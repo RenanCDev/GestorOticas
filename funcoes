@@ -1,0 +1,31 @@
+/// |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+/// |||             Universidade Federal do Rio Grande do Norte                 |||
+/// |||                 Centro de Ensino Superior do Seridó                     |||
+/// |||           Aluno -- Renan Missias Rodrigues Alves da Costa               |||
+/// |||                  Disciplina DCT1106 -- Programação                      |||
+/// |||                Projeto Sistema de Gestão para Óticas                    |||
+/// |||             Developed by @RenanMRb - since august, 2023                 |||
+/// |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+/////
+//Assinaturas das funções
+void tela_universal(void);
+void tela_menu_principal(void);
+void tela_menu_colaboradores(void);
+void cadastrar_colaborador(void);
+void pesquisar_colaborador(void);
+void tela_menu_mercadorias(void);
+void cadastrar_mercadoria(void);
+void pesquisar_mercadoria(void);
+void tela_menu_loja(void);
+void fazer_venda(void);
+void pesquisar_venda(void); 
+void tela_menu_clientes(void);
+void tela_menu_financeiro(void);
+
+
