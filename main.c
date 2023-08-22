@@ -16,6 +16,7 @@
 //Assinaturas das funções
 void tela_apresentacao(void);
 void tela_sobre(void);
+int tela_menu_principal(int a);
 
 
 
@@ -36,13 +37,47 @@ void tela_apresentacao(void) {
 
 
 void tela_sobre(void) {
+    system("clear");
     printf("\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ ");
     printf("/         O projeto EAGLE EYES é um projeto de gestão de óticas .         / ");
     printf("\            Tem o objetivo de gerir e administrar uma ótica .            \ ");
-    printf("/                            ATENÇÃO ! ! ! !                              / ");
+    printf("/                        > > ATENÇÃO ! ! ! ! < <                          / ");
     printf("\                  Este NÃO é um programa comercial .                     \ ");
     printf("/      O desenolvedor não se responsabiliza por quaisquer danos !         / ");
     printf("\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ ");
     getchar();
 
 }
+
+
+int tela_menu_principal(int op) {
+    system("clear");
+    printf("\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ ");
+    printf("/                       Menu principal - EAGLE EYES                       / ");
+    printf("\                         1 -> Administrativo <-                          \ ");
+    printf("/                          2 -> Fornecedores <-                           / ");
+    printf("\                            3 -> Produtos <-                             \ ");
+    printf("/                          4 -> Colaboradores <-                          / ");
+    printf("\                            5 -> Clientes <-                             \ ");
+    printf("/                         0 -> Fechar programa <-                         / ");
+    printf("\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ ");
+    printf("Selecione uma opção: \n");
+    scanf("%d", &op);
+    getchar();
+    return op;
+}
+
+////em progresso
+/*int tela_administrativo(int op) {
+    system("clear");
+    printf("\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ ");
+    printf("/                       Administrativo - EAGLE EYES                       / ");
+    printf("\                         1 -> Administrativo <-                          \ ");
+    printf("/                          2 -> Fornecedores <-                           / ");
+    printf("\                            3 -> Produtos <-                             \ ");
+    printf("/                          4 -> Colaboradores <-                          / ");
+    printf("\                            5 -> Clientes <-                             \ ");
+    printf("/                         0 -> Fechar programa <-                         / ");
+    printf("\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ ");
+    printf("Selecione uma opção: \n");
+}*/
