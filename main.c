@@ -102,3 +102,33 @@ int tela_fornecedor(int op) {
     getchar();
     return op;
 }
+
+
+int tela_produtos(int op) {
+    system("clear");
+    printf("\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ ");
+    printf("/                          Produtos - EAGLE EYES                          / ");
+    printf("\                        1 -> Cadastrar produto <-                        \ ");
+    printf("/                        2 -> Pesquisar produto <-                        / ");
+    printf("\                     0 -> Voltar ao menu anterior <-                     \ ");
+    printf("/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ ");
+    printf("Selecione uma opção: \n");
+    scanf("%d", &op);
+    getchar();
+    return op;
+}
+
+
+int tela_colaboradores(int op) {
+    system("clear");
+    printf("\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ ");
+    printf("/                        Colaboradores - EAGLE EYE                        / ");
+    printf("\                      1 -> Cadastrar colaborador <-                      \ ");
+    printf("/                      2 -> Pesquisar colaborador <-                      / ");
+    printf("\                     0 -> Voltar ao menu anterior <-                     \ ");
+    printf("/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ ");
+    printf("Selecione uma opção: \n");
+    scanf("%d", &op);
+    getchar();
+    return op;
+}
