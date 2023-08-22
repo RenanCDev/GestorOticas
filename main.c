@@ -16,8 +16,9 @@
 //Assinaturas das funções
 void tela_apresentacao(void);
 void tela_sobre(void);
-int tela_menu_principal(int a);
-
+int tela_menu_principal(int op);
+int tela_administrativo(int op);
+int tela_fornecedor(int op);
 
 
 /////
@@ -81,6 +82,21 @@ int tela_administrativo(int op) {
     printf("\                       7 -> Relatorio clientes <-                        \ ");
     printf("/                     0 -> Voltar ao menu anterior <-                     / ");
     printf("\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ ");
+    printf("Selecione uma opção: \n");
+    scanf("%d", &op);
+    getchar();
+    return op;
+}
+
+
+int tela_fornecedor(int op) {
+    system("clear");
+    printf("\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ ");
+    printf("/                        Fornecedores - EAGLE EYES                        / ");
+    printf("\                       1 -> Cadastrar fornecedor <-                      \ ");
+    printf("/                       2 -> Pesquisar fornecedor <-                      / ");
+    printf("\                      0 -> Voltar ao menu anterior <-                    \ ");
+    printf("/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ ");
     printf("Selecione uma opção: \n");
     scanf("%d", &op);
     getchar();
