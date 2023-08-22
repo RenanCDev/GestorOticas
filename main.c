@@ -25,6 +25,21 @@ int tela_cliente(int op);
 
 
 /////
+//Programa principal
+int main(void) {
+    tela_apresentacao;
+    tela_sobre;
+    tela_menu_principal;
+    tela_administrativo;
+    tela_fornecedor;
+    tela_produto;
+    tela_colaborador;
+    tela_cliente;
+    return 0;
+}
+
+
+/////
 //Funções telas
 void tela_apresentacao(void) {
     system("clear");
