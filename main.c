@@ -67,17 +67,22 @@ int tela_menu_principal(int op) {
     return op;
 }
 
-////em progresso
-/*int tela_administrativo(int op) {
+
+int tela_administrativo(int op) {
     system("clear");
     printf("\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ ");
     printf("/                       Administrativo - EAGLE EYES                       / ");
-    printf("\                         1 -> Administrativo <-                          \ ");
-    printf("/                          2 -> Fornecedores <-                           / ");
-    printf("\                            3 -> Produtos <-                             \ ");
-    printf("/                          4 -> Colaboradores <-                          / ");
-    printf("\                            5 -> Clientes <-                             \ ");
-    printf("/                         0 -> Fechar programa <-                         / ");
+    printf("\                     1 -> Cadastrar administrador <-                     \ ");
+    printf("/                     2 -> Pesquisar admnistrador <-                      / ");
+    printf("\                    3 -> Relatorio administradores <-                    \ ");
+    printf("/                     4 -> Relatorio fornecedores <-                      / ");
+    printf("\                       5 -> Relatorio produtos <-                        \ ");
+    printf("/                     6 -> Relatorio colaboradores <-                     / ");
+    printf("\                       7 -> Relatorio clientes <-                        \ ");
+    printf("/                     0 -> Voltar ao menu anterior <-                     / ");
     printf("\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ ");
     printf("Selecione uma opção: \n");
-}*/
+    scanf("%d", &op);
+    getchar();
+    return op;
+}
