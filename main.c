@@ -19,6 +19,9 @@ void tela_sobre(void);
 int tela_menu_principal(int op);
 int tela_administrativo(int op);
 int tela_fornecedor(int op);
+int tela_produto(int op);
+int tela_colaborador(int op);
+int tela_cliente(int op);
 
 
 /////
@@ -104,7 +107,7 @@ int tela_fornecedor(int op) {
 }
 
 
-int tela_produtos(int op) {
+int tela_produto(int op) {
     system("clear");
     printf("\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ ");
     printf("/                          Produtos - EAGLE EYES                          / ");
@@ -119,12 +122,27 @@ int tela_produtos(int op) {
 }
 
 
-int tela_colaboradores(int op) {
+int tela_colaboradore(int op) {
     system("clear");
     printf("\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ ");
     printf("/                        Colaboradores - EAGLE EYE                        / ");
     printf("\                      1 -> Cadastrar colaborador <-                      \ ");
     printf("/                      2 -> Pesquisar colaborador <-                      / ");
+    printf("\                     0 -> Voltar ao menu anterior <-                     \ ");
+    printf("/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ ");
+    printf("Selecione uma opção: \n");
+    scanf("%d", &op);
+    getchar();
+    return op;
+}
+
+
+int tela_cliente(int op) {
+    system("clear");
+    printf("\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ ");
+    printf("/                          Produtos - EAGLE EYES                          / ");
+    printf("\                        1 -> Cadastrar cliente <-                        \ ");
+    printf("/                        2 -> Pesquisar cliente <-                        / ");
     printf("\                     0 -> Voltar ao menu anterior <-                     \ ");
     printf("/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ ");
     printf("Selecione uma opção: \n");
