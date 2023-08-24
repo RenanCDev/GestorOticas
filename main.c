@@ -44,27 +44,27 @@ int main(void) {
 //Funções telas
 void tela_apresentacao(void) {
     system("clear");
-    printf("+=========================================================================+");
-    printf("|             Universidade Federal do Rio Grande do Norte                 |");
-    printf("|                 Centro de Ensino Superior do Seridó                     |");
-    printf("|           Aluno -- Renan Missias Rodrigues Alves da Costa               |");
-    printf("|                  Disciplina DCT1106 -- Programação                      |");
-    printf("|                Projeto Sistema de Gestão para Óticas                    |");
-    printf("|             Developed by @RenanMRb - since august, 2023                 |");
-    printf("+=========================================================================+");
+    printf("+=========================================================================+\n");
+    printf("|             Universidade Federal do Rio Grande do Norte                 |\n");
+    printf("|                 Centro de Ensino Superior do Seridó                     |\n");
+    printf("|           Aluno -- Renan Missias Rodrigues Alves da Costa               |\n");
+    printf("|                  Disciplina DCT1106 -- Programação                      |\n");
+    printf("|                Projeto Sistema de Gestão para Óticas                    |\n");
+    printf("|             Developed by @RenanMRb - since august, 2023                 |\n");
+    printf("+=========================================================================+\n");
     getchar();  
 }
 
 
 void tela_sobre(void) {
     system("clear");
-    printf("+=========================================================================+");
-    printf("|         O projeto EAGLE EYES é um projeto de gestão de óticas .         |");
-    printf("|            Tem o objetivo de gerir e administrar uma ótica .            |");
-    printf("|                        > > ATENÇÃO ! ! ! ! < <                          |");
-    printf("|                  Este NÃO é um programa comercial .                     |");
-    printf("|      O desenolvedor não se responsabiliza por quaisquer danos !         |");
-    printf("+=========================================================================+");
+    printf("+=========================================================================+\n");
+    printf("|         O projeto EAGLE EYES é um projeto de gestão de óticas .         |\n");
+    printf("|            Tem o objetivo de gerir e administrar uma ótica .            |\n");
+    printf("|                        > > ATENÇÃO ! ! ! ! < <                          |\n");
+    printf("|                  Este NÃO é um programa comercial .                     |\n");
+    printf("|      O desenolvedor não se responsabiliza por quaisquer danos !         |\n");
+    printf("+=========================================================================+\n");
     getchar();
 
 }
@@ -72,17 +72,17 @@ void tela_sobre(void) {
 
 int tela_menu_principal(int op) {
     system("clear");
-    printf("+=========================================================================+");
-    printf("|                       Menu principal - EAGLE EYES                       |");
-    printf("|                         1 -> Administrativo <-                          |");
-    printf("|                          2 -> Fornecedores <-                           |");
-    printf("|                            3 -> Produtos <-                             |");
-    printf("|                          4 -> Colaboradores <-                          |");
-    printf("|                            5 -> Clientes <-                             |");
-    printf("|                         0 -> Fechar programa <-                         |");
-    printf("+=========================================================================+");
+    printf("+=========================================================================+\n");
+    printf("|                       Menu principal - EAGLE EYES                       |\n");
+    printf("|                         1 -> Administrativo <-                          |\n");
+    printf("|                          2 -> Fornecedores <-                           |\n");
+    printf("|                            3 -> Produtos <-                             |\n");
+    printf("|                          4 -> Colaboradores <-                          |\n");
+    printf("|                            5 -> Clientes <-                             |\n");
+    printf("|                         0 -> Fechar programa <-                         |\n");
+    printf("+=========================================================================+\n");
     printf("Selecione uma opção: \n");
-    scanf("%d", &op);
+    scanf("%d\n", &op);
     getchar();
     return op;
 }
@@ -90,19 +90,19 @@ int tela_menu_principal(int op) {
 
 int tela_administrativo(int op) {
     system("clear");
-    printf("+=========================================================================+");
-    printf("|                       Administrativo - EAGLE EYES                       |");
-    printf("|                     1 -> Cadastrar administrador <-                     |");
-    printf("|                     2 -> Pesquisar admnistrador <-                      |");
-    printf("|                    3 -> Relatorio administradores <-                    |");
-    printf("|                     4 -> Relatorio fornecedores <-                      |");
-    printf("|                       5 -> Relatorio produtos <-                        |");
-    printf("|                     6 -> Relatorio colaboradores <-                     |");
-    printf("|                       7 -> Relatorio clientes <-                        |");
-    printf("|                     0 -> Voltar ao menu anterior <-                     |");
-    printf("+=========================================================================+");
+    printf("+=========================================================================+\n");
+    printf("|                       Administrativo - EAGLE EYES                       |\n");
+    printf("|                     1 -> Cadastrar administrador <-                     |\n");
+    printf("|                     2 -> Pesquisar admnistrador <-                      |\n");
+    printf("|                    3 -> Relatorio administradores <-                    |\n");
+    printf("|                     4 -> Relatorio fornecedores <-                      |\n");
+    printf("|                       5 -> Relatorio produtos <-                        |\n");
+    printf("|                     6 -> Relatorio colaboradores <-                     |\n");
+    printf("|                       7 -> Relatorio clientes <-                        |\n");
+    printf("|                     0 -> Voltar ao menu anterior <-                     |\n");
+    printf("+=========================================================================+\n");
     printf("Selecione uma opção: \n");
-    scanf("%d", &op);
+    scanf("%d\n", &op);
     getchar();
     return op;
 }
@@ -110,14 +110,14 @@ int tela_administrativo(int op) {
 
 int tela_fornecedor(int op) {
     system("clear");
-    printf("+=========================================================================+");
-    printf("|                        Fornecedores - EAGLE EYES                        |");
-    printf("|                       1 -> Cadastrar fornecedor <-                      |");
-    printf("|                       2 -> Pesquisar fornecedor <-                      |");
-    printf("|                      0 -> Voltar ao menu anterior <-                    |");
-    printf("+=========================================================================+");
+    printf("+=========================================================================+\n");
+    printf("|                        Fornecedores - EAGLE EYES                        |\n");
+    printf("|                       1 -> Cadastrar fornecedor <-                      |\n");
+    printf("|                       2 -> Pesquisar fornecedor <-                      |\n");
+    printf("|                      0 -> Voltar ao menu anterior <-                    |\n");
+    printf("+=========================================================================+\n");
     printf("Selecione uma opção: \n");
-    scanf("%d", &op);
+    scanf("%d\n", &op);
     getchar();
     return op;
 }
@@ -125,14 +125,14 @@ int tela_fornecedor(int op) {
 
 int tela_produto(int op) {
     system("clear");
-    printf("+=========================================================================+");
-    printf("|                          Produtos - EAGLE EYES                          |");
-    printf("|                        1 -> Cadastrar produto <-                        |");
-    printf("|                        2 -> Pesquisar produto <-                        |");
-    printf("|                     0 -> Voltar ao menu anterior <-                     |");
-    printf("+=========================================================================+");
+    printf("+=========================================================================+\n");
+    printf("|                          Produtos - EAGLE EYES                          |\n");
+    printf("|                        1 -> Cadastrar produto <-                        |\n");
+    printf("|                        2 -> Pesquisar produto <-                        |\n");
+    printf("|                     0 -> Voltar ao menu anterior <-                     |\n");
+    printf("+=========================================================================+\n");
     printf("Selecione uma opção: \n");
-    scanf("%d", &op);
+    scanf("%d\n", &op);
     getchar();
     return op;
 }
@@ -140,14 +140,14 @@ int tela_produto(int op) {
 
 int tela_colaborador(int op) {
     system("clear");
-    printf("+=========================================================================+");
-    printf("|                        Colaboradores - EAGLE EYE                        |");
-    printf("|                      1 -> Cadastrar colaborador <-                      |");
-    printf("|                      2 -> Pesquisar colaborador <-                      |");
-    printf("|                     0 -> Voltar ao menu anterior <-                     |");
-    printf("+=========================================================================+");
+    printf("+=========================================================================+\n");
+    printf("|                        Colaboradores - EAGLE EYE                        |\n");
+    printf("|                      1 -> Cadastrar colaborador <-                      |\n");
+    printf("|                      2 -> Pesquisar colaborador <-                      |\n");
+    printf("|                     0 -> Voltar ao menu anterior <-                     |\n");
+    printf("+=========================================================================+\n");
     printf("Selecione uma opção: \n");
-    scanf("%d", &op);
+    scanf("%d\n", &op);
     getchar();
     return op;
 }
@@ -155,14 +155,14 @@ int tela_colaborador(int op) {
 
 int tela_cliente(int op) {
     system("clear");
-    printf("+=========================================================================+");
-    printf("|                          Produtos - EAGLE EYES                          |");
-    printf("|                        1 -> Cadastrar cliente <-                        |");
-    printf("|                        2 -> Pesquisar cliente <-                        |");
-    printf("|                     0 -> Voltar ao menu anterior <-                     |");
-    printf("+=========================================================================+");
+    printf("+=========================================================================+\n");
+    printf("|                          Produtos - EAGLE EYES                          |\n");
+    printf("|                        1 -> Cadastrar cliente <-                        |\n");
+    printf("|                        2 -> Pesquisar cliente <-                        |\n");
+    printf("|                     0 -> Voltar ao menu anterior <-                     |\n");
+    printf("+=========================================================================+\n");
     printf("Selecione uma opção: \n");
-    scanf("%d", &op);
+    scanf("%d\n", &op);
     getchar();
     return op;
 }
