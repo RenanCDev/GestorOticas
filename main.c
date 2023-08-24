@@ -65,7 +65,7 @@ void tela_apresentacao(void) {
     printf("|                                                                         |\n");
     printf("|             Developed by @RenanMRb - since august, 2023                 |\n");
     printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
+    printf("+========================================================================+\n");
     getchar();  
 }
 
@@ -190,7 +190,7 @@ int tela_cliente(int op) {
     system("clear");
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                          Produtos - EAGLE EYES                          |\n");
+    printf("|                          Clientes - EAGLE EYES                          |\n");
     printf("|                                                                         |\n");
     printf("|                        1 -> Cadastrar cliente <-                        |\n");
     printf("|                        2 -> Pesquisar cliente <-                        |\n");
