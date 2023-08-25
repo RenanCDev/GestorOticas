@@ -34,7 +34,7 @@ int tela_cliente(int op);
 /////
 //Programa principal
 int main(void) {
-    int op = 9;
+    int op;
     tela_apresentacao();
     tela_sobre();
     tela_menu_principal(op);
