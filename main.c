@@ -49,6 +49,7 @@ int main(void) {
 
 /////
 //Funções telas
+//Apresentação
 void tela_apresentacao(void) {
     system("clear");
     printf("+=========================================================================+\n");
@@ -70,6 +71,7 @@ void tela_apresentacao(void) {
 }
 
 
+//Sobre
 void tela_sobre(void) {
     system("clear");
     printf("+=========================================================================+\n");
@@ -88,6 +90,7 @@ void tela_sobre(void) {
 }
 
 
+//Menu principal
 int tela_menu_principal(int op) {
     system("clear");
     printf("+=========================================================================+\n");
@@ -109,6 +112,7 @@ int tela_menu_principal(int op) {
 }
 
 
+//Caminho administrativo
 int tela_administrativo(int op) {
     system("clear");
     printf("+=========================================================================+\n");
@@ -129,6 +133,27 @@ int tela_administrativo(int op) {
     scanf("%d\n", &op);
     getchar();
     return op;
+}
+
+
+//Cadastrar administrador
+int cpf, dat_nacimento, cel;
+char nome, endereco, email;
+int cadastro_cliente() {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                     Cliente - Cadastro - EAGLE EYES                     |\n");
+    printf("|                                                                         |\n");
+    printf("|                     1 -> Cadastrar administrador <-                     |\n");
+    printf("|                     2 -> Pesquisar admnistrador <-                      |\n");
+    printf("|                    3 -> Relatorio administradores <-                    |\n");
+    printf("|                     4 -> Relatorio fornecedores <-                      |\n");
+    printf("|                       5 -> Relatorio produtos <-                        |\n");
+    printf("|                     6 -> Relatorio colaboradores <-                     |\n");
+    printf("|                       7 -> Relatorio clientes <-                        |\n");
+    printf("|                     0 -> Voltar ao menu anterior <-                     |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
 }
 
 
@@ -203,3 +228,17 @@ int tela_cliente(int op) {
     return op;
 }
 
+
+/////
+//Telas universais
+//Cpf
+int cpf(int cpf) {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                            CPF - EAGLE EYES                             |\n");
+    printf("|                                                                         |\n");
+    scanf("%c|                            Digite seu CPF :                              |\n", &cpf);
+    printf("|                                                                         |\n");
+    printf("|                     1 -> Cadastrar administrador <-                     |\n");
+    printf("+=========================================================================+\n");
+}
