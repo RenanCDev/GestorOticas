@@ -261,6 +261,36 @@ char cpf(char cpf) {
 }
 
 
+//Nome
+char nome(char nome) {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                            Nome - Cliente                               |\n");
+    printf("|                                                                         |\n");
+    scanf("%c|                          Digite seu nome :                              |\n", &nome);
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    getchar();
+    return nome;
+}
+
+
+//Reentrada nome
+char cpf(char cpf) {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                            Nome - Cliente                               |\n");
+    printf("|                                                                         |\n");
+    printf("|                          Nome inválido ! ! !                            |\n");
+    printf("|                                                                         |\n");
+    scanf("%c|                          Digite seu nome :                              |\n", &cpf);
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    getchar();
+    return cpf;
+}
+
+
 //Data de nascimento
 char dat_nasc(char dat_nasc) {
     printf("+=========================================================================+\n");
@@ -290,5 +320,3 @@ char dat_nasc(char dat_nasc) {
     return dat_nasc;
 }
 
-
-//
