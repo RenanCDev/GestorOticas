@@ -273,3 +273,22 @@ char dat_nasc(char dat_nasc) {
     getchar();
     return dat_nasc;
 }
+
+
+//Reentrada data de nascimento
+char dat_nasc(char dat_nasc) {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                      Data de nascimento - Cliente                       |\n");
+    printf("|                                                                         |\n");
+    printf("|                    Data de nascimento inválida ! ! !                    |\n");
+    printf("|                                                                         |\n");
+    scanf("%c|                    Digite sua data de nascimento :                      |\n", &dat_nasc);
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    getchar();
+    return dat_nasc;
+}
+
+
+//
