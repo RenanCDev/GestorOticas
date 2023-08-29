@@ -231,13 +231,13 @@ int tela_cliente(int op) {
 
 /////
 //Telas universais
-//CPf
-int cpf(int cpf) {
+//CPF
+char cpf(char cpf) {
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                            CPF - EAGLE EYES                             |\n");
+    printf("|                             CPF - Cliente                               |\n");
     printf("|                                                                         |\n");
-    scanf("%c|                            Digite seu CPF :                             |\n", &cpf);
+    scanf("%c|                           Digite seu CPF :                              |\n", &cpf);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     getchar();
@@ -246,10 +246,10 @@ int cpf(int cpf) {
 
 
 //Reentrada CPF
-int cpf(int cpf) {
+char cpf(char cpf) {
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                            CPF - EAGLE EYES                             |\n");
+    printf("|                             CPF - Cliente                               |\n");
     printf("|                                                                         |\n");
     printf("|                           CPF inválido ! ! !                            |\n");
     printf("|                                                                         |\n");
@@ -262,4 +262,14 @@ int cpf(int cpf) {
 
 
 //Data de nascimento
-int da
+char dat_nasc(char dat_nasc) {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                      Data de nascimento - Cliente                       |\n");
+    printf("|                                                                         |\n");
+    scanf("%c|                    Digite sua data de nascimento :                      |\n", &dat_nasc);
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    getchar();
+    return dat_nasc;
+}
