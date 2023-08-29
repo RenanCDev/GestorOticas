@@ -231,14 +231,35 @@ int tela_cliente(int op) {
 
 /////
 //Telas universais
-//Cpf
+//CPf
 int cpf(int cpf) {
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                            CPF - EAGLE EYES                             |\n");
     printf("|                                                                         |\n");
-    scanf("%c|                            Digite seu CPF :                              |\n", &cpf);
+    scanf("%c|                            Digite seu CPF :                             |\n", &cpf);
     printf("|                                                                         |\n");
-    printf("|                     1 -> Cadastrar administrador <-                     |\n");
     printf("+=========================================================================+\n");
+    getchar();
+    return cpf;
 }
+
+
+//Reentrada CPF
+int cpf(int cpf) {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                            CPF - EAGLE EYES                             |\n");
+    printf("|                                                                         |\n");
+    printf("|                           CPF inválido ! ! !                            |\n");
+    printf("|                                                                         |\n");
+    scanf("%c|                            Digite seu CPF :                             |\n", &cpf);
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    getchar();
+    return cpf;
+}
+
+
+//Data de nascimento
+int da
