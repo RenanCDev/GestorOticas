@@ -35,6 +35,7 @@ int tela_cliente(int op);
 //Programa principal
 int main(void) {
     int op;
+    char cpf, re_cpf, nome, re_nome, dat_nasc, re_dat_nasc, cel, re_cel, endereco, re_endereco, email;
     tela_apresentacao();
     tela_sobre();
     tela_menu_principal(op);
@@ -66,8 +67,7 @@ void tela_apresentacao(void) {
     printf("|                                                                         |\n");
     printf("|               Developed by @RenanMRb - since august, 2023               |\n");
     printf("|                                                                         |\n");
-    printf("+========================================================================+\n");
-    getchar();  
+    printf("+========================================================================+\n");  
 }
 
 
@@ -87,7 +87,6 @@ void tela_sobre(void) {
     printf("|       O desenolvedor não se responsabiliza por quaisquer danos !        |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
-    getchar();
 
 }
 
@@ -114,7 +113,6 @@ int tela_menu_principal(int op) {
     printf("+=========================================================================+\n");
     printf("Selecione uma opção: \n");
     scanf("%d\n", &op);
-    getchar();
     return op;
 }
 
@@ -146,14 +144,11 @@ int tela_administrativo(int op) {
     printf("+=========================================================================+\n");
     printf("Selecione uma opção: \n");
     scanf("%d\n", &op);
-    getchar();
     return op;
 }
 
 
 //Cadastrar administrador
-int cpf, dat_nacimento, cel;
-char nome, endereco, email;
 int cadastro_cliente() {
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
@@ -186,7 +181,6 @@ int tela_fornecedor(int op) {
     printf("+=========================================================================+\n");
     printf("Selecione uma opção: \n");
     scanf("%d\n", &op);
-    getchar();
     return op;
 }
 
@@ -205,7 +199,6 @@ int tela_produto(int op) {
     printf("+=========================================================================+\n");
     printf("Selecione uma opção: \n");
     scanf("%d\n", &op);
-    getchar();
     return op;
 }
 
@@ -224,7 +217,6 @@ int tela_colaborador(int op) {
     printf("+=========================================================================+\n");
     printf("Selecione uma opção: \n");
     scanf("%d\n", &op);
-    getchar();
     return op;
 }
 
@@ -243,7 +235,6 @@ int tela_cliente(int op) {
     printf("+=========================================================================+\n");
     printf("Selecione uma opção: \n");
     scanf("%d\n", &op);
-    getchar();
     return op;
 }
 
@@ -260,13 +251,12 @@ char cpf(char cpf) {
     scanf("%c|                           Digite seu CPF :                              |\n", &cpf);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
-    getchar();
     return cpf;
 }
 
 
 //Reentrada CPF
-char cpf(char cpf) {
+char re_cpf(char re_cpf) {
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
@@ -274,11 +264,10 @@ char cpf(char cpf) {
     printf("|                                                                         |\n");
     printf("|                           CPF inválido ! ! !                            |\n");
     printf("|                                                                         |\n");
-    scanf("%c|                            Digite seu CPF :                             |\n", &cpf);
+    scanf("%c|                            Digite seu CPF :                             |\n", &re_cpf);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
-    getchar();
-    return cpf;
+    return re_cpf;
 }
 
 
@@ -292,13 +281,12 @@ char nome(char nome) {
     scanf("%c|                          Digite seu nome :                              |\n", &nome);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
-    getchar();
     return nome;
 }
 
 
 //Reentrada nome
-char cpf(char cpf) {
+char re_nome(char re_nome) {
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
@@ -306,11 +294,10 @@ char cpf(char cpf) {
     printf("|                                                                         |\n");
     printf("|                          Nome inválido ! ! !                            |\n");
     printf("|                                                                         |\n");
-    scanf("%c|                          Digite seu nome :                              |\n", &cpf);
+    scanf("%c|                          Digite seu nome :                              |\n", &re_nome);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
-    getchar();
-    return cpf;
+    return re_nome;
 }
 
 
@@ -324,13 +311,12 @@ char dat_nasc(char dat_nasc) {
     scanf("%c|                    Digite sua data de nascimento :                      |\n", &dat_nasc);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
-    getchar();
     return dat_nasc;
 }
 
 
 //Reentrada data de nascimento
-char dat_nasc(char dat_nasc) {
+char re_dat_nasc(char re_dat_nasc) {
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
@@ -338,10 +324,9 @@ char dat_nasc(char dat_nasc) {
     printf("|                                                                         |\n");
     printf("|                    Data de nascimento inválida ! ! !                    |\n");
     printf("|                                                                         |\n");
-    scanf("%c|                    Digite sua data de nascimento :                      |\n", &dat_nasc);
+    scanf("%c|                    Digite sua data de nascimento :                      |\n", &re_dat_nasc);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
-    getchar();
-    return dat_nasc;
+    return re_dat_nasc;
 }
 
