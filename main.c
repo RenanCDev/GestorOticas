@@ -54,6 +54,7 @@ int main(void) {
 void tela_apresentacao(void) {
     system("clear");
     printf("+=========================================================================+\n");
+    printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
     printf("|               Universidade Federal do Rio Grande do Norte               |\n");
     printf("|                                                                         |\n");
@@ -67,7 +68,7 @@ void tela_apresentacao(void) {
     printf("|                                                                         |\n");
     printf("|               Developed by @RenanMRb - since august, 2023               |\n");
     printf("|                                                                         |\n");
-    printf("+========================================================================+\n");  
+    printf("+=========================================================================+\n");  
 }
 
 
@@ -75,6 +76,7 @@ void tela_apresentacao(void) {
 void tela_sobre(void) {
     system("clear");
     printf("+=========================================================================+\n");
+    printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
     printf("|         O projeto EAGLE EYES é um projeto de gestão de óticas .         |\n");
     printf("|                                                                         |\n");
@@ -95,6 +97,7 @@ void tela_sobre(void) {
 int tela_menu_principal(int op) {
     system("clear");
     printf("+=========================================================================+\n");
+    printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
     printf("|                       Menu principal - EAGLE EYES                       |\n");
     printf("|                                                                         |\n");
@@ -193,7 +196,9 @@ int tela_produto(int op) {
     printf("|                          Produtos - EAGLE EYES                          |\n");
     printf("|                                                                         |\n");
     printf("|                        1 -> Cadastrar produto <-                        |\n");
+    printf("|                                                                         |\n");
     printf("|                        2 -> Pesquisar produto <-                        |\n");
+    printf("|                                                                         |\n");
     printf("|                     0 -> Voltar ao menu anterior <-                     |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
@@ -211,7 +216,9 @@ int tela_colaborador(int op) {
     printf("|                        Colaboradores - EAGLE EYE                        |\n");
     printf("|                                                                         |\n");
     printf("|                      1 -> Cadastrar colaborador <-                      |\n");
+    printf("|                                                                         |\n");
     printf("|                      2 -> Pesquisar colaborador <-                      |\n");
+    printf("|                                                                         |\n");
     printf("|                     0 -> Voltar ao menu anterior <-                     |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
@@ -229,7 +236,9 @@ int tela_cliente(int op) {
     printf("|                          Clientes - EAGLE EYES                          |\n");
     printf("|                                                                         |\n");
     printf("|                        1 -> Cadastrar cliente <-                        |\n");
+    printf("|                                                                         |\n");
     printf("|                        2 -> Pesquisar cliente <-                        |\n");
+    printf("|                                                                         |\n");
     printf("|                     0 -> Voltar ao menu anterior <-                     |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
@@ -246,9 +255,9 @@ char cpf(char cpf) {
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
-    printf("|                             CPF - Cliente                               |\n");
+    printf("|                              CPF - Cliente                              |\n");
     printf("|                                                                         |\n");
-    scanf("%c|                           Digite seu CPF :                              |\n", &cpf);
+    scanf("%c|                            Digite seu CPF :                             |\n", &cpf);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     return cpf;
@@ -276,9 +285,9 @@ char nome(char nome) {
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
-    printf("|                            Nome - Cliente                               |\n");
+    printf("|                             Nome - Cliente                              |\n");
     printf("|                                                                         |\n");
-    scanf("%c|                          Digite seu nome :                              |\n", &nome);
+    scanf("%c|                            Digite seu nome :                            |\n", &nome);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     return nome;
@@ -290,11 +299,11 @@ char re_nome(char re_nome) {
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
-    printf("|                            Nome - Cliente                               |\n");
+    printf("|                             Nome - Cliente                              |\n");
     printf("|                                                                         |\n");
-    printf("|                          Nome inválido ! ! !                            |\n");
+    printf("|                           Nome inválido ! ! !                           |\n");
     printf("|                                                                         |\n");
-    scanf("%c|                          Digite seu nome :                              |\n", &re_nome);
+    scanf("%c|                            Digite seu nome :                            |\n", &re_nome);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     return re_nome;
@@ -308,7 +317,7 @@ char dat_nasc(char dat_nasc) {
     printf("|                                                                         |\n");
     printf("|                      Data de nascimento - Cliente                       |\n");
     printf("|                                                                         |\n");
-    scanf("%c|                    Digite sua data de nascimento :                      |\n", &dat_nasc);
+    scanf("%c|                     Digite sua data de nascimento :                     |\n", &dat_nasc);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     return dat_nasc;
@@ -324,7 +333,7 @@ char re_dat_nasc(char re_dat_nasc) {
     printf("|                                                                         |\n");
     printf("|                    Data de nascimento inválida ! ! !                    |\n");
     printf("|                                                                         |\n");
-    scanf("%c|                    Digite sua data de nascimento :                      |\n", &re_dat_nasc);
+    scanf("%c|                     Digite sua data de nascimento :                     |\n", &re_dat_nasc);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     return re_dat_nasc;
