@@ -19,11 +19,6 @@
 #include <stdlib.h>
 
 
-//
-//
-//
-//
-//
 
 /////
 //Assinaturas das funções
