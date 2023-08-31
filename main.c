@@ -408,7 +408,7 @@ char cep(char cep) {
     printf("|                                                                         |\n");
     printf("|                               Eagle Eyes                                |\n");
     printf("|                                                                         |\n");
-    scanf("%c|                             Digite o cep :                              |\n", &cep);
+    scanf("%c|                             Digite o CEP :                              |\n", &cep);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     return cep;
@@ -422,7 +422,7 @@ char re_cep(char re_cep) {
     printf("|                                                                         |\n");
     printf("|                               Eagle Eyes                                |\n");
     printf("|                                                                         |\n");
-    printf("|                          Email inválido ! ! !                           |\n");
+    printf("|                           CEP inválido ! ! !                            |\n");
     printf("|                                                                         |\n");
     scanf("%c|                             Digite o cep :                              |\n", &re_cep);
     printf("|                                                                         |\n");
@@ -453,7 +453,7 @@ char re_estado(char re_estado) {
     printf("|                                                                         |\n");
     printf("|                               Eagle Eyes                                |\n");
     printf("|                                                                         |\n");
-    printf("|                          Email inválido ! ! !                           |\n");
+    printf("|                          Estado inválido ! ! !                          |\n");
     printf("|                                                                         |\n");
     scanf("%c|                            Digite o estado :                            |\n", &re_estado);
     printf("|                                                                         |\n");
@@ -483,7 +483,7 @@ char re_cidade(char re_cidade) {
     printf("|                                                                         |\n");
     printf("|                               Eagle Eyes                                |\n");
     printf("|                                                                         |\n");
-    printf("|                          Email inválido ! ! !                           |\n");
+    printf("|                          Cidade inválida ! ! !                          |\n");
     printf("|                                                                         |\n");
     scanf("%c|                            Digite a cidade :                            |\n", &re_cidade);
     printf("|                                                                         |\n");
@@ -513,6 +513,8 @@ char re_bairro(char re_bairro) {
     printf("|                                                                         |\n");
     printf("|                               Eagle Eyes                                |\n");
     printf("|                                                                         |\n");
+    printf("|                          Bairro inválido ! ! !                          |\n");
+    printf("|                                                                         |\n");
     scanf("%c|                           Digite o bairro :                             |\n", &re_bairro);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
@@ -541,9 +543,40 @@ char re_rua(char re_rua) {
     printf("|                                                                         |\n");
     printf("|                               Eagle Eyes                                |\n");
     printf("|                                                                         |\n");
+    printf("|                           Rua inválida ! ! !                            |\n");
+    printf("|                                                                         |\n");
     scanf("%c|                             Digite a rua :                              |\n", &re_rua);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     return re_rua;
 }
 
+
+//Entrada número
+char numero(char numero) {
+    printf("+=========================================================================+\n");
+    printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
+    printf("|                                                                         |\n");
+    printf("|                               Eagle Eyes                                |\n");
+    printf("|                                                                         |\n");
+    scanf("%c|                            Digite o numero :                            |\n", &numero);
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");   
+    return numero;
+}
+
+
+//Reentrada número
+char re_numero(char re_numero) {
+    printf("+=========================================================================+\n");
+    printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
+    printf("|                                                                         |\n");
+    printf("|                               Eagle Eyes                                |\n");
+    printf("|                                                                         |\n");
+    printf("|                          Número inválido ! ! !                          |\n");
+    printf("|                                                                         |\n");
+    scanf("%c|                            Digite o número :                            |\n", &re_rua);
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");   
+    return re_rua;
+}
