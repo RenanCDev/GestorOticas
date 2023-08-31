@@ -435,7 +435,33 @@ char re_cep(char re_cep) {
 
 
 //Estado
+char estado(char estado) {
+    printf("+=========================================================================+\n");
+    printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
+    printf("|                                                                         |\n");
+    printf("|                               Eagle Eyes                                |\n");
+    printf("|                                                                         |\n");
+    scanf("%c|                            Digite o estado :                           |\n", &estado);
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");   
+    return estado;
+}
 
+
+//Reentrada estado
+char re_estado(char re_estado) {
+    printf("+=========================================================================+\n");
+    printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
+    printf("|                                                                         |\n");
+    printf("|                               Eagle Eyes                                |\n");
+    printf("|                                                                         |\n");
+    printf("|                          Email inválido ! ! !                           |\n");
+    printf("|                                                                         |\n");
+    scanf("%c|                            Digite o estado :                            |\n", &re_estado);
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");   
+    return re_estado;
+}
 
 
 //Cidade
@@ -494,3 +520,4 @@ char re_bairro(char re_bairro) {
     printf("+=========================================================================+\n");   
     return re_bairro;
 }
+
