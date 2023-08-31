@@ -432,6 +432,42 @@ char re_cep(char re_cep) {
 
 
 /////Entrada endereço
+
+
+//Estado
+
+
+
+//Cidade
+char cidade(char cidade) {
+    printf("+=========================================================================+\n");
+    printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
+    printf("|                                                                         |\n");
+    printf("|                               Eagle Eyes                                |\n");
+    printf("|                                                                         |\n");
+    scanf("%c|                            Digite a cidade :                            |\n", &cidade);
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");   
+    return cidade;
+}
+
+
+//Reentrada cidade
+char re_cidade(char re_cidade) {
+    printf("+=========================================================================+\n");
+    printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
+    printf("|                                                                         |\n");
+    printf("|                               Eagle Eyes                                |\n");
+    printf("|                                                                         |\n");
+    printf("|                          Email inválido ! ! !                           |\n");
+    printf("|                                                                         |\n");
+    scanf("%c|                            Digite a cidade :                            |\n", &re_cidade);
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");   
+    return re_cidade;
+}
+
+
 //Bairro
 char bairro(char bairro) {
     printf("+=========================================================================+\n");
