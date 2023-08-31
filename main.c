@@ -69,6 +69,7 @@ void tela_apresentacao(void) {
     printf("|               Developed by @RenanMRb - since august, 2023               |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");  
+    getchar();
 }
 
 
@@ -89,7 +90,7 @@ void tela_sobre(void) {
     printf("|       O desenolvedor não se responsabiliza por quaisquer danos !        |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
-
+    getchar();
 }
 
 
