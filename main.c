@@ -255,9 +255,9 @@ char cpf(char cpf) {
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
-    printf("|                              CPF - Cliente                              |\n");
+    printf("|                               Eagle Eyes                                |\n");
     printf("|                                                                         |\n");
-    scanf("%c|                            Digite seu CPF :                             |\n", &cpf);
+    scanf("%c|                             Digite o CPF :                              |\n", &cpf);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     return cpf;
@@ -269,11 +269,11 @@ char re_cpf(char re_cpf) {
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
-    printf("|                             CPF - Cliente                               |\n");
+    printf("|                               Eagle Eyes                                |\n");
     printf("|                                                                         |\n");
     printf("|                           CPF inválido ! ! !                            |\n");
     printf("|                                                                         |\n");
-    scanf("%c|                            Digite seu CPF :                             |\n", &re_cpf);
+    scanf("%c|                             Digite o CPF :                              |\n", &re_cpf);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     return re_cpf;
@@ -285,9 +285,9 @@ char nome(char nome) {
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
-    printf("|                             Nome - Cliente                              |\n");
+    printf("|                               Eagle Eyes                                |\n");
     printf("|                                                                         |\n");
-    scanf("%c|                            Digite seu nome :                            |\n", &nome);
+    scanf("%c|                             Digite o nome :                             |\n", &nome);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     return nome;
@@ -299,11 +299,11 @@ char re_nome(char re_nome) {
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
-    printf("|                             Nome - Cliente                              |\n");
+    printf("|                               Eagle Eyes                                |\n");
     printf("|                                                                         |\n");
     printf("|                           Nome inválido ! ! !                           |\n");
     printf("|                                                                         |\n");
-    scanf("%c|                            Digite seu nome :                            |\n", &re_nome);
+    scanf("%c|                             Digite o nome :                             |\n", &re_nome);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     return re_nome;
@@ -315,9 +315,9 @@ char dat_nasc(char dat_nasc) {
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
-    printf("|                      Data de nascimento - Cliente                       |\n");
+    printf("|                               Eagle Eyes                                |\n");
     printf("|                                                                         |\n");
-    scanf("%c|                     Digite sua data de nascimento :                     |\n", &dat_nasc);
+    scanf("%c|                      Digite a data de nascimento :                      |\n", &dat_nasc);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     return dat_nasc;
@@ -329,13 +329,42 @@ char re_dat_nasc(char re_dat_nasc) {
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
-    printf("|                      Data de nascimento - Cliente                       |\n");
+    printf("|                               Eagle Eyes                                |\n");
     printf("|                                                                         |\n");
     printf("|                    Data de nascimento inválida ! ! !                    |\n");
     printf("|                                                                         |\n");
-    scanf("%c|                     Digite sua data de nascimento :                     |\n", &re_dat_nasc);
+    scanf("%c|                      Digite a data de nascimento :                      |\n", &re_dat_nasc);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     return re_dat_nasc;
+}
+
+
+//Email
+char email(char email) {
+    printf("+=========================================================================+\n");
+    printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
+    printf("|                                                                         |\n");
+    printf("|                               Eagle Eyes                                |\n");
+    printf("|                                                                         |\n");
+    scanf("%c|                           Digite o email :                              |\n", &dat_nasc);
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    return dat_nasc;
+}
+
+
+//Reentrada email
+char re_email(char re_email) {
+    printf("+=========================================================================+\n");
+    printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
+    printf("|                                                                         |\n");
+    printf("|                               Eagle Eyes                                |\n");
+    printf("|                                                                         |\n");
+    printf("|                          Email inválido ! ! !                           |\n");
+    printf("|                                                                         |\n");
+    scanf("%c|                            Digite o email :                             |\n", &re_dat_nasc);
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");   
 }
 
