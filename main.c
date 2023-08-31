@@ -310,6 +310,36 @@ char re_nome(char re_nome) {
 }
 
 
+//Cel
+char cel(char cel) {
+    printf("+=========================================================================+\n");
+    printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
+    printf("|                                                                         |\n");
+    printf("|                               Eagle Eyes                                |\n");
+    printf("|                                                                         |\n");
+    scanf("%c|                           Digite o celular :                            |\n", &cel);
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    return cel;
+}
+
+
+//Reentrada cel
+char re_cel(char re_cel) {
+    printf("+=========================================================================+\n");
+    printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
+    printf("|                                                                         |\n");
+    printf("|                               Eagle Eyes                                |\n");
+    printf("|                                                                         |\n");
+    printf("|                           Nome inválido ! ! !                           |\n");
+    printf("|                                                                         |\n");
+    scanf("%c|                           Digite o celular :                            |\n", &re_cel);
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    return re_cel;
+}
+
+
 //Data de nascimento
 char dat_nasc(char dat_nasc) {
     printf("+=========================================================================+\n");
