@@ -347,10 +347,10 @@ char email(char email) {
     printf("|                                                                         |\n");
     printf("|                               Eagle Eyes                                |\n");
     printf("|                                                                         |\n");
-    scanf("%c|                           Digite o email :                              |\n", &dat_nasc);
+    scanf("%c|                           Digite o email :                              |\n", &email);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
-    return dat_nasc;
+    return email;
 }
 
 
@@ -363,8 +363,38 @@ char re_email(char re_email) {
     printf("|                                                                         |\n");
     printf("|                          Email inválido ! ! !                           |\n");
     printf("|                                                                         |\n");
-    scanf("%c|                            Digite o email :                             |\n", &re_dat_nasc);
+    scanf("%c|                            Digite o email :                             |\n", &re_email);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
+    return re_email;
 }
 
+
+//Entrada CEP
+char cep(char cep) {
+    printf("+=========================================================================+\n");
+    printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
+    printf("|                                                                         |\n");
+    printf("|                               Eagle Eyes                                |\n");
+    printf("|                                                                         |\n");
+    scanf("%c|                             Digite o cep :                              |\n", &cep);
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");   
+    return cep;
+}
+
+
+//Reentrada CEP
+char re_cep(char re_cep) {
+    printf("+=========================================================================+\n");
+    printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
+    printf("|                                                                         |\n");
+    printf("|                               Eagle Eyes                                |\n");
+    printf("|                                                                         |\n");
+    printf("|                          Email inválido ! ! !                           |\n");
+    printf("|                                                                         |\n");
+    scanf("%c|                             Digite o cep :                              |\n", &re_cep);
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");   
+    return re_cep;
+    }
