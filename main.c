@@ -427,4 +427,33 @@ char re_cep(char re_cep) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     return re_cep;
-    }
+}
+
+
+/////Entrada endereço
+//Bairro
+char bairro(char bairro) {
+    printf("+=========================================================================+\n");
+    printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
+    printf("|                                                                         |\n");
+    printf("|                               Eagle Eyes                                |\n");
+    printf("|                                                                         |\n");
+    scanf("%c|                           Digite o bairro :                             |\n", &bairro);
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");   
+    return bairro;
+}
+
+
+//Reentrada bairro
+char re_bairro(char re_bairro) {
+    printf("+=========================================================================+\n");
+    printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
+    printf("|                                                                         |\n");
+    printf("|                               Eagle Eyes                                |\n");
+    printf("|                                                                         |\n");
+    scanf("%c|                           Digite o bairro :                             |\n", &re_bairro);
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");   
+    return re_bairro;
+}
