@@ -575,8 +575,38 @@ char re_numero(char re_numero) {
     printf("|                                                                         |\n");
     printf("|                          Número inválido ! ! !                          |\n");
     printf("|                                                                         |\n");
-    scanf("%c|                            Digite o número :                            |\n", &re_rua);
+    scanf("%c|                            Digite o número :                            |\n", &re_numero);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    return re_rua;
+    return re_numero;
+}
+
+
+//Entrada complemento
+char complemento(char complemento) {
+    printf("+=========================================================================+\n");
+    printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
+    printf("|                                                                         |\n");
+    printf("|                               Eagle Eyes                                |\n");
+    printf("|                                                                         |\n");
+    scanf("%c|                         Digite o complemento :                          |\n", &complemento);
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");   
+    return complemento;
+}
+
+
+//reentrada complemento
+char re_complemento(char re_complemento) {
+    printf("+=========================================================================+\n");
+    printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
+    printf("|                                                                         |\n");
+    printf("|                               Eagle Eyes                                |\n");
+    printf("|                                                                         |\n");
+    printf("|                       Complemento inválido ! ! !                        |\n");
+    printf("|                                                                         |\n");
+    scanf("%c|                         Digite o complemento :                          |\n", &re_complemento);
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");   
+    return re_complemento;
 }
