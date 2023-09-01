@@ -23,12 +23,35 @@
 //Assinaturas das funções
 void tela_apresentacao(void);
 void tela_sobre(void);
-int tela_menu_principal(int op);
-int tela_administrativo(int op);
-int tela_fornecedor(int op);
-int tela_produto(int op);
-int tela_colaborador(int op);
-int tela_cliente(int op);
+int tela_menu_principal(void);
+int tela_administrativo(void);
+int tela_fornecedor(void);
+int tela_produto(void);
+int tela_colaborador(void);
+int tela_cliente(void);
+char cpf(void);
+char re_cpf(void);
+char nome(void);
+char re_nome(void);
+char cel(void);
+char re_cel(void);
+char dat_nasc(void);
+char re_dat_nasc(void);
+char email(void);
+char re_email(void);
+char cep(void);
+char re_cep(void);
+char estado(void);
+char re_estado(void);
+char cidade(void);
+char re_cidade(void);
+char bairro(void);
+char re_bairro(void);
+char rua(void);
+char re_rua(void);
+char numero(void);
+char complemento(void);
+char re_complemento(void);
 
 
 /////
@@ -36,14 +59,14 @@ int tela_cliente(int op);
 int main(void) {
     int op;
     char cpf, re_cpf, nome, re_nome, dat_nasc, re_dat_nasc, cel, re_cel, endereco, re_endereco, email;
-    tela_apresentacao();
-    tela_sobre();
-    tela_menu_principal(op);
-    tela_administrativo(op);
-    tela_fornecedor(op);
-    tela_produto(op);
-    tela_colaborador(op);
-    tela_cliente(op);
+    tela_apresentacao(void);
+    tela_sobre(void);
+    tela_menu_principal(void);
+    tela_administrativo(void);
+    tela_fornecedor(void);
+    tela_produto(void);
+    tela_colaborador(void);
+    tela_cliente(void);
     return 0;
 }
 
@@ -95,7 +118,8 @@ void tela_sobre(void) {
 
 
 //Menu principal
-int tela_menu_principal(int op) {
+int tela_menu_principal(void) {
+    int op;
     system("clear");
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
@@ -122,7 +146,8 @@ int tela_menu_principal(int op) {
 
 
 //Caminho administrativo
-int tela_administrativo(int op) {
+int tela_administrativo(void) {
+    int op;
     system("clear");
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
@@ -153,7 +178,8 @@ int tela_administrativo(int op) {
 
 
 //Cadastrar administrador
-int cadastro_cliente() {
+int cadastro_cliente(void) {
+    int op;
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
@@ -165,11 +191,15 @@ int cadastro_cliente() {
     printf("|                                                                         |\n");
     printf("|                     0 -> Voltar ao menu anterior <-                     |\n");
     printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
+    printf("+=========================================================================+\n"); 
+    printf("Selecione uma opção: \n");
+    scanf("%d\n", &op);
+    return op;
 }
 
 
-int tela_fornecedor(int op) {
+int tela_fornecedor(void) {
+    int op;
     system("clear");
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
@@ -189,7 +219,8 @@ int tela_fornecedor(int op) {
 }
 
 
-int tela_produto(int op) {
+int tela_produto(void) {
+    int op;
     system("clear");
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
@@ -209,7 +240,8 @@ int tela_produto(int op) {
 }
 
 
-int tela_colaborador(int op) {
+int tela_colaborador(void) {
+    int op;
     system("clear");
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
@@ -229,7 +261,8 @@ int tela_colaborador(int op) {
 }
 
 
-int tela_cliente(int op) {
+int tela_cliente(void) {
+    int op;
     system("clear");
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
@@ -252,7 +285,8 @@ int tela_cliente(int op) {
 /////
 //Telas universais
 //CPF
-char cpf(char cpf) {
+char cpf(void) {
+    char cpf;
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
@@ -266,7 +300,8 @@ char cpf(char cpf) {
 
 
 //Reentrada CPF
-char re_cpf(char re_cpf) {
+char re_cpf(void) {
+    char re_cpf;
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
@@ -282,7 +317,8 @@ char re_cpf(char re_cpf) {
 
 
 //Nome
-char nome(char nome) {
+char nome(void) {
+    char nome;
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
@@ -296,7 +332,8 @@ char nome(char nome) {
 
 
 //Reentrada nome
-char re_nome(char re_nome) {
+char re_nome(void) {
+    char re_nome;
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
@@ -312,7 +349,8 @@ char re_nome(char re_nome) {
 
 
 //Cel
-char cel(char cel) {
+char cel(void) {
+    char cel;
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
@@ -326,7 +364,8 @@ char cel(char cel) {
 
 
 //Reentrada cel
-char re_cel(char re_cel) {
+char re_cel(void) {
+    char re_cel;
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
@@ -342,7 +381,8 @@ char re_cel(char re_cel) {
 
 
 //Data de nascimento
-char dat_nasc(char dat_nasc) {
+char dat_nasc(void) {
+    char dat_nasc;
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
@@ -356,7 +396,8 @@ char dat_nasc(char dat_nasc) {
 
 
 //Reentrada data de nascimento
-char re_dat_nasc(char re_dat_nasc) {
+char re_dat_nasc(void) {
+    char re_dat_nasc;
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
@@ -372,7 +413,8 @@ char re_dat_nasc(char re_dat_nasc) {
 
 
 //Email
-char email(char email) {
+char email(void) {
+    char email;
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
@@ -386,7 +428,8 @@ char email(char email) {
 
 
 //Reentrada email
-char re_email(char re_email) {
+char re_email(void) {
+    char re_email;
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
@@ -401,8 +444,10 @@ char re_email(char re_email) {
 }
 
 
+/////Entrada endereço
 //Entrada CEP
-char cep(char cep) {
+char cep(void) {
+    char cep;
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
@@ -416,7 +461,8 @@ char cep(char cep) {
 
 
 //Reentrada CEP
-char re_cep(char re_cep) {
+char re_cep(void) {
+    char re_cep;
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
@@ -431,9 +477,9 @@ char re_cep(char re_cep) {
 }
 
 
-/////Entrada endereço
 //Estado
-char estado(char estado) {
+char estado(void) {
+    char estado;
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
@@ -447,7 +493,8 @@ char estado(char estado) {
 
 
 //Reentrada estado
-char re_estado(char re_estado) {
+char re_estado(void) {
+    char re_estado;
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
@@ -463,7 +510,8 @@ char re_estado(char re_estado) {
 
 
 //Cidade
-char cidade(char cidade) {
+char cidade(void) {
+    char cidade;
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
@@ -477,7 +525,8 @@ char cidade(char cidade) {
 
 
 //Reentrada cidade
-char re_cidade(char re_cidade) {
+char re_cidade(void) {
+    char re_cidade;
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
@@ -493,7 +542,8 @@ char re_cidade(char re_cidade) {
 
 
 //Bairro
-char bairro(char bairro) {
+char bairro(void) {
+    char bairro;
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
@@ -507,7 +557,8 @@ char bairro(char bairro) {
 
 
 //Reentrada bairro
-char re_bairro(char re_bairro) {
+char re_bairro(void) {
+    char re_bairro;
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
@@ -523,7 +574,8 @@ char re_bairro(char re_bairro) {
 
 
 //Rua
-char rua(char rua) {
+char rua(void) {
+    char rua;
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
@@ -537,7 +589,8 @@ char rua(char rua) {
 
 
 //Reentrada rua
-char re_rua(char re_rua) {
+char re_rua(void) {
+    char re_rua;
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
@@ -553,7 +606,8 @@ char re_rua(char re_rua) {
 
 
 //Entrada número
-char numero(char numero) {
+char numero(void) {
+    char numero;
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
@@ -567,7 +621,8 @@ char numero(char numero) {
 
 
 //Reentrada número
-char re_numero(char re_numero) {
+char re_numero(void) {
+    char re_numerp;
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
@@ -583,7 +638,8 @@ char re_numero(char re_numero) {
 
 
 //Entrada complemento
-char complemento(char complemento) {
+char complemento(void) {
+    char complemento;
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
@@ -597,7 +653,8 @@ char complemento(char complemento) {
 
 
 //reentrada complemento
-char re_complemento(char re_complemento) {
+char re_complemento(void) {
+    char re_complemento;
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
