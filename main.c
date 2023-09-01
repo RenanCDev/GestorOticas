@@ -59,14 +59,14 @@ char re_complemento(void);
 int main(void) {
     int op;
     char cpf, re_cpf, nome, re_nome, dat_nasc, re_dat_nasc, cel, re_cel, endereco, re_endereco, email;
-    tela_apresentacao(void);
-    tela_sobre(void);
-    tela_menu_principal(void);
-    tela_administrativo(void);
-    tela_fornecedor(void);
-    tela_produto(void);
-    tela_colaborador(void);
-    tela_cliente(void);
+    tela_apresentacao();
+    tela_sobre();
+    tela_menu_principal();
+    tela_administrativo();
+    tela_fornecedor();
+    tela_produto();
+    tela_colaborador();
+    tela_cliente();
     return 0;
 }
 
@@ -622,7 +622,7 @@ char numero(void) {
 
 //Reentrada número
 char re_numero(void) {
-    char re_numerp;
+    char re_numero;
     printf("+=========================================================================+\n");
     printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
     printf("|                                                                         |\n");
