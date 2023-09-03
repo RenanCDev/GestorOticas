@@ -1,18 +1,19 @@
-/*  +=========================================================================+
-    |                                                                         |
-    |             Universidade Federal do Rio Grande do Norte                 |
-    |                                                                         |
-    |                 Centro de Ensino Superior do Seridó                     |
-    |                                                                         |
-    |           Aluno -- Renan Missias Rodrigues Alves da Costa               |
-    |                                                                         |
-    |                  Disciplina DCT1106 -- Programação                      |
-    |                                                                         |
-    |                Projeto Sistema de Gestão para Óticas                    |
-    |                                                                         |
-    |             Developed by @RenanMRb - since august, 2023                 |
-    |                                                                         |
-    +=========================================================================+ */
+/*  ("+=========================================================================+\n")
+    ("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n")
+    ("|                                                                         |\n")
+    ("|               Universidade Federal do Rio Grande do Norte               |\n")
+    ("|                                                                         |\n")
+    ("|                   Centro de Ensino Superior do Seridó                   |\n")
+    ("|                                                                         |\n")
+    ("|             Aluno -- Renan Missias Rodrigues Alves da Costa             |\n")
+    ("|                                                                         |\n")
+    ("|                    Disciplina DCT1106 -- Programação                    |\n")
+    ("|                                                                         |\n")
+    ("|                  Projeto Sistema de Gestão para Óticas                  |\n")
+    ("|                                                                         |\n")
+    ("|               Developed by @RenanMRb - since august, 2023               |\n")
+    ("|                                                                         |\n")
+    ("+=========================================================================+\n")  */
 
 
 #include <stdio.h>
