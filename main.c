@@ -702,4 +702,36 @@ char re_pont_referencia(void) {
 }
 
 
+//Entrada CNPJ
+char cnpj(void) {
+    char cnpj;
+    printf("+=========================================================================+\n");
+    printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
+    printf("|                                                                         |\n");
+    printf("|                               Eagle Eyes                                |\n");
+    printf("|                                                                         |\n");
+    scanf("%c|                             Digite o CNPJ :                             |\n", &cnpj);
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");   
+    return cnpj;
+}
+
+
+//Reentrada CNPJ
+char re_cnpj(void) {
+    char re_cnpj;
+    printf("+=========================================================================+\n");
+    printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
+    printf("|                                                                         |\n");
+    printf("|                               Eagle Eyes                                |\n");
+    printf("|                                                                         |\n");
+    printf("|                           CNPJ inválido ! ! !                           |\n");
+    printf("|                                                                         |\n");
+    scanf("%c|                             Digite o CNPJ :                             |\n", &re_pont_referencia);
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");   
+    return re_pont_referencia;
+}
+
+
 
