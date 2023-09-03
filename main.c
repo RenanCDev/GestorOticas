@@ -652,7 +652,7 @@ char complemento(void) {
 }
 
 
-//reentrada complemento
+//Reentrada complemento
 char re_complemento(void) {
     char re_complemento;
     printf("+=========================================================================+\n");
@@ -667,3 +667,38 @@ char re_complemento(void) {
     printf("+=========================================================================+\n");   
     return re_complemento;
 }
+
+
+//Entrada ponto de referência
+char pont_referencia(void) {
+    char pont_referencia;
+    printf("+=========================================================================+\n");
+    printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
+    printf("|                                                                         |\n");
+    printf("|                               Eagle Eyes                                |\n");
+    printf("|                                                                         |\n");
+    scanf("%c|                     Digite o ponto de referência :                      |\n", &pont_referencia);
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");   
+    return pont_referencia;
+}
+
+
+//Reentrada ponto de referência
+char re_pont_referencia(void) {
+    char re_pont_referencia;
+    printf("+=========================================================================+\n");
+    printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
+    printf("|                                                                         |\n");
+    printf("|                               Eagle Eyes                                |\n");
+    printf("|                                                                         |\n");
+    printf("|                   Ponto de referência inválido ! ! !                    |\n");
+    printf("|                                                                         |\n");
+    scanf("%c|                     Digite o ponto de referência :                      |\n", &re_pont_referencia);
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");   
+    return re_pont_referencia;
+}
+
+
+
