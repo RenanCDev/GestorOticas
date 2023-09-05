@@ -734,5 +734,33 @@ char re_cnpj(void) {
 }
 
 
+//Entrada inscrição estadual
+char insc_estadual(void) {
+    char insc_estadual;
+    printf("+=========================================================================+\n");
+    printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
+    printf("|                                                                         |\n");
+    printf("|                               Eagle Eyes                                |\n");
+    printf("|                                                                         |\n");
+    scanf("%c|                              Digite a IE :                              |\n", &insc_estadual);
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");   
+    return insc_estadual;
+}
 
-////Teste bug github 7
+
+//Reentrada inscrição estadual
+char re_insc_estadual(void) {
+    char re_insc_estadual;
+    printf("+=========================================================================+\n");
+    printf("|0123456789 0123456789 012345678|||||||||||9 0123456789 012346789 01234567|\n");
+    printf("|                                                                         |\n");
+    printf("|                               Eagle Eyes                                |\n");
+    printf("|                                                                         |\n");
+    printf("|                            IE inválido ! ! !                            |\n");
+    printf("|                                                                         |\n");
+    scanf("%c|                              Digite a IE :                              |\n", &re_insc_estadual);
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");   
+    return re_insc_estadual;
+}
