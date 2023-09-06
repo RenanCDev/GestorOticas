@@ -79,7 +79,35 @@ int main(void) {
         switch (op1) {
             case 1:
                 op2 = tela_administrativo();
-                break;
+                do {
+                    switch (op2) {
+                        case 1:
+                        //cadastrar administrador
+                        break;
+                        case 2:
+                        //pesquisar administrador
+                        break;
+                        case 3:
+                        //relatorio administradores
+                        break;
+                        case 4:
+                        //relatorio fornecedores
+                        break;
+                        case 5:
+                        //relatorio produtos
+                        break;
+                        case 6:
+                        //relatorio colaboradores
+                        break;
+                        case 7:
+                        //relatorio clientes
+                        break;
+                        case 0:
+                        break;
+                    }
+                }
+                while (op2 != 0);
+                return 0;
             case 2:
                 op2 = tela_fornecedor();
                 break;
@@ -97,7 +125,8 @@ int main(void) {
         }
     }
     while (op1 != 0);
-    return 0;}
+    return 0;
+    }
     return 0;
 }
 
