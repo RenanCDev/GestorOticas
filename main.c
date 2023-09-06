@@ -52,6 +52,12 @@ char re_rua(void);
 char numero(void);
 char complemento(void);
 char re_complemento(void);
+char pont_referencia(void);
+char re_pont_referencia(void);
+char cnpj(void);
+char re_cnpj(void);
+char insc_estadual(void);
+char re_inst_estadual(void);
 
 
 /////
