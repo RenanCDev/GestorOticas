@@ -17,6 +17,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
+
 
 
 /////
@@ -63,16 +65,39 @@ char re_inst_estadual(void);
 /////
 //Programa principal
 int main(void) {
-    int op;
-    char cpf, re_cpf, nome, re_nome, dat_nasc, re_dat_nasc, cel, re_cel, endereco, re_endereco, email;
-    tela_apresentacao();
+    int op, op1, op2;
+    char cpf, re_cpf, nome, re_nome, dat_nasc, re_dat_nasc, cel, re_cel, endereco, re_endereco,
+    email, re_email, cep, re_cep, estado, re_estado, cidade, re_cidade, bairro, re_bairro,
+    rua, re_rua, numero, re_numero, complemento, re_complemento, pot_referencia, re_pont_referencia,
+    cnpj, re_cnpj, insc_estadual, re_insc_estadual;
+    setlocale(LC_ALL, "Portuguese_Brazil");
     tela_sobre();
-    tela_menu_principal();
-    tela_administrativo();
-    tela_fornecedor();
-    tela_produto();
-    tela_colaborador();
-    tela_cliente();
+    tela_apresentacao();
+    {
+    do {
+        op1 = tela_menu_principal();
+        switch (op1) {
+            case 1:
+                op2 = tela_administrativo();
+                break;
+            case 2:
+                tela_fornecedor();
+                break;
+            case 3:
+                tela_produto();
+                break;
+            case 4:
+                tela_colaborador();
+                break;
+            case 5:
+                tela_cliente();
+                break;
+            case 0:
+            break;
+        }
+    }
+    while (op1 != 0);
+    return 0;}
     return 0;
 }
 
@@ -695,10 +720,10 @@ char re_cnpj(void) {
     printf("|                                                                         |\n");
     printf("|                           CNPJ inválido ! ! !                           |\n");
     printf("|                                                                         |\n");
-    scanf("%c|                             Digite o CNPJ :                             |\n", &re_pont_referencia);
+    scanf("%c|                             Digite o CNPJ :                             |\n", &re_cnpj);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    return re_pont_referencia;
+    return re_cnpj;
 }
 
 
