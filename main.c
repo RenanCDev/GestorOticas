@@ -81,16 +81,16 @@ int main(void) {
                 op2 = tela_administrativo();
                 break;
             case 2:
-                tela_fornecedor();
+                op2 = tela_fornecedor();
                 break;
             case 3:
-                tela_produto();
+                op2 = tela_produto();
                 break;
             case 4:
-                tela_colaborador();
+                op2 = tela_colaborador();
                 break;
             case 5:
-                tela_cliente();
+                op2 = tela_cliente();
                 break;
             case 0:
             break;
