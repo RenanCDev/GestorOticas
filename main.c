@@ -105,6 +105,7 @@ int main(void) {
                         case 0:
                         break;
                     }
+                    while (op2 != 0);
                 }
                 while (op2 != 0);
                 return 0;
@@ -233,7 +234,47 @@ int tela_administrativo(void) {
 }
 
 
-//Cadastrar administrador
+//Tela cadastrar administrador
+void cad_admin(void) {
+    system("clear");
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                               EAGLE EYES                                |\n");
+    printf("|                                                                         |\n");
+    printf("|                         Cadastro administrador                          |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
+//Tela pesquisar administrador
+void pesq_admin(void) {
+    system("clear");
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                               EAGLE EYES                                |\n");
+    printf("|                                                                         |\n");
+    printf("|                         Pesquisar administrador                         |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
+//Tela relatório administrador
+void relat_admin(void) {
+    system("clear");
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                               EAGLE EYES                                |\n");
+    printf("|                                                                         |\n");
+    printf("|                         Relatório administrador                         |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
+//Tela relatório
+
 int cadastro_cliente(void) {
     int op;
     printf("+=========================================================================+\n");
