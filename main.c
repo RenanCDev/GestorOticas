@@ -462,7 +462,7 @@ char email(void) {
     printf("|                                                                         |\n");
     printf("|                               Eagle Eyes                                |\n");
     printf("|                                                                         |\n");
-    scanf("%c|                           Digite o email :                              |\n", &email);
+    scanf("%c|                            Digite o email :                             |\n", &email);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     return email;
@@ -523,7 +523,7 @@ char estado(void) {
     printf("|                                                                         |\n");
     printf("|                               Eagle Eyes                                |\n");
     printf("|                                                                         |\n");
-    scanf("%c|                            Digite o estado :                           |\n", &estado);
+    scanf("%c|                            Digite o estado :                            |\n", &estado);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     return estado;
@@ -583,7 +583,7 @@ char bairro(void) {
     printf("|                                                                         |\n");
     printf("|                               Eagle Eyes                                |\n");
     printf("|                                                                         |\n");
-    scanf("%c|                           Digite o bairro :                             |\n", &bairro);
+    scanf("%c|                            Digite o bairro :                            |\n", &bairro);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     return bairro;
@@ -599,7 +599,7 @@ char re_bairro(void) {
     printf("|                                                                         |\n");
     printf("|                          Bairro inválido ! ! !                          |\n");
     printf("|                                                                         |\n");
-    scanf("%c|                           Digite o bairro :                             |\n", &re_bairro);
+    scanf("%c|                            Digite o bairro :                            |\n", &re_bairro);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     return re_bairro;
