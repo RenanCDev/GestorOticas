@@ -176,6 +176,41 @@ void tela_sobre(void) {
 }
 
 
+//Tela banner
+void tela_banner(void) {
+    system("clear");
+    prtinf("#######                                #######                     \n");
+    prtinf("#         ##    ####  #      ######    #       #   # ######  ####  \n");
+    prtinf("#        #  #  #    # #      #         #        # #  #      #      \n");
+    prtinf("#####   #    # #      #      #####     #####     #   #####   ####  \n");
+    prtinf("#       ###### #  ### #      #         #         #   #           # \n");
+    prtinf("#       #    # #    # #      #         #         #   #      #    # \n");
+    prtinf("####### #    #  ####  ###### ######    #######   #   ######  ####  \n");                                                                    
+}
+
+
+//Tela banner imagem
+void tela_banner_img(void) {                                                                                                                                                             
+printf("                      ####      ##                                                 \n");
+printf("            ####MM                ##                                               \n");
+printf("  ##@@######                        ####                                        ## \n");
+printf("####            ##                    @@##                                    MM## \n");
+printf("  ##                ##                  ++####@@                          @@@@     \n");
+printf("  ##                  ######::      ##              ######              @@    ##   \n");
+printf("  ##                  ##        ####                    ##########  MM##      ##   \n");
+printf("                        ##      MM                        ########@@               \n");
+printf("    ##                  MM      ##@@                        ####                   \n");
+printf("    ##                  MM        @@                        ##                     \n");
+printf("      ##              ##          ##@@                      ##                     \n");
+printf("          @@                        @@                      ##                     \n");
+printf("          @@                        @@                      ##                     \n");
+printf("              ######                ##                                             \n");
+printf("                                      ##                  ##                       \n");
+printf("                                          ##            @@                         \n");
+printf("                                                ##::                               \n");
+}
+
+
 //Menu principal
 int tela_menu_principal(void) {
     int op;
