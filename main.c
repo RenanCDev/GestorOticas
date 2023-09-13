@@ -260,7 +260,7 @@ void pesq_admin(void) {
 }
 
 
-//Tela relatório administrador
+//Tela relatório administradores
 void relat_admin(void) {
     system("clear");
     printf("+=========================================================================+\n");
@@ -273,7 +273,56 @@ void relat_admin(void) {
 }
 
 
-//Tela relatório
+//Tela relatório fornecedores
+void relat_fornec(void) {
+    system("clear");
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                               EAGLE EYES                                |\n");
+    printf("|                                                                         |\n");
+    printf("|                          Relatório fornecedor                           |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
+//Tela relatório produtos
+void relat_produtos(void) {
+    system("clear");
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                               EAGLE EYES                                |\n");
+    printf("|                                                                         |\n");
+    printf("|                           Relatório produtos                            |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
+//Tela relatório colaboradores
+void relat_colab(void) {
+    system("clear");
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                               EAGLE EYES                                |\n");
+    printf("|                                                                         |\n");
+    printf("|                         Relatório colaboradores                         |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
+//Tela relatório clientes
+void relat_clientes(void) {
+    system("clear");
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                               EAGLE EYES                                |\n");
+    printf("|                                                                         |\n");
+    printf("|                           Relatório clientes                            |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
 
 int cadastro_cliente(void) {
     int op;
