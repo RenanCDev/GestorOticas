@@ -182,7 +182,7 @@ int tela_menu_principal(void) {
     system("clear");
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                       Menu principal - EAGLE EYES                       |\n");
+    printf("|                             Menu principal                              |\n");
     printf("|                                                                         |\n");
     printf("|                         1 -> Administrativo <-                          |\n");
     printf("|                                                                         |\n");
@@ -209,7 +209,7 @@ int tela_administrativo(void) {
     system("clear");
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                       Administrativo - EAGLE EYES                       |\n");
+    printf("|                             Administrativo                              |\n");
     printf("|                                                                         |\n");
     printf("|                     1 -> Cadastrar administrador <-                     |\n");
     printf("|                                                                         |\n");
@@ -239,8 +239,6 @@ void cad_admin(void) {
     system("clear");
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                               EAGLE EYES                                |\n");
-    printf("|                                                                         |\n");
     printf("|                         Cadastro administrador                          |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
@@ -251,8 +249,6 @@ void cad_admin(void) {
 void pesq_admin(void) {
     system("clear");
     printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                               EAGLE EYES                                |\n");
     printf("|                                                                         |\n");
     printf("|                         Pesquisar administrador                         |\n");
     printf("|                                                                         |\n");
@@ -265,8 +261,6 @@ void relat_admin(void) {
     system("clear");
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                               EAGLE EYES                                |\n");
-    printf("|                                                                         |\n");
     printf("|                         Relatório administrador                         |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
@@ -277,8 +271,6 @@ void relat_admin(void) {
 void relat_fornec(void) {
     system("clear");
     printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                               EAGLE EYES                                |\n");
     printf("|                                                                         |\n");
     printf("|                          Relatório fornecedor                           |\n");
     printf("|                                                                         |\n");
@@ -291,8 +283,6 @@ void relat_produtos(void) {
     system("clear");
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                               EAGLE EYES                                |\n");
-    printf("|                                                                         |\n");
     printf("|                           Relatório produtos                            |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
@@ -303,8 +293,6 @@ void relat_produtos(void) {
 void relat_colab(void) {
     system("clear");
     printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                               EAGLE EYES                                |\n");
     printf("|                                                                         |\n");
     printf("|                         Relatório colaboradores                         |\n");
     printf("|                                                                         |\n");
@@ -317,18 +305,17 @@ void relat_clientes(void) {
     system("clear");
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                               EAGLE EYES                                |\n");
-    printf("|                                                                         |\n");
     printf("|                           Relatório clientes                            |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
 }
 
+
 int cadastro_cliente(void) {
     int op;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                     Cliente - Cadastro - EAGLE EYES                     |\n");
+    printf("|                                 Cliente                                 |\n");
     printf("|                                                                         |\n");
     printf("|                        1 -> Cadastrar cliente <-                        |\n");
     printf("|                                                                         |\n");
@@ -348,7 +335,7 @@ int tela_fornecedor(void) {
     system("clear");
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                        Fornecedores - EAGLE EYES                        |\n");
+    printf("|                              Fornecedores                               |\n");
     printf("|                                                                         |\n");
     printf("|                      1 -> Cadastrar fornecedor <-                       |\n");
     printf("|                                                                         |\n");
@@ -368,7 +355,7 @@ int tela_produto(void) {
     system("clear");
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                          Produtos - EAGLE EYES                          |\n");
+    printf("|                                Produtos                                 |\n");
     printf("|                                                                         |\n");
     printf("|                        1 -> Cadastrar produto <-                        |\n");
     printf("|                                                                         |\n");
@@ -388,7 +375,7 @@ int tela_colaborador(void) {
     system("clear");
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                        Colaboradores - EAGLE EYE                        |\n");
+    printf("|                              Colaboradores                              |\n");
     printf("|                                                                         |\n");
     printf("|                      1 -> Cadastrar colaborador <-                      |\n");
     printf("|                                                                         |\n");
@@ -408,7 +395,7 @@ int tela_cliente(void) {
     system("clear");
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                          Clientes - EAGLE EYES                          |\n");
+    printf("|                                Clientes                                 |\n");
     printf("|                                                                         |\n");
     printf("|                        1 -> Cadastrar cliente <-                        |\n");
     printf("|                                                                         |\n");
@@ -430,8 +417,6 @@ char cpf(void) {
     char cpf;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                               Eagle Eyes                                |\n");
-    printf("|                                                                         |\n");
     scanf("%c|                             Digite o CPF :                              |\n", &cpf);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
@@ -443,8 +428,6 @@ char cpf(void) {
 char re_cpf(void) {
     char re_cpf;
     printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                               Eagle Eyes                                |\n");
     printf("|                                                                         |\n");
     printf("|                           CPF inválido ! ! !                            |\n");
     printf("|                                                                         |\n");
@@ -460,8 +443,6 @@ char nome(void) {
     char nome;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                               Eagle Eyes                                |\n");
-    printf("|                                                                         |\n");
     scanf("%c|                             Digite o nome :                             |\n", &nome);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
@@ -473,8 +454,6 @@ char nome(void) {
 char re_nome(void) {
     char re_nome;
     printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                               Eagle Eyes                                |\n");
     printf("|                                                                         |\n");
     printf("|                           Nome inválido ! ! !                           |\n");
     printf("|                                                                         |\n");
@@ -490,8 +469,6 @@ char cel(void) {
     char cel;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                               Eagle Eyes                                |\n");
-    printf("|                                                                         |\n");
     scanf("%c|                           Digite o celular :                            |\n", &cel);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
@@ -503,8 +480,6 @@ char cel(void) {
 char re_cel(void) {
     char re_cel;
     printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                               Eagle Eyes                                |\n");
     printf("|                                                                         |\n");
     printf("|                           Nome inválido ! ! !                           |\n");
     printf("|                                                                         |\n");
@@ -520,8 +495,6 @@ char dat_nasc(void) {
     char dat_nasc;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                               Eagle Eyes                                |\n");
-    printf("|                                                                         |\n");
     scanf("%c|                      Digite a data de nascimento :                      |\n", &dat_nasc);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
@@ -533,8 +506,6 @@ char dat_nasc(void) {
 char re_dat_nasc(void) {
     char re_dat_nasc;
     printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                               Eagle Eyes                                |\n");
     printf("|                                                                         |\n");
     printf("|                    Data de nascimento inválida ! ! !                    |\n");
     printf("|                                                                         |\n");
@@ -550,8 +521,6 @@ char email(void) {
     char email;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                               Eagle Eyes                                |\n");
-    printf("|                                                                         |\n");
     scanf("%c|                            Digite o email :                             |\n", &email);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
@@ -563,8 +532,6 @@ char email(void) {
 char re_email(void) {
     char re_email;
     printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                               Eagle Eyes                                |\n");
     printf("|                                                                         |\n");
     printf("|                          Email inválido ! ! !                           |\n");
     printf("|                                                                         |\n");
@@ -581,8 +548,6 @@ char cep(void) {
     char cep;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                               Eagle Eyes                                |\n");
-    printf("|                                                                         |\n");
     scanf("%c|                             Digite o CEP :                              |\n", &cep);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
@@ -594,8 +559,6 @@ char cep(void) {
 char re_cep(void) {
     char re_cep;
     printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                               Eagle Eyes                                |\n");
     printf("|                                                                         |\n");
     printf("|                           CEP inválido ! ! !                            |\n");
     printf("|                                                                         |\n");
@@ -611,8 +574,6 @@ char estado(void) {
     char estado;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                               Eagle Eyes                                |\n");
-    printf("|                                                                         |\n");
     scanf("%c|                            Digite o estado :                            |\n", &estado);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
@@ -624,8 +585,6 @@ char estado(void) {
 char re_estado(void) {
     char re_estado;
     printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                               Eagle Eyes                                |\n");
     printf("|                                                                         |\n");
     printf("|                          Estado inválido ! ! !                          |\n");
     printf("|                                                                         |\n");
@@ -641,8 +600,6 @@ char cidade(void) {
     char cidade;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                               Eagle Eyes                                |\n");
-    printf("|                                                                         |\n");
     scanf("%c|                            Digite a cidade :                            |\n", &cidade);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
@@ -654,8 +611,6 @@ char cidade(void) {
 char re_cidade(void) {
     char re_cidade;
     printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                               Eagle Eyes                                |\n");
     printf("|                                                                         |\n");
     printf("|                          Cidade inválida ! ! !                          |\n");
     printf("|                                                                         |\n");
@@ -671,8 +626,6 @@ char bairro(void) {
     char bairro;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                               Eagle Eyes                                |\n");
-    printf("|                                                                         |\n");
     scanf("%c|                            Digite o bairro :                            |\n", &bairro);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
@@ -684,8 +637,6 @@ char bairro(void) {
 char re_bairro(void) {
     char re_bairro;
     printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                               Eagle Eyes                                |\n");
     printf("|                                                                         |\n");
     printf("|                          Bairro inválido ! ! !                          |\n");
     printf("|                                                                         |\n");
@@ -701,8 +652,6 @@ char rua(void) {
     char rua;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                               Eagle Eyes                                |\n");
-    printf("|                                                                         |\n");
     scanf("%c|                             Digite a rua :                              |\n", &rua);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
@@ -714,8 +663,6 @@ char rua(void) {
 char re_rua(void) {
     char re_rua;
     printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                               Eagle Eyes                                |\n");
     printf("|                                                                         |\n");
     printf("|                           Rua inválida ! ! !                            |\n");
     printf("|                                                                         |\n");
@@ -731,8 +678,6 @@ char numero(void) {
     char numero;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                               Eagle Eyes                                |\n");
-    printf("|                                                                         |\n");
     scanf("%c|                            Digite o numero :                            |\n", &numero);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
@@ -744,8 +689,6 @@ char numero(void) {
 char re_numero(void) {
     char re_numero;
     printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                               Eagle Eyes                                |\n");
     printf("|                                                                         |\n");
     printf("|                          Número inválido ! ! !                          |\n");
     printf("|                                                                         |\n");
@@ -761,8 +704,6 @@ char complemento(void) {
     char complemento;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                               Eagle Eyes                                |\n");
-    printf("|                                                                         |\n");
     scanf("%c|                         Digite o complemento :                          |\n", &complemento);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
@@ -774,8 +715,6 @@ char complemento(void) {
 char re_complemento(void) {
     char re_complemento;
     printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                               Eagle Eyes                                |\n");
     printf("|                                                                         |\n");
     printf("|                       Complemento inválido ! ! !                        |\n");
     printf("|                                                                         |\n");
@@ -791,8 +730,6 @@ char pont_referencia(void) {
     char pont_referencia;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                               Eagle Eyes                                |\n");
-    printf("|                                                                         |\n");
     scanf("%c|                     Digite o ponto de referência :                      |\n", &pont_referencia);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
@@ -804,8 +741,6 @@ char pont_referencia(void) {
 char re_pont_referencia(void) {
     char re_pont_referencia;
     printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                               Eagle Eyes                                |\n");
     printf("|                                                                         |\n");
     printf("|                   Ponto de referência inválido ! ! !                    |\n");
     printf("|                                                                         |\n");
@@ -821,8 +756,6 @@ char cnpj(void) {
     char cnpj;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                               Eagle Eyes                                |\n");
-    printf("|                                                                         |\n");
     scanf("%c|                             Digite o CNPJ :                             |\n", &cnpj);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
@@ -834,8 +767,6 @@ char cnpj(void) {
 char re_cnpj(void) {
     char re_cnpj;
     printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                               Eagle Eyes                                |\n");
     printf("|                                                                         |\n");
     printf("|                           CNPJ inválido ! ! !                           |\n");
     printf("|                                                                         |\n");
@@ -851,8 +782,6 @@ char insc_estadual(void) {
     char insc_estadual;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                               Eagle Eyes                                |\n");
-    printf("|                                                                         |\n");
     scanf("%c|                              Digite a IE :                              |\n", &insc_estadual);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
@@ -864,8 +793,6 @@ char insc_estadual(void) {
 char re_insc_estadual(void) {
     char re_insc_estadual;
     printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                               Eagle Eyes                                |\n");
     printf("|                                                                         |\n");
     printf("|                            IE inválido ! ! !                            |\n");
     printf("|                                                                         |\n");
