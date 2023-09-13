@@ -25,6 +25,7 @@
 //Assinaturas das funções
 void tela_apresentacao(void);
 void tela_sobre(void);
+void tela_baner(void);
 int tela_menu_principal(void);
 int tela_administrativo(void);
 int tela_fornecedor(void);
@@ -179,35 +180,17 @@ void tela_sobre(void) {
 //Tela banner
 void tela_banner(void) {
     system("clear");
-    prtinf("#######                                #######                     \n");
-    prtinf("#         ##    ####  #      ######    #       #   # ######  ####  \n");
-    prtinf("#        #  #  #    # #      #         #        # #  #      #      \n");
-    prtinf("#####   #    # #      #      #####     #####     #   #####   ####  \n");
-    prtinf("#       ###### #  ### #      #         #         #   #           # \n");
-    prtinf("#       #    # #    # #      #         #         #   #      #    # \n");
-    prtinf("####### #    #  ####  ###### ######    #######   #   ######  ####  \n");                                                                    
-}
-
-
-//Tela banner imagem
-void tela_banner_img(void) {                                                                                                                                                             
-printf("                      ####      ##                                                 \n");
-printf("            ####MM                ##                                               \n");
-printf("  ##@@######                        ####                                        ## \n");
-printf("####            ##                    @@##                                    MM## \n");
-printf("  ##                ##                  ++####@@                          @@@@     \n");
-printf("  ##                  ######::      ##              ######              @@    ##   \n");
-printf("  ##                  ##        ####                    ##########  MM##      ##   \n");
-printf("                        ##      MM                        ########@@               \n");
-printf("    ##                  MM      ##@@                        ####                   \n");
-printf("    ##                  MM        @@                        ##                     \n");
-printf("      ##              ##          ##@@                      ##                     \n");
-printf("          @@                        @@                      ##                     \n");
-printf("          @@                        @@                      ##                     \n");
-printf("              ######                ##                                             \n");
-printf("                                      ##                  ##                       \n");
-printf("                                          ##            @@                         \n");
-printf("                                                ##::                               \n");
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|   #######                                #######                        |\n");
+    printf("|   #         ##    ####  #      ######    #       #   # ######  ####     |\n");
+    printf("|   #        #  #  #    # #      #         #        # #  #      #         |\n");
+    printf("|   #####   #    # #      #      #####     #####     #   #####   ####     |\n");
+    printf("|   #       ###### #  ### #      #         #         #   #           #    |\n");
+    printf("|   #       #    # #    # #      #         #         #   #      #    #    |\n");
+    printf("|   ####### #    #  ####  ###### ######    #######   #   ######  ####     |\n");   
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");   
 }
 
 
@@ -215,6 +198,7 @@ printf("                                                ##::                    
 int tela_menu_principal(void) {
     int op;
     system("clear");
+    tela_banner();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                             Menu principal                              |\n");
