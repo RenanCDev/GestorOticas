@@ -25,38 +25,41 @@
 //Assinaturas das funções
 void tela_apresentacao(void);
 void tela_sobre(void);
-void tela_baner(void);
+void tela_banner(void);
+void tela_cad_admin(void);
+void cad_admin(void);
 int tela_menu_principal(void);
 int tela_administrativo(void);
 int tela_fornecedor(void);
 int tela_produto(void);
 int tela_colaborador(void);
 int tela_cliente(void);
-char cpf(void);
-char re_cpf(void);
-char nome(void);
-char re_nome(void);
-char cel(void);
-char re_cel(void);
-char dat_nasc(void);
-char re_dat_nasc(void);
-char email(void);
-char re_email(void);
-char cep(void);
-char re_cep(void);
-char estado(void);
-char re_estado(void);
-char cidade(void);
-char re_cidade(void);
-char bairro(void);
-char re_bairro(void);
-char rua(void);
-char re_rua(void);
-char numero(void);
-char complemento(void);
-char re_complemento(void);
-char pont_referencia(void);
-char re_pont_referencia(void);
+char ent_cpf(void);
+char re_ent_cpf(void);
+char ent_nome(void);
+char re_ent_nome(void);
+char ent_cel(void);
+char re_ent_cel(void);
+char ent_dat_nasc(void);
+char re_ent_dat_nasc(void);
+char ent_email(void);
+char re_ent_email(void);
+char ent_cep(void);
+char re_ent_cep(void);
+char ent_estado(void);
+char re_ent_estado(void);
+char ent_cidade(void);
+char re_ent_cidade(void);
+char ent_bairro(void);
+char re_ent_bairro(void);
+char ent_rua(void);
+char re_ent_rua(void);
+char ent_numero(void);
+char re_ent_numero(void);
+char ent_complement(void);
+char re_ent_complemento(void);
+char ent_pont_referencia(void);
+char re_ent_pont_referencia(void);
 char cnpj(void);
 char re_cnpj(void);
 char insc_estadual(void);
@@ -67,7 +70,7 @@ char re_inst_estadual(void);
 //Programa principal
 int main(void) {
     int op, op1, op2;
-    char cpf, re_cpf, nome, re_nome, dat_nasc, re_dat_nasc, cel, re_cel, endereco, re_endereco,
+    char a, cpf, re_cpf, nome, re_nome, dat_nasc, re_dat_nasc, cel, re_cel, endereco, re_endereco,
     email, re_email, cep, re_cep, estado, re_estado, cidade, re_cidade, bairro, re_bairro,
     rua, re_rua, numero, re_numero, complemento, re_complemento, pot_referencia, re_pont_referencia,
     cnpj, re_cnpj, insc_estadual, re_insc_estadual;
@@ -79,11 +82,11 @@ int main(void) {
         op1 = tela_menu_principal();
         switch (op1) {
             case 1:
-                op2 = tela_administrativo();
                 do {
+                op2 = tela_administrativo();
                     switch (op2) {
                         case 1:
-                        //cadastrar administrador
+                        cad_admin();
                         break;
                         case 2:
                         //pesquisar administrador
@@ -106,7 +109,6 @@ int main(void) {
                         case 0:
                         break;
                     }
-                    while (op2 != 0);
                 }
                 while (op2 != 0);
                 return 0;
@@ -190,14 +192,13 @@ void tela_banner(void) {
     printf("|   #       #    # #    # #      #         #         #   #      #    #    |\n");
     printf("|   ####### #    #  ####  ###### ######    #######   #   ######  ####     |\n");   
     printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");   
+    printf("+=========================================================================+\n");
 }
 
 
 //Menu principal
 int tela_menu_principal(void) {
     int op;
-    system("clear");
     tela_banner();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -226,6 +227,7 @@ int tela_menu_principal(void) {
 int tela_administrativo(void) {
     int op;
     system("clear");
+    tela_banner();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                             Administrativo                              |\n");
@@ -254,13 +256,44 @@ int tela_administrativo(void) {
 
 
 //Tela cadastrar administrador
-void cad_admin(void) {
-    system("clear");
+void tela_cad_admin(void) {
+    //system("clear");//
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                         Cadastro administrador                          |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
+}
+
+
+//Cadastrar administrador
+void cad_admin(void) {
+    tela_cad_admin();
+    char cpf = ent_cpf();
+    tela_cad_admin();
+    char nome = ent_nome();
+    tela_cad_admin();
+    char cel = ent_cel();
+    tela_cad_admin();
+    char dat_nasc = ent_dat_nasc();
+    tela_cad_admin();
+    char email = ent_email();
+    tela_cad_admin();
+    char cep = ent_cep();
+    tela_cad_admin();
+    char estado = ent_estado();
+    tela_cad_admin();
+    char cidade = ent_cidade();
+    tela_cad_admin();
+    char bairro = ent_bairro();
+    tela_cad_admin();
+    char rua = ent_rua();
+    tela_cad_admin();
+    char numero = ent_numero();
+    tela_cad_admin();
+    char complemento = ent_complement();
+    tela_cad_admin();
+    char pont_referencia = ent_pont_referencia();
 }
 
 
@@ -432,11 +465,12 @@ int tela_cliente(void) {
 /////
 //Telas universais
 //CPF
-char cpf(void) {
+char ent_cpf(void) {
     char cpf;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    scanf("%c|                             Digite o CPF :                              |\n", &cpf);
+    printf("|                             Digite o CPF :                              |\n");
+    //scanf("%c", &cpf);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     return cpf;
@@ -444,7 +478,7 @@ char cpf(void) {
 
 
 //Reentrada CPF
-char re_cpf(void) {
+char re_ent_cpf(void) {
     char re_cpf;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -458,11 +492,12 @@ char re_cpf(void) {
 
 
 //Nome
-char nome(void) {
+char ent_nome(void) {
     char nome;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    scanf("%c|                             Digite o nome :                             |\n", &nome);
+    printf("|                             Digite o nome :                             |\n");
+    //scanf("%c", &nome);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     return nome;
@@ -470,7 +505,7 @@ char nome(void) {
 
 
 //Reentrada nome
-char re_nome(void) {
+char re_ent_nome(void) {
     char re_nome;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -484,11 +519,12 @@ char re_nome(void) {
 
 
 //Cel
-char cel(void) {
+char ent_cel(void) {
     char cel;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    scanf("%c|                           Digite o celular :                            |\n", &cel);
+    printf("|                           Digite o celular :                            |\n");
+    //scanf("%c", &cel);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     return cel;
@@ -496,7 +532,7 @@ char cel(void) {
 
 
 //Reentrada cel
-char re_cel(void) {
+char re_ent_cel(void) {
     char re_cel;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -510,11 +546,12 @@ char re_cel(void) {
 
 
 //Data de nascimento
-char dat_nasc(void) {
+char ent_dat_nasc(void) {
     char dat_nasc;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    scanf("%c|                      Digite a data de nascimento :                      |\n", &dat_nasc);
+    printf("|                      Digite a data de nascimento :                      |\n");
+    //scanf("%c", &dat_nasc);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     return dat_nasc;
@@ -522,7 +559,7 @@ char dat_nasc(void) {
 
 
 //Reentrada data de nascimento
-char re_dat_nasc(void) {
+char re_ent_dat_nasc(void) {
     char re_dat_nasc;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -536,11 +573,12 @@ char re_dat_nasc(void) {
 
 
 //Email
-char email(void) {
+char ent_email(void) {
     char email;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    scanf("%c|                            Digite o email :                             |\n", &email);
+    printf("|                            Digite o email :                             |\n");
+    //scanf("%c", &email);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     return email;
@@ -548,7 +586,7 @@ char email(void) {
 
 
 //Reentrada email
-char re_email(void) {
+char re_ent_email(void) {
     char re_email;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -563,11 +601,12 @@ char re_email(void) {
 
 /////Entrada endereço
 //Entrada CEP
-char cep(void) {
+char ent_cep(void) {
     char cep;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    scanf("%c|                             Digite o CEP :                              |\n", &cep);
+    printf("|                             Digite o CEP :                              |\n");
+    //scanf("%c", &cep);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     return cep;
@@ -575,7 +614,7 @@ char cep(void) {
 
 
 //Reentrada CEP
-char re_cep(void) {
+char re_ent_cep(void) {
     char re_cep;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -589,11 +628,12 @@ char re_cep(void) {
 
 
 //Estado
-char estado(void) {
+char ent_estado(void) {
     char estado;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    scanf("%c|                            Digite o estado :                            |\n", &estado);
+    printf("|                            Digite o estado :                            |\n");
+    //scanf("%c", &estado);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     return estado;
@@ -601,7 +641,7 @@ char estado(void) {
 
 
 //Reentrada estado
-char re_estado(void) {
+char re_ent_estado(void) {
     char re_estado;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -615,11 +655,12 @@ char re_estado(void) {
 
 
 //Cidade
-char cidade(void) {
+char ent_cidade(void) {
     char cidade;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    scanf("%c|                            Digite a cidade :                            |\n", &cidade);
+    printf("|                            Digite a cidade :                            |\n");
+    //scanf("%c", &cidade);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     return cidade;
@@ -627,7 +668,7 @@ char cidade(void) {
 
 
 //Reentrada cidade
-char re_cidade(void) {
+char re_ent_cidade(void) {
     char re_cidade;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -641,11 +682,12 @@ char re_cidade(void) {
 
 
 //Bairro
-char bairro(void) {
+char ent_bairro(void) {
     char bairro;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    scanf("%c|                            Digite o bairro :                            |\n", &bairro);
+    printf("|                            Digite o bairro :                            |\n");
+    //scanf("%c", &bairro);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     return bairro;
@@ -653,7 +695,7 @@ char bairro(void) {
 
 
 //Reentrada bairro
-char re_bairro(void) {
+char re_ent_bairro(void) {
     char re_bairro;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -667,11 +709,12 @@ char re_bairro(void) {
 
 
 //Rua
-char rua(void) {
+char ent_rua(void) {
     char rua;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    scanf("%c|                             Digite a rua :                              |\n", &rua);
+    printf("|                             Digite a rua :                              |\n");
+    //scanf("%c", &rua);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     return rua;
@@ -679,7 +722,7 @@ char rua(void) {
 
 
 //Reentrada rua
-char re_rua(void) {
+char re_ent_rua(void) {
     char re_rua;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -693,11 +736,12 @@ char re_rua(void) {
 
 
 //Entrada número
-char numero(void) {
+char ent_numero(void) {
     char numero;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    scanf("%c|                            Digite o numero :                            |\n", &numero);
+    printf("|                            Digite o numero :                            |\n");
+    //scanf("%c", &numero);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     return numero;
@@ -705,7 +749,7 @@ char numero(void) {
 
 
 //Reentrada número
-char re_numero(void) {
+char re_ent_numero(void) {
     char re_numero;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -719,11 +763,12 @@ char re_numero(void) {
 
 
 //Entrada complemento
-char complemento(void) {
+char ent_complement(void) {
     char complemento;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    scanf("%c|                         Digite o complemento :                          |\n", &complemento);
+    printf("|                         Digite o complemento :                          |\n");
+    //scanf("%c", &complemento);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     return complemento;
@@ -731,7 +776,7 @@ char complemento(void) {
 
 
 //Reentrada complemento
-char re_complemento(void) {
+char re_ent_complement(void) {
     char re_complemento;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -745,11 +790,12 @@ char re_complemento(void) {
 
 
 //Entrada ponto de referência
-char pont_referencia(void) {
+char ent_pont_referencia(void) {
     char pont_referencia;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    scanf("%c|                     Digite o ponto de referência :                      |\n", &pont_referencia);
+    printf("|                     Digite o ponto de referência :                      |\n");
+    //scanf("%c", &pont_referencia);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     return pont_referencia;
@@ -757,7 +803,7 @@ char pont_referencia(void) {
 
 
 //Reentrada ponto de referência
-char re_pont_referencia(void) {
+char re_ent_pont_referencia(void) {
     char re_pont_referencia;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -771,7 +817,7 @@ char re_pont_referencia(void) {
 
 
 //Entrada CNPJ
-char cnpj(void) {
+char ent_cnpj(void) {
     char cnpj;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -783,7 +829,7 @@ char cnpj(void) {
 
 
 //Reentrada CNPJ
-char re_cnpj(void) {
+char re_ent_cnpj(void) {
     char re_cnpj;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -797,7 +843,7 @@ char re_cnpj(void) {
 
 
 //Entrada inscrição estadual
-char insc_estadual(void) {
+char ent_insc_estadual(void) {
     char insc_estadual;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -809,7 +855,7 @@ char insc_estadual(void) {
 
 
 //Reentrada inscrição estadual
-char re_insc_estadual(void) {
+char re_ent_insc_estadual(void) {
     char re_insc_estadual;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
