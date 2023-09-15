@@ -107,7 +107,7 @@ int main(void) {
                     }   
                 }   
                 while (op1 != 0);
-                return 0;
+                break;
             case 2:
                 op1 = tela_fornecedor();
                 break;
@@ -258,7 +258,6 @@ void tela_cad_admin(void) {
     printf("|                         Cadastro administrador                          |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
-    getchar();
 }
 
 
@@ -373,7 +372,7 @@ int cadastro_cliente(void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
     printf("Selecione uma opção: \n");
-    scanf("%d\n", &op);
+    scanf("%d", &op);
     return op;
 }
 
@@ -393,7 +392,7 @@ int tela_fornecedor(void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     printf("Selecione uma opção: \n");
-    scanf("%d\n", &op);
+    scanf("%d", &op);
     return op;
 }
 
@@ -413,7 +412,7 @@ int tela_produto(void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     printf("Selecione uma opção: \n");
-    scanf("%d\n", &op);
+    scanf("%d", &op);
     return op;
 }
 
@@ -433,7 +432,7 @@ int tela_colaborador(void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     printf("Selecione uma opção: \n");
-    scanf("%d\n", &op);
+    scanf("%d", &op);
     return op;
 }
 
@@ -453,7 +452,7 @@ int tela_cliente(void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     printf("Selecione uma opção: \n");
-    scanf("%d\n", &op);
+    scanf("%d", &op);
     return op;
 }
 
@@ -468,7 +467,6 @@ char ent_cpf(void) {
     scanf("%c|                             Digite o CPF :                              |\n", &cpf);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
-    getchar();
     return cpf;
 }
 
@@ -480,7 +478,8 @@ char re_ent_cpf(void) {
     printf("|                                                                         |\n");
     printf("|                           CPF inválido ! ! !                            |\n");
     printf("|                                                                         |\n");
-    scanf("%c|                             Digite o CPF :                              |\n", &cpf);
+    printf("|                             Digite o CPF :                              |\n");
+    scanf("%c", &cpf);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     return cpf;
