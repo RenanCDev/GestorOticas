@@ -27,12 +27,16 @@
 //CPF
 void ent_cpf(void) {
     char cpf;
+    char* pont;
+    pont = (char*) malloc(11*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                             Digite o CPF :                              |\n");
     printf("|                                                                         |\n");
+    scanf("%[0-9]", pont);
+    printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
-    getchar();
+    scanf("%c", &cpf);
     //return cpf;
 }
 
@@ -40,14 +44,18 @@ void ent_cpf(void) {
 //Reentrada CPF
 void re_ent_cpf(void) {
     char cpf;
+    char* pont;
+    pont = (char*) malloc(11*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                           CPF inválido ! ! !                            |\n");
     printf("|                                                                         |\n");
     printf("|                             Digite o CPF :                              |\n");
     printf("|                                                                         |\n");
+    scanf("%[0-9]", pont);
+    printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
-    getchar();
+    scanf("%c", &cpf);
     //return cpf;
 }
 
@@ -55,12 +63,16 @@ void re_ent_cpf(void) {
 //Email
 void ent_email(void) {
     char email;
+    char* pont;
+    pont = (char*) malloc(30*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                            Digite o email :                             |\n");
     printf("|                                                                         |\n");
+    scanf("%[0-9A-Za-z._-]", pont);
+    printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
-    getchar();
+    scanf("%c", &email);
     //return email;
 }
 
@@ -68,14 +80,18 @@ void ent_email(void) {
 //Reentrada email
 void re_ent_email(void) {
     char email;
+    char* pont;
+    pont = (char*) malloc(30*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                          Email inválido ! ! !                           |\n");
     printf("|                                                                         |\n");
     printf("|                            Digite o email :                             |\n");
     printf("|                                                                         |\n");
+    scanf("%[0-9A-Za-z._-]", pont);
+    printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    getchar();
+    scanf("%c", &email);
     //return email;
 }
 
@@ -83,12 +99,16 @@ void re_ent_email(void) {
 //Cel
 void ent_cel(void) {
     char cel;
+    char* pont;
+    pont = (char*) malloc(11*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                           Digite o celular :                            |\n");
     printf("|                                                                         |\n");
+    scanf("%[0-9]", pont);
+    printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
-    getchar();
+    scanf("%c", &cel);
     //return cel;
 }
 
@@ -96,14 +116,18 @@ void ent_cel(void) {
 //Reentrada cel
 void re_ent_cel(void) {
     char cel;
+    char* pont;
+    pont = (char*) malloc(11*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                         Celular inválido ! ! !                          |\n");
     printf("|                                                                         |\n");
     printf("|                           Digite o celular :                            |\n");
     printf("|                                                                         |\n");
+    scanf("%[0-9]", pont);
+    printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
-    getchar();
+    scanf("%c", &cel);
     //return cel;
 }
 
@@ -111,12 +135,16 @@ void re_ent_cel(void) {
 //Nome
 void ent_nome(void) {
     char nome;
+    char* pont;
+    pont = (char*) malloc(30*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                             Digite o nome :                             |\n");
     printf("|                                                                         |\n");
+    scanf("%[0-9A-Za-z._-]", pont);
+    printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
-    getchar();
+    scanf("%c", &nome);
     //return nome;
 }
 
@@ -124,14 +152,18 @@ void ent_nome(void) {
 //Reentrada nome
 void re_ent_nome(void) {
     char nome;
+    char* pont;
+    pont = (char*) malloc(30*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                           Nome inválido ! ! !                           |\n");
     printf("|                                                                         |\n");
     printf("|                             Digite o nome :                             |\n");
     printf("|                                                                         |\n");
+    scanf("%[0-9A-Za-z._-]", pont);
+    printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
-    getchar();
+    scanf("%c", &nome);
     //return nome;
 }
 
@@ -139,12 +171,16 @@ void re_ent_nome(void) {
 //Data de nascimento
 void ent_dat_nasc(void) {
     char dat_nasc;
+    char* pont;
+    pont = (char*) malloc(8*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                      Digite a data de nascimento :                      |\n");
     printf("|                                                                         |\n");
+    scanf("%[0-9]", pont);
+    printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
-    getchar();
+    scanf("%c", &dat_nasc);
     //return dat_nasc;
 }
 
@@ -152,14 +188,18 @@ void ent_dat_nasc(void) {
 //Reentrada data de nascimento
 void re_ent_dat_nasc(void) {
     char dat_nasc;
+    char* pont;
+    pont = (char*) malloc(8*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                    Data de nascimento inválida ! ! !                    |\n");
     printf("|                                                                         |\n");
     printf("|                      Digite a data de nascimento :                      |\n");
     printf("|                                                                         |\n");
+    scanf("%[0-9]", pont);
+    printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
-    getchar();
+    scanf("%c", &dat_nasc);
     //return dat_nasc;
 }
 
@@ -168,12 +208,16 @@ void re_ent_dat_nasc(void) {
 //Entrada CNPJ
 void ent_cnpj(void) {
     char cnpj;
+    char* pont;
+    pont = (char*) malloc(14*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                             Digite o CNPJ :                             |\n");
     printf("|                                                                         |\n");
+    scanf("%[0-9]", pont);
+    printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    getchar();
+    scanf("%c", &cnpj);
     //return cnpj;
 }
 
@@ -181,14 +225,18 @@ void ent_cnpj(void) {
 //Reentrada CNPJ
 void re_ent_cnpj(void) {
     char cnpj;
+    char* pont;
+    pont = (char*) malloc(14*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                           CNPJ inválido ! ! !                           |\n");
     printf("|                                                                         |\n");
     printf("|                             Digite o CNPJ :                             |\n");
     printf("|                                                                         |\n");
+    scanf("%[0-9]", pont);
+    printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    getchar();
+    scanf("%c", &cnpj);
     //return cnpj;
 }
 
@@ -196,12 +244,34 @@ void re_ent_cnpj(void) {
 //Entrada inscrição estadual
 void ent_insc_estadual(void) {
     char insc_estadual;
+    char* pont;
+    pont = (char*) malloc(9*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                              Digite a IE :                              |\n");
     printf("|                                                                         |\n");
+    scanf("%[0-9]", pont);
+    printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    getchar();
+    scanf("%c", &insc_estadual);
+    //return insc_estadual;
+}
+
+
+//Reentrada inscrição estadual
+void re_ent_insc_estadual(void) {
+    char insc_estadual;char* pont;
+    pont = (char*) malloc(9*sizeof(char));
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                            IE inválido ! ! !                            |\n");
+    printf("|                                                                         |\n");
+    printf("|                              Digite a IE :                              |\n");
+    printf("|                                                                         |\n");
+    scanf("%[0-9]", pont);
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");   
+    scanf("%c", &insc_estadual);
     //return insc_estadual;
 }
 
@@ -210,12 +280,16 @@ void ent_insc_estadual(void) {
 //Entrada CEP
 void ent_cep(void) {
     char cep;
+    char* pont;
+    pont = (char*) malloc(9*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                             Digite o cep :                              |\n");
     printf("|                                                                         |\n");
+    scanf("%[0-9A-Za-z._-]", pont);
+    printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    getchar();
+    scanf("%c", &cep);
     //return cep;
 }
 
@@ -223,14 +297,18 @@ void ent_cep(void) {
 //Reentrada CEP
 void re_ent_cep(void) {
     char cep;
+    char* pont;
+    pont = (char*) malloc(9*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                           CEP inválido ! ! !                            |\n");
     printf("|                                                                         |\n");
     printf("|                             Digite o cep :                              |\n");
     printf("|                                                                         |\n");
+    scanf("%[0-9A-Za-z._-]", pont);
+    printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    getchar();
+    scanf("%c", &cep);
     //return cep;
 }
 
@@ -238,12 +316,16 @@ void re_ent_cep(void) {
 //Estado
 void ent_estado(void) {
     char estado;
+    char* pont;
+    pont = (char*) malloc(15*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                            Digite o estado :                            |\n");
     printf("|                                                                         |\n");
+    scanf("%[0-9A-Za-z._-]", pont);
+    printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    getchar();
+    scanf("%c", &estado);
     //return estado;
 }
 
@@ -251,14 +333,18 @@ void ent_estado(void) {
 //Reentrada estado
 void re_ent_estado(void) {
     char estado;
+    char* pont;
+    pont = (char*) malloc(15*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                          Estado inválido ! ! !                          |\n");
     printf("|                                                                         |\n");
     printf("|                            Digite o estado :                            |\n");
     printf("|                                                                         |\n");
+    scanf("%[0-9A-Za-z._-]", pont);
+    printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    getchar();
+    scanf("%c", &estado);
     //return estado;
 }
 
@@ -266,12 +352,16 @@ void re_ent_estado(void) {
 //Cidade
 void ent_cidade(void) {
     char cidade;
+    char* pont;
+    pont = (char*) malloc(30*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                            Digite a cidade :                            |\n");
     printf("|                                                                         |\n");
+    scanf("%[0-9A-Za-z._-]", pont);
+    printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    getchar();
+    scanf("%c", &cidade);
     //return cidade;
 }
 
@@ -279,14 +369,18 @@ void ent_cidade(void) {
 //Reentrada cidade
 void re_ent_cidade(void) {
     char cidade;
+    char* pont;
+    pont = (char*) malloc(30*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                          Cidade inválida ! ! !                          |\n");
     printf("|                                                                         |\n");
     printf("|                            Digite a cidade :                            |\n");
     printf("|                                                                         |\n");
+    scanf("%[0-9A-Za-z._-]", pont);
+    printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    getchar();
+    scanf("%c", &cidade);
     //return cidade;
 }
 
@@ -294,12 +388,16 @@ void re_ent_cidade(void) {
 //Bairro
 void ent_bairro(void) {
     char bairro;
+    char* pont;
+    pont = (char*) malloc(30*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                            Digite o bairro :                            |\n");
     printf("|                                                                         |\n");
+    scanf("%[0-9A-Za-z._-]", pont);
+    printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    getchar();
+    scanf("%c", &bairro);
     //return bairro;
 }
 
@@ -307,14 +405,18 @@ void ent_bairro(void) {
 //Reentrada bairro
 void re_ent_bairro(void) {
     char bairro;
+    char* pont;
+    pont = (char*) malloc(30*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                          Bairro inválido ! ! !                          |\n");
     printf("|                                                                         |\n");
     printf("|                            Digite o bairro :                            |\n");
     printf("|                                                                         |\n");
+    scanf("%[0-9A-Za-z._-]", pont);
+    printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    getchar();
+    scanf("%c", &bairro);
     //return bairro;
 }
 
@@ -322,12 +424,16 @@ void re_ent_bairro(void) {
 //Rua
 void ent_rua(void) {
     char rua;
+    char* pont;
+    pont = (char*) malloc(30*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                             Digite a rua :                              |\n");
     printf("|                                                                         |\n");
+    scanf("%[0-9A-Za-z._-]", pont);
+    printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    getchar();
+    scanf("%c", &rua);
     //return rua;
 }
 
@@ -335,14 +441,18 @@ void ent_rua(void) {
 //Reentrada rua
 void re_ent_rua(void) {
     char rua;
+    char* pont;
+    pont = (char*) malloc(30*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                           Rua inválida ! ! !                            |\n");
     printf("|                                                                         |\n");
     printf("|                             Digite a rua :                              |\n");
     printf("|                                                                         |\n");
+    scanf("%[0-9A-Za-z._-]", pont);
+    printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    getchar();
+    scanf("%c", &rua);
     //return rua;
 }
 
@@ -350,27 +460,34 @@ void re_ent_rua(void) {
 //Entrada número
 void ent_numero(void) {
     char numero;
+    char* pont;
+    pont = (char*) malloc(10*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                            Digite o número :                            |\n");
     printf("|                                                                         |\n");
+    scanf("%[0-9A-Za-z._-]", pont);
+    printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    getchar();
-    //return numero;
+    scanf("%c", &numero);
 }
 
 
 //Reentrada número
 void re_ent_numero(void) {
     char numero;
+    char* pont;
+    pont = (char*) malloc(10*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                          Número inválido ! ! !                          |\n");
     printf("|                                                                         |\n");
     printf("|                            Digite o número :                            |\n");
     printf("|                                                                         |\n");
+    scanf("%[0-9A-Za-z._-]", pont);
+    printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    getchar();
+    scanf("%c", &numero);
     //return numero;
 }
 
@@ -378,12 +495,16 @@ void re_ent_numero(void) {
 //Entrada complemento
 void ent_complement(void) {
     char complemento;
+    char* pont;
+    pont = (char*) malloc(30*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                         Digite o complemento :                          |\n");
     printf("|                                                                         |\n");
+    scanf("%[0-9A-Za-z._-]", pont);
+    printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    getchar();
+    scanf("%c", &complemento);
     //return complemento;
 }
 
@@ -391,14 +512,18 @@ void ent_complement(void) {
 //Reentrada complemento
 void re_ent_complement(void) {
     char complemento;
+    char* pont;
+    pont = (char*) malloc(30*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                       Complemento inválido ! ! !                        |\n");
     printf("|                                                                         |\n");
     printf("|                         Digite o complemento :                          |\n");
     printf("|                                                                         |\n");
+    scanf("%[0-9A-Za-z._-]", pont);
+    printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    getchar();
+    scanf("%c", &complemento);
     //return complemento;
 }
 
@@ -406,12 +531,16 @@ void re_ent_complement(void) {
 //Entrada ponto de referência
 void ent_pont_referencia(void) {
     char pont_referencia;
+    char* pont;
+    pont = (char*) malloc(30*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                     Digite o ponto de referência :                      |\n");
     printf("|                                                                         |\n");
+    scanf("%[0-9A-Za-z._-]", pont);
+    printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    getchar();
+    scanf("%c", &pont_referencia);
     //return pont_referencia;
 }
 
@@ -419,30 +548,19 @@ void ent_pont_referencia(void) {
 //Reentrada ponto de referência
 void re_ent_pont_referencia(void) {
     char pont_referencia;
+    char* pont;
+    pont = (char*) malloc(30*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                   Ponto de referência inválido ! ! !                    |\n");
     printf("|                                                                         |\n");
     printf("|                     Digite o ponto de referência :                      |\n");
     printf("|                                                                         |\n");
+    scanf("%[0-9A-Za-z._-]", pont);
+    printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    getchar();
+    scanf("%c", &pont_referencia);
     //return pont_referencia;
-}
-
-
-//Reentrada inscrição estadual
-void re_ent_insc_estadual(void) {
-    char insc_estadual;
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                            IE inválido ! ! !                            |\n");
-    printf("|                                                                         |\n");
-    printf("|                              Digite a IE :                              |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");   
-    getchar();
-    //return insc_estadual;
 }
 
 
@@ -450,12 +568,16 @@ void re_ent_insc_estadual(void) {
 //Código de barras
 void ent_cod_barras(void) {
     char cod_barras;
+    char* pont;
+    pont = (char*) malloc(30*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                       Digite o código de barras :                       |\n");
     printf("|                                                                         |\n");
+    scanf("%[0-9]", pont);
+    printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    getchar();
+    scanf("%c", &cod_barras);
     //return cod_barras;
 }
 
@@ -463,13 +585,17 @@ void ent_cod_barras(void) {
 //Reentrada de código de barras
 void re_ent_cod_barras(void) {
     char cod_barras;
+    char* pont;
+    pont = (char*) malloc(30*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                     Código de barras inválido ! ! !                     |\n");
     printf("|                                                                         |\n");
     printf("|                       Digite o código de barras :                       |\n");
     printf("|                                                                         |\n");
+    scanf("%[0-9]", pont);
+    printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    getchar();
+    scanf("%c", &cod_barras);
     //return vod_barras;
 }
