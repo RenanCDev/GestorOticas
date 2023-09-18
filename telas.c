@@ -35,8 +35,9 @@ void tela_cad_admin(void) {
 
 
 //Tela pesquisar administrador
-void pesq_admin(void) {
+void tela_pesq_admin(void) {
     system("clear");
+    tela_banner();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                         Pesquisar administrador                         |\n");
@@ -46,8 +47,9 @@ void pesq_admin(void) {
 
 
 //Tela relatório administradores
-void relat_admin(void) {
+void tela_relat_admin(void) {
     system("clear");
+    tela_banner();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                         Relatório administrador                         |\n");
@@ -57,8 +59,9 @@ void relat_admin(void) {
 
 
 //Tela relatório fornecedores
-void relat_fornec(void) {
+void tela_relat_fornec(void) {
     system("clear");
+    tela_banner();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                          Relatório fornecedor                           |\n");
@@ -68,8 +71,9 @@ void relat_fornec(void) {
 
 
 //Tela relatório produtos
-void relat_produtos(void) {
+void tela_relat_produto(void) {
     system("clear");
+    tela_banner();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                           Relatório produtos                            |\n");
@@ -79,8 +83,9 @@ void relat_produtos(void) {
 
 
 //Tela relatório colaboradores
-void relat_colab(void) {
+void tela_relat_colab(void) {
     system("clear");
+    tela_banner();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                         Relatório colaboradores                         |\n");
@@ -90,11 +95,85 @@ void relat_colab(void) {
 
 
 //Tela relatório clientes
-void relat_clientes(void) {
+void tela_relat_cliente(void) {
     system("clear");
+    tela_banner();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                           Relatório clientes                            |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
+//Telas de desenvolvimento
+//Pesquisar administrador
+void dados_admin(void) {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                Aqui aparecerá os dados do administrador                 |\n");
+    printf("|                                                                         |\n");
+    printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
+//Relatório administrador
+void dados_relat_admin(void) {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|          Aqui aparecerá os dados do relatório do administrador          |\n");
+    printf("|                                                                         |\n");
+    printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
+//Relatório fornecedor
+void dados_relat_fornec(void) {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|           Aqui aparecerá os dados do relatório do fornecedor            |\n");
+    printf("|                                                                         |\n");
+    printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
+//Relatório produto
+void dados_relat_produto(void) {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|             Aqui aparecerá os dados do relatório do produto             |\n");
+    printf("|                                                                         |\n");
+    printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
+//Relatório colaborador
+void dados_relat_colab(void) {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|           Aqui aparecerá os dados do relatório do colaborador           |\n");
+    printf("|                                                                         |\n");
+    printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
+//Relatório cliente
+void dados_relat_cliente(void) {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|             Aqui aparecerá os dados do relatório do cliente             |\n");
+    printf("|                                                                         |\n");
+    printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
 }

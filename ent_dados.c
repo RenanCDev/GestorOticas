@@ -21,7 +21,9 @@
 #include "ent_dados.h"
 
 
+///
 //Entrada de dados
+//Dados das pessoas físicas
 //CPF
 void ent_cpf(void) {
     char cpf;
@@ -47,90 +49,6 @@ void re_ent_cpf(void) {
     printf("+=========================================================================+\n");
     getchar();
     //return cpf;
-}
-
-
-//Nome
-void ent_nome(void) {
-    char nome;
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                             Digite o nome :                             |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-    getchar();
-    //return nome;
-}
-
-
-//Reentrada nome
-void re_ent_nome(void) {
-    char nome;
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                           Nome inválido ! ! !                           |\n");
-    printf("|                                                                         |\n");
-    printf("|                             Digite o nome :                             |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-    getchar();
-    //return nome;
-}
-
-
-//Cel
-void ent_cel(void) {
-    char cel;
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                           Digite o celular :                            |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-    getchar();
-    //return cel;
-}
-
-
-//Reentrada cel
-void re_ent_cel(void) {
-    char cel;
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                         Celular inválido ! ! !                          |\n");
-    printf("|                                                                         |\n");
-    printf("|                           Digite o celular :                            |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-    getchar();
-    //return cel;
-}
-
-
-//Data de nascimento
-void ent_dat_nasc(void) {
-    char dat_nasc;
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                      Digite a data de nascimento :                      |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-    getchar();
-    //return dat_nasc;
-}
-
-
-//Reentrada data de nascimento
-void re_ent_dat_nasc(void) {
-    char dat_nasc;
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                    Data de nascimento inválida ! ! !                    |\n");
-    printf("|                                                                         |\n");
-    printf("|                      Digite a data de nascimento :                      |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-    getchar();
-    //return dat_nasc;
 }
 
 
@@ -162,7 +80,133 @@ void re_ent_email(void) {
 }
 
 
-/////Entrada endereço
+//Cel
+void ent_cel(void) {
+    char cel;
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                           Digite o celular :                            |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    getchar();
+    //return cel;
+}
+
+
+//Reentrada cel
+void re_ent_cel(void) {
+    char cel;
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                         Celular inválido ! ! !                          |\n");
+    printf("|                                                                         |\n");
+    printf("|                           Digite o celular :                            |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    getchar();
+    //return cel;
+}
+
+
+//Nome
+void ent_nome(void) {
+    char nome;
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                             Digite o nome :                             |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    getchar();
+    //return nome;
+}
+
+
+//Reentrada nome
+void re_ent_nome(void) {
+    char nome;
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                           Nome inválido ! ! !                           |\n");
+    printf("|                                                                         |\n");
+    printf("|                             Digite o nome :                             |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    getchar();
+    //return nome;
+}
+
+
+//Data de nascimento
+void ent_dat_nasc(void) {
+    char dat_nasc;
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                      Digite a data de nascimento :                      |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    getchar();
+    //return dat_nasc;
+}
+
+
+//Reentrada data de nascimento
+void re_ent_dat_nasc(void) {
+    char dat_nasc;
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                    Data de nascimento inválida ! ! !                    |\n");
+    printf("|                                                                         |\n");
+    printf("|                      Digite a data de nascimento :                      |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    getchar();
+    //return dat_nasc;
+}
+
+
+//Dados das pessoa jurídicas
+//Entrada CNPJ
+void ent_cnpj(void) {
+    char cnpj;
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                             Digite o CNPJ :                             |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");   
+    getchar();
+    //return cnpj;
+}
+
+
+//Reentrada CNPJ
+void re_ent_cnpj(void) {
+    char cnpj;
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                           CNPJ inválido ! ! !                           |\n");
+    printf("|                                                                         |\n");
+    printf("|                             Digite o CNPJ :                             |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");   
+    getchar();
+    //return cnpj;
+}
+
+
+//Entrada inscrição estadual
+void ent_insc_estadual(void) {
+    char insc_estadual;
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                              Digite a IE :                              |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");   
+    getchar();
+    //return insc_estadual;
+}
+
+
+//Dados dos endereços
 //Entrada CEP
 void ent_cep(void) {
     char cep;
@@ -387,47 +431,6 @@ void re_ent_pont_referencia(void) {
 }
 
 
-//Entrada CNPJ
-void ent_cnpj(void) {
-    char cnpj;
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                             Digite o CNPJ :                             |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");   
-    getchar();
-    //return cnpj;
-}
-
-
-//Reentrada CNPJ
-void re_ent_cnpj(void) {
-    char cnpj;
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                           CNPJ inválido ! ! !                           |\n");
-    printf("|                                                                         |\n");
-    printf("|                             Digite o CNPJ :                             |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");   
-    getchar();
-    //return cnpj;
-}
-
-
-//Entrada inscrição estadual
-void ent_insc_estadual(void) {
-    char insc_estadual;
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                              Digite a IE :                              |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");   
-    getchar();
-    //return insc_estadual;
-}
-
-
 //Reentrada inscrição estadual
 void re_ent_insc_estadual(void) {
     char insc_estadual;
@@ -440,4 +443,33 @@ void re_ent_insc_estadual(void) {
     printf("+=========================================================================+\n");   
     getchar();
     //return insc_estadual;
+}
+
+
+//Dados dos produtos
+//Código de barras
+void ent_cod_barras(void) {
+    char cod_barras;
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                       Digite o código de barras :                       |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");   
+    getchar();
+    //return cod_barras;
+}
+
+
+//Reentrada de código de barras
+void re_ent_cod_barras(void) {
+    char cod_barras;
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                     Código de barras inválido ! ! !                     |\n");
+    printf("|                                                                         |\n");
+    printf("|                       Digite o código de barras :                       |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");   
+    getchar();
+    //return vod_barras;
 }

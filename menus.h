@@ -15,6 +15,8 @@
     ("+=========================================================================+\n")  */
 
 
+///
+//Declaração das funções dos menus
 int menu_principal(void);
 int menu_administrativo(void);
 int menu_fornecedor(void);

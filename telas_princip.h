@@ -15,6 +15,8 @@
     ("+=========================================================================+\n")  */
 
 
+///
+//Declaração das funções das telas principais
 void tela_apresentacao(void);
 void tela_sobre(void);
 void tela_banner(void);
