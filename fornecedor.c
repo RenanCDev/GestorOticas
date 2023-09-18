@@ -18,45 +18,69 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
-#include "telas_princip.h"
+#include "menus.h"
 #include "telas.h"
 #include "ent_dados.h"
-#include "menus.h"
-#include "administrativo.h"
 #include "fornecedor.h"
 
 
-/////
-//Programa principal
-int main(void) {
+void modulo_fornecedor (void) {
     setlocale(LC_ALL, "Portuguese_Brazil");
-    int op0;
-    {
-    tela_sobre();
-    tela_apresentacao();
+    int op;
     do {
-        op0 = menu_principal();
-        switch (op0) {
+        op = menu_fornecedor();
+        switch (op) {
             case 1:
-                modulo_administrativo();
+                cad_fornec();
                 break;
             case 2:
-                modulo_fornecedor();
-                break;
-            case 3:
-                //modulo_produto();
-                break;
-            case 4:
-                //modulo_colaborador();
-                break;
-            case 5:
-                //modulo_cliente();
+                pesq_fornec();
                 break;
             case 0:
-                 break;
-            }
+            break;
         }
-    while (op0 != 0);
-    return 0;
     }
+    while (op != 0);
+}
+
+
+
+//Cadastrar fornecedor
+void cad_fornec (void){
+    tela_cad_fornec();
+    ent_cpf();
+    tela_cad_fornec();
+    ent_email();
+    tela_cad_fornec();
+    ent_cel();
+    tela_cad_fornec();
+    ent_nome();
+    tela_cad_fornec();
+    ent_dat_nasc();
+    tela_cad_fornec();
+    ent_cep();
+    tela_cad_fornec();
+    ent_estado();
+    tela_cad_fornec();
+    ent_cidade();
+    tela_cad_fornec();
+    ent_bairro();
+    tela_cad_fornec();
+    ent_rua();
+    tela_cad_fornec();
+    ent_numero();
+    tela_cad_fornec();
+    ent_complement();
+    tela_cad_fornec();
+    ent_pont_referencia();
+    tela_cad_fornec();
+}
+
+
+//Pesquisar fornec
+void pesq_fornec (void) {
+    tela_pesq_fornec();
+    ent_cpf();
+    dados_fornec();
+    getchar();
 }

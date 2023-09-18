@@ -99,6 +99,7 @@ int menu_fornecedor(void) {
     printf("+=========================================================================+\n");
     printf("Selecione uma opção: \n");
     scanf("%d", &op);
+    getchar();
     return op;
 }
 

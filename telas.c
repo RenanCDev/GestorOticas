@@ -22,6 +22,7 @@
 #include "telas_princip.h"
 
 ///Telas secundarias
+//Telas administrativo
 //Tela cadastrar administrador
 void tela_cad_admin(void) {
     system("clear");
@@ -106,6 +107,32 @@ void tela_relat_cliente(void) {
 }
 
 
+//Telas de fornecedor
+//Cadastrar fornecedor
+void tela_cad_fornec(void) {
+    system("clear");
+    tela_banner();
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                           Cadastro fornecedor                           |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
+//Tela pesquisar fornecedor
+void tela_pesq_fornec(void) {
+    system("clear");
+    tela_banner();
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                          Pesquisar fornecedor                           |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
+
 //Telas de desenvolvimento
 //Pesquisar administrador
 void dados_admin(void) {
@@ -172,6 +199,18 @@ void dados_relat_cliente(void) {
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|             Aqui aparecerá os dados do relatório do cliente             |\n");
+    printf("|                                                                         |\n");
+    printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
+//Pesquisar fornecedor
+void dados_fornec(void) {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                  Aqui aparecerá os dados do fornecedor                  |\n");
     printf("|                                                                         |\n");
     printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
     printf("|                                                                         |\n");

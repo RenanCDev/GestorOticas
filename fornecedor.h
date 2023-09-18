@@ -15,48 +15,6 @@
     ("+=========================================================================+\n")  */
 
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <locale.h>
-#include "telas_princip.h"
-#include "telas.h"
-#include "ent_dados.h"
-#include "menus.h"
-#include "administrativo.h"
-#include "fornecedor.h"
-
-
-/////
-//Programa principal
-int main(void) {
-    setlocale(LC_ALL, "Portuguese_Brazil");
-    int op0;
-    {
-    tela_sobre();
-    tela_apresentacao();
-    do {
-        op0 = menu_principal();
-        switch (op0) {
-            case 1:
-                modulo_administrativo();
-                break;
-            case 2:
-                modulo_fornecedor();
-                break;
-            case 3:
-                //modulo_produto();
-                break;
-            case 4:
-                //modulo_colaborador();
-                break;
-            case 5:
-                //modulo_cliente();
-                break;
-            case 0:
-                 break;
-            }
-        }
-    while (op0 != 0);
-    return 0;
-    }
-}
+void modulo_fornecedor (void);
+void cad_fornec (void);
+void pesq_fornec (void);

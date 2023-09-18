@@ -33,6 +33,8 @@ void ent_cpf(void) {
     printf("|                                                                         |\n");
     printf("|                             Digite o CPF :                              |\n");
     printf("|                                                                         |\n");
+    printf("|                         Insira apenas números !                         |\n");
+    printf("|                                                                         |\n");
     scanf("%[0-9]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
@@ -51,6 +53,8 @@ void re_ent_cpf(void) {
     printf("|                           CPF inválido ! ! !                            |\n");
     printf("|                                                                         |\n");
     printf("|                             Digite o CPF :                              |\n");
+    printf("|                                                                         |\n");
+    printf("|                         Insira apenas números !                         |\n");
     printf("|                                                                         |\n");
     scanf("%[0-9]", pont);
     printf("|                                                                         |\n");
@@ -105,6 +109,8 @@ void ent_cel(void) {
     printf("|                                                                         |\n");
     printf("|                           Digite o celular :                            |\n");
     printf("|                                                                         |\n");
+    printf("|                         Insira apenas números !                         |\n");
+    printf("|                                                                         |\n");
     scanf("%[0-9]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
@@ -123,6 +129,8 @@ void re_ent_cel(void) {
     printf("|                         Celular inválido ! ! !                          |\n");
     printf("|                                                                         |\n");
     printf("|                           Digite o celular :                            |\n");
+    printf("|                                                                         |\n");
+    printf("|                         Insira apenas números !                         |\n");
     printf("|                                                                         |\n");
     scanf("%[0-9]", pont);
     printf("|                                                                         |\n");
@@ -177,6 +185,8 @@ void ent_dat_nasc(void) {
     printf("|                                                                         |\n");
     printf("|                      Digite a data de nascimento :                      |\n");
     printf("|                                                                         |\n");
+    printf("|                         Insira apenas números !                         |\n");
+    printf("|                                                                         |\n");
     scanf("%[0-9]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
@@ -196,6 +206,8 @@ void re_ent_dat_nasc(void) {
     printf("|                                                                         |\n");
     printf("|                      Digite a data de nascimento :                      |\n");
     printf("|                                                                         |\n");
+    printf("|                         Insira apenas números !                         |\n");
+    printf("|                                                                         |\n");
     scanf("%[0-9]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
@@ -213,6 +225,8 @@ void ent_cnpj(void) {
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                             Digite o CNPJ :                             |\n");
+    printf("|                                                                         |\n");
+    printf("|                         Insira apenas números !                         |\n");
     printf("|                                                                         |\n");
     scanf("%[0-9]", pont);
     printf("|                                                                         |\n");
@@ -233,6 +247,8 @@ void re_ent_cnpj(void) {
     printf("|                                                                         |\n");
     printf("|                             Digite o CNPJ :                             |\n");
     printf("|                                                                         |\n");
+    printf("|                         Insira apenas números !                         |\n");
+    printf("|                                                                         |\n");
     scanf("%[0-9]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
@@ -249,6 +265,8 @@ void ent_insc_estadual(void) {
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                              Digite a IE :                              |\n");
+    printf("|                                                                         |\n");
+    printf("|                         Insira apenas números !                         |\n");
     printf("|                                                                         |\n");
     scanf("%[0-9]", pont);
     printf("|                                                                         |\n");
@@ -268,6 +286,8 @@ void re_ent_insc_estadual(void) {
     printf("|                                                                         |\n");
     printf("|                              Digite a IE :                              |\n");
     printf("|                                                                         |\n");
+    printf("|                         Insira apenas números !                         |\n");
+    printf("|                                                                         |\n");
     scanf("%[0-9]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
@@ -286,7 +306,9 @@ void ent_cep(void) {
     printf("|                                                                         |\n");
     printf("|                             Digite o cep :                              |\n");
     printf("|                                                                         |\n");
-    scanf("%[0-9A-Za-z._-]", pont);
+    printf("|                         Insira apenas números !                         |\n");
+    printf("|                                                                         |\n");
+    scanf("%[0-9]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     scanf("%c", &cep);
@@ -304,6 +326,8 @@ void re_ent_cep(void) {
     printf("|                           CEP inválido ! ! !                            |\n");
     printf("|                                                                         |\n");
     printf("|                             Digite o cep :                              |\n");
+    printf("|                                                                         |\n");
+    printf("|                         Insira apenas números !                         |\n");
     printf("|                                                                         |\n");
     scanf("%[0-9A-Za-z._-]", pont);
     printf("|                                                                         |\n");
@@ -464,7 +488,7 @@ void ent_numero(void) {
     pont = (char*) malloc(10*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                            Digite o número :                            |\n");
+    printf("|                     Digite o número da residência:                      |\n");
     printf("|                                                                         |\n");
     scanf("%[0-9A-Za-z._-]", pont);
     printf("|                                                                         |\n");
@@ -482,7 +506,7 @@ void re_ent_numero(void) {
     printf("|                                                                         |\n");
     printf("|                          Número inválido ! ! !                          |\n");
     printf("|                                                                         |\n");
-    printf("|                            Digite o número :                            |\n");
+    printf("|                     Digite o número da residência:                      |\n");
     printf("|                                                                         |\n");
     scanf("%[0-9A-Za-z._-]", pont);
     printf("|                                                                         |\n");
@@ -574,6 +598,8 @@ void ent_cod_barras(void) {
     printf("|                                                                         |\n");
     printf("|                       Digite o código de barras :                       |\n");
     printf("|                                                                         |\n");
+    printf("|                         Insira apenas números !                         |\n");
+    printf("|                                                                         |\n");
     scanf("%[0-9]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
@@ -592,6 +618,8 @@ void re_ent_cod_barras(void) {
     printf("|                     Código de barras inválido ! ! !                     |\n");
     printf("|                                                                         |\n");
     printf("|                       Digite o código de barras :                       |\n");
+    printf("|                                                                         |\n");
+    printf("|                         Insira apenas números !                         |\n");
     printf("|                                                                         |\n");
     scanf("%[0-9]", pont);
     printf("|                                                                         |\n");
