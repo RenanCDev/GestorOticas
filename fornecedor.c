@@ -48,7 +48,9 @@ void modulo_fornecedor (void) {
 //Cadastrar fornecedor
 void cad_fornec (void){
     tela_cad_fornec();
-    ent_cpf();
+    ent_cnpj();
+    tela_cad_fornec();
+    ent_insc_estadual();
     tela_cad_fornec();
     ent_email();
     tela_cad_fornec();
