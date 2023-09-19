@@ -156,6 +156,30 @@ void tela_pesq_produto(void) {
 }
 
 
+//Cadastrar colaborador
+void tela_cad_colab(void) {
+    system("clear");
+    tela_banner();
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                          Cadastro colaborador                           |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
+//Tela pesquisar produto
+void tela_pesq_colab(void) {
+    system("clear");
+    tela_banner();
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                          Pesquisar colaborador                          |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
 //Telas de desenvolvimento
 //Pesquisar administrador
 void dados_admin(void) {
@@ -246,6 +270,18 @@ void dados_produto(void) {
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                   Aqui aparecerá os dados do produto                    |\n");
+    printf("|                                                                         |\n");
+    printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
+//Pesquisar colaborador
+void dados_colab(void) {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                 Aqui aparecerá os dados do colaborador                  |\n");
     printf("|                                                                         |\n");
     printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
     printf("|                                                                         |\n");

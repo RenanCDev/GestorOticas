@@ -34,7 +34,12 @@ void tela_pesq_fornec(void);
 
 //Telas produtos
 void tela_cad_produto(void);
-void tela_pesq_produto();
+void tela_pesq_produto(void);
+
+
+//Telas colaborador
+void tela_cad_colab(void);
+void tela_pesq_colab(void);
 
 
 //Telas de desenvolvimento
@@ -46,5 +51,6 @@ void dados_relat_colab(void);
 void dados_relat_cliente(void);
 void dados_fornec(void);
 void dados_produto(void);
+void dados_colab(void);
 
 

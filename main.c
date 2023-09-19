@@ -53,7 +53,7 @@ int main(void) {
                 modulo_colaborador();
                 break;
             case 5:
-                modulo_cliente();
+                //modulo_cliente();
                 break;
             case 0:
                  break;
