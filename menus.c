@@ -120,6 +120,7 @@ int menu_produto(void) {
     printf("+=========================================================================+\n");
     printf("Selecione uma opção: \n");
     scanf("%d", &op);
+    getchar();
     return op;
 }
 
@@ -140,6 +141,7 @@ int menu_colaborador(void) {
     printf("+=========================================================================+\n");
     printf("Selecione uma opção: \n");
     scanf("%d", &op);
+    getchar();
     return op;
 }
 
@@ -160,5 +162,6 @@ int menu_cliente(void) {
     printf("+=========================================================================+\n");
     printf("Selecione uma opção: \n");
     scanf("%d", &op);
+    getchar();
     return op;
 }

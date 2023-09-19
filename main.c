@@ -24,6 +24,9 @@
 #include "menus.h"
 #include "administrativo.h"
 #include "fornecedor.h"
+#include "produto.h"
+#include "colaborador.h"
+#include "cliente.h"
 
 
 /////
@@ -44,13 +47,13 @@ int main(void) {
                 modulo_fornecedor();
                 break;
             case 3:
-                //modulo_produto();
+                modulo_produto();
                 break;
             case 4:
-                //modulo_colaborador();
+                modulo_colaborador();
                 break;
             case 5:
-                //modulo_cliente();
+                modulo_cliente();
                 break;
             case 0:
                  break;

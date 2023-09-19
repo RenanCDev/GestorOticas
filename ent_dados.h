@@ -59,3 +59,4 @@ void re_ent_pont_referencia(void);
 //Dados dos produtos
 void ent_cod_barras(void);
 void re_ent_cod_barras(void);
+void ent_desc_produto(void);

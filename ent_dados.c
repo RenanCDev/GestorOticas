@@ -73,7 +73,7 @@ void ent_email(void) {
     printf("|                                                                         |\n");
     printf("|                            Digite o email :                             |\n");
     printf("|                                                                         |\n");
-    scanf("%[0-9A-Za-z._-]", pont);
+    scanf("%[0-9A-Za-z@._-]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     scanf("%c", &email);
@@ -92,7 +92,7 @@ void re_ent_email(void) {
     printf("|                                                                         |\n");
     printf("|                            Digite o email :                             |\n");
     printf("|                                                                         |\n");
-    scanf("%[0-9A-Za-z._-]", pont);
+    scanf("%[0-9A-Za-z@._-]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     scanf("%c", &email);
@@ -149,7 +149,7 @@ void ent_nome(void) {
     printf("|                                                                         |\n");
     printf("|                             Digite o nome :                             |\n");
     printf("|                                                                         |\n");
-    scanf("%[0-9A-Za-z._-]", pont);
+    scanf("%[0-9A-Za-z@._-]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     scanf("%c", &nome);
@@ -168,7 +168,7 @@ void re_ent_nome(void) {
     printf("|                                                                         |\n");
     printf("|                             Digite o nome :                             |\n");
     printf("|                                                                         |\n");
-    scanf("%[0-9A-Za-z._-]", pont);
+    scanf("%[0-9A-Za-z@._-]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     scanf("%c", &nome);
@@ -329,7 +329,7 @@ void re_ent_cep(void) {
     printf("|                                                                         |\n");
     printf("|                         Insira apenas números !                         |\n");
     printf("|                                                                         |\n");
-    scanf("%[0-9A-Za-z._-]", pont);
+    scanf("%[0-9A-Za-z@._-]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     scanf("%c", &cep);
@@ -346,7 +346,7 @@ void ent_estado(void) {
     printf("|                                                                         |\n");
     printf("|                            Digite o estado :                            |\n");
     printf("|                                                                         |\n");
-    scanf("%[0-9A-Za-z._-]", pont);
+    scanf("%[0-9A-Za-z@._-]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     scanf("%c", &estado);
@@ -365,7 +365,7 @@ void re_ent_estado(void) {
     printf("|                                                                         |\n");
     printf("|                            Digite o estado :                            |\n");
     printf("|                                                                         |\n");
-    scanf("%[0-9A-Za-z._-]", pont);
+    scanf("%[0-9A-Za-z@._-]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     scanf("%c", &estado);
@@ -382,7 +382,7 @@ void ent_cidade(void) {
     printf("|                                                                         |\n");
     printf("|                            Digite a cidade :                            |\n");
     printf("|                                                                         |\n");
-    scanf("%[0-9A-Za-z._-]", pont);
+    scanf("%[0-9A-Za-z@._-]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     scanf("%c", &cidade);
@@ -401,7 +401,7 @@ void re_ent_cidade(void) {
     printf("|                                                                         |\n");
     printf("|                            Digite a cidade :                            |\n");
     printf("|                                                                         |\n");
-    scanf("%[0-9A-Za-z._-]", pont);
+    scanf("%[0-9A-Za-z@._-]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     scanf("%c", &cidade);
@@ -418,7 +418,7 @@ void ent_bairro(void) {
     printf("|                                                                         |\n");
     printf("|                            Digite o bairro :                            |\n");
     printf("|                                                                         |\n");
-    scanf("%[0-9A-Za-z._-]", pont);
+    scanf("%[0-9A-Za-z@._-]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     scanf("%c", &bairro);
@@ -437,7 +437,7 @@ void re_ent_bairro(void) {
     printf("|                                                                         |\n");
     printf("|                            Digite o bairro :                            |\n");
     printf("|                                                                         |\n");
-    scanf("%[0-9A-Za-z._-]", pont);
+    scanf("%[0-9A-Za-z@._-]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     scanf("%c", &bairro);
@@ -454,7 +454,7 @@ void ent_rua(void) {
     printf("|                                                                         |\n");
     printf("|                             Digite a rua :                              |\n");
     printf("|                                                                         |\n");
-    scanf("%[0-9A-Za-z._-]", pont);
+    scanf("%[0-9A-Za-z@._-]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     scanf("%c", &rua);
@@ -473,7 +473,7 @@ void re_ent_rua(void) {
     printf("|                                                                         |\n");
     printf("|                             Digite a rua :                              |\n");
     printf("|                                                                         |\n");
-    scanf("%[0-9A-Za-z._-]", pont);
+    scanf("%[0-9A-Za-z@._-]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     scanf("%c", &rua);
@@ -490,7 +490,7 @@ void ent_numero(void) {
     printf("|                                                                         |\n");
     printf("|                     Digite o número da residência:                      |\n");
     printf("|                                                                         |\n");
-    scanf("%[0-9A-Za-z._-]", pont);
+    scanf("%[0-9A-Za-z@._-]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     scanf("%c", &numero);
@@ -508,7 +508,7 @@ void re_ent_numero(void) {
     printf("|                                                                         |\n");
     printf("|                     Digite o número da residência:                      |\n");
     printf("|                                                                         |\n");
-    scanf("%[0-9A-Za-z._-]", pont);
+    scanf("%[0-9A-Za-z@._-]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     scanf("%c", &numero);
@@ -525,7 +525,7 @@ void ent_complement(void) {
     printf("|                                                                         |\n");
     printf("|                         Digite o complemento :                          |\n");
     printf("|                                                                         |\n");
-    scanf("%[0-9A-Za-z._-]", pont);
+    scanf("%[0-9A-Za-z@._-]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     scanf("%c", &complemento);
@@ -544,7 +544,7 @@ void re_ent_complement(void) {
     printf("|                                                                         |\n");
     printf("|                         Digite o complemento :                          |\n");
     printf("|                                                                         |\n");
-    scanf("%[0-9A-Za-z._-]", pont);
+    scanf("%[0-9A-Za-z@._-]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     scanf("%c", &complemento);
@@ -561,7 +561,7 @@ void ent_pont_referencia(void) {
     printf("|                                                                         |\n");
     printf("|                     Digite o ponto de referência :                      |\n");
     printf("|                                                                         |\n");
-    scanf("%[0-9A-Za-z._-]", pont);
+    scanf("%[0-9A-Za-z@._-]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     scanf("%c", &pont_referencia);
@@ -580,7 +580,7 @@ void re_ent_pont_referencia(void) {
     printf("|                                                                         |\n");
     printf("|                     Digite o ponto de referência :                      |\n");
     printf("|                                                                         |\n");
-    scanf("%[0-9A-Za-z._-]", pont);
+    scanf("%[0-9A-Za-z@._-]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     scanf("%c", &pont_referencia);
@@ -627,3 +627,22 @@ void re_ent_cod_barras(void) {
     scanf("%c", &cod_barras);
     //return vod_barras;
 }
+
+
+//Entrada descrição do produto
+void ent_desc_produto(void) {
+    char desc_produto;
+    char* pont;
+    pont = (char*) malloc(30*sizeof(char));
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                          Descreva o produto :                           |\n");
+    printf("|                                                                         |\n");
+    scanf("%[0-9A-Za-z@._-]", pont);
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");   
+    scanf("%c", &desc_produto);
+    //return desc_produto;
+}
+
+

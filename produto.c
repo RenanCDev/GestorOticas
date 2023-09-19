@@ -13,38 +13,50 @@
     ("|               Developed by @RenanMRb - since august, 2023               |\n")
     ("|                                                                         |\n")
     ("+=========================================================================+\n")  */
-    
-
-///
-//Declaração das funções das telas
-//Telas administrativo
-void tela_cad_admin(void);
-void tela_pesq_admin(void);
-void tela_relat_admin(void);
-void tela_relat_fornec(void);
-void tela_relat_produto(void);
-void tela_relat_colab(void);
-void tela_relat_cliente(void);
 
 
-//Telas fornecedor
-void tela_cad_fornec(void);
-void tela_pesq_fornec(void);
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include "menus.h"
+#include "telas.h"
+#include "ent_dados.h"
+#include "produto.h"
 
 
-//Telas produtos
-void tela_cad_produto(void);
-void tela_pesq_produto();
+void modulo_produto (void) {
+    setlocale(LC_ALL, "Portuguese_Brazil");
+    int op;
+    do {
+        op = menu_produto();
+        switch (op) {
+            case 1:
+                cad_produto();
+                break;
+            case 2:
+                pesq_produto();
+                break;
+            case 0:
+            break;
+        }
+    }
+    while (op != 0);
+}
 
 
-//Telas de desenvolvimento
-void dados_admin(void);
-void dados_relat_admin(void);
-void dados_relat_fornec(void);
-void dados_relat_produto(void);
-void dados_relat_colab(void);
-void dados_relat_cliente(void);
-void dados_fornec(void);
-void dados_produto(void);
+//Cadastrar fornecedor
+void cad_produto (void){
+    tela_cad_produto();
+    ent_cod_barras();
+    tela_cad_produto();
+    ent_desc_produto();
+}
 
 
+//Pesquisar fornec
+void pesq_produto (void) {
+    tela_pesq_produto();
+    ent_cod_barras();
+    dados_produto();
+    getchar();
+}

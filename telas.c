@@ -132,6 +132,29 @@ void tela_pesq_fornec(void) {
 }
 
 
+//Cadastrar produto
+void tela_cad_produto(void) {
+    system("clear");
+    tela_banner();
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                            Cadastro produto                             |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
+//Tela pesquisar produto
+void tela_pesq_produto(void) {
+    system("clear");
+    tela_banner();
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                            Pesquisar produto                            |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
 
 //Telas de desenvolvimento
 //Pesquisar administrador
@@ -211,6 +234,18 @@ void dados_fornec(void) {
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                  Aqui aparecerá os dados do fornecedor                  |\n");
+    printf("|                                                                         |\n");
+    printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
+//Pesquisar produto
+void dados_produto(void) {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                   Aqui aparecerá os dados do produto                    |\n");
     printf("|                                                                         |\n");
     printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
     printf("|                                                                         |\n");

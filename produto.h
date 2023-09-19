@@ -13,38 +13,8 @@
     ("|               Developed by @RenanMRb - since august, 2023               |\n")
     ("|                                                                         |\n")
     ("+=========================================================================+\n")  */
-    
-
-///
-//Declaração das funções das telas
-//Telas administrativo
-void tela_cad_admin(void);
-void tela_pesq_admin(void);
-void tela_relat_admin(void);
-void tela_relat_fornec(void);
-void tela_relat_produto(void);
-void tela_relat_colab(void);
-void tela_relat_cliente(void);
 
 
-//Telas fornecedor
-void tela_cad_fornec(void);
-void tela_pesq_fornec(void);
-
-
-//Telas produtos
-void tela_cad_produto(void);
-void tela_pesq_produto();
-
-
-//Telas de desenvolvimento
-void dados_admin(void);
-void dados_relat_admin(void);
-void dados_relat_fornec(void);
-void dados_relat_produto(void);
-void dados_relat_colab(void);
-void dados_relat_cliente(void);
-void dados_fornec(void);
-void dados_produto(void);
-
-
+void modulo_produto(void);
+void cad_produto(void);
+void pesq_produto(void);
