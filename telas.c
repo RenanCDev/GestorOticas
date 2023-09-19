@@ -180,6 +180,29 @@ void tela_pesq_colab(void) {
 }
 
 
+//Cadastrar cliente
+void tela_cad_cliente(void) {
+    system("clear");
+    tela_banner();
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                            Cadastro cliente                             |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
+//Tela pesquisar produto
+void tela_pesq_cliente(void) {
+    system("clear");
+    tela_banner();
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                            Pesquisar cliente                            |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
 //Telas de desenvolvimento
 //Pesquisar administrador
 void dados_admin(void) {
@@ -282,6 +305,17 @@ void dados_colab(void) {
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                 Aqui aparecerá os dados do colaborador                  |\n");
+    printf("|                                                                         |\n");
+    printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+//Pesquisar cliente
+void dados_cliente(void) {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                   Aqui aparecerá os dados do cliente                    |\n");
     printf("|                                                                         |\n");
     printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
     printf("|                                                                         |\n");

@@ -77,7 +77,7 @@ void cad_fornec (void){
 }
 
 
-//Pesquisar fornec
+//Pesquisar fornecedor
 void pesq_fornec (void) {
     tela_pesq_fornec();
     ent_cpf();

@@ -45,7 +45,7 @@ void modulo_colaborador (void) {
 
 
 
-//Cadastrar fornecedor
+//Cadastrar colaborador
 void cad_colab (void){
     tela_cad_colab();
     ent_cpf();
@@ -77,7 +77,7 @@ void cad_colab (void){
 }
 
 
-//Pesquisar fornec
+//Pesquisar colaborador
 void pesq_colab (void) {
     tela_pesq_colab();
     ent_cpf();
