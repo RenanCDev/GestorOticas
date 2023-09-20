@@ -85,6 +85,7 @@ int menu_administrativo(void) {
 int menu_fornecedor(void) {
     int op;
     system("clear");
+    tela_banner();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                              Fornecedores                               |\n");
@@ -106,6 +107,7 @@ int menu_fornecedor(void) {
 int menu_produto(void) {
     int op;
     system("clear");
+    tela_banner();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                                Produtos                                 |\n");
@@ -127,6 +129,7 @@ int menu_produto(void) {
 int menu_colaborador(void) {
     int op;
     system("clear");
+    tela_banner();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                              Colaboradores                              |\n");
@@ -148,6 +151,7 @@ int menu_colaborador(void) {
 int menu_cliente(void) {
     int op;
     system("clear");
+    tela_banner();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                                Clientes                                 |\n");
