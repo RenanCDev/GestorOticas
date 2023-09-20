@@ -53,9 +53,9 @@ void cad_fornec (void){
     tela_cad_fornec();
     ent_cel();
     tela_cad_fornec();
-    ent_nome();
+    ent_nome_fantas();
     tela_cad_fornec();
-    ent_dat_nasc();
+    ent_raz_social();
     tela_cad_fornec();
     ent_cep();
     tela_cad_fornec();
@@ -72,7 +72,6 @@ void cad_fornec (void){
     ent_complement();
     tela_cad_fornec();
     ent_pont_referencia();
-    tela_cad_fornec();
 }
 
 

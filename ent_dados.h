@@ -35,6 +35,8 @@ void ent_cnpj(void);
 void re_ent_cnpj(void);
 void ent_insc_estadual(void);
 void re_ent_insc_estadual(void);
+void ent_nome_fantas(void);
+void ent_raz_social(void);
 
 
 //Dados dos endereço

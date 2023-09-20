@@ -295,6 +295,39 @@ void re_ent_insc_estadual(void) {
 }
 
 
+//Entrada nome fantasia
+void ent_nome_fantas(void) {
+    char nome_fantas;
+    char* pont;
+    pont = (char*) malloc(50*sizeof(char));
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                 Digite o nome fantasia do fornecedor :                  |\n");
+    printf("|                                                                         |\n");
+    scanf("%[0-9A-Za-z@._-]", pont);
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");   
+    scanf("%c", &nome_fantas);
+    //return nome_fantas;
+}
+
+
+//Entrada razão social
+void ent_raz_social(void) {
+    char raz_social;
+    char* pont;
+    pont = (char*) malloc(50*sizeof(char));
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                  Digite a razão social do fornecedor :                  |\n");
+    printf("|                                                                         |\n");
+    scanf("%[0-9A-Za-z@._-]", pont);
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");   
+    scanf("%c", &raz_social);
+    //return raz_social;
+}
+
 //Dados dos endereços
 //Entrada CEP
 void ent_cep(void) {
@@ -592,7 +625,7 @@ void re_ent_pont_referencia(void) {
 void ent_cod_barras(void) {
     char cod_barras;
     char* pont;
-    pont = (char*) malloc(30*sizeof(char));
+    pont = (char*) malloc(44*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                       Digite o código de barras :                       |\n");
@@ -611,7 +644,7 @@ void ent_cod_barras(void) {
 void re_ent_cod_barras(void) {
     char cod_barras;
     char* pont;
-    pont = (char*) malloc(30*sizeof(char));
+    pont = (char*) malloc(44*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                     Código de barras inválido ! ! !                     |\n");
@@ -624,7 +657,7 @@ void re_ent_cod_barras(void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     scanf("%c", &cod_barras);
-    //return vod_barras;
+    //return cod_barras;
 }
 
 
