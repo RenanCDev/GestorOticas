@@ -18,8 +18,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
-#include "menus.h"
-#include "telas_princip.h"
+#include "all.h"
 
 
 ///Menus

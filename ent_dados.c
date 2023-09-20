@@ -18,8 +18,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
-#include "ent_dados.h"
-
+#include "all.h"
 
 ///
 //Entrada de dados

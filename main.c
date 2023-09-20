@@ -18,15 +18,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
-#include "telas_princip.h"
-#include "telas.h"
-#include "ent_dados.h"
-#include "menus.h"
-#include "administrativo.h"
-#include "fornecedor.h"
-#include "produto.h"
-#include "colaborador.h"
-#include "cliente.h"
+#include "all.h"
 
 
 /////

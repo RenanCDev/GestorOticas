@@ -18,10 +18,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
-#include "menus.h"
-#include "telas.h"
-#include "ent_dados.h"
-#include "cliente.h"
+#include "all.h"
 
 
 void modulo_cliente(void) {

@@ -18,8 +18,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
-#include "telas.h"
-#include "telas_princip.h"
+#include "all.h"
 
 ///Telas secundarias
 //Telas administrativo
