@@ -319,4 +319,80 @@ void dados_cliente(void) {
     printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
+    getchar();
+}
+
+
+//Tela cadastro administrador
+void tela_cad_adm_t(void) {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|               Aqui aparecerá o cadastro do administrador                |\n");
+    printf("|                                                                         |\n");
+    printf("|                    Cadastro concluido com sucesso !                     |\n");
+    printf("|                                                                         |\n");
+    printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    getchar();
+}
+
+
+//Cadastro fornecedor
+void tela_cad_forn_t(void) {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                 Aqui aparecerá o cadastro do fornecedor                 |\n");
+    printf("|                                                                         |\n");
+    printf("|                    Cadastro concluido com sucesso !                     |\n");
+    printf("|                                                                         |\n");
+    printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    getchar();
+}
+
+
+//Cadastro produto
+void tela_cad_prod_t(void) {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                  Aqui aparecerá o cadastro do produto                   |\n");
+    printf("|                                                                         |\n");
+    printf("|                    Cadastro concluido com sucesso !                     |\n");
+    printf("|                                                                         |\n");
+    printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    getchar();
+}
+
+
+//Cadastro colaborador
+void tela_cad_colab_t(void) {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                Aqui aparecerá o cadastro do colaborador                 |\n");
+    printf("|                                                                         |\n");
+    printf("|                    Cadastro concluido com sucesso !                     |\n");
+    printf("|                                                                         |\n");
+    printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    getchar();
+}
+
+
+//Cadastro cliente
+void tela_cad_cliente_t(void) {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                  Aqui aparecerá o cadastro do cliente                   |\n");
+    printf("|                                                                         |\n");
+    printf("|                    Cadastro concluido com sucesso !                     |\n");
+    printf("|                                                                         |\n");
+    printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    getchar();
 }

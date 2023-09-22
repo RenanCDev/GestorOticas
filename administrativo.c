@@ -85,7 +85,7 @@ void cad_admin (void){
     ent_complement();
     tela_cad_admin();
     ent_pont_referencia();
-    tela_cad_admin();
+    tela_cad_adm_t();
 }
 
 

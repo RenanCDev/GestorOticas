@@ -72,6 +72,7 @@ void cad_fornec (void){
     ent_complement();
     tela_cad_fornec();
     ent_pont_referencia();
+    tela_cad_forn_t();
 }
 
 

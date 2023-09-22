@@ -42,7 +42,7 @@ void tela_cad_colab(void);
 void tela_pesq_colab(void);
 
 
-//Telas ccliente
+//Telas cliente
 void tela_cad_cliente(void);
 void tela_pesq_cliente(void);
 
@@ -58,5 +58,11 @@ void dados_fornec(void);
 void dados_produto(void);
 void dados_colab(void);
 void dados_cliente(void);
+void tela_cad_adm_t(void);
+void tela_cad_forn_t(void);
+void tela_cad_prod_t(void);
+void tela_cad_colab_t(void);
+void tela_cad_cliente_t(void);
+
 
 

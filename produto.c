@@ -50,6 +50,7 @@ void cad_produto (void){
     ent_cod_barras();
     tela_cad_produto();
     ent_desc_produto();
+    tela_cad_prod_t();
 }
 
 

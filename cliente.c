@@ -70,7 +70,7 @@ void cad_cliente (void){
     ent_complement();
     tela_cad_cliente();
     ent_pont_referencia();
-    tela_cad_cliente();
+    tela_cad_cliente_t();
 }
 
 

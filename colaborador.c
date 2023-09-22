@@ -70,7 +70,7 @@ void cad_colab (void){
     ent_complement();
     tela_cad_colab();
     ent_pont_referencia();
-    tela_cad_colab();
+    tela_cad_colab_t();
 }
 
 
