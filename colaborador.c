@@ -42,7 +42,7 @@ void modulo_colaborador (void) {
 
 
 
-//Cadastrar colaborador
+//Função para cadastrar colaborador
 void cad_colab (void){
     tela_cad_colab();
     ent_cpf();
@@ -52,29 +52,11 @@ void cad_colab (void){
     ent_cel();
     tela_cad_colab();
     ent_nome();
-    tela_cad_colab();
-    ent_dat_nasc();
-    tela_cad_colab();
-    ent_cep();
-    tela_cad_colab();
-    ent_estado();
-    tela_cad_colab();
-    ent_cidade();
-    tela_cad_colab();
-    ent_bairro();
-    tela_cad_colab();
-    ent_rua();
-    tela_cad_colab();
-    ent_numero();
-    tela_cad_colab();
-    ent_complement();
-    tela_cad_colab();
-    ent_pont_referencia();
-    tela_cad_colab_t();
+    tela_cad_colab_ok();
 }
 
 
-//Pesquisar colaborador
+//Função para pesquisar colaborador
 void pesq_colab (void) {
     tela_pesq_colab();
     ent_cpf();

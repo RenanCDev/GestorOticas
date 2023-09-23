@@ -42,7 +42,7 @@ void modulo_cliente(void) {
 
 
 
-//Cadastrar clienteorador
+//Função  para cadastrar clienteorador
 void cad_cliente (void){
     tela_cad_cliente();
     ent_cpf();
@@ -52,29 +52,11 @@ void cad_cliente (void){
     ent_cel();
     tela_cad_cliente();
     ent_nome();
-    tela_cad_cliente();
-    ent_dat_nasc();
-    tela_cad_cliente();
-    ent_cep();
-    tela_cad_cliente();
-    ent_estado();
-    tela_cad_cliente();
-    ent_cidade();
-    tela_cad_cliente();
-    ent_bairro();
-    tela_cad_cliente();
-    ent_rua();
-    tela_cad_cliente();
-    ent_numero();
-    tela_cad_cliente();
-    ent_complement();
-    tela_cad_cliente();
-    ent_pont_referencia();
-    tela_cad_cliente_t();
+    tela_cad_cliente_ok();
 }
 
 
-//Pesquisar clienteorador
+//Função para pesquisar clienteorador
 void pesq_cliente (void) {
     tela_pesq_cliente();
     ent_cpf();

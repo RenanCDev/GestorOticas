@@ -44,17 +44,17 @@ void modulo_produto (void) {
 }
 
 
-//Cadastrar fornecedor
+//Função cadastrar produto
 void cad_produto (void){
     tela_cad_produto();
     ent_cod_barras();
     tela_cad_produto();
     ent_desc_produto();
-    tela_cad_prod_t();
+    tela_cad_prod_ok();
 }
 
 
-//Pesquisar fornec
+//Função pesquisar produto
 void pesq_produto (void) {
     tela_pesq_produto();
     ent_cod_barras();

@@ -15,6 +15,8 @@
     ("+=========================================================================+\n")  */
 
 
+/////
+//Declaração das funções do produto.c
 void modulo_produto(void);
 void cad_produto(void);
 void pesq_produto(void);

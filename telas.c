@@ -40,7 +40,7 @@ void tela_banner(void) {
 }
 
 
-//Telas administrativo
+//Telas módulo administrativo
 //Tela cadastrar administrador
 void tela_cad_admin(void) {
     system("clear");
@@ -125,8 +125,8 @@ void tela_relat_cliente(void) {
 }
 
 
-//Telas de fornecedor
-//Cadastrar fornecedor
+//Telas do módulo fornecedor
+//Tela cadastrar fornecedor
 void tela_cad_fornec(void) {
     system("clear");
     tela_banner();
@@ -150,7 +150,7 @@ void tela_pesq_fornec(void) {
 }
 
 
-//Cadastrar produto
+//Tela cadastrar produto
 void tela_cad_produto(void) {
     system("clear");
     tela_banner();
@@ -174,7 +174,7 @@ void tela_pesq_produto(void) {
 }
 
 
-//Cadastrar colaborador
+//Tela cadastrar colaborador
 void tela_cad_colab(void) {
     system("clear");
     tela_banner();
@@ -186,7 +186,7 @@ void tela_cad_colab(void) {
 }
 
 
-//Tela pesquisar produto
+//Tela pesquisar colaborador
 void tela_pesq_colab(void) {
     system("clear");
     tela_banner();
@@ -198,7 +198,7 @@ void tela_pesq_colab(void) {
 }
 
 
-//Cadastrar cliente
+//Tela cadastrar cliente
 void tela_cad_cliente(void) {
     system("clear");
     tela_banner();
@@ -222,7 +222,7 @@ void tela_pesq_cliente(void) {
 }
 
 //Telas de desenvolvimento
-//Pesquisar administrador
+//Pesquisar administrador em desenvolvimento
 void dados_admin(void) {
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -234,7 +234,7 @@ void dados_admin(void) {
 }
 
 
-//Relatório administrador
+//Relatório administrador em desenvolvimento
 void dados_relat_admin(void) {
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -246,7 +246,7 @@ void dados_relat_admin(void) {
 }
 
 
-//Relatório fornecedor
+//Relatório fornecedor em desenvolvimento
 void dados_relat_fornec(void) {
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -258,7 +258,7 @@ void dados_relat_fornec(void) {
 }
 
 
-//Relatório produto
+//Relatório produto em desenvolvimento
 void dados_relat_produto(void) {
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -270,7 +270,7 @@ void dados_relat_produto(void) {
 }
 
 
-//Relatório colaborador
+//Relatório colaborador em desenvolvimento
 void dados_relat_colab(void) {
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -282,7 +282,7 @@ void dados_relat_colab(void) {
 }
 
 
-//Relatório cliente
+//Relatório cliente em desenvolvimento
 void dados_relat_cliente(void) {
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -294,7 +294,7 @@ void dados_relat_cliente(void) {
 }
 
 
-//Pesquisar fornecedor
+//Pesquisar fornecedor em desenvolvimento
 void dados_fornec(void) {
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -306,7 +306,7 @@ void dados_fornec(void) {
 }
 
 
-//Pesquisar produto
+//Pesquisar produto em desenvolvimento
 void dados_produto(void) {
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -318,7 +318,7 @@ void dados_produto(void) {
 }
 
 
-//Pesquisar colaborador
+//Pesquisar colaborador em desenvolvimento
 void dados_colab(void) {
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -329,7 +329,7 @@ void dados_colab(void) {
     printf("+=========================================================================+\n");
 }
 
-//Pesquisar cliente
+//Pesquisar cliente em desenvolvimento
 void dados_cliente(void) {
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -342,11 +342,11 @@ void dados_cliente(void) {
 }
 
 
-//Tela cadastro administrador
-void tela_cad_adm_t(void) {
+//Tela cadastro administrador ok em desenvolvimento
+void tela_cad_adm_ok(void) {
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|               Aqui aparecerá o cadastro do administrador                |\n");
+    printf("|            Aqui aparecerá o cadastro do administrador . . .             |\n");
     printf("|                                                                         |\n");
     printf("|                    Cadastro concluido com sucesso !                     |\n");
     printf("|                                                                         |\n");
@@ -357,11 +357,11 @@ void tela_cad_adm_t(void) {
 }
 
 
-//Cadastro fornecedor
-void tela_cad_forn_t(void) {
+//Tela cadastro fornecedor ok em desenvolvimento
+void tela_cad_forn_ok(void) {
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                 Aqui aparecerá o cadastro do fornecedor                 |\n");
+    printf("|            Aqui aparecerá o cadastro do administrador . . .             |\n");
     printf("|                                                                         |\n");
     printf("|                    Cadastro concluido com sucesso !                     |\n");
     printf("|                                                                         |\n");
@@ -372,11 +372,11 @@ void tela_cad_forn_t(void) {
 }
 
 
-//Cadastro produto
-void tela_cad_prod_t(void) {
+//Tela cadastro produto ok em desenvolvimento
+void tela_cad_prod_ok(void) {
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                  Aqui aparecerá o cadastro do produto                   |\n");
+    printf("|            Aqui aparecerá o cadastro do administrador . . .             |\n");
     printf("|                                                                         |\n");
     printf("|                    Cadastro concluido com sucesso !                     |\n");
     printf("|                                                                         |\n");
@@ -387,11 +387,11 @@ void tela_cad_prod_t(void) {
 }
 
 
-//Cadastro colaborador
-void tela_cad_colab_t(void) {
+//Tela cadastro colaborador ok em desenvolvimento
+void tela_cad_colab_ok(void) {
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                Aqui aparecerá o cadastro do colaborador                 |\n");
+    printf("|            Aqui aparecerá o cadastro do administrador . . .             |\n");
     printf("|                                                                         |\n");
     printf("|                    Cadastro concluido com sucesso !                     |\n");
     printf("|                                                                         |\n");
@@ -402,11 +402,11 @@ void tela_cad_colab_t(void) {
 }
 
 
-//Cadastro cliente
-void tela_cad_cliente_t(void) {
+//Tela cadastro cliente ok em desenvolvimento
+void tela_cad_cliente_ok(void) {
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                  Aqui aparecerá o cadastro do cliente                   |\n");
+    printf("|            Aqui aparecerá o cadastro do administrador . . .             |\n");
     printf("|                                                                         |\n");
     printf("|                    Cadastro concluido com sucesso !                     |\n");
     printf("|                                                                         |\n");

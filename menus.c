@@ -21,8 +21,9 @@
 #include "all.h"
 
 
-///Menus
-//Menu principal
+//////
+//Funções menus
+//Função menu principal
 int menu_principal(void) {
     int op;
     tela_banner();
@@ -53,8 +54,8 @@ int menu_principal(void) {
 }
 
 
-//Apresentação do programa
-int tela_apresentacao(void) {
+//Tela apresentação do programa
+void tela_apresentacao(void) {
     system("clear");
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -75,7 +76,7 @@ int tela_apresentacao(void) {
 }
 
 
-//Menu administrativo
+//Função menu administrativo
 int menu_administrativo(void) {
     int op;
     system("clear");
@@ -108,6 +109,7 @@ int menu_administrativo(void) {
 }
 
 
+//Função menu fornecedor
 int menu_fornecedor(void) {
     int op;
     system("clear");
@@ -130,6 +132,7 @@ int menu_fornecedor(void) {
 }
 
 
+//Função menu produto
 int menu_produto(void) {
     int op;
     system("clear");
@@ -152,6 +155,7 @@ int menu_produto(void) {
 }
 
 
+//Função menu colaborador
 int menu_colaborador(void) {
     int op;
     system("clear");
@@ -174,6 +178,7 @@ int menu_colaborador(void) {
 }
 
 
+//Função menu cliente
 int menu_cliente(void) {
     int op;
     system("clear");
@@ -197,7 +202,7 @@ int menu_cliente(void) {
 
 
 //Tela sobre o programa
-int tela_sobre(void) {
+void tela_sobre(void) {
     system("clear");
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");

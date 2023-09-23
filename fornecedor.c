@@ -42,41 +42,21 @@ void modulo_fornecedor (void) {
 
 
 
-//Cadastrar fornecedor
+//Função cadastrar fornecedor
 void cad_fornec (void){
     tela_cad_fornec();
     ent_cnpj();
-    tela_cad_fornec();
-    ent_insc_estadual();
     tela_cad_fornec();
     ent_email();
     tela_cad_fornec();
     ent_cel();
     tela_cad_fornec();
-    ent_nome_fantas();
-    tela_cad_fornec();
-    ent_raz_social();
-    tela_cad_fornec();
-    ent_cep();
-    tela_cad_fornec();
-    ent_estado();
-    tela_cad_fornec();
-    ent_cidade();
-    tela_cad_fornec();
-    ent_bairro();
-    tela_cad_fornec();
-    ent_rua();
-    tela_cad_fornec();
-    ent_numero();
-    tela_cad_fornec();
-    ent_complement();
-    tela_cad_fornec();
-    ent_pont_referencia();
-    tela_cad_forn_t();
+    ent_nome();
+    tela_cad_forn_ok();
 }
 
 
-//Pesquisar fornecedor
+//Função pesquisar fornecedor
 void pesq_fornec (void) {
     tela_pesq_fornec();
     ent_cpf();

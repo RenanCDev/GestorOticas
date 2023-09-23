@@ -32,6 +32,7 @@ int main(void) {
         switch (op0) {
             case 1:
                 tela_apresentacao();
+                getchar();
                 break;
             case 2:
                 modulo_administrativo();
@@ -50,6 +51,7 @@ int main(void) {
                 break;
             case 7:
                 tela_sobre();
+                getchar();
                 break;
             case 0:
                  break;

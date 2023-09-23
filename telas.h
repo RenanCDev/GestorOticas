@@ -21,7 +21,7 @@
 void tela_banner(void);
 
 
-//Telas administrativo
+//Telas do módulo  em desenvolvimento administrativo
 void tela_cad_admin(void);
 void tela_pesq_admin(void);
 void tela_relat_admin(void);
@@ -31,22 +31,22 @@ void tela_relat_colab(void);
 void tela_relat_cliente(void);
 
 
-//Telas fornecedor
+//Telas do módulo  em desenvolvimento fornecedor
 void tela_cad_fornec(void);
 void tela_pesq_fornec(void);
 
 
-//Telas produtos
+//Telas do módulo  em desenvolvimento produtos
 void tela_cad_produto(void);
 void tela_pesq_produto(void);
 
 
-//Telas colaborador
+//Telas do módulo  em desenvolvimento colaborador
 void tela_cad_colab(void);
 void tela_pesq_colab(void);
 
 
-//Telas cliente
+//Telas do módulo  em desenvolvimentodo módulo  em desenvolvimento cliente
 void tela_cad_cliente(void);
 void tela_pesq_cliente(void);
 
@@ -62,11 +62,11 @@ void dados_fornec(void);
 void dados_produto(void);
 void dados_colab(void);
 void dados_cliente(void);
-void tela_cad_adm_t(void);
-void tela_cad_forn_t(void);
-void tela_cad_prod_t(void);
-void tela_cad_colab_t(void);
-void tela_cad_cliente_t(void);
+void tela_cad_adm_ok(void);
+void tela_cad_forn_ok(void);
+void tela_cad_prod_ok(void);
+void tela_cad_colab_ok(void);
+void tela_cad_cliente_ok(void);
 
 
 

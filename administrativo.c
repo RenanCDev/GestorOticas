@@ -56,8 +56,8 @@ void modulo_administrativo (void) {
 }
 
 
-///
-//Cadastrar administrador
+/////
+//Função para cadastrar administrador
 void cad_admin (void){
     tela_cad_admin();
     ent_cpf();
@@ -67,29 +67,11 @@ void cad_admin (void){
     ent_cel();
     tela_cad_admin();
     ent_nome();
-    tela_cad_admin();
-    ent_dat_nasc();
-    tela_cad_admin();
-    ent_cep();
-    tela_cad_admin();
-    ent_estado();
-    tela_cad_admin();
-    ent_cidade();
-    tela_cad_admin();
-    ent_bairro();
-    tela_cad_admin();
-    ent_rua();
-    tela_cad_admin();
-    ent_numero();
-    tela_cad_admin();
-    ent_complement();
-    tela_cad_admin();
-    ent_pont_referencia();
-    tela_cad_adm_t();
+    tela_cad_adm_ok();
 }
 
 
-//Pesquisar administrador
+//Função para pesquisar administrador
 void pesq_admin (void) {
     tela_pesq_admin();
     ent_cpf();
@@ -98,7 +80,7 @@ void pesq_admin (void) {
 }
 
 
-//Relatório administrador
+//Função para apresentar o relatório administrador
 void relat_admin (void) {
     tela_relat_admin();
     ent_cpf();
@@ -107,7 +89,7 @@ void relat_admin (void) {
 }
 
 
-//Relatório fornecedor
+//Função para apresentar o relatório fornecedor
 void relat_fornec (void) {
     tela_relat_fornec();
     ent_cnpj();
@@ -116,7 +98,7 @@ void relat_fornec (void) {
 }
 
 
-//Relatório produto
+//Função para apresentar o relatório produto
 void relat_produto (void) {
     tela_relat_produto();
     ent_cod_barras();
@@ -125,7 +107,7 @@ void relat_produto (void) {
 }
 
 
-//Relatório colaborador
+//Função para apresentar o relatório colaborador
 void relat_colab (void) {
     tela_relat_colab();
     ent_cpf();
@@ -134,7 +116,7 @@ void relat_colab (void) {
 }
 
 
-//Relatório cliente
+//Função para apresentar o relatório cliente
 void relat_cliente (void) {
     tela_relat_cliente();
     ent_cpf();

@@ -15,13 +15,13 @@
     ("+=========================================================================+\n")  */
 
 
-///
+/////
 //Declaração das funções dos menus
-int tela_apresentacao(void);
+void tela_apresentacao(void);
 int menu_principal(void);
 int menu_administrativo(void);
 int menu_fornecedor(void);
 int menu_produto(void);
 int menu_colaborador(void);
 int menu_cliente(void);
-int tela_sobre(void);
+void tela_sobre(void);

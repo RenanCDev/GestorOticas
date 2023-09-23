@@ -15,8 +15,8 @@
     ("+=========================================================================+\n")  */
 
 
-///
-//Declaração das funções do modulo administrativo
+/////
+//Declaração das funções administrativo.c
 void modulo_administrativo (void);
 void cad_admin (void);
 void pesq_admin (void);
