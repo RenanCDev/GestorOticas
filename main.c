@@ -27,25 +27,29 @@ int main(void) {
     setlocale(LC_ALL, "Portuguese_Brazil");
     int op0;
     {
-    tela_sobre();
-    tela_apresentacao();
     do {
         op0 = menu_principal();
         switch (op0) {
             case 1:
-                modulo_administrativo();
+                tela_apresentacao();
                 break;
             case 2:
-                modulo_fornecedor();
+                modulo_administrativo();
                 break;
             case 3:
-                modulo_produto();
+                modulo_fornecedor();
                 break;
             case 4:
-                modulo_colaborador();
+                modulo_produto();
                 break;
             case 5:
+                modulo_colaborador();
+                break;
+            case 6:
                 modulo_cliente();
+                break;
+            case 7:
+                tela_sobre();
                 break;
             case 0:
                  break;

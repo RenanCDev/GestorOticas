@@ -20,7 +20,26 @@
 #include <locale.h>
 #include "all.h"
 
-///Telas secundarias
+
+/////
+//Funções tela
+//Tela banner
+void tela_banner(void) {
+    system("clear");
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|   #######                                #######                        |\n");
+    printf("|   #         ##    ####  #      ######    #       #   # ######  ####     |\n");
+    printf("|   #        #  #  #    # #      #         #        # #  #      #         |\n");
+    printf("|   #####   #    # #      #      #####     #####     #   #####   ####     |\n");
+    printf("|   #       ###### #  ### #      #         #         #   #           #    |\n");
+    printf("|   #       #    # #    # #      #         #         #   #      #    #    |\n");
+    printf("|   ####### #    #  ####  ###### ######    #######   #   ######  ####     |\n");   
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
 //Telas administrativo
 //Tela cadastrar administrador
 void tela_cad_admin(void) {

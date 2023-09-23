@@ -1,4 +1,3 @@
-#include "telas_princip.h"
 #include "telas.h"
 #include "ent_dados.h"
 #include "menus.h"

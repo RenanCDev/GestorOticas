@@ -30,15 +30,19 @@ int menu_principal(void) {
     printf("|                                                                         |\n");
     printf("|                             Menu principal                              |\n");
     printf("|                                                                         |\n");
-    printf("|                         1 -> Administrativo <-                          |\n");
+    printf("|                    1 -> Apresentação do programa <-                     |\n");
     printf("|                                                                         |\n");
-    printf("|                          2 -> Fornecedores <-                           |\n");
+    printf("|                         2 -> Administrativo <-                          |\n");
     printf("|                                                                         |\n");
-    printf("|                            3 -> Produtos <-                             |\n");
+    printf("|                          3 -> Fornecedores <-                           |\n");
     printf("|                                                                         |\n");
-    printf("|                          4 -> Colaboradores <-                          |\n");
+    printf("|                            4 -> Produtos <-                             |\n");
     printf("|                                                                         |\n");
-    printf("|                            5 -> Clientes <-                             |\n");
+    printf("|                          5 -> Colaboradores <-                          |\n");
+    printf("|                                                                         |\n");
+    printf("|                            6 -> Clientes <-                             |\n");
+    printf("|                                                                         |\n");
+    printf("|                        7 -> Sobre o programa <-                         |\n");
     printf("|                                                                         |\n");
     printf("|                         0 -> Fechar programa <-                         |\n");
     printf("|                                                                         |\n");
@@ -46,6 +50,28 @@ int menu_principal(void) {
     printf("Selecione uma opção: \n");
     scanf("%d", &op);
     return op;
+}
+
+
+//Apresentação do programa
+int tela_apresentacao(void) {
+    system("clear");
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|               Universidade Federal do Rio Grande do Norte               |\n");
+    printf("|                                                                         |\n");
+    printf("|                   Centro de Ensino Superior do Seridó                   |\n");
+    printf("|                                                                         |\n");
+    printf("|             Aluno -- Renan Missias Rodrigues Alves da Costa             |\n");
+    printf("|                                                                         |\n");
+    printf("|                    Disciplina DCT1106 -- Programação                    |\n");
+    printf("|                                                                         |\n");
+    printf("|                  Projeto Sistema de Gestão para Óticas                  |\n");
+    printf("|                                                                         |\n");
+    printf("|               Developed by @RenanMRb - since august, 2023               |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");  
+    getchar();
 }
 
 
@@ -167,4 +193,24 @@ int menu_cliente(void) {
     scanf("%d", &op);
     getchar();
     return op;
+}
+
+
+//Tela sobre o programa
+int tela_sobre(void) {
+    system("clear");
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|         O projeto EAGLE EYES é um projeto de gestão de óticas .         |\n");
+    printf("|                                                                         |\n");
+    printf("|            Tem o objetivo de gerir e administrar uma ótica .            |\n");
+    printf("|                                                                         |\n");
+    printf("|                             > > ATENÇÃO < <                             |\n");
+    printf("|                                                                         |\n");
+    printf("|                   Este NÃO é um programa comercial .                    |\n");
+    printf("|                                                                         |\n");
+    printf("|       O desenolvedor não se responsabiliza por quaisquer danos !        |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    getchar();
 }

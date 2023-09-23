@@ -15,8 +15,12 @@
     ("+=========================================================================+\n")  */
     
 
-///
-//Declaração das funções das telas
+/////
+//Declaração das funções telas
+//Tela banner
+void tela_banner(void);
+
+
 //Telas administrativo
 void tela_cad_admin(void);
 void tela_pesq_admin(void);
