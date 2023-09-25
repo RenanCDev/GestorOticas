@@ -31,30 +31,30 @@ int main(void) {
         op0 = menu_principal();
         switch (op0) {
             case 1:
-                tela_apresentacao();
-                getchar();
-                break;
-            case 2:
                 modulo_administrativo();
                 break;
-            case 3:
+            case 2:
                 modulo_fornecedor();
                 break;
-            case 4:
+            case 3:
                 modulo_produto();
                 break;
-            case 5:
+            case 4:
                 modulo_colaborador();
                 break;
-            case 6:
+            case 5:
                 modulo_cliente();
                 break;
-            case 7:
+            case 6:
                 tela_sobre();
                 getchar();
                 break;
             case 0:
-                 break;
+                break;
+            default:
+                tela_erro();
+                getchar();
+                break;
             }
         }
     while (op0 != 0);

@@ -221,6 +221,20 @@ void tela_pesq_cliente(void) {
     printf("+=========================================================================+\n");
 }
 
+
+//Tela Erro
+void tela_erro(void) {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                           ENTRADA INVÁLIDA !                            |\n");
+    printf("|                                                                         |\n");
+    printf("|                  Tecle ENTER para inserir nova entrada                  |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    getchar();
+}
+
+
 //Telas de desenvolvimento
 //Pesquisar administrador em desenvolvimento
 void dados_admin(void) {

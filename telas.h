@@ -51,6 +51,10 @@ void tela_cad_cliente(void);
 void tela_pesq_cliente(void);
 
 
+//Tela erro
+void tela_erro(void);
+
+
 //Telas de desenvolvimento
 void dados_admin(void);
 void dados_relat_admin(void);

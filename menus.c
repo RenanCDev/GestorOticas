@@ -54,28 +54,6 @@ int menu_principal(void) {
 }
 
 
-//Tela apresentação do programa
-void tela_apresentacao(void) {
-    system("clear");
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|               Universidade Federal do Rio Grande do Norte               |\n");
-    printf("|                                                                         |\n");
-    printf("|                   Centro de Ensino Superior do Seridó                   |\n");
-    printf("|                                                                         |\n");
-    printf("|             Aluno -- Renan Missias Rodrigues Alves da Costa             |\n");
-    printf("|                                                                         |\n");
-    printf("|                    Disciplina DCT1106 -- Programação                    |\n");
-    printf("|                                                                         |\n");
-    printf("|                  Projeto Sistema de Gestão para Óticas                  |\n");
-    printf("|                                                                         |\n");
-    printf("|               Developed by @RenanMRb - since august, 2023               |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");  
-    getchar();
-}
-
-
 //Função menu administrativo
 int menu_administrativo(void) {
     int op;
@@ -204,6 +182,22 @@ int menu_cliente(void) {
 //Tela sobre o programa
 void tela_sobre(void) {
     system("clear");
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|               Universidade Federal do Rio Grande do Norte               |\n");
+    printf("|                                                                         |\n");
+    printf("|                   Centro de Ensino Superior do Seridó                   |\n");
+    printf("|                                                                         |\n");
+    printf("|             Aluno -- Renan Missias Rodrigues Alves da Costa             |\n");
+    printf("|                                                                         |\n");
+    printf("|                    Disciplina DCT1106 -- Programação                    |\n");
+    printf("|                                                                         |\n");
+    printf("|                  Projeto Sistema de Gestão para Óticas                  |\n");
+    printf("|                                                                         |\n");
+    printf("|               Developed by @RenanMRb - since august, 2023               |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");  
+    getchar();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|         O projeto EAGLE EYES é um projeto de gestão de óticas .         |\n");
