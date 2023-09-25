@@ -19,3 +19,4 @@ void modulo_venda(void);
 void cad_venda(void);
 void pesq_venda(void);
 void acresc_item_venda(void);
+void form_pag(void);

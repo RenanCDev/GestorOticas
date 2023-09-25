@@ -64,5 +64,4 @@ void pesq_cliente (void) {
     tela_pesq_cliente();
     ent_cpf();
     dados_cliente();
-    getchar();
 }

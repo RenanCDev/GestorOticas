@@ -59,6 +59,8 @@ void cad_venda(void) {
     tela_venda_cliente();
     info_cliente_0();
     ent_cpf();
+    form_pag();
+    tela_cad_venda();
     tela_venda_ok();
 }
 
@@ -73,6 +75,7 @@ void pesq_venda(void) {
 void acresc_item_venda(void) {
     int op;
     do {
+        tela_cad_venda();
         op = menu_item_venda();
         switch (op) {
             case 1:
@@ -89,18 +92,31 @@ void acresc_item_venda(void) {
                 tela_erro();
                 break;
         }
+    system("clear");
     }
     while (op != 2);
 }
 
 
-/*void fomr_ag(void) {
+void form_pag(void) {
     int op;
     do {
+        tela_cad_venda();
         op = menu_form_pag();
         switch (op) {
             case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            default:
+                tela_erro();
+                break;
         }
+    system("clear");
     }
+    while (op != 1 & op != 2 & op != 3 & op != 4);
 }
-*/

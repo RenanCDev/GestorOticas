@@ -62,7 +62,7 @@ void cad_fornec (void){
 //Função pesquisar fornecedor
 void pesq_fornec (void) {
     tela_pesq_fornec();
-    ent_cpf();
+    ent_cnpj();
     dados_fornec();
     getchar();
 }

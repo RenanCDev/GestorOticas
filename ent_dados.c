@@ -213,7 +213,7 @@ void ent_id_venda(void) {
     pont = (char*) malloc(10*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                         Digite o id da venda :                          |\n");
+    printf("|                         Digite o ID da venda :                          |\n");
     printf("|                                                                         |\n");
     printf("|                         Insira apenas números !                         |\n");
     printf("|                                                                         |\n");
