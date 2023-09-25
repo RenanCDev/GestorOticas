@@ -21,20 +21,27 @@
 #include "all.h"
 
 
-void modulo_administrativo (void) {
+void modulo_relatorio (void) {
     setlocale(LC_ALL, "Portuguese_Brazil");
     int op;
     do {
-        op = menu_administrativo();
+        op = menu_relatorio();
         switch (op) {
             case 1:
-                cad_admin();
+                relat_admin();
                 break;
             case 2:
-                pesq_admin();
+                relat_fornec();
                 break;
             case 3:
-                modulo_relatorio();
+                relat_produto();
+                break;
+            case 4:
+                relat_colab();
+                break;
+            case 5:
+                relat_cliente();
+                break;
             case 0:
             break;
         }
@@ -42,26 +49,48 @@ void modulo_administrativo (void) {
     while (op != 0);
 }
 
-
 /////
-//Função para cadastrar administrador
-void cad_admin (void){
-    tela_cad_admin();
+//Funções paaraa apresentar os relatórios
+//Função para apresentar o relatório administrador
+void relat_admin (void) {
+    tela_relat_admin();
     ent_cpf();
-    tela_cad_admin();
-    ent_email();
-    tela_cad_admin();
-    ent_cel();
-    tela_cad_admin();
-    ent_nome();
-    tela_cad_adm_ok();
+    dados_relat_admin();
+    getchar();
 }
 
 
-//Função para pesquisar administrador
-void pesq_admin (void) {
-    tela_pesq_admin();
+//Função para apresentar o relatório fornecedor
+void relat_fornec (void) {
+    tela_relat_fornec();
+    ent_cnpj();
+    dados_relat_fornec();
+    getchar();
+}
+
+
+//Função para apresentar o relatório produto
+void relat_produto (void) {
+    tela_relat_produto();
+    ent_cod_barras();
+    dados_relat_produto();
+    getchar();
+}
+
+
+//Função para apresentar o relatório colaborador
+void relat_colab (void) {
+    tela_relat_colab();
     ent_cpf();
-    dados_admin();
+    dados_relat_colab();
+    getchar();
+}
+
+
+//Função para apresentar o relatório cliente
+void relat_cliente (void) {
+    tela_relat_cliente();
+    ent_cpf();
+    dados_relat_cliente();
     getchar();
 }

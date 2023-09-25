@@ -15,53 +15,11 @@
     ("+=========================================================================+\n")  */
 
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <locale.h>
-#include "all.h"
-
-
-void modulo_administrativo (void) {
-    setlocale(LC_ALL, "Portuguese_Brazil");
-    int op;
-    do {
-        op = menu_administrativo();
-        switch (op) {
-            case 1:
-                cad_admin();
-                break;
-            case 2:
-                pesq_admin();
-                break;
-            case 3:
-                modulo_relatorio();
-            case 0:
-            break;
-        }
-    }
-    while (op != 0);
-}
-
-
 /////
-//Função para cadastrar administrador
-void cad_admin (void){
-    tela_cad_admin();
-    ent_cpf();
-    tela_cad_admin();
-    ent_email();
-    tela_cad_admin();
-    ent_cel();
-    tela_cad_admin();
-    ent_nome();
-    tela_cad_adm_ok();
-}
-
-
-//Função para pesquisar administrador
-void pesq_admin (void) {
-    tela_pesq_admin();
-    ent_cpf();
-    dados_admin();
-    getchar();
-}
+//Declaração das funções relatorio.c
+void modulo_relatorio(void);
+void relat_admin (void);
+void relat_fornec (void);
+void relat_produto (void);
+void relat_colab (void);
+void relat_cliente (void);

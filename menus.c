@@ -31,19 +31,17 @@ int menu_principal(void) {
     printf("|                                                                         |\n");
     printf("|                             Menu principal                              |\n");
     printf("|                                                                         |\n");
-    printf("|                    1 -> Apresentação do programa <-                     |\n");
+    printf("|                         1 -> Administrativo <-                          |\n");
     printf("|                                                                         |\n");
-    printf("|                         2 -> Administrativo <-                          |\n");
+    printf("|                          2 -> Fornecedores <-                           |\n");
     printf("|                                                                         |\n");
-    printf("|                          3 -> Fornecedores <-                           |\n");
+    printf("|                            3 -> Produtos <-                             |\n");
     printf("|                                                                         |\n");
-    printf("|                            4 -> Produtos <-                             |\n");
+    printf("|                          4 -> Colaboradores <-                          |\n");
     printf("|                                                                         |\n");
-    printf("|                          5 -> Colaboradores <-                          |\n");
+    printf("|                            5 -> Clientes <-                             |\n");
     printf("|                                                                         |\n");
-    printf("|                            6 -> Clientes <-                             |\n");
-    printf("|                                                                         |\n");
-    printf("|                        7 -> Sobre o programa <-                         |\n");
+    printf("|                        6 -> Sobre o programa <-                         |\n");
     printf("|                                                                         |\n");
     printf("|                         0 -> Fechar programa <-                         |\n");
     printf("|                                                                         |\n");
@@ -67,15 +65,36 @@ int menu_administrativo(void) {
     printf("|                                                                         |\n");
     printf("|                     2 -> Pesquisar admnistrador <-                      |\n");
     printf("|                                                                         |\n");
-    printf("|                    3 -> Relatorio administradores <-                    |\n");
+    printf("|                           3 -> Relatórios <-                            |\n");
     printf("|                                                                         |\n");
-    printf("|                     4 -> Relatorio fornecedores <-                      |\n");
+    printf("|                     0 -> Voltar ao menu anterior <-                     |\n");
     printf("|                                                                         |\n");
-    printf("|                       5 -> Relatorio produtos <-                        |\n");
+    printf("+=========================================================================+\n");
+    printf("Selecione uma opção: \n");
+    scanf("%d", &op);
+    getchar();
+    return op;
+}
+
+
+//Função menu relatórios
+int menu_relatorio(void) {
+    int op;
+    system("clear");
+    tela_banner();
+    printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                     6 -> Relatorio colaboradores <-                     |\n");
+    printf("|                             Administrativo                              |\n");
     printf("|                                                                         |\n");
-    printf("|                       7 -> Relatorio clientes <-                        |\n");
+    printf("|                    1 -> Relatório administradores <-                    |\n");
+    printf("|                                                                         |\n");
+    printf("|                     2 -> Relatório fornecedores <-                      |\n");
+    printf("|                                                                         |\n");
+    printf("|                       3 -> Relatório produtos <-                        |\n");
+    printf("|                                                                         |\n");
+    printf("|                     4 -> Relatório colaboradores <-                     |\n");
+    printf("|                                                                         |\n");
+    printf("|                       5 -> Relatório clientes <-                        |\n");
     printf("|                                                                         |\n");
     printf("|                     0 -> Voltar ao menu anterior <-                     |\n");
     printf("|                                                                         |\n");
