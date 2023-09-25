@@ -54,6 +54,7 @@ void cad_venda(void) {
     tela_cad_venda();
     tela_venda_q_prod();
     ent_quant();
+    acresc_item_venda();
     tela_cad_venda();
     tela_venda_cliente();
     info_cliente_0();
@@ -67,3 +68,39 @@ void pesq_venda(void) {
     ent_id_venda();
     dados_venda();
 }
+
+
+void acresc_item_venda(void) {
+    int op;
+    do {
+        op = menu_item_venda();
+        switch (op) {
+            case 1:
+                tela_cad_venda();
+                tela_venda_produt();
+                ent_cod_barras();
+                tela_cad_venda();
+                tela_venda_q_prod();
+                ent_quant();
+                break;
+            case 2:
+                break;
+            default:
+                tela_erro();
+                break;
+        }
+    }
+    while (op != 2);
+}
+
+
+/*void fomr_ag(void) {
+    int op;
+    do {
+        op = menu_form_pag();
+        switch (op) {
+            case 1:
+        }
+    }
+}
+*/

@@ -223,6 +223,46 @@ int menu_venda(void) {
 }
 
 
+//Função adicionar item a venda
+int menu_item_venda(void) {
+    int op;
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                      1 -> Acrescentar novo item <-                      |\n");
+    printf("|                                                                         |\n");
+    printf("|                     2 -> Prosseguir com a venda <-                      |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    printf("Selecione uma opção: \n");
+    scanf("%d", &op);
+    getchar();
+    return op;
+}
+
+
+//Função forma de pagamento
+int menu_form_pag(void) {
+    int op;
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                           Forma de pagamento                            |\n");
+    printf("|                                                                         |\n");
+    printf("|                            1 -> Dinheiro <-                             |\n");
+    printf("|                                                                         |\n");
+    printf("|                               2 -> Pix <-                               |\n");
+    printf("|                                                                         |\n");
+    printf("|                        3 -> Cartão de crédito <-                        |\n");
+    printf("|                                                                         |\n");
+    printf("|                        4 -> Cartão de débito <-                         |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    printf("Selecione uma opção: \n");
+    scanf("%d", &op);
+    getchar();
+    return op;
+}
+
+
 //Tela sobre o programa
 void tela_sobre(void) {
     system("clear");

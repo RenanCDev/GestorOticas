@@ -25,4 +25,6 @@ int menu_colaborador(void);
 int menu_cliente(void);
 int menu_relatorio(void);
 int menu_venda(void);
+int menu_item_venda(void);
+int menu_form_pag(void);
 void tela_sobre(void);
