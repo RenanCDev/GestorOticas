@@ -39,7 +39,6 @@ void modulo_administrativo (void) {
                 break;
             default:
                 tela_erro();
-                getchar();
                 break;
         }
     }

@@ -37,7 +37,6 @@ void modulo_colaborador (void) {
                 break;
             default:
                 tela_erro();
-                getchar();
                 break;
         }
     }

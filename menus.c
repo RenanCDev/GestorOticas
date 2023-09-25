@@ -216,7 +216,6 @@ void tela_sobre(void) {
     printf("|               Developed by @RenanMRb - since august, 2023               |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");  
-    getchar();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|         O projeto EAGLE EYES é um projeto de gestão de óticas .         |\n");
@@ -228,6 +227,11 @@ void tela_sobre(void) {
     printf("|                   Este NÃO é um programa comercial .                    |\n");
     printf("|                                                                         |\n");
     printf("|       O desenolvedor não se responsabiliza por quaisquer danos !        |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                        Tecle ENTER para retornar                        |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     getchar();

@@ -46,7 +46,6 @@ void modulo_relatorio (void) {
                 break;
             default:
                 tela_erro();
-                getchar();
                 break;
         }
     }

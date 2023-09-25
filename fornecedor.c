@@ -37,7 +37,6 @@ void modulo_fornecedor (void) {
                 break;
             default:
                 tela_erro();
-                getchar();
                 break;
         }
     }

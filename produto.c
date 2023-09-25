@@ -40,7 +40,6 @@ void modulo_produto (void) {
                 break;
             default:
                 tela_erro();
-                getchar();
                 break;
         }
     }
