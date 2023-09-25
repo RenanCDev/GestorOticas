@@ -36,7 +36,11 @@ void modulo_administrativo (void) {
             case 3:
                 modulo_relatorio();
             case 0:
-            break;
+                break;
+            default:
+                tela_erro();
+                getchar();
+                break;
         }
     }
     while (op != 0);

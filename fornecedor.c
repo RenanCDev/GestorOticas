@@ -34,7 +34,11 @@ void modulo_fornecedor (void) {
                 pesq_fornec();
                 break;
             case 0:
-            break;
+                break;
+            default:
+                tela_erro();
+                getchar();
+                break;
         }
     }
     while (op != 0);

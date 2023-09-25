@@ -34,7 +34,11 @@ void modulo_colaborador (void) {
                 pesq_colab();
                 break;
             case 0:
-            break;
+                break;
+            default:
+                tela_erro();
+                getchar();
+                break;
         }
     }
     while (op != 0);

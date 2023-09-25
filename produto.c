@@ -37,7 +37,11 @@ void modulo_produto (void) {
                 pesq_produto();
                 break;
             case 0:
-            break;
+                break;
+            default:
+                tela_erro();
+                getchar();
+                break;
         }
     }
     while (op != 0);
