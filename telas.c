@@ -222,6 +222,79 @@ void tela_pesq_cliente(void) {
 }
 
 
+//Telas para vendas
+//Tela cadastrar venda
+void tela_cad_venda(void) {
+    system("clear");
+    tela_banner();
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                             Cadastro venda                              |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
+//Tela pesquisar venda
+void tela_pesq_venda(void) {
+    system("clear");
+    tela_banner();
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                             Pesquisar venda                             |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
+//Tela colaborador venda
+void tela_venda_colab(void) {
+    system("clear");
+    tela_banner();
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                           Venda - colaborador                           |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
+//Tela produto venda
+void tela_venda_produt(void) {
+    system("clear");
+    tela_banner();
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                             Venda - produto                             |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
+//Tela quantidade do produto venda
+void tela_venda_q_prod(void) {
+    system("clear");
+    tela_banner();
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                      Venda - Quantidade do produto                      |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
+//Tela cliente venda
+void tela_venda_cliente(void) {
+    system("clear");
+    tela_banner();
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                             Venda - cliente                             |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
 //Tela Erro
 void tela_erro(void) {
     printf("+=========================================================================+\n");
@@ -343,11 +416,25 @@ void dados_colab(void) {
     printf("+=========================================================================+\n");
 }
 
+
 //Pesquisar cliente em desenvolvimento
 void dados_cliente(void) {
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                   Aqui aparecerá os dados do cliente                    |\n");
+    printf("|                                                                         |\n");
+    printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    getchar();
+}
+
+
+//Pesquisar venda em desenvolvimento
+void dados_venda(void) {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                    Aqui aparecerá os dados da venda                     |\n");
     printf("|                                                                         |\n");
     printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
     printf("|                                                                         |\n");
@@ -428,4 +515,32 @@ void tela_cad_cliente_ok(void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     getchar();
+}
+
+
+//Tela cadastro cliente ok em desenvolvimento
+void tela_venda_ok(void) {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                Aqui aparecerá o cadastro da venda . . .                 |\n");
+    printf("|                                                                         |\n");
+    printf("|                      Venda concluida com sucesso !                      |\n");
+    printf("|                                                                         |\n");
+    printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    getchar();
+}
+
+
+//Informativos
+//Informativo venda para cliente sem cadastro
+void info_cliente_0(void) {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                   No caso do cliente não ter cadastro                   |\n");
+    printf("|                                                                         |\n");
+    printf("|          insira -> 0 <-, logo após tecle ENTER para prosseguir          |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
 }

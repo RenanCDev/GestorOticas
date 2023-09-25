@@ -41,7 +41,9 @@ int menu_principal(void) {
     printf("|                                                                         |\n");
     printf("|                            5 -> Clientes <-                             |\n");
     printf("|                                                                         |\n");
-    printf("|                        6 -> Sobre o programa <-                         |\n");
+    printf("|                             6 -> Vendas <-                              |\n");
+    printf("|                                                                         |\n");
+    printf("|                        7 -> Sobre o programa <-                         |\n");
     printf("|                                                                         |\n");
     printf("|                         0 -> Fechar programa <-                         |\n");
     printf("|                                                                         |\n");
@@ -187,6 +189,29 @@ int menu_cliente(void) {
     printf("|                        1 -> Cadastrar cliente <-                        |\n");
     printf("|                                                                         |\n");
     printf("|                        2 -> Pesquisar cliente <-                        |\n");
+    printf("|                                                                         |\n");
+    printf("|                     0 -> Voltar ao menu anterior <-                     |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    printf("Selecione uma opção: \n");
+    scanf("%d", &op);
+    getchar();
+    return op;
+}
+
+
+//Função menu venda
+int menu_venda(void) {
+    int op;
+    system("clear");
+    tela_banner();
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                                 Vendas                                  |\n");
+    printf("|                                                                         |\n");
+    printf("|                         1 -> Cadastrar venda <-                         |\n");
+    printf("|                                                                         |\n");
+    printf("|                         2 -> Pesquisar venda <-                         |\n");
     printf("|                                                                         |\n");
     printf("|                     0 -> Voltar ao menu anterior <-                     |\n");
     printf("|                                                                         |\n");

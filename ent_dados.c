@@ -156,7 +156,7 @@ void ent_quant(void) {
     pont = (char*) malloc(5*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                Digite a quantidade de entrada de peças :                |\n");
+    printf("|                     Digite a quantidade de peças :                      |\n");
     printf("|                                                                         |\n");
     printf("|                         Insira apenas números !                         |\n");
     printf("|                                                                         |\n");
@@ -168,7 +168,7 @@ void ent_quant(void) {
 }
 
 
-//Entrada do valor de enttrada da peça
+//Entrada do valor de entrada da peça
 void ent_valor_ent(void) {
     char valor;
     char* pont;
@@ -203,4 +203,23 @@ void ent_valor_saida(void) {
     printf("+=========================================================================+\n");   
     scanf("%c", &valor);
     //return valor;
+}
+
+
+//Entrada id da venda
+void ent_id_venda(void) {
+    char id;
+    char* pont;
+    pont = (char*) malloc(10*sizeof(char));
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                         Digite o id da venda :                          |\n");
+    printf("|                                                                         |\n");
+    printf("|                         Insira apenas números !                         |\n");
+    printf("|                                                                         |\n");
+    scanf("%[0-9]", pont);
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");   
+    scanf("%c", &id);
+    //return id;
 }

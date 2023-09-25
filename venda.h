@@ -15,15 +15,6 @@
     ("+=========================================================================+\n")  */
 
 
-/////
-//#include de todas as #include
-#include "telas.h"
-#include "ent_dados.h"
-#include "menus.h"
-#include "administrativo.h"
-#include "fornecedor.h"
-#include "produto.h"
-#include "colaborador.h"
-#include "cliente.h"
-#include "relatorio.h"
-#include "venda.h"
+void modulo_venda(void);
+void cad_venda(void);
+void pesq_venda(void);

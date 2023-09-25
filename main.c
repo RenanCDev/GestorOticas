@@ -46,6 +46,9 @@ int main(void) {
                 modulo_cliente();
                 break;
             case 6:
+                modulo_venda();
+                break;
+            case 7:
                 tela_sobre();
                 getchar();
                 break;

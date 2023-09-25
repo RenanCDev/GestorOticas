@@ -27,3 +27,4 @@ void ent_desc_produto(void);
 void ent_quant(void);
 void ent_valor_ent(void);
 void ent_valor_saida(void);
+void ent_id_venda(void);
