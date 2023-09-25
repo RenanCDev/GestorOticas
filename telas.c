@@ -375,7 +375,7 @@ void tela_cad_adm_ok(void) {
 void tela_cad_forn_ok(void) {
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|            Aqui aparecerá o cadastro do administrador . . .             |\n");
+    printf("|              Aqui aparecerá o cadastro do fornecedor . . .              |\n");
     printf("|                                                                         |\n");
     printf("|                    Cadastro concluido com sucesso !                     |\n");
     printf("|                                                                         |\n");
@@ -390,7 +390,7 @@ void tela_cad_forn_ok(void) {
 void tela_cad_prod_ok(void) {
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|            Aqui aparecerá o cadastro do administrador . . .             |\n");
+    printf("|               Aqui aparecerá o cadastro do produto . . .                |\n");
     printf("|                                                                         |\n");
     printf("|                    Cadastro concluido com sucesso !                     |\n");
     printf("|                                                                         |\n");
@@ -405,7 +405,7 @@ void tela_cad_prod_ok(void) {
 void tela_cad_colab_ok(void) {
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|            Aqui aparecerá o cadastro do administrador . . .             |\n");
+    printf("|             Aqui aparecerá o cadastro do colaborador . . .              |\n");
     printf("|                                                                         |\n");
     printf("|                    Cadastro concluido com sucesso !                     |\n");
     printf("|                                                                         |\n");
@@ -420,7 +420,7 @@ void tela_cad_colab_ok(void) {
 void tela_cad_cliente_ok(void) {
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|            Aqui aparecerá o cadastro do administrador . . .             |\n");
+    printf("|               Aqui aparecerá o cadastro do cliente . . .                |\n");
     printf("|                                                                         |\n");
     printf("|                    Cadastro concluido com sucesso !                     |\n");
     printf("|                                                                         |\n");

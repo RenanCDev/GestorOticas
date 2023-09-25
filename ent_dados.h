@@ -18,15 +18,12 @@
 ///
 //Declaração das funções de entrada de dados
 void ent_cpf(void);
-void re_ent_cpf(void);
 void ent_email(void);
-void re_ent_email(void);
 void ent_cel(void);
-void re_ent_cel(void);
 void ent_nome(void);
-void re_ent_nome(void);
 void ent_cnpj(void);
-void re_ent_cnpj(void);
 void ent_cod_barras(void);
-void re_ent_cod_barras(void);
 void ent_desc_produto(void);
+void ent_quant(void);
+void ent_valor_ent(void);
+void ent_valor_saida(void);

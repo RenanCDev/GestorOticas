@@ -52,7 +52,15 @@ void cad_produto (void){
     tela_cad_produto();
     ent_cod_barras();
     tela_cad_produto();
+    ent_cnpj();
+    tela_cad_produto();
     ent_desc_produto();
+    tela_cad_produto();
+    ent_quant();
+    tela_cad_produto();
+    ent_valor_ent();
+    tela_cad_produto();
+    ent_valor_saida();
     tela_cad_prod_ok();
 }
 
