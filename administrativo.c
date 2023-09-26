@@ -59,7 +59,7 @@ void cad_admin (void){
     ent_nome();
     tela_cad_admin();
     t_exe_cad_adm();
-    tela_cad_adm_ok();
+    tela_cad_concl();
 }
 
 

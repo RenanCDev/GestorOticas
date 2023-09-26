@@ -57,7 +57,7 @@ void cad_colab (void){
     ent_nome();
     tela_cad_colab();
     t_exe_cad_colab();
-    tela_cad_colab_ok();
+    tela_cad_concl();
 }
 
 

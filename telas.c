@@ -320,95 +320,30 @@ void tela_erro(void) {
 }
 
 
-//Tela cadastro administrador ok em desenvolvimento
-void tela_cad_adm_ok(void) {
+//Tela cadastro concluído
+void tela_cad_concl(void) {
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|            Aqui aparecerá o cadastro do administrador . . .             |\n");
+    printf("|                    CADASTRO CONCLUÍDO COM SUCESSO !                     |\n");
     printf("|                                                                         |\n");
-    printf("|                    Cadastro concluido com sucesso !                     |\n");
-    printf("|                                                                         |\n");
-    printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
+    printf("|                         Tecle ENTER para seguir                         |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     getchar();
 }
 
 
-//Tela cadastro fornecedor ok em desenvolvimento
-void tela_cad_forn_ok(void) {
+//Tela venda concluída
+void tela_vend_concl(void) {
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|              Aqui aparecerá o cadastro do fornecedor . . .              |\n");
+    printf("|                      VENDA CONCLUÍDO COM SUCESSO !                      |\n");
     printf("|                                                                         |\n");
-    printf("|                    Cadastro concluido com sucesso !                     |\n");
-    printf("|                                                                         |\n");
-    printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
+    printf("|                         Tecle ENTER para seguir                         |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     getchar();
 }
-
-
-//Tela cadastro produto ok em desenvolvimento
-void tela_cad_prod_ok(void) {
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|               Aqui aparecerá o cadastro do produto . . .                |\n");
-    printf("|                                                                         |\n");
-    printf("|                    Cadastro concluido com sucesso !                     |\n");
-    printf("|                                                                         |\n");
-    printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-    getchar();
-}
-
-
-//Tela cadastro colaborador ok em desenvolvimento
-void tela_cad_colab_ok(void) {
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|             Aqui aparecerá o cadastro do colaborador . . .              |\n");
-    printf("|                                                                         |\n");
-    printf("|                    Cadastro concluido com sucesso !                     |\n");
-    printf("|                                                                         |\n");
-    printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-    getchar();
-}
-
-
-//Tela cadastro cliente ok em desenvolvimento
-void tela_cad_cliente_ok(void) {
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|               Aqui aparecerá o cadastro do cliente . . .                |\n");
-    printf("|                                                                         |\n");
-    printf("|                    Cadastro concluido com sucesso !                     |\n");
-    printf("|                                                                         |\n");
-    printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-    getchar();
-}
-
-
-//Tela cadastro cliente ok em desenvolvimento
-void tela_venda_ok(void) {
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                Aqui aparecerá o cadastro da venda . . .                 |\n");
-    printf("|                                                                         |\n");
-    printf("|                      Venda concluida com sucesso !                      |\n");
-    printf("|                                                                         |\n");
-    printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-    getchar();
-}
-
 
 //Informativos
 //Informativo venda para cliente sem cadastro

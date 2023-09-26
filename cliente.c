@@ -57,7 +57,7 @@ void cad_cliente (void){
     ent_nome();
     tela_cad_cliente();
     t_exe_cad_cliente();
-    tela_cad_cliente_ok();
+    tela_cad_concl();
 }
 
 

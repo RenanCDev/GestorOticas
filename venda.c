@@ -62,7 +62,7 @@ void cad_venda(void) {
     form_pag();
     tela_cad_venda();
     t_exe_cad_vend();
-    tela_venda_ok();
+    tela_vend_concl();
 }
 
 

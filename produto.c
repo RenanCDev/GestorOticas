@@ -63,7 +63,7 @@ void cad_produto (void){
     ent_valor_saida();
     tela_cad_produto();
     t_exe_cad_prod();
-    tela_cad_prod_ok();
+    tela_cad_concl();
 }
 
 

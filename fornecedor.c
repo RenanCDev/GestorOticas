@@ -57,7 +57,7 @@ void cad_fornec (void){
     ent_nome();
     tela_cad_fornec();
     t_exe_cad_forn();
-    tela_cad_forn_ok();
+    tela_cad_concl();
 }
 
 

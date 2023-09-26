@@ -68,13 +68,9 @@ void tela_relat_venda(void);
 void tela_erro(void);
 
 
-//Telas de desenvolvimento
-void tela_cad_adm_ok(void);
-void tela_cad_forn_ok(void);
-void tela_cad_prod_ok(void);
-void tela_cad_colab_ok(void);
-void tela_cad_cliente_ok(void);
-void tela_venda_ok(void);
+//Telas de conclusão
+void tela_cad_concl(void);
+void tela_vend_concl(void);
 
 
 //Telas informacionais
