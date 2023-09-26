@@ -57,6 +57,8 @@ void cad_admin (void){
     ent_cel();
     tela_cad_admin();
     ent_nome();
+    tela_cad_admin();
+    t_exe_cad_adm();
     tela_cad_adm_ok();
 }
 
@@ -65,6 +67,6 @@ void cad_admin (void){
 void pesq_admin (void) {
     tela_pesq_admin();
     ent_cpf();
-    dados_admin();
+    t_exe_cad_adm();
     getchar();
 }

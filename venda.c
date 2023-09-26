@@ -61,6 +61,7 @@ void cad_venda(void) {
     ent_cpf();
     form_pag();
     tela_cad_venda();
+    t_exe_cad_vend();
     tela_venda_ok();
 }
 
@@ -68,7 +69,8 @@ void cad_venda(void) {
 void pesq_venda(void) {
     tela_pesq_venda();
     ent_id_venda();
-    dados_venda();
+    t_exe_cad_vend();
+    getchar();
 }
 
 

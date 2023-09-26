@@ -20,8 +20,3 @@
 void modulo_administrativo (void);
 void cad_admin (void);
 void pesq_admin (void);
-void relat_admin (void);
-void relat_fornec (void);
-void relat_produto (void);
-void relat_colab (void);
-void relat_cliente (void);

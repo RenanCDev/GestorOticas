@@ -125,6 +125,18 @@ void tela_relat_cliente(void) {
 }
 
 
+//Tela relatório clientes
+void tela_relat_venda(void) {
+    system("clear");
+    tela_banner();
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                            Relatório vendas                             |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
 //Telas do módulo fornecedor
 //Tela cadastrar fornecedor
 void tela_cad_fornec(void) {
@@ -308,141 +320,6 @@ void tela_erro(void) {
 }
 
 
-//Telas de desenvolvimento
-//Pesquisar administrador em desenvolvimento
-void dados_admin(void) {
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                Aqui aparecerá os dados do administrador                 |\n");
-    printf("|                                                                         |\n");
-    printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-}
-
-
-//Relatório administrador em desenvolvimento
-void dados_relat_admin(void) {
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|          Aqui aparecerá os dados do relatório do administrador          |\n");
-    printf("|                                                                         |\n");
-    printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-}
-
-
-//Relatório fornecedor em desenvolvimento
-void dados_relat_fornec(void) {
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|           Aqui aparecerá os dados do relatório do fornecedor            |\n");
-    printf("|                                                                         |\n");
-    printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-}
-
-
-//Relatório produto em desenvolvimento
-void dados_relat_produto(void) {
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|             Aqui aparecerá os dados do relatório do produto             |\n");
-    printf("|                                                                         |\n");
-    printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-}
-
-
-//Relatório colaborador em desenvolvimento
-void dados_relat_colab(void) {
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|           Aqui aparecerá os dados do relatório do colaborador           |\n");
-    printf("|                                                                         |\n");
-    printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-}
-
-
-//Relatório cliente em desenvolvimento
-void dados_relat_cliente(void) {
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|             Aqui aparecerá os dados do relatório do cliente             |\n");
-    printf("|                                                                         |\n");
-    printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-}
-
-
-//Pesquisar fornecedor em desenvolvimento
-void dados_fornec(void) {
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                  Aqui aparecerá os dados do fornecedor                  |\n");
-    printf("|                                                                         |\n");
-    printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-}
-
-
-//Pesquisar produto em desenvolvimento
-void dados_produto(void) {
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                   Aqui aparecerá os dados do produto                    |\n");
-    printf("|                                                                         |\n");
-    printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-}
-
-
-//Pesquisar colaborador em desenvolvimento
-void dados_colab(void) {
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                 Aqui aparecerá os dados do colaborador                  |\n");
-    printf("|                                                                         |\n");
-    printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-}
-
-
-//Pesquisar cliente em desenvolvimento
-void dados_cliente(void) {
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                   Aqui aparecerá os dados do cliente                    |\n");
-    printf("|                                                                         |\n");
-    printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-    getchar();
-}
-
-
-//Pesquisar venda em desenvolvimento
-void dados_venda(void) {
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                    Aqui aparecerá os dados da venda                     |\n");
-    printf("|                                                                         |\n");
-    printf("|                          EM DESENVOLVIMENTO!!!                          |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-    getchar();
-}
-
-
 //Tela cadastro administrador ok em desenvolvimento
 void tela_cad_adm_ok(void) {
     printf("+=========================================================================+\n");
@@ -541,6 +418,502 @@ void info_cliente_0(void) {
     printf("|                   No caso do cliente não ter cadastro                   |\n");
     printf("|                                                                         |\n");
     printf("|          insira -> 0 <-, logo após tecle ENTER para prosseguir          |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
+//Telas Exemplos
+//Tela exemplo cadastro administrador
+void t_exe_cad_adm(void) {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|   CPF : XXX.XXX.XXX-XX                                                  |\n");
+    printf("|                                                                         |\n");
+    printf("|   Email : email.exemplo@dominio.com                                     |\n");
+    printf("|                                                                         |\n");
+    printf("|   Cel .: (XX)9 9999 - 9999                                              |\n");
+    printf("|                                                                         |\n");
+    printf("|   Administrador : Administrador Exemplo de eyes                         |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
+//Tela exemplo relatório administrador
+void t_exe_relat_adm(void) {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|   CPF : XXX.XXX.XXX-XX                                                  |\n");
+    printf("|                                                                         |\n");
+    printf("|   Email : email.exemplo@dominio.com                                     |\n");
+    printf("|                                                                         |\n");
+    printf("|   Cel .: (XX)9 9999 - 9999                                              |\n");
+    printf("|                                                                         |\n");
+    printf("|   Administrador : Administrador Exemplo de eyes                         |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|   Atividade 01 - #descrição completa da venda . . .                     |\n");
+    printf("|                                                                         |\n");
+    printf("|                  #dados comletos . . .                                  |\n");
+    printf("|                                                                         |\n");
+    printf("|                  #descrição completa da venda . . .                     |\n");
+    printf("|                                                                         |\n");
+    printf("|                  #dados comletos . . .                                  |\n");
+    printf("|                                                                         |\n");
+    printf("|                  #descrição completa da venda . . .                     |\n");
+    printf("|                                                                         |\n");
+    printf("|                  #dados comletos . . .                                  |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|   Atividade 02 - #descrição completa da venda . . .                     |\n");
+    printf("|                                                                         |\n");
+    printf("|                  #dados comletos . . .                                  |\n");
+    printf("|                                                                         |\n");
+    printf("|                  #descrição completa da venda . . .                     |\n");
+    printf("|                                                                         |\n");
+    printf("|                  #dados comletos . . .                                  |\n");
+    printf("|                                                                         |\n");
+    printf("|                  #descrição completa da venda . . .                     |\n");
+    printf("|                                                                         |\n");
+    printf("|                  #dados comletos . . .                                  |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|   Atividade 03 - #descrição completa da venda . . .                     |\n");
+    printf("|                                                                         |\n");
+    printf("|                  #dados comletos . . .                                  |\n");
+    printf("|                                                                         |\n");
+    printf("|                  #descrição completa da venda . . .                     |\n");
+    printf("|                                                                         |\n");
+    printf("|                  #dados comletos . . .                                  |\n");
+    printf("|                                                                         |\n");
+    printf("|                  #descrição completa da venda . . .                     |\n");
+    printf("|                                                                         |\n");
+    printf("|                  #dados comletos . . .                                  |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|   Atividade 04 - #descrição completa da venda . . .                     |\n");
+    printf("|                                                                         |\n");
+    printf("|                  #dados comletos . . .                                  |\n");
+    printf("|                                                                         |\n");
+    printf("|                  #descrição completa da venda . . .                     |\n");
+    printf("|                                                                         |\n");
+    printf("|                  #dados comletos . . .                                  |\n");
+    printf("|                                                                         |\n");
+    printf("|                  #descrição completa da venda . . .                     |\n");
+    printf("|                                                                         |\n");
+    printf("|                  #dados comletos . . .                                  |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|   Atividade 05 - #descrição completa da venda . . .                     |\n");
+    printf("|                                                                         |\n");
+    printf("|                  #dados comletos . . .                                  |\n");
+    printf("|                                                                         |\n");
+    printf("|                  #descrição completa da venda . . .                     |\n");
+    printf("|                                                                         |\n");
+    printf("|                  #dados comletos . . .                                  |\n");
+    printf("|                                                                         |\n");
+    printf("|                  #descrição completa da venda . . .                     |\n");
+    printf("|                                                                         |\n");
+    printf("|                  #dados comletos . . .                                  |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
+//Tela exemplo relatório administrador
+void t_exe_relat_forn(void) {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|   CNPJ : XX.XXX.XXX/0001-XX                                             |\n");
+    printf("|                                                                         |\n");
+    printf("|   Email : email.exemplo@dominio.com                                     |\n");
+    printf("|                                                                         |\n");
+    printf("|   Cel .: (XX)9 9999 - 9999                                              |\n");
+    printf("|                                                                         |\n");
+    printf("|   Fornecedor : Fornecedor Exemplo de eyes                               |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|   Compra 01 - #descrição completa da compra . . .                       |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("|              #descrição completa da compra . . .                        |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("|              #descrição completa da compra . . .                        |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|   Compra 02 - #descrição completa da compra . . .                       |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("|              #descrição completa da compra . . .                        |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("|              #descrição completa da compra . . .                        |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|   Compra 03 - #descrição completa da compra . . .                       |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("|              #descrição completa da compra . . .                        |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("|              #descrição completa da compra . . .                        |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|   Compra 04 - #descrição completa da compra . . .                       |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("|              #descrição completa da compra . . .                        |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("|              #descrição completa da compra . . .                        |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|   Compra 05 - #descrição completa da compra . . .                       |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("|              #descrição completa da compra . . .                        |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("|              #descrição completa da compra . . .                        |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
+//Tela exemplo relatório administrador
+void t_exe_relat_prod(void) {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|   Código de barras : 0 00000 00000 0                                    |\n");
+    printf("|                                                                         |\n");
+    printf("|   Fornecedor : Fornecedor Exemplo Eagle                                 |\n");
+    printf("|                                                                         |\n");
+    printf("|   Descrição do produto : **** ******* ******** *******                  |\n");
+    printf("|                                                                         |\n");
+    printf("|   Estoque atual : 9999                                                  |\n");
+    printf("|                                                                         |\n");
+    printf("|   Valor de compra : 999,99 R$                                           |\n");
+    printf("|                                                                         |\n");
+    printf("|   Valor de compra : 1888,88 R$                                          |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|              #descrição completa do produto . . .                       |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("|              #descrição completa do produto . . .                       |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("|              #descrição completa do produto . . .                       |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
+//Tela exemplo relatório colaborador
+void t_exe_relat_colab(void) {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|   CPF : XXX.XXX.XXX-XX                                                  |\n");
+    printf("|                                                                         |\n");
+    printf("|   Email : email.exemplo@dominio.com                                     |\n");
+    printf("|                                                                         |\n");
+    printf("|   Cel .: (XX)9 9999 - 9999                                              |\n");
+    printf("|                                                                         |\n");
+    printf("|   Colaborador : Colaborador Exemplo de eyes                             |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|   Venda 01 - #descrição completa da venda . . .                         |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("|              #descrição completa da venda . . .                         |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("|              #descrição completa da venda . . .                         |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|   Venda 02 - #descrição completa da venda . . .                         |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("|              #descrição completa da venda . . .                         |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("|              #descrição completa da venda . . .                         |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|   Venda 03 - #descrição completa da venda . . .                         |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("|              #descrição completa da venda . . .                         |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("|              #descrição completa da venda . . .                         |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|   Venda 04 - #descrição completa da venda . . .                         |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("|              #descrição completa da venda . . .                         |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("|              #descrição completa da venda . . .                         |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|   Venda 05 - #descrição completa da venda . . .                         |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("|              #descrição completa da venda . . .                         |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("|              #descrição completa da venda . . .                         |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+//Tela exemplo relatório cliente
+void t_exe_relat_client(void) {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|   CPF : XXX.XXX.XXX-XX                                                  |\n");
+    printf("|                                                                         |\n");
+    printf("|   Email : email.exemplo@dominio.com                                     |\n");
+    printf("|                                                                         |\n");
+    printf("|   Cel .: (XX)9 9999 - 9999                                              |\n");
+    printf("|                                                                         |\n");
+    printf("|   Cliente : Cliente Exemplo de eyes                                     |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|   Compra 01 - #descrição completa da compra . . .                       |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("|              #descrição completa da compra . . .                        |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("|              #descrição completa da compra . . .                        |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|   Compra 02 - #descrição completa da compra . . .                       |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("|              #descrição completa da compra . . .                        |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("|              #descrição completa da compra . . .                        |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|   Compra 03 - #descrição completa da compra . . .                       |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("|              #descrição completa da compra . . .                        |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("|              #descrição completa da compra . . .                        |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|   Compra 04 - #descrição completa da compra . . .                       |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("|              #descrição completa da compra . . .                        |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("|              #descrição completa da compra . . .                        |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|   Compra 05 - #descrição completa da compra . . .                       |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("|              #descrição completa da compra . . .                        |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("|              #descrição completa da compra . . .                        |\n");
+    printf("|                                                                         |\n");
+    printf("|              #dados comletos . . .                                      |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
+//Tela exemplo cadastro fornecedor
+void t_exe_cad_forn(void) {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|   CNPJ : XX.XXX.XXX/0001-XX                                             |\n");
+    printf("|                                                                         |\n");
+    printf("|   Email : email.exemplo@dominio.com                                     |\n");
+    printf("|                                                                         |\n");
+    printf("|   Cel .: (XX)9 9999 - 9999                                              |\n");
+    printf("|                                                                         |\n");
+    printf("|   Fornecedor : Fornecedor Exemplo de eyes                               |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
+//Tela exemplo cadastro pproduto
+void t_exe_cad_prod(void) {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|   Código de barras : 0 00000 00000 0                                    |\n");
+    printf("|                                                                         |\n");
+    printf("|   Fornecedor : Fornecedor Exemplo Eagle                                 |\n");
+    printf("|                                                                         |\n");
+    printf("|   Descrição do produto : **** ******* ******** *******                  |\n");
+    printf("|                                                                         |\n");
+    printf("|   Estoque atual : 9999                                                  |\n");
+    printf("|                                                                         |\n");
+    printf("|   Valor de compra : 999,99 R$                                           |\n");
+    printf("|                                                                         |\n");
+    printf("|   Valor de compra : 1888,88 R$                                          |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
+//Tela exemplo cadastro colaborador
+void t_exe_cad_colab(void) {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|   CPF : XXX.XXX.XXX-XX                                                  |\n");
+    printf("|                                                                         |\n");
+    printf("|   Email : email.exemplo@dominio.com                                     |\n");
+    printf("|                                                                         |\n");
+    printf("|   Cel .: (XX)9 9999 - 9999                                              |\n");
+    printf("|                                                                         |\n");
+    printf("|   Colaborador : Colaborador Exemplo de eyes                             |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
+//Tela exemplo cadastro cliente
+void t_exe_cad_cliente(void) {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|   CPF : XXX.XXX.XXX-XX                                                  |\n");
+    printf("|                                                                         |\n");
+    printf("|   Email : email.exemplo@dominio.com                                     |\n");
+    printf("|                                                                         |\n");
+    printf("|   Cel .: (XX)9 9999 - 9999                                              |\n");
+    printf("|                                                                         |\n");
+    printf("|   Cliente : Cliente Exemplo de eyes                                     |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+}
+
+
+//Tela exemplo cadastro venda
+void t_exe_cad_vend(void) {
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|   Colaborador CPF : XXX.XXX.XXX-XX                                      |\n");
+    printf("|                                                                         |\n");
+    printf("|   Código de barras : 0 00000 00000 0                                    |\n");
+    printf("|                                                                         |\n");
+    printf("|   Descrição do produto : **** ******* ******** *******                  |\n");
+    printf("|                                                                         |\n");
+    printf("|   Quantidade de peças : 5                                               |\n");
+    printf("|                                                                         |\n");
+    printf("|   Valor da peça / Valor total : 99,00 R$ x 5 = 495,00 R$                |\n");
+    printf("|                                                                         |\n");
+    printf("|   Código de barras : 0 00000 00000 0                                    |\n");
+    printf("|                                                                         |\n");
+    printf("|   Descrição do produto : **** ******* ******** *******                  |\n");
+    printf("|                                                                         |\n");
+    printf("|   Quantidade de peças : 10                                              |\n");
+    printf("|                                                                         |\n");
+    printf("|   Valor da peça / Valor total : 1000,00 R$ x 5 = 10.000,00 R$           |\n");
+    printf("|                                                                         |\n");
+    printf("|   Valor total da venda : 10.495,00 R$                                   |\n");
+    printf("|                                                                         |\n");
+    printf("|   Cliente CPF : XXX.XXX.XXX-XX                                          |\n");
+    printf("|                                                                         |\n");
+    printf("|   Metodo de pagamento : PIX                                             |\n");
+    printf("|                                                                         |\n");
+    printf("|   ID da venda : XXXXXXXXXX-XX-XX                                        |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
 }

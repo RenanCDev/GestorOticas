@@ -42,6 +42,9 @@ void modulo_relatorio (void) {
             case 5:
                 relat_cliente();
                 break;
+            case 6:
+                relat_venda();
+                break;    
             case 0:
                 break;
             default:
@@ -58,7 +61,7 @@ void modulo_relatorio (void) {
 void relat_admin (void) {
     tela_relat_admin();
     ent_cpf();
-    dados_relat_admin();
+    t_exe_relat_adm();
     getchar();
 }
 
@@ -67,7 +70,7 @@ void relat_admin (void) {
 void relat_fornec (void) {
     tela_relat_fornec();
     ent_cnpj();
-    dados_relat_fornec();
+    t_exe_relat_forn();
     getchar();
 }
 
@@ -76,7 +79,7 @@ void relat_fornec (void) {
 void relat_produto (void) {
     tela_relat_produto();
     ent_cod_barras();
-    dados_relat_produto();
+    t_exe_relat_prod();
     getchar();
 }
 
@@ -85,7 +88,7 @@ void relat_produto (void) {
 void relat_colab (void) {
     tela_relat_colab();
     ent_cpf();
-    dados_relat_colab();
+    t_exe_relat_colab();
     getchar();
 }
 
@@ -94,6 +97,15 @@ void relat_colab (void) {
 void relat_cliente (void) {
     tela_relat_cliente();
     ent_cpf();
-    dados_relat_cliente();
+    t_exe_relat_client();
+    getchar();
+}
+
+
+//Função para apresentar o relatório vendas
+void relat_venda (void) {
+    tela_relat_venda();
+    ent_id_venda();
+    t_exe_cad_vend();
     getchar();
 }

@@ -55,6 +55,8 @@ void cad_fornec (void){
     ent_cel();
     tela_cad_fornec();
     ent_nome();
+    tela_cad_fornec();
+    t_exe_cad_forn();
     tela_cad_forn_ok();
 }
 
@@ -63,6 +65,6 @@ void cad_fornec (void){
 void pesq_fornec (void) {
     tela_pesq_fornec();
     ent_cnpj();
-    dados_fornec();
+    t_exe_cad_forn();
     getchar();
 }

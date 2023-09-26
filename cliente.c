@@ -55,6 +55,8 @@ void cad_cliente (void){
     ent_cel();
     tela_cad_cliente();
     ent_nome();
+    tela_cad_cliente();
+    t_exe_cad_cliente();
     tela_cad_cliente_ok();
 }
 
@@ -63,5 +65,6 @@ void cad_cliente (void){
 void pesq_cliente (void) {
     tela_pesq_cliente();
     ent_cpf();
-    dados_cliente();
+    t_exe_cad_cliente();
+    getchar();
 }

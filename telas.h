@@ -61,6 +61,7 @@ void tela_venda_colab(void);
 void tela_venda_produt(void);
 void tela_venda_q_prod(void);
 void tela_venda_cliente(void);
+void tela_relat_venda(void);
 
 
 //Tela erro
@@ -68,17 +69,6 @@ void tela_erro(void);
 
 
 //Telas de desenvolvimento
-void dados_admin(void);
-void dados_relat_admin(void);
-void dados_relat_fornec(void);
-void dados_relat_produto(void);
-void dados_relat_colab(void);
-void dados_relat_cliente(void);
-void dados_fornec(void);
-void dados_produto(void);
-void dados_colab(void);
-void dados_cliente(void);
-void dados_venda(void);
 void tela_cad_adm_ok(void);
 void tela_cad_forn_ok(void);
 void tela_cad_prod_ok(void);
@@ -90,4 +80,17 @@ void tela_venda_ok(void);
 //Telas informacionais
 void info_cliente_0(void);
 
+
+//Telas exemplo
+void t_exe_cad_adm(void);
+void t_exe_relat_adm(void);
+void t_exe_relat_forn(void);
+void t_exe_relat_prod(void);
+void t_exe_relat_colab(void);
+void t_exe_relat_client(void);
+void t_exe_cad_forn(void);
+void t_exe_cad_prod(void);
+void t_exe_cad_colab(void);
+void t_exe_cad_cliente(void);
+void t_exe_cad_vend(void);
 

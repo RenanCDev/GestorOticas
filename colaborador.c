@@ -55,6 +55,8 @@ void cad_colab (void){
     ent_cel();
     tela_cad_colab();
     ent_nome();
+    tela_cad_colab();
+    t_exe_cad_colab();
     tela_cad_colab_ok();
 }
 
@@ -63,6 +65,6 @@ void cad_colab (void){
 void pesq_colab (void) {
     tela_pesq_colab();
     ent_cpf();
-    dados_colab();
+    t_exe_cad_colab();
     getchar();
 }

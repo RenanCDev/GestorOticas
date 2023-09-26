@@ -98,6 +98,8 @@ int menu_relatorio(void) {
     printf("|                                                                         |\n");
     printf("|                       5 -> Relatório clientes <-                        |\n");
     printf("|                                                                         |\n");
+    printf("|                        6 -> Relatório vendas <-                         |\n");
+    printf("|                                                                         |\n");
     printf("|                     0 -> Voltar ao menu anterior <-                     |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
@@ -249,7 +251,7 @@ int menu_form_pag(void) {
     printf("|                                                                         |\n");
     printf("|                            1 -> Dinheiro <-                             |\n");
     printf("|                                                                         |\n");
-    printf("|                               2 -> Pix <-                               |\n");
+    printf("|                               2 -> PIX <-                               |\n");
     printf("|                                                                         |\n");
     printf("|                        3 -> Cartão de crédito <-                        |\n");
     printf("|                                                                         |\n");

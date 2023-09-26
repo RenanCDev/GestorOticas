@@ -61,6 +61,8 @@ void cad_produto (void){
     ent_valor_ent();
     tela_cad_produto();
     ent_valor_saida();
+    tela_cad_produto();
+    t_exe_cad_prod();
     tela_cad_prod_ok();
 }
 
@@ -69,6 +71,6 @@ void cad_produto (void){
 void pesq_produto (void) {
     tela_pesq_produto();
     ent_cod_barras();
-    dados_produto();
+    t_exe_cad_prod();
     getchar();
 }

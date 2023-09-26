@@ -23,3 +23,4 @@ void relat_fornec (void);
 void relat_produto (void);
 void relat_colab (void);
 void relat_cliente (void);
+void relat_venda(void);
