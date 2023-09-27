@@ -42,9 +42,11 @@ void tela_banner(void) {
 
 //Telas módulo administrativo
 //Tela cadastrar administrador
-void tela_cad_admin(void) {
+void tela_cad_admin(char *pont) {
     system("clear");
     tela_banner();
+    pont = (char*) malloc(26*sizeof(char));
+    printf ("%c\n", *pont);
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                         Cadastro administrador                          |\n");
