@@ -18,6 +18,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
+#include <string.h>
 #include "all.h"
 
 
@@ -45,10 +46,10 @@ void tela_banner(void) {
 void tela_cad_admin(char* ex) {
     system("clear");
     tela_banner();
-    printf ("%s", ex);
+    int tam_ex = strlen(ex);
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                         Cadastro administrador                          |\n");
+    printf("|                         %s                          |\n", ex);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
 }
