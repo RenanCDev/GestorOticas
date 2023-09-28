@@ -22,7 +22,7 @@ void tela_banner(void);
 
 
 //Telas do módulo administrativo
-void tela_cad_admin(char *pont);
+void tela_cad_admin(char*);
 void tela_pesq_admin(void);
 
 

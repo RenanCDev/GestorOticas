@@ -49,19 +49,18 @@ void modulo_administrativo (void) {
 /////
 //Função para cadastrar administrador
 void cad_admin (void){
-    char ex;
-    char pont[] = "Cadastro administrador";
-    printf ("%s", pont);
+    char ex[] = "Cadastro administrador";
+    printf ("%s", ex);
     getchar();
-    tela_cad_admin(pont);
+    tela_cad_admin(ex);
     ent_cpf();
-    tela_cad_admin(pont);
+    tela_cad_admin(ex);
     ent_email();
-    tela_cad_admin(pont);
+    tela_cad_admin(ex);
     ent_cel();
-    tela_cad_admin(pont);
+    tela_cad_admin(ex);
     ent_nome();
-    tela_cad_admin(pont);
+    tela_cad_admin(ex);
     t_exe_cad_adm();
     tela_cad_concl();
 }
