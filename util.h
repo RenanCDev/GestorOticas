@@ -15,7 +15,10 @@
     ("+=========================================================================+\n")  */
 
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <locale.h>
-#include "all.h"
+/////
+//Declaração das funções uteis
+int valid_op(char, char);
+int valid_digt(char);
+int valid_cel(char*);
+int valid_letra(char*);
+int valid_nome(char*);

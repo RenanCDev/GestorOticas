@@ -27,3 +27,4 @@
 #include "cliente.h"
 #include "relatorio.h"
 #include "venda.h"
+#include "util.h"

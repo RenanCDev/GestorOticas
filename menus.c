@@ -24,8 +24,8 @@
 //////
 //Funções menus
 //Função menu principal
-int menu_principal(void) {
-    int op;
+char menu_principal(void) {
+    char op;
     tela_banner();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -49,14 +49,14 @@ int menu_principal(void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     printf("Selecione uma opção: \n");
-    scanf("%d", &op);
+    scanf("%c", &op);
     return op;
 }
 
 
 //Função menu administrativo
-int menu_administrativo(void) {
-    int op;
+char menu_administrativo(void) {
+    char op;
     system("clear");
     tela_banner();
     printf("+=========================================================================+\n");
@@ -73,15 +73,15 @@ int menu_administrativo(void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     printf("Selecione uma opção: \n");
-    scanf("%d", &op);
+    scanf("%c", &op);
     getchar();
     return op;
 }
 
 
 //Função menu relatórios
-int menu_relatorio(void) {
-    int op;
+char menu_relatorio(void) {
+    char op;
     system("clear");
     tela_banner();
     printf("+=========================================================================+\n");
@@ -104,15 +104,15 @@ int menu_relatorio(void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     printf("Selecione uma opção: \n");
-    scanf("%d", &op);
+    scanf("%c", &op);
     getchar();
     return op;
 }
 
 
 //Função menu fornecedor
-int menu_fornecedor(void) {
-    int op;
+char menu_fornecedor(void) {
+    char op;
     system("clear");
     tela_banner();
     printf("+=========================================================================+\n");
@@ -127,15 +127,15 @@ int menu_fornecedor(void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     printf("Selecione uma opção: \n");
-    scanf("%d", &op);
+    scanf("%c", &op);
     getchar();
     return op;
 }
 
 
 //Função menu produto
-int menu_produto(void) {
-    int op;
+char menu_produto(void) {
+    char op;
     system("clear");
     tela_banner();
     printf("+=========================================================================+\n");
@@ -150,15 +150,15 @@ int menu_produto(void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     printf("Selecione uma opção: \n");
-    scanf("%d", &op);
+    scanf("%c", &op);
     getchar();
     return op;
 }
 
 
 //Função menu colaborador
-int menu_colaborador(void) {
-    int op;
+char menu_colaborador(void) {
+    char op;
     system("clear");
     tela_banner();
     printf("+=========================================================================+\n");
@@ -173,15 +173,15 @@ int menu_colaborador(void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     printf("Selecione uma opção: \n");
-    scanf("%d", &op);
+    scanf("%c", &op);
     getchar();
     return op;
 }
 
 
 //Função menu cliente
-int menu_cliente(void) {
-    int op;
+char menu_cliente(void) {
+    char op;
     system("clear");
     tela_banner();
     printf("+=========================================================================+\n");
@@ -196,15 +196,15 @@ int menu_cliente(void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     printf("Selecione uma opção: \n");
-    scanf("%d", &op);
+    scanf("%c", &op);
     getchar();
     return op;
 }
 
 
 //Função menu venda
-int menu_venda(void) {
-    int op;
+char menu_venda(void) {
+    char op;
     system("clear");
     tela_banner();
     printf("+=========================================================================+\n");
@@ -219,15 +219,15 @@ int menu_venda(void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     printf("Selecione uma opção: \n");
-    scanf("%d", &op);
+    scanf("%c", &op);
     getchar();
     return op;
 }
 
 
 //Função adicionar item a venda
-int menu_item_venda(void) {
-    int op;
+char menu_item_venda(void) {
+    char op;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                      1 -> Acrescentar novo item <-                      |\n");
@@ -236,15 +236,15 @@ int menu_item_venda(void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     printf("Selecione uma opção: \n");
-    scanf("%d", &op);
+    scanf("%c", &op);
     getchar();
     return op;
 }
 
 
 //Função forma de pagamento
-int menu_form_pag(void) {
-    int op;
+char menu_form_pag(void) {
+    char op;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                           Forma de pagamento                            |\n");
@@ -259,7 +259,7 @@ int menu_form_pag(void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     printf("Selecione uma opção: \n");
-    scanf("%d", &op);
+    scanf("%c", &op);
     getchar();
     return op;
 }
