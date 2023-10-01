@@ -20,5 +20,5 @@
 int valid_op (int, int);
 int valid_digt (char);
 int valid_cel (char*);
-int valid_letra (char*);
+int valid_letra (char);
 int valid_nome (char*);

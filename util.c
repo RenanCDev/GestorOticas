@@ -44,7 +44,7 @@ int valid_digt (char num) {
         return 0; } }
 
 
-/*
+
 //Validação para número de celular:
 //Verifica se a string recebida é um numero de celular(retorna "1") ou não(retorna "0")
 //
@@ -55,7 +55,7 @@ int valid_cel(char* cel) {
         return 0;
     }
     for (int i = 0; i < tam_cel; i++) {
-        if (!valid_cel(cel[i])) {
+        if (!valid_digt(cel[i])) {
             return 0;
         }
     }
@@ -66,12 +66,12 @@ int valid_cel(char* cel) {
 //Verifica se a letra recebida é caractere alfabético(retorna "1") ou não(retorna "0")
 //Considerando alfabeto "A" - "Z" ou "a" - "z"
 //
-int valid_letra(char* letra) {
-    if (letra >= "A" && letra <= "Z") {
+int valid_letra(char letra) {
+    if (letra >= 'A' && letra <= 'Z') {
         return 1;
     } 
     else {
-        if (letra >= "a" && letra <= "z") {
+        if (letra >= 'a' && letra <= 'z') {
             return 1;
         } 
         else {
@@ -86,11 +86,10 @@ int valid_letra(char* letra) {
 //Considerando alfabeto "A" - "Z" ou "a" - "z"
 //
 int valid_nome(char* nome) {
-    for (int i=0; nome[i]!="\0"; i++) {
+    for (int i=0; nome[i]!='\0'; i++) {
         if (!valid_letra(nome[i])) {
             return 0;
         }
     }
     return 1;
 }
-*/
