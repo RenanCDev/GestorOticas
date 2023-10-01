@@ -17,7 +17,7 @@
 
 /////
 //Declaração das funções uteis
-int valid_op(char, char);
+int valid_op(int, int);
 int valid_digt(char);
 int valid_cel(char*);
 int valid_letra(char*);

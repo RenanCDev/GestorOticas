@@ -27,8 +27,8 @@
 //Valida opção:
 //Verifica se a entrada informada esta dentro das opções possíveis(retorna "1") ou não(retorna "0")
 //
-int valid_op(char op, char op_max) {
-    if (op >= '0' && op <= op_max) {
+int valid_op(int op, int op_max) {
+    if (op >= 0 && op <= op_max) {
         return 1;
     } 
     else {

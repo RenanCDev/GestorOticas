@@ -17,14 +17,14 @@
 
 /////
 //Declaração das funções dos menus
-char menu_principal(void);
-char menu_administrativo(void);
-char menu_fornecedor(void);
-char menu_produto(void);
-char menu_colaborador(void);
-char menu_cliente(void);
-char menu_relatorio(void);
-char menu_venda(void);
-char menu_item_venda(void);
-char menu_form_pag(void);
+int menu_principal(void);
+int menu_administrativo(void);
+int menu_fornecedor(void);
+int menu_produto(void);
+int menu_colaborador(void);
+int menu_cliente(void);
+int menu_relatorio(void);
+int menu_venda(void);
+int menu_item_venda(void);
+int menu_form_pag(void);
 void tela_sobre(void);

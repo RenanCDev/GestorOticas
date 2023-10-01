@@ -30,29 +30,29 @@ int main(void) {
     do {
         op0 = menu_principal();
         switch (op0) {
-            case '1':
+            case 1:
                 modulo_administrativo();
                 break;
-            case '2':
+            case 2:
                 modulo_fornecedor();
                 break;
-            case '3':
+            case 3:
                 modulo_produto();
                 break;
-            case '4':
+            case 4:
                 modulo_colaborador();
                 break;
-            case '5':
+            case 5:
                 modulo_cliente();
                 break;
-            case '6':
+            case 6:
                 modulo_venda();
                 break;
-            case '7':
+            case 7:
                 tela_sobre();
                 getchar();
                 break;
-            case '0':
+            case 0:
                 break;
             default:
                 tela_erro();
@@ -60,7 +60,7 @@ int main(void) {
                 break;
             }
         }
-    while (op0 != '0');
+    while (op0 != 0);
     return 0;
     }
 }
