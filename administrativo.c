@@ -22,52 +22,51 @@
 
 
 void modulo_administrativo (void) {
-    setlocale(LC_ALL, "Portuguese_Brazil");
-    int op;
+    setlocale (LC_ALL,"Portuguese_Brazil");
+    char op;
+    char op_max = '3';
     do {
-        op = menu_administrativo();
-        switch (op) {
-            case 1:
-                cad_admin();
-                break;
-            case 2:
-                pesq_admin();
-                break;
-            case 3:
-                modulo_relatorio();
-            case 0:
-                break;
-            default:
+        do {
+            op = menu_administrativo ();
+            if (!valid_op(op, op_max)) {
                 tela_erro();
+                getchar(); } }   
+        while (!valid_op(op, op_max));
+        switch (op) {
+            case '1':
+                getchar ();
+                cad_admin ();
                 break;
-        }
-    }
-    while (op != 0);
-}
+            case '2':
+                getchar ();
+                pesq_admin ();
+                break;
+            case '3':
+                modulo_relatorio ();
+                break; } }
+    while (op != '0'); }
 
 
 /////
 //Função para cadastrar administrador
-void cad_admin (void){
+void cad_admin (void) {
     char ex[22] = "Cadastro administrador";
-    tela_cad_admin(ex);
-    ent_cpf();
-    tela_cad_admin(ex);
-    ent_email();
-    tela_cad_admin(ex);
-    ent_cel();
-    tela_cad_admin(ex);
-    ent_nome();
-    tela_cad_admin(ex);
-    t_exe_cad_adm();
-    tela_cad_concl();
-}
+    tela_cad_admin (ex);
+    ent_cpf ();
+    tela_cad_admin (ex);
+    ent_email ();
+    tela_cad_admin (ex);
+    ent_cel ();
+    tela_cad_admin (ex);
+    ent_nome ();
+    tela_cad_admin (ex);
+    t_exe_cad_adm ();
+    tela_cad_concl (); }
 
 
 //Função para pesquisar administrador
 void pesq_admin (void) {
-    tela_pesq_admin();
-    ent_cpf();
-    t_exe_cad_adm();
-    getchar();
-}
+    tela_pesq_admin ();
+    ent_cpf ();
+    t_exe_cad_adm ();
+    getchar (); }

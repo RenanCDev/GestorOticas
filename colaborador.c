@@ -22,49 +22,46 @@
 
 
 void modulo_colaborador (void) {
-    setlocale(LC_ALL, "Portuguese_Brazil");
-    int op;
+    setlocale( LC_ALL, "Portuguese_Brazil");
+    char op;
+    char op_max = '2';
     do {
-        op = menu_colaborador();
-        switch (op) {
-            case 1:
-                cad_colab();
-                break;
-            case 2:
-                pesq_colab();
-                break;
-            case 0:
-                break;
-            default:
+        do {
+            op = menu_colaborador ();
+            if (!valid_op(op, op_max)) {
                 tela_erro();
+                getchar(); } }   
+        while (!valid_op(op, op_max));
+        switch (op) {
+            case '1':
+                getchar ();
+                cad_colab ();
                 break;
-        }
-    }
-    while (op != 0);
-}
-
+            case '2':
+                getchar ();
+                pesq_colab ();
+                break; } }
+    while (op != '0'); }
 
 
 //Função para cadastrar colaborador
-void cad_colab (void){
-    tela_cad_colab();
-    ent_cpf();
-    tela_cad_colab();
-    ent_email();
-    tela_cad_colab();
-    ent_cel();
-    tela_cad_colab();
-    ent_nome();
-    tela_cad_colab();
-    t_exe_cad_colab();
-    tela_cad_concl();
-}
+void cad_colab (void) {
+    tela_cad_colab ();
+    ent_cpf ();
+    tela_cad_colab ();
+    ent_email ();
+    tela_cad_colab ();
+    ent_cel ();
+    tela_cad_colab ();
+    ent_nome ();
+    tela_cad_colab ();
+    t_exe_cad_colab ();
+    tela_cad_concl (); }
 
 
 //Função para pesquisar colaborador
 void pesq_colab (void) {
-    tela_pesq_colab();
-    ent_cpf();
-    t_exe_cad_colab();
-    getchar();
-}
+    tela_pesq_colab ();
+    ent_cpf ();
+    t_exe_cad_colab ();
+    getchar (); }

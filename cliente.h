@@ -16,6 +16,6 @@
 
 
 //Declaração das funções cliente.c
-void modulo_cliente(void);
-void cad_cliente(void);
-void pesq_cliente(void);
+void modulo_cliente (void);
+void cad_cliente (void);
+void pesq_cliente (void);

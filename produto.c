@@ -18,59 +18,54 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
-#include "menus.h"
-#include "telas.h"
-#include "ent_dados.h"
-#include "produto.h"
+#include "all.h"
 
 
 void modulo_produto (void) {
-    setlocale(LC_ALL, "Portuguese_Brazil");
-    int op;
+    setlocale (LC_ALL, "Portuguese_Brazil");
+    char op;
+    char op_max = '2';
     do {
-        op = menu_produto();
-        switch (op) {
-            case 1:
-                cad_produto();
-                break;
-            case 2:
-                pesq_produto();
-                break;
-            case 0:
-                break;
-            default:
+        do {
+            op = menu_produto ();
+            if (!valid_op(op, op_max)) {
                 tela_erro();
+                getchar(); } }   
+        while (!valid_op(op, op_max));
+        switch (op) {
+            case '1':
+                getchar ();
+                cad_produto ();
                 break;
-        }
-    }
-    while (op != 0);
-}
+            case '2':
+                getchar ();
+                pesq_produto ();
+                break; } }
+    while (op != '0'); }
 
 
 //Função cadastrar produto
-void cad_produto (void){
-    tela_cad_produto();
-    ent_cod_barras();
-    tela_cad_produto();
-    ent_cnpj();
-    tela_cad_produto();
-    ent_desc_produto();
-    tela_cad_produto();
-    ent_quant();
-    tela_cad_produto();
-    ent_valor_ent();
-    tela_cad_produto();
-    ent_valor_saida();
-    tela_cad_produto();
-    t_exe_cad_prod();
-    tela_cad_concl();
-}
+void cad_produto (void) {
+    tela_cad_produto ();
+    ent_cod_barras ();
+    tela_cad_produto ();
+    ent_cnpj ();
+    tela_cad_produto ();
+    ent_desc_produto ();
+    tela_cad_produto ();
+    ent_quant ();
+    tela_cad_produto ();
+    ent_valor_ent ();
+    tela_cad_produto ();
+    ent_valor_saida ();
+    tela_cad_produto ();
+    t_exe_cad_prod ();
+    tela_cad_concl (); }
 
 
 //Função pesquisar produto
 void pesq_produto (void) {
-    tela_pesq_produto();
-    ent_cod_barras();
-    t_exe_cad_prod();
-    getchar();
-}
+    tela_pesq_produto ();
+    ent_cod_barras ();
+    t_exe_cad_prod ();
+    getchar (); }

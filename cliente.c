@@ -21,50 +21,48 @@
 #include "all.h"
 
 
-void modulo_cliente(void) {
-    setlocale(LC_ALL, "Portuguese_Brazil");
-    int op;
+void modulo_cliente (void) {
+    setlocale (LC_ALL, "Portuguese_Brazil");
+    char op;
+    char op_max = '2';
     do {
-        op = menu_cliente();
-        switch (op) {
-            case 1:
-                cad_cliente();
-                break;
-            case 2:
-                pesq_cliente();
-                break;
-            case 0:
-                break;
-            default:
+        do {
+            op = menu_cliente ();
+            if (!valid_op(op, op_max)) {
                 tela_erro();
+                getchar(); } }   
+        while (!valid_op(op, op_max));
+        switch (op) {
+            case '1':
+                getchar ();
+                cad_cliente ();
                 break;
-        }
-    }
-    while (op != 0);
-}
+            case '2':
+                getchar ();
+                pesq_cliente ();
+                break; } }
+    while (op != '0'); }
 
 
 
 //Função  para cadastrar clienteorador
-void cad_cliente (void){
-    tela_cad_cliente();
-    ent_cpf();
-    tela_cad_cliente();
-    ent_email();
-    tela_cad_cliente();
-    ent_cel();
-    tela_cad_cliente();
-    ent_nome();
-    tela_cad_cliente();
-    t_exe_cad_cliente();
-    tela_cad_concl();
-}
+void cad_cliente (void) {
+    tela_cad_cliente ();
+    ent_cpf ();
+    tela_cad_cliente ();
+    ent_email ();
+    tela_cad_cliente ();
+    ent_cel ();
+    tela_cad_cliente ();
+    ent_nome ();
+    tela_cad_cliente ();
+    t_exe_cad_cliente ();
+    tela_cad_concl (); }
 
 
 //Função para pesquisar clienteorador
 void pesq_cliente (void) {
-    tela_pesq_cliente();
-    ent_cpf();
-    t_exe_cad_cliente();
-    getchar();
-}
+    tela_pesq_cliente ();
+    ent_cpf ();
+    t_exe_cad_cliente ();
+    getchar (); }

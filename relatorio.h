@@ -17,10 +17,10 @@
 
 /////
 //Declaração das funções relatorio.c
-void modulo_relatorio(void);
+void modulo_relatorio (void);
 void relat_admin (void);
 void relat_fornec (void);
 void relat_produto (void);
 void relat_colab (void);
 void relat_cliente (void);
-void relat_venda(void);
+void relat_venda (void);

@@ -23,7 +23,7 @@
 /////
 //Funções de entrada de dados
 //entrada do CPF
-void ent_cpf(void) {
+void ent_cpf (void) {
     char cpf;
     char* pont;
     pont = (char*) malloc(11*sizeof(char));
@@ -36,13 +36,11 @@ void ent_cpf(void) {
     scanf("%[0-9]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
-    scanf("%c", &cpf);
-    //return cpf;
-}
+    scanf("%c", &cpf); }
 
 
 //Entrada do email
-void ent_email(void) {
+void ent_email (void) {
     char email;
     char* pont;
     pont = (char*) malloc(30*sizeof(char));
@@ -53,13 +51,11 @@ void ent_email(void) {
     scanf("%[0-9A-Za-z@._-]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
-    scanf("%c", &email);
-    //return email;
-}
+    scanf("%c", &email); }
 
 
 //Entrada do celular
-void ent_cel(void) {
+void ent_cel (void) {
     char cel;
     char* pont;
     pont = (char*) malloc(11*sizeof(char));
@@ -72,13 +68,11 @@ void ent_cel(void) {
     scanf("%[0-9]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
-    scanf("%c", &cel);
-    //return cel;
-}
+    scanf("%c", &cel); }
 
 
 //Entrada do nome
-void ent_nome(void) {
+void ent_nome (void) {
     char nome;
     char* pont;
     pont = (char*) malloc(30*sizeof(char));
@@ -89,13 +83,11 @@ void ent_nome(void) {
     scanf("%[0-9A-Za-z@._-]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
-    scanf("%c", &nome);
-    //return nome;
-}
+    scanf("%c", &nome); }
 
 
 //Entrada do CNPJ
-void ent_cnpj(void) {
+void ent_cnpj (void) {
     char cnpj;
     char* pont;
     pont = (char*) malloc(14*sizeof(char));
@@ -108,13 +100,11 @@ void ent_cnpj(void) {
     scanf("%[0-9]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    scanf("%c", &cnpj);
-    //return cnpj;
-}
+    scanf("%c", &cnpj); }
 
 
 //Entrada do código de barras
-void ent_cod_barras(void) {
+void ent_cod_barras (void) {
     char cod_barras;
     char* pont;
     pont = (char*) malloc(44*sizeof(char));
@@ -127,13 +117,11 @@ void ent_cod_barras(void) {
     scanf("%[0-9]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    scanf("%c", &cod_barras);
-    //return cod_barras;
-}
+    scanf("%c", &cod_barras); }
 
 
 //Entrada da descrição do produto
-void ent_desc_produto(void) {
+void ent_desc_produto (void) {
     char desc_produto;
     char* pont;
     pont = (char*) malloc(50*sizeof(char));
@@ -144,13 +132,11 @@ void ent_desc_produto(void) {
     scanf("%[0-9A-Za-z@._-]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    scanf("%c", &desc_produto);
-    //return desc_produto;
-}
+    scanf("%c", &desc_produto); }
 
 
 //Entrada quantidade de peças
-void ent_quant(void) {
+void ent_quant (void) {
     char quant;
     char* pont;
     pont = (char*) malloc(5*sizeof(char));
@@ -163,13 +149,11 @@ void ent_quant(void) {
     scanf("%[0-9]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    scanf("%c", &quant);
-    //return quant;
-}
+    scanf("%c", &quant); }
 
 
 //Entrada do valor de entrada da peça
-void ent_valor_ent(void) {
+void ent_valor_ent (void) {
     char valor;
     char* pont;
     pont = (char*) malloc(10*sizeof(char));
@@ -182,13 +166,11 @@ void ent_valor_ent(void) {
     scanf("%[0-9,]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    scanf("%c", &valor);
-    //return valor;
-}
+    scanf("%c", &valor); }
 
 
 //Entrada valor de saída da peça
-void ent_valor_saida(void) {
+void ent_valor_saida (void) {
     char valor;
     char* pont;
     pont = (char*) malloc(10*sizeof(char));
@@ -201,13 +183,11 @@ void ent_valor_saida(void) {
     scanf("%[0-9,]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    scanf("%c", &valor);
-    //return valor;
-}
+    scanf("%c", &valor); }
 
 
 //Entrada id da venda
-void ent_id_venda(void) {
+void ent_id_venda (void) {
     char id;
     char* pont;
     pont = (char*) malloc(10*sizeof(char));
@@ -220,6 +200,4 @@ void ent_id_venda(void) {
     scanf("%[0-9]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    scanf("%c", &id);
-    //return id;
-}
+    scanf("%c", &id); }

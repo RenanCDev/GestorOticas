@@ -27,28 +27,24 @@
 //Valida opção:
 //Verifica se a entrada informada esta dentro das opções possíveis(retorna "1") ou não(retorna "0")
 //
-int valid_op(int op, int op_max) {
+int valid_op (int op, int op_max) {
     if (op >= 0 && op <= op_max) {
-        return 1;
-    } 
+        return 1; } 
     else {
-        return 0;
-    }
-}
+        return 0; } }
 
-/*
+
 //Validação para dígito:
 //Verifica se o caractere é digito(retorna "1") ou não(retorna "0")
 //
-int valid_digt(char num) {
+int valid_digt (char num) {
     if (num >= '0' && num <= '9') {
-        return 1;
-    } else {
-        return 0;
-    }
-}
+        return 1; } 
+    else {
+        return 0; } }
 
 
+/*
 //Validação para número de celular:
 //Verifica se a string recebida é um numero de celular(retorna "1") ou não(retorna "0")
 //

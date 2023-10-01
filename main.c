@@ -23,44 +23,41 @@
 
 /////
 //Programa principal
-int main(void) {
-    setlocale(LC_ALL, "Portuguese_Brazil");
+int main (void) {
+    setlocale (LC_ALL, "Portuguese_Brazil");
     char op0;
-    {
+    char op_max = '7';
     do {
-        op0 = menu_principal();
+        do {
+            op0 = menu_principal ();
+            if (!valid_op(op0, op_max)) {
+                tela_erro ();
+                getchar ();
+                getchar (); } }     
+        while (!valid_op(op0, op_max));
         switch (op0) {
-            case 1:
-                modulo_administrativo();
+            case '1':
+                modulo_administrativo ();
                 break;
-            case 2:
-                modulo_fornecedor();
+            case '2':
+                modulo_fornecedor ();
                 break;
-            case 3:
-                modulo_produto();
+            case '3':
+                modulo_produto ();
                 break;
-            case 4:
-                modulo_colaborador();
+            case '4':
+                modulo_colaborador ();
                 break;
-            case 5:
-                modulo_cliente();
+            case '5':
+                modulo_cliente ();
                 break;
-            case 6:
-                modulo_venda();
+            case '6':
+                modulo_venda ();
                 break;
-            case 7:
-                tela_sobre();
-                getchar();
-                break;
-            case 0:
-                break;
-            default:
-                tela_erro();
-                getchar();
-                break;
-            }
-        }
-    while (op0 != 0);
-    return 0;
-    }
-}
+            case '7':
+                tela_sobre ();
+                getchar ();
+                getchar ();
+                break; } }
+    while (op0 != '0');
+    return 0; }

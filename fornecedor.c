@@ -22,49 +22,47 @@
 
 
 void modulo_fornecedor (void) {
-    setlocale(LC_ALL, "Portuguese_Brazil");
-    int op;
+    setlocale (LC_ALL, "Portuguese_Brazil");
+    char op;
+    char op_max = '2';
     do {
-        op = menu_fornecedor();
-        switch (op) {
-            case 1:
-                cad_fornec();
-                break;
-            case 2:
-                pesq_fornec();
-                break;
-            case 0:
-                break;
-            default:
+        do {
+            op = menu_fornecedor ();
+            if (!valid_op(op, op_max)) {
                 tela_erro();
+                getchar(); } }   
+        while (!valid_op(op, op_max));
+        switch (op) {
+            case '1':
+                getchar ();
+                cad_fornec ();
                 break;
-        }
-    }
-    while (op != 0);
-}
+            case '2':
+                getchar ();
+                pesq_fornec ();
+                break; } }
+    while (op != '0'); }
 
 
 
 //Função cadastrar fornecedor
-void cad_fornec (void){
-    tela_cad_fornec();
-    ent_cnpj();
-    tela_cad_fornec();
-    ent_email();
-    tela_cad_fornec();
-    ent_cel();
-    tela_cad_fornec();
-    ent_nome();
-    tela_cad_fornec();
-    t_exe_cad_forn();
-    tela_cad_concl();
-}
+void cad_fornec (void) {
+    tela_cad_fornec ();
+    ent_cnpj ();
+    tela_cad_fornec ();
+    ent_email ();
+    tela_cad_fornec ();
+    ent_cel ();
+    tela_cad_fornec ();
+    ent_nome ();
+    tela_cad_fornec ();
+    t_exe_cad_forn ();
+    tela_cad_concl (); }
 
 
 //Função pesquisar fornecedor
 void pesq_fornec (void) {
-    tela_pesq_fornec();
-    ent_cnpj();
-    t_exe_cad_forn();
-    getchar();
-}
+    tela_pesq_fornec ();
+    ent_cnpj ();
+    t_exe_cad_forn ();
+    getchar (); }
