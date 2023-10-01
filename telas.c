@@ -46,7 +46,13 @@ void tela_banner(void) {
 void tela_cad_admin(char* ex) {
     system("clear");
     tela_banner();
-    int tam_ex = strlen(ex);
+    /*int tam_ex = strlen(ex);
+    char linha [76] = "|                                                                         |\n";
+    char* vet = &linha[0];
+    int tam_linha = strlen(linha);
+    printf ("%d\n%d\n%s\n", tam_ex, tam_linha, vet);
+    getchar();
+    getchar();*/
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                         %s                          |\n", ex);
