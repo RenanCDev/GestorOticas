@@ -32,6 +32,7 @@ void modulo_colaborador (void) {
             op = menu_colaborador ();
             if (!valid_op(op, op_max)) {
                 tela_erro();
+                getchar();
                 getchar(); } }   
         while (!valid_op(op, op_max));
         switch (op) {

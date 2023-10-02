@@ -33,6 +33,7 @@ void modulo_venda (void) {
             op = menu_venda ();
             if (!valid_op(op, op_max)) {
                 tela_erro();
+                getchar();
                 getchar(); } }   
         while (!valid_op(op, op_max));
         switch (op) {
@@ -90,6 +91,7 @@ void acresc_item_venda (void) {
             op = menu_item_venda ();
             if (!valid_op(op, op_max)) {
                 tela_erro();
+                getchar();
                 getchar(); } }   
         while (!valid_op(op, op_max));
         switch (op) {
@@ -116,6 +118,7 @@ void form_pag (void) {
             op = menu_form_pag ();
             if (!valid_op(op, op_max)) {
                 tela_erro();
+                getchar();
                 getchar(); } }   
         while (!valid_op(op, op_max));
         switch (op) {

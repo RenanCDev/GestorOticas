@@ -33,6 +33,7 @@ void modulo_produto (void) {
             op = menu_produto ();
             if (!valid_op(op, op_max)) {
                 tela_erro();
+                getchar();
                 getchar(); } }   
         while (!valid_op(op, op_max));
         switch (op) {

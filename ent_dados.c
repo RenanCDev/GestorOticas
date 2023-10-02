@@ -63,16 +63,22 @@ void ent_cel (void) {
     char cel;
     char* pont;
     pont = (char*) malloc(11*sizeof(char));
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                           Digite o celular :                            |\n");
-    printf("|                                                                         |\n");
-    printf("|                         Insira apenas números !                         |\n");
-    printf("|                                                                         |\n");
-    scanf("%[0-9]", pont);
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-    scanf("%c", &cel); }
+    do {
+        printf("+=========================================================================+\n");
+        printf("|                                                                         |\n");
+        printf("|                           Digite o celular :                            |\n");
+        printf("|                                                                         |\n");
+        printf("|                Insira apenas números, incluindo o ddd !                 |\n");
+        printf("|                                                                         |\n");
+        scanf("%[0-9]", pont);
+        printf("|                                                                         |\n");
+        printf("+=========================================================================+\n");
+        scanf("%c", pont);
+        if (!valid_cel(pont)) {
+            tela_erro ();
+            getchar ();
+            getchar (); } }
+    while (!valid_cel(pont)); }
 
 
 //Entrada do nome
@@ -80,7 +86,7 @@ void ent_cel (void) {
 void ent_nome (void) {
     char nome;
     char* pont;
-    pont = (char*) malloc(30*sizeof(char));
+    pont = (char*) malloc(60*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                             Digite o nome :                             |\n");
@@ -96,7 +102,7 @@ void ent_nome (void) {
 void ent_cnpj (void) {
     char cnpj;
     char* pont;
-    pont = (char*) malloc(14*sizeof(char));
+    pont = (char*) malloc(20*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                      Digite o CNPJ do fornecedor :                      |\n");
@@ -132,7 +138,7 @@ void ent_cod_barras (void) {
 void ent_desc_produto (void) {
     char desc_produto;
     char* pont;
-    pont = (char*) malloc(50*sizeof(char));
+    pont = (char*) malloc(154*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                          Descreva o produto :                           |\n");
@@ -148,7 +154,7 @@ void ent_desc_produto (void) {
 void ent_quant (void) {
     char quant;
     char* pont;
-    pont = (char*) malloc(5*sizeof(char));
+    pont = (char*) malloc(6*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                     Digite a quantidade de peças :                      |\n");
@@ -166,7 +172,7 @@ void ent_quant (void) {
 void ent_valor_ent (void) {
     char valor;
     char* pont;
-    pont = (char*) malloc(10*sizeof(char));
+    pont = (char*) malloc(6*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                   Digite o valor de entrada da peça :                   |\n");
@@ -184,7 +190,7 @@ void ent_valor_ent (void) {
 void ent_valor_saida (void) {
     char valor;
     char* pont;
-    pont = (char*) malloc(10*sizeof(char));
+    pont = (char*) malloc(6*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                    Digite o valor de saída da peça :                    |\n");

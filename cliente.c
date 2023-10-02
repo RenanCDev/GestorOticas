@@ -32,6 +32,7 @@ void modulo_cliente (void) {
             op = menu_cliente ();
             if (!valid_op(op, op_max)) {
                 tela_erro();
+                getchar();
                 getchar(); } }   
         while (!valid_op(op, op_max));
         switch (op) {

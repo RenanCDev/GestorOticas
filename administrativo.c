@@ -32,6 +32,7 @@ void modulo_administrativo (void) {
             op = menu_administrativo ();
             if (!valid_op(op, op_max)) {
                 tela_erro();
+                getchar();
                 getchar(); } }   
         while (!valid_op(op, op_max));
         switch (op) {

@@ -33,6 +33,7 @@ void modulo_relatorio (void) {
             op = menu_relatorio ();
             if (!valid_op(op, op_max)) {
                 tela_erro();
+                getchar();
                 getchar(); } }   
         while (!valid_op(op, op_max));
         switch (op) {
