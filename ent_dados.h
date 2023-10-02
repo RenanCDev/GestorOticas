@@ -15,8 +15,9 @@
     ("+=========================================================================+\n")  */
 
 
-///
-//Declaração das funções de entrada de dados
+/////
+//Declaração das funções do aquivo ent_dados.c
+//
 void ent_cpf (void);
 void ent_email (void);
 void ent_cel (void);

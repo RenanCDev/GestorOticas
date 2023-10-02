@@ -16,7 +16,7 @@
     
 
 /////
-//Declaração das funções telas
+//Declaração das funções do arquivo telas.c
 //Tela banner
 void tela_banner (void);
 
@@ -64,16 +64,10 @@ void tela_venda_cliente (void);
 void tela_relat_venda (void);
 
 
-//Tela erro
-void tela_erro (void);
-
-
-//Telas de conclusão
+//Telas informacionais
 void tela_cad_concl (void);
 void tela_vend_concl (void);
-
-
-//Telas informacionais
+void tela_erro (void);
 void info_cliente_0 (void);
 
 
@@ -89,4 +83,3 @@ void t_exe_cad_prod (void);
 void t_exe_cad_colab (void);
 void t_exe_cad_cliente (void);
 void t_exe_cad_vend (void);
-

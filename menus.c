@@ -22,8 +22,10 @@
 
 
 //////
-//Funções menus
-//Função menu principal
+//Menus
+//
+//Menu principal
+//
 char menu_principal (void) {
     char op;
     tela_banner ();
@@ -53,7 +55,8 @@ char menu_principal (void) {
     return op; }
 
 
-//Função menu administrativo
+//Menu administrativo
+//
 char menu_administrativo (void) {
     char op;
     system("clear");
@@ -76,7 +79,8 @@ char menu_administrativo (void) {
     return op; }
 
 
-//Função menu relatórios
+//Menu relatórios
+//
 char menu_relatorio (void) {
     char op;
     system("clear");
@@ -105,7 +109,8 @@ char menu_relatorio (void) {
     return op; }
 
 
-//Função menu fornecedor
+//Menu fornecedor
+//
 char menu_fornecedor (void) {
     char op;
     system("clear");
@@ -126,7 +131,8 @@ char menu_fornecedor (void) {
     return op; }
 
 
-//Função menu produto
+//Menu produto
+//
 char menu_produto (void) {
     char op;
     system("clear");
@@ -147,7 +153,8 @@ char menu_produto (void) {
     return op; }
 
 
-//Função menu colaborador
+//Menu colaborador
+//
 char menu_colaborador (void) {
     char op;
     system("clear");
@@ -168,7 +175,8 @@ char menu_colaborador (void) {
     return op; }
 
 
-//Função menu cliente
+//Menu cliente
+//
 char menu_cliente (void) {
     char op;
     system("clear");
@@ -189,7 +197,8 @@ char menu_cliente (void) {
     return op; }
 
 
-//Função menu venda
+//Menu venda
+//
 char menu_venda (void) {
     char op;
     system("clear");
@@ -210,7 +219,8 @@ char menu_venda (void) {
     return op; }
 
 
-//Função adicionar item a venda
+//Adiciona itens a uma venda
+//
 char menu_item_venda (void) {
     char op;
     printf("+=========================================================================+\n");
@@ -225,7 +235,8 @@ char menu_item_venda (void) {
     return op; }
 
 
-//Função forma de pagamento
+//Forma de pagamento
+//
 char menu_form_pag (void) {
     char op;
     printf("+=========================================================================+\n");
@@ -268,7 +279,11 @@ void tela_sobre (void) {
     printf("|                                                                         |\n");
     printf("|         O projeto EAGLE EYES é um projeto de gestão de óticas .         |\n");
     printf("|                                                                         |\n");
-    printf("|            Tem o objetivo de gerir e administrar uma ótica .            |\n");
+    printf("|       Tem o objetivo avaliar o desenvolvedor do segundo período .       |\n");
+    printf("|                                                                         |\n");
+    printf("|              Avaliador - Doutor Flavius da Luz e Gorgonio               |\n");
+    printf("|                                                                         |\n");
+    printf("| Disciplina DCT1106 Programação -- Bacharelado de Sistemas de Informação |\n");
     printf("|                                                                         |\n");
     printf("|                             > > ATENÇÃO < <                             |\n");
     printf("|                                                                         |\n");

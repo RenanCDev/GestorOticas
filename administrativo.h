@@ -16,7 +16,8 @@
 
 
 /////
-//Declaração das funções administrativo.c
+//Declaração das funções do arquivo administrativo.c
+//
 void modulo_administrativo (void);
 void cad_admin (void);
 void pesq_admin (void);

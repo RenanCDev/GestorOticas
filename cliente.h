@@ -15,7 +15,9 @@
     ("+=========================================================================+\n")  */
 
 
-//Declaração das funções cliente.c
+/////
+//Declaração das funções do arquivo cliente.c
+//
 void modulo_cliente (void);
 void cad_cliente (void);
 void pesq_cliente (void);

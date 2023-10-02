@@ -21,6 +21,9 @@
 #include "all.h"
 
 
+/////
+//Percorre todo o caminho do menu relatorio
+//
 void modulo_relatorio (void) {
     setlocale (LC_ALL, "Portuguese_Brazil");
     char op;
@@ -60,9 +63,10 @@ void modulo_relatorio (void) {
     while (op != '0'); }
 
 
-/////
-//Funções paaraa apresentar os relatórios
-//Função para apresentar o relatório administrador
+//Funções para apresentar os relatórios
+//
+//Relatório administrador
+//
 void relat_admin (void) {
     tela_relat_admin ();
     ent_cpf ();
@@ -70,7 +74,8 @@ void relat_admin (void) {
     getchar (); }
 
 
-//Função para apresentar o relatório fornecedor
+//Relatório fornecedor
+//
 void relat_fornec (void) {
     tela_relat_fornec ();
     ent_cnpj ();
@@ -78,7 +83,8 @@ void relat_fornec (void) {
     getchar (); }
 
 
-//Função para apresentar o relatório produto
+//Relatório produto
+//
 void relat_produto (void) {
     tela_relat_produto ();
     ent_cod_barras ();
@@ -86,7 +92,8 @@ void relat_produto (void) {
     getchar (); }
 
 
-//Função para apresentar o relatório colaborador
+//Relatório colaborador
+//
 void relat_colab (void) {
     tela_relat_colab ();
     ent_cpf ();
@@ -94,7 +101,8 @@ void relat_colab (void) {
     getchar (); }
 
 
-//Função para apresentar o relatório cliente
+//Relatório cliente
+//
 void relat_cliente (void) {
     tela_relat_cliente ();
     ent_cpf ();
@@ -102,7 +110,8 @@ void relat_cliente (void) {
     getchar (); }
 
 
-//Função para apresentar o relatório vendas
+//Relatório vendas
+//
 void relat_venda (void) {
     tela_relat_venda ();
     ent_id_venda ();

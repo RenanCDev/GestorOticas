@@ -21,6 +21,8 @@
 #include "all.h"
 
 
+/////
+//Percorre todo o caminho do menu colaborador
 void modulo_colaborador (void) {
     setlocale( LC_ALL, "Portuguese_Brazil");
     char op;
@@ -44,7 +46,8 @@ void modulo_colaborador (void) {
     while (op != '0'); }
 
 
-//Função para cadastrar colaborador
+//Cadastra um novo colaborador
+//
 void cad_colab (void) {
     tela_cad_colab ();
     ent_cpf ();
@@ -59,7 +62,8 @@ void cad_colab (void) {
     tela_cad_concl (); }
 
 
-//Função para pesquisar colaborador
+//Pesquisa o cadastro de um colaborador
+//
 void pesq_colab (void) {
     tela_pesq_colab ();
     ent_cpf ();

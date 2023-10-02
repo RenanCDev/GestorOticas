@@ -16,7 +16,8 @@
 
 
 /////
-//Declaração das funções dos menus
+//Declaração das funções do arquivo menus.c
+//
 char menu_principal (void);
 char menu_administrativo (void);
 char menu_fornecedor (void);

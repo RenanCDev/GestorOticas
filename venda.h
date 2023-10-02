@@ -15,6 +15,8 @@
     ("+=========================================================================+\n")  */
 
 
+/////
+//Declaração das funções do arquivo venda.c
 void modulo_venda (void);
 void cad_venda (void);
 void pesq_venda (void);

@@ -16,7 +16,8 @@
 
 
 /////
-//Declaração das funções do fornecedor.c
+//Declaração das funções do arquivo fornecedor.c
+//
 void modulo_fornecedor (void);
 void cad_fornec (void);
 void pesq_fornec (void);

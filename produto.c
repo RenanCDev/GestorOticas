@@ -21,6 +21,9 @@
 #include "all.h"
 
 
+/////
+//Percorre todo o caminho do menu produto
+//
 void modulo_produto (void) {
     setlocale (LC_ALL, "Portuguese_Brazil");
     char op;
@@ -44,7 +47,8 @@ void modulo_produto (void) {
     while (op != '0'); }
 
 
-//Função cadastrar produto
+//Cadastra produto
+//
 void cad_produto (void) {
     tela_cad_produto ();
     ent_cod_barras ();
@@ -63,7 +67,8 @@ void cad_produto (void) {
     tela_cad_concl (); }
 
 
-//Função pesquisar produto
+//Pesquisa produto
+//
 void pesq_produto (void) {
     tela_pesq_produto ();
     ent_cod_barras ();

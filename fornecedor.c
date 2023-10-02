@@ -21,6 +21,9 @@
 #include "all.h"
 
 
+/////
+//Percorre todo o caminho do menu fornecedor
+//
 void modulo_fornecedor (void) {
     setlocale (LC_ALL, "Portuguese_Brazil");
     char op;
@@ -44,8 +47,8 @@ void modulo_fornecedor (void) {
     while (op != '0'); }
 
 
-
-//Função cadastrar fornecedor
+//Cadastra fornecedor
+//
 void cad_fornec (void) {
     tela_cad_fornec ();
     ent_cnpj ();
@@ -60,7 +63,8 @@ void cad_fornec (void) {
     tela_cad_concl (); }
 
 
-//Função pesquisar fornecedor
+//Pesquisa fornecedor
+//
 void pesq_fornec (void) {
     tela_pesq_fornec ();
     ent_cnpj ();

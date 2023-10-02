@@ -22,7 +22,9 @@
 
 /////
 //Funções de entrada de dados
+//
 //entrada do CPF
+//
 void ent_cpf (void) {
     char cpf;
     char* pont;
@@ -40,6 +42,7 @@ void ent_cpf (void) {
 
 
 //Entrada do email
+//
 void ent_email (void) {
     char email;
     char* pont;
@@ -55,6 +58,7 @@ void ent_email (void) {
 
 
 //Entrada do celular
+//
 void ent_cel (void) {
     char cel;
     char* pont;
@@ -72,6 +76,7 @@ void ent_cel (void) {
 
 
 //Entrada do nome
+//
 void ent_nome (void) {
     char nome;
     char* pont;
@@ -87,6 +92,7 @@ void ent_nome (void) {
 
 
 //Entrada do CNPJ
+//
 void ent_cnpj (void) {
     char cnpj;
     char* pont;
@@ -104,6 +110,7 @@ void ent_cnpj (void) {
 
 
 //Entrada do código de barras
+//
 void ent_cod_barras (void) {
     char cod_barras;
     char* pont;
@@ -121,6 +128,7 @@ void ent_cod_barras (void) {
 
 
 //Entrada da descrição do produto
+//
 void ent_desc_produto (void) {
     char desc_produto;
     char* pont;
@@ -136,6 +144,7 @@ void ent_desc_produto (void) {
 
 
 //Entrada quantidade de peças
+//
 void ent_quant (void) {
     char quant;
     char* pont;
@@ -153,6 +162,7 @@ void ent_quant (void) {
 
 
 //Entrada do valor de entrada da peça
+//
 void ent_valor_ent (void) {
     char valor;
     char* pont;
@@ -170,6 +180,7 @@ void ent_valor_ent (void) {
 
 
 //Entrada valor de saída da peça
+//
 void ent_valor_saida (void) {
     char valor;
     char* pont;
@@ -187,6 +198,7 @@ void ent_valor_saida (void) {
 
 
 //Entrada id da venda
+//
 void ent_id_venda (void) {
     char id;
     char* pont;

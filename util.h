@@ -16,7 +16,7 @@
 
 
 /////
-//Declaração das funções uteis
+//Declaração das funções do arquivo utel.c
 int valid_op (int, int);
 int valid_digt (char);
 int valid_cel (char*);

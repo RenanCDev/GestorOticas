@@ -16,7 +16,7 @@
 
 
 /////
-//Declaração das funções relatorio.c
+//Declaração das funções do arquivo relatorio.c
 void modulo_relatorio (void);
 void relat_admin (void);
 void relat_fornec (void);

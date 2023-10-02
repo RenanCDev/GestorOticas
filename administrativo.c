@@ -20,7 +20,9 @@
 #include <locale.h>
 #include "all.h"
 
-
+/////
+//Percorre todo o caminho do menu administrativo
+//
 void modulo_administrativo (void) {
     setlocale (LC_ALL,"Portuguese_Brazil");
     char op;
@@ -47,8 +49,8 @@ void modulo_administrativo (void) {
     while (op != '0'); }
 
 
-/////
-//Função para cadastrar administrador
+//Cadastra um novo administrador
+//
 void cad_admin (void) {
     char ex[22] = "Cadastro administrador";
     tela_cad_admin (ex);
@@ -64,7 +66,7 @@ void cad_admin (void) {
     tela_cad_concl (); }
 
 
-//Função para pesquisar administrador
+//Pesquisa o cadastro de algum administrador
 void pesq_admin (void) {
     tela_pesq_admin ();
     ent_cpf ();

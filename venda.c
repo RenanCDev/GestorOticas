@@ -21,6 +21,9 @@
 #include "all.h"
 
 
+/////
+//Percorre todo o caminho do menu venda
+//
 void modulo_venda (void) {
     setlocale (LC_ALL, "Portuguese_Brazil");
     char op;
@@ -44,6 +47,8 @@ void modulo_venda (void) {
     while (op != '0'); }
 
 
+//Cadastra uma nova venda
+//
 void cad_venda (void) {
     tela_cad_venda ();
     tela_venda_colab ();
@@ -65,6 +70,8 @@ void cad_venda (void) {
     tela_vend_concl (); }
 
 
+//Pesquisa o cadastro de alguma venda
+//
 void pesq_venda (void) {
     tela_pesq_venda ();
     ent_id_venda ();
@@ -72,6 +79,8 @@ void pesq_venda (void) {
     getchar (); }
 
 
+//Acrescenta itens a uma venda em processo
+//
 void acresc_item_venda (void) {
     char op;
     char op_max = '2';
@@ -96,6 +105,8 @@ void acresc_item_venda (void) {
     while (op != '2'); }
 
 
+//Declara a forma de pagamento de uma venda
+//
 void form_pag (void) {
     char op;
     char op_max = '4';

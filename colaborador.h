@@ -16,7 +16,8 @@
 
 
 /////
-//Declaração das funções colaborador.cc
+//Declaração das funções do arquivo colaborador.c
+//
 void modulo_colaborador (void);
 void cad_colab (void);
 void pesq_colab (void);

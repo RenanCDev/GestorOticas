@@ -23,6 +23,7 @@
 
 /////
 //Programa principal
+//
 int main (void) {
     setlocale (LC_ALL, "Portuguese_Brazil");
     char op0;

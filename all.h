@@ -16,7 +16,8 @@
 
 
 /////
-//#include de todas as #include
+//Contém todos os //#include ".h"//
+//
 #include "telas.h"
 #include "ent_dados.h"
 #include "menus.h"

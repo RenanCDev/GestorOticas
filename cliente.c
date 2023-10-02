@@ -21,6 +21,8 @@
 #include "all.h"
 
 
+/////
+//Percorre todo o caminho do menu cliente
 void modulo_cliente (void) {
     setlocale (LC_ALL, "Portuguese_Brazil");
     char op;
@@ -44,8 +46,8 @@ void modulo_cliente (void) {
     while (op != '0'); }
 
 
-
-//Função  para cadastrar clienteorador
+//Cadastra um novo cliente
+//
 void cad_cliente (void) {
     tela_cad_cliente ();
     ent_cpf ();
@@ -60,7 +62,8 @@ void cad_cliente (void) {
     tela_cad_concl (); }
 
 
-//Função para pesquisar clienteorador
+//Pesquisa o cadastro de um cliente
+//
 void pesq_cliente (void) {
     tela_pesq_cliente ();
     ent_cpf ();
