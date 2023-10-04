@@ -54,14 +54,23 @@ void modulo_administrativo (void) {
 //
 void cad_admin (void) {
     char ex[22] = "Cadastro administrador";
+    int verify;
     tela_cad_admin (ex);
     ent_cpf ();
     tela_cad_admin (ex);
     ent_email ();
-    tela_cad_admin (ex);
-    ent_cel ();
-    tela_cad_admin (ex);
-    ent_nome ();
+    do {
+        tela_cad_admin (ex);
+        verify = ent_cel ();
+            if (!verify) {
+                tela_erro (); } } 
+    while (!verify);
+    do {
+        tela_cad_admin (ex);
+        verify = ent_nome ();
+            if (!verify) {
+                tela_erro (); } }
+    while (!verify);
     tela_cad_admin (ex);
     t_exe_cad_adm ();
     tela_cad_concl (); }

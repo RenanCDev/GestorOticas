@@ -34,8 +34,8 @@ int valid_op (int op, int op_max) {
     else {
         return 0; } }
 
-// AUTOR: FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
-// RE-LEITURA: RENAN MISSIAS // GIT: https://github.com/RenanMRb
+// AUTOR: RENAN MISSIAS // GIT: https://github.com/RenanMRb
+// INSPIRAÇÃO - VALIDAÇÃO PARA DIGITO - AUTOR FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
 
 
 //Validação para dígito:
@@ -52,22 +52,22 @@ int valid_digt (char num) {
 // RE-LEITURA: RENAN MISSIAS // GIT: https://github.com/RenanMRb
 
 
-//Validação para número de celular:
-//Verifica se a string recebida é um numero de celular(retorna "1") ou não(retorna "0")
+//Validação para números com tamanho exigido:
+//Verifica se a string recebida contém apenas números no tamanho exigido(retorna "1") ou não(retorna "0")
 //
 
-int valid_cel(char* cel) {
-    int tam_cel;
-    tam_cel = strlen(cel);
-    if (tam_cel != 11) {
+int valid_numeros(char* variavel, int tam) {
+    int tam_variavel;
+    tam_variavel = strlen(variavel);
+    if (tam_variavel != tam) {
         return 0; }
-    for (int i = 0; i < tam_cel; i++) {
-        if (!valid_digt(cel[i])) {
+    for (int i = 0; i < tam; i++) {
+        if (!valid_digt(variavel[i])) {
             return 0; } }
     return 1; }
 
-// AUTOR: FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
-// RE-LEITURA: RENAN MISSIAS // GIT: https://github.com/RenanMRb
+// AUTOR: RENAN MISSIAS // GIT: https://github.com/RenanMRb
+// INSPIRAÇÃO - VALIDAÇÃO PARA CELULAR - AUTOR FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
 
 
 //Validação para letra:

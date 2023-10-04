@@ -323,7 +323,8 @@ void tela_erro (void) {
     printf("|                                                                         |\n");
     printf("|                  Tecle ENTER para inserir nova entrada                  |\n");
     printf("|                                                                         |\n");
-    printf("+=========================================================================+\n"); }
+    printf("+=========================================================================+\n");
+    getchar (); }
 
 
 //Tela cadastro concluído
@@ -689,6 +690,6 @@ void t_exe_cad_vend (void) {
     printf("|                                                                         |\n");
     printf("|   Metodo de pagamento : PIX                                             |\n");
     printf("|                                                                         |\n");
-    printf("|   ID da venda : XXXXXXXXXX-XX-XX                                        |\n");
+    printf("|   ID da venda : XXXXX                                                   |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); }

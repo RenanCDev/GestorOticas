@@ -18,14 +18,14 @@
 /////
 //Declaração das funções do aquivo ent_dados.c
 //
-void ent_cpf (void);
-void ent_email (void);
-void ent_cel (void);
-void ent_nome (void);
-void ent_cnpj (void);
-void ent_cod_barras (void);
-void ent_desc_produto (void);
-void ent_quant (void);
-void ent_valor_ent (void);
-void ent_valor_saida (void);
-void ent_id_venda (void);
+char ent_cpf (void);
+char ent_email (void);
+char ent_cel (void);
+char ent_nome (void);
+char ent_cnpj (void);
+char ent_cod_barras (void);
+char ent_desc_produto (void);
+char ent_quant (void);
+char ent_valor_ent (void);
+char ent_valor_saida (void);
+char ent_id_venda (void);
