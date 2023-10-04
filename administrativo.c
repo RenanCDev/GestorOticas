@@ -55,6 +55,12 @@ void modulo_administrativo (void) {
 void cad_admin (void) {
     char ex[22] = "Cadastro administrador";
     int verify;
+    char a = ('9');
+    int b = a;
+    //0 = 44
+    printf("%p\n%d\n",&a,b);
+    getchar ();
+    getchar ();
     tela_cad_admin (ex);
     ent_cpf ();
     tela_cad_admin (ex);

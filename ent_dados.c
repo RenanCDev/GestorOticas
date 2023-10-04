@@ -39,7 +39,8 @@ char ent_cpf (void) {
     scanf("%[0-9]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
-    scanf("%c", &cpf); }
+    scanf("%c", &cpf); 
+    return 1;}
 
 
 //Entrada do email
@@ -56,7 +57,8 @@ char ent_email (void) {
     scanf("%[0-9A-Za-z@._-]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
-    scanf("%c", &email); }
+    scanf("%c", &email); 
+    return 1;}
 
 
 //Entrada do celular
@@ -64,7 +66,7 @@ char ent_email (void) {
 char ent_cel (void) {
     char cel;
     char* pont;
-    pont = (char*) malloc(11*sizeof(char));
+    pont = (char*) malloc(20*sizeof(char));
     int tam = 11;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -118,7 +120,8 @@ char ent_cnpj (void) {
     scanf("%[0-9]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    scanf("%c", &cnpj); }
+    scanf("%c", &cnpj); 
+    return 1;}
 
 
 //Entrada do código de barras
@@ -126,7 +129,7 @@ char ent_cnpj (void) {
 char ent_cod_barras (void) {
     char cod_barras;
     char* pont;
-    pont = (char*) malloc(12*sizeof(char));
+    pont = (char*) malloc(20*sizeof(char));
     int tam = 12;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -169,7 +172,7 @@ char ent_desc_produto (void) {
 char ent_quant (void) {
     char quant;
     char* pont;
-    pont = (char*) malloc(6*sizeof(char));
+    pont = (char*) malloc(8*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                     Digite a quantidade de peças .                      |\n");
@@ -180,7 +183,8 @@ char ent_quant (void) {
     scanf("%[0-9]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    scanf("%c", &quant); }
+    scanf("%c", &quant);
+    return 1; } 
 
 
 //Entrada do valor de entrada da peça
@@ -188,7 +192,7 @@ char ent_quant (void) {
 char ent_valor_ent (void) {
     char valor;
     char* pont;
-    pont = (char*) malloc(6*sizeof(char));
+    pont = (char*) malloc(8*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                   Digite o valor de entrada da peça .                   |\n");
@@ -199,7 +203,8 @@ char ent_valor_ent (void) {
     scanf("%[0-9,]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    scanf("%c", &valor); }
+    scanf("%c", &valor); 
+    return 1;}
 
 
 //Entrada valor de saída da peça
@@ -207,7 +212,7 @@ char ent_valor_ent (void) {
 char ent_valor_saida (void) {
     char valor;
     char* pont;
-    pont = (char*) malloc(6*sizeof(char));
+    pont = (char*) malloc(8*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                    Digite o valor de saída da peça .                    |\n");
@@ -218,7 +223,8 @@ char ent_valor_saida (void) {
     scanf("%[0-9,]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    scanf("%c", &valor); }
+    scanf("%c", &valor); 
+    return 1;}
 
 
 //Entrada id da venda
@@ -226,7 +232,7 @@ char ent_valor_saida (void) {
 char ent_id_venda (void) {
     char id;
     char* pont;
-    pont = (char*) malloc(10*sizeof(char));
+    pont = (char*) malloc(8*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                         Digite o ID da venda .                          |\n");
@@ -236,4 +242,5 @@ char ent_id_venda (void) {
     scanf("%[0-9]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    scanf("%c", &id); }
+    scanf("%c", &id); 
+    return 1;}

@@ -34,8 +34,7 @@ int valid_op (int op, int op_max) {
     else {
         return 0; } }
 
-// AUTOR: RENAN MISSIAS // GIT: https://github.com/RenanMRb
-// INSPIRAÇÃO - VALIDAÇÃO PARA DIGITO - AUTOR FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
+// ADAPTADA DE - VALIDAÇÃO PARA DIGITO - AUTOR FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
 
 
 //Validação para dígito:
@@ -49,7 +48,6 @@ int valid_digt (char num) {
         return 0; } }
 
 // AUTOR: FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
-// RE-LEITURA: RENAN MISSIAS // GIT: https://github.com/RenanMRb
 
 
 //Validação para números com tamanho exigido:
@@ -66,8 +64,18 @@ int valid_numeros(char* variavel, int tam) {
             return 0; } }
     return 1; }
 
-// AUTOR: RENAN MISSIAS // GIT: https://github.com/RenanMRb
-// INSPIRAÇÃO - VALIDAÇÃO PARA CELULAR - AUTOR FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
+// ADAPTADA - VALIDAÇÃO PARA CELULAR - AUTOR FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
+
+
+//Validação para CPF:
+//Verifica se a string recebida é um CPF válido(retorna "1") ou não(retorna "0")
+//
+
+/*int valid_cpf(char* variavel, int tam) {
+    if (!valid_numeros(variavel, tam)) {
+        return 0; }
+    
+}*/
 
 
 //Validação para letra:
@@ -85,7 +93,6 @@ int valid_letra(char letra) {
             return 0; } } }
 
 // AUTOR: FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
-// RE-LEITURA: RENAN MISSIAS // GIT: https://github.com/RenanMRb
 
 
 //Validação para nome:
@@ -100,4 +107,3 @@ int valid_nome(char* nome) {
         return 1; }
 
 // AUTOR: FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
-// RE-LEITURA: RENAN MISSIAS // GIT: https://github.com/RenanMRb
