@@ -323,8 +323,7 @@ void tela_erro (void) {
     printf("|                                                                         |\n");
     printf("|                  Tecle ENTER para inserir nova entrada                  |\n");
     printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-    getchar (); }
+    printf("+=========================================================================+\n"); }
 
 
 //Tela cadastro concluído
@@ -336,8 +335,7 @@ void tela_cad_concl (void) {
     printf("|                                                                         |\n");
     printf("|                         Tecle ENTER para seguir                         |\n");
     printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-    getchar (); }
+    printf("+=========================================================================+\n"); }
 
 
 //Tela venda concluída
@@ -349,8 +347,7 @@ void tela_vend_concl (void) {
     printf("|                                                                         |\n");
     printf("|                         Tecle ENTER para seguir                         |\n");
     printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-    getchar (); }
+    printf("+=========================================================================+\n"); }
 
 
 //Informativo venda para cliente sem cadastro

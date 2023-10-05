@@ -29,19 +29,16 @@ void modulo_administrativo (void) {
     char op_max = '3';
     do {
         do {
+            limpa_buffer ();
             op = menu_administrativo ();
             if (!valid_op(op, op_max)) {
-                tela_erro();
-                getchar();
-                getchar(); } }   
+                tela_erro(); } }   
         while (!valid_op(op, op_max));
         switch (op) {
             case '1':
-                getchar ();
                 cad_admin ();
                 break;
             case '2':
-                getchar ();
                 pesq_admin ();
                 break;
             case '3':
@@ -55,28 +52,35 @@ void modulo_administrativo (void) {
 void cad_admin (void) {
     char ex[22] = "Cadastro administrador";
     int verify;
-    char a = ('9');
-    int b = a;
-    //0 = 44
-    printf("%p\n%d\n",&a,b);
-    getchar ();
-    getchar ();
-    tela_cad_admin (ex);
-    ent_cpf ();
-    tela_cad_admin (ex);
-    ent_email ();
     do {
+        limpa_buffer ();
+        tela_cad_admin (ex);
+        verify = ent_cpf ();
+        if (!verify) {
+            tela_erro (); } }
+    while (!verify);
+    do {
+        limpa_buffer ();
+        tela_cad_admin (ex);
+        verify = ent_email ();
+        if (!verify) {
+            tela_erro (); } }
+    while (!verify);
+    do {
+        limpa_buffer ();
         tela_cad_admin (ex);
         verify = ent_cel ();
-            if (!verify) {
-                tela_erro (); } } 
+        if (!verify) {
+            tela_erro (); } } 
     while (!verify);
     do {
+        limpa_buffer ();
         tela_cad_admin (ex);
         verify = ent_nome ();
-            if (!verify) {
-                tela_erro (); } }
+        if (!verify) {
+            tela_erro (); } }
     while (!verify);
+    limpa_buffer ();
     tela_cad_admin (ex);
     t_exe_cad_adm ();
     tela_cad_concl (); }
@@ -84,7 +88,11 @@ void cad_admin (void) {
 
 //Pesquisa o cadastro de algum administrador
 void pesq_admin (void) {
-    tela_pesq_admin ();
-    ent_cpf ();
-    t_exe_cad_adm ();
-    getchar (); }
+    int verify;
+    do {
+        limpa_buffer ();
+        tela_pesq_admin ();
+        verify = ent_cpf ();
+        if (!verify); }
+    while (!verify);
+    t_exe_cad_adm (); }

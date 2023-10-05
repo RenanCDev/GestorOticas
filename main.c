@@ -33,32 +33,38 @@ int main (void) {
             op0 = menu_principal ();
             if (!valid_op(op0, op_max)) {
                 tela_erro ();
-                getchar ();
                 getchar (); } }     
         while (!valid_op(op0, op_max));
         switch (op0) {
             case '1':
                 modulo_administrativo ();
+                limpa_buffer ();
                 break;
             case '2':
                 modulo_fornecedor ();
+                limpa_buffer ();
                 break;
             case '3':
                 modulo_produto ();
+                limpa_buffer ();
                 break;
             case '4':
                 modulo_colaborador ();
+                limpa_buffer ();
                 break;
             case '5':
                 modulo_cliente ();
+                limpa_buffer ();
                 break;
             case '6':
                 modulo_venda ();
+                limpa_buffer ();
                 break;
             case '7':
                 tela_sobre ();
                 getchar ();
                 getchar ();
+                limpa_buffer ();
                 break; } }
     while (op0 != '0');
     return 0; }

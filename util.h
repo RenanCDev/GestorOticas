@@ -17,8 +17,14 @@
 
 /////
 //Declaração das funções do arquivo utel.c
-int valid_op (int, int);
+int valid_op (char, char);
 int valid_digt (char);
 int valid_numeros (char*, int);
+int valid_cpf (char*);
+void limpa_buffer (void);
+int verif_bissexto (int);
+int verif_data (int, int, int);
+int valid_data (char*);
 int valid_letra (char);
 int valid_nome (char*);
+int valid_email (char*);

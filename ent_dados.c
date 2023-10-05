@@ -40,6 +40,8 @@ char ent_cpf (void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     scanf("%c", &cpf); 
+    if (!valid_cpf(pont)) {
+        return 0; }
     return 1;}
 
 
@@ -58,6 +60,8 @@ char ent_email (void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     scanf("%c", &email); 
+    if (!valid_email(pont)) {
+        return 0; }
     return 1;}
 
 

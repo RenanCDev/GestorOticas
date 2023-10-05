@@ -30,35 +30,29 @@ void modulo_relatorio (void) {
     char op_max = '6';
     do {
         do {
+            limpa_buffer ();
             op = menu_relatorio ();
             if (!valid_op(op, op_max)) {
-                tela_erro();
-                getchar();
-                getchar(); } }   
+                limpa_buffer ();
+                tela_erro(); } }   
         while (!valid_op(op, op_max));
         switch (op) {
             case '1':
-                getchar ();
                 relat_admin ();
                 break;
             case '2':
-                getchar ();
                 relat_fornec ();
                 break;
             case '3':
-                getchar ();
                 relat_produto ();
                 break;
             case '4':
-                getchar ();
                 relat_colab ();
                 break;
             case '5':
-                getchar ();
                 relat_cliente ();
                 break;
             case '6':
-                getchar ();
                 relat_venda ();
                 break; } }
     while (op != '0'); }
@@ -69,15 +63,22 @@ void modulo_relatorio (void) {
 //Relatório administrador
 //
 void relat_admin (void) {
-    tela_relat_admin ();
-    ent_cpf ();
-    t_exe_relat_adm ();
-    getchar (); }
+    int verify;
+    do {
+        limpa_buffer ();
+        tela_relat_admin ();
+        verify = ent_cpf (); 
+        if (!verify) {
+            tela_erro (); } }
+    while (!verify);
+    limpa_buffer ();
+    t_exe_relat_adm (); }
 
 
 //Relatório fornecedor
 //
 void relat_fornec (void) {
+    int verify;
     tela_relat_fornec ();
     ent_cnpj ();
     t_exe_relat_forn ();
