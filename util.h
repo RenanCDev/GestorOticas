@@ -28,3 +28,5 @@ int valid_data (char*);
 int valid_letra (char);
 int valid_nome (char*);
 int valid_email (char*);
+int valid_cnpj (char*);
+int valid_cod_barras (char*);

@@ -51,8 +51,14 @@ void modulo_produto (void) {
 //Cadastra produto
 //
 void cad_produto (void) {
-    tela_cad_produto ();
-    ent_cod_barras ();
+    int verify;
+    do {
+        limpa_buffer ();
+        tela_cad_produto ();
+        verify = ent_cod_barras ();
+        if (!verify) {
+            tela_erro (); } }
+    while (!verify);
     tela_cad_produto ();
     ent_cnpj ();
     tela_cad_produto ();

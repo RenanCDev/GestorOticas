@@ -125,6 +125,8 @@ char ent_cnpj (void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     scanf("%c", &cnpj); 
+    if (!valid_cnpj(pont)) {
+        return 0; }
     return 1;}
 
 
@@ -134,7 +136,6 @@ char ent_cod_barras (void) {
     char cod_barras;
     char* pont;
     pont = (char*) malloc(20*sizeof(char));
-    int tam = 12;
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                       Digite o código de barras .                       |\n");
@@ -146,7 +147,10 @@ char ent_cod_barras (void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     scanf("%c", &cod_barras); 
-    if (!valid_numeros(pont, tam)) {
+    printf ("%c",pont[0]);
+    getchar ();
+    getchar ();
+    if (!valid_cod_barras(pont)) {
        return 0; }
     return 1; }
 

@@ -215,13 +215,82 @@ int valid_nome (char* nome) {
 // AUTOR: FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
 
 
-//Valida E-mail
+//Validação para E-mail:
 //Verifica se a string recebida corresponde a um email válido(retorna "1")
 //ou não(retorna "0")
 //
+
 int valid_email(char* email) {
     char usuario[256], site[256], dominio[256];
     if (sscanf(email, "%[^@ \t\n]@%[^. \t\n].%3[^ \t\n]", usuario, site, dominio ) != 3 )
         return 0;
     return 1; }
+
 // AUTOR: LACOBUS // STACKOVERFLOW: https://pt.stackoverflow.com/questions/310096/como-validar-um-e-mail-em-c
+
+
+//validação para CNPJ:
+//Verifica se a string recebida corresponde a um CNPJ válido(retorna "1") ou não (retorna "0")
+//
+
+int valid_cnpj(char*  cnpj) {
+    int size = strlen(cnpj);
+    if (size != 14) {
+        return 0; }
+    int digits[14];
+    for (int i = 0; i < size; i++) {
+        if (cnpj[i] < '0' || cnpj[i] > '9') {
+            return 0; }
+        digits[i] = cnpj[i] - '0'; }
+    int sum = 0;
+    int weight = 5;
+    for (int i = 0; i < 12; i++) {
+        sum += digits[i] * weight;
+        weight = (weight == 2) ? 9 : (weight - 1); }
+    int remainder = sum % 11;
+    int digit1 = (remainder < 2) ? 0 : (11 - remainder);
+    if (digits[12] != digit1) {
+        return 0; }
+    sum = 0;
+    weight = 6;
+    for (int i = 0; i < 13; i++) {
+        sum += digits[i] * weight;
+        weight = (weight == 2) ? 9 : (weight - 1); }
+    remainder = sum % 11;
+    int digit2 = (remainder < 2) ? 0 : (11 - remainder);
+    if (digits[13] == digit2) {
+        return 1; }
+    return 0; }
+
+// AUTOR: CHAT GPT
+
+//Validação para código de barras
+//Verifica se a string recebida é um código de barras válido(retorna "1") ou não(retorna "0")
+//
+
+int valid_cod_barras (char* cod_barras) {
+    int tam = 13;
+    int l = 0;
+    int k = 0;
+    
+    if (!valid_numeros(cod_barras, tam)) {
+        return 0; } 
+    else {
+        for (int i = 0; i < 12; i++) {
+            if (i % 2 == 0) {
+                l = l + ((cod_barras[i] - '0') * 1); }
+                else {
+                l = l + ((cod_barras[i] - '0') * 3); } }
+        int m = l % 10;
+        if (m != 0) {
+            do {
+                l = l + 1;
+                k = k + 1;
+                m = l % 10; }
+            while (m != 0); }
+        int z = cod_barras[12];
+        if (z == k + 48) {
+            return 1; } }
+    return 0; }
+
+// AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb

@@ -51,8 +51,14 @@ void modulo_fornecedor (void) {
 //Cadastra fornecedor
 //
 void cad_fornec (void) {
-    tela_cad_fornec ();
-    ent_cnpj ();
+    int verify;
+    do {
+        limpa_buffer ();
+        tela_cad_fornec ();
+        verify = ent_cnpj ();
+        if (!verify) {
+            tela_erro (); } }
+    while (!verify);
     tela_cad_fornec ();
     ent_email ();
     tela_cad_fornec ();

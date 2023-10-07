@@ -37,6 +37,11 @@ int main (void) {
         while (!valid_op(op0, op_max));
         switch (op0) {
             case '1':
+            char b [] = "87";
+            printf("%d\n",b[1]);
+            getchar ();
+            getchar ();
+            getchar ();
                 modulo_administrativo ();
                 limpa_buffer ();
                 break;
