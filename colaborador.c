@@ -29,19 +29,16 @@ void modulo_colaborador (void) {
     char op_max = '2';
     do {
         do {
+            limpa_buffer ();
             op = menu_colaborador ();
             if (!valid_op(op, op_max)) {
-                tela_erro();
-                getchar();
-                getchar(); } }   
+                tela_erro(); } }   
         while (!valid_op(op, op_max));
         switch (op) {
             case '1':
-                getchar ();
                 cad_colab ();
                 break;
             case '2':
-                getchar ();
                 pesq_colab ();
                 break; } }
     while (op != '0'); }
@@ -50,15 +47,35 @@ void modulo_colaborador (void) {
 //Cadastra um novo colaborador
 //
 void cad_colab (void) {
-    tela_cad_colab ();
-    ent_cpf ();
-    tela_cad_colab ();
-    ent_email ();
-    tela_cad_colab ();
-    ent_cel ();
-    tela_cad_colab ();
-    ent_nome ();
-    tela_cad_colab ();
+    int verify;
+    do {
+        limpa_buffer ();
+        tela_cad_colab ();
+        verify = ent_cpf ();
+        if (!verify) {
+            tela_erro (); } }
+    while (!verify);
+    do {
+        limpa_buffer ();
+        tela_cad_colab ();
+        verify = ent_email ();
+        if (!verify) {
+            tela_erro (); } }
+    while (!verify);
+    do {
+        limpa_buffer ();
+        tela_cad_colab ();
+        verify = ent_cel ();
+        if (!verify) {
+            tela_erro (); } }
+    while (!verify);
+    do {
+        limpa_buffer ();
+        tela_cad_colab ();
+        verify = ent_nome ();
+        if (!verify) {
+            tela_erro (); } }
+    while (!verify);
     t_exe_cad_colab ();
     tela_cad_concl (); }
 
@@ -66,7 +83,12 @@ void cad_colab (void) {
 //Pesquisa o cadastro de um colaborador
 //
 void pesq_colab (void) {
-    tela_pesq_colab ();
-    ent_cpf ();
-    t_exe_cad_colab ();
-    getchar (); }
+    int verify;
+    do {
+        limpa_buffer ();
+        tela_pesq_colab ();
+        verify = ent_cpf ();
+        if (!verify) {
+            tela_erro (); } }
+    while (!verify);
+    t_exe_cad_colab (); }

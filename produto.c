@@ -30,19 +30,16 @@ void modulo_produto (void) {
     char op_max = '2';
     do {
         do {
+            limpa_buffer ();
             op = menu_produto ();
             if (!valid_op(op, op_max)) {
-                tela_erro();
-                getchar();
-                getchar(); } }   
+                tela_erro();} }   
         while (!valid_op(op, op_max));
         switch (op) {
             case '1':
-                getchar ();
                 cad_produto ();
                 break;
             case '2':
-                getchar ();
                 pesq_produto ();
                 break; } }
     while (op != '0'); }
@@ -59,17 +56,41 @@ void cad_produto (void) {
         if (!verify) {
             tela_erro (); } }
     while (!verify);
-    tela_cad_produto ();
-    ent_cnpj ();
-    tela_cad_produto ();
-    ent_desc_produto ();
-    tela_cad_produto ();
-    ent_quant ();
-    tela_cad_produto ();
-    ent_valor_ent ();
-    tela_cad_produto ();
-    ent_valor_saida ();
-    tela_cad_produto ();
+    do {
+        limpa_buffer ();
+        tela_cad_produto ();
+        verify = ent_cnpj ();
+        if (!verify) {
+            tela_erro (); } }
+    while (!verify);
+    do {
+        limpa_buffer ();
+        tela_cad_produto ();
+        verify = ent_desc_produto ();
+        if (!verify) {
+            tela_erro (); } }
+    while (!verify);
+    do {
+        limpa_buffer ();
+        tela_cad_produto ();
+        verify = ent_quant ();
+        if (!verify) {
+            tela_erro (); } }
+    while (!verify);
+    do {
+        limpa_buffer ();
+        tela_cad_produto ();
+        verify = ent_valor_ent ();
+        if (!verify) {
+            tela_erro (); } }
+    while (!verify);
+    do {
+        limpa_buffer ();
+        tela_cad_produto ();
+        verify = ent_valor_saida ();
+        if (!verify) {
+            tela_erro (); } }
+    while (!verify);
     t_exe_cad_prod ();
     tela_cad_concl (); }
 
@@ -77,7 +98,12 @@ void cad_produto (void) {
 //Pesquisa produto
 //
 void pesq_produto (void) {
-    tela_pesq_produto ();
-    ent_cod_barras ();
-    t_exe_cad_prod ();
-    getchar (); }
+    int verify;
+    do {
+        limpa_buffer ();
+        tela_pesq_produto ();
+        verify = ent_cod_barras ();
+        if (!verify) {
+            tela_erro (); } }
+    while (!verify);
+    t_exe_cad_prod (); }

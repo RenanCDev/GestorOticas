@@ -26,22 +26,17 @@
 //
 int main (void) {
     setlocale (LC_ALL, "Portuguese_Brazil");
-    char op0;
+    char op0[500];
     char op_max = '7';
     do {
         do {
-            op0 = menu_principal ();
-            if (!valid_op(op0, op_max)) {
+            op0[0] = menu_principal ();
+            if (!valid_entrada(op0)) {
                 tela_erro ();
                 getchar (); } }     
-        while (!valid_op(op0, op_max));
-        switch (op0) {
+        while (!valid_entrada(op0));
+        switch (op0[0]) {
             case '1':
-            char b [] = "87";
-            printf("%d\n",b[1]);
-            getchar ();
-            getchar ();
-            getchar ();
                 modulo_administrativo ();
                 limpa_buffer ();
                 break;
@@ -71,5 +66,5 @@ int main (void) {
                 getchar ();
                 limpa_buffer ();
                 break; } }
-    while (op0 != '0');
+    while (op0[0] != '0');
     return 0; }

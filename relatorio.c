@@ -79,43 +79,72 @@ void relat_admin (void) {
 //
 void relat_fornec (void) {
     int verify;
-    tela_relat_fornec ();
-    ent_cnpj ();
-    t_exe_relat_forn ();
-    getchar (); }
+    do {
+        limpa_buffer ();
+        tela_relat_fornec ();
+        verify = ent_cnpj (); 
+        if (!verify) {
+            tela_erro (); } }
+    while (!verify);
+    limpa_buffer ();
+    t_exe_relat_forn (); }
 
 
 //Relatório produto
 //
 void relat_produto (void) {
-    tela_relat_produto ();
-    ent_cod_barras ();
-    t_exe_relat_prod ();
-    getchar (); }
+    int verify;
+    do {
+        limpa_buffer ();
+        tela_relat_produto ();
+        verify = ent_cod_barras (); 
+        if (!verify) {
+            tela_erro (); } }
+    while (!verify);
+    limpa_buffer ();
+    t_exe_relat_prod (); }
 
 
 //Relatório colaborador
 //
 void relat_colab (void) {
-    tela_relat_colab ();
-    ent_cpf ();
-    t_exe_relat_colab ();
-    getchar (); }
+    int verify;
+    do {
+        limpa_buffer ();
+        tela_relat_colab ();
+        verify = ent_cpf (); 
+        if (!verify) {
+            tela_erro (); } }
+    while (!verify);
+    limpa_buffer ();
+    t_exe_relat_colab (); }
 
 
 //Relatório cliente
 //
 void relat_cliente (void) {
-    tela_relat_cliente ();
-    ent_cpf ();
-    t_exe_relat_client ();
-    getchar (); }
+    int verify;
+    do {
+        limpa_buffer ();
+        tela_relat_cliente ();
+        verify = ent_cpf (); 
+        if (!verify) {
+            tela_erro (); } }
+    while (!verify);
+    limpa_buffer ();
+    t_exe_relat_client (); }
 
 
 //Relatório vendas
 //
 void relat_venda (void) {
-    tela_relat_venda ();
-    ent_id_venda ();
-    t_exe_cad_vend ();
-    getchar (); }
+    int verify;
+    do {
+        limpa_buffer ();
+        tela_relat_venda ();
+        verify = ent_id_venda (); 
+        if (!verify) {
+            tela_erro (); } }
+    while (!verify);
+    limpa_buffer ();
+    t_exe_cad_vend (); }

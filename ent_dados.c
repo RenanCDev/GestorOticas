@@ -178,6 +178,7 @@ char ent_desc_produto (void) {
 //Entrada de quantidade de peças
 //
 char ent_quant (void) {
+    char tam = '9';
     char quant;
     char* pont;
     pont = (char*) malloc(8*sizeof(char));
@@ -192,6 +193,8 @@ char ent_quant (void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     scanf("%c", &quant);
+    if (!valid_op(quant, tam)) {
+        return 0; }
     return 1; } 
 
 
@@ -238,6 +241,7 @@ char ent_valor_saida (void) {
 //Entrada id da venda
 //
 char ent_id_venda (void) {
+    char tam = '9';
     char id;
     char* pont;
     pont = (char*) malloc(8*sizeof(char));
@@ -250,5 +254,7 @@ char ent_id_venda (void) {
     scanf("%[0-9]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    scanf("%c", &id); 
-    return 1;}
+    scanf("%c", &id);
+    if (!valid_op(id, tam)) {
+        return 0; } 
+    return 1; }

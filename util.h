@@ -17,6 +17,7 @@
 
 /////
 //Declaração das funções do arquivo utel.c
+int valid_entrada (char*);
 int valid_op (char, char);
 int valid_digt (char);
 int valid_numeros (char*, int);

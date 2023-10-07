@@ -30,19 +30,16 @@ void modulo_fornecedor (void) {
     char op_max = '2';
     do {
         do {
+            limpa_buffer ();
             op = menu_fornecedor ();
             if (!valid_op(op, op_max)) {
-                tela_erro();
-                getchar();
-                getchar(); } }   
+                tela_erro(); } }   
         while (!valid_op(op, op_max));
         switch (op) {
             case '1':
-                getchar ();
                 cad_fornec ();
                 break;
             case '2':
-                getchar ();
                 pesq_fornec ();
                 break; } }
     while (op != '0'); }
@@ -59,13 +56,27 @@ void cad_fornec (void) {
         if (!verify) {
             tela_erro (); } }
     while (!verify);
-    tela_cad_fornec ();
-    ent_email ();
-    tela_cad_fornec ();
-    ent_cel ();
-    tela_cad_fornec ();
-    ent_nome ();
-    tela_cad_fornec ();
+    do {
+        limpa_buffer ();
+        tela_cad_fornec ();
+        verify = ent_email ();
+        if (!verify) {
+            tela_erro (); } }
+    while (!verify);
+    do {
+        limpa_buffer ();
+        tela_cad_fornec ();
+        verify = ent_cel ();
+        if (!verify) {
+            tela_erro (); } }
+    while (!verify);
+    do {
+        limpa_buffer ();
+        tela_cad_fornec ();
+        verify = ent_nome ();
+        if (!verify) {
+            tela_erro (); } }
+    while (!verify);
     t_exe_cad_forn ();
     tela_cad_concl (); }
 
@@ -73,7 +84,12 @@ void cad_fornec (void) {
 //Pesquisa fornecedor
 //
 void pesq_fornec (void) {
-    tela_pesq_fornec ();
-    ent_cnpj ();
-    t_exe_cad_forn ();
-    getchar (); }
+    int verify;
+    do {
+        limpa_buffer ();
+        tela_pesq_fornec ();
+        verify = ent_cnpj ();
+        if (!verify) {
+            tela_erro (); } }
+    while (!verify);
+    t_exe_cad_forn (); }

@@ -30,19 +30,16 @@ void modulo_venda (void) {
     char op_max = '2';
     do {
         do {
+            limpa_buffer ();
             op = menu_venda ();
             if (!valid_op(op, op_max)) {
-                tela_erro();
-                getchar();
-                getchar(); } }   
+                tela_erro(); } }   
         while (!valid_op(op, op_max));
         switch (op) {
             case '1':
-                getchar ();
                 cad_venda ();
                 break;
             case '2':
-                getchar ();
                 pesq_venda ();
                 break; } }
     while (op != '0'); }
@@ -51,22 +48,46 @@ void modulo_venda (void) {
 //Cadastra uma nova venda
 //
 void cad_venda (void) {
-    tela_cad_venda ();
-    tela_venda_colab ();
-    ent_cpf ();
-    tela_cad_venda ();
-    tela_venda_produt ();
-    ent_cod_barras ();
-    tela_cad_venda ();
-    tela_venda_q_prod ();
-    ent_quant ();
-    acresc_item_venda ();
-    tela_cad_venda ();
-    tela_venda_cliente ();
-    info_cliente_0 ();
-    ent_cpf ();
-    form_pag ();
-    tela_cad_venda ();
+    int verify;
+    do {
+        limpa_buffer ();
+        tela_venda_colab ();
+        verify = ent_cpf (); 
+        if (!verify) {
+            tela_erro (); } }
+    while (!verify);
+    do {
+        limpa_buffer ();
+        tela_venda_produt ();
+        verify = ent_cod_barras (); 
+        if (!verify) {
+            tela_erro (); } }
+    while (!verify);
+    do {
+        limpa_buffer ();
+        tela_venda_q_prod ();
+        verify = ent_quant (); 
+        if (!verify) {
+            tela_erro ();
+        acresc_item_venda (); } }
+    while (!verify);
+    do {
+        limpa_buffer ();
+        tela_venda_cliente ();
+        info_cliente_0 ();
+        verify = ent_cpf (); 
+        if (!verify) {
+            tela_erro ();
+        form_pag ();  } }
+    while (!verify);
+    do {
+        limpa_buffer ();
+        tela_relat_admin ();
+        verify = ent_cpf (); 
+        if (!verify) {
+            tela_erro (); } }
+    while (!verify);
+    limpa_buffer ();
     t_exe_cad_vend ();
     tela_vend_concl (); }
 
@@ -74,10 +95,16 @@ void cad_venda (void) {
 //Pesquisa o cadastro de alguma venda
 //
 void pesq_venda (void) {
-    tela_pesq_venda ();
-    ent_id_venda ();
-    t_exe_cad_vend ();
-    getchar (); }
+    int verify;
+    do {
+        limpa_buffer ();
+        tela_pesq_venda ();
+        verify = ent_id_venda (); 
+        if (!verify) {
+            tela_erro (); } }
+    while (!verify);
+    limpa_buffer ();
+    t_exe_cad_vend (); }
 
 
 //Acrescenta itens a uma venda em processo
@@ -88,22 +115,33 @@ void acresc_item_venda (void) {
     do {
         do {
             tela_cad_venda ();
+            limpa_buffer ();
             op = menu_item_venda ();
             if (!valid_op(op, op_max)) {
-                tela_erro();
-                getchar();
-                getchar(); } }   
+                tela_erro(); } }   
         while (!valid_op(op, op_max));
         switch (op) {
             case '1':
-                getchar ();
+            int verify;
+            do {
+                limpa_buffer ();
                 tela_cad_venda ();
                 tela_venda_produt ();
-                ent_cod_barras ();
+                verify = ent_cod_barras (); 
+                if (!verify) {
+                    tela_erro (); } }
+            while (!verify);
+            limpa_buffer ();
+            do {
+                limpa_buffer ();
                 tela_cad_venda ();
                 tela_venda_q_prod ();
-                ent_quant ();
-                break; } }
+                verify = ent_quant (); 
+                if (!verify) {
+                    tela_erro (); } }
+            while (!verify);
+            limpa_buffer ();
+            break; } }
     while (op != '2'); }
 
 
@@ -114,12 +152,11 @@ void form_pag (void) {
     char op_max = '4';
     do {
         do {
+            limpa_buffer ();
             tela_cad_venda ();
             op = menu_form_pag ();
             if (!valid_op(op, op_max)) {
-                tela_erro();
-                getchar();
-                getchar(); } }   
+                tela_erro(); } }   
         while (!valid_op(op, op_max));
         switch (op) {
             case '1':

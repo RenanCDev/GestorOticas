@@ -29,19 +29,16 @@ void modulo_cliente (void) {
     char op_max = '2';
     do {
         do {
+            limpa_buffer ();
             op = menu_cliente ();
             if (!valid_op(op, op_max)) {
-                tela_erro();
-                getchar();
-                getchar(); } }   
+                tela_erro(); } }   
         while (!valid_op(op, op_max));
         switch (op) {
             case '1':
-                getchar ();
                 cad_cliente ();
                 break;
             case '2':
-                getchar ();
                 pesq_cliente ();
                 break; } }
     while (op != '0'); }
@@ -50,14 +47,36 @@ void modulo_cliente (void) {
 //Cadastra um novo cliente
 //
 void cad_cliente (void) {
-    tela_cad_cliente ();
-    ent_cpf ();
-    tela_cad_cliente ();
-    ent_email ();
-    tela_cad_cliente ();
-    ent_cel ();
-    tela_cad_cliente ();
-    ent_nome ();
+    int verify;
+    do {
+        limpa_buffer ();
+        tela_cad_cliente ();
+        verify = ent_cpf ();
+        if (!verify) {
+            tela_erro (); } }
+    while (!verify);
+    do {
+        limpa_buffer ();
+        tela_cad_cliente ();
+        verify = ent_email ();
+        if (!verify) {
+            tela_erro (); } }
+    while (!verify);
+    do {
+        limpa_buffer ();
+        tela_cad_cliente ();
+        verify = ent_cel ();
+        if (!verify) {
+            tela_erro (); } }
+    while (!verify);
+    do {
+        limpa_buffer ();
+        tela_cad_cliente ();
+        verify = ent_nome ();
+        if (!verify) {
+            tela_erro (); } }
+    while (!verify);
+    limpa_buffer ();
     tela_cad_cliente ();
     t_exe_cad_cliente ();
     tela_cad_concl (); }
@@ -66,7 +85,12 @@ void cad_cliente (void) {
 //Pesquisa o cadastro de um cliente
 //
 void pesq_cliente (void) {
-    tela_pesq_cliente ();
-    ent_cpf ();
-    t_exe_cad_cliente ();
-    getchar (); }
+    int verify;
+    do {
+        limpa_buffer ();
+        tela_pesq_cliente ();
+        verify = ent_cpf ();
+        if (!verify) {
+            tela_erro (); } }
+    while (!verify);
+    t_exe_cad_cliente (); }

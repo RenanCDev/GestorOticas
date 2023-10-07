@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "telas.h": "c"
+        "telas.h": "c",
+        "stdlib.h": "c"
     }
 }
