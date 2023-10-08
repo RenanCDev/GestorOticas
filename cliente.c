@@ -26,14 +26,8 @@
 void modulo_cliente (void) {
     setlocale (LC_ALL, "Portuguese_Brazil");
     char op;
-    char op_max = '2';
-    do {
         do {
-            limpa_buffer ();
             op = menu_cliente ();
-            if (!valid_op(op, op_max)) {
-                tela_erro(); } }   
-        while (!valid_op(op, op_max));
         switch (op) {
             case '1':
                 cad_cliente ();
@@ -93,4 +87,5 @@ void pesq_cliente (void) {
         if (!verify) {
             tela_erro (); } }
     while (!verify);
-    t_exe_cad_cliente (); }
+    t_exe_cad_cliente (); 
+    limpa_buffer (); }

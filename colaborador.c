@@ -26,14 +26,8 @@
 void modulo_colaborador (void) {
     setlocale( LC_ALL, "Portuguese_Brazil");
     char op;
-    char op_max = '2';
-    do {
         do {
-            limpa_buffer ();
             op = menu_colaborador ();
-            if (!valid_op(op, op_max)) {
-                tela_erro(); } }   
-        while (!valid_op(op, op_max));
         switch (op) {
             case '1':
                 cad_colab ();
@@ -76,6 +70,8 @@ void cad_colab (void) {
         if (!verify) {
             tela_erro (); } }
     while (!verify);
+    limpa_buffer ();
+    tela_cad_colab ();
     t_exe_cad_colab ();
     tela_cad_concl (); }
 
@@ -91,4 +87,5 @@ void pesq_colab (void) {
         if (!verify) {
             tela_erro (); } }
     while (!verify);
-    t_exe_cad_colab (); }
+    t_exe_cad_colab ();
+    limpa_buffer (); }

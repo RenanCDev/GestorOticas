@@ -26,19 +26,13 @@
 //
 int main (void) {
     setlocale (LC_ALL, "Portuguese_Brazil");
-    char op0[500];
-    char op_max = '7';
-    do {
+    char op0;
         do {
-            op0[0] = menu_principal ();
-            if (!valid_entrada(op0)) {
-                tela_erro ();
-                getchar (); } }     
-        while (!valid_entrada(op0));
-        switch (op0[0]) {
+            op0 = menu_principal ();
+        switch (op0) {
             case '1':
-                modulo_administrativo ();
                 limpa_buffer ();
+                modulo_administrativo ();
                 break;
             case '2':
                 modulo_fornecedor ();
@@ -62,9 +56,7 @@ int main (void) {
                 break;
             case '7':
                 tela_sobre ();
-                getchar ();
-                getchar ();
                 limpa_buffer ();
                 break; } }
-    while (op0[0] != '0');
+    while (op0 != '0');
     return 0; }

@@ -27,27 +27,24 @@
 //Valida opção:
 //Verifica se a entrada informada esta dentro das opções possíveis(retorna "1") ou não(retorna "0")
 //
-
-
-// Função que retorna 1 caso a entrada tiver mais de 1 caractere
-// e retorna 0 caso contrário
+//Função que retorna 1 caso a entrada tiver mais de 1 caractere
+//e retorna 0 caso contrário
 //
-int valid_entrada(char *entrada) {
-  if (strlen(entrada) > 1) {
-    return 0; }
-  return 1; } 
-// AUTOR: LUIZ MIGUEL /// GIT: https://github.com/LuizMiguel4444
-
-
-
-
 int valid_op (char op, char op_max) {
     if (op >= '0' && op <= op_max) {
         return 1; } 
     else {
         return 0; } }
 
+
 // ADAPTADA DE - VALIDAÇÃO PARA DIGITO - AUTOR FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
+
+int valid_entrada(char *entrada) {
+  if (strlen(entrada) > 1) {
+    return 0; }
+  return 1; } 
+
+// AUTOR: LUIZ MIGUEL // GIT: https://github.com/LuizMiguel4444
 
 
 //Validação para dígito:
@@ -67,7 +64,7 @@ int valid_digt (char num) {
 //Verifica se a string recebida contém apenas números no tamanho exigido(retorna "1") ou não(retorna "0")
 //
 
-int valid_numeros(char* variavel, int tam) {
+int valid_numeros(char* variavel, char tam) {
     int tam_variavel;
     tam_variavel = strlen(variavel);
     if (tam_variavel != tam) {

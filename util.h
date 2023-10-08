@@ -20,7 +20,7 @@
 int valid_entrada (char*);
 int valid_op (char, char);
 int valid_digt (char);
-int valid_numeros (char*, int);
+int valid_numeros (char*, char);
 int valid_cpf (char*);
 void limpa_buffer (void);
 int verif_bissexto (int);

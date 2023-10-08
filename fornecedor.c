@@ -27,14 +27,8 @@
 void modulo_fornecedor (void) {
     setlocale (LC_ALL, "Portuguese_Brazil");
     char op;
-    char op_max = '2';
-    do {
         do {
-            limpa_buffer ();
             op = menu_fornecedor ();
-            if (!valid_op(op, op_max)) {
-                tela_erro(); } }   
-        while (!valid_op(op, op_max));
         switch (op) {
             case '1':
                 cad_fornec ();
@@ -77,8 +71,10 @@ void cad_fornec (void) {
         if (!verify) {
             tela_erro (); } }
     while (!verify);
+    limpa_buffer ();
     t_exe_cad_forn ();
-    tela_cad_concl (); }
+    tela_cad_concl ();
+    limpa_buffer (); }
 
 
 //Pesquisa fornecedor
@@ -92,4 +88,5 @@ void pesq_fornec (void) {
         if (!verify) {
             tela_erro (); } }
     while (!verify);
-    t_exe_cad_forn (); }
+    t_exe_cad_forn ();
+    limpa_buffer (); }

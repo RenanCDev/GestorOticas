@@ -27,14 +27,8 @@
 void modulo_venda (void) {
     setlocale (LC_ALL, "Portuguese_Brazil");
     char op;
-    char op_max = '2';
     do {
-        do {
-            limpa_buffer ();
-            op = menu_venda ();
-            if (!valid_op(op, op_max)) {
-                tela_erro(); } }   
-        while (!valid_op(op, op_max));
+        op = menu_venda ();
         switch (op) {
             case '1':
                 cad_venda ();
@@ -89,7 +83,8 @@ void cad_venda (void) {
     while (!verify);
     limpa_buffer ();
     t_exe_cad_vend ();
-    tela_vend_concl (); }
+    tela_vend_concl ();
+    limpa_buffer (); }
 
 
 //Pesquisa o cadastro de alguma venda
@@ -103,8 +98,8 @@ void pesq_venda (void) {
         if (!verify) {
             tela_erro (); } }
     while (!verify);
-    limpa_buffer ();
-    t_exe_cad_vend (); }
+    t_exe_cad_vend ();
+    limpa_buffer (); }
 
 
 //Acrescenta itens a uma venda em processo

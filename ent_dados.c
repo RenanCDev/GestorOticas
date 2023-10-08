@@ -36,7 +36,7 @@ char ent_cpf (void) {
     printf("|                         Insira apenas números !                         |\n");
     printf("|                                                                         |\n");
     printf("|                            CPF: ");
-    scanf("%[0-9]", pont);
+    scanf("%[0-9A-Za-z@._-]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     scanf("%c", &cpf); 
@@ -79,7 +79,7 @@ char ent_cel (void) {
     printf("|                Insira apenas números, incluindo o ddd !                 |\n");
     printf("|                                                                         |\n");
     printf("|                            Cel.: ");
-    scanf("%[0-9]", pont);
+    scanf("%[0-9A-Za-z@._-]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     scanf("%c", &cel);
@@ -121,7 +121,7 @@ char ent_cnpj (void) {
     printf("|                         Insira apenas números !                         |\n");
     printf("|                                                                         |\n");
     printf("|                          CNPJ: ");
-    scanf("%[0-9]", pont);
+    scanf("%[0-9A-Za-z@._-]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     scanf("%c", &cnpj); 
@@ -143,13 +143,10 @@ char ent_cod_barras (void) {
     printf("|                         Insira apenas números !                         |\n");
     printf("|                                                                         |\n");
     printf("|                     Código de barras: ");
-    scanf("%[0-9]", pont);
+    scanf("%[0-9A-Za-z@._-]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     scanf("%c", &cod_barras); 
-    printf ("%c",pont[0]);
-    getchar ();
-    getchar ();
     if (!valid_cod_barras(pont)) {
        return 0; }
     return 1; }
@@ -189,7 +186,7 @@ char ent_quant (void) {
     printf("|                         Insira apenas números !                         |\n");
     printf("|                                                                         |\n");
     printf("|                          Quantidade de peças: ");
-    scanf("%[0-9]", pont);
+    scanf("%[0-9A-Za-z@._-]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     scanf("%c", &quant);
@@ -211,7 +208,7 @@ char ent_valor_ent (void) {
     printf("|               Insira apenas números, incluindo centavos !               |\n");
     printf("|                                                                         |\n");
     printf("|                           Valor de compra: R$");
-    scanf("%[0-9,]", pont);
+    scanf("%[0-9A-Za-z@._-]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     scanf("%c", &valor); 
@@ -231,7 +228,7 @@ char ent_valor_saida (void) {
     printf("|               Insira apenas números, incluindo centavos !               |\n");
     printf("|                                                                         |\n");
     printf("|                           Valor de venda: R$");
-    scanf("%[0-9,]", pont);
+    scanf("%[0-9A-Za-z@._-]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     scanf("%c", &valor); 
@@ -241,7 +238,7 @@ char ent_valor_saida (void) {
 //Entrada id da venda
 //
 char ent_id_venda (void) {
-    char tam = '9';
+    char tam = '6';
     char id;
     char* pont;
     pont = (char*) malloc(8*sizeof(char));
@@ -251,10 +248,10 @@ char ent_id_venda (void) {
     printf("|                                                                         |\n");
     printf("|                         Insira apenas números !                         |\n");
     printf("|                                                                         |\n");
-    scanf("%[0-9]", pont);
+    scanf("%[0-9A-Za-z@._-]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     scanf("%c", &id);
-    if (!valid_op(id, tam)) {
+    if (!valid_numeros(pont, tam)) {
         return 0; } 
     return 1; }

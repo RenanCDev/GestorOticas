@@ -335,7 +335,8 @@ void tela_cad_concl (void) {
     printf("|                                                                         |\n");
     printf("|                         Tecle ENTER para seguir                         |\n");
     printf("|                                                                         |\n");
-    printf("+=========================================================================+\n"); }
+    printf("+=========================================================================+\n");
+    limpa_buffer (); }
 
 
 //Tela venda concluída

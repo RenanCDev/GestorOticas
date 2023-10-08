@@ -26,14 +26,8 @@
 void modulo_administrativo (void) {
     setlocale (LC_ALL,"Portuguese_Brazil");
     char op;
-    char op_max = '3';
-    do {
         do {
-            limpa_buffer ();
             op = menu_administrativo ();
-            if (!valid_op(op, op_max)) {
-                tela_erro(); } }   
-        while (!valid_op(op, op_max));
         switch (op) {
             case '1':
                 cad_admin ();
@@ -55,8 +49,8 @@ void cad_admin (void) {
     do {
         limpa_buffer ();
         tela_cad_admin (ex);
-        verify = ent_cpf ();
-        if (!verify) {
+        verify = ent_cpf (); 
+        if (!verify)  {
             tela_erro (); } }
     while (!verify);
     do {
@@ -92,7 +86,9 @@ void pesq_admin (void) {
     do {
         limpa_buffer ();
         tela_pesq_admin ();
-        verify = ent_cpf ();
-        if (!verify); }
+        verify = ent_cpf (); 
+        if (!verify)  {
+            tela_erro (); } }
     while (!verify);
-    t_exe_cad_adm (); }
+    t_exe_cad_adm ();
+    limpa_buffer (); }

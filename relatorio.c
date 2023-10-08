@@ -27,15 +27,8 @@
 void modulo_relatorio (void) {
     setlocale (LC_ALL, "Portuguese_Brazil");
     char op;
-    char op_max = '6';
-    do {
         do {
-            limpa_buffer ();
             op = menu_relatorio ();
-            if (!valid_op(op, op_max)) {
-                limpa_buffer ();
-                tela_erro(); } }   
-        while (!valid_op(op, op_max));
         switch (op) {
             case '1':
                 relat_admin ();
