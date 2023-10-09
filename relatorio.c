@@ -65,7 +65,8 @@ void relat_admin (void) {
             tela_erro (); } }
     while (!verify);
     limpa_buffer ();
-    t_exe_relat_adm (); }
+    t_exe_relat_adm (); 
+    limpa_buffer (); }
 
 
 //Relatório fornecedor
@@ -80,7 +81,8 @@ void relat_fornec (void) {
             tela_erro (); } }
     while (!verify);
     limpa_buffer ();
-    t_exe_relat_forn (); }
+    t_exe_relat_forn (); 
+    limpa_buffer ();}
 
 
 //Relatório produto
@@ -95,7 +97,8 @@ void relat_produto (void) {
             tela_erro (); } }
     while (!verify);
     limpa_buffer ();
-    t_exe_relat_prod (); }
+    t_exe_relat_prod (); 
+    limpa_buffer ();}
 
 
 //Relatório colaborador
@@ -110,7 +113,8 @@ void relat_colab (void) {
             tela_erro (); } }
     while (!verify);
     limpa_buffer ();
-    t_exe_relat_colab (); }
+    t_exe_relat_colab (); 
+    limpa_buffer ();}
 
 
 //Relatório cliente
@@ -125,7 +129,8 @@ void relat_cliente (void) {
             tela_erro (); } }
     while (!verify);
     limpa_buffer ();
-    t_exe_relat_client (); }
+    t_exe_relat_client (); 
+    limpa_buffer ();}
 
 
 //Relatório vendas
@@ -140,4 +145,5 @@ void relat_venda (void) {
             tela_erro (); } }
     while (!verify);
     limpa_buffer ();
-    t_exe_cad_vend (); }
+    t_exe_cad_vend (); 
+    limpa_buffer ();}

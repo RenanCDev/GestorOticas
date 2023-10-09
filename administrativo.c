@@ -90,5 +90,6 @@ void pesq_admin (void) {
         if (!verify)  {
             tela_erro (); } }
     while (!verify);
+    limpa_buffer ();
     t_exe_cad_adm ();
     limpa_buffer (); }

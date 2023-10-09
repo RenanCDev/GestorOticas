@@ -86,9 +86,9 @@ void cad_produto (void) {
             tela_erro (); } }
     while (!verify);
     limpa_buffer ();
+    tela_cad_produto ();
     t_exe_cad_prod ();
-    tela_cad_concl ();
-    limpa_buffer (); }
+    tela_cad_concl ();}
 
 
 //Pesquisa produto
@@ -102,5 +102,6 @@ void pesq_produto (void) {
         if (!verify) {
             tela_erro (); } }
     while (!verify);
+    limpa_buffer ();
     t_exe_cad_prod ();
     limpa_buffer (); }

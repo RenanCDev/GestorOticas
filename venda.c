@@ -52,36 +52,32 @@ void cad_venda (void) {
     while (!verify);
     do {
         limpa_buffer ();
-        tela_venda_produt ();
-        verify = ent_cod_barras (); 
-        if (!verify) {
-            tela_erro (); } }
-    while (!verify);
-    do {
-        limpa_buffer ();
-        tela_venda_q_prod ();
-        verify = ent_quant (); 
-        if (!verify) {
-            tela_erro ();
-        acresc_item_venda (); } }
-    while (!verify);
-    do {
-        limpa_buffer ();
         tela_venda_cliente ();
         info_cliente_0 ();
         verify = ent_cpf (); 
         if (!verify) {
-            tela_erro ();
-        form_pag ();  } }
-    while (!verify);
-    do {
-        limpa_buffer ();
-        tela_relat_admin ();
-        verify = ent_cpf (); 
-        if (!verify) {
             tela_erro (); } }
     while (!verify);
+    do {
+        do {
+            limpa_buffer ();
+            tela_venda_produt ();
+            verify = ent_cod_barras (); 
+            if (!verify) {
+                tela_erro (); } }
+        while (!verify);
+        do {
+            limpa_buffer ();
+            tela_venda_q_prod ();
+            verify = ent_quant (); 
+            if (!verify) {
+                tela_erro (); } }
+        while (!verify);
+        verify = acresc_item_venda (); } 
+    while (!verify);
+    form_pag ();
     limpa_buffer ();
+    tela_cad_venda ();
     t_exe_cad_vend ();
     tela_vend_concl ();
     limpa_buffer (); }
@@ -104,40 +100,22 @@ void pesq_venda (void) {
 
 //Acrescenta itens a uma venda em processo
 //
-void acresc_item_venda (void) {
+int acresc_item_venda (void) {
     char op;
     char op_max = '2';
-    do {
         do {
             tela_cad_venda ();
-            limpa_buffer ();
             op = menu_item_venda ();
             if (!valid_op(op, op_max)) {
                 tela_erro(); } }   
         while (!valid_op(op, op_max));
         switch (op) {
             case '1':
-            int verify;
-            do {
-                limpa_buffer ();
-                tela_cad_venda ();
-                tela_venda_produt ();
-                verify = ent_cod_barras (); 
-                if (!verify) {
-                    tela_erro (); } }
-            while (!verify);
-            limpa_buffer ();
-            do {
-                limpa_buffer ();
-                tela_cad_venda ();
-                tela_venda_q_prod ();
-                verify = ent_quant (); 
-                if (!verify) {
-                    tela_erro (); } }
-            while (!verify);
-            limpa_buffer ();
+            return 0;
+            break; 
+            case '2': 
+            return 1;
             break; } }
-    while (op != '2'); }
 
 
 //Declara a forma de pagamento de uma venda
@@ -146,25 +124,16 @@ void form_pag (void) {
     char op;
     char op_max = '4';
     do {
-        do {
-            limpa_buffer ();
-            tela_cad_venda ();
-            op = menu_form_pag ();
-            if (!valid_op(op, op_max)) {
-                tela_erro(); } }   
-        while (!valid_op(op, op_max));
-        switch (op) {
-            case '1':
-                getchar ();
-                break;
-            case '2':
-                getchar ();
-                break;
-            case '3':
-                getchar ();
-                break;
-            case '4':
-                getchar ();
-                break; }
+        tela_cad_venda ();
+        op = menu_form_pag ();
+    switch (op) {
+        case '1':
+            break;
+        case '2':
+            break;
+        case '3':
+            break;
+        case '4':
+            break; }
     system("clear"); }
     while ((op != '1') && (op != '2') && (op != '3') && (op != '4')); }

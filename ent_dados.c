@@ -175,7 +175,6 @@ char ent_desc_produto (void) {
 //Entrada de quantidade de peças
 //
 char ent_quant (void) {
-    char tam = '9';
     char quant;
     char* pont;
     pont = (char*) malloc(8*sizeof(char));
@@ -190,7 +189,7 @@ char ent_quant (void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     scanf("%c", &quant);
-    if (!valid_op(quant, tam)) {
+    if (!valid_numeros_s(pont)) {
         return 0; }
     return 1; } 
 
@@ -247,11 +246,10 @@ char ent_id_venda (void) {
     printf("|                         Digite o ID da venda .                          |\n");
     printf("|                                                                         |\n");
     printf("|                         Insira apenas números !                         |\n");
-    printf("|                                                                         |\n");
     scanf("%[0-9A-Za-z@._-]", pont);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     scanf("%c", &id);
-    if (!valid_numeros(pont, tam)) {
+    if (!valid_numeros_s(pont)) {
         return 0; } 
     return 1; }

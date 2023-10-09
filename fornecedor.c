@@ -72,9 +72,9 @@ void cad_fornec (void) {
             tela_erro (); } }
     while (!verify);
     limpa_buffer ();
+    tela_cad_fornec ();
     t_exe_cad_forn ();
-    tela_cad_concl ();
-    limpa_buffer (); }
+    tela_cad_concl (); }
 
 
 //Pesquisa fornecedor
@@ -88,5 +88,6 @@ void pesq_fornec (void) {
         if (!verify) {
             tela_erro (); } }
     while (!verify);
+    limpa_buffer (); 
     t_exe_cad_forn ();
     limpa_buffer (); }

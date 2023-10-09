@@ -351,6 +351,7 @@ char menu_form_pag (void) {
 //Tela sobre o programa
 void tela_sobre (void) {
     system("clear");
+    tela_banner ();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|               Universidade Federal do Rio Grande do Norte               |\n");
