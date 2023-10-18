@@ -42,35 +42,41 @@ void modulo_cliente (void) {
 //Cadastra um novo cliente
 //
 void cad_cliente (void) {
-    int verify;
+    char* cpf;
+    char* email;
+    char* cel;
+    char* nome;
     do {
         limpa_buffer ();
         tela_cad_cliente ();
-        verify = ent_cpf ();
-        if (!verify) {
+        cpf = ent_cpf (); 
+        if (!valid_cpf(cpf)) {
             tela_erro (); } }
-    while (!verify);
+    while (!valid_cpf(cpf));
     do {
         limpa_buffer ();
         tela_cad_cliente ();
-        verify = ent_email ();
-        if (!verify) {
+        email = ent_email ();
+        if (!valid_email(email)) {
+            limpa_buffer ();
             tela_erro (); } }
-    while (!verify);
+    while (!valid_email(email));
     do {
         limpa_buffer ();
         tela_cad_cliente ();
-        verify = ent_cel ();
-        if (!verify) {
-            tela_erro (); } }
-    while (!verify);
+        cel = ent_cel ();
+        if (!valid_numeros(cel, 11)) {
+            limpa_buffer ();
+            tela_erro (); } } 
+    while (!valid_numeros(cel, 11));
     do {
         limpa_buffer ();
         tela_cad_cliente ();
-        verify = ent_nome ();
-        if (!verify) {
+        nome = ent_nome ();
+        if (!valid_nome(nome)) {
+            limpa_buffer ();
             tela_erro (); } }
-    while (!verify);
+    while (!valid_nome(nome));
     limpa_buffer ();
     tela_cad_cliente ();
     t_exe_cad_cliente ();
@@ -80,13 +86,13 @@ void cad_cliente (void) {
 //Pesquisa o cadastro de um cliente
 //
 void pesq_cliente (void) {
-    int verify;
+    char* cpf;
     do {
         limpa_buffer ();
         tela_pesq_cliente ();
-        verify = ent_cpf ();
-        if (!verify) {
+        cpf = ent_cpf ();
+        if (!valid_cpf(cpf)) {
             tela_erro (); } }
-    while (!verify);
+    while (!valid_cpf(cpf));
     t_exe_cad_cliente (); 
     limpa_buffer (); }

@@ -57,14 +57,14 @@ void modulo_relatorio (void) {
 //Relatório administrador
 //
 void relat_admin (void) {
-    int verify;
+    char* cpf;
     do {
         limpa_buffer ();
         tela_relat_admin ();
-        verify = ent_cpf (); 
-        if (!verify) {
+        cpf = ent_cpf (); 
+        if (!valid_cpf(cpf)) {
             tela_erro (); } }
-    while (!verify);
+    while (!valid_cpf(cpf));
     limpa_buffer ();
     t_exe_relat_adm (); 
     limpa_buffer (); }
@@ -73,14 +73,14 @@ void relat_admin (void) {
 //Relatório fornecedor
 //
 void relat_fornec (void) {
-    int verify;
+    char* cnpj;
     do {
         limpa_buffer ();
         tela_relat_fornec ();
-        verify = ent_cnpj (); 
-        if (!verify) {
+        cnpj = ent_cnpj (); 
+        if (!valid_cnpj(cnpj)) {
             tela_erro (); } }
-    while (!verify);
+    while (!valid_cnpj(cnpj));
     limpa_buffer ();
     t_exe_relat_forn (); 
     limpa_buffer ();}
@@ -89,14 +89,14 @@ void relat_fornec (void) {
 //Relatório produto
 //
 void relat_produto (void) {
-    int verify;
+    char* cod_barras;
     do {
         limpa_buffer ();
         tela_relat_produto ();
-        verify = ent_cod_barras (); 
-        if (!verify) {
+        cod_barras = ent_cod_barras (); 
+        if (!valid_cod_barras(cod_barras)) {
             tela_erro (); } }
-    while (!verify);
+    while (!valid_cod_barras(cod_barras));
     limpa_buffer ();
     t_exe_relat_prod (); 
     limpa_buffer ();}
@@ -105,14 +105,14 @@ void relat_produto (void) {
 //Relatório colaborador
 //
 void relat_colab (void) {
-    int verify;
+    char* cpf;
     do {
         limpa_buffer ();
         tela_relat_colab ();
-        verify = ent_cpf (); 
-        if (!verify) {
+        cpf = ent_cpf (); 
+        if (!valid_cpf(cpf)) {
             tela_erro (); } }
-    while (!verify);
+    while (!valid_cpf(cpf));
     limpa_buffer ();
     t_exe_relat_colab (); 
     limpa_buffer ();}
@@ -121,14 +121,14 @@ void relat_colab (void) {
 //Relatório cliente
 //
 void relat_cliente (void) {
-    int verify;
+    char* cpf;
     do {
         limpa_buffer ();
         tela_relat_cliente ();
-        verify = ent_cpf (); 
-        if (!verify) {
+        cpf = ent_cpf (); 
+        if (!valid_cpf(cpf)) {
             tela_erro (); } }
-    while (!verify);
+    while (!valid_cpf(cpf));
     limpa_buffer ();
     t_exe_relat_client (); 
     limpa_buffer ();}
@@ -137,14 +137,14 @@ void relat_cliente (void) {
 //Relatório vendas
 //
 void relat_venda (void) {
-    int verify;
+    char* id;
     do {
         limpa_buffer ();
         tela_relat_venda ();
-        verify = ent_id_venda (); 
-        if (!verify) {
+        id = ent_id_venda (); 
+        if (!valid_numeros_s(id)) {
             tela_erro (); } }
-    while (!verify);
+    while (!valid_numeros_s(id));
     limpa_buffer ();
     t_exe_cad_vend (); 
     limpa_buffer ();}

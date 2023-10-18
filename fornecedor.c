@@ -43,35 +43,41 @@ void modulo_fornecedor (void) {
 //Cadastra fornecedor
 //
 void cad_fornec (void) {
-    int verify;
+    char* cnpj;
+    char* email;
+    char* cel;
+    char* nome;
     do {
         limpa_buffer ();
         tela_cad_fornec ();
-        verify = ent_cnpj ();
-        if (!verify) {
+        cnpj = ent_cnpj ();
+        if (!valid_cnpj(cnpj)) {
             tela_erro (); } }
-    while (!verify);
+    while (!valid_cnpj(cnpj));
     do {
         limpa_buffer ();
         tela_cad_fornec ();
-        verify = ent_email ();
-        if (!verify) {
+        email = ent_email ();
+        if (!valid_email(email)) {
+            limpa_buffer ();
             tela_erro (); } }
-    while (!verify);
+    while (!valid_email(email));
     do {
         limpa_buffer ();
         tela_cad_fornec ();
-        verify = ent_cel ();
-        if (!verify) {
+        cel = ent_cel ();
+        if (!valid_numeros(cel, 11)) {
+            limpa_buffer ();
             tela_erro (); } }
-    while (!verify);
+    while (!valid_numeros(cel, 11));
     do {
         limpa_buffer ();
         tela_cad_fornec ();
-        verify = ent_nome ();
-        if (!verify) {
+        nome = ent_nome ();
+        if (!valid_nome(nome)) {
+            limpa_buffer ();
             tela_erro (); } }
-    while (!verify);
+    while (!valid_nome(nome));
     limpa_buffer ();
     tela_cad_fornec ();
     t_exe_cad_forn ();
@@ -81,14 +87,14 @@ void cad_fornec (void) {
 //Pesquisa fornecedor
 //
 void pesq_fornec (void) {
-    int verify;
+    char* cnpj;
     do {
         limpa_buffer ();
         tela_pesq_fornec ();
-        verify = ent_cnpj ();
-        if (!verify) {
+        cnpj = ent_cnpj ();
+        if (!valid_cnpj(cnpj)) {
             tela_erro (); } }
-    while (!verify);
+    while (!valid_cnpj(cnpj));
     limpa_buffer (); 
     t_exe_cad_forn ();
     limpa_buffer (); }

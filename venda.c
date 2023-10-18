@@ -44,36 +44,42 @@ void modulo_venda (void) {
 //
 void cad_venda (void) {
     int verify;
+    char* cpf;
+    char* cod_barras;
+    char* quant;
     do {
         limpa_buffer ();
         tela_venda_colab ();
-        verify = ent_cpf (); 
-        if (!verify) {
+        cpf = ent_cpf (); 
+        if (!valid_cpf(cpf)) {
             tela_erro (); } }
-    while (!verify);
+    while (!valid_cpf(cpf));
     do {
         limpa_buffer ();
         tela_venda_cliente ();
         info_cliente_0 ();
-        verify = ent_cpf (); 
-        if (!verify) {
+        cpf = ent_cpf (); 
+        if (!valid_cpf(cpf)) {
+            limpa_buffer ();
             tela_erro (); } }
-    while (!verify);
+    while (!valid_cpf(cpf));
     do {
         do {
             limpa_buffer ();
             tela_venda_produt ();
-            verify = ent_cod_barras (); 
-            if (!verify) {
+            cod_barras = ent_cod_barras (); 
+            if (!valid_cod_barras(cod_barras)) {
+                limpa_buffer ();
                 tela_erro (); } }
-        while (!verify);
+        while (!valid_cod_barras(cod_barras));
         do {
             limpa_buffer ();
             tela_venda_q_prod ();
-            verify = ent_quant (); 
-            if (!verify) {
+            quant = ent_quant (); 
+            if (!valid_numeros_s(quant)) {
+                limpa_buffer ();
                 tela_erro (); } }
-        while (!verify);
+        while (!valid_numeros_s(quant));
         verify = acresc_item_venda (); } 
     while (!verify);
     form_pag ();
@@ -87,14 +93,14 @@ void cad_venda (void) {
 //Pesquisa o cadastro de alguma venda
 //
 void pesq_venda (void) {
-    int verify;
+    char* id;
     do {
         limpa_buffer ();
         tela_pesq_venda ();
-        verify = ent_id_venda (); 
-        if (!verify) {
+        id = ent_id_venda (); 
+        if (!valid_numeros_s(id)) {
             tela_erro (); } }
-    while (!verify);
+    while (!valid_numeros_s(id));
     t_exe_cad_vend ();
     limpa_buffer (); }
 

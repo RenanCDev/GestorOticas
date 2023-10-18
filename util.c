@@ -24,7 +24,7 @@
 
 /////
 //Funções de validação:
-//Valida opção:
+//Validação opção:
 //Verifica se a entrada informada esta dentro das opções possíveis(retorna "1") ou não(retorna "0")
 //
 //Função que retorna 1 caso a entrada tiver mais de 1 caractere
@@ -145,7 +145,8 @@ void limpa_buffer (void) {
 
 } // AUTOR: GUILHERME BERNAL /// STACKOVERFLOW: https://pt.stackoverflow.com/questions/9427/limpeza-do-buffer-do-teclado-ap%C3%B3s-scanf
 
-//Verifica bissexto:
+
+//Validação bissexto:
 //Verifica se o ano for bissexto(divisível por 4, não divisível por ...
 //100 ou divisível por 400)(retorna "1") ou não(retorna "0")
 //
@@ -160,7 +161,7 @@ int verif_bissexto(int aa) {
 // AUTOR: FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
 
 
-//Verifica data:
+//Validação data:
 //Verifica se dia, mês e ano correspondem a uma data válida, inclusive
 //em anos bissextos(retorna "1"), ou não (retorna "0")
 //
@@ -185,7 +186,7 @@ int verif_data (int dd, int mm, int aa) {
 // AUTOR: FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
 
 
-//Valida data:
+//Validação data:
 //Verifica se a string recebida corresponde a uma data válida (apenas dígitos
 //e no formato: ddmmaaaa)(retorna "1") ou não(retorna "0")
 //
@@ -209,7 +210,7 @@ int valid_data (char* data) {
 //AUTOR FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
 
 
-//Validação para letra:
+//Validaçãopara letra:
 //Verifica se a letra recebida é caractere alfabético(retorna "1") ou não(retorna "0")
 //Considerando alfabeto "A" - "Z" ou "a" - "z"
 //

@@ -26,10 +26,9 @@
 //
 //entrada do CPF
 //
-char ent_cpf (void) {
-    char cpf;
-    char* pont;
-    pont = (char*) malloc(11*sizeof(char));
+char* ent_cpf (void) {
+    char* cpf;
+    cpf = (char*) malloc(11*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                             Digite o CPF .                              |\n");
@@ -37,64 +36,34 @@ char ent_cpf (void) {
     printf("|                         Insira apenas números !                         |\n");
     printf("|                                                                         |\n");
     printf("|                            CPF: ");
-    scanf("%[0-9A-Za-z@._-]", pont);
+    scanf("%[0-9A-Za-z@._-]", cpf);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
-    scanf("%c", &cpf); 
-    printf("cpf: %c\npont: %s\n",cpf, pont);
     getchar();
-    if (!valid_cpf(pont)) {
-        return 0; }
-    return 1;}
-
-
-char* ent_cp (void) {
-    char cpf;
-    char* pont;
-    pont = (char*) malloc(11*sizeof(char));
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                             Digite o CPF .                              |\n");
-    printf("|                                                                         |\n");
-    printf("|                         Insira apenas números !                         |\n");
-    printf("|                                                                         |\n");
-    printf("|                            CPF: ");
-    scanf("%[0-9A-Za-z@._-]", pont);
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-    scanf("%c", &cpf); 
-    printf("cpf: %c\npont: %s\n",cpf, pont);
-    getchar();
-    return pont; }
+    return cpf; }
 
 
 //Entrada do email
 //
-char ent_email (void) {
-    char email;
-    char* pont;
-    pont = (char*) malloc(30*sizeof(char));
+char* ent_email (void) {
+    char* email;
+    email = (char*) malloc(30*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                            Digite o E-mail .                            |\n");
     printf("|                                                                         |\n");
     printf("|                   E-mail: ");
-    scanf("%[0-9A-Za-z@._-]", pont);
+    scanf("%[0-9A-Za-z@._-]", email);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
-    scanf("%c", &email); 
-    if (!valid_email(pont)) {
-        return 0; }
-    return 1;}
+    return email; }
 
 
 //Entrada do celular
 //
-char ent_cel (void) {
-    char cel;
-    char* pont;
-    pont = (char*) malloc(20*sizeof(char));
-    int tam = 11;
+char* ent_cel (void) {
+    char* cel;
+    cel = (char*) malloc(20*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                           Digite o celular .                            |\n");
@@ -102,41 +71,33 @@ char ent_cel (void) {
     printf("|                Insira apenas números, incluindo o ddd !                 |\n");
     printf("|                                                                         |\n");
     printf("|                            Cel.: ");
-    scanf("%[0-9A-Za-z@._-]", pont);
+    scanf("%[0-9A-Za-z@._-]", cel);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
-    scanf("%c", &cel);
-    if (!valid_numeros(pont, tam)) {
-       return 0; }
-    return 1; }
+    return cel; }
 
 
 //Entrada do nome
 //
-char ent_nome (void) {
-    char nome;
-    char* pont;
-    pont = (char*) malloc(60*sizeof(char));
+char* ent_nome (void) {
+    char* nome;
+    nome = (char*) malloc(60*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                             Digite o nome .                             |\n");
     printf("|                                                                         |\n");
     printf("|               Nome: ");
-    scanf("%[0-9A-Za-z@._-]", pont);
+    scanf("%[0-9A-Za-z@._-]", nome);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
-    scanf("%c", &nome);
-    if (!valid_nome(pont)) {
-       return 0; }
-    return 1; }
+    return nome; }
 
 
 //Entrada do CNPJ
 //
-char ent_cnpj (void) {
-    char cnpj;
-    char* pont;
-    pont = (char*) malloc(20*sizeof(char));
+char* ent_cnpj (void) {
+    char* cnpj;
+    cnpj = (char*) malloc(20*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                      Digite o CNPJ do fornecedor :                      |\n");
@@ -144,21 +105,17 @@ char ent_cnpj (void) {
     printf("|                         Insira apenas números !                         |\n");
     printf("|                                                                         |\n");
     printf("|                          CNPJ: ");
-    scanf("%[0-9A-Za-z@._-]", pont);
+    scanf("%[0-9A-Za-z@._-]", cnpj);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    scanf("%c", &cnpj); 
-    if (!valid_cnpj(pont)) {
-        return 0; }
-    return 1;}
+    return cnpj; }
 
 
 //Entrada do código de barras
 //
-char ent_cod_barras (void) {
-    char cod_barras;
-    char* pont;
-    pont = (char*) malloc(20*sizeof(char));
+char* ent_cod_barras (void) {
+    char* cod_barras;
+    cod_barras = (char*) malloc(20*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                       Digite o código de barras .                       |\n");
@@ -166,41 +123,33 @@ char ent_cod_barras (void) {
     printf("|                         Insira apenas números !                         |\n");
     printf("|                                                                         |\n");
     printf("|                     Código de barras: ");
-    scanf("%[0-9A-Za-z@._-]", pont);
+    scanf("%[0-9A-Za-z@._-]", cod_barras);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    scanf("%c", &cod_barras); 
-    if (!valid_cod_barras(pont)) {
-       return 0; }
-    return 1; }
+    return cod_barras; }
 
 
 //Entrada da descrição do produto
 //
-char ent_desc_produto (void) {
-    char desc_produto;
-    char* pont;
-    pont = (char*) malloc(154*sizeof(char));
+char* ent_desc_produto (void) {
+    char* desc;
+    desc = (char*) malloc(154*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                          Descreva o produto .                           |\n");
     printf("|                                                                         |\n");
     printf("|     Descrição do produto: ");
-    scanf("%[0-9A-Za-z@._-]", pont);
+    scanf("%[0-9A-Za-z@._-]", desc);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    scanf("%c", &desc_produto); 
-    if (!valid_nome(pont)) {
-       return 0; }
-    return 1; }
+    return desc;; }
 
 
 //Entrada de quantidade de peças
 //
-char ent_quant (void) {
-    char quant;
-    char* pont;
-    pont = (char*) malloc(8*sizeof(char));
+char* ent_quant (void) {
+    char* quant;
+    quant = (char*) malloc(8*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                     Digite a quantidade de peças .                      |\n");
@@ -208,21 +157,17 @@ char ent_quant (void) {
     printf("|                         Insira apenas números !                         |\n");
     printf("|                                                                         |\n");
     printf("|                          Quantidade de peças: ");
-    scanf("%[0-9A-Za-z@._-]", pont);
+    scanf("%[0-9A-Za-z@._-]", quant);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    scanf("%c", &quant);
-    if (!valid_numeros_s(pont)) {
-        return 0; }
-    return 1; } 
+    return quant; } 
 
 
 //Entrada do valor de entrada da peça
 //
-char ent_valor_ent (void) {
-    char valor;
-    char* pont;
-    pont = (char*) malloc(8*sizeof(char));
+char* ent_valor_ent (void) {
+    char* valor;
+    valor = (char*) malloc(8*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                   Digite o valor de entrada da peça .                   |\n");
@@ -230,19 +175,17 @@ char ent_valor_ent (void) {
     printf("|               Insira apenas números, incluindo centavos !               |\n");
     printf("|                                                                         |\n");
     printf("|                           Valor de compra: R$");
-    scanf("%[0-9A-Za-z@._-]", pont);
+    scanf("%[0-9A-Za-z@._-]", valor);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    scanf("%c", &valor); 
-    return 1;}
+    return valor; }
 
 
 //Entrada valor de saída da peça
 //
-char ent_valor_saida (void) {
-    char valor;
-    char* pont;
-    pont = (char*) malloc(8*sizeof(char));
+char* ent_valor_saida (void) {
+    char* valor;
+    valor = (char*) malloc(8*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                    Digite o valor de saída da peça .                    |\n");
@@ -250,28 +193,23 @@ char ent_valor_saida (void) {
     printf("|               Insira apenas números, incluindo centavos !               |\n");
     printf("|                                                                         |\n");
     printf("|                           Valor de venda: R$");
-    scanf("%[0-9A-Za-z@._-]", pont);
+    scanf("%[0-9A-Za-z@._-]", valor);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    scanf("%c", &valor); 
-    return 1;}
+    return valor; }
 
 
 //Entrada id da venda
 //
-char ent_id_venda (void) {
-    char id;
-    char* pont;
-    pont = (char*) malloc(8*sizeof(char));
+char* ent_id_venda (void) {
+    char* id;
+    id = (char*) malloc(8*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                         Digite o ID da venda .                          |\n");
     printf("|                                                                         |\n");
     printf("|                         Insira apenas números !                         |\n");
-    scanf("%[0-9A-Za-z@._-]", pont);
+    scanf("%[0-9A-Za-z@._-]", id);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    scanf("%c", &id);
-    if (!valid_numeros_s(pont)) {
-        return 0; } 
-    return 1; }
+    return id; }

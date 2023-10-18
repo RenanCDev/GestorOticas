@@ -43,49 +43,59 @@ void modulo_produto (void) {
 //Cadastra produto
 //
 void cad_produto (void) {
-    int verify;
+    char* cod_barras;
+    char* cnpj;
+    char* desc;
+    char* quant;
+    char* valor_comp;
+    char* valor_vend;
     do {
         limpa_buffer ();
         tela_cad_produto ();
-        verify = ent_cod_barras ();
-        if (!verify) {
+        cod_barras = ent_cod_barras ();
+        if (!valid_cod_barras(cod_barras)) {
             tela_erro (); } }
-    while (!verify);
+    while (!valid_cod_barras(cod_barras));
     do {
         limpa_buffer ();
         tela_cad_produto ();
-        verify = ent_cnpj ();
-        if (!verify) {
+        cnpj = ent_cnpj ();
+        if (!valid_cnpj(cnpj)) {
+            limpa_buffer ();
             tela_erro (); } }
-    while (!verify);
+    while (!valid_cnpj(cnpj));
     do {
         limpa_buffer ();
         tela_cad_produto ();
-        verify = ent_desc_produto ();
-        if (!verify) {
+        desc = ent_desc_produto ();
+        if (!valid_nome(desc)) {
+            limpa_buffer ();
             tela_erro (); } }
-    while (!verify);
+    while (!valid_nome(desc));
     do {
         limpa_buffer ();
         tela_cad_produto ();
-        verify = ent_quant ();
-        if (!verify) {
+        quant = ent_quant ();
+        if (!valid_numeros_s(quant)) {
+            limpa_buffer ();
             tela_erro (); } }
-    while (!verify);
+    while (!valid_numeros_s(quant));
     do {
         limpa_buffer ();
         tela_cad_produto ();
-        verify = ent_valor_ent ();
-        if (!verify) {
+        valor_comp = ent_valor_ent ();
+        if (!valid_numeros_s(valor_comp)) {
+            limpa_buffer ();
             tela_erro (); } }
-    while (!verify);
+    while (!valid_numeros_s(valor_comp));
     do {
         limpa_buffer ();
         tela_cad_produto ();
-        verify = ent_valor_saida ();
-        if (!verify) {
+        valor_vend = ent_valor_saida ();
+        if (!valid_numeros_s(valor_vend)) {
+            limpa_buffer ();
             tela_erro (); } }
-    while (!verify);
+    while (!valid_numeros_s(valor_vend));
     limpa_buffer ();
     tela_cad_produto ();
     t_exe_cad_prod ();
@@ -95,14 +105,14 @@ void cad_produto (void) {
 //Pesquisa produto
 //
 void pesq_produto (void) {
-    int verify;
+    char* cod_barras;
     do {
         limpa_buffer ();
         tela_pesq_produto ();
-        verify = ent_cod_barras ();
-        if (!verify) {
+        cod_barras = ent_cod_barras ();
+        if (!valid_cod_barras(cod_barras)) {
             tela_erro (); } }
-    while (!verify);
+    while (!valid_cod_barras(cod_barras));
     limpa_buffer ();
     t_exe_cad_prod ();
     limpa_buffer (); }

@@ -42,35 +42,41 @@ void modulo_colaborador (void) {
 //Cadastra um novo colaborador
 //
 void cad_colab (void) {
-    int verify;
+    char* cpf;
+    char* email;
+    char* cel;
+    char* nome;
     do {
         limpa_buffer ();
         tela_cad_colab ();
-        verify = ent_cpf ();
-        if (!verify) {
+        cpf = ent_cpf (); 
+        if (!valid_cpf(cpf)) {
             tela_erro (); } }
-    while (!verify);
+    while (!valid_cpf(cpf));
     do {
         limpa_buffer ();
         tela_cad_colab ();
-        verify = ent_email ();
-        if (!verify) {
+        email = ent_email ();
+        if (!valid_email(email)) {
+            limpa_buffer ();
             tela_erro (); } }
-    while (!verify);
+    while (!valid_email(email));
     do {
         limpa_buffer ();
         tela_cad_colab ();
-        verify = ent_cel ();
-        if (!verify) {
-            tela_erro (); } }
-    while (!verify);
+        cel = ent_cel ();
+        if (!valid_numeros(cel, 11)) {
+            limpa_buffer ();
+            tela_erro (); } } 
+    while (!valid_numeros(cel, 11));
     do {
         limpa_buffer ();
         tela_cad_colab ();
-        verify = ent_nome ();
-        if (!verify) {
+        nome = ent_nome ();
+        if (!valid_nome(nome)) {
+            limpa_buffer ();
             tela_erro (); } }
-    while (!verify);
+    while (!valid_nome(nome));
     limpa_buffer ();
     tela_cad_colab ();
     t_exe_cad_colab ();
@@ -80,13 +86,13 @@ void cad_colab (void) {
 //Pesquisa o cadastro de um colaborador
 //
 void pesq_colab (void) {
-    int verify;
+    char* cpf;
     do {
         limpa_buffer ();
         tela_pesq_colab ();
-        verify = ent_cpf ();
-        if (!verify) {
+        cpf = ent_cpf ();
+        if (!valid_cpf(cpf)) {
             tela_erro (); } }
-    while (!verify);
+    while (!valid_cpf(cpf));
     t_exe_cad_colab ();
     limpa_buffer (); }

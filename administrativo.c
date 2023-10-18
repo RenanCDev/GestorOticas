@@ -46,40 +46,41 @@ void modulo_administrativo (void) {
 //
 void cad_admin (void) {
     char ex[22] = "Cadastro administrador";
-    int verify = 0;
-    char cp[13];
-    char* op;
+    char* cpf;
+    char* email;
+    char* cel;
+    char* nome;
     do {
         limpa_buffer ();
         tela_cad_admin (ex);
-        op = ent_cp (); 
-        scanf("%c", &*cp);
-        printf("cp: %s",cp);
-        getchar();
-        if (!verify)  {
+        cpf = ent_cpf (); 
+        if (!valid_cpf(cpf)) {
             tela_erro (); } }
-    while (!verify);
+    while (!valid_cpf(cpf));
     do {
         limpa_buffer ();
         tela_cad_admin (ex);
-        verify = ent_email ();
-        if (!verify) {
+        email = ent_email ();
+        if (!valid_email(email)) {
+            limpa_buffer ();
             tela_erro (); } }
-    while (!verify);
+    while (!valid_email(email));
     do {
         limpa_buffer ();
         tela_cad_admin (ex);
-        verify = ent_cel ();
-        if (!verify) {
+        cel = ent_cel ();
+        if (!valid_numeros(cel, 11)) {
+            limpa_buffer ();
             tela_erro (); } } 
-    while (!verify);
+    while (!valid_numeros(cel, 11));
     do {
         limpa_buffer ();
         tela_cad_admin (ex);
-        verify = ent_nome ();
-        if (!verify) {
+        nome = ent_nome ();
+        if (!valid_nome(nome)) {
+            limpa_buffer ();
             tela_erro (); } }
-    while (!verify);
+    while (!valid_nome(nome));
     limpa_buffer ();
     tela_cad_admin (ex);
     t_exe_cad_adm ();
@@ -88,14 +89,13 @@ void cad_admin (void) {
 
 //Pesquisa o cadastro de algum administrador
 void pesq_admin (void) {
-    int verify;
+    char* cpf;
     do {
         limpa_buffer ();
         tela_pesq_admin ();
-        verify = ent_cpf (); 
-        if (!verify)  {
+        cpf = ent_cpf (); 
+        if (!valid_cpf(cpf)) {
             tela_erro (); } }
-    while (!verify);
-    limpa_buffer ();
+    while (!valid_cpf(cpf));
     t_exe_cad_adm ();
     limpa_buffer (); }
