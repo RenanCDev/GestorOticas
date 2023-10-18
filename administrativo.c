@@ -17,6 +17,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <locale.h>
 #include "all.h"
 
@@ -45,11 +46,16 @@ void modulo_administrativo (void) {
 //
 void cad_admin (void) {
     char ex[22] = "Cadastro administrador";
-    int verify;
+    int verify = 0;
+    char cp[13];
+    char* op;
     do {
         limpa_buffer ();
         tela_cad_admin (ex);
-        verify = ent_cpf (); 
+        op = ent_cp (); 
+        scanf("%c", &*cp);
+        printf("cp: %s",cp);
+        getchar();
         if (!verify)  {
             tela_erro (); } }
     while (!verify);

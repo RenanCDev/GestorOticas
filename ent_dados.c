@@ -17,6 +17,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <locale.h>
 #include "all.h"
 
@@ -40,9 +41,31 @@ char ent_cpf (void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     scanf("%c", &cpf); 
+    printf("cpf: %c\npont: %s\n",cpf, pont);
+    getchar();
     if (!valid_cpf(pont)) {
         return 0; }
     return 1;}
+
+
+char* ent_cp (void) {
+    char cpf;
+    char* pont;
+    pont = (char*) malloc(11*sizeof(char));
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                             Digite o CPF .                              |\n");
+    printf("|                                                                         |\n");
+    printf("|                         Insira apenas números !                         |\n");
+    printf("|                                                                         |\n");
+    printf("|                            CPF: ");
+    scanf("%[0-9A-Za-z@._-]", pont);
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    scanf("%c", &cpf); 
+    printf("cpf: %c\npont: %s\n",cpf, pont);
+    getchar();
+    return pont; }
 
 
 //Entrada do email
@@ -237,7 +260,6 @@ char ent_valor_saida (void) {
 //Entrada id da venda
 //
 char ent_id_venda (void) {
-    char tam = '6';
     char id;
     char* pont;
     pont = (char*) malloc(8*sizeof(char));

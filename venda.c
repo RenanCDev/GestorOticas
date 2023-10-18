@@ -17,6 +17,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <locale.h>
 #include "all.h"
 
@@ -115,6 +116,9 @@ int acresc_item_venda (void) {
             break; 
             case '2': 
             return 1;
+            break; 
+            default: 
+            return 0;
             break; } }
 
 
@@ -122,7 +126,6 @@ int acresc_item_venda (void) {
 //
 void form_pag (void) {
     char op;
-    char op_max = '4';
     do {
         tela_cad_venda ();
         op = menu_form_pag ();

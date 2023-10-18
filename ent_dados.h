@@ -19,6 +19,7 @@
 //Declaração das funções do aquivo ent_dados.c
 //
 char ent_cpf (void);
+char* ent_cp (void);
 char ent_email (void);
 char ent_cel (void);
 char ent_nome (void);
