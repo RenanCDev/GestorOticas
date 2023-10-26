@@ -44,10 +44,9 @@ void modulo_administrativo (void) {
                 case '3':
                     modulo_relatorio ();
                     break; 
-                } 
-            }
-        while (op != '0'); 
-    }
+            } 
+        } while (op != '0'); 
+}
 
 
 //Cadastra um novo administrador
@@ -63,41 +62,37 @@ void cad_admin (void) {
         cpf = ent_cpf ();
         if (!valid_cpf(cpf)) {
             tela_erro ();
-            } 
-        }
-    while (!valid_cpf(cpf));
+        } 
+    } while (!valid_cpf(cpf));
     limpa_buffer ();
     do {
         tela_cad_admin (ex);
         email = ent_email ();
         if (!valid_email(email)) {
             tela_erro (); 
-            } 
-        }
-    while (!valid_email(email));
+        } 
+    } while (!valid_email(email));
     limpa_buffer ();
     do {
         tela_cad_admin (ex);
         cel = ent_cel ();
         if (!valid_numeros(cel, 11)) {
             tela_erro (); 
-            } 
         } 
-    while (!valid_numeros(cel, 11));
+    }  while (!valid_numeros(cel, 11));
     limpa_buffer ();
     do {
         tela_cad_admin (ex);
         nome = ent_nome ();
         if (!valid_nome(nome)) {
             tela_erro (); 
-            } 
-        }
-    while (!valid_nome(nome));
+        } 
+    } while (!valid_nome(nome));
     limpa_buffer ();
     tela_cad_admin (ex);
     t_exe_cad_adm ();
     tela_cad_concl (); 
-    }
+}
 
 
 //Pesquisa o cadastro de algum administrador
@@ -108,9 +103,10 @@ void pesq_admin (void) {
         tela_pesq_admin ();
         cpf = ent_cpf (); 
         if (!valid_cpf(cpf)) {
-            tela_erro (); } }
-    while (!valid_cpf(cpf));
+        tela_erro (); 
+        } 
+    } while (!valid_cpf(cpf));
     limpa_buffer ();
     t_exe_cad_adm ();
     limpa_buffer (); 
-    }
+}

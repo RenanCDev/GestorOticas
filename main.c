@@ -59,8 +59,7 @@ int main (void) {
                     tela_sobre ();
                     limpa_buffer ();
                     break;
-                } 
-            }
-    while (op0 != '0');
+            } 
+        } while (op0 != '0');
     return 0; 
-    }
+}

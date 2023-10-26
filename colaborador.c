@@ -39,10 +39,9 @@ void modulo_colaborador (void) {
                     limpa_buffer ();
                     pesq_colab ();
                     break; 
-                } 
-            }
-    while (op != '0'); 
-    }
+            } 
+        } while (op != '0'); 
+}
 
 
 //Cadastra um novo colaborador
@@ -57,40 +56,37 @@ void cad_colab (void) {
         cpf = ent_cpf (); 
         if (!valid_cpf(cpf)) {
             tela_erro (); 
-            } 
-        }
-    while (!valid_cpf(cpf));
+        } 
+    } while (!valid_cpf(cpf));
     limpa_buffer ();
     do {
         tela_cad_colab ();
         email = ent_email ();
         if (!valid_email(email)) {
             tela_erro (); 
-            } 
-        }
-    while (!valid_email(email));
+        } 
+    } while (!valid_email(email));
     limpa_buffer ();
     do {
         tela_cad_colab ();
         cel = ent_cel ();
         if (!valid_numeros(cel, 11)) {
             tela_erro (); 
-            } 
         } 
-    while (!valid_numeros(cel, 11));
+    }  while (!valid_numeros(cel, 11));
     limpa_buffer ();
     do {
         tela_cad_colab ();
         nome = ent_nome ();
         if (!valid_nome(nome)) {
             tela_erro (); 
-            } 
-        }
-    while (!valid_nome(nome));
+        } 
+    } while (!valid_nome(nome));
     limpa_buffer ();
     tela_cad_colab ();
     t_exe_cad_colab ();
-    tela_cad_concl (); }
+    tela_cad_concl (); 
+}
 
 
 //Pesquisa o cadastro de um colaborador
@@ -102,10 +98,9 @@ void pesq_colab (void) {
         cpf = ent_cpf ();
         if (!valid_cpf(cpf)) {
             tela_erro (); 
-            } 
-        }
-    while (!valid_cpf(cpf));
+        } 
+    } while (!valid_cpf(cpf));
     limpa_buffer ();
     t_exe_cad_colab ();
     limpa_buffer (); 
-    }
+}

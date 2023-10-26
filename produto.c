@@ -39,10 +39,9 @@ void modulo_produto (void) {
                     limpa_buffer ();
                     pesq_produto ();
                     break; 
-                } 
-            }
-    while (op != '0'); 
-    }
+            } 
+        } while (op != '0'); 
+}
 
 
 //Cadastra produto
@@ -60,8 +59,7 @@ void cad_produto (void) {
         if (!valid_cod_barras(cod_barras)) {
             tela_erro (); 
         } 
-    }
-    while (!valid_cod_barras(cod_barras));
+    } while (!valid_cod_barras(cod_barras));
     limpa_buffer ();
     do {
         tela_cad_produto ();
@@ -69,8 +67,7 @@ void cad_produto (void) {
         if (!valid_cnpj(cnpj)) {
             tela_erro (); 
         } 
-    }
-    while (!valid_cnpj(cnpj));
+    } while (!valid_cnpj(cnpj));
     limpa_buffer ();
     do {
         tela_cad_produto ();
@@ -78,8 +75,7 @@ void cad_produto (void) {
         if (!valid_nome(desc)) {
             tela_erro (); 
         } 
-    }
-    while (!valid_nome(desc));
+    } while (!valid_nome(desc));
     limpa_buffer ();
     do {
         tela_cad_produto ();
@@ -87,8 +83,7 @@ void cad_produto (void) {
         if (!valid_numeros_s(quant)) {
             tela_erro (); 
         } 
-    }
-    while (!valid_numeros_s(quant));
+    } while (!valid_numeros_s(quant));
     limpa_buffer ();
     do {
         tela_cad_produto ();
@@ -96,8 +91,7 @@ void cad_produto (void) {
         if (!valid_numeros_s(valor_comp)) {
             tela_erro (); 
         } 
-    }
-    while (!valid_numeros_s(valor_comp));
+    } while (!valid_numeros_s(valor_comp));
     limpa_buffer ();
     do {
         tela_cad_produto ();
@@ -105,12 +99,12 @@ void cad_produto (void) {
         if (!valid_numeros_s(valor_vend)) {
             tela_erro (); 
         } 
-    }
-    while (!valid_numeros_s(valor_vend));
+    } while (!valid_numeros_s(valor_vend));
     limpa_buffer ();
     tela_cad_produto ();
     t_exe_cad_prod ();
-    tela_cad_concl ();}
+    tela_cad_concl ();
+}
 
 
 //Pesquisa produto
@@ -123,9 +117,8 @@ void pesq_produto (void) {
         if (!valid_cod_barras(cod_barras)) {
             tela_erro (); 
         } 
-    }
-    while (!valid_cod_barras(cod_barras));
+    } while (!valid_cod_barras(cod_barras));
     limpa_buffer ();
     t_exe_cad_prod ();
     limpa_buffer (); 
-    }
+}

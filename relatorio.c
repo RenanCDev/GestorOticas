@@ -55,10 +55,9 @@ void modulo_relatorio (void) {
                     limpa_buffer ();
                     relat_venda ();
                     break;
-                } 
             }
-    while (op != '0'); 
-    }
+        } while (op != '0'); 
+}
 
 
 //Funções para apresentar os relatórios
@@ -72,13 +71,12 @@ void relat_admin (void) {
         cpf = ent_cpf (); 
         if (!valid_cpf(cpf)) {
             tela_erro (); 
-            } 
-        }
-    while (!valid_cpf(cpf));
+        } 
+    } while (!valid_cpf(cpf));
     limpa_buffer ();
     t_exe_relat_adm (); 
     limpa_buffer (); 
-    }
+}
 
 
 //Relatório fornecedor
@@ -90,13 +88,12 @@ void relat_fornec (void) {
         cnpj = ent_cnpj (); 
         if (!valid_cnpj(cnpj)) {
             tela_erro (); 
-            } 
-        }
-    while (!valid_cnpj(cnpj));
+        } 
+    } while (!valid_cnpj(cnpj));
     limpa_buffer ();
     t_exe_relat_forn (); 
     limpa_buffer ();
-    }
+}
 
 
 //Relatório produto
@@ -108,13 +105,12 @@ void relat_produto (void) {
         cod_barras = ent_cod_barras (); 
         if (!valid_cod_barras(cod_barras)) {
             tela_erro (); 
-            } 
-        }
-    while (!valid_cod_barras(cod_barras));
+        } 
+    } while (!valid_cod_barras(cod_barras));
     limpa_buffer ();
     t_exe_relat_prod (); 
     limpa_buffer ();
-    }
+}
 
 
 //Relatório colaborador
@@ -126,13 +122,12 @@ void relat_colab (void) {
         cpf = ent_cpf (); 
         if (!valid_cpf(cpf)) {
             tela_erro (); 
-            } 
-        }
-    while (!valid_cpf(cpf));
+        } 
+    } while (!valid_cpf(cpf));
     limpa_buffer ();
     t_exe_relat_colab (); 
     limpa_buffer ();
-    }
+}
 
 
 //Relatório cliente
@@ -144,13 +139,12 @@ void relat_cliente (void) {
         cpf = ent_cpf (); 
         if (!valid_cpf(cpf)) {
             tela_erro (); 
-            } 
-        }
-    while (!valid_cpf(cpf));
+        } 
+    } while (!valid_cpf(cpf));
     limpa_buffer ();
     t_exe_relat_client (); 
     limpa_buffer ();
-    }
+}
 
 
 //Relatório vendas
@@ -162,10 +156,9 @@ void relat_venda (void) {
         id = ent_id_venda (); 
         if (!valid_numeros_s(id)) {
             tela_erro (); 
-            } 
-        }
-    while (!valid_numeros_s(id));
+        } 
+    } while (!valid_numeros_s(id));
     limpa_buffer ();
     t_exe_cad_vend (); 
     limpa_buffer ();
-    }
+}

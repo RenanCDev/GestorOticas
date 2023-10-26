@@ -57,14 +57,14 @@ char menu_principal (void) {
         scanf("%s", &*op);
         if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
             return op[0]; 
-            } 
+        } 
         else {
             tela_erro ();
             return '9';
-            } 
-        }
-    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+        } 
     }
+    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+}
 
 
 //Menu administrativo
@@ -92,14 +92,14 @@ char menu_administrativo (void) {
         scanf("%s", &*op);
         if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
             return op[0]; 
-            } 
+        } 
         else {
             tela_erro ();
             return '9';
-            } 
-        }
-    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+        } 
     }
+    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+}
 
 
 //Menu relatórios
@@ -133,14 +133,14 @@ char menu_relatorio (void) {
         scanf("%s", &*op);
         if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
             return op[0]; 
-            } 
+        } 
         else {
             tela_erro ();
             return '9';
-            } 
-        }
-    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+        } 
     }
+    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+}
 
 
 //Menu fornecedor
@@ -166,14 +166,14 @@ char menu_fornecedor (void) {
         scanf("%s", &*op);
         if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
             return op[0]; 
-            } 
+        } 
         else {
             tela_erro ();
             return '9';
-            } 
-        }
-    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+        } 
     }
+    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+}
 
 
 //Menu produto
@@ -199,14 +199,14 @@ char menu_produto (void) {
         scanf("%s", &*op);
         if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
             return op[0]; 
-            } 
+        } 
         else {
             tela_erro ();
             return '9';
-            } 
-        }
-    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+        } 
     }
+    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+}
 
 
 //Menu colaborador
@@ -232,14 +232,14 @@ char menu_colaborador (void) {
         scanf("%s", &*op);
         if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
             return op[0]; 
-            } 
+        } 
         else {
             tela_erro ();
             return '9';
-            } 
-        }
-    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+        } 
     }
+    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+}
 
 
 //Menu cliente
@@ -265,14 +265,14 @@ char menu_cliente (void) {
         scanf("%s", &*op);
         if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
             return op[0]; 
-            } 
+        } 
         else {
             tela_erro ();
             return '9';
-            } 
-        }
-    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+        } 
     }
+    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+}
 
 
 //Menu venda
@@ -298,14 +298,14 @@ char menu_venda (void) {
         scanf("%s", &*op);
         if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
             return op[0]; 
-            } 
+        } 
         else {
             tela_erro ();
             return '9';
-            } 
-        }
-    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+        } 
     }
+    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+}
 
 
 //Adiciona itens a uma venda
@@ -325,13 +325,13 @@ char menu_item_venda (void) {
         scanf("%s", &*op);
         if ((valid_entrada(op)) && (valid_op(op[0], op_max)) && (op[0] != '0')) {
             return op[0]; 
-            } 
+        } 
         else {
             return '9';
-            } 
-        }
-    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+        } 
     }
+    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+}
 
 
 //Forma de pagamento
@@ -357,14 +357,14 @@ char menu_form_pag (void) {
         scanf("%s", &*op);
         if ((valid_entrada(op)) && (valid_op(op[0], op_max)) && (op[0] != '0')) {
             return op[0]; 
-            } 
+        } 
         else {
             tela_erro ();
             return '9';
-            } 
-        }
-    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+        } 
     }
+    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+}
 
 
 //Tela sobre o programa
@@ -410,4 +410,4 @@ void tela_sobre (void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
     limpa_buffer ();
-    }
+}

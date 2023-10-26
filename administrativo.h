@@ -27,7 +27,7 @@ struct administrador {
     char nome[40];
     char cache[256];
     char id[7];
-    };
+};
 
 
 //Declaração das funções do arquivo administrativo.c

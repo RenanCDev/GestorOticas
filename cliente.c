@@ -39,10 +39,9 @@ void modulo_cliente (void) {
                     limpa_buffer ();
                     pesq_cliente ();
                     break; 
-                } 
-            }
-    while (op != '0'); 
-    }
+            } 
+        } while (op != '0'); 
+}
 
 
 //Cadastra um novo cliente
@@ -57,41 +56,37 @@ void cad_cliente (void) {
         cpf = ent_cpf (); 
         if (!valid_cpf(cpf)) {
             tela_erro (); 
-            } 
-        }
-    while (!valid_cpf(cpf));
+        } 
+    } while (!valid_cpf(cpf));
     limpa_buffer ();
     do {
         tela_cad_cliente ();
         email = ent_email ();
         if (!valid_email(email)) {
             tela_erro (); 
-            } 
-        }
-    while (!valid_email(email));
+        } 
+    } while (!valid_email(email));
     limpa_buffer ();
     do {
         tela_cad_cliente ();
         cel = ent_cel ();
         if (!valid_numeros(cel, 11)) {
             tela_erro (); 
-            } 
         } 
-    while (!valid_numeros(cel, 11));
+    }  while (!valid_numeros(cel, 11));
     limpa_buffer ();
     do {
         tela_cad_cliente ();
         nome = ent_nome ();
         if (!valid_nome(nome)) {
             tela_erro (); 
-            } 
-        }
-    while (!valid_nome(nome));
+        } 
+    } while (!valid_nome(nome));
     limpa_buffer ();
     tela_cad_cliente ();
     t_exe_cad_cliente ();
     tela_cad_concl (); 
-    }
+}
 
 
 //Pesquisa o cadastro de um cliente
@@ -103,10 +98,9 @@ void pesq_cliente (void) {
         cpf = ent_cpf ();
         if (!valid_cpf(cpf)) {
             tela_erro (); 
-            } 
-        }
-    while (!valid_cpf(cpf));
+        } 
+    } while (!valid_cpf(cpf));
     limpa_buffer ();
     t_exe_cad_cliente (); 
     limpa_buffer (); 
-    }
+}

@@ -40,7 +40,7 @@ void tela_banner (void) {
     printf("|   ####### #    #  ####  ###### ######    #######   #   ######  ####     |\n");   
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    }
+}
 
 
 //Telas módulo administrativo
@@ -55,7 +55,7 @@ void tela_cad_admin (char* ex) {
     printf("|                         %s                          |\n", ex);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    }
+}
 
 
 //Tela pesquisar administrador
@@ -68,7 +68,7 @@ void tela_pesq_admin (void) {
     printf("|                         Pesquisar administrador                         |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    }
+}
 
 
 //Tela relatório administradores
@@ -81,7 +81,7 @@ void tela_relat_admin (void) {
     printf("|                         Relatório administrador                         |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    }
+}
 
 
 //Tela relatório fornecedores
@@ -94,7 +94,7 @@ void tela_relat_fornec (void) {
     printf("|                          Relatório fornecedor                           |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    }
+}
 
 
 //Tela relatório produtos
@@ -107,7 +107,7 @@ void tela_relat_produto (void) {
     printf("|                           Relatório produtos                            |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    }
+}
 
 
 //Tela relatório colaboradores
@@ -120,7 +120,7 @@ void tela_relat_colab (void) {
     printf("|                         Relatório colaboradores                         |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    }
+}
 
 
 //Tela relatório clientes
@@ -133,7 +133,7 @@ void tela_relat_cliente (void) {
     printf("|                           Relatório clientes                            |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    }
+}
 
 
 //Tela relatório clientes
@@ -146,7 +146,7 @@ void tela_relat_venda (void) {
     printf("|                            Relatório vendas                             |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    }
+}
 
 
 //Telas do módulo fornecedor
@@ -161,7 +161,7 @@ void tela_cad_fornec (void) {
     printf("|                           Cadastro fornecedor                           |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    }
+}
 
 
 //Tela pesquisar fornecedor
@@ -174,7 +174,7 @@ void tela_pesq_fornec (void) {
     printf("|                          Pesquisar fornecedor                           |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    }
+}
 
 
 //Tela cadastrar produto
@@ -187,7 +187,7 @@ void tela_cad_produto (void) {
     printf("|                            Cadastro produto                             |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    }
+}
 
 
 //Tela pesquisar produto
@@ -200,7 +200,7 @@ void tela_pesq_produto (void) {
     printf("|                            Pesquisar produto                            |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    }
+}
 
 
 //Tela cadastrar colaborador
@@ -213,7 +213,7 @@ void tela_cad_colab (void) {
     printf("|                          Cadastro colaborador                           |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    }
+}
 
 
 //Tela pesquisar colaborador
@@ -226,7 +226,7 @@ void tela_pesq_colab (void) {
     printf("|                          Pesquisar colaborador                          |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    }
+}
 
 
 //Tela cadastrar cliente
@@ -239,7 +239,7 @@ void tela_cad_cliente (void) {
     printf("|                            Cadastro cliente                             |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    }
+}
 
 
 //Tela pesquisar produto
@@ -252,7 +252,7 @@ void tela_pesq_cliente (void) {
     printf("|                            Pesquisar cliente                            |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    }
+}
 
 
 //Telas do modulo venda
@@ -267,7 +267,7 @@ void tela_cad_venda (void) {
     printf("|                             Cadastro venda                              |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    }
+}
 
 
 //Tela pesquisar venda
@@ -280,7 +280,7 @@ void tela_pesq_venda (void) {
     printf("|                             Pesquisar venda                             |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    }
+}
 
 
 //Tela colaborador venda
@@ -293,7 +293,7 @@ void tela_venda_colab (void) {
     printf("|                           Venda - colaborador                           |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    }
+}
 
 
 //Tela produto venda
@@ -306,7 +306,7 @@ void tela_venda_produt (void) {
     printf("|                             Venda - produto                             |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    }
+}
 
 
 //Tela quantidade do produto venda
@@ -319,7 +319,7 @@ void tela_venda_q_prod (void) {
     printf("|                      Venda - Quantidade do produto                      |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    }
+}
 
 
 //Tela cliente venda
@@ -332,7 +332,7 @@ void tela_venda_cliente (void) {
     printf("|                             Venda - cliente                             |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    }
+}
 
 
 //Telas informativas
@@ -349,7 +349,7 @@ void tela_erro (void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     limpa_buffer ();
-    }
+}
 
 
 //Tela cadastro concluído
@@ -363,7 +363,7 @@ void tela_cad_concl (void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     limpa_buffer (); 
-    }
+}
 
 
 //Tela venda concluída
@@ -376,7 +376,7 @@ void tela_vend_concl (void) {
     printf("|                         Tecle ENTER para seguir                         |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    }
+}
 
 
 //Informativo venda para cliente sem cadastro
@@ -389,7 +389,7 @@ void info_cliente_0 (void) {
     printf("|          insira -> 0 <-, logo após tecle ENTER para prosseguir          |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    }
+}
 
 
 //Telas Exemplos
@@ -408,7 +408,7 @@ void t_exe_cad_adm (void) {
     printf("|   Administrador : Administrador Exemplo de eyes                         |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    }
+}
 
 
 //Tela exemplo relatório administrador
@@ -453,7 +453,7 @@ void t_exe_relat_adm (void) {
     printf("|                  #dados comletos . . .                                  |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    }
+}
 
 
 //Tela exemplo relatório administrador
@@ -498,7 +498,7 @@ void t_exe_relat_forn (void) {
     printf("|              #dados comletos . . .                                      |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    }
+}
 
 
 //Tela exemplo relatório administrador
@@ -533,7 +533,7 @@ void t_exe_relat_prod (void) {
     printf("|              #dados comletos . . .                                      |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    }
+}
 
 
 //Tela exemplo relatório colaborador
@@ -578,7 +578,7 @@ void t_exe_relat_colab (void) {
     printf("|              #dados comletos . . .                                      |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    }
+}
     
 
 //Tela exemplo relatório cliente
@@ -623,7 +623,7 @@ void t_exe_relat_client (void) {
     printf("|              #dados comletos . . .                                      |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    }
+}
 
 
 //Tela exemplo cadastro fornecedor
@@ -640,7 +640,7 @@ void t_exe_cad_forn (void) {
     printf("|   Fornecedor : Fornecedor Exemplo de eyes                               |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    }
+}
 
 
 //Tela exemplo cadastro pproduto
@@ -661,7 +661,7 @@ void t_exe_cad_prod (void) {
     printf("|   Valor de compra : 1888,88 R$                                          |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    }
+}
 
 
 //Tela exemplo cadastro colaborador
@@ -678,7 +678,7 @@ void t_exe_cad_colab (void) {
     printf("|   Colaborador : Colaborador Exemplo de eyes                             |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    }
+}
 
 
 //Tela exemplo cadastro cliente
@@ -695,7 +695,7 @@ void t_exe_cad_cliente (void) {
     printf("|   Cliente : Cliente Exemplo de eyes                                     |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    }
+}
 
 
 //Tela exemplo cadastro venda
@@ -730,4 +730,4 @@ void t_exe_cad_vend (void) {
     printf("|   ID da venda : XXXXX                                                   |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    }
+}

@@ -39,10 +39,9 @@ void modulo_venda (void) {
                 limpa_buffer ();
                 pesq_venda ();
                 break; 
-            } 
-        }
-    while (op != '0'); 
-    }
+        } 
+    } while (op != '0'); 
+}
 
 
 //Cadastra uma nova venda
@@ -57,9 +56,8 @@ void cad_venda (void) {
         cpf = ent_cpf (); 
         if (!valid_cpf(cpf)) {
             tela_erro (); 
-            } 
-        }
-    while (!valid_cpf(cpf));
+        } 
+    } while (!valid_cpf(cpf));
     limpa_buffer ();
     do {
         tela_venda_cliente ();
@@ -67,9 +65,8 @@ void cad_venda (void) {
         cpf = ent_cpf (); 
         if (!valid_cpf(cpf)) {
             tela_erro (); 
-            } 
-        }
-    while (!valid_cpf(cpf));
+        } 
+    } while (!valid_cpf(cpf));
     do {
         limpa_buffer ();
         do {
@@ -77,21 +74,20 @@ void cad_venda (void) {
             cod_barras = ent_cod_barras (); 
             if (!valid_cod_barras(cod_barras)) {
                 tela_erro (); 
-                } 
-            }
-        while (!valid_cod_barras(cod_barras));
+            } 
+        }
+ while (!valid_cod_barras(cod_barras));
         limpa_buffer ();
         do {
             tela_venda_q_prod ();
             quant = ent_quant (); 
             if (!valid_numeros_s(quant)) {
                 tela_erro (); 
-                } 
-            }
-        while (!valid_numeros_s(quant));
+            } 
+        }
+ while (!valid_numeros_s(quant));
         verify = acresc_item_venda (); 
-        } 
-    while (!verify);
+    }  while (!verify);
     limpa_buffer ();
     form_pag ();
     limpa_buffer ();
@@ -99,7 +95,7 @@ void cad_venda (void) {
     t_exe_cad_vend ();
     tela_vend_concl ();
     limpa_buffer (); 
-    }
+}
 
 
 //Pesquisa o cadastro de alguma venda
@@ -111,13 +107,12 @@ void pesq_venda (void) {
         id = ent_id_venda (); 
         if (!valid_numeros_s(id)) {
             tela_erro (); 
-            } 
-        }
-    while (!valid_numeros_s(id));
+        } 
+    } while (!valid_numeros_s(id));
     limpa_buffer ();
     t_exe_cad_vend ();
     limpa_buffer (); 
-    }
+}
 
 
 //Acrescenta itens a uma venda em processo
@@ -130,9 +125,9 @@ int acresc_item_venda (void) {
             op = menu_item_venda ();
             if (!valid_op(op, op_max)) {
                 tela_erro(); 
-                } 
-            }   
-        while (!valid_op(op, op_max));
+            } 
+        }   
+ while (!valid_op(op, op_max));
         switch (op) {
             case '1':
                 return 0;
@@ -143,8 +138,8 @@ int acresc_item_venda (void) {
             default: 
                 return 0;
                 break; 
-            } 
-    }
+        } 
+}
 
 
 //Declara a forma de pagamento de uma venda
@@ -163,8 +158,7 @@ void form_pag (void) {
                 break;
             case '4':
                 break;
-            }
-        system("clear"); 
         }
-    while ((op != '1') && (op != '2') && (op != '3') && (op != '4')); 
-    }
+        system("clear"); 
+    } while ((op != '1') && (op != '2') && (op != '3') && (op != '4')); 
+}

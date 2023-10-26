@@ -39,10 +39,9 @@ void modulo_fornecedor (void) {
                     limpa_buffer ();
                     pesq_fornec ();
                     break; 
-                } 
             }
-    while (op != '0'); 
-    }
+        } while (op != '0'); 
+}
 
 
 //Cadastra fornecedor
@@ -57,40 +56,37 @@ void cad_fornec (void) {
         cnpj = ent_cnpj ();
         if (!valid_cnpj(cnpj)) {
             tela_erro (); 
-            } 
-        }
-    while (!valid_cnpj(cnpj));
+        } 
+    } while (!valid_cnpj(cnpj));
     limpa_buffer ();
     do {
         tela_cad_fornec ();
         email = ent_email ();
         if (!valid_email(email)) {
             tela_erro (); 
-            } 
-        }
-    while (!valid_email(email));
+        } 
+    } while (!valid_email(email));
     limpa_buffer ();
     do {
         tela_cad_fornec ();
         cel = ent_cel ();
         if (!valid_numeros(cel, 11)) {
             tela_erro (); 
-            } 
-        }
-    while (!valid_numeros(cel, 11));
+        } 
+    } while (!valid_numeros(cel, 11));
     limpa_buffer ();
     do {
         tela_cad_fornec ();
         nome = ent_nome ();
         if (!valid_nome(nome)) {
             tela_erro (); 
-            } 
-        }
-    while (!valid_nome(nome));
+        } 
+    } while (!valid_nome(nome));
     limpa_buffer ();
     tela_cad_fornec ();
     t_exe_cad_forn ();
-    tela_cad_concl (); }
+    tela_cad_concl ();
+}
 
 
 //Pesquisa fornecedor
@@ -102,10 +98,9 @@ void pesq_fornec (void) {
         cnpj = ent_cnpj ();
         if (!valid_cnpj(cnpj)) {
             tela_erro (); 
-            } 
-        }
-    while (!valid_cnpj(cnpj));
+        } 
+    } while (!valid_cnpj(cnpj));
     limpa_buffer (); 
     t_exe_cad_forn ();
     limpa_buffer (); 
-    }
+}
