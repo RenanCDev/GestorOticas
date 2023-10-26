@@ -32,12 +32,17 @@ void modulo_venda (void) {
         op = menu_venda ();
         switch (op) {
             case '1':
+                limpa_buffer ();
                 cad_venda ();
                 break;
             case '2':
+                limpa_buffer ();
                 pesq_venda ();
-                break; } }
-    while (op != '0'); }
+                break; 
+            } 
+        }
+    while (op != '0'); 
+    }
 
 
 //Cadastra uma nova venda
@@ -48,46 +53,53 @@ void cad_venda (void) {
     char* cod_barras;
     char* quant;
     do {
-        limpa_buffer ();
         tela_venda_colab ();
         cpf = ent_cpf (); 
         if (!valid_cpf(cpf)) {
-            tela_erro (); } }
+            tela_erro (); 
+            } 
+        }
     while (!valid_cpf(cpf));
+    limpa_buffer ();
     do {
-        limpa_buffer ();
         tela_venda_cliente ();
         info_cliente_0 ();
         cpf = ent_cpf (); 
         if (!valid_cpf(cpf)) {
-            limpa_buffer ();
-            tela_erro (); } }
+            tela_erro (); 
+            } 
+        }
     while (!valid_cpf(cpf));
     do {
+        limpa_buffer ();
         do {
-            limpa_buffer ();
             tela_venda_produt ();
             cod_barras = ent_cod_barras (); 
             if (!valid_cod_barras(cod_barras)) {
-                limpa_buffer ();
-                tela_erro (); } }
+                tela_erro (); 
+                } 
+            }
         while (!valid_cod_barras(cod_barras));
+        limpa_buffer ();
         do {
-            limpa_buffer ();
             tela_venda_q_prod ();
             quant = ent_quant (); 
             if (!valid_numeros_s(quant)) {
-                limpa_buffer ();
-                tela_erro (); } }
+                tela_erro (); 
+                } 
+            }
         while (!valid_numeros_s(quant));
-        verify = acresc_item_venda (); } 
+        verify = acresc_item_venda (); 
+        } 
     while (!verify);
+    limpa_buffer ();
     form_pag ();
     limpa_buffer ();
     tela_cad_venda ();
     t_exe_cad_vend ();
     tela_vend_concl ();
-    limpa_buffer (); }
+    limpa_buffer (); 
+    }
 
 
 //Pesquisa o cadastro de alguma venda
@@ -95,14 +107,17 @@ void cad_venda (void) {
 void pesq_venda (void) {
     char* id;
     do {
-        limpa_buffer ();
         tela_pesq_venda ();
         id = ent_id_venda (); 
         if (!valid_numeros_s(id)) {
-            tela_erro (); } }
+            tela_erro (); 
+            } 
+        }
     while (!valid_numeros_s(id));
+    limpa_buffer ();
     t_exe_cad_vend ();
-    limpa_buffer (); }
+    limpa_buffer (); 
+    }
 
 
 //Acrescenta itens a uma venda em processo
@@ -114,18 +129,22 @@ int acresc_item_venda (void) {
             tela_cad_venda ();
             op = menu_item_venda ();
             if (!valid_op(op, op_max)) {
-                tela_erro(); } }   
+                tela_erro(); 
+                } 
+            }   
         while (!valid_op(op, op_max));
         switch (op) {
             case '1':
-            return 0;
-            break; 
+                return 0;
+                break; 
             case '2': 
-            return 1;
-            break; 
+                return 1;
+                break; 
             default: 
-            return 0;
-            break; } }
+                return 0;
+                break; 
+            } 
+    }
 
 
 //Declara a forma de pagamento de uma venda
@@ -135,14 +154,17 @@ void form_pag (void) {
     do {
         tela_cad_venda ();
         op = menu_form_pag ();
-    switch (op) {
-        case '1':
-            break;
-        case '2':
-            break;
-        case '3':
-            break;
-        case '4':
-            break; }
-    system("clear"); }
-    while ((op != '1') && (op != '2') && (op != '3') && (op != '4')); }
+        switch (op) {
+            case '1':
+                break;
+            case '2':
+                break;
+            case '3':
+                break;
+            case '4':
+                break;
+            }
+        system("clear"); 
+        }
+    while ((op != '1') && (op != '2') && (op != '3') && (op != '4')); 
+    }

@@ -30,14 +30,19 @@ void modulo_produto (void) {
     char op;
         do {
             op = menu_produto ();
-        switch (op) {
-            case '1':
-                cad_produto ();
-                break;
-            case '2':
-                pesq_produto ();
-                break; } }
-    while (op != '0'); }
+            switch (op) {
+                case '1':
+                    limpa_buffer ();
+                    cad_produto ();
+                    break;
+                case '2':
+                    limpa_buffer ();
+                    pesq_produto ();
+                    break; 
+                } 
+            }
+    while (op != '0'); 
+    }
 
 
 //Cadastra produto
@@ -50,51 +55,57 @@ void cad_produto (void) {
     char* valor_comp;
     char* valor_vend;
     do {
-        limpa_buffer ();
         tela_cad_produto ();
         cod_barras = ent_cod_barras ();
         if (!valid_cod_barras(cod_barras)) {
-            tela_erro (); } }
+            tela_erro (); 
+        } 
+    }
     while (!valid_cod_barras(cod_barras));
+    limpa_buffer ();
     do {
-        limpa_buffer ();
         tela_cad_produto ();
         cnpj = ent_cnpj ();
         if (!valid_cnpj(cnpj)) {
-            limpa_buffer ();
-            tela_erro (); } }
+            tela_erro (); 
+        } 
+    }
     while (!valid_cnpj(cnpj));
+    limpa_buffer ();
     do {
-        limpa_buffer ();
         tela_cad_produto ();
         desc = ent_desc_produto ();
         if (!valid_nome(desc)) {
-            limpa_buffer ();
-            tela_erro (); } }
+            tela_erro (); 
+        } 
+    }
     while (!valid_nome(desc));
+    limpa_buffer ();
     do {
-        limpa_buffer ();
         tela_cad_produto ();
         quant = ent_quant ();
         if (!valid_numeros_s(quant)) {
-            limpa_buffer ();
-            tela_erro (); } }
+            tela_erro (); 
+        } 
+    }
     while (!valid_numeros_s(quant));
+    limpa_buffer ();
     do {
-        limpa_buffer ();
         tela_cad_produto ();
         valor_comp = ent_valor_ent ();
         if (!valid_numeros_s(valor_comp)) {
-            limpa_buffer ();
-            tela_erro (); } }
+            tela_erro (); 
+        } 
+    }
     while (!valid_numeros_s(valor_comp));
+    limpa_buffer ();
     do {
-        limpa_buffer ();
         tela_cad_produto ();
         valor_vend = ent_valor_saida ();
         if (!valid_numeros_s(valor_vend)) {
-            limpa_buffer ();
-            tela_erro (); } }
+            tela_erro (); 
+        } 
+    }
     while (!valid_numeros_s(valor_vend));
     limpa_buffer ();
     tela_cad_produto ();
@@ -107,12 +118,14 @@ void cad_produto (void) {
 void pesq_produto (void) {
     char* cod_barras;
     do {
-        limpa_buffer ();
         tela_pesq_produto ();
         cod_barras = ent_cod_barras ();
         if (!valid_cod_barras(cod_barras)) {
-            tela_erro (); } }
+            tela_erro (); 
+        } 
+    }
     while (!valid_cod_barras(cod_barras));
     limpa_buffer ();
     t_exe_cad_prod ();
-    limpa_buffer (); }
+    limpa_buffer (); 
+    }

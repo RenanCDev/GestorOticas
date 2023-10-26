@@ -24,19 +24,25 @@
 
 /////
 //Percorre todo o caminho do menu cliente
+//
 void modulo_cliente (void) {
     setlocale (LC_ALL, "Portuguese_Brazil");
     char op;
         do {
             op = menu_cliente ();
-        switch (op) {
-            case '1':
-                cad_cliente ();
-                break;
-            case '2':
-                pesq_cliente ();
-                break; } }
-    while (op != '0'); }
+            switch (op) {
+                case '1':
+                    limpa_buffer ();
+                    cad_cliente ();
+                    break;
+                case '2':
+                    limpa_buffer ();
+                    pesq_cliente ();
+                    break; 
+                } 
+            }
+    while (op != '0'); 
+    }
 
 
 //Cadastra um novo cliente
@@ -47,40 +53,45 @@ void cad_cliente (void) {
     char* cel;
     char* nome;
     do {
-        limpa_buffer ();
         tela_cad_cliente ();
         cpf = ent_cpf (); 
         if (!valid_cpf(cpf)) {
-            tela_erro (); } }
+            tela_erro (); 
+            } 
+        }
     while (!valid_cpf(cpf));
+    limpa_buffer ();
     do {
-        limpa_buffer ();
         tela_cad_cliente ();
         email = ent_email ();
         if (!valid_email(email)) {
-            limpa_buffer ();
-            tela_erro (); } }
+            tela_erro (); 
+            } 
+        }
     while (!valid_email(email));
+    limpa_buffer ();
     do {
-        limpa_buffer ();
         tela_cad_cliente ();
         cel = ent_cel ();
         if (!valid_numeros(cel, 11)) {
-            limpa_buffer ();
-            tela_erro (); } } 
+            tela_erro (); 
+            } 
+        } 
     while (!valid_numeros(cel, 11));
+    limpa_buffer ();
     do {
-        limpa_buffer ();
         tela_cad_cliente ();
         nome = ent_nome ();
         if (!valid_nome(nome)) {
-            limpa_buffer ();
-            tela_erro (); } }
+            tela_erro (); 
+            } 
+        }
     while (!valid_nome(nome));
     limpa_buffer ();
     tela_cad_cliente ();
     t_exe_cad_cliente ();
-    tela_cad_concl (); }
+    tela_cad_concl (); 
+    }
 
 
 //Pesquisa o cadastro de um cliente
@@ -88,11 +99,14 @@ void cad_cliente (void) {
 void pesq_cliente (void) {
     char* cpf;
     do {
-        limpa_buffer ();
         tela_pesq_cliente ();
         cpf = ent_cpf ();
         if (!valid_cpf(cpf)) {
-            tela_erro (); } }
+            tela_erro (); 
+            } 
+        }
     while (!valid_cpf(cpf));
+    limpa_buffer ();
     t_exe_cad_cliente (); 
-    limpa_buffer (); }
+    limpa_buffer (); 
+    }

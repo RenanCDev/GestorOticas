@@ -39,8 +39,8 @@ char* ent_cpf (void) {
     scanf("%[0-9A-Za-z@._-]", cpf);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
-    getchar();
-    return cpf; }
+    return cpf; 
+    }
 
 
 //Entrada do email
@@ -56,7 +56,8 @@ char* ent_email (void) {
     scanf("%[0-9A-Za-z@._-]", email);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
-    return email; }
+    return email; 
+    }
 
 
 //Entrada do celular
@@ -74,7 +75,8 @@ char* ent_cel (void) {
     scanf("%[0-9A-Za-z@._-]", cel);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
-    return cel; }
+    return cel; 
+    }
 
 
 //Entrada do nome
@@ -90,7 +92,8 @@ char* ent_nome (void) {
     scanf("%[0-9A-Za-z@._-]", nome);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
-    return nome; }
+    return nome; 
+    }
 
 
 //Entrada do CNPJ
@@ -108,7 +111,8 @@ char* ent_cnpj (void) {
     scanf("%[0-9A-Za-z@._-]", cnpj);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    return cnpj; }
+    return cnpj; 
+    }
 
 
 //Entrada do código de barras
@@ -126,7 +130,8 @@ char* ent_cod_barras (void) {
     scanf("%[0-9A-Za-z@._-]", cod_barras);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    return cod_barras; }
+    return cod_barras; 
+    }
 
 
 //Entrada da descrição do produto
@@ -142,7 +147,8 @@ char* ent_desc_produto (void) {
     scanf("%[0-9A-Za-z@._-]", desc);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    return desc;; }
+    return desc; 
+    }
 
 
 //Entrada de quantidade de peças
@@ -160,7 +166,8 @@ char* ent_quant (void) {
     scanf("%[0-9A-Za-z@._-]", quant);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    return quant; } 
+    return quant; 
+    } 
 
 
 //Entrada do valor de entrada da peça
@@ -178,7 +185,8 @@ char* ent_valor_ent (void) {
     scanf("%[0-9A-Za-z@._-]", valor);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    return valor; }
+    return valor; 
+    }
 
 
 //Entrada valor de saída da peça
@@ -196,7 +204,8 @@ char* ent_valor_saida (void) {
     scanf("%[0-9A-Za-z@._-]", valor);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    return valor; }
+    return valor; 
+    }
 
 
 //Entrada id da venda
@@ -209,7 +218,10 @@ char* ent_id_venda (void) {
     printf("|                         Digite o ID da venda .                          |\n");
     printf("|                                                                         |\n");
     printf("|                         Insira apenas números !                         |\n");
+    printf("|                                                                         |\n");
+    printf("|                                  ID :");
     scanf("%[0-9A-Za-z@._-]", id);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    return id; }
+    return id; 
+    }

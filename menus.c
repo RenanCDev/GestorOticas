@@ -28,7 +28,7 @@
 //Menu principal
 //
 char menu_principal (void) {
-    char op [500];
+    char op [50];
     char op_max = '7';
     do {
         tela_banner ();
@@ -56,19 +56,21 @@ char menu_principal (void) {
         printf("Selecione uma opção: \n");
         scanf("%s", &*op);
         if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
-            return op[0]; } 
+            return op[0]; 
+            } 
         else {
-            limpa_buffer ();
             tela_erro ();
-            limpa_buffer ();
-            return '9';} }
-    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); }
+            return '9';
+            } 
+        }
+    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+    }
 
 
 //Menu administrativo
 //
 char menu_administrativo (void) {
-    char op [500];
+    char op [50];
     char op_max = '3';
     do {
         system("clear");
@@ -89,19 +91,21 @@ char menu_administrativo (void) {
         printf("Selecione uma opção: \n");
         scanf("%s", &*op);
         if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
-            return op[0]; } 
+            return op[0]; 
+            } 
         else {
-            limpa_buffer ();
             tela_erro ();
-            limpa_buffer ();
-            return '9';} }
-    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); }
+            return '9';
+            } 
+        }
+    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+    }
 
 
 //Menu relatórios
 //
 char menu_relatorio (void) {
-    char op [500];
+    char op [50];
     char op_max = '6';
     do {
         system("clear");
@@ -128,19 +132,21 @@ char menu_relatorio (void) {
         printf("Selecione uma opção: \n");
         scanf("%s", &*op);
         if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
-            return op[0]; } 
+            return op[0]; 
+            } 
         else {
-            limpa_buffer ();
             tela_erro ();
-            limpa_buffer ();
-            return '9';} }
-    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); }
+            return '9';
+            } 
+        }
+    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+    }
 
 
 //Menu fornecedor
 //
 char menu_fornecedor (void) {
-    char op [500];
+    char op [50];
     char op_max = '2';
     do {
         system("clear");
@@ -159,19 +165,21 @@ char menu_fornecedor (void) {
         printf("Selecione uma opção: \n");
         scanf("%s", &*op);
         if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
-            return op[0]; } 
+            return op[0]; 
+            } 
         else {
-            limpa_buffer ();
             tela_erro ();
-            limpa_buffer ();
-            return '9';} }
-    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); }
+            return '9';
+            } 
+        }
+    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+    }
 
 
 //Menu produto
 //
 char menu_produto (void) {
-    char op [500];
+    char op [50];
     char op_max = '2';
     do {
         system("clear");
@@ -190,19 +198,21 @@ char menu_produto (void) {
         printf("Selecione uma opção: \n");
         scanf("%s", &*op);
         if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
-            return op[0]; } 
+            return op[0]; 
+            } 
         else {
-            limpa_buffer ();
             tela_erro ();
-            limpa_buffer ();
-            return '9';} }
-    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); }
+            return '9';
+            } 
+        }
+    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+    }
 
 
 //Menu colaborador
 //
 char menu_colaborador (void) {
-    char op [500];
+    char op [50];
     char op_max = '2';
     do {
         system("clear");
@@ -221,19 +231,21 @@ char menu_colaborador (void) {
         printf("Selecione uma opção: \n");
         scanf("%s", &*op);
         if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
-            return op[0]; } 
+            return op[0]; 
+            } 
         else {
-            limpa_buffer ();
             tela_erro ();
-            limpa_buffer ();
-            return '9';} }
-    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); }
+            return '9';
+            } 
+        }
+    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+    }
 
 
 //Menu cliente
 //
 char menu_cliente (void) {
-    char op [500];
+    char op [50];
     char op_max = '2';
     do {
         system("clear");
@@ -252,19 +264,21 @@ char menu_cliente (void) {
         printf("Selecione uma opção: \n");
         scanf("%s", &*op);
         if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
-            return op[0]; } 
+            return op[0]; 
+            } 
         else {
-            limpa_buffer ();
             tela_erro ();
-            limpa_buffer ();
-            return '9';} }
-    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); }
+            return '9';
+            } 
+        }
+    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+    }
 
 
 //Menu venda
 //
 char menu_venda (void) {
-    char op [500];
+    char op [50];
     char op_max = '2';
     do {
         system("clear");
@@ -283,19 +297,21 @@ char menu_venda (void) {
         printf("Selecione uma opção: \n");
         scanf("%s", &*op);
         if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
-            return op[0]; } 
+            return op[0]; 
+            } 
         else {
-            limpa_buffer ();
             tela_erro ();
-            limpa_buffer ();
-            return '9';} }
-    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); }
+            return '9';
+            } 
+        }
+    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+    }
 
 
 //Adiciona itens a uma venda
 //
 char menu_item_venda (void) {
-    char op [500];
+    char op [50];
     char op_max = '2';
     do {
         printf("+=========================================================================+\n");
@@ -307,20 +323,21 @@ char menu_item_venda (void) {
         printf("+=========================================================================+\n");
         printf("Selecione uma opção: \n");
         scanf("%s", &*op);
-        if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
-            return op[0]; } 
+        if ((valid_entrada(op)) && (valid_op(op[0], op_max)) && (op[0] != '0')) {
+            return op[0]; 
+            } 
         else {
-            limpa_buffer ();
-            tela_erro ();
-            limpa_buffer ();
-            return '9';} }
-    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); }
+            return '9';
+            } 
+        }
+    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+    }
 
 
 //Forma de pagamento
 //
 char menu_form_pag (void) {
-    char op [500];
+    char op [50];
     char op_max = '4';
     do {
         printf("+=========================================================================+\n");
@@ -338,17 +355,20 @@ char menu_form_pag (void) {
         printf("+=========================================================================+\n");
         printf("Selecione uma opção: \n");
         scanf("%s", &*op);
-        if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
-            return op[0]; } 
+        if ((valid_entrada(op)) && (valid_op(op[0], op_max)) && (op[0] != '0')) {
+            return op[0]; 
+            } 
         else {
-            limpa_buffer ();
             tela_erro ();
-            limpa_buffer ();
-            return '9';} }
-    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); }
+            return '9';
+            } 
+        }
+    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+    }
 
 
 //Tela sobre o programa
+//
 void tela_sobre (void) {
     system("clear");
     tela_banner ();
@@ -389,4 +409,5 @@ void tela_sobre (void) {
     printf("|                        Tecle ENTER para retornar                        |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    limpa_buffer ();}
+    limpa_buffer ();
+    }

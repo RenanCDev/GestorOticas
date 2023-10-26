@@ -15,13 +15,16 @@
     ("+=========================================================================+\n")  */
 
 
+/////
+//Include do material necessario
+//
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <locale.h>
 #include "all.h"
 
-/////
+
 //Percorre todo o caminho do menu administrativo
 //
 void modulo_administrativo (void) {
@@ -29,73 +32,85 @@ void modulo_administrativo (void) {
     char op;
         do {
             op = menu_administrativo ();
-        switch (op) {
-            case '1':
-                cad_admin ();
-                break;
-            case '2':
-                pesq_admin ();
-                break;
-            case '3':
-                modulo_relatorio ();
-                break; } }
-    while (op != '0'); }
+            switch (op) {
+                case '1':
+                    limpa_buffer ();
+                    cad_admin ();
+                    break;
+                case '2':
+                    limpa_buffer ();
+                    pesq_admin ();
+                    break;
+                case '3':
+                    modulo_relatorio ();
+                    break; 
+                } 
+            }
+        while (op != '0'); 
+    }
 
 
 //Cadastra um novo administrador
 //
 void cad_admin (void) {
-    char ex[22] = "Cadastro administrador";
     char* cpf;
     char* email;
     char* cel;
     char* nome;
+    char ex[22] = "Cadastro administrador";
     do {
-        limpa_buffer ();
         tela_cad_admin (ex);
-        cpf = ent_cpf (); 
+        cpf = ent_cpf ();
         if (!valid_cpf(cpf)) {
-            tela_erro (); } }
+            tela_erro ();
+            } 
+        }
     while (!valid_cpf(cpf));
+    limpa_buffer ();
     do {
-        limpa_buffer ();
         tela_cad_admin (ex);
         email = ent_email ();
         if (!valid_email(email)) {
-            limpa_buffer ();
-            tela_erro (); } }
+            tela_erro (); 
+            } 
+        }
     while (!valid_email(email));
+    limpa_buffer ();
     do {
-        limpa_buffer ();
         tela_cad_admin (ex);
         cel = ent_cel ();
         if (!valid_numeros(cel, 11)) {
-            limpa_buffer ();
-            tela_erro (); } } 
+            tela_erro (); 
+            } 
+        } 
     while (!valid_numeros(cel, 11));
+    limpa_buffer ();
     do {
-        limpa_buffer ();
         tela_cad_admin (ex);
         nome = ent_nome ();
         if (!valid_nome(nome)) {
-            limpa_buffer ();
-            tela_erro (); } }
+            tela_erro (); 
+            } 
+        }
     while (!valid_nome(nome));
     limpa_buffer ();
     tela_cad_admin (ex);
     t_exe_cad_adm ();
-    tela_cad_concl (); }
+    tela_cad_concl (); 
+    }
 
 
 //Pesquisa o cadastro de algum administrador
+//
 void pesq_admin (void) {
     char* cpf;
     do {
-        limpa_buffer ();
         tela_pesq_admin ();
         cpf = ent_cpf (); 
         if (!valid_cpf(cpf)) {
             tela_erro (); } }
     while (!valid_cpf(cpf));
+    limpa_buffer ();
     t_exe_cad_adm ();
-    limpa_buffer (); }
+    limpa_buffer (); 
+    }

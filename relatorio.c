@@ -30,26 +30,35 @@ void modulo_relatorio (void) {
     char op;
         do {
             op = menu_relatorio ();
-        switch (op) {
-            case '1':
-                relat_admin ();
-                break;
-            case '2':
-                relat_fornec ();
-                break;
-            case '3':
-                relat_produto ();
-                break;
-            case '4':
-                relat_colab ();
-                break;
-            case '5':
-                relat_cliente ();
-                break;
-            case '6':
-                relat_venda ();
-                break; } }
-    while (op != '0'); }
+            switch (op) {
+                case '1':
+                    limpa_buffer ();
+                    relat_admin ();
+                    break;
+                case '2':
+                    limpa_buffer ();
+                    relat_fornec ();
+                    break;
+                case '3':
+                    limpa_buffer ();
+                    relat_produto ();
+                    break;
+                case '4':
+                    limpa_buffer ();
+                    relat_colab ();
+                    break;
+                case '5':
+                    limpa_buffer ();
+                    relat_cliente ();
+                    break;
+                case '6':
+                    limpa_buffer ();
+                    relat_venda ();
+                    break;
+                } 
+            }
+    while (op != '0'); 
+    }
 
 
 //Funções para apresentar os relatórios
@@ -59,15 +68,17 @@ void modulo_relatorio (void) {
 void relat_admin (void) {
     char* cpf;
     do {
-        limpa_buffer ();
         tela_relat_admin ();
         cpf = ent_cpf (); 
         if (!valid_cpf(cpf)) {
-            tela_erro (); } }
+            tela_erro (); 
+            } 
+        }
     while (!valid_cpf(cpf));
     limpa_buffer ();
     t_exe_relat_adm (); 
-    limpa_buffer (); }
+    limpa_buffer (); 
+    }
 
 
 //Relatório fornecedor
@@ -75,15 +86,17 @@ void relat_admin (void) {
 void relat_fornec (void) {
     char* cnpj;
     do {
-        limpa_buffer ();
         tela_relat_fornec ();
         cnpj = ent_cnpj (); 
         if (!valid_cnpj(cnpj)) {
-            tela_erro (); } }
+            tela_erro (); 
+            } 
+        }
     while (!valid_cnpj(cnpj));
     limpa_buffer ();
     t_exe_relat_forn (); 
-    limpa_buffer ();}
+    limpa_buffer ();
+    }
 
 
 //Relatório produto
@@ -91,15 +104,17 @@ void relat_fornec (void) {
 void relat_produto (void) {
     char* cod_barras;
     do {
-        limpa_buffer ();
         tela_relat_produto ();
         cod_barras = ent_cod_barras (); 
         if (!valid_cod_barras(cod_barras)) {
-            tela_erro (); } }
+            tela_erro (); 
+            } 
+        }
     while (!valid_cod_barras(cod_barras));
     limpa_buffer ();
     t_exe_relat_prod (); 
-    limpa_buffer ();}
+    limpa_buffer ();
+    }
 
 
 //Relatório colaborador
@@ -107,15 +122,17 @@ void relat_produto (void) {
 void relat_colab (void) {
     char* cpf;
     do {
-        limpa_buffer ();
         tela_relat_colab ();
         cpf = ent_cpf (); 
         if (!valid_cpf(cpf)) {
-            tela_erro (); } }
+            tela_erro (); 
+            } 
+        }
     while (!valid_cpf(cpf));
     limpa_buffer ();
     t_exe_relat_colab (); 
-    limpa_buffer ();}
+    limpa_buffer ();
+    }
 
 
 //Relatório cliente
@@ -123,15 +140,17 @@ void relat_colab (void) {
 void relat_cliente (void) {
     char* cpf;
     do {
-        limpa_buffer ();
         tela_relat_cliente ();
         cpf = ent_cpf (); 
         if (!valid_cpf(cpf)) {
-            tela_erro (); } }
+            tela_erro (); 
+            } 
+        }
     while (!valid_cpf(cpf));
     limpa_buffer ();
     t_exe_relat_client (); 
-    limpa_buffer ();}
+    limpa_buffer ();
+    }
 
 
 //Relatório vendas
@@ -139,12 +158,14 @@ void relat_cliente (void) {
 void relat_venda (void) {
     char* id;
     do {
-        limpa_buffer ();
         tela_relat_venda ();
         id = ent_id_venda (); 
         if (!valid_numeros_s(id)) {
-            tela_erro (); } }
+            tela_erro (); 
+            } 
+        }
     while (!valid_numeros_s(id));
     limpa_buffer ();
     t_exe_cad_vend (); 
-    limpa_buffer ();}
+    limpa_buffer ();
+    }

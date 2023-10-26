@@ -24,19 +24,25 @@
 
 /////
 //Percorre todo o caminho do menu colaborador
+//
 void modulo_colaborador (void) {
     setlocale( LC_ALL, "Portuguese_Brazil");
     char op;
         do {
             op = menu_colaborador ();
-        switch (op) {
-            case '1':
-                cad_colab ();
-                break;
-            case '2':
-                pesq_colab ();
-                break; } }
-    while (op != '0'); }
+            switch (op) {
+                case '1':
+                    limpa_buffer ();
+                    cad_colab ();
+                    break;
+                case '2':
+                    limpa_buffer ();
+                    pesq_colab ();
+                    break; 
+                } 
+            }
+    while (op != '0'); 
+    }
 
 
 //Cadastra um novo colaborador
@@ -47,35 +53,39 @@ void cad_colab (void) {
     char* cel;
     char* nome;
     do {
-        limpa_buffer ();
         tela_cad_colab ();
         cpf = ent_cpf (); 
         if (!valid_cpf(cpf)) {
-            tela_erro (); } }
+            tela_erro (); 
+            } 
+        }
     while (!valid_cpf(cpf));
+    limpa_buffer ();
     do {
-        limpa_buffer ();
         tela_cad_colab ();
         email = ent_email ();
         if (!valid_email(email)) {
-            limpa_buffer ();
-            tela_erro (); } }
+            tela_erro (); 
+            } 
+        }
     while (!valid_email(email));
+    limpa_buffer ();
     do {
-        limpa_buffer ();
         tela_cad_colab ();
         cel = ent_cel ();
         if (!valid_numeros(cel, 11)) {
-            limpa_buffer ();
-            tela_erro (); } } 
+            tela_erro (); 
+            } 
+        } 
     while (!valid_numeros(cel, 11));
+    limpa_buffer ();
     do {
-        limpa_buffer ();
         tela_cad_colab ();
         nome = ent_nome ();
         if (!valid_nome(nome)) {
-            limpa_buffer ();
-            tela_erro (); } }
+            tela_erro (); 
+            } 
+        }
     while (!valid_nome(nome));
     limpa_buffer ();
     tela_cad_colab ();
@@ -88,11 +98,14 @@ void cad_colab (void) {
 void pesq_colab (void) {
     char* cpf;
     do {
-        limpa_buffer ();
         tela_pesq_colab ();
         cpf = ent_cpf ();
         if (!valid_cpf(cpf)) {
-            tela_erro (); } }
+            tela_erro (); 
+            } 
+        }
     while (!valid_cpf(cpf));
+    limpa_buffer ();
     t_exe_cad_colab ();
-    limpa_buffer (); }
+    limpa_buffer (); 
+    }
