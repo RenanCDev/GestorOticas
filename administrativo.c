@@ -163,7 +163,7 @@ void pesq_admin (void) {
 }
 
 
-//Carregadorr de dados do administrador
+//Carregador de dados do administrador
 //
 Admin* carregar_admin(char* cpf) {
     FILE *fp;

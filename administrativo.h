@@ -21,12 +21,10 @@
 typedef struct administrador Admin;
 
 struct administrador {
-    char cpf[20];
+    char cpf[11];
     char email[30];
-    char cel[20];
+    char cel[11];
     char nome[40];
-    char cache[256];
-    char id[7];
 };
 
 //Declaração das funções do arquivo administrativo.c

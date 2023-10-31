@@ -16,6 +16,16 @@
 
 
 /////
+//Criação da struck
+//
+typedef struct cliente Cli;
+
+struct cliente {
+    char cpf[11];
+    char email[30];
+    char cel[11];
+    char nome[40];
+};
 //Declaração das funções do arquivo cliente.c
 //
 void modulo_cliente (void);

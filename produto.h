@@ -16,6 +16,18 @@
 
 
 /////
+//Criação da struck
+//
+typedef struct produto Prod;
+
+struct produto {
+    char cod_barras[13];
+    char cnpj[14];
+    char desc[255];
+    char quant[10];
+    char valor_comp[10];
+    char valor_vend[10];
+};
 //Declaração das funções do arquivo produto.c
 //
 void modulo_produto (void);

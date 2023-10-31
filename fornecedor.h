@@ -16,6 +16,16 @@
 
 
 /////
+//Criação da struck
+//
+typedef struct fornecedor Fornec;
+
+struct fornecedor {
+    char cnpj[14];
+    char email[30];
+    char cel[11];
+    char nome[40];
+};
 //Declaração das funções do arquivo fornecedor.c
 //
 void modulo_fornecedor (void);
