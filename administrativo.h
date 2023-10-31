@@ -29,9 +29,14 @@ struct administrador {
     char id[7];
 };
 
-
 //Declaração das funções do arquivo administrativo.c
 //
 void modulo_administrativo (void);
-void cad_admin (void);
+Admin* cad_admin (void);
 void pesq_admin (void);
+char* le_cpf (void);
+char* le_email (void);
+char* le_cel (void);
+char* le_nome (void);
+void gravar_admin (Admin*);
+Admin* carregar_admin(char* cpf);

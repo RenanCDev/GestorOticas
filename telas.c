@@ -352,6 +352,21 @@ void tela_erro (void) {
 }
 
 
+//Tela erro busca dados
+//
+void tela_erro_dados (void) {
+    limpa_buffer ();
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                               ERRO ! ! !                                |\n");
+    printf("|                                                                         |\n");
+    printf("|            SAVE/ LOADING de dados incompleto ou com problema            |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    limpa_buffer ();
+}
+
+
 //Tela cadastro concluído
 //
 void tela_cad_concl (void) {
@@ -396,16 +411,19 @@ void info_cliente_0 (void) {
 //
 //Tela exemplo cadastro administrador
 //
-void t_exe_cad_adm (void) {
+void t_exe_cad_adm (char* cpf, char* email, char* cel, char* nome) {
+    limpa_buffer ();
+    char ex[22] = "Cadastro administrador"; 
+    tela_cad_admin (ex);
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|   CPF : XXX.XXX.XXX-XX                                                  |\n");
+    printf("|   CPF : %s\n", cpf);
     printf("|                                                                         |\n");
-    printf("|   Email : email.exemplo@dominio.com                                     |\n");
+    printf("|   Email : %s\n", email);
     printf("|                                                                         |\n");
-    printf("|   Cel .: (XX)9 9999 - 9999                                              |\n");
+    printf("|   Cel .: %s\n", cel);
     printf("|                                                                         |\n");
-    printf("|   Administrador : Administrador Exemplo de eyes                         |\n");
+    printf("|   Administrador : %s\n", nome);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
 }

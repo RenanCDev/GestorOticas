@@ -77,12 +77,13 @@ void tela_relat_venda (void);
 void tela_cad_concl (void);
 void tela_vend_concl (void);
 void tela_erro (void);
+void tela_erro_dados (void);
 void info_cliente_0 (void);
 
 
 //Telas exemplo
 //
-void t_exe_cad_adm (void);
+void t_exe_cad_adm (char*, char*, char*, char*);
 void t_exe_relat_adm (void);
 void t_exe_relat_forn (void);
 void t_exe_relat_prod (void);
