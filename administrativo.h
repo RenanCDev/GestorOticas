@@ -21,9 +21,9 @@
 typedef struct administrador Admin;
 
 struct administrador {
-    char cpf[11];
+    char cpf[12];
     char email[30];
-    char cel[11];
+    char cel[12];
     char nome[40];
 };
 
@@ -32,9 +32,9 @@ struct administrador {
 void modulo_administrativo (void);
 Admin* cad_admin (void);
 void pesq_admin (void);
-char* le_cpf (void);
-char* le_email (void);
-char* le_cel (void);
-char* le_nome (void);
+char* le_cpf (char*);
+char* le_email (char*);
+char* le_cel (char*);
+char* le_nome (char*);
 void gravar_admin (Admin*);
 Admin* carregar_admin(char* cpf);

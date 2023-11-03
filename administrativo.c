@@ -55,21 +55,19 @@ void modulo_administrativo (void) {
 //
 Admin* cad_admin (void) {
     Admin* adm;
-    adm = (Admin*)malloc((sizeof(Admin) +1));
-    char ex[22] = "Cadastro administrador"; 
-    char* cpf = le_cpf ();
+    adm = (Admin*)malloc((sizeof(Admin)));
+    char* cpf = le_cpf ("Cadastro administrador");
     strcpy(adm->cpf, cpf);
     limpa_buffer ();
-    char* email = le_email ();
+    char* email = le_email ("Cadastro administrador");
     strcpy(adm->email, email);
     limpa_buffer ();
-    char* cel = le_cel ();
+    char* cel = le_cel ("Cadastro administrador");
     strcpy(adm->cel, cel);
     limpa_buffer ();
-    char* nome = le_nome ();
+    char* nome = le_nome ("Cadastro administrador");
     strcpy(adm->nome, nome);
     t_exe_cad_adm (adm->cpf, adm->email, adm->cel, adm->nome);
-    tela_cad_concl (); 
     return adm;
 }
 
@@ -77,11 +75,10 @@ Admin* cad_admin (void) {
 //Funções de leitura de entradas
 //Leitura CPF
 //
-char* le_cpf (void) {
+char* le_cpf (char* tela) {
     char* cpf;
-    char ex[22] = "Cadastro administrador"; 
     do {
-        tela_cad_admin (ex);
+        tela_uni_1 (tela);
         cpf = ent_cpf ();
         if (!valid_cpf(cpf)) {
             tela_erro ();
@@ -91,11 +88,10 @@ char* le_cpf (void) {
 }
 //Leitura email
 //
-char* le_email (void) {
+char* le_email (char* tela) {
     char* email;
-    char ex[22] = "Cadastro administrador"; 
     do {
-        tela_cad_admin (ex);
+        tela_uni_1 (tela);
         email = ent_email ();
         if (!valid_email(email)) {
             tela_erro ();
@@ -105,11 +101,10 @@ char* le_email (void) {
 }
 //Leitura celular
 //
-char* le_cel (void) {
+char* le_cel (char* tela) {
     char* cel;
-    char ex[22] = "Cadastro administrador"; 
     do {
-        tela_cad_admin (ex);
+        tela_uni_1 (tela);
         cel = ent_cel ();
         if (!valid_numeros(cel, 11)) {
             tela_erro ();
@@ -119,11 +114,10 @@ char* le_cel (void) {
 }
 //Leitura nome
 //
-char* le_nome (void) {
+char* le_nome (char* tela) {
     char* nome;
-    char ex[22] = "Cadastro administrador"; 
     do {
-        tela_cad_admin (ex);
+        tela_uni_1 (tela);
         nome = ent_nome ();
         if (!valid_nome(nome)) {
             tela_erro ();
@@ -151,14 +145,13 @@ void gravar_admin (Admin* adm) {
 //
 void pesq_admin (void) {
     Admin* adm;
-    char* cpf = le_cpf ();
+    char* cpf = le_cpf ("Cadastro administrador");
     adm = carregar_admin(cpf);
     if (adm == NULL) {
         tela_erro_dados ();
     }
     else {
     t_exe_cad_adm (adm->cpf, adm->email, adm->cel, adm->nome);
-    limpa_buffer (); 
     }
 }
 

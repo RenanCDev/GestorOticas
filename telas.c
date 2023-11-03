@@ -45,14 +45,14 @@ void tela_banner (void) {
 
 //Telas módulo administrativo
 //
-//Tela cadastrar administrador
+//Tela universal de uma linha
+//Recebe uma string parametro, centraliza e printa
 //
-void tela_cad_admin (char* ex) {
-    system("clear");
+void tela_uni_1 (char* a) {
     tela_banner ();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                         %s                          |\n", ex);
+    printf("|%s|\n", centralizar_texto(a, 73, 0));
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
 }
@@ -61,7 +61,6 @@ void tela_cad_admin (char* ex) {
 //Tela pesquisar administrador
 //
 void tela_pesq_admin (void) {
-    system("clear");
     tela_banner ();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -74,7 +73,6 @@ void tela_pesq_admin (void) {
 //Tela relatório administradores
 //
 void tela_relat_admin (void) {
-    system("clear");
     tela_banner ();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -87,7 +85,6 @@ void tela_relat_admin (void) {
 //Tela relatório fornecedores
 //
 void tela_relat_fornec (void) {
-    system("clear");
     tela_banner ();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -100,7 +97,6 @@ void tela_relat_fornec (void) {
 //Tela relatório produtos
 //
 void tela_relat_produto (void) {
-    system("clear");
     tela_banner ();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -113,7 +109,6 @@ void tela_relat_produto (void) {
 //Tela relatório colaboradores
 //
 void tela_relat_colab (void) {
-    system("clear");
     tela_banner ();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -126,7 +121,6 @@ void tela_relat_colab (void) {
 //Tela relatório clientes
 //
 void tela_relat_cliente (void) {
-    system("clear");
     tela_banner ();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -139,7 +133,6 @@ void tela_relat_cliente (void) {
 //Tela relatório clientes
 //
 void tela_relat_venda (void) {
-    system("clear");
     tela_banner ();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -154,7 +147,6 @@ void tela_relat_venda (void) {
 //Tela cadastrar fornecedor
 //
 void tela_cad_fornec (void) {
-    system("clear");
     tela_banner ();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -167,7 +159,6 @@ void tela_cad_fornec (void) {
 //Tela pesquisar fornecedor
 //
 void tela_pesq_fornec (void) {
-    system("clear");
     tela_banner ();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -180,7 +171,6 @@ void tela_pesq_fornec (void) {
 //Tela cadastrar produto
 //
 void tela_cad_produto (void) {
-    system("clear");
     tela_banner ();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -193,7 +183,6 @@ void tela_cad_produto (void) {
 //Tela pesquisar produto
 //
 void tela_pesq_produto (void) {
-    system("clear");
     tela_banner ();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -206,7 +195,6 @@ void tela_pesq_produto (void) {
 //Tela cadastrar colaborador
 //
 void tela_cad_colab (void) {
-    system("clear");
     tela_banner ();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -219,7 +207,6 @@ void tela_cad_colab (void) {
 //Tela pesquisar colaborador
 //
 void tela_pesq_colab (void) {
-    system("clear");
     tela_banner ();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -232,7 +219,6 @@ void tela_pesq_colab (void) {
 //Tela cadastrar cliente
 //
 void tela_cad_cliente (void) {
-    system("clear");
     tela_banner ();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -245,7 +231,6 @@ void tela_cad_cliente (void) {
 //Tela pesquisar produto
 //
 void tela_pesq_cliente (void) {
-    system("clear");
     tela_banner ();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -260,7 +245,6 @@ void tela_pesq_cliente (void) {
 //Tela cadastrar venda
 //
 void tela_cad_venda (void) {
-    system("clear");
     tela_banner ();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -273,7 +257,6 @@ void tela_cad_venda (void) {
 //Tela pesquisar venda
 //
 void tela_pesq_venda (void) {
-    system("clear");
     tela_banner ();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -286,7 +269,6 @@ void tela_pesq_venda (void) {
 //Tela colaborador venda
 //
 void tela_venda_colab (void) {
-    system("clear");
     tela_banner ();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -299,7 +281,6 @@ void tela_venda_colab (void) {
 //Tela produto venda
 //
 void tela_venda_produt (void) {
-    system("clear");
     tela_banner ();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -312,7 +293,6 @@ void tela_venda_produt (void) {
 //Tela quantidade do produto venda
 //
 void tela_venda_q_prod (void) {
-    system("clear");
     tela_banner ();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -325,7 +305,6 @@ void tela_venda_q_prod (void) {
 //Tela cliente venda
 //
 void tela_venda_cliente (void) {
-    system("clear");
     tela_banner ();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -413,19 +392,19 @@ void info_cliente_0 (void) {
 //
 void t_exe_cad_adm (char* cpf, char* email, char* cel, char* nome) {
     limpa_buffer ();
-    char ex[22] = "Cadastro administrador"; 
-    tela_cad_admin (ex);
+    tela_uni_1 ("Cadastro administrador");
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|   CPF : %s\n", cpf);
+    printf("|   CPF : %s|\n", centralizar_texto(cpf, 64, -1));
     printf("|                                                                         |\n");
-    printf("|   Email : %s\n", email);
+    printf("|   Email : %s|\n", centralizar_texto(email, 62, -1));
     printf("|                                                                         |\n");
-    printf("|   Cel .: %s\n", cel);
+    printf("|   Cel .: %s|\n", centralizar_texto(cel, 63, -1));
     printf("|                                                                         |\n");
-    printf("|   Administrador : %s\n", nome);
+    printf("|   Administrador : %s|\n", centralizar_texto(nome, 54, -1));
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
+    tela_cad_concl ();
 }
 
 

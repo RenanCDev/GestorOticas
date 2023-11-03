@@ -366,3 +366,49 @@ int valid_cod_barras (char* cod_barras) {
     return 0; 
 }
 // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+
+
+//Centralizar_texto
+//Centraliza o texto inserido
+//
+char* centralizar_texto(char* texto, int tam, int horizontal) {
+    int tam_texto = strlen(texto);
+
+    for(int c = 0;c < tam_texto;c++) {
+        if(texto[c] < 0) {
+            tam++;
+            c++;
+        }
+    }
+    int pos;
+    if(horizontal == 1) {
+        pos = tam - tam_texto;
+    } else if (horizontal == -1) {
+        pos = 0;
+    } else {
+        pos = tam/2 - tam_texto/2;
+    }
+
+    char *str= malloc((tam + 1)*sizeof(char));
+    for(int c = 0; c < tam; c++) {
+        if(c >= pos && c < (pos + tam_texto)) {
+            str[c] = texto[c-pos];
+        } else {
+            str[c] = ' ';
+        }
+    }
+    str[tam] = '\0';
+    return str;
+}
+
+
+void mostrar_opcoes(char* opcoes[], int linha_tam) {
+    int c = 0;
+    while(opcoes[c] != NULL) {
+        char* texto = malloc((17 + strlen(opcoes[c])) * sizeof(char));
+        sprintf(texto, "            %d. %s", c+1, opcoes[c]);
+        printf("///%s///\n", centralizar_texto(texto, linha_tam, -1));
+        c++;
+    }
+}
+// AUTOR: EMANUEL ALVES // GIT: https://github.com/Faltrenn

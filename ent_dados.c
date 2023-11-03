@@ -40,7 +40,7 @@ char* ent_cpf (void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     return cpf; 
-    }
+}
 
 
 //Entrada do email
@@ -57,7 +57,7 @@ char* ent_email (void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     return email; 
-    }
+}
 
 
 //Entrada do celular
@@ -76,7 +76,7 @@ char* ent_cel (void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     return cel; 
-    }
+}
 
 
 //Entrada do nome
@@ -93,7 +93,7 @@ char* ent_nome (void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     return nome; 
-    }
+}
 
 
 //Entrada do CNPJ
@@ -112,7 +112,7 @@ char* ent_cnpj (void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     return cnpj; 
-    }
+}
 
 
 //Entrada do código de barras
@@ -131,7 +131,7 @@ char* ent_cod_barras (void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     return cod_barras; 
-    }
+}
 
 
 //Entrada da descrição do produto
@@ -148,7 +148,7 @@ char* ent_desc_produto (void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     return desc; 
-    }
+}
 
 
 //Entrada de quantidade de peças
@@ -167,7 +167,7 @@ char* ent_quant (void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     return quant; 
-    } 
+} 
 
 
 //Entrada do valor de entrada da peça
@@ -186,7 +186,7 @@ char* ent_valor_ent (void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     return valor; 
-    }
+}
 
 
 //Entrada valor de saída da peça
@@ -205,7 +205,7 @@ char* ent_valor_saida (void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     return valor; 
-    }
+}
 
 
 //Entrada id da venda
@@ -224,4 +224,4 @@ char* ent_id_venda (void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     return id; 
-    }
+}

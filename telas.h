@@ -24,7 +24,7 @@ void tela_banner (void);
 
 //Telas do módulo administrativo
 //
-void tela_cad_admin(char*);
+void tela_uni_1(char*);
 void tela_pesq_admin (void);
 
 
