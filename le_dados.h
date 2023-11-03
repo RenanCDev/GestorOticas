@@ -15,22 +15,7 @@
     ("+=========================================================================+\n")  */
 
 
-/////
-//Criação da struck
-//
-typedef struct administrador Admin;
-
-struct administrador {
-    char cpf[12];
-    char email[30];
-    char cel[12];
-    char nome[40];
-};
-
-//Declaração das funções do arquivo administrativo.c
-//
-void modulo_administrativo (void);
-Admin* cad_admin (void);
-void pesq_admin (void);
-void gravar_admin (Admin*);
-Admin* carregar_admin(char* cpf);
+char* le_cpf (char*);
+char* le_email (char*);
+char* le_cel (char*);
+char* le_nome (char*);
