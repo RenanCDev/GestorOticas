@@ -137,10 +137,10 @@ char* le_valor_c (char* tela) {
     do {
         tela_uni_1 (tela);
         valor_ent = ent_valor_ent ();
-        if (!valid_numeros_fs(valor_ent)) {
+        if (!valid_numeros_f(valor_ent, 8)) {
             tela_erro ();
         } 
-    } while (!valid_numeros_fs(valor_ent)); 
+    } while (!valid_numeros_f(valor_ent, 8)); 
     return valor_ent;
 }
 //Leitura valor de venda
@@ -150,10 +150,10 @@ char* le_valor_v (char* tela) {
     do {
         tela_uni_1 (tela);
         valor_saida = ent_valor_saida ();
-        if (!valid_numeros_fs(valor_saida)) {
+        if (!valid_numeros_f(valor_saida, 8)) {
             tela_erro ();
         } 
-    } while (!valid_numeros_fs(valor_saida)); 
+    } while (!valid_numeros_f(valor_saida, 8)); 
     return valor_saida;
 }
 //Leitura de id da venda

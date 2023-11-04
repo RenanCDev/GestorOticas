@@ -61,9 +61,11 @@ Prod* cad_prod (void) {
     strcpy(pro->desc, desc);
     limpa_buffer ();
     char* quant = le_quant ("Cadastro produto");
+    limpa_buffer ();
     strcpy(pro->quant, quant);
     char* valor_comp = le_valor_c ("Cadastro produto");
     strcpy(pro->valor_comp, valor_comp);
+    limpa_buffer ();
     char* valor_vend = le_valor_v ("Cadastro produto");
     strcpy(pro->valor_vend, valor_vend);
     t_cad_prod_ok ("Cadastro produto", pro->cod_barras, pro->cnpj, pro->desc, pro->quant,

@@ -183,7 +183,6 @@ char* ent_quant (void) {
     scanf("%[0-9A-Za-z@._-]", quant);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
-    limpa_buffer ();
     return quant; 
 } 
 
@@ -204,7 +203,7 @@ char* ent_valor_ent (void) {
     printf("|                           Valor de compra: R$ ");
     scanf("%[0-9A-Za-z@._-]", valor);
     printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");   
+    printf("+=========================================================================+\n"); 
     return valor; 
 }
 
@@ -220,12 +219,12 @@ char* ent_valor_saida (void) {
     printf("|                                                                         |\n");
     printf("|               Insira apenas números, incluindo centavos !               |\n");
     printf("|                                                                         |\n");
-    printf("|                    Tamanho máximo de XX caracters .                     |\n");
+    printf("|                     Tamanho máximo de 8 caracters .                     |\n");
     printf("|                                                                         |\n");
     printf("|                           Valor de venda: R$ ");
     scanf("%[0-9A-Za-z@._-]", valor);
     printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");   
+    printf("+=========================================================================+\n");
     return valor; 
 }
 
