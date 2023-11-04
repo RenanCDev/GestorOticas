@@ -63,6 +63,7 @@ Colab* cad_colab (void) {
     char* nome = le_nome ("Cadastro colaborador");
     strcpy(col->nome, nome);
     t_cad_ok ("Cadastro colaborador", col->cpf, col->email, col->cel, col->nome);
+    tela_cad_concl ();
     return col;
 }
 
@@ -85,13 +86,14 @@ void gravar_colab (Colab* col) {
 //
 void pesq_colab (void) {
     Colab* col;
-    char* cpf = le_cpf ("Cadastro colaborador");
+    char* cpf = le_cpf ("Pesquisa colaborador");
     col = carregar_colab(cpf);
     if (col == NULL) {
         tela_erro_dados ();
     }
     else {
     t_cad_ok ("Cadastro colaborador", col->cpf, col->email, col->cel, col->nome);
+    limpa_buffer ();
     free(col);
     }
 }

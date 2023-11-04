@@ -86,10 +86,27 @@ int valid_numeros(char* variavel, char tam) {
 // ADAPTADA - VALIDAÇÃO PARA CELULAR - AUTOR FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
 
 
+//Validação para números float com tamanho exigido:
+//Verifica se a string recebida contém apenas números e duas casas decimais no tamanho exigido(retorna "1") ou não(retorna "0")
+//
+int valid_numeros_fs(char* variavel) {
+    int tam_variavel;
+    tam_variavel = strlen(variavel);
+    int a = tam_variavel -2;
+    if (variavel[a] != '.') {
+        for (int i = 0; i < tam_variavel; i++) {
+            if (!valid_digt(variavel[i])) {
+                return 0; 
+            } 
+        }
+    }
+    return 1;
+}
+// ADAPTADA - VALIDAÇÃO PARA CELULAR - AUTOR FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
+
 //Validação para números sem tamanho exigido:
 //Verifica se a string recebida contém apenas números(retorna "1") ou não(retorna "0")
 //
-
 int valid_numeros_s(char* variavel) {
     int tam_variavel;
     tam_variavel = strlen(variavel);

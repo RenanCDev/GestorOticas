@@ -62,6 +62,7 @@ Client* cad_client (void) {
     char* nome = le_nome ("Cadastro cliente");
     strcpy(cli->nome, nome);
     t_cad_ok ("Cadastro cliente", cli->cpf, cli->email, cli->cel, cli->nome);
+    tela_cad_concl ();
     return cli;
 }
 
@@ -84,13 +85,14 @@ void gravar_client (Client* cli) {
 //
 void pesq_client (void) {
     Client* cli;
-    char* cpf = le_cpf ("Cadastro cliente");
+    char* cpf = le_cpf ("Pesquisa cliente");
     cli = carregar_client(cpf);
     if (cli == NULL) {
         tela_erro_dados ();
     }
     else {
     t_cad_ok ("Cadastro cliente", cli->cpf, cli->email, cli->cel, cli->nome);
+    limpa_buffer ();
     free(cli);
     }
 }

@@ -69,6 +69,7 @@ Admin* cad_admin (void) {
     char* nome = le_nome ("Cadastro administrador");
     strcpy(adm->nome, nome);
     t_cad_ok ("Cadastro administrador", adm->cpf, adm->email, adm->cel, adm->nome);
+    tela_cad_concl ();
     return adm;
 }
 
@@ -97,7 +98,8 @@ void pesq_admin (void) {
         tela_erro_dados ();
     }
     else {
-    t_cad_ok ("Cadastro cliente", adm->cpf, adm->email, adm->cel, adm->nome);
+    t_cad_ok ("Cadastro administrador", adm->cpf, adm->email, adm->cel, adm->nome);
+    limpa_buffer ();
     free(adm);
     }
 }

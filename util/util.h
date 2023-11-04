@@ -22,6 +22,7 @@ int valid_entrada (char*);
 int valid_op (char, char);
 int valid_digt (char);
 int valid_numeros (char*, char);
+int valid_numeros_fs(char*);
 int valid_numeros_s (char*);
 int valid_cpf (char*);
 void limpa_buffer (void);

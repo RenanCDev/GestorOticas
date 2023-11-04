@@ -26,6 +26,7 @@
 //Percorre todo o caminho do menu fornecedor
 //
 void modulo_fornecedor (void) {
+    Fornec* fornecedor;
     setlocale (LC_ALL, "Portuguese_Brazil");
     char op;
         do {
@@ -33,7 +34,8 @@ void modulo_fornecedor (void) {
             switch (op) {
                 case '1':
                     limpa_buffer ();
-                    cad_fornec ();
+                    fornecedor = cad_fornec ();
+                    gravar_fornec (fornecedor);
                     break;
                 case '2':
                     limpa_buffer ();
@@ -46,61 +48,74 @@ void modulo_fornecedor (void) {
 
 //Cadastra fornecedor
 //
-void cad_fornec (void) {
-    char* cnpj;
-    char* email;
-    char* cel;
-    char* nome;
-    do {
-        tela_cad_fornec ();
-        cnpj = ent_cnpj ();
-        if (!valid_cnpj(cnpj)) {
-            tela_erro (); 
-        } 
-    } while (!valid_cnpj(cnpj));
+Fornec* cad_fornec (void) {
+    Fornec* forn;
+    forn = (Fornec*)malloc((sizeof(Fornec)));
+    char* cnpj = le_cnpj ("Cadastro fornecedor");
+    strcpy(forn->cnpj, cnpj);
     limpa_buffer ();
-    do {
-        tela_cad_fornec ();
-        email = ent_email ();
-        if (!valid_email(email)) {
-            tela_erro (); 
-        } 
-    } while (!valid_email(email));
+    char* email = le_email ("Cadastro fornecedor");
+    strcpy(forn->email, email);
     limpa_buffer ();
-    do {
-        tela_cad_fornec ();
-        cel = ent_cel ();
-        if (!valid_numeros(cel, 11)) {
-            tela_erro (); 
-        } 
-    } while (!valid_numeros(cel, 11));
+    char* cel = le_cel ("Cadastro fornecedor");
+    strcpy(forn->cel, cel);
     limpa_buffer ();
-    do {
-        tela_cad_fornec ();
-        nome = ent_nome ();
-        if (!valid_nome(nome)) {
-            tela_erro (); 
-        } 
-    } while (!valid_nome(nome));
-    limpa_buffer ();
-    tela_cad_fornec ();
-    //t_exe_cad_forn ();
+    char* nome = le_nome ("Cadastro fornecedor");
+    strcpy(forn->nome, nome);
+    t_cad_ok ("Cadastro fornecedor", forn->cnpj, forn->email, forn->cel, forn->nome);
     tela_cad_concl ();
+    return forn;
 }
 
 
-//Pesquisa fornecedor
+//Gravador de dados do fornecedor
+//
+void gravar_fornec (Fornec* forn) {
+    FILE *fp_forn;
+    fp_forn = fopen("dat/fornecedor.dat", "ab");
+    if (fp_forn == NULL) {
+        tela_erro_dados ();
+    }
+    fwrite(forn, sizeof(Fornec), 1, fp_forn);
+    fclose(fp_forn);
+    free(forn);
+}
+
+
+
+//Pesquisa o cadastro de algum fornecedor
 //
 void pesq_fornec (void) {
-    char* cnpj;
-    do {
-        tela_pesq_fornec ();
-        cnpj = ent_cnpj ();
-        if (!valid_cnpj(cnpj)) {
-            tela_erro (); 
-        } 
-    } while (!valid_cnpj(cnpj));
-    limpa_buffer (); 
-   // t_exe_cad_forn ();
-    limpa_buffer (); 
+    Fornec* forn;
+    char* cnpj = le_cnpj ("Pesquisa fornecedor");
+    forn = carregar_fornec(cnpj);
+    if (forn == NULL) {
+        tela_erro_dados ();
+    }
+    else {
+    t_cad_ok ("Cadastro fornecedor", forn->cnpj, forn->email, forn->cel, forn->nome);
+    limpa_buffer ();
+    free(forn);
+    }
+}
+
+
+//Carregador de dados do fornecedor
+//
+Fornec* carregar_fornec(char* cnpj) {
+    FILE *fp;
+    Fornec* forn;
+    forn = (Fornec*)malloc(sizeof(Fornec));
+    fp = fopen("dat/fornecedor.dat", "rb");
+    if (fp == NULL) {
+        tela_erro_dados();
+    }
+    while (fread(forn, sizeof(Fornec), 1, fp)) {
+        if ((strcmp(forn->cnpj, cnpj) == 0)) {
+            fclose(fp);
+            return forn;
+        }
+    }
+    fclose(fp);
+    return NULL;
 }

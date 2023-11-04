@@ -26,6 +26,7 @@
 //Percorre todo o caminho do menu produto
 //
 void modulo_produto (void) {
+    Prod* produto;
     setlocale (LC_ALL, "Portuguese_Brazil");
     char op;
         do {
@@ -33,11 +34,12 @@ void modulo_produto (void) {
             switch (op) {
                 case '1':
                     limpa_buffer ();
-                    cad_produto ();
+                    produto = cad_prod ();
+                    gravar_prod (produto);
                     break;
                 case '2':
                     limpa_buffer ();
-                    pesq_produto ();
+                    pesq_prod ();
                     break; 
             } 
         } while (op != '0'); 
@@ -46,79 +48,78 @@ void modulo_produto (void) {
 
 //Cadastra produto
 //
-void cad_produto (void) {
-    char* cod_barras;
-    char* cnpj;
-    char* desc;
-    char* quant;
-    char* valor_comp;
-    char* valor_vend;
-    do {
-        tela_cad_produto ();
-        cod_barras = ent_cod_barras ();
-        if (!valid_cod_barras(cod_barras)) {
-            tela_erro (); 
-        } 
-    } while (!valid_cod_barras(cod_barras));
+Prod* cad_prod (void) {
+    Prod* pro;
+    pro = (Prod*)malloc((sizeof(Prod)));
+    char* cod_barras = le_cod_barras ("Cadastro produto");
+    strcpy(pro->cod_barras, cod_barras);
     limpa_buffer ();
-    do {
-        tela_cad_produto ();
-        cnpj = ent_cnpj ();
-        if (!valid_cnpj(cnpj)) {
-            tela_erro (); 
-        } 
-    } while (!valid_cnpj(cnpj));
+    char* cnpj = le_cnpj ("Cadastro produto");
+    strcpy(pro->cnpj, cnpj);
     limpa_buffer ();
-    do {
-        tela_cad_produto ();
-        desc = ent_desc_produto ();
-        if (!valid_nome(desc)) {
-            tela_erro (); 
-        } 
-    } while (!valid_nome(desc));
+    char* desc = le_desc_prod ("Cadastro produto");
+    strcpy(pro->desc, desc);
     limpa_buffer ();
-    do {
-        tela_cad_produto ();
-        quant = ent_quant ();
-        if (!valid_numeros_s(quant)) {
-            tela_erro (); 
-        } 
-    } while (!valid_numeros_s(quant));
-    limpa_buffer ();
-    do {
-        tela_cad_produto ();
-        valor_comp = ent_valor_ent ();
-        if (!valid_numeros_s(valor_comp)) {
-            tela_erro (); 
-        } 
-    } while (!valid_numeros_s(valor_comp));
-    limpa_buffer ();
-    do {
-        tela_cad_produto ();
-        valor_vend = ent_valor_saida ();
-        if (!valid_numeros_s(valor_vend)) {
-            tela_erro (); 
-        } 
-    } while (!valid_numeros_s(valor_vend));
-    limpa_buffer ();
-    tela_cad_produto ();
-    t_exe_cad_prod ();
+    char* quant = le_quant ("Cadastro produto");
+    strcpy(pro->quant, quant);
+    char* valor_comp = le_valor_c ("Cadastro produto");
+    strcpy(pro->valor_comp, valor_comp);
+    char* valor_vend = le_valor_v ("Cadastro produto");
+    strcpy(pro->valor_vend, valor_vend);
+    t_cad_prod_ok ("Cadastro produto", pro->cod_barras, pro->cnpj, pro->desc, pro->quant,
+     pro->valor_comp, pro->valor_vend);
     tela_cad_concl ();
+    return pro;
 }
 
 
-//Pesquisa produto
+//Gravador de dados do produto
 //
-void pesq_produto (void) {
-    char* cod_barras;
-    do {
-        tela_pesq_produto ();
-        cod_barras = ent_cod_barras ();
-        if (!valid_cod_barras(cod_barras)) {
-            tela_erro (); 
-        } 
-    } while (!valid_cod_barras(cod_barras));
-    limpa_buffer ();
-    t_exe_cad_prod ();
-    limpa_buffer (); 
+void gravar_prod (Prod* pro) {
+    FILE *fp_pro;
+    fp_pro = fopen("dat/produto.dat", "ab");
+    if (fp_pro == NULL) {
+        tela_erro_dados ();
+    }
+    fwrite(pro, sizeof(Prod), 1, fp_pro);
+    fclose(fp_pro);
+    free(pro);
+}
+
+
+//Pesquisa o cadastro de algum produto
+//
+void pesq_prod (void) {
+    Prod* pro;
+    char* cod_barras = le_cod_barras ("Cadastro prodistrador");
+    pro = carregar_prod(cod_barras);
+    if (pro == NULL) {
+        tela_erro_dados ();
+    }
+    else {
+    t_cad_prod_ok ("Cadastro produto", pro->cod_barras, pro->cnpj, pro->desc, pro->quant,
+     pro->valor_comp, pro->valor_vend);    limpa_buffer ();
+    free(pro);
+    }
+}
+
+
+//Carregador de dados do produto
+//
+Prod* carregar_prod(char* cod_barras) {
+    FILE *fp;
+    Prod* pro;
+    pro = (Prod*)malloc(sizeof(Prod));
+    fp = fopen("dat/produto.dat", "rb");
+    if (fp == NULL) {
+        tela_erro_dados();
+    }
+    while (fread(pro, sizeof(Prod), 1, fp)) {
+        if ((strcmp(pro->cod_barras, cod_barras) == 0)) {
+            fclose(fp);
+            return pro;
+        }
+    }
+    fclose(fp);
+    return NULL;
 }

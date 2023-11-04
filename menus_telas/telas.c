@@ -387,7 +387,7 @@ void info_cliente_0 (void) {
 
 //Telas Exemplos
 //
-//Tela exemplo cadastro administrador
+//Tela cadastro pessoas físicas
 //
 void t_cad_ok (char* tela, char* cpf, char* email, char* cel, char* nome) {
     limpa_buffer ();
@@ -403,9 +403,31 @@ void t_cad_ok (char* tela, char* cpf, char* email, char* cel, char* nome) {
     printf("|   Nome : %s|\n", centralizar_texto(nome, 63, -1));
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
-    tela_cad_concl ();
 }
 
+
+//Tela exemplo cadastro produto
+//
+void t_cad_prod_ok (char* tela, char* cod_barras, char* cnpj, char* desc,
+char* quant, char* valor_comp, char* valor_vend) {
+    limpa_buffer ();
+    tela_uni_1 (tela);
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|   Código de barras : %s|\n", centralizar_texto(cod_barras, 51, -1));
+    printf("|                                                                         |\n");
+    printf("|   Fornecedor : %s|\n", centralizar_texto(cnpj, 57, -1));
+    printf("|                                                                         |\n");
+    printf("|   Descrição do produto : %s|\n", centralizar_texto(desc, 47, -1));
+    printf("|                                                                         |\n");
+    printf("|   Estoque atual : %s|\n", centralizar_texto(quant, 54, -1));
+    printf("|                                                                         |\n");
+    printf("|   Valor de compra : %s|\n", centralizar_texto(valor_comp, 52, -1));
+    printf("|                                                                         |\n");
+    printf("|   Valor de venda : %s|\n", centralizar_texto(valor_vend, 53, -1));
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n"); 
+}
 
 //Tela exemplo relatório administrador
 //

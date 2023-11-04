@@ -21,13 +21,15 @@
 typedef struct fornecedor Fornec;
 
 struct fornecedor {
-    char cnpj[14];
+    char cnpj[15];
     char email[30];
-    char cel[11];
-    char nome[40];
+    char cel[12];
+    char nome[50];
 };
 //Declaração das funções do arquivo fornecedor.c
 //
 void modulo_fornecedor (void);
-void cad_fornec (void);
+Fornec* cad_fornec (void);
 void pesq_fornec (void);
+void gravar_fornec (Fornec*);
+Fornec* carregar_fornec(char* cnpj);

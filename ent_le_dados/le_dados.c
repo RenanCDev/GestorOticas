@@ -78,3 +78,94 @@ char* le_nome (char* tela) {
     } while (!valid_nome(nome)); 
     return nome;
 }
+//Leitura cnpj
+//
+char* le_cnpj (char* tela) {
+    char* cnpj;
+    do {
+        tela_uni_1 (tela);
+        cnpj = ent_cnpj ();
+        if (!valid_cnpj(cnpj)) {
+            tela_erro ();
+        } 
+    } while (!valid_cnpj(cnpj)); 
+    return cnpj;
+}
+//Leitura código de barras
+//
+char* le_cod_barras (char* tela) {
+    char* cod_barras;
+    do {
+        tela_uni_1 (tela);
+        cod_barras = ent_cod_barras ();
+        if (!valid_cod_barras(cod_barras)) {
+            tela_erro ();
+        } 
+    } while (!valid_cod_barras(cod_barras)); 
+    return cod_barras;
+}
+//Leitura da descrição do produto
+//
+char* le_desc_prod (char* tela) {
+    char* desc_prod;
+    do {
+        tela_uni_1 (tela);
+        desc_prod = ent_desc_produto ();
+        if (!valid_nome(desc_prod)) {
+            tela_erro ();
+        } 
+    } while (!valid_nome(desc_prod)); 
+    return desc_prod;
+}
+//Leitura quantidade de peças
+//
+char* le_quant (char* tela) {
+    char* quant;
+    do {
+        tela_uni_1 (tela);
+        quant = ent_quant ();
+        if (!valid_numeros_s(quant)) {
+            tela_erro ();
+        } 
+    } while (!valid_numeros_s(quant)); 
+    return quant;
+}
+//Leitura valor de compra
+//
+char* le_valor_c (char* tela) {
+    char* valor_ent;
+    do {
+        tela_uni_1 (tela);
+        valor_ent = ent_valor_ent ();
+        if (!valid_numeros_fs(valor_ent)) {
+            tela_erro ();
+        } 
+    } while (!valid_numeros_fs(valor_ent)); 
+    return valor_ent;
+}
+//Leitura valor de venda
+//
+char* le_valor_v (char* tela) {
+    char* valor_saida;
+    do {
+        tela_uni_1 (tela);
+        valor_saida = ent_valor_saida ();
+        if (!valid_numeros_fs(valor_saida)) {
+            tela_erro ();
+        } 
+    } while (!valid_numeros_fs(valor_saida)); 
+    return valor_saida;
+}
+//Leitura de id da venda
+//
+char* le_id (char* tela) {
+    char* id;
+    do {
+        tela_uni_1 (tela);
+        id = ent_id_venda ();
+        if (!valid_numeros_s(id)) {
+            tela_erro ();
+        } 
+    } while (!valid_numeros_s(id)); 
+    return id;
+}
