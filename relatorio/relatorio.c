@@ -19,7 +19,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <locale.h>
-#include "all.h"
+#include "../util/all.h"
 
 
 /////

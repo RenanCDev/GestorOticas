@@ -19,8 +19,7 @@
 #include <stdlib.h>
 #include <locale.h>
 #include <string.h>
-#include "all.h"
-
+#include "../util/all.h"
 
 /////
 //Telas do programa
@@ -390,9 +389,9 @@ void info_cliente_0 (void) {
 //
 //Tela exemplo cadastro administrador
 //
-void t_exe_cad_adm (char* cpf, char* email, char* cel, char* nome) {
+void t_cad_ok (char* tela, char* cpf, char* email, char* cel, char* nome) {
     limpa_buffer ();
-    tela_uni_1 ("Cadastro administrador");
+    tela_uni_1 (tela);
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|   CPF : %s|\n", centralizar_texto(cpf, 64, -1));
@@ -401,7 +400,7 @@ void t_exe_cad_adm (char* cpf, char* email, char* cel, char* nome) {
     printf("|                                                                         |\n");
     printf("|   Cel .: %s|\n", centralizar_texto(cel, 63, -1));
     printf("|                                                                         |\n");
-    printf("|   Administrador : %s|\n", centralizar_texto(nome, 54, -1));
+    printf("|   Nome : %s|\n", centralizar_texto(nome, 63, -1));
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
     tela_cad_concl ();
@@ -507,7 +506,7 @@ void t_exe_relat_prod (void) {
     printf("|                                                                         |\n");
     printf("|   Fornecedor : Fornecedor Exemplo Eagle                                 |\n");
     printf("|                                                                         |\n");
-    printf("|   Descrição do produto : **** ******* ******** *******                  |\n");
+    printf("|   Produto : **** ******* ******** *******                               |\n");
     printf("|                                                                         |\n");
     printf("|   Estoque atual : 9999                                                  |\n");
     printf("|                                                                         |\n");
@@ -623,23 +622,6 @@ void t_exe_relat_client (void) {
 }
 
 
-//Tela exemplo cadastro fornecedor
-//
-void t_exe_cad_forn (void) {
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|   CNPJ : XX.XXX.XXX/0001-XX                                             |\n");
-    printf("|                                                                         |\n");
-    printf("|   Email : email.exemplo@dominio.com                                     |\n");
-    printf("|                                                                         |\n");
-    printf("|   Cel .: (XX)9 9999 - 9999                                              |\n");
-    printf("|                                                                         |\n");
-    printf("|   Fornecedor : Fornecedor Exemplo de eyes                               |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n"); 
-}
-
-
 //Tela exemplo cadastro pproduto
 //
 void t_exe_cad_prod (void) {
@@ -656,40 +638,6 @@ void t_exe_cad_prod (void) {
     printf("|   Valor de compra : 999,99 R$                                           |\n");
     printf("|                                                                         |\n");
     printf("|   Valor de compra : 1888,88 R$                                          |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n"); 
-}
-
-
-//Tela exemplo cadastro colaborador
-//
-void t_exe_cad_colab (void) {
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|   CPF : XXX.XXX.XXX-XX                                                  |\n");
-    printf("|                                                                         |\n");
-    printf("|   Email : email.exemplo@dominio.com                                     |\n");
-    printf("|                                                                         |\n");
-    printf("|   Cel .: (XX)9 9999 - 9999                                              |\n");
-    printf("|                                                                         |\n");
-    printf("|   Colaborador : Colaborador Exemplo de eyes                             |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n"); 
-}
-
-
-//Tela exemplo cadastro cliente
-//
-void t_exe_cad_cliente (void) {
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|   CPF : XXX.XXX.XXX-XX                                                  |\n");
-    printf("|                                                                         |\n");
-    printf("|   Email : email.exemplo@dominio.com                                     |\n");
-    printf("|                                                                         |\n");
-    printf("|   Cel .: (XX)9 9999 - 9999                                              |\n");
-    printf("|                                                                         |\n");
-    printf("|   Cliente : Cliente Exemplo de eyes                                     |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
 }

@@ -19,88 +19,106 @@
 #include <stdlib.h>
 #include <string.h>
 #include <locale.h>
-#include "all.h"
+#include "../util/all.h"
 
 
 /////
-//Percorre todo o caminho do menu cliente
+//Percorre todo o caminho do menu produto
 //
-void modulo_cliente (void) {
+void modulo_produto (void) {
     setlocale (LC_ALL, "Portuguese_Brazil");
     char op;
         do {
-            op = menu_cliente ();
+            op = menu_produto ();
             switch (op) {
                 case '1':
                     limpa_buffer ();
-                    cad_cliente ();
+                    cad_produto ();
                     break;
                 case '2':
                     limpa_buffer ();
-                    pesq_cliente ();
+                    pesq_produto ();
                     break; 
             } 
         } while (op != '0'); 
 }
 
 
-//Cadastra um novo cliente
+//Cadastra produto
 //
-void cad_cliente (void) {
-    char* cpf;
-    char* email;
-    char* cel;
-    char* nome;
+void cad_produto (void) {
+    char* cod_barras;
+    char* cnpj;
+    char* desc;
+    char* quant;
+    char* valor_comp;
+    char* valor_vend;
     do {
-        tela_cad_cliente ();
-        cpf = ent_cpf (); 
-        if (!valid_cpf(cpf)) {
+        tela_cad_produto ();
+        cod_barras = ent_cod_barras ();
+        if (!valid_cod_barras(cod_barras)) {
             tela_erro (); 
         } 
-    } while (!valid_cpf(cpf));
+    } while (!valid_cod_barras(cod_barras));
     limpa_buffer ();
     do {
-        tela_cad_cliente ();
-        email = ent_email ();
-        if (!valid_email(email)) {
+        tela_cad_produto ();
+        cnpj = ent_cnpj ();
+        if (!valid_cnpj(cnpj)) {
             tela_erro (); 
         } 
-    } while (!valid_email(email));
+    } while (!valid_cnpj(cnpj));
     limpa_buffer ();
     do {
-        tela_cad_cliente ();
-        cel = ent_cel ();
-        if (!valid_numeros(cel, 11)) {
+        tela_cad_produto ();
+        desc = ent_desc_produto ();
+        if (!valid_nome(desc)) {
             tela_erro (); 
         } 
-    }  while (!valid_numeros(cel, 11));
+    } while (!valid_nome(desc));
     limpa_buffer ();
     do {
-        tela_cad_cliente ();
-        nome = ent_nome ();
-        if (!valid_nome(nome)) {
+        tela_cad_produto ();
+        quant = ent_quant ();
+        if (!valid_numeros_s(quant)) {
             tela_erro (); 
         } 
-    } while (!valid_nome(nome));
+    } while (!valid_numeros_s(quant));
     limpa_buffer ();
-    tela_cad_cliente ();
-    t_exe_cad_cliente ();
-    tela_cad_concl (); 
+    do {
+        tela_cad_produto ();
+        valor_comp = ent_valor_ent ();
+        if (!valid_numeros_s(valor_comp)) {
+            tela_erro (); 
+        } 
+    } while (!valid_numeros_s(valor_comp));
+    limpa_buffer ();
+    do {
+        tela_cad_produto ();
+        valor_vend = ent_valor_saida ();
+        if (!valid_numeros_s(valor_vend)) {
+            tela_erro (); 
+        } 
+    } while (!valid_numeros_s(valor_vend));
+    limpa_buffer ();
+    tela_cad_produto ();
+    t_exe_cad_prod ();
+    tela_cad_concl ();
 }
 
 
-//Pesquisa o cadastro de um cliente
+//Pesquisa produto
 //
-void pesq_cliente (void) {
-    char* cpf;
+void pesq_produto (void) {
+    char* cod_barras;
     do {
-        tela_pesq_cliente ();
-        cpf = ent_cpf ();
-        if (!valid_cpf(cpf)) {
+        tela_pesq_produto ();
+        cod_barras = ent_cod_barras ();
+        if (!valid_cod_barras(cod_barras)) {
             tela_erro (); 
         } 
-    } while (!valid_cpf(cpf));
+    } while (!valid_cod_barras(cod_barras));
     limpa_buffer ();
-    t_exe_cad_cliente (); 
+    t_exe_cad_prod ();
     limpa_buffer (); 
 }

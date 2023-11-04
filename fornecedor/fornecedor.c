@@ -19,50 +19,40 @@
 #include <stdlib.h>
 #include <string.h>
 #include <locale.h>
-#include "all.h"
+#include "../util/all.h"
 
 
 /////
-//Percorre todo o caminho do menu produto
+//Percorre todo o caminho do menu fornecedor
 //
-void modulo_produto (void) {
+void modulo_fornecedor (void) {
     setlocale (LC_ALL, "Portuguese_Brazil");
     char op;
         do {
-            op = menu_produto ();
+            op = menu_fornecedor ();
             switch (op) {
                 case '1':
                     limpa_buffer ();
-                    cad_produto ();
+                    cad_fornec ();
                     break;
                 case '2':
                     limpa_buffer ();
-                    pesq_produto ();
+                    pesq_fornec ();
                     break; 
-            } 
+            }
         } while (op != '0'); 
 }
 
 
-//Cadastra produto
+//Cadastra fornecedor
 //
-void cad_produto (void) {
-    char* cod_barras;
+void cad_fornec (void) {
     char* cnpj;
-    char* desc;
-    char* quant;
-    char* valor_comp;
-    char* valor_vend;
+    char* email;
+    char* cel;
+    char* nome;
     do {
-        tela_cad_produto ();
-        cod_barras = ent_cod_barras ();
-        if (!valid_cod_barras(cod_barras)) {
-            tela_erro (); 
-        } 
-    } while (!valid_cod_barras(cod_barras));
-    limpa_buffer ();
-    do {
-        tela_cad_produto ();
+        tela_cad_fornec ();
         cnpj = ent_cnpj ();
         if (!valid_cnpj(cnpj)) {
             tela_erro (); 
@@ -70,55 +60,47 @@ void cad_produto (void) {
     } while (!valid_cnpj(cnpj));
     limpa_buffer ();
     do {
-        tela_cad_produto ();
-        desc = ent_desc_produto ();
-        if (!valid_nome(desc)) {
+        tela_cad_fornec ();
+        email = ent_email ();
+        if (!valid_email(email)) {
             tela_erro (); 
         } 
-    } while (!valid_nome(desc));
+    } while (!valid_email(email));
     limpa_buffer ();
     do {
-        tela_cad_produto ();
-        quant = ent_quant ();
-        if (!valid_numeros_s(quant)) {
+        tela_cad_fornec ();
+        cel = ent_cel ();
+        if (!valid_numeros(cel, 11)) {
             tela_erro (); 
         } 
-    } while (!valid_numeros_s(quant));
+    } while (!valid_numeros(cel, 11));
     limpa_buffer ();
     do {
-        tela_cad_produto ();
-        valor_comp = ent_valor_ent ();
-        if (!valid_numeros_s(valor_comp)) {
+        tela_cad_fornec ();
+        nome = ent_nome ();
+        if (!valid_nome(nome)) {
             tela_erro (); 
         } 
-    } while (!valid_numeros_s(valor_comp));
+    } while (!valid_nome(nome));
     limpa_buffer ();
-    do {
-        tela_cad_produto ();
-        valor_vend = ent_valor_saida ();
-        if (!valid_numeros_s(valor_vend)) {
-            tela_erro (); 
-        } 
-    } while (!valid_numeros_s(valor_vend));
-    limpa_buffer ();
-    tela_cad_produto ();
-    t_exe_cad_prod ();
+    tela_cad_fornec ();
+    //t_exe_cad_forn ();
     tela_cad_concl ();
 }
 
 
-//Pesquisa produto
+//Pesquisa fornecedor
 //
-void pesq_produto (void) {
-    char* cod_barras;
+void pesq_fornec (void) {
+    char* cnpj;
     do {
-        tela_pesq_produto ();
-        cod_barras = ent_cod_barras ();
-        if (!valid_cod_barras(cod_barras)) {
+        tela_pesq_fornec ();
+        cnpj = ent_cnpj ();
+        if (!valid_cnpj(cnpj)) {
             tela_erro (); 
         } 
-    } while (!valid_cod_barras(cod_barras));
-    limpa_buffer ();
-    t_exe_cad_prod ();
+    } while (!valid_cnpj(cnpj));
+    limpa_buffer (); 
+   // t_exe_cad_forn ();
     limpa_buffer (); 
 }

@@ -16,17 +16,21 @@
 
 
 /////
-//Contém todos os //#include ".h"//
+//Criação da struck
 //
-#include "telas.h"
-#include "ent_dados.h"
-#include "menus.h"
-#include "administrativo.h"
-#include "fornecedor.h"
-#include "produto.h"
-#include "colaborador.h"
-#include "cliente.h"
-#include "relatorio.h"
-#include "venda.h"
-#include "util.h"
-#include "le_dados.h"
+typedef struct cliente Client;
+
+struct cliente {
+    char cpf[12];
+    char email[30];
+    char cel[12];
+    char nome[50];
+};
+
+//Declaração das funções do arquivo cliente.c
+//
+void modulo_cliente (void);
+Client* cad_client (void);
+void pesq_client (void);
+void gravar_client (Client*);
+Client* carregar_client(char* cpf);

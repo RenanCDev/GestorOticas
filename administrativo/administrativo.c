@@ -22,9 +22,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <locale.h>
-#include "all.h"
+#include "../util/all.h"
 
 
+/////
 //Percorre todo o caminho do menu administrativo
 //
 void modulo_administrativo (void) {
@@ -67,7 +68,7 @@ Admin* cad_admin (void) {
     limpa_buffer ();
     char* nome = le_nome ("Cadastro administrador");
     strcpy(adm->nome, nome);
-    t_exe_cad_adm (adm->cpf, adm->email, adm->cel, adm->nome);
+    t_cad_ok ("Cadastro administrador", adm->cpf, adm->email, adm->cel, adm->nome);
     return adm;
 }
 
@@ -76,7 +77,7 @@ Admin* cad_admin (void) {
 //
 void gravar_admin (Admin* adm) {
     FILE *fp_adm;
-    fp_adm = fopen("administrativo.dat", "ab");
+    fp_adm = fopen("dat/administrativo.dat", "ab");
     if (fp_adm == NULL) {
         tela_erro_dados ();
     }
@@ -96,7 +97,8 @@ void pesq_admin (void) {
         tela_erro_dados ();
     }
     else {
-    t_exe_cad_adm (adm->cpf, adm->email, adm->cel, adm->nome);
+    t_cad_ok ("Cadastro cliente", adm->cpf, adm->email, adm->cel, adm->nome);
+    free(adm);
     }
 }
 
@@ -107,15 +109,12 @@ Admin* carregar_admin(char* cpf) {
     FILE *fp;
     Admin* adm;
     adm = (Admin*)malloc(sizeof(Admin));
-    fp = fopen("administrativo.dat", "rb");
-    if (fp == NULL)
-    {
+    fp = fopen("dat/administrativo.dat", "rb");
+    if (fp == NULL) {
         tela_erro_dados();
     }
-    while (fread(adm, sizeof(Admin), 1, fp))
-    {
-        if ((strcmp(adm->cpf, cpf) == 0))
-        {
+    while (fread(adm, sizeof(Admin), 1, fp)) {
+        if ((strcmp(adm->cpf, cpf) == 0)) {
             fclose(fp);
             return adm;
         }

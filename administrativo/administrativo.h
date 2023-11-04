@@ -18,16 +18,19 @@
 /////
 //Criação da struck
 //
-typedef struct cliente Cli;
+typedef struct administrador Admin;
 
-struct cliente {
-    char cpf[11];
+struct administrador {
+    char cpf[12];
     char email[30];
-    char cel[11];
-    char nome[40];
+    char cel[12];
+    char nome[50];
 };
-//Declaração das funções do arquivo cliente.c
+
+//Declaração das funções do arquivo administrativo.c
 //
-void modulo_cliente (void);
-void cad_cliente (void);
-void pesq_cliente (void);
+void modulo_administrativo (void);
+Admin* cad_admin (void);
+void pesq_admin (void);
+void gravar_admin (Admin*);
+Admin* carregar_admin(char* cpf);

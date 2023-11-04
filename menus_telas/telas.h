@@ -83,7 +83,7 @@ void info_cliente_0 (void);
 
 //Telas exemplo
 //
-void t_exe_cad_adm (char*, char*, char*, char*);
+void t_cad_ok (char*, char*, char*, char*, char*);
 void t_exe_relat_adm (void);
 void t_exe_relat_forn (void);
 void t_exe_relat_prod (void);

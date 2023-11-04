@@ -19,13 +19,14 @@
 #include <stdlib.h>
 #include <string.h>
 #include <locale.h>
-#include "all.h"
+#include "../util/all.h"
 
 
 /////
 //Percorre todo o caminho do menu colaborador
 //
 void modulo_colaborador (void) {
+    Colab* colaborador;
     setlocale( LC_ALL, "Portuguese_Brazil");
     char op;
         do {
@@ -33,7 +34,8 @@ void modulo_colaborador (void) {
             switch (op) {
                 case '1':
                     limpa_buffer ();
-                    cad_colab ();
+                    colaborador = cad_colab ();
+                    gravar_colab (colaborador);
                     break;
                 case '2':
                     limpa_buffer ();
@@ -46,61 +48,71 @@ void modulo_colaborador (void) {
 
 //Cadastra um novo colaborador
 //
-void cad_colab (void) {
-    char* cpf;
-    char* email;
-    char* cel;
-    char* nome;
-    do {
-        tela_cad_colab ();
-        cpf = ent_cpf (); 
-        if (!valid_cpf(cpf)) {
-            tela_erro (); 
-        } 
-    } while (!valid_cpf(cpf));
+Colab* cad_colab (void) {
+    Colab* col;
+    col = (Colab*)malloc((sizeof(Colab)));
+    char* cpf = le_cpf ("Cadastro colaborador");
+    strcpy(col->cpf, cpf);
     limpa_buffer ();
-    do {
-        tela_cad_colab ();
-        email = ent_email ();
-        if (!valid_email(email)) {
-            tela_erro (); 
-        } 
-    } while (!valid_email(email));
+    char* email = le_email ("Cadastro colaborador");
+    strcpy(col->email, email);
     limpa_buffer ();
-    do {
-        tela_cad_colab ();
-        cel = ent_cel ();
-        if (!valid_numeros(cel, 11)) {
-            tela_erro (); 
-        } 
-    }  while (!valid_numeros(cel, 11));
+    char* cel = le_cel ("Cadastro colaborador");
+    strcpy(col->cel, cel);
     limpa_buffer ();
-    do {
-        tela_cad_colab ();
-        nome = ent_nome ();
-        if (!valid_nome(nome)) {
-            tela_erro (); 
-        } 
-    } while (!valid_nome(nome));
-    limpa_buffer ();
-    tela_cad_colab ();
-    t_exe_cad_colab ();
-    tela_cad_concl (); 
+    char* nome = le_nome ("Cadastro colaborador");
+    strcpy(col->nome, nome);
+    t_cad_ok ("Cadastro colaborador", col->cpf, col->email, col->cel, col->nome);
+    return col;
 }
 
 
-//Pesquisa o cadastro de um colaborador
+//Gravador de dados do colaborador
+//
+void gravar_colab (Colab* col) {
+    FILE *fp_col;
+    fp_col = fopen("dat/colaborador.dat", "ab");
+    if (fp_col == NULL) {
+        tela_erro_dados ();
+    }
+    fwrite(col, sizeof(Colab), 1, fp_col);
+    fclose(fp_col);
+    free(col);
+}
+
+
+//Pesquisa o cadastro de algum colaborador
 //
 void pesq_colab (void) {
-    char* cpf;
-    do {
-        tela_pesq_colab ();
-        cpf = ent_cpf ();
-        if (!valid_cpf(cpf)) {
-            tela_erro (); 
-        } 
-    } while (!valid_cpf(cpf));
-    limpa_buffer ();
-    t_exe_cad_colab ();
-    limpa_buffer (); 
+    Colab* col;
+    char* cpf = le_cpf ("Cadastro colaborador");
+    col = carregar_colab(cpf);
+    if (col == NULL) {
+        tela_erro_dados ();
+    }
+    else {
+    t_cad_ok ("Cadastro colaborador", col->cpf, col->email, col->cel, col->nome);
+    free(col);
+    }
+}
+
+
+//Carregador de dados do colaborador
+//
+Colab* carregar_colab(char* cpf) {
+    FILE *fp;
+    Colab* col;
+    col = (Colab*)malloc(sizeof(Colab));
+    fp = fopen("dat/colaborador.dat", "rb");
+    if (fp == NULL) {
+        tela_erro_dados();
+    }
+    while (fread(col, sizeof(Colab), 1, fp)) {
+        if ((strcmp(col->cpf, cpf) == 0)) {
+            fclose(fp);
+            return col;
+        }
+    }
+    fclose(fp);
+    return NULL;
 }

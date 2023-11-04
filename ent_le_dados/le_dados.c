@@ -15,92 +15,66 @@
     ("+=========================================================================+\n")  */
 
 
+/////
+//Include do material necessario
+//
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <locale.h>
-#include "all.h"
+#include "../util/all.h"
 
 
-/////
-//Percorre todo o caminho do menu fornecedor
+//Funções de leitura de entradas
+//Leitura CPF
 //
-void modulo_fornecedor (void) {
-    setlocale (LC_ALL, "Portuguese_Brazil");
-    char op;
-        do {
-            op = menu_fornecedor ();
-            switch (op) {
-                case '1':
-                    limpa_buffer ();
-                    cad_fornec ();
-                    break;
-                case '2':
-                    limpa_buffer ();
-                    pesq_fornec ();
-                    break; 
-            }
-        } while (op != '0'); 
-}
-
-
-//Cadastra fornecedor
-//
-void cad_fornec (void) {
-    char* cnpj;
-    char* email;
-    char* cel;
-    char* nome;
+char* le_cpf (char* tela) {
+    char* cpf;
     do {
-        tela_cad_fornec ();
-        cnpj = ent_cnpj ();
-        if (!valid_cnpj(cnpj)) {
-            tela_erro (); 
+        tela_uni_1 (tela);
+        cpf = ent_cpf ();
+        if (!valid_cpf(cpf)) {
+            tela_erro ();
         } 
-    } while (!valid_cnpj(cnpj));
-    limpa_buffer ();
+    } while (!valid_cpf(cpf)); 
+    return cpf;
+}
+//Leitura email
+//
+char* le_email (char* tela) {
+    char* email;
     do {
-        tela_cad_fornec ();
+        tela_uni_1 (tela);
         email = ent_email ();
         if (!valid_email(email)) {
-            tela_erro (); 
+            tela_erro ();
         } 
-    } while (!valid_email(email));
-    limpa_buffer ();
+    } while (!valid_email(email)); 
+    return email;
+}
+//Leitura celular
+//
+char* le_cel (char* tela) {
+    char* cel;
     do {
-        tela_cad_fornec ();
+        tela_uni_1 (tela);
         cel = ent_cel ();
         if (!valid_numeros(cel, 11)) {
-            tela_erro (); 
+            tela_erro ();
         } 
-    } while (!valid_numeros(cel, 11));
-    limpa_buffer ();
+    } while (!valid_numeros(cel, 11)); 
+    return cel;
+}
+//Leitura nome
+//
+char* le_nome (char* tela) {
+    char* nome;
     do {
-        tela_cad_fornec ();
+        tela_uni_1 (tela);
         nome = ent_nome ();
         if (!valid_nome(nome)) {
-            tela_erro (); 
+            tela_erro ();
         } 
-    } while (!valid_nome(nome));
-    limpa_buffer ();
-    tela_cad_fornec ();
-    t_exe_cad_forn ();
-    tela_cad_concl ();
-}
-
-
-//Pesquisa fornecedor
-//
-void pesq_fornec (void) {
-    char* cnpj;
-    do {
-        tela_pesq_fornec ();
-        cnpj = ent_cnpj ();
-        if (!valid_cnpj(cnpj)) {
-            tela_erro (); 
-        } 
-    } while (!valid_cnpj(cnpj));
-    limpa_buffer (); 
-    t_exe_cad_forn ();
-    limpa_buffer (); 
+    } while (!valid_nome(nome)); 
+    return nome;
 }

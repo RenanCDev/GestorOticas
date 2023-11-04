@@ -3,6 +3,12 @@
         "telas.h": "c",
         "stdlib.h": "c",
         "stdio.h": "c",
-        "menus.h": "c"
+        "menus.h": "c",
+        "administrativo.h": "c",
+        "string.h": "c",
+        "relatorio.h": "c",
+        "venda.h": "c",
+        "locale.h": "c",
+        "all.h": "c"
     }
 }

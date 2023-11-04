@@ -21,13 +21,16 @@
 typedef struct colaborador Colab;
 
 struct colaborador {
-    char cpf[11];
+    char cpf[12];
     char email[30];
-    char cel[11];
-    char nome[40];
+    char cel[12];
+    char nome[50];
 };
+
 //Declaração das funções do arquivo colaborador.c
 //
 void modulo_colaborador (void);
-void cad_colab (void);
+Colab* cad_colab (void);
 void pesq_colab (void);
+void gravar_colab (Colab*);
+Colab* carregar_colab(char* cpf);

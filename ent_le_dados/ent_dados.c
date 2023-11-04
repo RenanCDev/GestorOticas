@@ -19,7 +19,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <locale.h>
-#include "all.h"
+#include "../util/all.h"
+
 
 /////
 //Funções de entrada de dados
@@ -35,11 +36,13 @@ char* ent_cpf (void) {
     printf("|                                                                         |\n");
     printf("|                         Insira apenas números !                         |\n");
     printf("|                                                                         |\n");
+    printf("|                    Tamanho máximo de 11 caracters .                     |\n");
+    printf("|                                                                         |\n");
     printf("|                            CPF: ");
     scanf("%[0-9A-Za-z@._-]", cpf);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
-    return cpf; 
+    return cpf;
 }
 
 
@@ -52,11 +55,13 @@ char* ent_email (void) {
     printf("|                                                                         |\n");
     printf("|                            Digite o E-mail .                            |\n");
     printf("|                                                                         |\n");
+    printf("|                    Tamanho máximo de 28 caracters .                     |\n");
+    printf("|                                                                         |\n");
     printf("|                   E-mail: ");
     scanf("%[0-9A-Za-z@._-]", email);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
-    return email; 
+    return email;
 }
 
 
@@ -64,12 +69,14 @@ char* ent_email (void) {
 //
 char* ent_cel (void) {
     char* cel;
-    cel = (char*) malloc(20*sizeof(char));
+    cel = (char*) malloc(11*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                           Digite o celular .                            |\n");
     printf("|                                                                         |\n");
     printf("|                Insira apenas números, incluindo o ddd !                 |\n");
+    printf("|                                                                         |\n");
+    printf("|                    Tamanho máximo de 11 caracters .                     |\n");
     printf("|                                                                         |\n");
     printf("|                            Cel.: ");
     scanf("%[0-9A-Za-z@._-]", cel);
@@ -83,10 +90,12 @@ char* ent_cel (void) {
 //
 char* ent_nome (void) {
     char* nome;
-    nome = (char*) malloc(60*sizeof(char));
+    nome = (char*) malloc(40*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                             Digite o nome .                             |\n");
+    printf("|                                                                         |\n");
+    printf("|                    Tamanho máximo de 40 caracters .                     |\n");
     printf("|                                                                         |\n");
     printf("|               Nome: ");
     scanf("%[0-9A-Za-z@._-]", nome);
@@ -100,12 +109,14 @@ char* ent_nome (void) {
 //
 char* ent_cnpj (void) {
     char* cnpj;
-    cnpj = (char*) malloc(20*sizeof(char));
+    cnpj = (char*) malloc(14*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                      Digite o CNPJ do fornecedor :                      |\n");
     printf("|                                                                         |\n");
     printf("|                         Insira apenas números !                         |\n");
+    printf("|                                                                         |\n");
+    printf("|                    Tamanho máximo de 14 caracters .                     |\n");
     printf("|                                                                         |\n");
     printf("|                          CNPJ: ");
     scanf("%[0-9A-Za-z@._-]", cnpj);
@@ -119,12 +130,14 @@ char* ent_cnpj (void) {
 //
 char* ent_cod_barras (void) {
     char* cod_barras;
-    cod_barras = (char*) malloc(20*sizeof(char));
+    cod_barras = (char*) malloc(13*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                       Digite o código de barras .                       |\n");
     printf("|                                                                         |\n");
     printf("|                         Insira apenas números !                         |\n");
+    printf("|                                                                         |\n");
+    printf("|                    Tamanho máximo de 13 caracters .                     |\n");
     printf("|                                                                         |\n");
     printf("|                     Código de barras: ");
     scanf("%[0-9A-Za-z@._-]", cod_barras);
@@ -138,10 +151,12 @@ char* ent_cod_barras (void) {
 //
 char* ent_desc_produto (void) {
     char* desc;
-    desc = (char*) malloc(154*sizeof(char));
+    desc = (char*) malloc(40*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                          Descreva o produto .                           |\n");
+    printf("|                                                                         |\n");
+    printf("|                    Tamanho máximo de 40 caracters .                     |\n");
     printf("|                                                                         |\n");
     printf("|     Descrição do produto: ");
     scanf("%[0-9A-Za-z@._-]", desc);
@@ -162,6 +177,8 @@ char* ent_quant (void) {
     printf("|                                                                         |\n");
     printf("|                         Insira apenas números !                         |\n");
     printf("|                                                                         |\n");
+    printf("|                     Tamanho máximo de 8 caracters .                     |\n");
+    printf("|                                                                         |\n");
     printf("|                          Quantidade de peças: ");
     scanf("%[0-9A-Za-z@._-]", quant);
     printf("|                                                                         |\n");
@@ -180,6 +197,8 @@ char* ent_valor_ent (void) {
     printf("|                   Digite o valor de entrada da peça .                   |\n");
     printf("|                                                                         |\n");
     printf("|               Insira apenas números, incluindo centavos !               |\n");
+    printf("|                                                                         |\n");
+    printf("|                     Tamanho máximo de 8 caracters .                     |\n");
     printf("|                                                                         |\n");
     printf("|                           Valor de compra: R$");
     scanf("%[0-9A-Za-z@._-]", valor);
@@ -200,6 +219,8 @@ char* ent_valor_saida (void) {
     printf("|                                                                         |\n");
     printf("|               Insira apenas números, incluindo centavos !               |\n");
     printf("|                                                                         |\n");
+    printf("|                    Tamanho máximo de XX caracters .                     |\n");
+    printf("|                                                                         |\n");
     printf("|                           Valor de venda: R$");
     scanf("%[0-9A-Za-z@._-]", valor);
     printf("|                                                                         |\n");
@@ -218,6 +239,8 @@ char* ent_id_venda (void) {
     printf("|                         Digite o ID da venda .                          |\n");
     printf("|                                                                         |\n");
     printf("|                         Insira apenas números !                         |\n");
+    printf("|                                                                         |\n");
+    printf("|                     Tamanho máximo de 8 caracters .                     |\n");
     printf("|                                                                         |\n");
     printf("|                                  ID :");
     scanf("%[0-9A-Za-z@._-]", id);

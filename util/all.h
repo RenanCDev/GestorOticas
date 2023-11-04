@@ -16,21 +16,17 @@
 
 
 /////
-//Criação da struck
+//Contém todos os //#include ".h"//
 //
-typedef struct administrador Admin;
-
-struct administrador {
-    char cpf[12];
-    char email[30];
-    char cel[12];
-    char nome[40];
-};
-
-//Declaração das funções do arquivo administrativo.c
-//
-void modulo_administrativo (void);
-Admin* cad_admin (void);
-void pesq_admin (void);
-void gravar_admin (Admin*);
-Admin* carregar_admin(char* cpf);
+#include "../menus_telas/telas.h"
+#include "../ent_le_dados/ent_dados.h"
+#include "../menus_telas/menus.h"
+#include "../administrativo/administrativo.h"
+#include "../fornecedor/fornecedor.h"
+#include "../produto/produto.h"
+#include "../colaborador/colaborador.h"
+#include "../cliente/cliente.h"
+#include "../relatorio/relatorio.h"
+#include "../venda/venda.h"
+#include "../util/util.h"
+#include "../ent_le_dados/le_dados.h"
