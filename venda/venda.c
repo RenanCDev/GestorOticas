@@ -74,8 +74,7 @@ void cad_venda (void) {
             if (!valid_cod_barras(cod_barras)) {
                 tela_erro (); 
             } 
-        }
- while (!valid_cod_barras(cod_barras));
+        } while (!valid_cod_barras(cod_barras));
         limpa_buffer ();
         do {
             tela_venda_q_prod ();
@@ -83,10 +82,9 @@ void cad_venda (void) {
             if (!valid_numeros_s(quant)) {
                 tela_erro (); 
             } 
-        }
- while (!valid_numeros_s(quant));
+        } while (!valid_numeros_s(quant));
         verify = acresc_item_venda (); 
-    }  while (!verify);
+    } while (!verify);
     limpa_buffer ();
     form_pag ();
     limpa_buffer ();
