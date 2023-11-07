@@ -20,12 +20,9 @@
 //
 char menu_principal (void);
 char menu_administrativo (void);
-char menu_fornecedor (void);
 char menu_sec_uni (char*, char*, char*) ;
-char menu_colaborador (void);
-char menu_cliente (void);
 char menu_relatorio (void);
-char menu_venda (void);
+char menu_edit (char*, char*, char*, char*, char*, char);
 char menu_item_venda (void);
 char menu_form_pag (void);
 void tela_sobre (void);

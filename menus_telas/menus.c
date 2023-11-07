@@ -63,8 +63,7 @@ char menu_principal (void) {
             tela_erro ();
             return '9';
         } 
-    }
-    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+    } while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
 }
 
 
@@ -98,8 +97,7 @@ char menu_administrativo (void) {
             tela_erro ();
             return '9';
         } 
-    }
-    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+    } while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
 }
 
 
@@ -139,8 +137,7 @@ char menu_relatorio (void) {
             tela_erro ();
             return '9';
         } 
-    }
-    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+    } while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
 }
 
 
@@ -172,8 +169,44 @@ char menu_sec_uni (char* menu, char* procurar, char* pesquisar) {
             tela_erro ();
             return '9';
         } 
-    }
-    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+    } while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+}
+
+
+//Menu relatórios
+//
+char menu_edit (char* titulo, char* cpf, char* email, char* cel, char* nome, char status) {
+    char op [50];
+    char op_max = '5';
+    do {
+        system("clear");
+        tela_banner ();
+        t_cad_ok (titulo, cpf, email, cel, nome, status);
+        printf("+=========================================================================+\n");
+        printf("|                                                                         |\n");
+        printf("|                             Editar/ Excluir                             |\n");
+        printf("|                                                                         |\n");
+        printf("|                           1 -> Editar o email                           |\n");
+        printf("|                                                                         |\n");
+        printf("|                            2 -> Editar o cel                            |\n");
+        printf("|                                                                         |\n");
+        printf("|                           3 -> Editar o nomme                           |\n");
+        printf("|                                                                         |\n");
+        printf("|                         4 -> Excluir o cadastro                         |\n");
+        printf("|                                                                         |\n");
+        printf("|                      0 -> Voltar ao menu anterior                       |\n");
+        printf("|                                                                         |\n");
+        printf("+=========================================================================+\n");
+        printf("Selecione uma opção: \n");
+        scanf("%s", &*op);
+        if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
+            return op[0]; 
+        } 
+        else {
+            tela_erro ();
+            return '9';
+        } 
+    } while ((!valid_entrada(op)) || (valid_op(op[0], op_max)));
 }
 
 
@@ -198,8 +231,7 @@ char menu_item_venda (void) {
         else {
             return '9';
         } 
-    }
-    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+    } while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
 }
 
 
@@ -231,8 +263,7 @@ char menu_form_pag (void) {
             tela_erro ();
             return '9';
         } 
-    }
-    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+    } while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
 }
 
 
