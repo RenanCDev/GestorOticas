@@ -25,6 +25,7 @@ struct colaborador {
     char email[30];
     char cel[12];
     char nome[50];
+    char status;
 };
 
 //Declaração das funções do arquivo colaborador.c

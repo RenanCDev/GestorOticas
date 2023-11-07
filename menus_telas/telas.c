@@ -17,8 +17,9 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <locale.h>
 #include <string.h>
+#include <locale.h>
+#include <unistd.h>
 #include "../util/all.h"
 
 /////
@@ -52,18 +53,6 @@ void tela_uni_1 (char* a) {
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|%s|\n", centralizar_texto(a, 73, 0));
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n"); 
-}
-
-
-//Tela pesquisar administrador
-//
-void tela_pesq_admin (void) {
-    tela_banner ();
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                         Pesquisar administrador                         |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
 }
@@ -136,104 +125,6 @@ void tela_relat_venda (void) {
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                            Relatório vendas                             |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n"); 
-}
-
-
-//Telas do módulo fornecedor
-//
-//Tela cadastrar fornecedor
-//
-void tela_cad_fornec (void) {
-    tela_banner ();
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                           Cadastro fornecedor                           |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n"); 
-}
-
-
-//Tela pesquisar fornecedor
-//
-void tela_pesq_fornec (void) {
-    tela_banner ();
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                          Pesquisar fornecedor                           |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n"); 
-}
-
-
-//Tela cadastrar produto
-//
-void tela_cad_produto (void) {
-    tela_banner ();
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                            Cadastro produto                             |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n"); 
-}
-
-
-//Tela pesquisar produto
-//
-void tela_pesq_produto (void) {
-    tela_banner ();
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                            Pesquisar produto                            |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n"); 
-}
-
-
-//Tela cadastrar colaborador
-//
-void tela_cad_colab (void) {
-    tela_banner ();
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                          Cadastro colaborador                           |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n"); 
-}
-
-
-//Tela pesquisar colaborador
-//
-void tela_pesq_colab (void) {
-    tela_banner ();
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                          Pesquisar colaborador                          |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n"); 
-}
-
-
-//Tela cadastrar cliente
-//
-void tela_cad_cliente (void) {
-    tela_banner ();
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                            Cadastro cliente                             |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n"); 
-}
-
-
-//Tela pesquisar produto
-//
-void tela_pesq_cliente (void) {
-    tela_banner ();
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                            Pesquisar cliente                            |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
 }
@@ -345,6 +236,23 @@ void tela_erro_dados (void) {
 }
 
 
+//Tela cadastro existente
+//
+void tela_erro_cpf (void) {
+    limpa_buffer ();
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                               ERRO ! ! !                                |\n");
+    printf("|                                                                         |\n");
+    printf("|                      Esse CPF já esta cadastrado .                      |\n");
+    printf("|                                                                         |\n");
+    printf("|                    Tecle ENTER para inserir novo CPF                    |\n");
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    limpa_buffer ();
+}
+
+
 //Tela cadastro concluído
 //
 void tela_cad_concl (void) {
@@ -389,7 +297,7 @@ void info_cliente_0 (void) {
 //
 //Tela cadastro pessoas físicas
 //
-void t_cad_ok (char* tela, char* cpf, char* email, char* cel, char* nome) {
+void t_cad_ok (char* tela, char* cpf, char* email, char* cel, char* nome, char status) {
     limpa_buffer ();
     tela_uni_1 (tela);
     printf("+=========================================================================+\n");
@@ -401,6 +309,8 @@ void t_cad_ok (char* tela, char* cpf, char* email, char* cel, char* nome) {
     printf("|   Cel .: %s|\n", centralizar_texto(cel, 63, -1));
     printf("|                                                                         |\n");
     printf("|   Nome : %s|\n", centralizar_texto(nome, 63, -1));
+    printf("|                                                                         |\n");
+    printf("|   Status do cadastro (1 = ativo, 0 = inativo) : %c                       |\n", status);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
 }

@@ -19,6 +19,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <locale.h>
+#include <unistd.h>
 #include "../util/all.h"
 
 
@@ -30,7 +31,7 @@ void modulo_colaborador (void) {
     setlocale( LC_ALL, "Portuguese_Brazil");
     char op;
         do {
-            op = menu_colaborador ();
+            op = menu_sec_uni ("Colaborador", "Cadastrar colaborador", "Pesquisar colaborador");
             switch (op) {
                 case '1':
                     limpa_buffer ();
@@ -62,7 +63,8 @@ Colab* cad_colab (void) {
     limpa_buffer ();
     char* nome = le_nome ("Cadastro colaborador");
     strcpy(col->nome, nome);
-    t_cad_ok ("Cadastro colaborador", col->cpf, col->email, col->cel, col->nome);
+    col->status = '1';
+    t_cad_ok ("Cadastro colaborador", col->cpf, col->email, col->cel, col->nome, col->status);
     tela_cad_concl ();
     return col;
 }
@@ -92,7 +94,7 @@ void pesq_colab (void) {
         tela_erro_dados ();
     }
     else {
-    t_cad_ok ("Cadastro colaborador", col->cpf, col->email, col->cel, col->nome);
+    t_cad_ok ("Cadastro colaborador", col->cpf, col->email, col->cel, col->nome, col->status);
     limpa_buffer ();
     free(col);
     }

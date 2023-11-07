@@ -21,7 +21,7 @@
 char menu_principal (void);
 char menu_administrativo (void);
 char menu_fornecedor (void);
-char menu_produto (void);
+char menu_sec_uni (char*, char*, char*) ;
 char menu_colaborador (void);
 char menu_cliente (void);
 char menu_relatorio (void);

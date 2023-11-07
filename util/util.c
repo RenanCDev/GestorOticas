@@ -137,7 +137,7 @@ int valid_cpf (char* cpf) {
     if (strlen(cpf) != 11) {
         return 0;
     }
-    else if((strcmp (cpf,"00000000000") == 0) || (strcmp (cpf,"11111111111") == 0) || (strcmp (cpf,"22222222222") == 0) ||
+    else if((strcmp (cpf,"11111111111") == 0) || (strcmp (cpf,"22222222222") == 0) ||
             (strcmp (cpf,"33333333333") == 0) || (strcmp (cpf,"44444444444") == 0) || (strcmp (cpf,"55555555555") == 0) ||
             (strcmp (cpf,"66666666666") == 0) || (strcmp (cpf,"77777777777") == 0) || (strcmp (cpf,"88888888888") == 0) ||
             (strcmp (cpf,"99999999999") == 0) || (strcmp (cpf,"12345678909") == 0)) {
@@ -264,7 +264,7 @@ int valid_data (char* data) {
 //AUTOR FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
 
 
-//Validaçãopara letra:
+//Validação para letra:
 //Verifica se a letra recebida é caractere alfabético(retorna "1") ou não(retorna "0")
 //Considerando alfabeto "A" - "Z" ou "a" - "z"
 //
@@ -277,7 +277,12 @@ int valid_letra (char letra) {
             return 1; 
         } 
         else {
-            return 0; 
+            if (letra == ' ') {
+                return 1;
+            }
+            else {
+                return 0; 
+            }
         } 
     } 
 }
@@ -303,7 +308,6 @@ int valid_nome (char* nome) {
 //Verifica se a string recebida corresponde a um email válido(retorna "1")
 //ou não(retorna "0")
 //
-
 int valid_email(char* email) {
     char usuario[256], site[256], dominio[256];
     if (sscanf(email, "%[^@ \t\n]@%[^. \t\n].%3[^ \t\n]", usuario, site, dominio ) != 3 ) {
@@ -438,3 +442,6 @@ void mostrar_opcoes(char* opcoes[], int linha_tam) {
     }
 }
 // AUTOR: EMANUEL ALVES // GIT: https://github.com/Faltrenn
+
+
+//Verifica se o dado inserio já esta cadastrado(retorna "1") ou não(retorna "0")

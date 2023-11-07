@@ -41,14 +41,4 @@ all:
 	rm util/*.gch
 	rm venda/*.gch
 rm:
-	rm *.o;
-	rm administrativo/*.gch
-	rm cliente/*.gch
-	rm colaborador/*.gch
-	rm ent_le_dados/*.gch
-	rm fornecedor/*.gch
-	rm menus_telas/*.gch
-	rm produto/*.gch
-	rm relatorio/*.gch
-	rm util/*.gch
-	rm venda/*.gch
+	rm dat/*.dat;

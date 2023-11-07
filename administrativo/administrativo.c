@@ -22,6 +22,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <locale.h>
+#include <unistd.h>
 #include "../util/all.h"
 
 
@@ -57,7 +58,13 @@ void modulo_administrativo (void) {
 Admin* cad_admin (void) {
     Admin* adm;
     adm = (Admin*)malloc((sizeof(Admin)));
-    char* cpf = le_cpf ("Cadastro administrador");
+    char* cpf;
+    do {
+        cpf = le_cpf ("Cadastro administrador");
+        if (!verify_cpf_dat (cpf)) {
+            tela_erro_cpf ();
+        }
+    } while (!verify_cpf_dat (cpf));
     strcpy(adm->cpf, cpf);
     limpa_buffer ();
     char* email = le_email ("Cadastro administrador");
@@ -68,9 +75,27 @@ Admin* cad_admin (void) {
     limpa_buffer ();
     char* nome = le_nome ("Cadastro administrador");
     strcpy(adm->nome, nome);
-    t_cad_ok ("Cadastro administrador", adm->cpf, adm->email, adm->cel, adm->nome);
+    adm->status = '1';
+    t_cad_ok ("Cadastro administrador", adm->cpf, adm->email, adm->cel, adm->nome, adm->status);
     tela_cad_concl ();
     return adm;
+}
+
+
+//Pesquisa o cadastro de algum administrador
+//
+void pesq_admin (void) {
+    Admin* adm;
+    char* cpf = le_cpf ("Cadastro administrador");
+    adm = carregar_admin(cpf);
+    if (adm == NULL) {
+        tela_erro_dados ();
+    }
+    else {
+    t_cad_ok ("Cadastro administrador", adm->cpf, adm->email, adm->cel, adm->nome, adm->status);
+    limpa_buffer ();
+    free(adm);
+    }
 }
 
 
@@ -88,23 +113,6 @@ void gravar_admin (Admin* adm) {
 }
 
 
-//Pesquisa o cadastro de algum administrador
-//
-void pesq_admin (void) {
-    Admin* adm;
-    char* cpf = le_cpf ("Cadastro administrador");
-    adm = carregar_admin(cpf);
-    if (adm == NULL) {
-        tela_erro_dados ();
-    }
-    else {
-    t_cad_ok ("Cadastro administrador", adm->cpf, adm->email, adm->cel, adm->nome);
-    limpa_buffer ();
-    free(adm);
-    }
-}
-
-
 //Carregador de dados do administrador
 //
 Admin* carregar_admin(char* cpf) {
@@ -116,11 +124,30 @@ Admin* carregar_admin(char* cpf) {
         tela_erro_dados();
     }
     while (fread(adm, sizeof(Admin), 1, fp)) {
-        if ((strcmp(adm->cpf, cpf) == 0)) {
+        if ((!strcmp(adm->cpf, cpf))) {
             fclose(fp);
             return adm;
         }
     }
     fclose(fp);
     return NULL;
+}
+
+
+//Verifica se o cpf ja esta cadastrado (retorna "1") ou não (retorna"0")
+//
+int verify_cpf_dat (char *cpf) {
+    FILE* fp;
+    Admin* adm;
+
+    adm = (Admin *)malloc(sizeof(Admin));
+    fp = fopen("dat/administrativo.dat", "rb");
+    while (fread(adm, sizeof(Admin), 1, fp)) {
+        if ((strcmp(adm->cpf, cpf) == 0) && adm->status == '1') {
+            fclose(fp);
+            return 0;
+        }
+    }
+    fclose(fp);
+    return 1;
 }

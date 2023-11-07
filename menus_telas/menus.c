@@ -19,6 +19,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <locale.h>
+#include <unistd.h>
 #include "../util/all.h"
 
 
@@ -36,21 +37,21 @@ char menu_principal (void) {
         printf("|                                                                         |\n");
         printf("|                             Menu principal                              |\n");
         printf("|                                                                         |\n");
-        printf("|                         1 -> Administrativo <-                          |\n");
+        printf("|                           1 -> Administrativo                           |\n");
         printf("|                                                                         |\n");
-        printf("|                          2 -> Fornecedores <-                           |\n");
+        printf("|                            2 -> Fornecedores                            |\n");
         printf("|                                                                         |\n");
-        printf("|                            3 -> Produtos <-                             |\n");
+        printf("|                              3 -> Produtos                              |\n");
         printf("|                                                                         |\n");
-        printf("|                          4 -> Colaboradores <-                          |\n");
+        printf("|                           4 -> Colaboradores                            |\n");
         printf("|                                                                         |\n");
-        printf("|                            5 -> Clientes <-                             |\n");
+        printf("|                              5 -> Clientes                              |\n");
         printf("|                                                                         |\n");
-        printf("|                             6 -> Vendas <-                              |\n");
+        printf("|                               6 -> Vendas                               |\n");
         printf("|                                                                         |\n");
-        printf("|                        7 -> Sobre o programa <-                         |\n");
+        printf("|                          7 -> Sobre o programa                          |\n");
         printf("|                                                                         |\n");
-        printf("|                         0 -> Fechar programa <-                         |\n");
+        printf("|                          0 -> Fechar programa                           |\n");
         printf("|                                                                         |\n");
         printf("+=========================================================================+\n");
         printf("Selecione uma opção: \n");
@@ -77,15 +78,15 @@ char menu_administrativo (void) {
         tela_banner ();
         printf("+=========================================================================+\n");
         printf("|                                                                         |\n");
-        printf("|                             Administrativo                              |\n");
+        printf("|                              Administrador                              |\n");
         printf("|                                                                         |\n");
-        printf("|                     1 -> Cadastrar administrador <-                     |\n");
+        printf("|                      1 -> Cadastrar administrador                       |\n");
         printf("|                                                                         |\n");
-        printf("|                     2 -> Pesquisar admnistrador <-                      |\n");
+        printf("|                       2 -> Pesquisar admnistrador                       |\n");
         printf("|                                                                         |\n");
-        printf("|                           3 -> Relatórios <-                            |\n");
+        printf("|                             3 -> Relatórios                             |\n");
         printf("|                                                                         |\n");
-        printf("|                     0 -> Voltar ao menu anterior <-                     |\n");
+        printf("|                      0 -> Voltar ao menu anterior                       |\n");
         printf("|                                                                         |\n");
         printf("+=========================================================================+\n");
         printf("Selecione uma opção: \n");
@@ -114,52 +115,19 @@ char menu_relatorio (void) {
         printf("|                                                                         |\n");
         printf("|                             Administrativo                              |\n");
         printf("|                                                                         |\n");
-        printf("|                    1 -> Relatório administradores <-                    |\n");
+        printf("|                     1 -> Relatório administradores                      |\n");
         printf("|                                                                         |\n");
-        printf("|                     2 -> Relatório fornecedores <-                      |\n");
+        printf("|                       2 -> Relatório fornecedores                       |\n");
         printf("|                                                                         |\n");
-        printf("|                       3 -> Relatório produtos <-                        |\n");
+        printf("|                         3 -> Relatório produtos                         |\n");
         printf("|                                                                         |\n");
-        printf("|                     4 -> Relatório colaboradores <-                     |\n");
+        printf("|                      4 -> Relatório colaboradores                       |\n");
         printf("|                                                                         |\n");
-        printf("|                       5 -> Relatório clientes <-                        |\n");
+        printf("|                         5 -> Relatório clientes                         |\n");
         printf("|                                                                         |\n");
-        printf("|                        6 -> Relatório vendas <-                         |\n");
+        printf("|                          6 -> Relatório vendas                          |\n");
         printf("|                                                                         |\n");
-        printf("|                     0 -> Voltar ao menu anterior <-                     |\n");
-        printf("|                                                                         |\n");
-        printf("+=========================================================================+\n");
-        printf("Selecione uma opção: \n");
-        scanf("%s", &*op);
-        if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
-            return op[0]; 
-        } 
-        else {
-            tela_erro ();
-            return '9';
-        } 
-    }
-    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
-}
-
-
-//Menu fornecedor
-//
-char menu_fornecedor (void) {
-    char op [50];
-    char op_max = '2';
-    do {
-        system("clear");
-        tela_banner ();
-        printf("+=========================================================================+\n");
-        printf("|                                                                         |\n");
-        printf("|                              Fornecedores                               |\n");
-        printf("|                                                                         |\n");
-        printf("|                      1 -> Cadastrar fornecedor <-                       |\n");
-        printf("|                                                                         |\n");
-        printf("|                      2 -> Pesquisar fornecedor <-                       |\n");
-        printf("|                                                                         |\n");
-        printf("|                     0 -> Voltar ao menu anterior <-                     |\n");
+        printf("|                      0 -> Voltar ao menu anterior                       |\n");
         printf("|                                                                         |\n");
         printf("+=========================================================================+\n");
         printf("Selecione uma opção: \n");
@@ -176,9 +144,9 @@ char menu_fornecedor (void) {
 }
 
 
-//Menu produto
+//Menu secundario universal para 3 opções
 //
-char menu_produto (void) {
+char menu_sec_uni (char* menu, char* procurar, char* pesquisar) {
     char op [50];
     char op_max = '2';
     do {
@@ -186,112 +154,13 @@ char menu_produto (void) {
         tela_banner ();
         printf("+=========================================================================+\n");
         printf("|                                                                         |\n");
-        printf("|                                Produtos                                 |\n");
+        printf("|%s|\n", centralizar_texto(menu, 73, 0));
         printf("|                                                                         |\n");
-        printf("|                        1 -> Cadastrar produto <-                        |\n");
+        printf("|                        1 -> %s |\n", centralizar_texto(procurar, 43, -1));
         printf("|                                                                         |\n");
-        printf("|                        2 -> Pesquisar produto <-                        |\n");
+        printf("|                        2 -> %s |\n", centralizar_texto(pesquisar, 43, -1));
         printf("|                                                                         |\n");
-        printf("|                     0 -> Voltar ao menu anterior <-                     |\n");
-        printf("|                                                                         |\n");
-        printf("+=========================================================================+\n");
-        printf("Selecione uma opção: \n");
-        scanf("%s", &*op);
-        if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
-            return op[0]; 
-        } 
-        else {
-            tela_erro ();
-            return '9';
-        } 
-    }
-    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
-}
-
-
-//Menu colaborador
-//
-char menu_colaborador (void) {
-    char op [50];
-    char op_max = '2';
-    do {
-        system("clear");
-        tela_banner ();
-        printf("+=========================================================================+\n");
-        printf("|                                                                         |\n");
-        printf("|                              Colaboradores                              |\n");
-        printf("|                                                                         |\n");
-        printf("|                      1 -> Cadastrar colaborador <-                      |\n");
-        printf("|                                                                         |\n");
-        printf("|                      2 -> Pesquisar colaborador <-                      |\n");
-        printf("|                                                                         |\n");
-        printf("|                     0 -> Voltar ao menu anterior <-                     |\n");
-        printf("|                                                                         |\n");
-        printf("+=========================================================================+\n");
-        printf("Selecione uma opção: \n");
-        scanf("%s", &*op);
-        if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
-            return op[0]; 
-        } 
-        else {
-            tela_erro ();
-            return '9';
-        } 
-    }
-    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
-}
-
-
-//Menu cliente
-//
-char menu_cliente (void) {
-    char op [50];
-    char op_max = '2';
-    do {
-        system("clear");
-        tela_banner ();
-        printf("+=========================================================================+\n");
-        printf("|                                                                         |\n");
-        printf("|                                Clientes                                 |\n");
-        printf("|                                                                         |\n");
-        printf("|                        1 -> Cadastrar cliente <-                        |\n");
-        printf("|                                                                         |\n");
-        printf("|                        2 -> Pesquisar cliente <-                        |\n");
-        printf("|                                                                         |\n");
-        printf("|                     0 -> Voltar ao menu anterior <-                     |\n");
-        printf("|                                                                         |\n");
-        printf("+=========================================================================+\n");
-        printf("Selecione uma opção: \n");
-        scanf("%s", &*op);
-        if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
-            return op[0]; 
-        } 
-        else {
-            tela_erro ();
-            return '9';
-        } 
-    }
-    while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
-}
-
-
-//Menu venda
-//
-char menu_venda (void) {
-    char op [50];
-    char op_max = '2';
-    do {
-        system("clear");
-        tela_banner ();
-        printf("+=========================================================================+\n");
-        printf("|                                                                         |\n");
-        printf("|                                 Vendas                                  |\n");
-        printf("|                                                                         |\n");
-        printf("|                         1 -> Cadastrar venda <-                         |\n");
-        printf("|                                                                         |\n");
-        printf("|                         2 -> Pesquisar venda <-                         |\n");
-        printf("|                                                                         |\n");
-        printf("|                     0 -> Voltar ao menu anterior <-                     |\n");
+        printf("|                      0 -> Voltar ao menu anterior                       |\n");
         printf("|                                                                         |\n");
         printf("+=========================================================================+\n");
         printf("Selecione uma opção: \n");
@@ -316,9 +185,9 @@ char menu_item_venda (void) {
     do {
         printf("+=========================================================================+\n");
         printf("|                                                                         |\n");
-        printf("|                      1 -> Acrescentar novo item <-                      |\n");
+        printf("|                       1 -> Acrescentar novo item                        |\n");
         printf("|                                                                         |\n");
-        printf("|                     2 -> Prosseguir com a venda <-                      |\n");
+        printf("|                       2 -> Prosseguir com a venda                       |\n");
         printf("|                                                                         |\n");
         printf("+=========================================================================+\n");
         printf("Selecione uma opção: \n");
@@ -344,13 +213,13 @@ char menu_form_pag (void) {
         printf("|                                                                         |\n");
         printf("|                           Forma de pagamento                            |\n");
         printf("|                                                                         |\n");
-        printf("|                            1 -> Dinheiro <-                             |\n");
+        printf("|                              1 -> Dinheiro                              |\n");
         printf("|                                                                         |\n");
-        printf("|                               2 -> PIX <-                               |\n");
+        printf("|                                2 -> PIX                                 |\n");
         printf("|                                                                         |\n");
-        printf("|                        3 -> Cartão de crédito <-                        |\n");
+        printf("|                         3 -> Cartão de crédito                          |\n");
         printf("|                                                                         |\n");
-        printf("|                        4 -> Cartão de débito <-                         |\n");
+        printf("|                          4 -> Cartão de débito                          |\n");
         printf("|                                                                         |\n");
         printf("+=========================================================================+\n");
         printf("Selecione uma opção: \n");

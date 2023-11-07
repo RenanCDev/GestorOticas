@@ -19,13 +19,39 @@
 #include <stdlib.h>
 #include <string.h>
 #include <locale.h>
+#include <unistd.h>
 #include "util/all.h"
 
 
 /////
+//LOAD/CREATE dos arquivos
+void load_create (const char* arq) {
+    FILE *fp;
+    char past[256];
+    snprintf(past, sizeof(past), "%s/%s", "dat", arq);
+    fp = fopen(past, "rb");
+    if (fp == NULL) {
+        fp = fopen(past, "wb");
+        if (fp == NULL) {
+            tela_erro_dados ();
+            printf("O programa será encerrado!");
+            exit(1);
+        }
+        fclose(fp);
+    }
+}
+
+
 //Programa principal
 //
 int main (void) {
+    load_create("administrativo.dat");
+    load_create("cliente.dat");
+    load_create("colaborador.dat");
+    load_create("fornecedor.dat");
+    load_create("produto.dat");
+    load_create("relatorio.dat");
+    load_create("venda.dat");
     setlocale (LC_ALL, "Portuguese_Brazil");
     char op0;
         do {

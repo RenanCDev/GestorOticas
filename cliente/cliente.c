@@ -19,6 +19,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <locale.h>
+#include <unistd.h>
 #include "../util/all.h"
 
 /////
@@ -29,7 +30,7 @@ void modulo_cliente (void) {
     setlocale (LC_ALL, "Portuguese_Brazil");
     char op;
         do {
-            op = menu_cliente ();
+            op = menu_sec_uni ("Cliente", "Cadastrar cliente", "Pesquisar cliente");
             switch (op) {
                 case '1':
                     limpa_buffer ();
@@ -61,7 +62,8 @@ Client* cad_client (void) {
     limpa_buffer ();
     char* nome = le_nome ("Cadastro cliente");
     strcpy(cli->nome, nome);
-    t_cad_ok ("Cadastro cliente", cli->cpf, cli->email, cli->cel, cli->nome);
+    cli->status = '1';
+    t_cad_ok ("Cadastro cliente", cli->cpf, cli->email, cli->cel, cli->nome, cli->status);
     tela_cad_concl ();
     return cli;
 }
@@ -91,7 +93,7 @@ void pesq_client (void) {
         tela_erro_dados ();
     }
     else {
-    t_cad_ok ("Cadastro cliente", cli->cpf, cli->email, cli->cel, cli->nome);
+    t_cad_ok ("Cadastro cliente", cli->cpf, cli->email, cli->cel, cli->nome, cli->status);
     limpa_buffer ();
     free(cli);
     }

@@ -19,6 +19,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <locale.h>
+#include <unistd.h>
 #include "../util/all.h"
 
 
@@ -30,7 +31,7 @@ void modulo_produto (void) {
     setlocale (LC_ALL, "Portuguese_Brazil");
     char op;
         do {
-            op = menu_produto ();
+            op = menu_sec_uni ("Produto", "Cadastrar produto", "Pesquisar produto");
             switch (op) {
                 case '1':
                     limpa_buffer ();

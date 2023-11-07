@@ -19,6 +19,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <locale.h>
+#include <unistd.h>
 #include "../util/all.h"
 
 
@@ -30,7 +31,7 @@ void modulo_fornecedor (void) {
     setlocale (LC_ALL, "Portuguese_Brazil");
     char op;
         do {
-            op = menu_fornecedor ();
+            op = menu_sec_uni ("Fornecedor", "Cadastrar fornecedor", "Pesquisar fornecedor");
             switch (op) {
                 case '1':
                     limpa_buffer ();
@@ -62,7 +63,8 @@ Fornec* cad_fornec (void) {
     limpa_buffer ();
     char* nome = le_nome ("Cadastro fornecedor");
     strcpy(forn->nome, nome);
-    t_cad_ok ("Cadastro fornecedor", forn->cnpj, forn->email, forn->cel, forn->nome);
+    forn->status = '1';
+    t_cad_ok ("Cadastro fornecedor", forn->cnpj, forn->email, forn->cel, forn->nome, forn->status);
     tela_cad_concl ();
     return forn;
 }
@@ -93,7 +95,7 @@ void pesq_fornec (void) {
         tela_erro_dados ();
     }
     else {
-    t_cad_ok ("Cadastro fornecedor", forn->cnpj, forn->email, forn->cel, forn->nome);
+    t_cad_ok ("Cadastro fornecedor", forn->cnpj, forn->email, forn->cel, forn->nome, forn->status);
     limpa_buffer ();
     free(forn);
     }

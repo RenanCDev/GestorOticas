@@ -19,6 +19,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <locale.h>
+#include <unistd.h>
 #include "../util/all.h"
 
 
@@ -38,8 +39,10 @@ char* ent_cpf (void) {
     printf("|                                                                         |\n");
     printf("|                    Tamanho máximo de 11 caracters .                     |\n");
     printf("|                                                                         |\n");
+    printf("|          No caso do cadastro zero insira 11 caracters zeros .           |\n");
+    printf("|                                                                         |\n");
     printf("|                            CPF: ");
-    scanf("%[0-9A-Za-z@._-]", cpf);
+    scanf("%[ 0-9A-Za-z@._- ]", cpf);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     return cpf;
@@ -98,7 +101,7 @@ char* ent_nome (void) {
     printf("|                    Tamanho máximo de 40 caracters .                     |\n");
     printf("|                                                                         |\n");
     printf("|               Nome: ");
-    scanf("%[0-9A-Za-z@._-]", nome);
+    scanf(" %50[^\n]", nome);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     return nome; 
@@ -117,6 +120,8 @@ char* ent_cnpj (void) {
     printf("|                         Insira apenas números !                         |\n");
     printf("|                                                                         |\n");
     printf("|                    Tamanho máximo de 14 caracters .                     |\n");
+    printf("|                                                                         |\n");
+    printf("|          No caso do cadastro zero insira 14 caracters zeros .           |\n");
     printf("|                                                                         |\n");
     printf("|                          CNPJ: ");
     scanf("%[0-9A-Za-z@._-]", cnpj);
@@ -138,6 +143,8 @@ char* ent_cod_barras (void) {
     printf("|                         Insira apenas números !                         |\n");
     printf("|                                                                         |\n");
     printf("|                    Tamanho máximo de 13 caracters .                     |\n");
+    printf("|                                                                         |\n");
+    printf("|          No caso do cadastro zero insira 13 caracters zeros .           |\n");
     printf("|                                                                         |\n");
     printf("|                     Código de barras: ");
     scanf("%[0-9A-Za-z@._-]", cod_barras);
@@ -236,7 +243,7 @@ char* ent_id_venda (void) {
     id = (char*) malloc(8*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                         Digite o ID da venda .                          |\n");
+    printf("|                              Digite o ID .                              |\n");
     printf("|                                                                         |\n");
     printf("|                         Insira apenas números !                         |\n");
     printf("|                                                                         |\n");
