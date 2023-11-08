@@ -180,7 +180,7 @@ char menu_edit (char* titulo, char* cpf, char* email, char* cel, char* nome, cha
     char op_max = '5';
     do {
         system("clear");
-        tela_banner ();
+        //tela_banner ();
         t_cad_ok (titulo, cpf, email, cel, nome, status);
         printf("+=========================================================================+\n");
         printf("|                                                                         |\n");
@@ -188,7 +188,7 @@ char menu_edit (char* titulo, char* cpf, char* email, char* cel, char* nome, cha
         printf("|                                                                         |\n");
         printf("|%s|\n", centralizar_texto ("1 -> Editar email <-", 73, 0));
         printf("|                                                                         |\n");
-        printf("|%s|\n", centralizar_texto ("2 -> Editar cel <-", 73, 0));printf("|                            2 -> Editar o cel                            |\n");
+        printf("|%s|\n", centralizar_texto ("2 -> Editar cel <-", 73, 0));
         printf("|                                                                         |\n");
         printf("|%s|\n", centralizar_texto ("3 -> Editar nome <-", 73, 0));
         printf("|                                                                         |\n");

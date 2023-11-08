@@ -2,6 +2,7 @@ run: all
 	./main
 
 all:
+	clear;
 	gcc -c -Wall administrativo/administrativo.c;
 	gcc -c -Wall administrativo/administrativo.h;
 	gcc -c -Wall cliente/cliente.c;

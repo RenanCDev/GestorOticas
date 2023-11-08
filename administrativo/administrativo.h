@@ -36,3 +36,5 @@ Admin* pesq_admin (void);
 void gravar_admin (Admin*);
 Admin* carregar_admin(char*);
 int verify_cpf_dat (char*);
+void regravar_adm(Admin*, char);
+void edit_cad (Admin*, char);

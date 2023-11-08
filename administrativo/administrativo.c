@@ -41,35 +41,20 @@ void modulo_administrativo (void) {
                     adm = cad_admin ();
                     gravar_admin (adm);
                     break;
-                // case '2':
-                //     limpa_buffer ();
-                //     adm = pesq_admin ();
-                //     char edit;
-                //     do {
-                //         edit = menu_edit("Cadastro administrador", adm->cpf, adm->email, adm->cel, adm->nome, adm->status);
-                //         switch (edit) {
-                //             case '1' :
-                //             char* email = le_email ("Cadastro administrador");
-                //             strcpy(adm->email, email);
-                //             limpa_buffer ();
-                //             break;
-                //             case '2' :
-                //             char* cel = le_cel ("Cadastro administrador");
-                //             strcpy(adm->cel, cel);
-                //             limpa_buffer ();
-                //             break;
-                //             case '3' :
-                //             char* nome = le_nome ("Cadastro administrador");
-                //             strcpy(adm->nome, nome);
-                //             limpa_buffer ();
-                //             case '4' :
-                //             char* email = le_email ("Cadastro administrador");
-                //             strcpy(adm->email, email);
-                //             limpa_buffer ();
-                //             break;
-                //             }
-                //         } while (edit != '0' || edit != '4');
-                //     break;
+                case '2':
+                    limpa_buffer ();
+                    adm = pesq_admin ();
+                    char edit;
+                    do {
+                        edit = menu_edit("Cadastro administrador", adm->cpf, adm->email, adm->cel, adm->nome, adm->status);
+                        if ((edit >= '1') || (edit <= '4')) {
+                            regravar_adm (adm, edit);
+                        }
+                        else {
+                            tela_erro ();
+                        }
+                    } while (edit != '0');
+                    break;
                 case '3':
                     modulo_relatorio ();
                     break; 
@@ -173,4 +158,52 @@ int verify_cpf_dat (char *cpf) {
     }
     fclose(fp);
     return 1;
+}
+
+
+void regravar_adm(Admin* adm, char op) {
+    int achou = 0;
+    FILE* fp;
+    Admin* nova_ent;
+
+    nova_ent = (Admin*)malloc(sizeof(Admin));
+    fp = fopen("dat/administrativo.dat", "r+b");
+    if (fp == NULL) {
+        tela_erro_dados();
+    }
+    while(!feof(fp)) {
+        fread(nova_ent, sizeof(Admin), 1, fp);
+        if (strcmp(nova_ent->cpf, adm->cpf) == 0) {
+            achou = 1;
+            edit_cad(adm, op);
+            fseek(fp, -1 * sizeof(Admin), SEEK_CUR);
+            fwrite(adm, sizeof(Admin), 1, fp);
+            break;
+        }
+    }
+    if (!achou) {
+        tela_erro ();
+        getchar();
+    }
+    fclose(fp);
+    free(nova_ent);
+}
+
+void edit_cad (Admin* adm, char op) {
+        switch (op) {
+        case '1' :
+            limpa_buffer ();
+            char* email = le_email ("Cadastro administrador");
+            strcpy(adm->email, email);
+            break;
+        case '2' :
+            limpa_buffer ();
+            char* cel = le_cel ("Cadastro administrador");
+            strcpy(adm->cel, cel);
+            break;
+        case '3' :
+            limpa_buffer ();
+            char* nome = le_nome ("Cadastro administrador");
+            strcpy(adm->nome, nome);
+        }
 }
