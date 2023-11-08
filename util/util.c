@@ -269,22 +269,22 @@ int valid_data (char* data) {
 //Considerando alfabeto "A" - "Z" ou "a" - "z"
 //
 int valid_letra (char letra) {
+    int a = letra;
     if (letra >= 'A' && letra <= 'Z') {
-        return 1; 
+    return 1;
+    } 
+    else if (letra >= 'a' && letra <= 'z') {
+    return 1;
+    } 
+    else if (letra == ' ') {
+    return 1;
+    }  
+    else if (a < 0) {
+    return 1;
     } 
     else {
-        if (letra >= 'a' && letra <= 'z') {
-            return 1; 
-        } 
-        else {
-            if (letra == ' ') {
-                return 1;
-            }
-            else {
-                return 0; 
-            }
-        } 
-    } 
+    return 0;
+    }
 }
 // AUTOR: FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
 
@@ -429,17 +429,6 @@ char* centralizar_texto(char* texto, int tam, int horizontal) {
     }
     str[tam] = '\0';
     return str;
-}
-
-
-void mostrar_opcoes(char* opcoes[], int linha_tam) {
-    int c = 0;
-    while(opcoes[c] != NULL) {
-        char* texto = malloc((17 + strlen(opcoes[c])) * sizeof(char));
-        sprintf(texto, "            %d. %s", c+1, opcoes[c]);
-        printf("///%s///\n", centralizar_texto(texto, linha_tam, -1));
-        c++;
-    }
 }
 // AUTOR: EMANUEL ALVES // GIT: https://github.com/Faltrenn
 

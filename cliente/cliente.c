@@ -30,7 +30,7 @@ void modulo_cliente (void) {
     setlocale (LC_ALL, "Portuguese_Brazil");
     char op;
         do {
-            op = menu_sec_uni ("Cliente", "Cadastrar cliente", "Pesquisar cliente");
+            op = menu_sec_uni ("Cliente", " 1 -> Cadastrar cliente <- ", " 2 -> Pesquisar cliente <- ");
             switch (op) {
                 case '1':
                     limpa_buffer ();

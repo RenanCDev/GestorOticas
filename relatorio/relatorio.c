@@ -68,7 +68,7 @@ void modulo_relatorio (void) {
 void relat_admin (void) {
     char* cpf;
     do {
-        tela_relat_admin ();
+        tela_uni_1 ("Relatório admministrador");
         cpf = ent_cpf (); 
         if (!valid_cpf(cpf)) {
             tela_erro (); 
@@ -85,7 +85,7 @@ void relat_admin (void) {
 void relat_fornec (void) {
     char* cnpj;
     do {
-        tela_relat_fornec ();
+        tela_uni_1 ("Relatório fornecedor");
         cnpj = ent_cnpj (); 
         if (!valid_cnpj(cnpj)) {
             tela_erro (); 
@@ -102,7 +102,7 @@ void relat_fornec (void) {
 void relat_produto (void) {
     char* cod_barras;
     do {
-        tela_relat_produto ();
+        tela_uni_1 ("Relatório produto");
         cod_barras = ent_cod_barras (); 
         if (!valid_cod_barras(cod_barras)) {
             tela_erro (); 
@@ -119,7 +119,7 @@ void relat_produto (void) {
 void relat_colab (void) {
     char* cpf;
     do {
-        tela_relat_colab ();
+        tela_uni_1 ("Relatório colaborador");
         cpf = ent_cpf (); 
         if (!valid_cpf(cpf)) {
             tela_erro (); 
@@ -136,7 +136,7 @@ void relat_colab (void) {
 void relat_cliente (void) {
     char* cpf;
     do {
-        tela_relat_cliente ();
+        tela_uni_1 ("Relatório cliente");
         cpf = ent_cpf (); 
         if (!valid_cpf(cpf)) {
             tela_erro (); 
@@ -153,7 +153,7 @@ void relat_cliente (void) {
 void relat_venda (void) {
     char* id;
     do {
-        tela_relat_venda ();
+        tela_uni_1 ("Relatório venda");
         id = ent_id_venda (); 
         if (!valid_numeros_s(id)) {
             tela_erro (); 

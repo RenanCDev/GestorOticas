@@ -31,8 +31,7 @@ void modulo_fornecedor (void) {
     setlocale (LC_ALL, "Portuguese_Brazil");
     char op;
         do {
-            op = menu_sec_uni ("Fornecedor", "Cadastrar fornecedor", "Pesquisar fornecedor");
-            switch (op) {
+            op = menu_sec_uni ("Fornecedor", " 1 -> Cadastrar fornecedor <- ", " 2 -> Pesquisar fornecedor <- ");            switch (op) {
                 case '1':
                     limpa_buffer ();
                     fornecedor = cad_fornec ();

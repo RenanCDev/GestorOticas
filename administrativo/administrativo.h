@@ -32,7 +32,7 @@ struct administrador {
 //
 void modulo_administrativo (void);
 Admin* cad_admin (void);
-void pesq_admin (void);
+Admin* pesq_admin (void);
 void gravar_admin (Admin*);
 Admin* carregar_admin(char*);
 int verify_cpf_dat (char*);

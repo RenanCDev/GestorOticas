@@ -20,33 +20,7 @@
 //Tela banner
 //
 void tela_banner (void);
-
-
-//Telas do módulo administrativo
-//
-void tela_uni_1(char*);
-void tela_pesq_admin (void);
-
-
-//Telasdo módulo relatórios
-//
-void tela_relat_admin (void);
-void tela_relat_fornec (void);
-void tela_relat_produto (void);
-void tela_relat_colab (void);
-void tela_relat_cliente (void);
-
-
-//Telas do  módulo vendas
-//
-void tela_cad_venda (void);
-void tela_pesq_venda (void);
-void tela_venda_colab (void);
-void tela_venda_produt (void);
-void tela_venda_q_prod (void);
-void tela_venda_cliente (void);
-void tela_relat_venda (void);
-
+void tela_uni_1 (char*);
 
 //Telas informacionais
 //

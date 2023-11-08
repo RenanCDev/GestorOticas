@@ -31,7 +31,7 @@ void modulo_colaborador (void) {
     setlocale( LC_ALL, "Portuguese_Brazil");
     char op;
         do {
-            op = menu_sec_uni ("Colaborador", "Cadastrar colaborador", "Pesquisar colaborador");
+            op = menu_sec_uni ("Colaborador", " 1 -> Cadastrar colaborador <- ", " 2 -> Pesquisar colaborador <- ");
             switch (op) {
                 case '1':
                     limpa_buffer ();

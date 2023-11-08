@@ -29,7 +29,7 @@ void modulo_venda (void) {
     setlocale (LC_ALL, "Portuguese_Brazil");
     char op;
     do {
-        op = menu_sec_uni ("Venda", "Cadastrar venda", "Pesquisar venda");
+        op = menu_sec_uni ("Venda", " 1 -> Cadastrar venda <- ", " 2 -> Pesquisar venda <- ");
         switch (op) {
             case '1':
                 limpa_buffer ();
@@ -52,7 +52,7 @@ void cad_venda (void) {
     char* cod_barras;
     char* quant;
     do {
-        tela_venda_colab ();
+        tela_uni_1 ("Venda - colaborador");
         cpf = ent_cpf (); 
         if (!valid_cpf(cpf)) {
             tela_erro (); 
@@ -60,7 +60,7 @@ void cad_venda (void) {
     } while (!valid_cpf(cpf));
     limpa_buffer ();
     do {
-        tela_venda_cliente ();
+        tela_uni_1 ("Venda - cliente");
         info_cliente_0 ();
         cpf = ent_cpf (); 
         if (!valid_cpf(cpf)) {
@@ -70,7 +70,7 @@ void cad_venda (void) {
     do {
         limpa_buffer ();
         do {
-            tela_venda_produt ();
+            tela_uni_1 ("Venda - produto");
             cod_barras = ent_cod_barras (); 
             if (!valid_cod_barras(cod_barras)) {
                 tela_erro (); 
@@ -78,7 +78,7 @@ void cad_venda (void) {
         } while (!valid_cod_barras(cod_barras));
         limpa_buffer ();
         do {
-            tela_venda_q_prod ();
+            tela_uni_1 ("Venda - quantidade do produto");
             quant = ent_quant (); 
             if (!valid_numeros_s(quant)) {
                 tela_erro (); 
@@ -89,7 +89,7 @@ void cad_venda (void) {
     limpa_buffer ();
     form_pag ();
     limpa_buffer ();
-    tela_cad_venda ();
+    tela_uni_1 ("Cadastro - venda");
     t_exe_cad_vend ();
     tela_vend_concl ();
     limpa_buffer (); 
@@ -101,7 +101,7 @@ void cad_venda (void) {
 void pesq_venda (void) {
     char* id;
     do {
-        tela_pesq_venda ();
+        tela_uni_1 ("Pesquisa - venda");
         id = ent_id_venda (); 
         if (!valid_numeros_s(id)) {
             tela_erro (); 
@@ -119,7 +119,7 @@ int acresc_item_venda (void) {
     char op;
     char op_max = '2';
         do {
-            tela_cad_venda ();
+            tela_uni_1 ("Cadatro - venda");
             op = menu_item_venda ();
             if (!valid_op(op, op_max)) {
                 tela_erro(); 
@@ -145,7 +145,7 @@ int acresc_item_venda (void) {
 void form_pag (void) {
     char op;
     do {
-        tela_cad_venda ();
+        tela_uni_1 ("Cadatro - venda");
         op = menu_form_pag ();
         switch (op) {
             case '1':

@@ -31,7 +31,7 @@ void modulo_produto (void) {
     setlocale (LC_ALL, "Portuguese_Brazil");
     char op;
         do {
-            op = menu_sec_uni ("Produto", "Cadastrar produto", "Pesquisar produto");
+            op = menu_sec_uni ("Produto", " 1 -> Cadastrar produto <- ", " 2 -> pesquisar Produto <- ");
             switch (op) {
                 case '1':
                     limpa_buffer ();

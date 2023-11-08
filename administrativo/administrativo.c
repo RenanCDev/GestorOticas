@@ -41,36 +41,35 @@ void modulo_administrativo (void) {
                     adm = cad_admin ();
                     gravar_admin (adm);
                     break;
-                case '2':
-                    limpa_buffer ();
-                    adm = pesq_admin ();
-                    char edit;
-                    do {
-                        edit = menu_edit("Cadastro administrador", adm->cpf, adm->email, adm->cel, adm->nome, adm->status);
-                        switch (edit) {
-                            case '1' :
-                            char* email = le_email ("Cadastro administrador");
-                            strcpy(adm->email, email);
-                            limpa_buffer ();
-                            break;
-                            case '2' :
-                            char* cel = le_cel ("Cadastro administrador");
-                            strcpy(adm->cel, cel);
-                            limpa_buffer ();
-                            break;
-                            case '3' :
-                            char* nome = le_nome ("Cadastro administrador");
-                            strcpy(adm->nome, nome);
-                            limpa_buffer ();
-                            case '4' :
-                            char* email = le_email ("Cadastro administrador");
-                            strcpy(adm->email, email);
-                            limpa_buffer ();
-                            break;
-                            break;
-                            }
-                        } while (edit != '0' || edit != '4');
-                    break;
+                // case '2':
+                //     limpa_buffer ();
+                //     adm = pesq_admin ();
+                //     char edit;
+                //     do {
+                //         edit = menu_edit("Cadastro administrador", adm->cpf, adm->email, adm->cel, adm->nome, adm->status);
+                //         switch (edit) {
+                //             case '1' :
+                //             char* email = le_email ("Cadastro administrador");
+                //             strcpy(adm->email, email);
+                //             limpa_buffer ();
+                //             break;
+                //             case '2' :
+                //             char* cel = le_cel ("Cadastro administrador");
+                //             strcpy(adm->cel, cel);
+                //             limpa_buffer ();
+                //             break;
+                //             case '3' :
+                //             char* nome = le_nome ("Cadastro administrador");
+                //             strcpy(adm->nome, nome);
+                //             limpa_buffer ();
+                //             case '4' :
+                //             char* email = le_email ("Cadastro administrador");
+                //             strcpy(adm->email, email);
+                //             limpa_buffer ();
+                //             break;
+                //             }
+                //         } while (edit != '0' || edit != '4');
+                //     break;
                 case '3':
                     modulo_relatorio ();
                     break; 
