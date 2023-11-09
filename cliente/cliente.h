@@ -22,7 +22,7 @@ typedef struct cliente Client;
 
 struct cliente {
     char cpf[12];
-    char email[30];
+    char email[41];
     char cel[12];
     char nome[50];
     char status;
@@ -32,6 +32,11 @@ struct cliente {
 //
 void modulo_cliente (void);
 Client* cad_client (void);
-void pesq_client (void);
+Client* pesq_client (void);
+void excluir_cli(char*);
+void remove_cli(Client*);
 void gravar_client (Client*);
-Client* carregar_client(char* cpf);
+Client* carregar_cli (char*);
+int verify_cpf_dat_cli (char*);
+void regravar_cli(Client*, char);
+void edit_cad_cli (Client*, char);

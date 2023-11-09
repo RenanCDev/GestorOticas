@@ -53,12 +53,12 @@ char* ent_cpf (void) {
 //
 char* ent_email (void) {
     char* email;
-    email = (char*) malloc(30*sizeof(char));
+    email = (char*) malloc(40*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                            Digite o E-mail .                            |\n");
     printf("|                                                                         |\n");
-    printf("|                    Tamanho máximo de 28 caracters .                     |\n");
+    printf("|                    Tamanho máximo de 40 caracters .                     |\n");
     printf("|                                                                         |\n");
     printf("|                   E-mail: ");
     scanf("%[0-9A-Za-z@._-]", email);

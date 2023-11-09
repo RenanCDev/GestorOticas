@@ -33,7 +33,7 @@ void load_create (const char* arq) {
     if (fp == NULL) {
         fp = fopen(past, "wb");
         if (fp == NULL) {
-            tela_erro_dados ();
+            tela_erro_dados ("SAVE/ LOADING de dados incompleto ou com problema");
             printf("O programa será encerrado!");
             exit(1);
         }

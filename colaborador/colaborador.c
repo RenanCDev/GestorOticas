@@ -65,7 +65,7 @@ Colab* cad_colab (void) {
     strcpy(col->nome, nome);
     col->status = '1';
     t_cad_ok ("Cadastro colaborador", col->cpf, col->email, col->cel, col->nome, col->status);
-    tela_cad_concl ();
+    tela_op_ok ();
     return col;
 }
 
@@ -76,7 +76,7 @@ void gravar_colab (Colab* col) {
     FILE *fp_col;
     fp_col = fopen("dat/colaborador.dat", "ab");
     if (fp_col == NULL) {
-        tela_erro_dados ();
+        tela_erro_dados ("SAVE/ LOADING de dados incompleto ou com problema");
     }
     fwrite(col, sizeof(Colab), 1, fp_col);
     fclose(fp_col);
@@ -91,7 +91,7 @@ void pesq_colab (void) {
     char* cpf = le_cpf ("Pesquisa colaborador");
     col = carregar_colab(cpf);
     if (col == NULL) {
-        tela_erro_dados ();
+        tela_erro_dados ("SAVE/ LOADING de dados incompleto ou com problema");
     }
     else {
     t_cad_ok ("Cadastro colaborador", col->cpf, col->email, col->cel, col->nome, col->status);
@@ -109,7 +109,7 @@ Colab* carregar_colab(char* cpf) {
     col = (Colab*)malloc(sizeof(Colab));
     fp = fopen("dat/colaborador.dat", "rb");
     if (fp == NULL) {
-        tela_erro_dados();
+        tela_erro_dados("SAVE/ LOADING de dados incompleto ou com problema");
     }
     while (fread(col, sizeof(Colab), 1, fp)) {
         if ((strcmp(col->cpf, cpf) == 0)) {

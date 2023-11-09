@@ -33,8 +33,10 @@ struct administrador {
 void modulo_administrativo (void);
 Admin* cad_admin (void);
 Admin* pesq_admin (void);
+void excluir_adm(char*);
+void remove_adm(Admin*);
 void gravar_admin (Admin*);
-Admin* carregar_admin(char*);
-int verify_cpf_dat (char*);
+Admin* carregar_adm (char*);
+int verify_cpf_dat_adm (char*);
 void regravar_adm(Admin*, char);
-void edit_cad (Admin*, char);
+void edit_cad_adm (Admin*, char);

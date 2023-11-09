@@ -24,11 +24,10 @@ void tela_uni_1 (char*);
 
 //Telas informacionais
 //
-void tela_cad_concl (void);
-void tela_vend_concl (void);
+void tela_op_ok (void);
 void tela_erro (void);
-void tela_erro_dados (void);
-void tela_erro_cpf (void);
+void tela_erro_dados (char*);
+void tela_erro_dado_c (void);
 void info_cliente_0 (void);
 
 

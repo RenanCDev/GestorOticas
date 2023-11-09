@@ -71,7 +71,7 @@ Prod* cad_prod (void) {
     strcpy(pro->valor_vend, valor_vend);
     t_cad_prod_ok ("Cadastro produto", pro->cod_barras, pro->cnpj, pro->desc, pro->quant,
      pro->valor_comp, pro->valor_vend);
-    tela_cad_concl ();
+    tela_op_ok ();
     return pro;
 }
 
@@ -82,7 +82,7 @@ void gravar_prod (Prod* pro) {
     FILE *fp_pro;
     fp_pro = fopen("dat/produto.dat", "ab");
     if (fp_pro == NULL) {
-        tela_erro_dados ();
+        tela_erro_dados ("SAVE/ LOADING de dados incompleto ou com problema");
     }
     fwrite(pro, sizeof(Prod), 1, fp_pro);
     fclose(fp_pro);
@@ -97,7 +97,7 @@ void pesq_prod (void) {
     char* cod_barras = le_cod_barras ("Cadastro prodistrador");
     pro = carregar_prod(cod_barras);
     if (pro == NULL) {
-        tela_erro_dados ();
+        tela_erro_dados ("SAVE/ LOADING de dados incompleto ou com problema");
     }
     else {
     t_cad_prod_ok ("Cadastro produto", pro->cod_barras, pro->cnpj, pro->desc, pro->quant,
@@ -115,7 +115,7 @@ Prod* carregar_prod(char* cod_barras) {
     pro = (Prod*)malloc(sizeof(Prod));
     fp = fopen("dat/produto.dat", "rb");
     if (fp == NULL) {
-        tela_erro_dados();
+        tela_erro_dados("SAVE/ LOADING de dados incompleto ou com problema");
     }
     while (fread(pro, sizeof(Prod), 1, fp)) {
         if ((strcmp(pro->cod_barras, cod_barras) == 0)) {

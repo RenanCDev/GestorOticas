@@ -44,16 +44,6 @@ void modulo_administrativo (void) {
                 case '2':
                     limpa_buffer ();
                     adm = pesq_admin ();
-                    char edit;
-                    do {
-                        edit = menu_edit("Cadastro administrador", adm->cpf, adm->email, adm->cel, adm->nome, adm->status);
-                        if ((edit >= '1') || (edit <= '4')) {
-                            regravar_adm (adm, edit);
-                        }
-                        else {
-                            tela_erro ();
-                        }
-                    } while (edit != '0');
                     break;
                 case '3':
                     modulo_relatorio ();
@@ -71,10 +61,10 @@ Admin* cad_admin (void) {
     char* cpf;
     do {
         cpf = le_cpf ("Cadastro administrador");
-        if (!verify_cpf_dat (cpf)) {
-            tela_erro_cpf ();
+        if (!verify_cpf_dat_adm (cpf)) {
+            tela_erro_dado_c ();
         }
-    } while (!verify_cpf_dat (cpf));
+    } while (!verify_cpf_dat_adm (cpf));
     strcpy(adm->cpf, cpf);
     limpa_buffer ();
     char* email = le_email ("Cadastro administrador");
@@ -87,7 +77,7 @@ Admin* cad_admin (void) {
     strcpy(adm->nome, nome);
     adm->status = '1';
     t_cad_ok ("Cadastro administrador", adm->cpf, adm->email, adm->cel, adm->nome, adm->status);
-    tela_cad_concl ();
+    tela_op_ok ();
     return adm;
 }
 
@@ -96,14 +86,26 @@ Admin* cad_admin (void) {
 //
 Admin* pesq_admin (void) {
     Admin* adm;
-    char* cpf = le_cpf ("Cadastro administrador");
-    adm = carregar_admin(cpf);
-    if (adm == NULL) {
-        tela_erro_dados ();
-    }
-    else {
+    char* cpf;
+    do{
+        cpf = le_cpf ("Pesquisa administrador");
+        adm = carregar_adm (cpf);
+        if (adm == NULL) {
+            tela_erro_dados ("Cadastro inexistente");
+        }
+    } while (adm == NULL);
+        char edit;
+        do {
+            edit = menu_edit("Cadastro administrador", adm->cpf, adm->email, adm->cel, adm->nome, adm->status);
+            if ((edit >= '1') || (edit <= '3')) {
+                regravar_adm (adm, edit);
+                tela_op_ok ();
+            }
+            else {
+                excluir_adm (adm->cpf);
+            }
+        } while ((edit != '0') && (edit != '4')); 
     return adm;
-    }
 }
 
 
@@ -113,7 +115,7 @@ void gravar_admin (Admin* adm) {
     FILE *fp_adm;
     fp_adm = fopen("dat/administrativo.dat", "ab");
     if (fp_adm == NULL) {
-        tela_erro_dados ();
+        tela_erro_dados ("SAVE/ LOADING de dados incompleto ou com problema");
     }
     fwrite(adm, sizeof(Admin), 1, fp_adm);
     fclose(fp_adm);
@@ -123,13 +125,13 @@ void gravar_admin (Admin* adm) {
 
 //Carregador de dados do administrador
 //
-Admin* carregar_admin(char* cpf) {
+Admin* carregar_adm(char* cpf) {
     FILE *fp;
     Admin* adm;
     adm = (Admin*)malloc(sizeof(Admin));
     fp = fopen("dat/administrativo.dat", "rb");
     if (fp == NULL) {
-        tela_erro_dados();
+        tela_erro_dados("SAVE/ LOADING de dados incompleto ou com problema");
     }
     while (fread(adm, sizeof(Admin), 1, fp)) {
         if ((!strcmp(adm->cpf, cpf))) {
@@ -144,10 +146,9 @@ Admin* carregar_admin(char* cpf) {
 
 //Verifica se o cpf ja esta cadastrado (retorna "1") ou não (retorna"0")
 //
-int verify_cpf_dat (char *cpf) {
+int verify_cpf_dat_adm (char *cpf) {
     FILE* fp;
     Admin* adm;
-
     adm = (Admin *)malloc(sizeof(Admin));
     fp = fopen("dat/administrativo.dat", "rb");
     while (fread(adm, sizeof(Admin), 1, fp)) {
@@ -162,35 +163,55 @@ int verify_cpf_dat (char *cpf) {
 
 
 void regravar_adm(Admin* adm, char op) {
-    int achou = 0;
     FILE* fp;
     Admin* nova_ent;
-
     nova_ent = (Admin*)malloc(sizeof(Admin));
     fp = fopen("dat/administrativo.dat", "r+b");
-    if (fp == NULL) {
-        tela_erro_dados();
-    }
     while(!feof(fp)) {
         fread(nova_ent, sizeof(Admin), 1, fp);
         if (strcmp(nova_ent->cpf, adm->cpf) == 0) {
-            achou = 1;
-            edit_cad(adm, op);
+            edit_cad_adm(adm, op);
             fseek(fp, -1 * sizeof(Admin), SEEK_CUR);
             fwrite(adm, sizeof(Admin), 1, fp);
             break;
         }
     }
-    if (!achou) {
-        tela_erro ();
-        getchar();
-    }
     fclose(fp);
     free(nova_ent);
 }
 
-void edit_cad (Admin* adm, char op) {
-        switch (op) {
+
+void excluir_adm(char* cpf)  {
+    Admin* adm;
+    adm = (Admin*)malloc(sizeof(Admin));
+    adm = carregar_adm(cpf);
+    adm->status = 'x';
+    remove_adm(adm);
+    free(adm);
+    free(cpf);
+}
+
+
+void remove_adm(Admin* adm) {
+    FILE *fp;
+    Admin* adm_op;
+    adm_op = (Admin*)malloc(sizeof(Admin));
+    fp = fopen("dat/administrativo.dat", "r+b");
+    while (!feof(fp)) {
+        fread(adm_op, sizeof(Admin), 1, fp);
+        if ((strcmp(adm_op->cpf, adm->cpf) == 0) && (adm_op->status != 'x')) {
+            adm_op->status = 'x';
+            fseek(fp, -1 * sizeof(Admin), SEEK_CUR);
+            fwrite(adm_op, sizeof(Admin), 1, fp);
+        }
+    }
+    fclose(fp);
+    free(adm_op);
+}
+
+
+void edit_cad_adm (Admin* adm, char op) {
+    switch (op) {
         case '1' :
             limpa_buffer ();
             char* email = le_email ("Cadastro administrador");
@@ -205,5 +226,8 @@ void edit_cad (Admin* adm, char op) {
             limpa_buffer ();
             char* nome = le_nome ("Cadastro administrador");
             strcpy(adm->nome, nome);
-        }
+        case '4' :
+            limpa_buffer ();
+            excluir_adm(adm->cpf);
+    }
 }

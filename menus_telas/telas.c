@@ -77,13 +77,13 @@ void tela_erro (void) {
 
 //Tela erro busca dados
 //
-void tela_erro_dados (void) {
+void tela_erro_dados (char* tela) {
     limpa_buffer ();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                               ERRO ! ! !                                |\n");
+    printf("|%s|\n", centralizar_texto("ERRO ! ! !", 73, 0));
     printf("|                                                                         |\n");
-    printf("|            SAVE/ LOADING de dados incompleto ou com problema            |\n");
+    printf("|%s|\n", centralizar_texto(tela, 73, 0));
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     limpa_buffer ();
@@ -92,45 +92,32 @@ void tela_erro_dados (void) {
 
 //Tela cadastro existente
 //
-void tela_erro_cpf (void) {
+void tela_erro_dado_c (void) {
     limpa_buffer ();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                               ERRO ! ! !                                |\n");
+    printf("|%s|\n", centralizar_texto("ERRO ! ! !", 73, 0));
     printf("|                                                                         |\n");
-    printf("|                      Esse CPF já esta cadastrado .                      |\n");
+    printf("|%s|\n", centralizar_texto("Entrada já cadastrada", 73, 0));
     printf("|                                                                         |\n");
-    printf("|                    Tecle ENTER para inserir novo CPF                    |\n");
+    printf("|%s|\n", centralizar_texto("Tecle ENTER para inserir nova entrada", 73, 0));
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     limpa_buffer ();
-}
-
-
-//Tela cadastro concluído
-//
-void tela_cad_concl (void) {
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                    CADASTRO CONCLUÍDO COM SUCESSO !                     |\n");
-    printf("|                                                                         |\n");
-    printf("|                         Tecle ENTER para seguir                         |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-    limpa_buffer (); 
 }
 
 
 //Tela venda concluída
 //
-void tela_vend_concl (void) {
+void tela_op_ok (void) {
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                      VENDA CONCLUÍDO COM SUCESSO !                      |\n");
+    printf("|%s|\n", centralizar_texto("OPERAÇÃO REALIZADA COM SUCESSO ! ! !", 73, 0));
     printf("|                                                                         |\n");
-    printf("|                         Tecle ENTER para seguir                         |\n");
+    printf("|%s|\n", centralizar_texto("Tecle ENTER para prosseguir", 73, 0));
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
+    limpa_buffer ();
 }
 
 

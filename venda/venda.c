@@ -91,7 +91,7 @@ void cad_venda (void) {
     limpa_buffer ();
     tela_uni_1 ("Cadastro - venda");
     t_exe_cad_vend ();
-    tela_vend_concl ();
+    tela_op_ok ();
     limpa_buffer (); 
 }
 

@@ -64,7 +64,7 @@ Fornec* cad_fornec (void) {
     strcpy(forn->nome, nome);
     forn->status = '1';
     t_cad_ok ("Cadastro fornecedor", forn->cnpj, forn->email, forn->cel, forn->nome, forn->status);
-    tela_cad_concl ();
+    tela_op_ok ();
     return forn;
 }
 
@@ -75,7 +75,7 @@ void gravar_fornec (Fornec* forn) {
     FILE *fp_forn;
     fp_forn = fopen("dat/fornecedor.dat", "ab");
     if (fp_forn == NULL) {
-        tela_erro_dados ();
+        tela_erro_dados ("SAVE/ LOADING de dados incompleto ou com problema");
     }
     fwrite(forn, sizeof(Fornec), 1, fp_forn);
     fclose(fp_forn);
@@ -91,7 +91,7 @@ void pesq_fornec (void) {
     char* cnpj = le_cnpj ("Pesquisa fornecedor");
     forn = carregar_fornec(cnpj);
     if (forn == NULL) {
-        tela_erro_dados ();
+        tela_erro_dados ("SAVE/ LOADING de dados incompleto ou com problema");
     }
     else {
     t_cad_ok ("Cadastro fornecedor", forn->cnpj, forn->email, forn->cel, forn->nome, forn->status);
@@ -109,7 +109,7 @@ Fornec* carregar_fornec(char* cnpj) {
     forn = (Fornec*)malloc(sizeof(Fornec));
     fp = fopen("dat/fornecedor.dat", "rb");
     if (fp == NULL) {
-        tela_erro_dados();
+        tela_erro_dados("SAVE/ LOADING de dados incompleto ou com problema");
     }
     while (fread(forn, sizeof(Fornec), 1, fp)) {
         if ((strcmp(forn->cnpj, cnpj) == 0)) {
