@@ -28,6 +28,7 @@ void tela_op_ok (void);
 void tela_erro (void);
 void tela_erro_dados (char*);
 void tela_erro_dado_c (void);
+void tela_erro_dado_i (void);
 void info_cliente_0 (void);
 
 

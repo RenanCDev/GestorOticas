@@ -53,6 +53,7 @@ Prod* cad_prod (void) {
     Prod* pro;
     pro = (Prod*)malloc((sizeof(Prod)));
     char* cod_barras;
+    char* cnpj;
     do {
         cod_barras = le_cod_barras ("Cadastro produto");
         if (!verify_cod_barras_dat_prod (cod_barras)) {
@@ -61,7 +62,12 @@ Prod* cad_prod (void) {
     } while (!verify_cod_barras_dat_prod (cod_barras));
     strcpy(pro->cod_barras, cod_barras);
     limpa_buffer ();
-    char* cnpj = le_cnpj ("Cadastro produto");
+    do {
+        cnpj = le_cnpj ("Cadastro produto");
+        if (verify_cnpj_dat_fornec (cnpj)) {
+            tela_erro_dado_i ();
+        }
+    } while (verify_cnpj_dat_fornec (cnpj));
     strcpy(pro->cnpj, cnpj);
     limpa_buffer ();
     char* desc = le_desc_prod ("Cadastro produto");
@@ -178,8 +184,13 @@ void regravar_prod (Prod* pro, char op) {
 void edit_cad_prod (Prod* pro, char op) {
     switch (op) {
         case '1' :
-            limpa_buffer ();
-            char* cnpj = le_cnpj ("Cadastro produto");
+            char* cnpj;
+            do {
+                cnpj = le_cnpj ("Cadastro produto");
+                if (verify_cnpj_dat_fornec (cnpj)) {
+                    tela_erro_dado_i ();
+                }
+            } while (verify_cnpj_dat_fornec (cnpj));
             strcpy(pro->cnpj, cnpj);
             break;
         case '2' :

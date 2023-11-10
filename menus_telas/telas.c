@@ -107,6 +107,23 @@ void tela_erro_dado_c (void) {
 }
 
 
+//Tela cadastro inexistente
+//
+void tela_erro_dado_i (void) {
+    limpa_buffer ();
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|%s|\n", centralizar_texto("ERRO ! ! !", 73, 0));
+    printf("|                                                                         |\n");
+    printf("|%s|\n", centralizar_texto("Entrada não cadastrada", 73, 0));
+    printf("|                                                                         |\n");
+    printf("|%s|\n", centralizar_texto("Tecle ENTER para inserir nova entrada", 73, 0));
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");
+    limpa_buffer ();
+}
+
+
 //Tela venda concluída
 //
 void tela_op_ok (void) {

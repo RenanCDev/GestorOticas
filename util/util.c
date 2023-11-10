@@ -431,6 +431,3 @@ char* centralizar_texto(char* texto, int tam, int horizontal) {
     return str;
 }
 // AUTOR: EMANUEL ALVES // GIT: https://github.com/Faltrenn
-
-
-//Verifica se o dado inserio já esta cadastrado(retorna "1") ou não(retorna "0")
