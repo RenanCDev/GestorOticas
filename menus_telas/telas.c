@@ -143,7 +143,7 @@ void t_cad_ok (char* tela, char* cpf, char* email, char* cel, char* nome, char s
     tela_uni_1 (tela);
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|   CPF : %s|\n", centralizar_texto(cpf, 64, -1));
+    printf("|   CPF/CNPJ : %s|\n", centralizar_texto(cpf, 59, -1));
     printf("|                                                                         |\n");
     printf("|   Email : %s|\n", centralizar_texto(email, 62, -1));
     printf("|                                                                         |\n");
