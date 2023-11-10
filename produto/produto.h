@@ -23,7 +23,7 @@ typedef struct produto Prod;
 struct produto {
     char cod_barras[14];
     char cnpj[15];
-    char desc[41];
+    char desc[47];
     char quant[9];
     char valor_comp[9];
     char valor_vend[9];

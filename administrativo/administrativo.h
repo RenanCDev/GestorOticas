@@ -22,9 +22,9 @@ typedef struct administrador Admin;
 
 struct administrador {
     char cpf[12];
-    char email[30];
+    char email[47];
     char cel[12];
-    char nome[50];
+    char nome[47];
     char status;
 };
 

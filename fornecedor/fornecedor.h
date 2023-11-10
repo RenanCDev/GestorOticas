@@ -22,9 +22,9 @@ typedef struct fornecedor Fornec;
 
 struct fornecedor {
     char cnpj[15];
-    char email[30];
+    char email[47];
     char cel[12];
-    char nome[50];
+    char nome[47];
     char status;
 };
 //Declaração das funções do arquivo fornecedor.c

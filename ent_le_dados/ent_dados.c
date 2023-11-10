@@ -53,15 +53,15 @@ char* ent_cpf (void) {
 //
 char* ent_email (void) {
     char* email;
-    email = (char*) malloc(40*sizeof(char));
+    email = (char*) malloc(46*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                            Digite o E-mail .                            |\n");
     printf("|                                                                         |\n");
-    printf("|                    Tamanho máximo de 40 caracters .                     |\n");
+    printf("|                    Tamanho máximo de 46 caracters .                     |\n");
     printf("|                                                                         |\n");
     printf("|                   E-mail: ");
-    scanf("%[0-9A-Za-z@._-]", email);
+    scanf("%s", email);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     return email;
@@ -82,7 +82,7 @@ char* ent_cel (void) {
     printf("|                    Tamanho máximo de 11 caracters .                     |\n");
     printf("|                                                                         |\n");
     printf("|                            Cel.: ");
-    scanf("%[0-9A-Za-z@._-]", cel);
+    scanf("%s", cel);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     return cel; 
@@ -93,15 +93,15 @@ char* ent_cel (void) {
 //
 char* ent_nome (void) {
     char* nome;
-    nome = (char*) malloc(40*sizeof(char));
+    nome = (char*) malloc(46*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                             Digite o nome .                             |\n");
     printf("|                                                                         |\n");
-    printf("|                    Tamanho máximo de 40 caracters .                     |\n");
+    printf("|                    Tamanho máximo de 46 caracters .                     |\n");
     printf("|                                                                         |\n");
     printf("|               Nome: ");
-    scanf(" %50[^\n]", nome);
+    scanf("%s", nome);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     return nome; 
@@ -124,7 +124,7 @@ char* ent_cnpj (void) {
     printf("|          No caso do cadastro zero insira 14 caracters zeros .           |\n");
     printf("|                                                                         |\n");
     printf("|                          CNPJ: ");
-    scanf("%[0-9A-Za-z@._-]", cnpj);
+    scanf("%s", cnpj);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     return cnpj; 
@@ -147,7 +147,7 @@ char* ent_cod_barras (void) {
     printf("|          No caso do cadastro zero insira 13 caracters zeros .           |\n");
     printf("|                                                                         |\n");
     printf("|                     Código de barras: ");
-    scanf("%[0-9A-Za-z@._-]", cod_barras);
+    scanf("%s", cod_barras);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     return cod_barras; 
@@ -158,15 +158,15 @@ char* ent_cod_barras (void) {
 //
 char* ent_desc_produto (void) {
     char* desc;
-    desc = (char*) malloc(40*sizeof(char));
+    desc = (char*) malloc(46*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                          Descreva o produto .                           |\n");
     printf("|                                                                         |\n");
-    printf("|                    Tamanho máximo de 40 caracters .                     |\n");
+    printf("|                    Tamanho máximo de 46 caracters .                     |\n");
     printf("|                                                                         |\n");
     printf("|     Descrição do produto: ");
-    scanf("%[0-9A-Za-z@._-]", desc);
+    scanf("%s", desc);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     return desc; 
@@ -187,7 +187,7 @@ char* ent_quant (void) {
     printf("|                     Tamanho máximo de 8 caracters .                     |\n");
     printf("|                                                                         |\n");
     printf("|                          Quantidade de peças: ");
-    scanf("%[0-9A-Za-z@._-]", quant);
+    scanf("%s", quant);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     return quant; 
@@ -208,7 +208,7 @@ char* ent_valor_ent (void) {
     printf("|                     Tamanho máximo de 8 caracters .                     |\n");
     printf("|                                                                         |\n");
     printf("|                           Valor de compra: R$ ");
-    scanf("%[0-9A-Za-z@._-]", valor);
+    scanf("%s", valor);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
     return valor; 
@@ -229,7 +229,7 @@ char* ent_valor_saida (void) {
     printf("|                     Tamanho máximo de 8 caracters .                     |\n");
     printf("|                                                                         |\n");
     printf("|                           Valor de venda: R$ ");
-    scanf("%[0-9A-Za-z@._-]", valor);
+    scanf("%s", valor);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     return valor; 
@@ -250,7 +250,7 @@ char* ent_id_venda (void) {
     printf("|                     Tamanho máximo de 8 caracters .                     |\n");
     printf("|                                                                         |\n");
     printf("|                                  ID :");
-    scanf("%[0-9A-Za-z@._-]", id);
+    scanf("%s", id);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     return id; 

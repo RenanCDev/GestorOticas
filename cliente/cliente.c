@@ -90,12 +90,13 @@ Client* pesq_client (void) {
         char edit;
         do {
             edit = menu_edit("Cadastro cliente", cli->cpf, cli->email, cli->cel, cli->nome, cli->status);
-            if ((edit >= '1') || (edit <= '3')) {
+            if ((edit >= '1') && (edit <= '3')) {
                 regravar_cli (cli, edit);
                 tela_op_ok ();
             }
             else {
                 excluir_cli (cli->cpf);
+                tela_op_ok ();
             }
         } while ((edit != '0') && (edit != '4')); 
     return cli;
@@ -127,7 +128,7 @@ Client* carregar_cli(char* cpf) {
         tela_erro_dados("SAVE/ LOADING de dados incompleto ou com problema");
     }
     while (fread(cli, sizeof(Client), 1, fp)) {
-        if ((!strcmp(cli->cpf, cpf))) {
+        if ((!strcmp(cli->cpf, cpf)) && (cli->status == '1')) {
             fclose(fp);
             return cli;
         }
@@ -178,7 +179,7 @@ void excluir_cli(char* cpf)  {
     Client* cli;
     cli = (Client*)malloc(sizeof(Client));
     cli = carregar_cli(cpf);
-    cli->status = 'x';
+    cli->status = '0';
     remove_cli(cli);
     free(cli);
     free(cpf);
@@ -192,8 +193,8 @@ void remove_cli(Client* cli) {
     fp = fopen("dat/cliente.dat", "r+b");
     while (!feof(fp)) {
         fread(cli_op, sizeof(Client), 1, fp);
-        if ((strcmp(cli_op->cpf, cli->cpf) == 0) && (cli_op->status != 'x')) {
-            cli_op->status = 'x';
+        if ((strcmp(cli_op->cpf, cli->cpf) == 0) && (cli_op->status != '0')) {
+            cli_op->status = '0';
             fseek(fp, -1 * sizeof(Client), SEEK_CUR);
             fwrite(cli_op, sizeof(Client), 1, fp);
         }

@@ -63,7 +63,7 @@ void tela_uni_1 (char* a) {
 //Tela Erro
 //
 void tela_erro (void) {
-    limpa_buffer ();
+    limpa_buffer ();    
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                           ENTRADA INVÁLIDA !                            |\n");
@@ -110,6 +110,7 @@ void tela_erro_dado_c (void) {
 //Tela venda concluída
 //
 void tela_op_ok (void) {
+    limpa_buffer ();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|%s|\n", centralizar_texto("OPERAÇÃO REALIZADA COM SUCESSO ! ! !", 73, 0));
@@ -139,7 +140,6 @@ void info_cliente_0 (void) {
 //Tela cadastro pessoas físicas
 //
 void t_cad_ok (char* tela, char* cpf, char* email, char* cel, char* nome, char status) {
-    limpa_buffer ();
     tela_uni_1 (tela);
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");

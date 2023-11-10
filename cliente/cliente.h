@@ -22,9 +22,9 @@ typedef struct cliente Client;
 
 struct cliente {
     char cpf[12];
-    char email[41];
+    char email[47];
     char cel[12];
-    char nome[50];
+    char nome[47];
     char status;
 };
 

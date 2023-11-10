@@ -97,12 +97,13 @@ Admin* pesq_admin (void) {
         char edit;
         do {
             edit = menu_edit("Cadastro administrador", adm->cpf, adm->email, adm->cel, adm->nome, adm->status);
-            if ((edit >= '1') || (edit <= '3')) {
+            if ((edit >= '1') && (edit <= '3')) {
                 regravar_adm (adm, edit);
                 tela_op_ok ();
             }
             else {
                 excluir_adm (adm->cpf);
+                tela_op_ok ();
             }
         } while ((edit != '0') && (edit != '4')); 
     return adm;
@@ -134,7 +135,7 @@ Admin* carregar_adm(char* cpf) {
         tela_erro_dados("SAVE/ LOADING de dados incompleto ou com problema");
     }
     while (fread(adm, sizeof(Admin), 1, fp)) {
-        if ((!strcmp(adm->cpf, cpf))) {
+        if ((!strcmp(adm->cpf, cpf) && (adm->status == '1'))) {
             fclose(fp);
             return adm;
         }
@@ -185,7 +186,7 @@ void excluir_adm(char* cpf)  {
     Admin* adm;
     adm = (Admin*)malloc(sizeof(Admin));
     adm = carregar_adm(cpf);
-    adm->status = 'x';
+    adm->status = '0';
     remove_adm(adm);
     free(adm);
     free(cpf);
@@ -199,8 +200,8 @@ void remove_adm(Admin* adm) {
     fp = fopen("dat/administrativo.dat", "r+b");
     while (!feof(fp)) {
         fread(adm_op, sizeof(Admin), 1, fp);
-        if ((strcmp(adm_op->cpf, adm->cpf) == 0) && (adm_op->status != 'x')) {
-            adm_op->status = 'x';
+        if ((strcmp(adm_op->cpf, adm->cpf) == 0) && (adm_op->status != '0')) {
+            adm_op->status = '0';
             fseek(fp, -1 * sizeof(Admin), SEEK_CUR);
             fwrite(adm_op, sizeof(Admin), 1, fp);
         }

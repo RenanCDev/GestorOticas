@@ -295,7 +295,7 @@ int valid_letra (char letra) {
 //
 int valid_nome (char* nome) {
     for (int i=0; nome[i] != '\0'; i++) {
-        if (!valid_letra(nome[i])) {
+        if (!valid_letra(nome[i]) || (strlen(nome) > 46)) {
             return 0; 
         } 
     } 
@@ -310,7 +310,7 @@ int valid_nome (char* nome) {
 //
 int valid_email(char* email) {
     char usuario[256], site[256], dominio[256];
-    if (sscanf(email, "%[^@ \t\n]@%[^. \t\n].%3[^ \t\n]", usuario, site, dominio ) != 3 ) {
+    if ((sscanf(email, "%[^@ \t\n]@%[^. \t\n].%3[^ \t\n]", usuario, site, dominio ) != 3 ) || (strlen(email) > 46)) {
         return 0;
     }
     return 1; 
