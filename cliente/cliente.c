@@ -94,7 +94,7 @@ Client* pesq_client (void) {
                 regravar_cli (cli, edit);
                 tela_op_ok ();
             }
-            else {
+            else if (edit == '4') {
                 excluir_cli (cli->cpf);
                 tela_op_ok ();
             }

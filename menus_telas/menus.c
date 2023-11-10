@@ -41,7 +41,7 @@ char menu_principal (void) {
         printf("|                                                                         |\n");
         printf("|%s|\n", centralizar_texto ("2 -> Fornecedor <-", 73, 0));
         printf("|                                                                         |\n");
-        printf("|%s|\n", centralizar_texto ("3 -> Poduto <-", 73, 0));
+        printf("|%s|\n", centralizar_texto ("3 -> Produto <-", 73, 0));
         printf("|                                                                         |\n");
         printf("|%s|\n", centralizar_texto ("4 -> Colaborador <-", 73, 0));
         printf("|                                                                         |\n");
@@ -51,7 +51,7 @@ char menu_principal (void) {
         printf("|                                                                         |\n");
         printf("|%s|\n", centralizar_texto ("7 -> Sobre o programa <-", 73, 0));
         printf("|                                                                         |\n");
-printf("|%s|\n", centralizar_texto ("0 -> Fechar o programa <-", 73, 0));
+        printf("|%s|\n", centralizar_texto ("0 -> Fechar o programa <-", 73, 0));
         printf("|                                                                         |\n");
         printf("+=========================================================================+\n");
         printf("Selecione uma opção: \n");

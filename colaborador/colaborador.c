@@ -95,7 +95,7 @@ Colab* pesq_colab (void) {
                 regravar_colab (col, edit);
                 tela_op_ok ();
             }
-            else {
+            else if (edit == '4') {
                 excluir_colab (col->cpf);
                 tela_op_ok ();
             }

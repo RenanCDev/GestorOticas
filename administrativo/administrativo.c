@@ -101,7 +101,7 @@ Admin* pesq_admin (void) {
                 regravar_adm (adm, edit);
                 tela_op_ok ();
             }
-            else {
+            else if (edit == '4') {
                 excluir_adm (adm->cpf);
                 tela_op_ok ();
             }

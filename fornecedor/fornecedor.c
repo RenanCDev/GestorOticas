@@ -94,7 +94,7 @@ Fornec* pesq_fornec (void) {
                 regravar_fornec (forn, edit);
                 tela_op_ok ();
             }
-            else {
+            else if (edit == '4') {
                 excluir_fornec (forn->cnpj);
                 tela_op_ok ();
             }
