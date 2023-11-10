@@ -220,8 +220,10 @@ void edit_cad_cli (Client* cli, char op) {
             limpa_buffer ();
             char* nome = le_nome ("Cadastro cliente");
             strcpy(cli->nome, nome);
+            break;
         case '4' :
             limpa_buffer ();
             excluir_cli(cli->cpf);
+            break;
     }
 }

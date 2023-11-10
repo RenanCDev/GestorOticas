@@ -43,3 +43,4 @@ all:
 	rm venda/*.gch
 rm:
 	rm dat/*.dat;
+	cp dados_teste/*.dat dat

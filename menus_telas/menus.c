@@ -177,10 +177,9 @@ char menu_sec_uni (char* menu, char* procurar, char* pesquisar) {
 //
 char menu_edit (char* titulo, char* cpf, char* email, char* cel, char* nome, char status) {
     char op [50];
-    char op_max = '5';
+    char op_max = '4';
     do {
         system("clear");
-        //tela_banner ();
         t_cad_ok (titulo, cpf, email, cel, nome, status);
         printf("+=========================================================================+\n");
         printf("|                                                                         |\n");
@@ -209,6 +208,43 @@ char menu_edit (char* titulo, char* cpf, char* email, char* cel, char* nome, cha
     } while ((!valid_entrada(op)) || (valid_op(op[0], op_max)));
 }
 
+
+//Menu relatórios
+//
+char menu_edit_prod (char* titulo, char* cod_barras, char* cnpj, char* desc, char* quant, char* valor_comp, char* valor_vend) {
+    char op [50];
+    char op_max = '5';
+    do {
+        system("clear");
+        t_cad_prod_ok(titulo, cod_barras, cnpj, desc, quant, valor_comp, valor_vend);
+        printf("+=========================================================================+\n");
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("Editar", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("1 -> Editar fornecedor <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("2 -> Editar descrição <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("3 -> Editar estoque <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("4 -> Editar valor de compra <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("5 -> Editar valor de venda <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("0 -> Voltar ao menu anterior <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("+=========================================================================+\n");
+        printf("Selecione uma opção: \n");
+        scanf("%s", &*op);
+        if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
+            return op[0]; 
+        } 
+        else {
+            tela_erro ();
+            return '9';
+        } 
+    } while ((!valid_entrada(op)) || (valid_op(op[0], op_max)));
+}
 
 //Adiciona itens a uma venda
 //

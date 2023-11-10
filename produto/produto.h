@@ -28,10 +28,15 @@ struct produto {
     char valor_comp[9];
     char valor_vend[9];
 };
+
+
 //Declaração das funções do arquivo produto.c
 //
 void modulo_produto (void);
 Prod* cad_prod (void);
-void pesq_prod (void);
+Prod* pesq_prod (void);
 void gravar_prod (Prod*);
-Prod* carregar_prod(char* cod_barras);
+Prod* carregar_prod (char*);
+int verify_cod_barras_dat_prod (char*);
+void regravar_prod (Prod*, char);
+void edit_cad_prod (Prod*, char);

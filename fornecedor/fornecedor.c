@@ -220,8 +220,10 @@ void edit_cad_fornec (Fornec* forn, char op) {
             limpa_buffer ();
             char* nome = le_nome ("Cadastro fornecedor");
             strcpy(forn->nome, nome);
+            break;
         case '4' :
             limpa_buffer ();
             excluir_fornec (forn->cnpj);
+            break;
     }
 }

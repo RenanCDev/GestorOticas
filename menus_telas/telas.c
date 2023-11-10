@@ -139,8 +139,8 @@ void info_cliente_0 (void) {
 //
 //Tela cadastro pessoas físicas
 //
-void t_cad_ok (char* tela, char* cpf, char* email, char* cel, char* nome, char status) {
-    tela_uni_1 (tela);
+void t_cad_ok (char* titulo, char* cpf, char* email, char* cel, char* nome, char status) {
+    tela_uni_1 (titulo);
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|   CPF/CNPJ : %s|\n", centralizar_texto(cpf, 59, -1));
@@ -161,7 +161,6 @@ void t_cad_ok (char* tela, char* cpf, char* email, char* cel, char* nome, char s
 //
 void t_cad_prod_ok (char* tela, char* cod_barras, char* cnpj, char* desc,
 char* quant, char* valor_comp, char* valor_vend) {
-    limpa_buffer ();
     tela_uni_1 (tela);
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");

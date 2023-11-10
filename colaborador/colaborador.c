@@ -221,8 +221,10 @@ void edit_cad_colab (Colab* col, char op) {
             limpa_buffer ();
             char* nome = le_nome ("Cadastro colaborador");
             strcpy(col->nome, nome);
+            break;
         case '4' :
             limpa_buffer ();
             excluir_colab(col->cpf);
+            break;
     }
 }
