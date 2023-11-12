@@ -16,8 +16,17 @@
 
 
 /////
-//Declaração das funções do arquivo venda.c
+//Criação da struck
 //
+typedef struct venda Vend;
+
+struct Vend {
+    char cpf_cli[12];
+    char cpf_col[12];
+    char cod_barras[14];
+};
+
+
 void modulo_venda (void);
 void cad_venda (void);
 void pesq_venda (void);

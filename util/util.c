@@ -95,19 +95,27 @@ int valid_numeros_f(char* variavel, int tam) {
     if (tam_variavel > tam) {
         return 0;
     }
+    int a = 0;
     for (int i = 0; i < tam_variavel; i++) {
-        if (!valid_digt(variavel[i])) {
-            if (variavel[i] == '.') {
-                if (i == (tam_variavel -3)) {
-                    for (i++; i < tam_variavel; i++) {
-                        if (!valid_digt(variavel[i])) {
-                            return 0;
+        if (variavel[i] == '.') {
+            a ++;
+        }
+    }
+    if (a == 1) {
+        for (int i = 0; i < tam_variavel; i++) {
+            if (!valid_digt(variavel[i])) {
+                if (variavel[i] == '.') {
+                    if (i == (tam_variavel -3)) {
+                        for (i++; i < tam_variavel; i++) {
+                            if (!valid_digt(variavel[i])) {
+                                return 0;
+                            }
+                            return 1;
                         }
-                        return 1;
                     }
                 }
-            }
-        } 
+            } 
+        }
     }
     return 0;
 }
@@ -299,7 +307,7 @@ int valid_nome (char* nome) {
             return 0; 
         } 
     } 
-        return 1; 
+    return 1; 
 }
 // AUTOR: FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
 
@@ -315,7 +323,6 @@ int valid_email(char* email) {
     }
     return 1; 
 }
-
 // AUTOR: LACOBUS // STACKOVERFLOW: https://pt.stackoverflow.com/questions/310096/como-validar-um-e-mail-em-c
 
 

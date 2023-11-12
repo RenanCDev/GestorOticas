@@ -26,6 +26,7 @@
 //Percorre todo o caminho do menu venda
 //
 void modulo_venda (void) {
+    Vend* venda;
     setlocale (LC_ALL, "Portuguese_Brazil");
     char op;
     do {
