@@ -41,4 +41,4 @@ void t_exe_relat_prod (void);
 void t_exe_relat_colab (void);
 void t_exe_relat_client (void);
 void t_cad_prod_ok (char*, char*, char*, char*, char*, char*, char*);
-void t_exe_cad_vend (void);
+void t_cad_vend_ok (char*, char*, char*, char*, char*, char*, char*, char*, char*, char);

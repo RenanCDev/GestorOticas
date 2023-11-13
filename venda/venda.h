@@ -20,15 +20,24 @@
 //
 typedef struct venda Vend;
 
-struct Vend {
+struct venda {
     char cpf_cli[12];
     char cpf_col[12];
     char cod_barras[14];
+    char desc[47];
+    char quant[9];
+    char valor_vend_uni[9];
+    char valor_vend_tot[10];
+    char id[9];
+    char status;
 };
 
 
 void modulo_venda (void);
-void cad_venda (void);
-void pesq_venda (void);
-int acresc_item_venda (void);
-void form_pag (void);
+Vend* cad_vend (void);
+void gravar_vend (Vend* ven);
+Vend* pesq_vend (void);
+Vend* carregar_vend (int);
+void edit_cad_vend (Vend*, char);
+void regravar_vend (Vend*, char);
+char* gera_id (void);

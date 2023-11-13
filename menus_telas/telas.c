@@ -156,8 +156,8 @@ void info_cliente_0 (void) {
 //
 //Tela cadastro pessoas físicas
 //
-void t_cad_ok (char* titulo, char* cpf, char* email, char* cel, char* nome, char status) {
-    tela_uni_1 (titulo);
+void t_cad_ok (char* tela, char* cpf, char* email, char* cel, char* nome, char status) {
+    tela_uni_1 (tela);
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|   CPF/CNPJ : %s|\n", centralizar_texto(cpf, 59, -1));
@@ -177,7 +177,7 @@ void t_cad_ok (char* titulo, char* cpf, char* email, char* cel, char* nome, char
 //Tela exemplo cadastro produto
 //
 void t_cad_prod_ok (char* tela, char* cod_barras, char* cnpj, char* desc,
-char* quant, char* valor_comp, char* valor_vend) {
+ char* quant, char* valor_comp, char* valor_vend) {
     tela_uni_1 (tela);
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -195,6 +195,32 @@ char* quant, char* valor_comp, char* valor_vend) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
 }
+
+
+//Tela exemplo cadastro venda
+//
+void t_cad_vend_ok (char* tela, char* cpf_cli, char* cpf_col, char* cod_barras, char* desc,
+ char* valor_vend_uni, char* quant, char* valor_vend_tot, char* id, char status) {
+    tela_uni_1(tela);
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|   Cliente CPF : %s|\n", centralizar_texto(cpf_cli, 56, -1));
+    printf("|                                                                         |\n");
+    printf("|   Colaborador CPF : %s|\n", centralizar_texto(cpf_col, 52, -1));
+    printf("|                                                                         |\n");
+    printf("|   Produto CdB : %s|\n", centralizar_texto(cod_barras, 56, -1));
+    printf("|                                                                         |\n");
+    printf("|   Desc. : %s|\n", centralizar_texto(desc, 62, -1));
+    printf("|                                                                         |\n");
+    printf("|   Valor unitário / Quantidade / Valor total : %s x %s = %s|\n", valor_vend_uni, quant, centralizar_texto(valor_vend_tot, 11, -1));
+    printf("|                                                                         |\n");
+    printf("|   ID : %s                                                        |\n", id);
+    printf("|                                                                         |\n");
+    printf("|   Status da venda (1 = ativo, 0 = inativo) : %c                          |\n", status);
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n"); 
+}
+
 
 //Tela exemplo relatório administrador
 //
@@ -431,37 +457,3 @@ void t_exe_cad_prod (void) {
     printf("+=========================================================================+\n"); 
 }
 
-
-//Tela exemplo cadastro venda
-//
-void t_exe_cad_vend (void) {
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|   Colaborador CPF : XXX.XXX.XXX-XX                                      |\n");
-    printf("|                                                                         |\n");
-    printf("|   Código de barras : 0 00000 00000 0                                    |\n");
-    printf("|                                                                         |\n");
-    printf("|   Descrição do produto : **** ******* ******** *******                  |\n");
-    printf("|                                                                         |\n");
-    printf("|   Quantidade de peças : 5                                               |\n");
-    printf("|                                                                         |\n");
-    printf("|   Valor da peça / Valor total : 99,00 R$ x 5 = 495,00 R$                |\n");
-    printf("|                                                                         |\n");
-    printf("|   Código de barras : 0 00000 00000 0                                    |\n");
-    printf("|                                                                         |\n");
-    printf("|   Descrição do produto : **** ******* ******** *******                  |\n");
-    printf("|                                                                         |\n");
-    printf("|   Quantidade de peças : 10                                              |\n");
-    printf("|                                                                         |\n");
-    printf("|   Valor da peça / Valor total : 1000,00 R$ x 5 = 10.000,00 R$           |\n");
-    printf("|                                                                         |\n");
-    printf("|   Valor total da venda : 10.495,00 R$                                   |\n");
-    printf("|                                                                         |\n");
-    printf("|   Cliente CPF : XXX.XXX.XXX-XX                                          |\n");
-    printf("|                                                                         |\n");
-    printf("|   Metodo de pagamento : PIX                                             |\n");
-    printf("|                                                                         |\n");
-    printf("|   ID da venda : XXXXX                                                   |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n"); 
-}

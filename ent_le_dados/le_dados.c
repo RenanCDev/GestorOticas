@@ -159,7 +159,7 @@ char* le_valor_v (char* tela) {
 }
 //Leitura de id da venda
 //
-char* le_id (char* tela) {
+int le_id (char* tela) {
     char* id;
     do {
         tela_uni_1 (tela);
@@ -167,6 +167,7 @@ char* le_id (char* tela) {
         if (!valid_numeros_s(id)) {
             tela_erro ();
         } 
-    } while (!valid_numeros_s(id)); 
-    return id;
+    } while (!valid_numeros_s(id));
+    int a = atoi (id);
+    return a;
 }

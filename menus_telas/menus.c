@@ -246,6 +246,39 @@ char menu_edit_prod (char* titulo, char* cod_barras, char* cnpj, char* desc, cha
     } while ((!valid_entrada(op)) || (valid_op(op[0], op_max)));
 }
 
+
+//Menu relatórios
+//
+// char menu_edit_vend (char* tela, char* cpf_cli, char* cpf_col, char* cod_barras, char* desc,
+//  char* valor_vend_uni, char*  quant, char* valor_vend_tot, int* id, char status) {
+//     char op [50];
+//     char op_max = '1';
+//     do {
+//         system("clear");
+//         t_cad_vend_ok (tela, cpf_cli, cpf_col, cod_barras, desc, valor_vend_uni, 
+//          quant, valor_vend_tot, id, status);
+//         printf("+=========================================================================+\n");
+//         printf("|                                                                         |\n");
+//         printf("|%s|\n", centralizar_texto ("Excluir", 73, 0));
+//         printf("|                                                                         |\n");
+//         printf("|%s|\n", centralizar_texto ("1 -> Excluir venda <-", 73, 0));
+//         printf("|                                                                         |\n");
+//         printf("|%s|\n", centralizar_texto ("0 -> Voltar ao menu anterior <-", 73, 0));
+//         printf("|                                                                         |\n");
+//         printf("+=========================================================================+\n");
+//         printf("Selecione uma opção: \n");
+//         scanf("%s", &*op);
+//         if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
+//             return op[0]; 
+//         } 
+//         else {
+//             tela_erro ();
+//             return '9';
+//         } 
+//     } while ((!valid_entrada(op)) || (valid_op(op[0], op_max)));
+// }
+
+
 //Adiciona itens a uma venda
 //
 char menu_item_venda (void) {

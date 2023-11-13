@@ -34,130 +34,120 @@ void modulo_venda (void) {
         switch (op) {
             case '1':
                 limpa_buffer ();
-                cad_venda ();
+                venda = cad_vend ();
+                gravar_vend(venda);
                 break;
             case '2':
                 limpa_buffer ();
-                pesq_venda ();
+                // pesq_vend ();
                 break; 
         } 
     } while (op != '0'); 
 }
 
 
-//Cadastra uma nova venda
+//Cadastra venda
 //
-void cad_venda (void) {
-    int verify;
+Vend* cad_vend (void) {
+    Vend* ven;
+    ven = (Vend*)malloc((sizeof(Vend)));
     char* cpf;
     char* cod_barras;
     char* quant;
+    int quant_e;
+    int quant_c;
+    int quant_t;
+    float v_vend;
+    float v_vend_t;
+    char id [8];
+    char status;
     do {
-        tela_uni_1 ("Venda - colaborador");
-        cpf = ent_cpf (); 
-        if (!valid_cpf(cpf)) {
-            tela_erro (); 
-        } 
-    } while (!valid_cpf(cpf));
-    limpa_buffer ();
-    do {
-        tela_uni_1 ("Venda - cliente");
-        info_cliente_0 ();
-        cpf = ent_cpf (); 
-        if (!valid_cpf(cpf)) {
-            tela_erro (); 
-        } 
-    } while (!valid_cpf(cpf));
-    do {
-        limpa_buffer ();
-        do {
-            tela_uni_1 ("Venda - produto");
-            cod_barras = ent_cod_barras (); 
-            if (!valid_cod_barras(cod_barras)) {
-                tela_erro (); 
-            } 
-        } while (!valid_cod_barras(cod_barras));
-        limpa_buffer ();
-        do {
-            tela_uni_1 ("Venda - quantidade do produto");
-            quant = ent_quant (); 
-            if (!valid_numeros_s(quant)) {
-                tela_erro (); 
-            } 
-        } while (!valid_numeros_s(quant));
-        verify = acresc_item_venda (); 
-    } while (!verify);
-    limpa_buffer ();
-    form_pag ();
-    limpa_buffer ();
-    tela_uni_1 ("Cadastro - venda");
-    t_exe_cad_vend ();
-    tela_op_ok ();
-    limpa_buffer (); 
-}
-
-
-//Pesquisa o cadastro de alguma venda
-//
-void pesq_venda (void) {
-    char* id;
-    do {
-        tela_uni_1 ("Pesquisa - venda");
-        id = ent_id_venda (); 
-        if (!valid_numeros_s(id)) {
-            tela_erro (); 
-        } 
-    } while (!valid_numeros_s(id));
-    limpa_buffer ();
-    t_exe_cad_vend ();
-    limpa_buffer (); 
-}
-
-
-//Acrescenta itens a uma venda em processo
-//
-int acresc_item_venda (void) {
-    char op;
-    char op_max = '2';
-        do {
-            tela_uni_1 ("Cadatro - venda");
-            op = menu_item_venda ();
-            if (!valid_op(op, op_max)) {
-                tela_erro(); 
-            } 
-        }   
- while (!valid_op(op, op_max));
-        switch (op) {
-            case '1':
-                return 0;
-                break; 
-            case '2': 
-                return 1;
-                break; 
-            default: 
-                return 0;
-                break; 
-        } 
-}
-
-
-//Declara a forma de pagamento de uma venda
-//
-void form_pag (void) {
-    char op;
-    do {
-        tela_uni_1 ("Cadatro - venda");
-        op = menu_form_pag ();
-        switch (op) {
-            case '1':
-                break;
-            case '2':
-                break;
-            case '3':
-                break;
-            case '4':
-                break;
+        cpf = le_cpf ("Cadastro venda - cliente");
+        if (verify_cpf_dat_cli (cpf)) {
+            tela_erro_dado_i ();
         }
-        system("clear"); 
-    } while ((op != '1') && (op != '2') && (op != '3') && (op != '4')); 
+    } while (verify_cpf_dat_cli (cpf));
+    strcpy(ven->cpf_cli, cpf);
+    limpa_buffer ();
+    do {
+        cpf = le_cpf ("Cadastro venda - colaborador");
+        if (verify_cpf_dat_colab (cpf)) {
+            tela_erro_dado_i ();
+        }
+    } while (verify_cpf_dat_colab (cpf));
+    strcpy(ven->cpf_col, cpf);
+    limpa_buffer ();
+    do {
+        cod_barras = le_cod_barras ("Cadastro venda");
+        if (verify_cod_barras_dat_prod (cod_barras)) {
+            tela_erro_dado_i ();
+        }
+    } while (verify_cod_barras_dat_prod (cod_barras));
+    Prod* pro;
+    pro = (Prod*)malloc((sizeof(Prod)));
+    strcpy(ven->cod_barras, pro->cod_barras);
+    strcpy(ven->desc, pro->desc);
+    limpa_buffer ();
+    do {
+        quant = le_quant ("Cadastro venda");
+        quant_e = atoi(quant);
+        quant_c = atoi(pro->quant);
+        quant_t = quant_c - quant_e;
+        if (quant_t < 0) {
+            tela_erro ();
+        } 
+    } while (quant_t < 0);
+    strcpy(ven->quant, quant);
+    snprintf(pro->quant, sizeof(pro->quant), "%d", quant_t);
+    strcpy(ven->valor_vend_uni, pro->valor_vend);
+    v_vend = atof(pro->valor_vend);
+    v_vend_t = v_vend * quant_e;
+    snprintf(ven->valor_vend_tot, sizeof(ven->valor_vend_tot), "%.2f", v_vend_t);
+    strcpy(id, gera_id());
+    status = '1';
+    t_cad_vend_ok ("Cadastro venda", ven->cpf_cli, ven->cpf_col, ven->cod_barras
+    , ven->desc, ven->quant, ven->valor_vend_uni, ven->valor_vend_tot, id, status);
+    tela_op_ok ();
+    return ven;
+}
+
+
+//Gravador de dados da venda
+//
+void gravar_vend (Vend* ven) {
+    FILE *fp_ven;
+    fp_ven = fopen("dat/venda.dat", "ab");
+    if (fp_ven == NULL) {
+        tela_erro_dados ("SAVE/ LOADING de dados incompleto ou com problema");
+    }
+    fwrite(ven, sizeof(Vend), 1, fp_ven);
+    fclose(fp_ven);
+    free(ven);
+}
+
+
+char* gera_id (void) {
+    FILE *fp_ven;
+    fp_ven = fopen("dat/venda.dat", "rb");
+    if (fp_ven == NULL) {
+        return "1";
+    }
+    fseek(fp_ven, 0, SEEK_END);
+    if ((long)ftell(fp_ven) == 0){
+        fclose(fp_ven);
+        return "1";
+    }
+    else {
+        fseek(fp_ven, -((long)sizeof(Vend)), SEEK_END);
+        Vend* perf_f;
+        perf_f = (Vend*)malloc((sizeof(Vend)));
+        fread(perf_f, sizeof(Vend), 1, fp_ven);
+        char id[8];
+        strcpy(id, perf_f->id);
+        int a = atoi(id);
+        a++;
+        snprintf(id, sizeof(id), "%d", a);
+        fclose(fp_ven);
+        return id;
+    }
 }

@@ -25,4 +25,4 @@ char* le_desc_prod (char*);
 char* le_quant (char*);
 char* le_valor_c (char*);
 char* le_valor_v (char*);
-char* le_id (char*);
+int le_id (char*);

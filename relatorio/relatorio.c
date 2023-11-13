@@ -160,6 +160,6 @@ void relat_venda (void) {
         } 
     } while (!valid_numeros_s(id));
     limpa_buffer ();
-    t_exe_cad_vend (); 
+    // t_exe_cad_vend (); 
     limpa_buffer ();
 }
