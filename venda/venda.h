@@ -28,7 +28,7 @@ struct venda {
     char quant[9];
     char valor_vend_uni[9];
     char valor_vend_tot[10];
-    char id[9];
+    int id;
     char status;
 };
 
@@ -40,4 +40,4 @@ Vend* pesq_vend (void);
 Vend* carregar_vend (int);
 void edit_cad_vend (Vend*, char);
 void regravar_vend (Vend*, char);
-char* gera_id (void);
+int gera_id (void);

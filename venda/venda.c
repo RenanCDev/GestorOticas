@@ -59,7 +59,6 @@ Vend* cad_vend (void) {
     int quant_t;
     float v_vend;
     float v_vend_t;
-    char id [8];
     char status;
     do {
         cpf = le_cpf ("Cadastro venda - cliente");
@@ -103,10 +102,10 @@ Vend* cad_vend (void) {
     v_vend = atof(pro->valor_vend);
     v_vend_t = v_vend * quant_e;
     snprintf(ven->valor_vend_tot, sizeof(ven->valor_vend_tot), "%.2f", v_vend_t);
-    strcpy(id, gera_id());
+    ven->id = gera_id ();
     status = '1';
     t_cad_vend_ok ("Cadastro venda", ven->cpf_cli, ven->cpf_col, ven->cod_barras
-    , ven->desc, ven->quant, ven->valor_vend_uni, ven->valor_vend_tot, id, status);
+    , ven->desc, ven->quant, ven->valor_vend_uni, ven->valor_vend_tot, ven->id, status);
     tela_op_ok ();
     return ven;
 }
@@ -126,27 +125,23 @@ void gravar_vend (Vend* ven) {
 }
 
 
-char* gera_id (void) {
+int gera_id (void) {
     FILE *fp_ven;
     fp_ven = fopen("dat/venda.dat", "rb");
     if (fp_ven == NULL) {
-        return "1";
+        return 1;
     }
     fseek(fp_ven, 0, SEEK_END);
     if ((long)ftell(fp_ven) == 0){
         fclose(fp_ven);
-        return "1";
+        return 1;
     }
     else {
         fseek(fp_ven, -((long)sizeof(Vend)), SEEK_END);
         Vend* perf_f;
-        perf_f = (Vend*)malloc((sizeof(Vend)));
+        perf_f = (Vend*)malloc(sizeof(Vend));
         fread(perf_f, sizeof(Vend), 1, fp_ven);
-        char id[8];
-        strcpy(id, perf_f->id);
-        int a = atoi(id);
-        a++;
-        snprintf(id, sizeof(id), "%d", a);
+        int id = perf_f->id+1;
         fclose(fp_ven);
         return id;
     }

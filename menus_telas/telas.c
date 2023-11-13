@@ -200,7 +200,7 @@ void t_cad_prod_ok (char* tela, char* cod_barras, char* cnpj, char* desc,
 //Tela exemplo cadastro venda
 //
 void t_cad_vend_ok (char* tela, char* cpf_cli, char* cpf_col, char* cod_barras, char* desc,
- char* valor_vend_uni, char* quant, char* valor_vend_tot, char* id, char status) {
+ char* valor_vend_uni, char* quant, char* valor_vend_tot, int id, char status) {
     tela_uni_1(tela);
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -214,7 +214,7 @@ void t_cad_vend_ok (char* tela, char* cpf_cli, char* cpf_col, char* cod_barras, 
     printf("|                                                                         |\n");
     printf("|   Valor unitário / Quantidade / Valor total : %s x %s = %s|\n", valor_vend_uni, quant, centralizar_texto(valor_vend_tot, 11, -1));
     printf("|                                                                         |\n");
-    printf("|   ID : %s                                                        |\n", id);
+    printf("|   ID : %d                                                        |\n", id);
     printf("|                                                                         |\n");
     printf("|   Status da venda (1 = ativo, 0 = inativo) : %c                          |\n", status);
     printf("|                                                                         |\n");
