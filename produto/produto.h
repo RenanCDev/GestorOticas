@@ -39,4 +39,5 @@ void gravar_prod (Prod*);
 Prod* carregar_prod (char*);
 int verify_cod_barras_dat_prod (char*);
 void regravar_prod (Prod*, char);
+void regravar_prod_s (Prod*);
 void edit_cad_prod (Prod*, char);

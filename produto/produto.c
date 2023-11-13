@@ -22,10 +22,10 @@
 #include <unistd.h>
 #include "../util/all.h"
 
-
 /////
 //Percorre todo o caminho do menu produto
 //
+char* cnpj;
 void modulo_produto (void) {
     Prod* produto;
     setlocale (LC_ALL, "Portuguese_Brazil");
@@ -53,7 +53,6 @@ Prod* cad_prod (void) {
     Prod* pro;
     pro = (Prod*)malloc((sizeof(Prod)));
     char* cod_barras;
-    char* cnpj;
     do {
         cod_barras = le_cod_barras ("Cadastro produto");
         if (!verify_cod_barras_dat_prod (cod_barras)) {
@@ -181,10 +180,20 @@ void regravar_prod (Prod* pro, char op) {
 }
 
 
+void regravar_prod_s (Prod* pro) {
+    FILE* fp;
+    Prod* pro;
+    fread(pro, sizeof(Prod), 1, fp);
+    fseek(fp, -1 * sizeof(Prod), SEEK_CUR);
+    fwrite(pro, sizeof(Prod), 1, fp);
+    fclose(fp);
+    free(pro);
+}
+
+
 void edit_cad_prod (Prod* pro, char op) {
     switch (op) {
         case '1' :
-            char* cnpj;
             do {
                 cnpj = le_cnpj ("Cadastro produto");
                 if (verify_cnpj_dat_fornec (cnpj)) {

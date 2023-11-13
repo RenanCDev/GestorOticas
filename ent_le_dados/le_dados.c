@@ -125,10 +125,10 @@ char* le_quant (char* tela) {
     do {
         tela_uni_1 (tela);
         quant = ent_quant ();
-        if (!valid_numeros_s(quant)) {
+        if ((strlen(quant) > 8) || (!valid_numeros_s(quant))) {
             tela_erro ();
         } 
-    } while (!valid_numeros_s(quant)); 
+    } while ((strlen(quant) > 8) || (!valid_numeros_s(quant))); 
     return quant;
 }
 //Leitura valor de compra

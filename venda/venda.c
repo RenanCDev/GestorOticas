@@ -87,6 +87,8 @@ Vend* cad_vend (void) {
     strcpy(ven->cod_barras, pro->cod_barras);
     strcpy(ven->desc, pro->desc);
     limpa_buffer ();
+    printf("asdniuabsdbasbdiuasd\n");
+    getchar ();
     do {
         quant = le_quant ("Cadastro venda");
         quant_e = atoi(quant);
@@ -97,6 +99,7 @@ Vend* cad_vend (void) {
         } 
     } while (quant_t < 0);
     strcpy(ven->quant, quant);
+    regravar_prod (pro);
     snprintf(pro->quant, sizeof(pro->quant), "%d", quant_t);
     strcpy(ven->valor_vend_uni, pro->valor_vend);
     v_vend = atof(pro->valor_vend);
