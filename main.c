@@ -55,7 +55,6 @@ int main (void) {
     setlocale (LC_ALL, "Portuguese_Brazil");
     char op0;
         do {
-            getchar();
             op0 = menu_principal ();
             switch (op0) {
                 case '1':

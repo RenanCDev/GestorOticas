@@ -180,14 +180,21 @@ void regravar_prod (Prod* pro, char op) {
 }
 
 
-void regravar_prod_s (Prod* pro) {
+void regravar_prod_q (Prod* pro) {
     FILE* fp;
-    Prod* pro;
-    fread(pro, sizeof(Prod), 1, fp);
-    fseek(fp, -1 * sizeof(Prod), SEEK_CUR);
-    fwrite(pro, sizeof(Prod), 1, fp);
+    Prod* nova_ent;
+    nova_ent = (Prod*)malloc(sizeof(Prod));
+    fp = fopen("dat/produto.dat", "r+b");
+    while(!feof(fp)) {
+        fread(nova_ent, sizeof(Prod), 1, fp);
+        if (strcmp(nova_ent->cod_barras, pro->cod_barras) == 0) {
+            fseek(fp, -1 * sizeof(Prod), SEEK_CUR);
+            fwrite(pro, sizeof(Prod), 1, fp);
+            break;
+        }
+    }
     fclose(fp);
-    free(pro);
+    free(nova_ent);
 }
 
 
