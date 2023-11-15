@@ -39,7 +39,7 @@ void modulo_venda (void) {
                 break;
             case '2':
                 limpa_buffer ();
-                // pesq_vend ();
+                pesq_vend ();
                 break; 
         } 
     } while (op != '0'); 
@@ -61,7 +61,6 @@ Vend* cad_vend (void) {
     int quant_tot;
     float v_vend;
     float v_vend_tot;
-    char status;
     do {
         cpf = le_cpf ("Cadastro venda - cliente");
         if (verify_cpf_dat_cli (cpf)) {
@@ -105,9 +104,9 @@ Vend* cad_vend (void) {
     snprintf(ven->valor_vend_tot, sizeof(ven->valor_vend_tot), "%.2f", v_vend_tot);
     free(pro);
     ven->id = gera_id ();
-    status = '1';
-    tela_venda ("Cadastro venda", ven->cpf_cli, ven->cpf_col, ven->cod_barras
-    , ven->desc, ven->quant, ven->valor_vend_uni, ven->valor_vend_tot, ven->id, status);
+    ven->status = '1';
+    tela_venda ("Cadastro venda", ven->cpf_cli, ven->cpf_col, ven->cod_barras,
+     ven->desc, ven->quant, ven->valor_vend_uni, ven->valor_vend_tot, ven->id, ven->status);
     tela_ok ();
     return ven;
 }
@@ -150,25 +149,73 @@ int gera_id (void) {
 }
 
 
-// //Pesquisa o cadastro de algum venda
-// //
-// Vend* pesq_vend (void) {
-//     Vend* ven;
-//     int id;
-//     do{
-//         id = le_id ("Pesquisa venda");
-//         ven = carregar_vend (id);
-//         if (ven == NULL) {
-//             tela_erro ("Cadastro inexistente");
-//         }
-//     } while (ven == NULL);
-//         char edit;
-//         do {
-//             edit = menu_edit_vend ("Cadastro venda", ven->cod_barras, ven->cnpj, ven->desc, ven->quant, ven->valor_comp, ven->valor_vend);
-//             if ((edit >= '1') && (edit <= '5')) {
-//                 regravar_vend (ven, edit);
-//                 tela_ok ();
-//             }
-//         } while (edit != '0'); 
-//     return ven;
-// }
+//Pesquisa o cadastro de algum venda
+//
+Vend* pesq_vend (void) {
+    Vend* ven;
+    int id;
+    do{
+        id = le_id ("Pesquisa venda");
+        ven = carregar_vend (id);
+        if (ven == NULL) {
+            tela_erro ("Venda inexistente");
+        }
+    } while (ven == NULL);
+        char edit;
+        do {
+            edit = menu_edit_vend ("Cadastro venda", ven->cpf_cli, ven->cpf_col, ven->cod_barras, ven->desc, ven->valor_vend_uni, ven->quant, ven->valor_vend_tot, ven->id, ven->status);
+            if (edit == '1') {
+                excluir_vend (id);
+                tela_ok ();
+            }
+         } while ((edit != '0') && (edit != '1')); 
+    return ven;
+}
+
+
+//Carregador de dados do fornecedor
+//
+Vend* carregar_vend (int id) {
+    FILE *fp;
+    Vend* ven;
+    ven = (Vend*)malloc(sizeof(Vend));
+    fp = fopen("dat/venda.dat", "rb");
+    if (fp == NULL) {
+    }
+    while (fread(ven, sizeof(Vend), 1, fp)) {
+        if ((ven->id == id) && (ven->status == '1')) {
+            fclose(fp);
+            return ven;
+        }
+    }
+    fclose(fp);
+    return NULL;
+}
+
+
+void excluir_vend (int id)  {
+    Vend* ven;
+    ven = (Vend*)malloc(sizeof(Vend));
+    ven = carregar_vend (id);
+    ven->status = '0';
+    remove_vend (ven);
+    free(ven);
+}
+
+
+void remove_vend (Vend* ven) {
+    FILE *fp;
+    Vend* ven_op;
+    ven_op = (Vend*)malloc(sizeof(Vend));
+    fp = fopen("dat/venda.dat", "r+b");
+    while (!feof(fp)) {
+        fread(ven_op, sizeof(Vend), 1, fp);
+        if ((ven_op->id == ven->id) && (ven_op->status != '0')) {
+            ven_op->status = '0';
+            fseek(fp, -1 * sizeof(Vend), SEEK_CUR);
+            fwrite(ven_op, sizeof(Vend), 1, fp);
+        }
+    }
+    fclose(fp);
+    free(ven_op);
+}

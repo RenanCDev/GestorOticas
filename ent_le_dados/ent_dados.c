@@ -249,7 +249,7 @@ char* ent_id_venda (void) {
     printf("|                                                                         |\n");
     printf("|                     Tamanho máximo de 8 caracters .                     |\n");
     printf("|                                                                         |\n");
-    printf("|                                  ID :");
+    printf("|                                  ID : ");
     scanf(" %55[^\n]", id);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   

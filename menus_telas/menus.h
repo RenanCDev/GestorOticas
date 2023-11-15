@@ -24,7 +24,7 @@ char menu_sec_uni (char*, char*, char*) ;
 char menu_relatorio (void);
 char menu_edit (char*, char*, char*, char*, char*, char);
 char menu_edit_prod (char*, char*, char*, char*, char*, char*, char*);
-char menu_edit_vend (char*, char*, char*, char*, char*, char*, char*, char*, int*, char);
+char menu_edit_vend (char*, char*, char*, char*, char*, char*, char*, char*, int, char);
 char menu_item_venda (void);
 char menu_form_pag (void);
 void tela_sobre (void);
