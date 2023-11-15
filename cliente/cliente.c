@@ -55,7 +55,7 @@ Client* cad_client (void) {
     do {
         cpf = le_cpf ("Cadastro cliente");
         if (!verify_cpf_dat_cli (cpf)) {
-            tela_erro_dado_c ();
+            tela_erro ("Entrada já cadastrada");
         }
     } while (!verify_cpf_dat_cli (cpf));
     strcpy(cli->cpf, cpf);
@@ -69,8 +69,8 @@ Client* cad_client (void) {
     char* nome = le_nome ("Cadastro cliente");
     strcpy(cli->nome, nome);
     cli->status = '1';
-    t_cad_ok ("Cadastro cliente", cli->cpf, cli->email, cli->cel, cli->nome, cli->status);
-    tela_op_ok ();
+    tela_pessoas ("Cadastro cliente", cli->cpf, cli->email, cli->cel, cli->nome, cli->status);
+    tela_ok ();
     return cli;
 }
 
@@ -84,7 +84,7 @@ Client* pesq_client (void) {
         cpf = le_cpf ("Pesquisa cliente");
         cli = carregar_cli (cpf);
         if (cli == NULL) {
-            tela_erro_dados ("Cadastro inexistente");
+            tela_erro ("Cadastro inexistente");
         }
     } while (cli == NULL);
         char edit;
@@ -92,11 +92,11 @@ Client* pesq_client (void) {
             edit = menu_edit("Cadastro cliente", cli->cpf, cli->email, cli->cel, cli->nome, cli->status);
             if ((edit >= '1') && (edit <= '3')) {
                 regravar_cli (cli, edit);
-                tela_op_ok ();
+                tela_ok ();
             }
             else if (edit == '4') {
                 excluir_cli (cli->cpf);
-                tela_op_ok ();
+                tela_ok ();
             }
         } while ((edit != '0') && (edit != '4')); 
     return cli;
@@ -109,7 +109,7 @@ void gravar_client (Client* cli) {
     FILE *fp_cli;
     fp_cli = fopen("dat/cliente.dat", "ab");
     if (fp_cli == NULL) {
-        tela_erro_dados ("SAVE/ LOADING de dados incompleto ou com problema");
+        tela_erro ("SAVE/ LOADING de dados incompleto ou com problema");
     }
     fwrite(cli, sizeof(Client), 1, fp_cli);
     fclose(fp_cli);
@@ -125,7 +125,7 @@ Client* carregar_cli(char* cpf) {
     cli = (Client*)malloc(sizeof(Client));
     fp = fopen("dat/cliente.dat", "rb");
     if (fp == NULL) {
-        tela_erro_dados("SAVE/ LOADING de dados incompleto ou com problema");
+        tela_erro ("SAVE/ LOADING de dados incompleto ou com problema");
     }
     while (fread(cli, sizeof(Client), 1, fp)) {
         if ((!strcmp(cli->cpf, cpf)) && (cli->status == '1')) {

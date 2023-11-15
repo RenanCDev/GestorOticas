@@ -32,10 +32,10 @@
 char* le_cpf (char* tela) {
     char* cpf;
     do {
-        tela_uni_1 (tela);
+        tela_universal (tela);
         cpf = ent_cpf ();
         if (!valid_cpf(cpf)) {
-            tela_erro ();
+            tela_erro ("ENTRADA INVÁLIDA ! ! !");
         } 
     } while (!valid_cpf(cpf)); 
     return cpf;
@@ -45,10 +45,10 @@ char* le_cpf (char* tela) {
 char* le_email (char* tela) {
     char* email;
     do {
-        tela_uni_1 (tela);
+        tela_universal (tela);
         email = ent_email ();
         if (!valid_email(email)) {
-            tela_erro ();
+            tela_erro ("ENTRADA INVÁLIDA ! ! !");
         } 
     } while (!valid_email(email)); 
     return email;
@@ -58,10 +58,10 @@ char* le_email (char* tela) {
 char* le_cel (char* tela) {
     char* cel;
     do {
-        tela_uni_1 (tela);
+        tela_universal (tela);
         cel = ent_cel ();
         if (!valid_numeros(cel, 11)) {
-            tela_erro ();
+            tela_erro ("ENTRADA INVÁLIDA ! ! !");
         } 
     } while (!valid_numeros(cel, 11)); 
     return cel;
@@ -71,10 +71,10 @@ char* le_cel (char* tela) {
 char* le_nome (char* tela) {
     char* nome;
     do {
-        tela_uni_1 (tela);
+        tela_universal (tela);
         nome = ent_nome ();
         if (!valid_nome(nome)) {
-            tela_erro ();
+            tela_erro ("ENTRADA INVÁLIDA ! ! !");
         } 
     } while (!valid_nome(nome)); 
     return nome;
@@ -84,10 +84,10 @@ char* le_nome (char* tela) {
 char* le_cnpj (char* tela) {
     char* cnpj;
     do {
-        tela_uni_1 (tela);
+        tela_universal (tela);
         cnpj = ent_cnpj ();
         if (!valid_cnpj(cnpj)) {
-            tela_erro ();
+            tela_erro ("ENTRADA INVÁLIDA ! ! !");
         } 
     } while (!valid_cnpj(cnpj)); 
     return cnpj;
@@ -97,10 +97,10 @@ char* le_cnpj (char* tela) {
 char* le_cod_barras (char* tela) {
     char* cod_barras;
     do {
-        tela_uni_1 (tela);
+        tela_universal (tela);
         cod_barras = ent_cod_barras ();
         if (!valid_cod_barras(cod_barras)) {
-            tela_erro ();
+            tela_erro ("ENTRADA INVÁLIDA ! ! !");
         } 
     } while (!valid_cod_barras(cod_barras)); 
     return cod_barras;
@@ -110,10 +110,10 @@ char* le_cod_barras (char* tela) {
 char* le_desc_prod (char* tela) {
     char* desc_prod;
     do {
-        tela_uni_1 (tela);
+        tela_universal (tela);
         desc_prod = ent_desc_produto ();
         if (!valid_nome(desc_prod)) {
-            tela_erro ();
+            tela_erro ("ENTRADA INVÁLIDA ! ! !");
         } 
     } while (!valid_nome(desc_prod)); 
     return desc_prod;
@@ -123,10 +123,10 @@ char* le_desc_prod (char* tela) {
 char* le_quant (char* tela) {
     char* quant;
     do {
-        tela_uni_1 (tela);
+        tela_universal (tela);
         quant = ent_quant ();
         if ((strlen(quant) > 8) || (!valid_numeros_s(quant))) {
-            tela_erro ();
+            tela_erro ("ENTRADA INVÁLIDA ! ! !");
         } 
     } while ((strlen(quant) > 8) || (!valid_numeros_s(quant))); 
     return quant;
@@ -136,10 +136,10 @@ char* le_quant (char* tela) {
 char* le_valor_c (char* tela) {
     char* valor_ent;
     do {
-        tela_uni_1 (tela);
+        tela_universal (tela);
         valor_ent = ent_valor_ent ();
         if (!valid_numeros_f(valor_ent, 8)) {
-            tela_erro ();
+            tela_erro ("ENTRADA INVÁLIDA ! ! !");
         } 
     } while (!valid_numeros_f(valor_ent, 8)); 
     return valor_ent;
@@ -149,10 +149,10 @@ char* le_valor_c (char* tela) {
 char* le_valor_v (char* tela) {
     char* valor_saida;
     do {
-        tela_uni_1 (tela);
+        tela_universal (tela);
         valor_saida = ent_valor_saida ();
         if (!valid_numeros_f(valor_saida, 8)) {
-            tela_erro ();
+            tela_erro ("ENTRADA INVÁLIDA ! ! !");
         } 
     } while (!valid_numeros_f(valor_saida, 8)); 
     return valor_saida;
@@ -162,10 +162,10 @@ char* le_valor_v (char* tela) {
 int le_id (char* tela) {
     char* id;
     do {
-        tela_uni_1 (tela);
+        tela_universal (tela);
         id = ent_id_venda ();
         if (!valid_numeros_s(id)) {
-            tela_erro ();
+            tela_erro ("ENTRADA INVÁLIDA ! ! !");
         } 
     } while (!valid_numeros_s(id));
     int a = atoi (id);

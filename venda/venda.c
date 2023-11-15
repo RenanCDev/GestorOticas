@@ -63,7 +63,7 @@ Vend* cad_vend (void) {
     do {
         cpf = le_cpf ("Cadastro venda - cliente");
         if (verify_cpf_dat_cli (cpf)) {
-            tela_erro_dado_i ();
+            tela_erro ("Entrada não cadastrada");
         }
     } while (verify_cpf_dat_cli (cpf));
     strcpy(ven->cpf_cli, cpf);
@@ -71,7 +71,7 @@ Vend* cad_vend (void) {
     do {
         cpf = le_cpf ("Cadastro venda - colaborador");
         if (verify_cpf_dat_colab (cpf)) {
-            tela_erro_dado_i ();
+            tela_erro ("Entrada não cadastrada");
         }
     } while (verify_cpf_dat_colab (cpf));
     strcpy(ven->cpf_col, cpf);
@@ -79,7 +79,7 @@ Vend* cad_vend (void) {
     do {
         cod_barras = le_cod_barras ("Cadastro venda");
         if (verify_cod_barras_dat_prod (cod_barras)) {
-            tela_erro_dado_i ();
+            tela_erro ("Entrada não cadastrada");
         }
     } while (verify_cod_barras_dat_prod (cod_barras));
     Prod* pro;
@@ -92,7 +92,7 @@ Vend* cad_vend (void) {
         quant_c = atoi(pro->quant);
         quant_t = quant_c - quant_e;
         if (quant_t < 0) {
-            tela_erro ();
+            tela_erro ("ENTRADA INVÁLIDA ! ! !");
         } 
     } while (quant_t < 0);
     strcpy(ven->quant, quant);
@@ -104,9 +104,9 @@ Vend* cad_vend (void) {
     snprintf(ven->valor_vend_tot, sizeof(ven->valor_vend_tot), "%.2f", v_vend_t);
     ven->id = gera_id ();
     status = '1';
-    t_cad_vend_ok ("Cadastro venda", ven->cpf_cli, ven->cpf_col, ven->cod_barras
+    tela_venda ("Cadastro venda", ven->cpf_cli, ven->cpf_col, ven->cod_barras
     , ven->desc, ven->quant, ven->valor_vend_uni, ven->valor_vend_tot, ven->id, status);
-    tela_op_ok ();
+    tela_ok ();
     return ven;
 }
 
@@ -117,7 +117,7 @@ void gravar_vend (Vend* ven) {
     FILE *fp_ven;
     fp_ven = fopen("dat/venda.dat", "ab");
     if (fp_ven == NULL) {
-        tela_erro_dados ("SAVE/ LOADING de dados incompleto ou com problema");
+        tela_erro ("SAVE/ LOADING de dados incompleto ou com problema");
     }
     fwrite(ven, sizeof(Vend), 1, fp_ven);
     fclose(fp_ven);
@@ -146,3 +146,27 @@ int gera_id (void) {
         return id;
     }
 }
+
+
+// //Pesquisa o cadastro de algum venda
+// //
+// Vend* pesq_vend (void) {
+//     Vend* ven;
+//     int id;
+//     do{
+//         id = le_id ("Pesquisa venda");
+//         ven = carregar_vend (id);
+//         if (ven == NULL) {
+//             tela_erro ("Cadastro inexistente");
+//         }
+//     } while (ven == NULL);
+//         char edit;
+//         do {
+//             edit = menu_edit_vend ("Cadastro venda", ven->cod_barras, ven->cnpj, ven->desc, ven->quant, ven->valor_comp, ven->valor_vend);
+//             if ((edit >= '1') && (edit <= '5')) {
+//                 regravar_vend (ven, edit);
+//                 tela_ok ();
+//             }
+//         } while (edit != '0'); 
+//     return ven;
+// }

@@ -62,7 +62,7 @@ Admin* cad_admin (void) {
     do {
         cpf = le_cpf ("Cadastro administrador");
         if (!verify_cpf_dat_adm (cpf)) {
-            tela_erro_dado_c ();
+            tela_erro ("Entrada já cadastrada");
         }
     } while (!verify_cpf_dat_adm (cpf));
     strcpy(adm->cpf, cpf);
@@ -76,8 +76,8 @@ Admin* cad_admin (void) {
     char* nome = le_nome ("Cadastro administrador");
     strcpy(adm->nome, nome);
     adm->status = '1';
-    t_cad_ok ("Cadastro administrador", adm->cpf, adm->email, adm->cel, adm->nome, adm->status);
-    tela_op_ok ();
+    tela_pessoas ("Cadastro administrador", adm->cpf, adm->email, adm->cel, adm->nome, adm->status);
+    tela_ok ();
     return adm;
 }
 
@@ -91,7 +91,7 @@ Admin* pesq_admin (void) {
         cpf = le_cpf ("Pesquisa administrador");
         adm = carregar_adm (cpf);
         if (adm == NULL) {
-            tela_erro_dados ("Cadastro inexistente");
+            tela_erro ("Cadastro inexistente");
         }
     } while (adm == NULL);
         char edit;
@@ -99,11 +99,11 @@ Admin* pesq_admin (void) {
             edit = menu_edit("Cadastro administrador", adm->cpf, adm->email, adm->cel, adm->nome, adm->status);
             if ((edit >= '1') && (edit <= '3')) {
                 regravar_adm (adm, edit);
-                tela_op_ok ();
+                tela_ok ();
             }
             else if (edit == '4') {
                 excluir_adm (adm->cpf);
-                tela_op_ok ();
+                tela_ok ();
             }
         } while ((edit != '0') && (edit != '4')); 
     return adm;
@@ -116,7 +116,7 @@ void gravar_admin (Admin* adm) {
     FILE *fp_adm;
     fp_adm = fopen("dat/administrativo.dat", "ab");
     if (fp_adm == NULL) {
-        tela_erro_dados ("SAVE/ LOADING de dados incompleto ou com problema");
+        tela_erro ("SAVE/ LOADING de dados incompleto ou com problema");
     }
     fwrite(adm, sizeof(Admin), 1, fp_adm);
     fclose(fp_adm);
@@ -132,7 +132,7 @@ Admin* carregar_adm(char* cpf) {
     adm = (Admin*)malloc(sizeof(Admin));
     fp = fopen("dat/administrativo.dat", "rb");
     if (fp == NULL) {
-        tela_erro_dados("SAVE/ LOADING de dados incompleto ou com problema");
+        tela_erro ("SAVE/ LOADING de dados incompleto ou com problema");
     }
     while (fread(adm, sizeof(Admin), 1, fp)) {
         if ((!strcmp(adm->cpf, cpf) && (adm->status == '1'))) {

@@ -20,25 +20,22 @@
 //Tela banner
 //
 void tela_banner (void);
-void tela_uni_1 (char*);
+void tela_universal (char*);
 
 //Telas informacionais
 //
-void tela_op_ok (void);
-void tela_erro (void);
-void tela_erro_dados (char*);
-void tela_erro_dado_c (void);
-void tela_erro_dado_i (void);
+void tela_ok (void);
+void tela_erro (char*);
 void info_cliente_0 (void);
 
 
 //Telas exemplo
 //
-void t_cad_ok (char*, char*, char*, char*, char*, char);
+void tela_pessoas (char*, char*, char*, char*, char*, char);
 void t_exe_relat_adm (void);
 void t_exe_relat_forn (void);
 void t_exe_relat_prod (void);
 void t_exe_relat_colab (void);
 void t_exe_relat_client (void);
-void t_cad_prod_ok (char*, char*, char*, char*, char*, char*, char*);
-void t_cad_vend_ok (char*, char*, char*, char*, char*, char*, char*, char*, int, char);
+void tela_produto (char*, char*, char*, char*, char*, char*, char*);
+void tela_venda (char*, char*, char*, char*, char*, char*, char*, char*, int, char);

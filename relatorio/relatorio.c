@@ -68,10 +68,10 @@ void modulo_relatorio (void) {
 void relat_admin (void) {
     char* cpf;
     do {
-        tela_uni_1 ("Relatório admministrador");
+        tela_universal ("Relatório admministrador");
         cpf = ent_cpf (); 
         if (!valid_cpf(cpf)) {
-            tela_erro (); 
+            tela_erro ("ENTRADA INVÁLIDA ! ! !");
         } 
     } while (!valid_cpf(cpf));
     limpa_buffer ();
@@ -85,10 +85,10 @@ void relat_admin (void) {
 void relat_fornec (void) {
     char* cnpj;
     do {
-        tela_uni_1 ("Relatório fornecedor");
+        tela_universal ("Relatório fornecedor");
         cnpj = ent_cnpj (); 
         if (!valid_cnpj(cnpj)) {
-            tela_erro (); 
+            tela_erro ("ENTRADA INVÁLIDA ! ! !"); 
         } 
     } while (!valid_cnpj(cnpj));
     limpa_buffer ();
@@ -102,10 +102,10 @@ void relat_fornec (void) {
 void relat_produto (void) {
     char* cod_barras;
     do {
-        tela_uni_1 ("Relatório produto");
+        tela_universal ("Relatório produto");
         cod_barras = ent_cod_barras (); 
         if (!valid_cod_barras(cod_barras)) {
-            tela_erro (); 
+            tela_erro ("ENTRADA INVÁLIDA ! ! !"); 
         } 
     } while (!valid_cod_barras(cod_barras));
     limpa_buffer ();
@@ -119,10 +119,10 @@ void relat_produto (void) {
 void relat_colab (void) {
     char* cpf;
     do {
-        tela_uni_1 ("Relatório colaborador");
+        tela_universal ("Relatório colaborador");
         cpf = ent_cpf (); 
         if (!valid_cpf(cpf)) {
-            tela_erro (); 
+            tela_erro ("ENTRADA INVÁLIDA ! ! !"); 
         } 
     } while (!valid_cpf(cpf));
     limpa_buffer ();
@@ -136,10 +136,10 @@ void relat_colab (void) {
 void relat_cliente (void) {
     char* cpf;
     do {
-        tela_uni_1 ("Relatório cliente");
+        tela_universal ("Relatório cliente");
         cpf = ent_cpf (); 
         if (!valid_cpf(cpf)) {
-            tela_erro (); 
+            tela_erro ("ENTRADA INVÁLIDA ! ! !"); 
         } 
     } while (!valid_cpf(cpf));
     limpa_buffer ();
@@ -153,10 +153,10 @@ void relat_cliente (void) {
 void relat_venda (void) {
     char* id;
     do {
-        tela_uni_1 ("Relatório venda");
+        tela_universal ("Relatório venda");
         id = ent_id_venda (); 
         if (!valid_numeros_s(id)) {
-            tela_erro (); 
+            tela_erro ("ENTRADA INVÁLIDA ! ! !"); 
         } 
     } while (!valid_numeros_s(id));
     limpa_buffer ();

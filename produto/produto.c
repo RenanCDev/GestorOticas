@@ -56,7 +56,7 @@ Prod* cad_prod (void) {
     do {
         cod_barras = le_cod_barras ("Cadastro produto");
         if (!verify_cod_barras_dat_prod (cod_barras)) {
-            tela_erro_dado_c ();
+            tela_erro ("Entrada já cadastrada");
         }
     } while (!verify_cod_barras_dat_prod (cod_barras));
     strcpy(pro->cod_barras, cod_barras);
@@ -64,7 +64,7 @@ Prod* cad_prod (void) {
     do {
         cnpj = le_cnpj ("Cadastro produto");
         if (verify_cnpj_dat_fornec (cnpj)) {
-            tela_erro_dado_i ();
+            tela_erro ("Entrada não cadastrada");
         }
     } while (verify_cnpj_dat_fornec (cnpj));
     strcpy(pro->cnpj, cnpj);
@@ -80,9 +80,9 @@ Prod* cad_prod (void) {
     limpa_buffer ();
     char* valor_vend = le_valor_v ("Cadastro produto");
     strcpy(pro->valor_vend, valor_vend);
-    t_cad_prod_ok ("Cadastro produto", pro->cod_barras, pro->cnpj, pro->desc, pro->quant,
+    tela_produto ("Cadastro produto", pro->cod_barras, pro->cnpj, pro->desc, pro->quant,
      pro->valor_comp, pro->valor_vend);
-    tela_op_ok ();
+    tela_ok ();
     return pro;
 }
 
@@ -93,7 +93,7 @@ void gravar_prod (Prod* pro) {
     FILE *fp_pro;
     fp_pro = fopen("dat/produto.dat", "ab");
     if (fp_pro == NULL) {
-        tela_erro_dados ("SAVE/ LOADING de dados incompleto ou com problema");
+        tela_erro ("SAVE/ LOADING de dados incompleto ou com problema");
     }
     fwrite(pro, sizeof(Prod), 1, fp_pro);
     fclose(fp_pro);
@@ -110,7 +110,7 @@ Prod* pesq_prod (void) {
         cod_barras = le_cod_barras ("Pesquisa produto");
         pro = carregar_prod (cod_barras);
         if (pro == NULL) {
-            tela_erro_dados ("Cadastro inexistente");
+            tela_erro ("Cadastro inexistente");
         }
     } while (pro == NULL);
         char edit;
@@ -118,7 +118,7 @@ Prod* pesq_prod (void) {
             edit = menu_edit_prod ("Cadastro produto", pro->cod_barras, pro->cnpj, pro->desc, pro->quant, pro->valor_comp, pro->valor_vend);
             if ((edit >= '1') && (edit <= '5')) {
                 regravar_prod (pro, edit);
-                tela_op_ok ();
+                tela_ok ();
             }
         } while (edit != '0'); 
     return pro;
@@ -204,7 +204,7 @@ void edit_cad_prod (Prod* pro, char op) {
             do {
                 cnpj = le_cnpj ("Cadastro produto");
                 if (verify_cnpj_dat_fornec (cnpj)) {
-                    tela_erro_dado_i ();
+                    tela_erro ("Entrada não cadastrada");
                 }
             } while (verify_cnpj_dat_fornec (cnpj));
             strcpy(pro->cnpj, cnpj);

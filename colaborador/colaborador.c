@@ -56,7 +56,7 @@ Colab* cad_colab (void) {
     do {
         cpf = le_cpf ("Cadastro colaborador");
         if (!verify_cpf_dat_colab (cpf)) {
-            tela_erro_dado_c ();
+            tela_erro ("Entrada já cadastrada");
         }
     } while (!verify_cpf_dat_colab (cpf));
     strcpy(col->cpf, cpf);
@@ -70,8 +70,8 @@ Colab* cad_colab (void) {
     char* nome = le_nome ("Cadastro colaborador");
     strcpy(col->nome, nome);
     col->status = '1';
-    t_cad_ok ("Cadastro colaborador", col->cpf, col->email, col->cel, col->nome, col->status);
-    tela_op_ok ();
+    tela_pessoas ("Cadastro colaborador", col->cpf, col->email, col->cel, col->nome, col->status);
+    tela_ok ();
     return col;
 }
 
@@ -85,7 +85,7 @@ Colab* pesq_colab (void) {
         cpf = le_cpf ("Pesquisa colaborador");
         col = carregar_colab (cpf);
         if (col == NULL) {
-            tela_erro_dados ("Cadastro inexistente");
+             tela_erro ("Cadastro inexistente");
         }
     } while (col == NULL);
         char edit;
@@ -93,11 +93,11 @@ Colab* pesq_colab (void) {
             edit = menu_edit("Cadastro colaborador", col->cpf, col->email, col->cel, col->nome, col->status);
             if ((edit >= '1') && (edit <= '3')) {
                 regravar_colab (col, edit);
-                tela_op_ok ();
+                tela_ok ();
             }
             else if (edit == '4') {
                 excluir_colab (col->cpf);
-                tela_op_ok ();
+                tela_ok ();
             }
         } while ((edit != '0') && (edit != '4')); 
     return col;
@@ -110,7 +110,7 @@ void gravar_colab (Colab* col) {
     FILE *fp_col;
     fp_col = fopen("dat/colaborador.dat", "ab");
     if (fp_col == NULL) {
-        tela_erro_dados ("SAVE/ LOADING de dados incompleto ou com problema");
+        tela_erro ("SAVE/ LOADING de dados incompleto ou com problema");
     }
     fwrite(col, sizeof(Colab), 1, fp_col);
     fclose(fp_col);
@@ -126,7 +126,7 @@ Colab* carregar_colab(char* cpf) {
     col = (Colab*)malloc(sizeof(Colab));
     fp = fopen("dat/colaborador.dat", "rb");
     if (fp == NULL) {
-        tela_erro_dados("SAVE/ LOADING de dados incompleto ou com problema");
+        tela_erro ("SAVE/ LOADING de dados incompleto ou com problema");
     }
     while (fread(col, sizeof(Colab), 1, fp)) {
         if ((!strcmp(col->cpf, cpf) && (col->status == '1'))) {

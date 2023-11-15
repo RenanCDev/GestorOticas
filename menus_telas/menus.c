@@ -60,7 +60,7 @@ char menu_principal (void) {
             return op[0]; 
         } 
         else {
-            tela_erro ();
+            tela_erro ("ENTRADA INVÁLIDA ! ! !");
             return '9';
         } 
     } while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
@@ -94,7 +94,7 @@ char menu_administrativo (void) {
             return op[0]; 
         } 
         else {
-            tela_erro ();
+            tela_erro ("ENTRADA INVÁLIDA ! ! !");
             return '9';
         } 
     } while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
@@ -134,7 +134,7 @@ char menu_relatorio (void) {
             return op[0]; 
         } 
         else {
-            tela_erro ();
+            tela_erro ("ENTRADA INVÁLIDA ! ! !");
             return '9';
         } 
     } while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
@@ -166,7 +166,7 @@ char menu_sec_uni (char* menu, char* procurar, char* pesquisar) {
             return op[0]; 
         } 
         else {
-            tela_erro ();
+            tela_erro ("ENTRADA INVÁLIDA ! ! !");
             return '9';
         } 
     } while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
@@ -180,7 +180,7 @@ char menu_edit (char* titulo, char* cpf, char* email, char* cel, char* nome, cha
     char op_max = '4';
     do {
         system("clear");
-        t_cad_ok (titulo, cpf, email, cel, nome, status);
+        tela_pessoas (titulo, cpf, email, cel, nome, status);
         printf("+=========================================================================+\n");
         printf("|                                                                         |\n");
         printf("|%s|\n", centralizar_texto ("Editar/ Excluir", 73, 0));
@@ -202,7 +202,7 @@ char menu_edit (char* titulo, char* cpf, char* email, char* cel, char* nome, cha
             return op[0]; 
         } 
         else {
-            tela_erro ();
+            tela_erro ("ENTRADA INVÁLIDA ! ! !");
             return '9';
         } 
     } while ((!valid_entrada(op)) || (valid_op(op[0], op_max)));
@@ -216,7 +216,7 @@ char menu_edit_prod (char* titulo, char* cod_barras, char* cnpj, char* desc, cha
     char op_max = '5';
     do {
         system("clear");
-        t_cad_prod_ok(titulo, cod_barras, cnpj, desc, quant, valor_comp, valor_vend);
+        tela_produto (titulo, cod_barras, cnpj, desc, quant, valor_comp, valor_vend);
         printf("+=========================================================================+\n");
         printf("|                                                                         |\n");
         printf("|%s|\n", centralizar_texto ("Editar", 73, 0));
@@ -240,7 +240,7 @@ char menu_edit_prod (char* titulo, char* cod_barras, char* cnpj, char* desc, cha
             return op[0]; 
         } 
         else {
-            tela_erro ();
+            tela_erro ("ENTRADA INVÁLIDA ! ! !");
             return '9';
         } 
     } while ((!valid_entrada(op)) || (valid_op(op[0], op_max)));
@@ -255,7 +255,7 @@ char menu_edit_prod (char* titulo, char* cod_barras, char* cnpj, char* desc, cha
 //     char op_max = '1';
 //     do {
 //         system("clear");
-//         t_cad_vend_ok (tela, cpf_cli, cpf_col, cod_barras, desc, valor_vend_uni, 
+//         tela_venda (tela, cpf_cli, cpf_col, cod_barras, desc, valor_vend_uni, 
 //          quant, valor_vend_tot, id, status);
 //         printf("+=========================================================================+\n");
 //         printf("|                                                                         |\n");
@@ -272,7 +272,7 @@ char menu_edit_prod (char* titulo, char* cod_barras, char* cnpj, char* desc, cha
 //             return op[0]; 
 //         } 
 //         else {
-//             tela_erro ();
+//             tela_erro ("ENTRADA INVÁLIDA ! ! !");
 //             return '9';
 //         } 
 //     } while ((!valid_entrada(op)) || (valid_op(op[0], op_max)));
@@ -329,7 +329,7 @@ char menu_form_pag (void) {
             return op[0]; 
         } 
         else {
-            tela_erro ();
+            tela_erro ("ENTRADA INVÁLIDA ! ! !");
             return '9';
         } 
     } while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 

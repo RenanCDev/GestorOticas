@@ -48,7 +48,7 @@ void tela_banner (void) {
 //Tela universal de uma linha
 //Recebe uma string parametro, centraliza e printa
 //
-void tela_uni_1 (char* a) {
+void tela_universal (char* a) {
     tela_banner ();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -58,26 +58,9 @@ void tela_uni_1 (char* a) {
 }
 
 
-//Telas informativas
+//Tela cadastro existente
 //
-//Tela Erro
-//
-void tela_erro (void) {
-    limpa_buffer ();    
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|                           ENTRADA INVÁLIDA !                            |\n");
-    printf("|                                                                         |\n");
-    printf("|                  Tecle ENTER para inserir nova entrada                  |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-    limpa_buffer ();
-}
-
-
-//Tela erro busca dados
-//
-void tela_erro_dados (char* tela) {
+void tela_erro (char* tela) {
     limpa_buffer ();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -85,39 +68,7 @@ void tela_erro_dados (char* tela) {
     printf("|                                                                         |\n");
     printf("|%s|\n", centralizar_texto(tela, 73, 0));
     printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-    limpa_buffer ();
-}
-
-
-//Tela cadastro existente
-//
-void tela_erro_dado_c (void) {
-    limpa_buffer ();
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|%s|\n", centralizar_texto("ERRO ! ! !", 73, 0));
-    printf("|                                                                         |\n");
-    printf("|%s|\n", centralizar_texto("Entrada já cadastrada", 73, 0));
-    printf("|                                                                         |\n");
-    printf("|%s|\n", centralizar_texto("Tecle ENTER para inserir nova entrada", 73, 0));
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-    limpa_buffer ();
-}
-
-
-//Tela cadastro inexistente
-//
-void tela_erro_dado_i (void) {
-    limpa_buffer ();
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|%s|\n", centralizar_texto("ERRO ! ! !", 73, 0));
-    printf("|                                                                         |\n");
-    printf("|%s|\n", centralizar_texto("Entrada não cadastrada", 73, 0));
-    printf("|                                                                         |\n");
-    printf("|%s|\n", centralizar_texto("Tecle ENTER para inserir nova entrada", 73, 0));
+    printf("|%s|\n", centralizar_texto("Tecle ENTER para seguir", 73, 0));
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");
     limpa_buffer ();
@@ -126,7 +77,7 @@ void tela_erro_dado_i (void) {
 
 //Tela venda concluída
 //
-void tela_op_ok (void) {
+void tela_ok (void) {
     limpa_buffer ();
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -144,9 +95,9 @@ void tela_op_ok (void) {
 void info_cliente_0 (void) {
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                   No caso do cliente não ter cadastro                   |\n");
+    printf("|%s|\n", centralizar_texto("No caso do cadastro inexistente", 73, 0));
     printf("|                                                                         |\n");
-    printf("|          insira -> 0 <-, logo após tecle ENTER para prosseguir          |\n");
+    printf("|%s|\n", centralizar_texto("insira '0' em todos os campos, logo após tecle ENTER para prosseguir", 73, 0));
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
 }
@@ -156,8 +107,8 @@ void info_cliente_0 (void) {
 //
 //Tela cadastro pessoas físicas
 //
-void t_cad_ok (char* tela, char* cpf, char* email, char* cel, char* nome, char status) {
-    tela_uni_1 (tela);
+void tela_pessoas (char* tela, char* cpf, char* email, char* cel, char* nome, char status) {
+    tela_universal (tela);
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|   CPF/CNPJ : %s|\n", centralizar_texto(cpf, 59, -1));
@@ -176,9 +127,9 @@ void t_cad_ok (char* tela, char* cpf, char* email, char* cel, char* nome, char s
 
 //Tela exemplo cadastro produto
 //
-void t_cad_prod_ok (char* tela, char* cod_barras, char* cnpj, char* desc,
+void tela_produto (char* tela, char* cod_barras, char* cnpj, char* desc,
  char* quant, char* valor_comp, char* valor_vend) {
-    tela_uni_1 (tela);
+    tela_universal (tela);
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|   Código de barras : %s|\n", centralizar_texto(cod_barras, 51, -1));
@@ -199,20 +150,20 @@ void t_cad_prod_ok (char* tela, char* cod_barras, char* cnpj, char* desc,
 
 //Tela exemplo cadastro venda
 //
-void t_cad_vend_ok (char* tela, char* cpf_cli, char* cpf_col, char* cod_barras, char* desc,
- char* valor_vend_uni, char* quant, char* valor_vend_tot, int id, char status) {
-    tela_uni_1(tela);
+void tela_venda (char* tela, char* cli, char* col, char* cod_barras, char* desc,
+ char* v_v_uni, char* quant, char* v_v_tot, int id, char status) {
+    tela_universal (tela);
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|   Cliente CPF : %s|\n", centralizar_texto(cpf_cli, 56, -1));
+    printf("|   Cliente CPF : %s|\n", centralizar_texto(cli, 56, -1));
     printf("|                                                                         |\n");
-    printf("|   Colaborador CPF : %s|\n", centralizar_texto(cpf_col, 52, -1));
+    printf("|   Colaborador CPF : %s|\n", centralizar_texto(col, 52, -1));
     printf("|                                                                         |\n");
     printf("|   Produto CdB : %s|\n", centralizar_texto(cod_barras, 56, -1));
     printf("|                                                                         |\n");
     printf("|   Desc. : %s|\n", centralizar_texto(desc, 62, -1));
     printf("|                                                                         |\n");
-    printf("|   Valor unitário / Quantidade / Valor total : %s x %s = %s|\n", valor_vend_uni, quant, centralizar_texto(valor_vend_tot, 11, -1));
+    printf("|   Quant / Val. uni. / Val. tot. : %s x %s = %s|\n", v_v_uni, quant, centralizar_texto(v_v_tot, (19-(strlen(v_v_uni)+(strlen(quant)))), -1));
     printf("|                                                                         |\n");
     printf("|   ID : %d                                                        |\n", id);
     printf("|                                                                         |\n");
