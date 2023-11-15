@@ -27,7 +27,7 @@ struct venda {
     char desc[47];
     char quant[9];
     char valor_vend_uni[9];
-    char valor_vend_tot[10];
+    char valor_vend_tot[20];
     int id;
     char status;
 };

@@ -10,7 +10,5 @@ all:
 	rm *.o;
 	rm */*.gch;
 rm:
-	rm *.o
-	rm */*.gch
 	rm dat/*.dat;
 	cp dados_teste/*.dat dat

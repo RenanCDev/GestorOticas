@@ -153,6 +153,8 @@ void tela_produto (char* tela, char* cod_barras, char* cnpj, char* desc,
 void tela_venda (char* tela, char* cli, char* col, char* cod_barras, char* desc,
  char* v_v_uni, char* quant, char* v_v_tot, int id, char status) {
     tela_universal (tela);
+    char id_c[8];
+    snprintf(id_c, sizeof(id_c), "%d", id);
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|   Cliente CPF : %s|\n", centralizar_texto(cli, 56, -1));
@@ -163,9 +165,9 @@ void tela_venda (char* tela, char* cli, char* col, char* cod_barras, char* desc,
     printf("|                                                                         |\n");
     printf("|   Desc. : %s|\n", centralizar_texto(desc, 62, -1));
     printf("|                                                                         |\n");
-    printf("|   Quant / Val. uni. / Val. tot. : %s x %s = %s|\n", v_v_uni, quant, centralizar_texto(v_v_tot, (19-(strlen(v_v_uni)+(strlen(quant)))), -1));
+    printf("|   Quant / Val. uni. / Val. tot. : %s x %s = %s|\n", v_v_uni, quant, centralizar_texto(v_v_tot, (32-(strlen(v_v_uni)+(strlen(quant)))), -1));
     printf("|                                                                         |\n");
-    printf("|   ID : %d                                                        |\n", id);
+    printf("|   ID : %s|\n", centralizar_texto(id_c, 65, -1));
     printf("|                                                                         |\n");
     printf("|   Status da venda (1 = ativo, 0 = inativo) : %c                          |\n", status);
     printf("|                                                                         |\n");

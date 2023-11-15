@@ -51,14 +51,16 @@ void modulo_venda (void) {
 Vend* cad_vend (void) {
     Vend* ven;
     ven = (Vend*)malloc((sizeof(Vend)));
+    Prod* pro;
+    pro = (Prod*)malloc((sizeof(Prod)));
     char* cpf;
     char* cod_barras;
     char* quant;
     int quant_e;
     int quant_c;
-    int quant_t;
+    int quant_tot;
     float v_vend;
-    float v_vend_t;
+    float v_vend_tot;
     char status;
     do {
         cpf = le_cpf ("Cadastro venda - cliente");
@@ -76,32 +78,32 @@ Vend* cad_vend (void) {
     } while (verify_cpf_dat_colab (cpf));
     strcpy(ven->cpf_col, cpf);
     limpa_buffer ();
-    do {
+    do{
         cod_barras = le_cod_barras ("Cadastro venda");
-        if (verify_cod_barras_dat_prod (cod_barras)) {
-            tela_erro ("Entrada não cadastrada");
+        pro = carregar_prod (cod_barras);
+        if (pro == NULL) {
+            tela_erro ("Cadastro inexistente");
         }
-    } while (verify_cod_barras_dat_prod (cod_barras));
-    Prod* pro;
-    pro = (Prod*)malloc((sizeof(Prod)));
+    } while (pro == NULL);
     strcpy(ven->cod_barras, pro->cod_barras);
     strcpy(ven->desc, pro->desc);
     do {
         quant = le_quant ("Cadastro venda");
         quant_e = atoi(quant);
         quant_c = atoi(pro->quant);
-        quant_t = quant_c - quant_e;
-        if (quant_t < 0) {
+        quant_tot = quant_c - quant_e;
+        if ((quant_tot < 0) || (quant_e <= 0)) {
             tela_erro ("ENTRADA INVÁLIDA ! ! !");
         } 
-    } while (quant_t < 0);
+    } while ((quant_tot < 0) || (quant_e <= 0));
     strcpy(ven->quant, quant);
-    snprintf(pro->quant, sizeof(pro->quant), "%d", quant_t);
+    snprintf(pro->quant, sizeof(pro->quant), "%d", quant_tot);
     regravar_prod_q (pro);
     strcpy(ven->valor_vend_uni, pro->valor_vend);
     v_vend = atof(pro->valor_vend);
-    v_vend_t = v_vend * quant_e;
-    snprintf(ven->valor_vend_tot, sizeof(ven->valor_vend_tot), "%.2f", v_vend_t);
+    v_vend_tot = v_vend * quant_e;
+    snprintf(ven->valor_vend_tot, sizeof(ven->valor_vend_tot), "%.2f", v_vend_tot);
+    free(pro);
     ven->id = gera_id ();
     status = '1';
     tela_venda ("Cadastro venda", ven->cpf_cli, ven->cpf_col, ven->cod_barras

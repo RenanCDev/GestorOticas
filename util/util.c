@@ -426,7 +426,7 @@ char* centralizar_texto(char* texto, int tam, int horizontal) {
         pos = tam/2 - tam_texto/2;
     }
 
-    char *str= malloc((tam + 1)*sizeof(char));
+    char *str = malloc((tam + 1)*sizeof(char));
     for(int c = 0; c < tam; c++) {
         if(c >= pos && c < (pos + tam_texto)) {
             str[c] = texto[c-pos];
