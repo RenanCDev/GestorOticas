@@ -16,11 +16,6 @@
 
 //Inclui aquilo que se faz necessário durante a execução do programa
 //o ../util/all.h é o include de todas as declarações de funções
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <locale.h>
-#include <unistd.h>
 #include "../util/all.h"
 
 

@@ -13,13 +13,7 @@
     ("|               Developed by @RenanMRb - since august, 2023               |\n")
     ("|                                                                         |\n")
     ("+=========================================================================+\n")  */
-
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <locale.h>
-#include <unistd.h>
+    
 #include "../util/all.h"
 
 /////

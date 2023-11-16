@@ -18,6 +18,14 @@
 /////
 //Contém todos os //#include ".h"//
 //
+#ifndef UTIL_H  // Evita problemas de inclusão múltipla
+#define UTIL_H
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <locale.h>
+#include <unistd.h>
+#include "../util/all.h"
 #include "../menus_telas/telas.h"
 #include "../ent_le_dados/ent_dados.h"
 #include "../menus_telas/menus.h"
@@ -30,3 +38,4 @@
 #include "../venda/venda.h"
 #include "../util/util.h"
 #include "../ent_le_dados/le_dados.h"
+#endif // UTIL_H
