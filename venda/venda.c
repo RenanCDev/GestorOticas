@@ -58,18 +58,18 @@ Vend* cad_vend (void) {
     float v_vend_tot;
     do {
         cpf = le_cpf ("Cadastro venda - cliente");
-        if (verify_cpf_dat_cli (cpf)) {
+        if (carregar_cli (cpf) != NULL) {
             tela_erro ("Entrada não cadastrada");
         }
-    } while (verify_cpf_dat_cli (cpf));
+    } while (carregar_cli (cpf) != NULL);
     strcpy(ven->cpf_cli, cpf);
     limpa_buffer ();
     do {
         cpf = le_cpf ("Cadastro venda - colaborador");
-        if (verify_cpf_dat_colab (cpf)) {
+        if (carregar_colab (cpf) != NULL) {
             tela_erro ("Entrada não cadastrada");
         }
-    } while (verify_cpf_dat_colab (cpf));
+    } while (carregar_colab (cpf) != NULL);
     strcpy(ven->cpf_col, cpf);
     limpa_buffer ();
     do{

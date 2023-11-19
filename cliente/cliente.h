@@ -33,10 +33,7 @@ struct cliente {
 void modulo_cliente (void);
 Client* cad_client (void);
 Client* pesq_client (void);
-void excluir_cli(char*);
-void remove_cli(Client*);
 void gravar_client (Client*);
 Client* carregar_cli (char*);
-int verify_cpf_dat_cli (char*);
 void regravar_cli(Client*, char);
 void edit_cad_cli (Client*, char);
