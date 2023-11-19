@@ -19,7 +19,7 @@
 #include "../util/all.h"
 
 
-//Módulo administrativo: cadastro e pesquisa de administradores, central de relatórios
+//Módulo administrativo: cadastro e pesquisa de administradores, entrada para a central de relatórios
 void modulo_administrativo (void) {
     Admin* adm; 
     setlocale (LC_ALL,"Portuguese_Brazil"); 
@@ -29,15 +29,15 @@ void modulo_administrativo (void) {
             switch (op) { 
                 case '1':
                     limpa_buffer (); 
-                    adm = cad_admin (); 
-                    gravar_admin (adm); 
+                    adm = cad_admin (); //Cria a struct Admin
+                    gravar_admin (adm); //Grava a struct Admin em arquivo
                     break; 
                 case '2':
                     limpa_buffer (); 
-                    adm = pesq_admin (); 
+                    adm = pesq_admin (); //Pesquisa a struct Admin em arquivo
                     break; 
                 case '3':
-                    modulo_relatorio (); 
+                    modulo_relatorio (); //Entrada no módulo relatórios
                     break; 
             } 
         } while (op != '0'); 
@@ -86,12 +86,8 @@ Admin* pesq_admin (void) {
         char edit;
         do {
             edit = menu_edit("Cadastro administrador", adm->cpf, adm->email, adm->cel, adm->nome, adm->status);
-            if ((edit >= '1') && (edit <= '3')) {
+            if ((edit >= '1') && (edit <= '4')) {
                 regravar_adm (adm, edit);
-                tela_ok ();
-            }
-            else if (edit == '4') {
-                excluir_adm (adm->cpf);
                 tela_ok ();
             }
         } while ((edit != '0') && (edit != '4'));
@@ -99,7 +95,7 @@ Admin* pesq_admin (void) {
 }
 
 
-//Percorre o algoritmo para gravar um administrador adequadamente
+//Percorre o algoritmo para gravar um administrador em arquivo adequadamente
 void gravar_admin (Admin* adm) {
     FILE* fp_adm;
     fp_adm = fopen("dat/administrativo.dat", "ab");
@@ -111,7 +107,7 @@ void gravar_admin (Admin* adm) {
 }
 
 
-//Percorre o algoritmo para carregar um administrador adequadamente
+//Percorre o algoritmo para carregar um administrador do arquivo adequadamente
 Admin* carregar_adm (char* cpf) {
     FILE* fp;
     Admin* adm;
@@ -128,7 +124,7 @@ Admin* carregar_adm (char* cpf) {
 }
 
 
-//Percorre o algoritmo para regravar um administrador adequadamente
+//Percorre o algoritmo para regravar um administrador em arquivo adequadamente
 void regravar_adm(Admin* adm, char op) {
     FILE* fp;
     Admin* nova_ent;
@@ -148,35 +144,7 @@ void regravar_adm(Admin* adm, char op) {
 }
 
 
-void excluir_adm(char* cpf) { 
-    Admin* adm; 
-    adm = (Admin*)malloc(sizeof(Admin)); 
-    adm = carregar_adm(cpf); 
-    adm->status = '0'; 
-    remove_adm(adm); 
-    free(adm); 
-    free(cpf); 
-}
-
-
-void remove_adm(Admin* adm) {
-    FILE* fp;
-    Admin* adm_op;
-    adm_op = (Admin*)malloc(sizeof(Admin));
-    fp = fopen("dat/administrativo.dat", "r+b");
-    while (!feof(fp)) {
-        fread(adm_op, sizeof(Admin), 1, fp);
-        if ((strcmp(adm_op->cpf, adm->cpf) == 0) && (adm_op->status != '0')) {
-            adm_op->status = '0';
-            fseek(fp, -1 * sizeof(Admin), SEEK_CUR);
-            fwrite(adm_op, sizeof(Admin), 1, fp);
-        }
-    }
-    fclose(fp);
-    free(adm_op);
-}
-
-
+//Percorre o algoritmo para editar ou fazer a exclusão lógica do administrador em arquivo adequadamente
 void edit_cad_adm (Admin* adm, char op) {
     switch (op) {
         case '1' :
@@ -195,8 +163,7 @@ void edit_cad_adm (Admin* adm, char op) {
             strcpy(adm->nome, nome);
             break;
         case '4' :
-            limpa_buffer ();
-            excluir_adm(adm->cpf);
+            adm->status = '0';
             break;
     }
 }

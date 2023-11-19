@@ -29,8 +29,6 @@ struct administrador { //Estruturação da struct "administrador"
 void modulo_administrativo (void);
 Admin* cad_admin (void);
 Admin* pesq_admin (void);
-void excluir_adm(char*);
-void remove_adm(Admin*);
 void gravar_admin (Admin*);
 Admin* carregar_adm (char*);
 void regravar_adm(Admin*, char);
