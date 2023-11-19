@@ -14,14 +14,12 @@
     ("|                                                                         |\n")
     ("+=========================================================================+\n")  */
 
-//Inclui aquilo que se faz necessário durante a execução do programa
-//o ../util/all.h é o include de todas as declarações de funções
+
+//Inclui todas as importações e declarações necessárias no programa
 #include "../util/all.h"
 
 
-/////
-//Percorre todo o caminho do menu colaborador
-//
+//Módulo colaborador: cadastro e pesquisa de colaboradores
 void modulo_colaborador (void) {
     Colab* colaborador;
     setlocale( LC_ALL, "Portuguese_Brazil");
@@ -31,30 +29,29 @@ void modulo_colaborador (void) {
             switch (op) {
                 case '1':
                     limpa_buffer ();
-                    colaborador = cad_colab ();
-                    gravar_colab (colaborador);
+                    colaborador = cad_colab (); //Cria a struct Colab
+                    gravar_colab (colaborador); //Grava a struct Colab em arquivo
                     break;
                 case '2':
                     limpa_buffer ();
-                    pesq_colab ();
+                    pesq_colab (); //Pesquisa a struct Colab em arquivo
                     break; 
             } 
         } while (op != '0'); 
 }
 
 
-//Cadastra um novo colaborador
-//
+//Percorre o algoritmo para cadastrar um novo colaborador adequadamente
 Colab* cad_colab (void) {
     Colab* col;
     col = (Colab*)malloc((sizeof(Colab)));
     char* cpf;
     do {
         cpf = le_cpf ("Cadastro colaborador");
-        if (!verify_cpf_dat_colab (cpf)) {
+        if (carregar_colab (cpf) != NULL) {
             tela_erro ("Entrada já cadastrada");
         }
-    } while (!verify_cpf_dat_colab (cpf));
+    } while (carregar_colab (cpf) != NULL);
     strcpy(col->cpf, cpf);
     limpa_buffer ();
     char* email = le_email ("Cadastro colaborador");
@@ -72,8 +69,7 @@ Colab* cad_colab (void) {
 }
 
 
-//Pesquisa o cadastro de algum colaborador
-//
+//Percorre o algoritmo para pesquisar um colaborador adequadamente
 Colab* pesq_colab (void) {
     Colab* col;
     char* cpf;
@@ -87,12 +83,8 @@ Colab* pesq_colab (void) {
         char edit;
         do {
             edit = menu_edit("Cadastro colaborador", col->cpf, col->email, col->cel, col->nome, col->status);
-            if ((edit >= '1') && (edit <= '3')) {
+            if ((edit >= '1') && (edit <= '4')) {
                 regravar_colab (col, edit);
-                tela_ok ();
-            }
-            else if (edit == '4') {
-                excluir_colab (col->cpf);
                 tela_ok ();
             }
         } while ((edit != '0') && (edit != '4')); 
@@ -100,30 +92,24 @@ Colab* pesq_colab (void) {
 }
 
 
-//Gravador de dados do colaborador
-//
+//Percorre o algoritmo para gravar um colaborador em arquivo adequadamente
 void gravar_colab (Colab* col) {
     FILE *fp_col;
     fp_col = fopen("dat/colaborador.dat", "ab");
-    if (fp_col == NULL) {
-        tela_erro ("SAVE/ LOADING de dados incompleto ou com problema");
-    }
-    fwrite(col, sizeof(Colab), 1, fp_col);
+    do {
+        fwrite(col, sizeof(Colab), 1, fp_col);
+    } while (fwrite(col, sizeof(Colab), 1, fp_col) != 1);
     fclose(fp_col);
     free(col);
 }
 
 
-//Carregador de dados do colaborador
-//
+//Percorre o algoritmo para carregar um colaborador do arquivo adequadamente
 Colab* carregar_colab(char* cpf) {
     FILE *fp;
     Colab* col;
     col = (Colab*)malloc(sizeof(Colab));
     fp = fopen("dat/colaborador.dat", "rb");
-    if (fp == NULL) {
-        tela_erro ("SAVE/ LOADING de dados incompleto ou com problema");
-    }
     while (fread(col, sizeof(Colab), 1, fp)) {
         if ((!strcmp(col->cpf, cpf) && (col->status == '1'))) {
             fclose(fp);
@@ -135,24 +121,7 @@ Colab* carregar_colab(char* cpf) {
 }
 
 
-//Verifica se o cpf ja esta cadastrado (retorna "1") ou não (retorna"0")
-//
-int verify_cpf_dat_colab (char *cpf) {
-    FILE* fp;
-    Colab* col;
-    col = (Colab *)malloc(sizeof(Colab));
-    fp = fopen("dat/colaborador.dat", "rb");
-    while (fread(col, sizeof(Colab), 1, fp)) {
-        if ((strcmp(col->cpf, cpf) == 0) && col->status == '1') {
-            fclose(fp);
-            return 0;
-        }
-    }
-    fclose(fp);
-    return 1;
-}
-
-
+//Percorre o algoritmo para regravar um colaborador em arquivo adequadamente
 void regravar_colab(Colab* col, char op) {
     FILE* fp;
     Colab* nova_ent;
@@ -172,35 +141,7 @@ void regravar_colab(Colab* col, char op) {
 }
 
 
-void excluir_colab(char* cpf)  {
-    Colab* col;
-    col = (Colab*)malloc(sizeof(Colab));
-    col = carregar_colab(cpf);
-    col->status = '0';
-    remove_colab(col);
-    free(col);
-    free(cpf);
-}
-
-
-void remove_colab(Colab* col) {
-    FILE *fp;
-    Colab* col_op;
-    col_op = (Colab*)malloc(sizeof(Colab));
-    fp = fopen("dat/colaborador.dat", "r+b");
-    while (!feof(fp)) {
-        fread(col_op, sizeof(Colab), 1, fp);
-        if ((strcmp(col_op->cpf, col->cpf) == 0) && (col_op->status != '0')) {
-            col_op->status = '0';
-            fseek(fp, -1 * sizeof(Colab), SEEK_CUR);
-            fwrite(col_op, sizeof(Colab), 1, fp);
-        }
-    }
-    fclose(fp);
-    free(col_op);
-}
-
-
+//Percorre o algoritmo para editar ou fazer a exclusão lógica do colaborador em arquivo adequadamente
 void edit_cad_colab (Colab* col, char op) {
     switch (op) {
         case '1' :
@@ -219,8 +160,7 @@ void edit_cad_colab (Colab* col, char op) {
             strcpy(col->nome, nome);
             break;
         case '4' :
-            limpa_buffer ();
-            excluir_colab(col->cpf);
+            col->status = '0';
             break;
     }
 }

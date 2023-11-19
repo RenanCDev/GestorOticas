@@ -33,10 +33,7 @@ struct colaborador {
 void modulo_colaborador (void);
 Colab* cad_colab (void);
 Colab* pesq_colab (void);
-void excluir_colab(char*);
-void remove_colab(Colab*);
 void gravar_colab (Colab*);
 Colab* carregar_colab (char*);
-int verify_cpf_dat_colab (char*);
 void regravar_colab(Colab*, char);
 void edit_cad_colab (Colab*, char);
