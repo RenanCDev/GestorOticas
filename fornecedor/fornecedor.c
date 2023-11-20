@@ -19,9 +19,7 @@
 #include "../util/all.h"
 
 
-/////
-//Percorre todo o caminho do menu fornecedor
-//
+//Módulo fornecedor: cadastro e pesquisa de fornecedores
 void modulo_fornecedor (void) {
     Fornec* fornecedor;
     setlocale (LC_ALL, "Portuguese_Brazil");
@@ -30,30 +28,29 @@ void modulo_fornecedor (void) {
             op = menu_sec_uni ("Fornecedor", " 1 -> Cadastrar fornecedor <- ", " 2 -> Pesquisar fornecedor <- ");            switch (op) {
                 case '1':
                     limpa_buffer ();
-                    fornecedor = cad_fornec ();
-                    gravar_fornec (fornecedor);
+                    fornecedor = cad_fornec (); //Cria a struct Fornec
+                    gravar_fornec (fornecedor); //Grava a struct Fornec em arquivo
                     break;
                 case '2':
                     limpa_buffer ();
-                    pesq_fornec ();
+                    pesq_fornec (); //Pesquisa a struct Fornec em arquivo
                     break; 
             }
         } while (op != '0'); 
 }
 
 
-//Cadastra um novo fornecedor
-//
+//Percorre o algoritmo para cadastrar um novo fornecedor adequadamente
 Fornec* cad_fornec (void) {
     Fornec* forn;
     forn = (Fornec*)malloc((sizeof(Fornec)));
     char* cnpj;
     do {
         cnpj = le_cnpj ("Cadastro fornecedor");
-        if (!verify_cnpj_dat_fornec (cnpj)) {
+        if (carregar_fornec (cnpj) != NULL) {
             tela_erro ("Entrada já cadastrada");
         }
-    } while (!verify_cnpj_dat_fornec (cnpj));
+    } while (carregar_fornec (cnpj) != NULL);
     strcpy(forn->cnpj, cnpj);
     limpa_buffer ();
     char* email = le_email ("Cadastro fornecedor");
@@ -71,8 +68,7 @@ Fornec* cad_fornec (void) {
 }
 
 
-//Pesquisa o cadastro de algum fornecedor
-//
+//Percorre o algoritmo para pesquisar um fornecedor adequadamente
 Fornec* pesq_fornec (void) {
     Fornec* forn;
     char* cnpj;
@@ -86,12 +82,8 @@ Fornec* pesq_fornec (void) {
         char edit;
         do {
             edit = menu_edit("Cadastro fornecedor", forn->cnpj, forn->email, forn->cel, forn->nome, forn->status);
-            if ((edit >= '1') && (edit <= '3')) {
+            if ((edit >= '1') && (edit <= '4')) {
                 regravar_fornec (forn, edit);
-                tela_ok ();
-            }
-            else if (edit == '4') {
-                excluir_fornec (forn->cnpj);
                 tela_ok ();
             }
         } while ((edit != '0') && (edit != '4')); 
@@ -99,30 +91,24 @@ Fornec* pesq_fornec (void) {
 }
 
 
-//Gravador de dados do fornecedor
-//
+//Percorre o algoritmo para gravar um fornecedor em arquivo adequadamente
 void gravar_fornec (Fornec* forn) {
     FILE *fp_forn;
     fp_forn = fopen("dat/fornecedor.dat", "ab");
-    if (fp_forn == NULL) {
-        tela_erro ("SAVE/ LOADING de dados incompleto ou com problema");
-    }
-    fwrite(forn, sizeof(Fornec), 1, fp_forn);
+    do {
+        fwrite(forn, sizeof(Fornec), 1, fp_forn);
+    } while (fwrite(forn, sizeof(Fornec), 1, fp_forn) != 1);
     fclose(fp_forn);
     free(forn);
 }
 
 
-//Carregador de dados do fornecedor
-//
+//Percorre o algoritmo para carregar um fornecedor do arquivo adequadamente
 Fornec* carregar_fornec (char* cnpj) {
     FILE *fp;
     Fornec* forn;
     forn = (Fornec*)malloc(sizeof(Fornec));
     fp = fopen("dat/fornecedor.dat", "rb");
-    if (fp == NULL) {
-        tela_erro ("SAVE/ LOADING de dados incompleto ou com problema");
-    }
     while (fread(forn, sizeof(Fornec), 1, fp)) {
         if ((!strcmp(forn->cnpj, cnpj)) && (forn->status == '1')) {
             fclose(fp);
@@ -134,24 +120,7 @@ Fornec* carregar_fornec (char* cnpj) {
 }
 
 
-//Verifica se o cnpj ja esta cadastrado (retorna "1") ou não (retorna"0")
-//
-int verify_cnpj_dat_fornec (char *cnpj) {
-    FILE* fp;
-    Fornec* forn;
-    forn = (Fornec*)malloc(sizeof(Fornec));
-    fp = fopen("dat/fornecedor.dat", "rb");
-    while (fread(forn, sizeof(Fornec), 1, fp)) {
-        if ((strcmp(forn->cnpj, cnpj) == 0) && forn->status == '1') {
-            fclose(fp);
-            return 0;
-        }
-    }
-    fclose(fp);
-    return 1;
-}
-
-
+//Percorre o algoritmo para regravar um fornecedor em arquivo adequadamente
 void regravar_fornec (Fornec* forn, char op) {
     FILE* fp;
     Fornec* nova_ent;
@@ -171,35 +140,7 @@ void regravar_fornec (Fornec* forn, char op) {
 }
 
 
-void excluir_fornec (char* cnpj)  {
-    Fornec* forn;
-    forn = (Fornec*)malloc(sizeof(Fornec));
-    forn = carregar_fornec (cnpj);
-    forn->status = '0';
-    remove_fornec (forn);
-    free(forn);
-    free(cnpj);
-}
-
-
-void remove_fornec (Fornec* forn) {
-    FILE *fp;
-    Fornec* forn_op;
-    forn_op = (Fornec*)malloc(sizeof(Fornec));
-    fp = fopen("dat/fornecedor.dat", "r+b");
-    while (!feof(fp)) {
-        fread(forn_op, sizeof(Fornec), 1, fp);
-        if ((strcmp(forn_op->cnpj, forn->cnpj) == 0) && (forn_op->status != '0')) {
-            forn_op->status = '0';
-            fseek(fp, -1 * sizeof(Fornec), SEEK_CUR);
-            fwrite(forn_op, sizeof(Fornec), 1, fp);
-        }
-    }
-    fclose(fp);
-    free(forn_op);
-}
-
-
+//Percorre o algoritmo para editar ou fazer a exclusão lógica do fornecedor em arquivo adequadamente
 void edit_cad_fornec (Fornec* forn, char op) {
     switch (op) {
         case '1' :
@@ -218,8 +159,7 @@ void edit_cad_fornec (Fornec* forn, char op) {
             strcpy(forn->nome, nome);
             break;
         case '4' :
-            limpa_buffer ();
-            excluir_fornec (forn->cnpj);
+            forn->status = '0';
             break;
     }
 }
