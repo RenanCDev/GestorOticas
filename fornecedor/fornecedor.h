@@ -33,10 +33,7 @@ struct fornecedor {
 void modulo_fornecedor (void);
 Fornec* cad_fornec (void);
 Fornec* pesq_fornec (void);
-void excluir_fornec (char*);
-void remove_fornec (Fornec*);
 void gravar_fornec (Fornec*);
-Fornec* carregar_fornec (char*);
-int verify_cnpj_dat_fornec (char*);
+Fornec* carregar_fornec (char*);    
 void regravar_fornec (Fornec*, char);
 void edit_cad_fornec (Fornec*, char);

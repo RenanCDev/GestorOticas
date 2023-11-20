@@ -15,7 +15,7 @@
     ("+=========================================================================+\n")  */
 
 
-
+//Inclui todas as importações e declarações necessárias no programa
 #include "../util/all.h"
 
 

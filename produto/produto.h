@@ -37,7 +37,6 @@ Prod* cad_prod (void);
 Prod* pesq_prod (void);
 void gravar_prod (Prod*);
 Prod* carregar_prod (char*);
-int verify_cod_barras_dat_prod (char*);
 void regravar_prod (Prod*, char);
-void regravar_prod_q (Prod*);
+void regravar_prod_quant (Prod*);
 void edit_cad_prod (Prod*, char);

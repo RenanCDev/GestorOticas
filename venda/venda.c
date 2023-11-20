@@ -92,7 +92,7 @@ Vend* cad_vend (void) {
     } while ((quant_tot < 0) || (quant_e <= 0));
     strcpy(ven->quant, quant);
     snprintf(pro->quant, sizeof(pro->quant), "%d", quant_tot);
-    regravar_prod_q (pro);
+    regravar_prod_quant (pro);
     strcpy(ven->valor_vend_uni, pro->valor_vend);
     v_vend = atof(pro->valor_vend);
     v_vend_tot = v_vend * quant_e;

@@ -15,12 +15,11 @@
     ("+=========================================================================+\n")  */
 
 
+//Inclui todas as importações e declarações necessárias no programa
 #include "../util/all.h"
 
-/////
-//Percorre todo o caminho do menu produto
-//
-char* cnpj;
+
+//Módulo produto: cadastro e pesquisa de produtos
 void modulo_produto (void) {
     Prod* produto;
     setlocale (LC_ALL, "Portuguese_Brazil");
@@ -30,30 +29,30 @@ void modulo_produto (void) {
             switch (op) {
                 case '1':
                     limpa_buffer ();
-                    produto = cad_prod ();
-                    gravar_prod (produto);
+                    produto = cad_prod (); //Cria a struct Prod
+                    gravar_prod (produto); //Grava a struct Prod em arquivo
                     break;
                 case '2':
                     limpa_buffer ();
-                    pesq_prod ();
+                    pesq_prod (); //Pesquisa a struct Prod em arquivo
                     break; 
             } 
         } while (op != '0'); 
 }
 
 
-//Cadastra produto
-//
+//Percorre o algoritmo para cadastrar um novo produto adequadamente
 Prod* cad_prod (void) {
     Prod* pro;
     pro = (Prod*)malloc((sizeof(Prod)));
     char* cod_barras;
+    char* cnpj;
     do {
         cod_barras = le_cod_barras ("Cadastro produto");
-        if (!verify_cod_barras_dat_prod (cod_barras)) {
+        if (carregar_prod (cod_barras) != NULL) {
             tela_erro ("Entrada já cadastrada");
         }
-    } while (!verify_cod_barras_dat_prod (cod_barras));
+    } while (carregar_prod (cod_barras) != NULL);
     strcpy(pro->cod_barras, cod_barras);
     limpa_buffer ();
     do {
@@ -82,22 +81,19 @@ Prod* cad_prod (void) {
 }
 
 
-//Gravador de dados do produto
-//
+//Percorre o algoritmo para gravar um produto em arquivo adequadamente
 void gravar_prod (Prod* pro) {
     FILE *fp_pro;
     fp_pro = fopen("dat/produto.dat", "ab");
-    if (fp_pro == NULL) {
-        tela_erro ("SAVE/ LOADING de dados incompleto ou com problema");
-    }
-    fwrite(pro, sizeof(Prod), 1, fp_pro);
+    do {
+        fwrite(pro, sizeof(Prod), 1, fp_pro);
+    } while (fwrite(pro, sizeof(Prod), 1, fp_pro) != 1);
     fclose(fp_pro);
     free(pro);
 }
 
 
-//Pesquisa o cadastro de algum produto
-//
+//Percorre o algoritmo para pesquisar um produto adequadamente
 Prod* pesq_prod (void) {
     Prod* pro;
     char* cod_barras;
@@ -120,8 +116,7 @@ Prod* pesq_prod (void) {
 }
 
 
-//Carregador de dados do produto
-//
+//Percorre o algoritmo para carregar um produto do arquivo adequadamente
 Prod* carregar_prod (char* cod_barras) {
     FILE *fp;
     Prod* pro;
@@ -138,24 +133,7 @@ Prod* carregar_prod (char* cod_barras) {
 }
 
 
-//Verifica se o cod_barras ja esta cadastrado (retorna "1") ou não (retorna"0")
-//
-int verify_cod_barras_dat_prod (char *cod_barras) {
-    FILE* fp;
-    Prod* pro;
-    pro = (Prod*)malloc(sizeof(Prod));
-    fp = fopen("dat/produto.dat", "rb");
-    while (fread(pro, sizeof(Prod), 1, fp)) {
-        if ((strcmp(pro->cod_barras, cod_barras) == 0)) {
-            fclose(fp);
-            return 0;
-        }
-    }
-    fclose(fp);
-    return 1;
-}
-
-
+//Percorre o algoritmo para regravar um produto em arquivo adequadamente
 void regravar_prod (Prod* pro, char op) {
     FILE* fp;
     Prod* nova_ent;
@@ -175,7 +153,8 @@ void regravar_prod (Prod* pro, char op) {
 }
 
 
-void regravar_prod_q (Prod* pro) {
+//Percorre o algoritmo para regravar nova quantidade do produto em arquivo adequadamente
+void regravar_prod_quant (Prod* pro) {
     FILE* fp;
     Prod* nova_ent;
     nova_ent = (Prod*)malloc(sizeof(Prod));
@@ -194,6 +173,7 @@ void regravar_prod_q (Prod* pro) {
 
 
 void edit_cad_prod (Prod* pro, char op) {
+    char* cnpj;
     switch (op) {
         case '1' :
             do {
