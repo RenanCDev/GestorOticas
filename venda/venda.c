@@ -15,11 +15,11 @@
     ("+=========================================================================+\n")  */
 
 
+//Inclui todas as importações e declarações necessárias no programa
 #include "../util/all.h"
 
-/////
-//Percorre todo o caminho do menu venda
-//
+
+//Módulo venda: cadastro e pesquisa de vendas
 void modulo_venda (void) {
     Vend* venda;
     setlocale (LC_ALL, "Portuguese_Brazil");
@@ -29,86 +29,53 @@ void modulo_venda (void) {
         switch (op) {
             case '1':
                 limpa_buffer ();
-                venda = cad_vend ();
-                gravar_vend(venda);
+                venda = cad_vend (); //Cria a struct Vend
+                gravar_vend(venda); //Grava a struct Vend em arquivo
                 break;
             case '2':
                 limpa_buffer ();
-                pesq_vend ();
+                pesq_vend (); //Pesquisa a struct Vend em arquivo
                 break; 
         } 
     } while (op != '0'); 
 }
 
 
-//Cadastra venda
-//
+//Percorre o algoritmo para cadastrar uma nova venda adequadamente
 Vend* cad_vend (void) {
     Vend* ven;
     ven = (Vend*)malloc((sizeof(Vend)));
     Prod* pro;
     pro = (Prod*)malloc((sizeof(Prod)));
-    char* cpf;
-    char* cod_barras;
-    char* quant;
-    int quant_e;
-    int quant_c;
-    int quant_tot;
     float v_vend;
     float v_vend_tot;
-    do {
-        cpf = le_cpf ("Cadastro venda - cliente");
-        if (carregar_cli (cpf) != NULL) {
-            tela_erro ("Entrada não cadastrada");
-        }
-    } while (carregar_cli (cpf) != NULL);
-    strcpy(ven->cpf_cli, cpf);
+    char* cpf_cli = cli_cad ();
+    strcpy(ven->cpf_cli, cpf_cli);
     limpa_buffer ();
-    do {
-        cpf = le_cpf ("Cadastro venda - colaborador");
-        if (carregar_colab (cpf) != NULL) {
-            tela_erro ("Entrada não cadastrada");
-        }
-    } while (carregar_colab (cpf) != NULL);
-    strcpy(ven->cpf_col, cpf);
+    char* cpf_col = col_cad ();
+    strcpy(ven->cpf_col, cpf_col);
     limpa_buffer ();
-    do{
-        cod_barras = le_cod_barras ("Cadastro venda");
-        pro = carregar_prod (cod_barras);
-        if (pro == NULL) {
-            tela_erro ("Cadastro inexistente");
-        }
-    } while (pro == NULL);
+    pro = pro_cad ();
     strcpy(ven->cod_barras, pro->cod_barras);
     strcpy(ven->desc, pro->desc);
-    do {
-        quant = le_quant ("Cadastro venda");
-        quant_e = atoi(quant);
-        quant_c = atoi(pro->quant);
-        quant_tot = quant_c - quant_e;
-        if ((quant_tot < 0) || (quant_e <= 0)) {
-            tela_erro ("ENTRADA INVÁLIDA ! ! !");
-        } 
-    } while ((quant_tot < 0) || (quant_e <= 0));
+    char* quant = quants (pro);
     strcpy(ven->quant, quant);
-    snprintf(pro->quant, sizeof(pro->quant), "%d", quant_tot);
-    regravar_prod_quant (pro);
     strcpy(ven->valor_vend_uni, pro->valor_vend);
     v_vend = atof(pro->valor_vend);
-    v_vend_tot = v_vend * quant_e;
+    int q_vend = atoi(quant);
+    v_vend_tot = v_vend * q_vend;
     snprintf(ven->valor_vend_tot, sizeof(ven->valor_vend_tot), "%.2f", v_vend_tot);
     free(pro);
-    ven->id = gera_id ();
+    ven->id = gera_id_vend ();
     ven->status = '1';
     tela_venda ("Cadastro venda", ven->cpf_cli, ven->cpf_col, ven->cod_barras,
-     ven->desc, ven->quant, ven->valor_vend_uni, ven->valor_vend_tot, ven->id, ven->status);
+    ven->desc, ven->quant, ven->valor_vend_uni, ven->valor_vend_tot, ven->id, ven->status);
     tela_ok ();
     return ven;
 }
 
 
-//Gravador de dados da venda
-//
+//Percorre o algoritmo para gravar uma venda em arquivo adequadamente
 void gravar_vend (Vend* ven) {
     FILE *fp_ven;
     fp_ven = fopen("dat/venda.dat", "ab");
@@ -121,7 +88,8 @@ void gravar_vend (Vend* ven) {
 }
 
 
-int gera_id (void) {
+//Percorre o algoritmo para gerar um id de uma venda adequadamente
+int gera_id_vend (void) {
     FILE *fp_ven;
     fp_ven = fopen("dat/venda.dat", "rb");
     if (fp_ven == NULL) {
@@ -144,8 +112,7 @@ int gera_id (void) {
 }
 
 
-//Pesquisa o cadastro de algum venda
-//
+//Percorre o algoritmo para pesquisar uma venda adequadamente
 Vend* pesq_vend (void) {
     Vend* ven;
     int id;
@@ -160,7 +127,7 @@ Vend* pesq_vend (void) {
         do {
             edit = menu_edit_vend ("Cadastro venda", ven->cpf_cli, ven->cpf_col, ven->cod_barras, ven->desc, ven->valor_vend_uni, ven->quant, ven->valor_vend_tot, ven->id, ven->status);
             if (edit == '1') {
-                excluir_vend (id);
+                excluir_vend (ven);
                 tela_ok ();
             }
          } while ((edit != '0') && (edit != '1')); 
@@ -168,8 +135,7 @@ Vend* pesq_vend (void) {
 }
 
 
-//Carregador de dados do fornecedor
-//
+//Percorre o algoritmo para carregar uma venda do arquivo adequadamente
 Vend* carregar_vend (int id) {
     FILE *fp;
     Vend* ven;
@@ -188,29 +154,21 @@ Vend* carregar_vend (int id) {
 }
 
 
-void excluir_vend (int id)  {
-    Vend* ven;
-    ven = (Vend*)malloc(sizeof(Vend));
-    ven = carregar_vend (id);
-    ven->status = '0';
-    remove_vend (ven);
-    free(ven);
-}
-
-
-void remove_vend (Vend* ven) {
-    FILE *fp;
-    Vend* ven_op;
-    ven_op = (Vend*)malloc(sizeof(Vend));
+//Percorre o algoritmo para excluir logicamente uma venda em arquivo adequadamente
+void excluir_vend (Vend* ven) {
+    FILE* fp;
+    Vend* nova_ent;
+    nova_ent = (Vend*)malloc(sizeof(Vend));
     fp = fopen("dat/venda.dat", "r+b");
-    while (!feof(fp)) {
-        fread(ven_op, sizeof(Vend), 1, fp);
-        if ((ven_op->id == ven->id) && (ven_op->status != '0')) {
-            ven_op->status = '0';
+    while(!feof(fp)) {
+        fread(nova_ent, sizeof(Vend), 1, fp);
+        if (nova_ent->id == ven->id) {
+            ven->status = '0';
             fseek(fp, -1 * sizeof(Vend), SEEK_CUR);
-            fwrite(ven_op, sizeof(Vend), 1, fp);
+            fwrite(ven, sizeof(Vend), 1, fp);
+            break;
         }
     }
     fclose(fp);
-    free(ven_op);
+    free(nova_ent);
 }

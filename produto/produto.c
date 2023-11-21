@@ -172,6 +172,7 @@ void regravar_prod_quant (Prod* pro) {
 }
 
 
+//Percorre o algoritmo para editar ou fazer a exclusão lógica do produto em arquivo adequadamente
 void edit_cad_prod (Prod* pro, char op) {
     char* cnpj;
     switch (op) {

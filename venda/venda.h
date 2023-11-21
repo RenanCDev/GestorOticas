@@ -38,6 +38,5 @@ Vend* cad_vend (void);
 void gravar_vend (Vend* ven);
 Vend* pesq_vend (void);
 Vend* carregar_vend (int);
-void excluir_vend (int);
-void remove_vend (Vend* ven);
-int gera_id (void);
+void excluir_vend (Vend* ven);
+int gera_id_vend (void);

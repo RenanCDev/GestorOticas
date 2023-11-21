@@ -166,3 +166,66 @@ int le_id (char* tela) {
     int a = atoi (id);
     return a;
 }
+
+
+//Percorre o algoritmo para retornar um cpf de um cliente cadastrado
+char* cli_cad (void) {
+    char* cpf;
+    do {
+        cpf = le_cpf ("Cadastro venda - cliente");
+        if (carregar_cli (cpf) == NULL) {
+            tela_erro ("Entrada não cadastrada");
+        }
+    } while (carregar_cli (cpf) == NULL);
+    return cpf;
+}
+
+
+//Percorre o algoritmo para retornar um cpf de um colaborador cadastrado
+char* col_cad (void) {
+    char* cpf;
+    do {
+        cpf = le_cpf ("Cadastro venda - colaborador");
+        if (carregar_colab (cpf) == NULL) {
+            tela_erro ("Entrada não cadastrada");
+        }
+    } while (carregar_colab (cpf) == NULL);
+    return cpf;
+}   
+
+
+//Percorre o algoritmo para retornar um produto cadastrado
+Prod* pro_cad (void) {
+    Prod* pro;
+    pro = (Prod*)malloc((sizeof(Prod)));
+    do{
+        char* cod_barras = le_cod_barras ("Cadastro venda");
+        pro = carregar_prod (cod_barras);
+        if (pro == NULL) {
+            tela_erro ("Cadastro inexistente");
+        }
+    } while (pro == NULL);
+    return pro;
+}
+
+
+//Percorre o algoritmo para retornar a quantidade vendida e atualização do estoque adequadamente
+char* quants (Prod* pro) {
+    pro = (Prod*)malloc((sizeof(Prod)));
+    char* quant;
+    int quant_escolhida;
+    int quant_estoque;
+    int quant_total;
+    do {
+        quant = le_quant ("Cadastro venda");
+        quant_escolhida = atoi(quant);
+        quant_estoque = atoi(pro->quant);
+        quant_total = quant_estoque - quant_escolhida;
+        if ((quant_total < 0) || (quant_estoque <= 0)) {
+            tela_erro ("ENTRADA INVÁLIDA ! ! !");
+        } 
+    } while ((quant_total < 0) || (quant_estoque <= 0));
+    snprintf(pro->quant, sizeof(pro->quant), "%d", quant_total);
+    regravar_prod_quant (pro);
+    return quant;
+}
