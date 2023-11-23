@@ -210,7 +210,7 @@ Prod* pro_cad (void) {
 
 
 //Percorre o algoritmo para retornar a quantidade vendida e atualização do estoque adequadamente
-char* quants (Prod* pro) {
+char* quant_vend (Prod* pro) {
     pro = (Prod*)malloc((sizeof(Prod)));
     char* quant;
     int quant_escolhida;

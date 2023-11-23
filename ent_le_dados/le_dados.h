@@ -32,4 +32,4 @@ int le_id (char*);
 char* cli_cad (void);
 char* col_cad (void);
 Prod* pro_cad (void);
-char* quants (Prod* pro);
+char* quant_vend (Prod* pro);

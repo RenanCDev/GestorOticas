@@ -58,7 +58,7 @@ Vend* cad_vend (void) {
     pro = pro_cad ();
     strcpy(ven->cod_barras, pro->cod_barras);
     strcpy(ven->desc, pro->desc);
-    char* quant = quants (pro);
+    char* quant = quant_vend (pro);
     strcpy(ven->quant, quant);
     strcpy(ven->valor_vend_uni, pro->valor_vend);
     v_vend = atof(pro->valor_vend);
@@ -69,7 +69,7 @@ Vend* cad_vend (void) {
     ven->id = gera_id_vend ();
     ven->status = '1';
     tela_venda ("Cadastro venda", ven->cpf_cli, ven->cpf_col, ven->cod_barras,
-    ven->desc, ven->quant, ven->valor_vend_uni, ven->valor_vend_tot, ven->id, ven->status);
+        ven->desc, ven->quant, ven->valor_vend_uni, ven->valor_vend_tot, ven->id, ven->status);
     tela_ok ();
     return ven;
 }
@@ -159,10 +159,18 @@ void excluir_vend (Vend* ven) {
     FILE* fp;
     Vend* nova_ent;
     nova_ent = (Vend*)malloc(sizeof(Vend));
+    Prod* pro;
+    pro = (Prod*)malloc(sizeof(Prod));
     fp = fopen("dat/venda.dat", "r+b");
     while(!feof(fp)) {
         fread(nova_ent, sizeof(Vend), 1, fp);
         if (nova_ent->id == ven->id) {
+            pro = carregar_prod (ven->cod_barras);
+            int devolve = atoi(ven->quant);
+            int estoque = atoi(pro->quant);
+            int novo_estoque = devolve + estoque;
+            snprintf(pro->quant, sizeof(pro->quant), "%d", novo_estoque);
+            regravar_prod_quant (pro);
             ven->status = '0';
             fseek(fp, -1 * sizeof(Vend), SEEK_CUR);
             fwrite(ven, sizeof(Vend), 1, fp);
