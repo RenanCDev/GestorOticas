@@ -91,13 +91,6 @@ int valid_numeros_f(char* variavel, int tam) {
     if (tam_variavel > tam) {
         return 0;
     }
-    int a = 0;
-    for (int i = 0; i < tam_variavel; i++) {
-        if (variavel[i] == '.') {
-            a ++;
-        }
-    }
-    if (a == 1) {
         for (int i = 0; i < tam_variavel; i++) {
             if (!valid_digt(variavel[i])) {
                 if (variavel[i] == '.') {
@@ -108,11 +101,13 @@ int valid_numeros_f(char* variavel, int tam) {
                             }
                             return 1;
                         }
+                    } 
+                    else {
+                        return 0;
                     }
                 }
             } 
         }
-    }
     return 0;
 }
 // ADAPTADA - VALIDAÇÃO PARA CELULAR - AUTOR FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
