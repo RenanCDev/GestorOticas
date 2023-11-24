@@ -24,7 +24,7 @@
 //Menu principal
 //
 char menu_principal (void) {
-    char op [50];
+    char* op;
     char op_max = '7';
     do {
         tela_banner ();
@@ -50,7 +50,7 @@ char menu_principal (void) {
         printf("|                                                                         |\n");
         printf("+=========================================================================+\n");
         printf("Selecione uma opção: \n");
-        scanf("%s", &*op);
+        op = input();
         if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
             return op[0]; 
         } 
@@ -65,7 +65,7 @@ char menu_principal (void) {
 //Menu administrativo
 //
 char menu_administrativo (void) {
-    char op [50];
+    char* op;
     char op_max = '3';
     do {
         system("clear");
@@ -84,7 +84,7 @@ char menu_administrativo (void) {
         printf("|                                                                         |\n");
         printf("+=========================================================================+\n");
         printf("Selecione uma opção: \n");
-        scanf("%s", &*op);
+        op = input ();
         if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
             return op[0]; 
         } 
@@ -99,7 +99,7 @@ char menu_administrativo (void) {
 //Menu relatórios
 //
 char menu_relatorio (void) {
-    char op [50];
+    char* op;
     char op_max = '6';
     do {
         system("clear");
@@ -124,7 +124,7 @@ char menu_relatorio (void) {
         printf("|                                                                         |\n");
         printf("+=========================================================================+\n");
         printf("Selecione uma opção: \n");
-        scanf("%s", &*op);
+        op = input ();
         if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
             return op[0]; 
         } 
@@ -139,7 +139,7 @@ char menu_relatorio (void) {
 //Menu secundario universal para 3 opções
 //
 char menu_sec_uni (char* menu, char* procurar, char* pesquisar) {
-    char op [50];
+    char* op;
     char op_max = '2';
     do {
         system("clear");
@@ -156,7 +156,7 @@ char menu_sec_uni (char* menu, char* procurar, char* pesquisar) {
         printf("|                                                                         |\n");
         printf("+=========================================================================+\n");
         printf("Selecione uma opção: \n");
-        scanf("%s", &*op);
+        op = input ();
         if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
             return op[0]; 
         } 
@@ -171,7 +171,7 @@ char menu_sec_uni (char* menu, char* procurar, char* pesquisar) {
 //Menu relatórios
 //
 char menu_edit (char* titulo, char* cpf, char* email, char* cel, char* nome, char status) {
-    char op [50];
+    char* op;
     char op_max = '4';
     do {
         system("clear");
@@ -192,7 +192,7 @@ char menu_edit (char* titulo, char* cpf, char* email, char* cel, char* nome, cha
         printf("|                                                                         |\n");
         printf("+=========================================================================+\n");
         printf("Selecione uma opção: \n");
-        scanf("%s", &*op);
+        op = input ();
         if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
             return op[0]; 
         } 
@@ -207,7 +207,7 @@ char menu_edit (char* titulo, char* cpf, char* email, char* cel, char* nome, cha
 //Menu relatórios
 //
 char menu_edit_prod (char* titulo, char* cod_barras, char* cnpj, char* desc, char* quant, char* valor_comp, char* valor_vend) {
-    char op [50];
+    char* op;
     char op_max = '5';
     do {
         system("clear");
@@ -230,7 +230,7 @@ char menu_edit_prod (char* titulo, char* cod_barras, char* cnpj, char* desc, cha
         printf("|                                                                         |\n");
         printf("+=========================================================================+\n");
         printf("Selecione uma opção: \n");
-        scanf("%s", &*op);
+        op = input ();
         if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
             return op[0]; 
         } 
@@ -246,7 +246,7 @@ char menu_edit_prod (char* titulo, char* cod_barras, char* cnpj, char* desc, cha
 //
 char menu_edit_vend (char* tela, char* cpf_cli, char* cpf_col, char* cod_barras, char* desc,
  char* valor_vend_uni, char*  quant, char* valor_vend_tot, int id, char status) {
-    char op [50];
+    char* op;
     char op_max = '1';
     do {
         system("clear");
@@ -262,7 +262,7 @@ char menu_edit_vend (char* tela, char* cpf_cli, char* cpf_col, char* cod_barras,
         printf("|                                                                         |\n");
         printf("+=========================================================================+\n");
         printf("Selecione uma opção: \n");
-        scanf("%s", &*op);
+        op = input ();
         if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
             return op[0]; 
         } 
@@ -277,7 +277,7 @@ char menu_edit_vend (char* tela, char* cpf_cli, char* cpf_col, char* cod_barras,
 //Adiciona itens a uma venda
 //
 char menu_item_venda (void) {
-    char op [50];
+    char* op;
     char op_max = '2';
     do {
         printf("+=========================================================================+\n");
@@ -288,7 +288,7 @@ char menu_item_venda (void) {
         printf("|                                                                         |\n");
         printf("+=========================================================================+\n");
         printf("Selecione uma opção: \n");
-        scanf("%s", &*op);
+        op = input ();
         if ((valid_entrada(op)) && (valid_op(op[0], op_max)) && (op[0] != '0')) {
             return op[0]; 
         } 
@@ -302,7 +302,7 @@ char menu_item_venda (void) {
 //Forma de pagamento
 //
 char menu_form_pag (void) {
-    char op [50];
+    char* op;
     char op_max = '4';
     do {
         printf("+=========================================================================+\n");
@@ -319,7 +319,7 @@ char menu_form_pag (void) {
         printf("|                                                                         |\n");
         printf("+=========================================================================+\n");
         printf("Selecione uma opção: \n");
-        scanf("%s", &*op);
+        op = input ();
         if ((valid_entrada(op)) && (valid_op(op[0], op_max)) && (op[0] != '0')) {
             return op[0]; 
         } 

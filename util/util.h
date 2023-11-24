@@ -35,3 +35,5 @@ int valid_email (char*);
 int valid_cnpj (char*);
 int valid_cod_barras (char*);
 char* centralizar_texto(char*, int, int);
+char* input (void);
+char* duplica (char*);

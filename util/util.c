@@ -139,7 +139,7 @@ int valid_cpf (char* cpf) {
     else if(/*(strcmp (cpf,"00000000000") == 0) ||(strcmp (cpf,"11111111111") == 0) || (strcmp (cpf,"22222222222") == 0) ||*/
             // (strcmp (cpf,"33333333333") == 0) || (strcmp (cpf,"44444444444") == 0) || (strcmp (cpf,"55555555555") == 0) ||
             // (strcmp (cpf,"66666666666") == 0) || (strcmp (cpf,"77777777777") == 0) || (strcmp (cpf,"88888888888") == 0) ||
-            (strcmp (cpf,"99999999999") == 0) /*|| (strcmp (cpf,"12345678909") == 0)*/) {
+            /*(strcmp (cpf,"99999999999") == 0) || */(strcmp (cpf,"12345678909") == 0)) {
         return 0; //se o CPF estiver dentre os mencionados acima, ele é considerado cpf de teste.
     }
     else {
@@ -357,7 +357,7 @@ int valid_cnpj(char*  cnpj) {
     }
     return 0; 
 }
-// AUTOR: CHAT GPT
+// ADAPTADA DO CHAT GPT
 
 //Validação para código de barras
 //Verifica se a string recebida é um código de barras válido(retorna "1") ou não(retorna "0")
@@ -429,3 +429,22 @@ char* centralizar_texto(char* texto, int tam, int horizontal) {
     return str;
 }
 // AUTOR: EMANUEL ALVES // GIT: https://github.com/Faltrenn
+
+
+// Simulador de input
+char* input (void) {
+  char linha[256];
+  scanf(" %255[^\n]", linha);
+  return duplica(linha);
+} 
+// AUTOR: FLAVIUS GORGÔNIO /// GIT: https://github.com/flaviusgorgonio
+
+
+// Auxiliar do simulador input
+char* duplica (char* s) {
+  int n;
+  n = strlen(s) + 1;
+  char* d = (char*) malloc(n*sizeof(char));
+  strcpy(d, s);
+  return d;
+} // AUTOR: FLAVIUS GORGÔNIO /// GIT: https://github.com/flaviusgorgonio
