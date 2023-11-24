@@ -47,8 +47,6 @@ Vend* cad_vend (void) {
     ven = (Vend*)malloc((sizeof(Vend)));
     Prod* pro;
     pro = (Prod*)malloc((sizeof(Prod)));
-    float v_vend;
-    float v_vend_tot;
     char* cpf_cli = cli_cad ();
     strcpy(ven->cpf_cli, cpf_cli);
     limpa_buffer ();
@@ -61,9 +59,9 @@ Vend* cad_vend (void) {
     char* quant = quant_vend (pro);
     strcpy(ven->quant, quant);
     strcpy(ven->valor_vend_uni, pro->valor_vend);
-    v_vend = atof(pro->valor_vend);
+    float v_vend = atof(pro->valor_vend);
     int q_vend = atoi(quant);
-    v_vend_tot = v_vend * q_vend;
+    float v_vend_tot = v_vend * q_vend;
     snprintf(ven->valor_vend_tot, sizeof(ven->valor_vend_tot), "%.2f", v_vend_tot);
     free(pro);
     ven->id = gera_id_vend ();
