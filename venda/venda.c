@@ -127,7 +127,8 @@ Vend* pesq_vend (void) {
     } while (ven == NULL);
         char edit;
         do {
-            edit = menu_edit_vend ("Cadastro venda", ven->cpf_cli, ven->cpf_col, ven->cod_barras, ven->desc, ven->valor_vend_uni, ven->quant, ven->valor_vend_tot, ven->id, ven->status, ven->data, ven->hora);
+            edit = menu_edit_vend ("Cadastro venda", ven->cpf_cli, ven->cpf_col, ven->cod_barras,
+                ven->desc, ven->valor_vend_uni, ven->quant, ven->valor_vend_tot, ven->id, ven->status, ven->data, ven->hora);
             if (edit == '1') {
                 excluir_vend (ven);
                 tela_ok ();
