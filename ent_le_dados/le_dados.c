@@ -68,6 +68,7 @@ char* le_nome (char* tela) {
     do {
         tela_universal (tela);
         nome = ent_nome ();
+        trat_nome(nome);
         if (!valid_nome(nome)) {
             tela_erro ("ENTRADA INVÁLIDA ! ! !");
         } 
@@ -107,6 +108,7 @@ char* le_desc_prod (char* tela) {
     do {
         tela_universal (tela);
         desc_prod = ent_desc_produto ();
+        trat_nome(desc_prod);
         if (!valid_nome(desc_prod)) {
             tela_erro ("ENTRADA INVÁLIDA ! ! !");
         } 
