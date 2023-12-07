@@ -22,6 +22,9 @@ struct administrador { //Estruturação da struct "administrador"
     char email[47];
     char cel[12];
     char nome[47];
+    char data [12];
+    char hora [12];
+    int id;
     char status;
 };
 
@@ -33,3 +36,4 @@ void gravar_admin (Admin*);
 Admin* carregar_adm (char*);
 void regravar_adm(Admin*, char);
 void edit_cad_adm (Admin*, char);
+int gera_id_admin (void);

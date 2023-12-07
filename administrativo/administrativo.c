@@ -1,20 +1,3 @@
-/*  ("+=========================================================================+\n")
-    ("|                                                                         |\n")
-    ("|               Universidade Federal do Rio Grande do Norte               |\n")
-    ("|                                                                         |\n")
-    ("|                   Centro de Ensino Superior do Seridó                   |\n")
-    ("|                                                                         |\n")
-    ("|             Aluno -- Renan Missias Rodrigues Alves da Costa             |\n")
-    ("|                                                                         |\n")
-    ("|                    Disciplina DCT1106 -- Programação                    |\n")
-    ("|                                                                         |\n")
-    ("|                  Projeto Sistema de Gestão para Óticas                  |\n")
-    ("|                                                                         |\n")
-    ("|               Developed by @RenanMRb - since august, 2023               |\n")
-    ("|                                                                         |\n")
-    ("+=========================================================================+\n")  */
-
-
 //Inclui todas as importações e declarações necessárias no programa
 #include "../util/all.h"
 
@@ -65,8 +48,13 @@ Admin* cad_admin (void) {
     limpa_buffer ();
     char* nome = le_nome ("Cadastro administrador");
     strcpy(adm->nome, nome);
+    char* data = inst_data ();
+    strcpy(adm->data, data);
+    char* hora = inst_hora ();
+    strcpy(adm->hora, hora);
     adm->status = '1';
-    tela_pessoas ("Cadastro administrador", adm->cpf, adm->email, adm->cel, adm->nome, adm->status);
+    adm->id = gera_id_admin ();
+    tela_pessoas ("Cadastro administrador", adm->cpf, adm->email, adm->cel, adm->nome, adm->status, adm->data, adm->hora, adm->id);
     tela_ok ();
     return adm;
 }
@@ -85,7 +73,7 @@ Admin* pesq_admin (void) {
     } while (adm == NULL);
         char edit;
         do {
-            edit = menu_edit("Cadastro administrador", adm->cpf, adm->email, adm->cel, adm->nome, adm->status);
+            edit = menu_edit("Cadastro administrador", adm->cpf, adm->email, adm->cel, adm->nome, adm->status, adm->data, adm->hora, adm->id);
             if ((edit >= '1') && (edit <= '4')) {
                 regravar_adm (adm, edit);
                 tela_ok ();
@@ -165,5 +153,28 @@ void edit_cad_adm (Admin* adm, char op) {
         case '4' :
             adm->status = '0';
             break;
+    }
+}
+
+//Percorre o algoritmo para gerar um id de um administrador adequadamente
+int gera_id_admin (void) {
+    FILE *fp_adm;
+    fp_adm = fopen("dat/administrativo.dat", "rb");
+    if (fp_adm == NULL) {
+        return 1;
+    }
+    fseek(fp_adm, 0, SEEK_END);
+    if ((long)ftell(fp_adm) == 0){
+        fclose(fp_adm);
+        return 1;
+    }
+    else {
+        fseek(fp_adm, -((long)sizeof(Admin)), SEEK_END);
+        Admin* perf_f;
+        perf_f = (Admin*)malloc(sizeof(Admin));
+        fread(perf_f, sizeof(Admin), 1, fp_adm);
+        int id = perf_f->id+1;
+        fclose(fp_adm);
+        return id;
     }
 }
