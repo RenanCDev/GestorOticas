@@ -25,7 +25,10 @@ struct colaborador {
     char email[47];
     char cel[12];
     char nome[47];
+    char data[12];
+    char hora[12];
     char status;
+    int id;
 };
 
 //Declaração das funções do arquivo colaborador.c
@@ -37,3 +40,4 @@ void gravar_colab (Colab*);
 Colab* carregar_colab (char*);
 void regravar_colab(Colab*, char);
 void edit_cad_colab (Colab*, char);
+int gera_id_colab (void);

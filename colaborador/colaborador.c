@@ -62,8 +62,12 @@ Colab* cad_colab (void) {
     limpa_buffer ();
     char* nome = le_nome ("Cadastro colaborador");
     strcpy(col->nome, nome);
+    char* data = inst_data ();
+    strcpy(col->data, data);
+    char* hora = inst_hora ();
+    strcpy(col->hora, hora);
     col->status = '1';
-    tela_pessoas ("Cadastro colaborador", col->cpf, col->email, col->cel, col->nome, col->status);
+    tela_pessoas ("Cadastro colaborador", col->cpf, col->email, col->cel, col->nome, col->status, col->data, col->hora, col->id);
     tela_ok ();
     return col;
 }
@@ -82,7 +86,7 @@ Colab* pesq_colab (void) {
     } while (col == NULL);
         char edit;
         do {
-            edit = menu_edit("Cadastro colaborador", col->cpf, col->email, col->cel, col->nome, col->status);
+            edit = menu_edit("Cadastro colaborador", col->cpf, col->email, col->cel, col->nome, col->status, col->data, col->hora, col->id);
             if ((edit >= '1') && (edit <= '4')) {
                 regravar_colab (col, edit);
                 tela_ok ();
@@ -162,5 +166,28 @@ void edit_cad_colab (Colab* col, char op) {
         case '4' :
             col->status = '0';
             break;
+    }
+}
+
+//Percorre o algoritmo para gerar um id de um colaborador adequadamente
+int gera_id_colab (void) {
+    FILE *fp_col;
+    fp_col = fopen("dat/colaborador.dat", "rb");
+    if (fp_col == NULL) {
+        return 1;
+    }
+    fseek(fp_col, 0, SEEK_END);
+    if ((long)ftell(fp_col) == 0){
+        fclose(fp_col);
+        return 1;
+    }
+    else {
+        fseek(fp_col, -((long)sizeof(Colab)), SEEK_END);
+        Colab* perf_f;
+        perf_f = (Colab*)malloc(sizeof(Colab));
+        fread(perf_f, sizeof(Colab), 1, fp_col);
+        int id = perf_f->id+1;
+        fclose(fp_col);
+        return id;
     }
 }
