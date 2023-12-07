@@ -28,6 +28,8 @@ struct venda {
     char quant[9];
     char valor_vend_uni[9];
     char valor_vend_tot[20];
+    char data[12];
+    char hora[12];
     int id;
     char status;
 };

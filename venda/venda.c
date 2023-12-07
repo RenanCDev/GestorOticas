@@ -65,9 +65,13 @@ Vend* cad_vend (void) {
     snprintf(ven->valor_vend_tot, sizeof(ven->valor_vend_tot), "%.2f", v_vend_tot);
     free(pro);
     ven->id = gera_id_vend ();
+    char* data = inst_data ();
+    strcpy(ven->data, data);
+    char* hora = inst_hora ();
+    strcpy(ven->hora, hora);
     ven->status = '1';
     tela_venda ("Cadastro venda", ven->cpf_cli, ven->cpf_col, ven->cod_barras,
-        ven->desc, ven->quant, ven->valor_vend_uni, ven->valor_vend_tot, ven->id, ven->status);
+        ven->desc, ven->quant, ven->valor_vend_uni, ven->valor_vend_tot, ven->id, ven->status, ven->data, ven->hora);
     tela_ok ();
     return ven;
 }
@@ -123,7 +127,7 @@ Vend* pesq_vend (void) {
     } while (ven == NULL);
         char edit;
         do {
-            edit = menu_edit_vend ("Cadastro venda", ven->cpf_cli, ven->cpf_col, ven->cod_barras, ven->desc, ven->valor_vend_uni, ven->quant, ven->valor_vend_tot, ven->id, ven->status);
+            edit = menu_edit_vend ("Cadastro venda", ven->cpf_cli, ven->cpf_col, ven->cod_barras, ven->desc, ven->valor_vend_uni, ven->quant, ven->valor_vend_tot, ven->id, ven->status, ven->data, ven->hora);
             if (edit == '1') {
                 excluir_vend (ven);
                 tela_ok ();
