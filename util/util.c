@@ -526,3 +526,10 @@ char* inst_hora (void) {
     strcat(horario, segundo);
     return horario;
 } // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+
+void trat_nome(char* nome)
+{
+  for (int i = 0; nome[i] != '\0'; ++i) {
+    nome[i] = toupper(nome[i]);
+  }
+} 

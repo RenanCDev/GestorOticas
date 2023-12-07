@@ -45,3 +45,4 @@ char* peg_minuto (void);
 char* peg_segundo (void);
 char* inst_data (void);
 char* inst_hora (void);
+void trat_nome (char*);
