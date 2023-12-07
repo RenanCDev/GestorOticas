@@ -417,10 +417,9 @@ char* peg_dia (void) {
     char* dia = (char*) malloc(6 * sizeof(char));
     sprintf(dia,"%d",d);
     if (strlen(dia) < 2) {
-        char* dia2 = (char*) malloc(6 * sizeof(char));
-        strcpy(dia2, dia);
+        dia[2] = '\0';
+        dia[1] = dia[0];
         dia[0] = '0';
-        strcat(dia, dia2);
     }
     return dia;
 } // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
@@ -434,10 +433,9 @@ char* peg_mes (void) {
     char* mes = (char*) malloc(6 * sizeof(char));
     sprintf(mes,"%d",m);
     if (strlen(mes) < 2) {
-        char* mes2 = (char*) malloc(6 * sizeof(char));
-        strcpy(mes2, mes);
+        mes[2] = '\0';
+        mes[1] = mes[0];
         mes[0] = '0';
-        strcat(mes, mes2);
     }
     return mes;
 } // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
@@ -462,10 +460,9 @@ char* peg_hora (void) {
     char* hora = (char*) malloc(6 * sizeof(char));
     sprintf(hora,"%d",h);
     if (strlen(hora) < 2) {
-        char* hora2 = (char*) malloc(6 * sizeof(char));
-        strcpy(hora2, hora);
+        hora[2] = '\0';
+        hora[1] = hora[0];
         hora[0] = '0';
-        strcat(hora, hora2);
     }
     return hora;
 } // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
@@ -479,10 +476,9 @@ char* peg_minuto (void) {
     char* minuto = (char*) malloc(6 * sizeof(char));
     sprintf(minuto,"%d",m);
     if (strlen(minuto) < 2) {
-        char* minuto2 = (char*) malloc(6 * sizeof(char));
-        strcpy(minuto2, minuto);
+        minuto[2] = '\0';
+        minuto[1] = minuto[0];
         minuto[0] = '0';
-        strcat(minuto, minuto2);
     }
     return minuto;
 } // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
@@ -496,10 +492,9 @@ char* peg_segundo (void) {
     char* segundo = (char*) malloc(6 * sizeof(char));
     sprintf(segundo,"%d",s);
     if (strlen(segundo) < 2) {
-        char* segundo2 = (char*) malloc(6 * sizeof(char));
-        strcpy(segundo2, segundo);
+        segundo[2] = '\0';
+        segundo[1] = segundo[0];
         segundo[0] = '0';
-        strcat(segundo, segundo2);
     }
     return segundo;
 } // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
