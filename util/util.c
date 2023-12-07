@@ -292,32 +292,35 @@ int valid_email(char* email) {
 int valid_cnpj(char*  cnpj) {
     int tamanho = strlen(cnpj);;
     if (tamanho != 14) {
-        return 0; 
+        return 0;
     }
-    int cnpj[14];
+    int cnpj_n[14];
     if (!valid_numeros_s(cnpj)) {
         return 0;
+    }
+    for (int i = 0; i < tamanho; i++) {
+        cnpj_n[i] = cnpj[i] - '0';
     }
     int digt = 0;
     int multiplicador = 5;
     for (int i = 0; i < 12; i++) {
-        digt += cnpj[i] * multiplicador;
+        digt += cnpj_n[i] * multiplicador;
         multiplicador = (multiplicador == 2) ? 9/*se o multiplicador for == '2', ele recebe '9'*/ : (multiplicador - 1)/*se não for, ele subtrai '1' dele mesmo*/; 
     }
     int digt_aux = digt % 11;
     int digit1 = (digt_aux < 2) ? 0/*se o digt_aux for < '2', ele recebe '0'*/ : (11 - digt_aux)/*se não for, ele subtrai digt_aux de '11'*/;
-    if (cnpj[12] != digit1) {
+    if (cnpj_n[12] != digit1) {
         return 0;
     }
     digt = 0;
     multiplicador = 6;
     for (int i = 0; i < 13; i++) {
-        digt += cnpj[i] * multiplicador;
+        digt += cnpj_n[i] * multiplicador;
         multiplicador = (multiplicador == 2) ? 9/*se o multiplicador for == '2', ele recebe '9'*/ : (multiplicador - 1)/*se não for, ele subtrai '1' dele mesmo*/; 
     }
     digt_aux = digt % 11;
     int digit2 = (digt_aux < 2) ? 0/*se o digt_aux for < '2', ele recebe '0'*/ : (11 - digt_aux)/*se não for, ele subtrai digt_aux de '11'*/;
-    if (cnpj[13] == digit2) {
+    if (cnpj_n[13] == digit2) {
         return 1; 
     }
     return 0; 
