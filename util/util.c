@@ -5,8 +5,7 @@
 int valid_op (char op, char op_max) {
     if (op >= '0' && op <= op_max) {
         return 1; 
-    } 
-    else {
+    } else {
         return 0; 
     } 
 } // ADAPTADA DE - VALIDAÇÃO PARA DIGITO - AUTOR FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
@@ -23,8 +22,7 @@ int valid_op_c (char *entrada) {
 int valid_digt (char num) {
     if (num >= '0' && num <= '9') {
         return 1; 
-    } 
-    else {
+    } else {
         return 0; 
     } 
 } // AUTOR: FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
@@ -256,17 +254,13 @@ int valid_letra (char letra) {
     int a = letra;
     if (letra >= 'A' && letra <= 'Z') {
     return 1;
-    } 
-    else if (letra >= 'a' && letra <= 'z') {
+    } else if (letra >= 'a' && letra <= 'z') {
     return 1;
-    } 
-    else if (letra == ' ') {
+    } else if (letra == ' ') {
     return 1;
-    }  
-    else if (a < 0) {
+    } else if (a < 0) {
     return 1;
-    } 
-    else {
+    } else {
     return 0;
     }
 } // AUTOR: FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
@@ -337,13 +331,11 @@ int valid_cod_barras (char* cod_barras) {
     int k = 0;
     if (!valid_numeros(cod_barras, tam)) {
         return 0; 
-    } 
-    else {
+    } else {
         for (int i = 0; i < 12; i++) {
             if (i % 2 == 0) {
                 l = l + ((cod_barras[i] - '0') * 1); 
-            }
-            else {
+            } else {
                 l = l + ((cod_barras[i] - '0') * 3); 
             } 
         }
