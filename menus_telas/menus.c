@@ -51,14 +51,14 @@ char menu_principal (void) {
         printf("+=========================================================================+\n");
         printf("Selecione uma opção: \n");
         op = input();
-        if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
+        if ((valid_op_c(op)) && (valid_op(op[0], op_max))) {
             return op[0]; 
         } 
         else {
             tela_erro ("ENTRADA INVÁLIDA ! ! !");
             return '9';
         } 
-    } while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+    } while ((!valid_op_c(op)) || (valid_op(op[0], op_max))); 
 }
 
 
@@ -85,14 +85,14 @@ char menu_administrativo (void) {
         printf("+=========================================================================+\n");
         printf("Selecione uma opção: \n");
         op = input ();
-        if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
+        if ((valid_op_c(op)) && (valid_op(op[0], op_max))) {
             return op[0]; 
         } 
         else {
             tela_erro ("ENTRADA INVÁLIDA ! ! !");
             return '9';
         } 
-    } while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+    } while ((!valid_op_c(op)) || (valid_op(op[0], op_max))); 
 }
 
 
@@ -125,16 +125,125 @@ char menu_relatorio (void) {
         printf("+=========================================================================+\n");
         printf("Selecione uma opção: \n");
         op = input ();
-        if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
+        if ((valid_op_c(op)) && (valid_op(op[0], op_max))) {
             return op[0]; 
         } 
         else {
             tela_erro ("ENTRADA INVÁLIDA ! ! !");
             return '9';
         } 
-    } while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+    } while ((!valid_op_c(op)) || (valid_op(op[0], op_max))); 
 }
 
+//Menu do relatório pessoas físicas e jurídicas
+char m_relat_pessoas (char* relatorio) {
+    char* op;
+    char op_max = '5';
+    do {
+        system("clear");
+        tela_banner ();
+        printf("+=========================================================================+\n");
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto (relatorio, 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("1 -> Mostrar todos <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("2 -> Mostrar atívos <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("3 -> Mostrar inatívos <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("4 -> Mostrar ordem cronológica <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("5 -> Pesquisa por nome <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("0 -> Voltar ao menu anterior <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("+=========================================================================+\n");
+        printf("Selecione uma opção: \n");
+        op = input ();
+        if ((valid_op_c(op)) && (valid_op(op[0], op_max))) {
+            return op[0]; 
+        } 
+        else {
+            tela_erro ("ENTRADA INVÁLIDA ! ! !");
+            return '9';
+        } 
+    } while ((!valid_op_c(op)) || (valid_op(op[0], op_max))); 
+}
+
+//Menu do relatório produtos
+char m_relat_produto (void) {
+    char* op;
+    char op_max = '4';
+    do {
+        system("clear");
+        tela_banner ();
+        printf("+=========================================================================+\n");
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("Relatório produto", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("1 -> Mostrar todos <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("2 -> Mostrar por fornecedor <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("3 -> Mostrar por ordem cronológica <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("4 -> Mostrar por nome <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("0 -> Voltar ao menu anterior <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("+=========================================================================+\n");
+        printf("Selecione uma opção: \n");
+        op = input ();
+        if ((valid_op_c(op)) && (valid_op(op[0], op_max))) {
+            return op[0]; 
+        } 
+        else {
+            tela_erro ("ENTRADA INVÁLIDA ! ! !");
+            return '9';
+        } 
+    } while ((!valid_op_c(op)) || (valid_op(op[0], op_max))); 
+}
+
+//Menu do relatório vendas
+char m_relat_venda (void) {
+    char* op;
+    char op_max = '7';
+    do {
+        system("clear");
+        tela_banner ();
+        printf("+=========================================================================+\n");
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("Relatório venda", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("1 -> Mostrar todas <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("2 -> Mostrar atívas <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("3 -> Mostrar inatívas <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("4 -> Mostrar por ordem cronológica <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("5 -> Mostrar por intervalo de data <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("6 -> Mostrar por cliente <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("7 -> Mostrar por colaborador <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("0 -> Voltar ao menu anterior <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("+=========================================================================+\n");
+        printf("Selecione uma opção: \n");
+        op = input ();
+        if ((valid_op_c(op)) && (valid_op(op[0], op_max))) {
+            return op[0]; 
+        } 
+        else {
+            tela_erro ("ENTRADA INVÁLIDA ! ! !");
+            return '9';
+        } 
+    } while ((!valid_op_c(op)) || (valid_op(op[0], op_max))); 
+}
 
 //Menu secundario universal para 3 opções
 //
@@ -157,25 +266,25 @@ char menu_sec_uni (char* menu, char* procurar, char* pesquisar) {
         printf("+=========================================================================+\n");
         printf("Selecione uma opção: \n");
         op = input ();
-        if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
+        if ((valid_op_c(op)) && (valid_op(op[0], op_max))) {
             return op[0]; 
         } 
         else {
             tela_erro ("ENTRADA INVÁLIDA ! ! !");
             return '9';
         } 
-    } while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+    } while ((!valid_op_c(op)) || (valid_op(op[0], op_max))); 
 }
 
 
 //Menu relatórios
 //
-char menu_edit (char* titulo, char* cpf, char* email, char* cel, char* nome, char status) {
+char menu_edit (char* titulo, char* cpf, char* email, char* cel, char* nome, char status, char* data, char* hora, int id) {
     char* op;
     char op_max = '4';
     do {
         system("clear");
-        tela_pessoas (titulo, cpf, email, cel, nome, status);
+        tela_pessoas (titulo, cpf, email, cel, nome, status, data, hora, id);
         printf("+=========================================================================+\n");
         printf("|                                                                         |\n");
         printf("|%s|\n", centralizar_texto ("Editar/ Excluir", 73, 0));
@@ -193,14 +302,14 @@ char menu_edit (char* titulo, char* cpf, char* email, char* cel, char* nome, cha
         printf("+=========================================================================+\n");
         printf("Selecione uma opção: \n");
         op = input ();
-        if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
+        if ((valid_op_c(op)) && (valid_op(op[0], op_max))) {
             return op[0]; 
         } 
         else {
             tela_erro ("ENTRADA INVÁLIDA ! ! !");
             return '9';
         } 
-    } while ((!valid_entrada(op)) || (valid_op(op[0], op_max)));
+    } while ((!valid_op_c(op)) || (valid_op(op[0], op_max)));
 }
 
 
@@ -231,14 +340,14 @@ char menu_edit_prod (char* titulo, char* cod_barras, char* cnpj, char* desc, cha
         printf("+=========================================================================+\n");
         printf("Selecione uma opção: \n");
         op = input ();
-        if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
+        if ((valid_op_c(op)) && (valid_op(op[0], op_max))) {
             return op[0]; 
         } 
         else {
             tela_erro ("ENTRADA INVÁLIDA ! ! !");
             return '9';
         } 
-    } while ((!valid_entrada(op)) || (valid_op(op[0], op_max)));
+    } while ((!valid_op_c(op)) || (valid_op(op[0], op_max)));
 }
 
 
@@ -263,14 +372,14 @@ char menu_edit_vend (char* tela, char* cpf_cli, char* cpf_col, char* cod_barras,
         printf("+=========================================================================+\n");
         printf("Selecione uma opção: \n");
         op = input ();
-        if ((valid_entrada(op)) && (valid_op(op[0], op_max))) {
+        if ((valid_op_c(op)) && (valid_op(op[0], op_max))) {
             return op[0]; 
         } 
         else {
             tela_erro ("ENTRADA INVÁLIDA ! ! !");
             return '9';
         } 
-    } while ((!valid_entrada(op)) || (valid_op(op[0], op_max)));
+    } while ((!valid_op_c(op)) || (valid_op(op[0], op_max)));
 }
 
 
@@ -289,13 +398,13 @@ char menu_item_venda (void) {
         printf("+=========================================================================+\n");
         printf("Selecione uma opção: \n");
         op = input ();
-        if ((valid_entrada(op)) && (valid_op(op[0], op_max)) && (op[0] != '0')) {
+        if ((valid_op_c(op)) && (valid_op(op[0], op_max)) && (op[0] != '0')) {
             return op[0]; 
         } 
         else {
             return '9';
         } 
-    } while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+    } while ((!valid_op_c(op)) || (valid_op(op[0], op_max))); 
 }
 
 
@@ -320,14 +429,14 @@ char menu_form_pag (void) {
         printf("+=========================================================================+\n");
         printf("Selecione uma opção: \n");
         op = input ();
-        if ((valid_entrada(op)) && (valid_op(op[0], op_max)) && (op[0] != '0')) {
+        if ((valid_op_c(op)) && (valid_op(op[0], op_max)) && (op[0] != '0')) {
             return op[0]; 
         } 
         else {
             tela_erro ("ENTRADA INVÁLIDA ! ! !");
             return '9';
         } 
-    } while ((!valid_entrada(op)) || (valid_op(op[0], op_max))); 
+    } while ((!valid_op_c(op)) || (valid_op(op[0], op_max))); 
 }
 
 

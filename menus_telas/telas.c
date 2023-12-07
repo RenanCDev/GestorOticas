@@ -102,8 +102,10 @@ void info_cliente_0 (void) {
 //
 //Tela cadastro pessoas físicas
 //
-void tela_pessoas (char* tela, char* cpf, char* email, char* cel, char* nome, char status) {
+void tela_pessoas (char* tela, char* cpf, char* email, char* cel, char* nome, char status, char* data, char* hora, int id) {
     tela_universal (tela);
+    char id_c[8];
+    snprintf(id_c, sizeof(id_c), "%d", id);
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|   CPF/CNPJ : %s|\n", centralizar_texto(cpf, 59, -1));
@@ -114,8 +116,12 @@ void tela_pessoas (char* tela, char* cpf, char* email, char* cel, char* nome, ch
     printf("|                                                                         |\n");
     printf("|   Nome : %s|\n", centralizar_texto(nome, 63, -1));
     printf("|                                                                         |\n");
-    // data
-    // id
+    printf("|   Data : %s|\n", centralizar_texto(data, 63, -1));
+    printf("|                                                                         |\n");
+    printf("|   Horário : %s|\n", centralizar_texto(hora, 60, -1));
+    printf("|                                                                         |\n");
+    printf("|   ID : %s|\n", centralizar_texto(id_c, 65, -1));
+    printf("|                                                                         |\n");
     printf("|   Status do cadastro (1 = ativo, 0 = inativo) : %c                       |\n", status);
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
@@ -130,8 +136,6 @@ void tela_produto (char* tela, char* cod_barras, char* cnpj, char* desc,
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|   Código de barras : %s|\n", centralizar_texto(cod_barras, 51, -1));
-    // data
-    // id
     printf("|                                                                         |\n");
     printf("|   Fornecedor : %s|\n", centralizar_texto(cnpj, 57, -1));
     printf("|                                                                         |\n");
@@ -166,7 +170,6 @@ void tela_venda (char* tela, char* cli, char* col, char* cod_barras, char* desc,
     printf("|                                                                         |\n");
     printf("|   Quant. / Uni. / Tot. : %s x %s = %s|\n", v_v_uni, quant, centralizar_texto(v_v_tot, (41-(strlen(v_v_uni)+(strlen(quant)))), -1));
     printf("|                                                                         |\n");
-    // data
     printf("|   ID : %s|\n", centralizar_texto(id_c, 65, -1));
     printf("|                                                                         |\n");
     printf("|   Status da venda (1 = ativo, 0 = inativo) : %c                          |\n", status);

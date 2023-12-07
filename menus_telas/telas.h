@@ -31,7 +31,7 @@ void info_cliente_0 (void);
 
 //Telas exemplo
 //
-void tela_pessoas (char*, char*, char*, char*, char*, char);
+void tela_pessoas (char*, char*, char*, char*, char*, char, char*, char*, int);
 void t_exe_relat_adm (void);
 void t_exe_relat_forn (void);
 void t_exe_relat_prod (void);
