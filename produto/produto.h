@@ -27,6 +27,9 @@ struct produto {
     char quant[9];
     char valor_comp[9];
     char valor_vend[9];
+    char data[12];
+    char hora[12];
+    int id;
 };
 
 
@@ -40,3 +43,4 @@ Prod* carregar_prod (char*);
 void regravar_prod (Prod*, char);
 void regravar_prod_quant (Prod*);
 void edit_cad_prod (Prod*, char);
+int gera_id_prod (void);

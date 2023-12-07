@@ -74,8 +74,13 @@ Prod* cad_prod (void) {
     limpa_buffer ();
     char* valor_vend = le_valor_v ("Cadastro produto");
     strcpy(pro->valor_vend, valor_vend);
+    char* data = inst_data ();
+    strcpy(pro->data, data);
+    char* hora = inst_hora ();
+    strcpy(pro->hora, hora);
+    pro->id = gera_id_prod ();
     tela_produto ("Cadastro produto", pro->cod_barras, pro->cnpj, pro->desc, pro->quant,
-     pro->valor_comp, pro->valor_vend);
+     pro->valor_comp, pro->valor_vend, pro->data, pro->hora, pro->id);
     tela_ok ();
     return pro;
 }
@@ -106,7 +111,8 @@ Prod* pesq_prod (void) {
     } while (pro == NULL);
         char edit;
         do {
-            edit = menu_edit_prod ("Cadastro produto", pro->cod_barras, pro->cnpj, pro->desc, pro->quant, pro->valor_comp, pro->valor_vend);
+            edit = menu_edit_prod ("Cadastro produto", pro->cod_barras, pro->cnpj, pro->desc, pro->quant, pro->valor_comp, pro->valor_vend,
+             pro->data, pro->hora, pro->id);
             if ((edit >= '1') && (edit <= '5')) {
                 regravar_prod (pro, edit);
                 tela_ok ();
@@ -205,5 +211,28 @@ void edit_cad_prod (Prod* pro, char op) {
             char* valor_vend = le_valor_v ("Cadastro produto");
             strcpy(pro->valor_vend, valor_vend);
             break;
+    }
+}
+
+//Percorre o algoritmo para gerar um id de um produto adequadamente
+int gera_id_prod (void) {
+    FILE *fp_pro;
+    fp_pro = fopen("dat/produto.dat", "rb");
+    if (fp_pro == NULL) {
+        return 1;
+    }
+    fseek(fp_pro, 0, SEEK_END);
+    if ((long)ftell(fp_pro) == 0){
+        fclose(fp_pro);
+        return 1;
+    }
+    else {
+        fseek(fp_pro, -((long)sizeof(Prod)), SEEK_END);
+        Prod* perf_f;
+        perf_f = (Prod*)malloc(sizeof(Prod));
+        fread(perf_f, sizeof(Prod), 1, fp_pro);
+        int id = perf_f->id+1;
+        fclose(fp_pro);
+        return id;
     }
 }
