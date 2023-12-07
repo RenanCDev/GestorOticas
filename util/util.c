@@ -1,31 +1,7 @@
-/*  ("+=========================================================================+\n")
-    ("|                                                                         |\n")
-    ("|               Universidade Federal do Rio Grande do Norte               |\n")
-    ("|                                                                         |\n")
-    ("|                   Centro de Ensino Superior do Seridó                   |\n")
-    ("|                                                                         |\n")
-    ("|             Aluno -- Renan Missias Rodrigues Alves da Costa             |\n")
-    ("|                                                                         |\n")
-    ("|                    Disciplina DCT1106 -- Programação                    |\n")
-    ("|                                                                         |\n")
-    ("|                  Projeto Sistema de Gestão para Óticas                  |\n")
-    ("|                                                                         |\n")
-    ("|               Developed by @RenanMRb - since august, 2023               |\n")
-    ("|                                                                         |\n")
-    ("+=========================================================================+\n")  */
-
-
+//Inclui todas as importações e declarações necessárias no programa
 #include "all.h"
 
-
-/////
-//Funções de validação:
-//Validação opção:
-//Verifica se a entrada informada esta dentro das opções possíveis(retorna "1") ou não(retorna "0")
-//
-//Função que retorna 1 caso a entrada tiver mais de 1 caractere
-//e retorna 0 caso contrário
-//
+//Validação opção: verifica se a entrada informada esta dentro das opções possíveis(retorna "1") ou não(retorna "0")
 int valid_op (char op, char op_max) {
     if (op >= '0' && op <= op_max) {
         return 1; 
@@ -33,25 +9,17 @@ int valid_op (char op, char op_max) {
     else {
         return 0; 
     } 
-}
-// ADAPTADA DE - VALIDAÇÃO PARA DIGITO - AUTOR FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
+} // ADAPTADA DE - VALIDAÇÃO PARA DIGITO - AUTOR FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
 
-
-//Validação para entrada
-//Valida se a entrada é válida, ou não
-//
-int valid_entrada(char *entrada) {
-    if (strlen(entrada) > 1) {
+//Validação opção char: verifica se a entrada contém apenas um char(retorna "1") ou não(retorna "0")
+int valid_op_c (char *entrada) {
+    if (strlen(entrada) != 1) {
         return 0; 
     }
     return 1; 
-} 
-// AUTOR: LUIZ MIGUEL // GIT: https://github.com/LuizMiguel4444
+} // AUTOR: LUIZ MIGUEL // GIT: https://github.com/LuizMiguel4444
 
-
-//Validação para dígito:
-//Verifica se o caractere é digito(retorna "1") ou não(retorna "0")
-//
+//Validação para dígito: verifica se o caractere é digito(retorna "1") ou não(retorna "0")
 int valid_digt (char num) {
     if (num >= '0' && num <= '9') {
         return 1; 
@@ -59,13 +27,17 @@ int valid_digt (char num) {
     else {
         return 0; 
     } 
-}
-// AUTOR: FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
+} // AUTOR: FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
 
+/// Validação data: verifica se o char é de data(retorna "1") ou não(retorna "0")
+int valid_char_data (char data) {
+    if ((valid_digt(data)) || (data == '/')) {
+        return 1;
+    }
+    return 0;
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
 
-//Validação para números com tamanho exigido:
-//Verifica se a string recebida contém apenas números no tamanho exigido(retorna "1") ou não(retorna "0")
-//
+//Validação para números com tamanho exigido: verifica se a string recebida contém apenas números no tamanho exigido(retorna "1") ou não(retorna "0")
 int valid_numeros(char* variavel, char tam) {
     int tam_variavel;
     tam_variavel = strlen(variavel);
@@ -78,43 +50,34 @@ int valid_numeros(char* variavel, char tam) {
         } 
     }
     return 1; 
-}
-// ADAPTADA - VALIDAÇÃO PARA CELULAR - AUTOR FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
+} // ADAPTADA - VALIDAÇÃO PARA CELULAR - AUTOR FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
 
-
-//Validação para números float com tamanho exigido:
-//Verifica se a string recebida contém apenas números e duas casas decimais no tamanho exigido(retorna "1") ou não(retorna "0")
-//
+//Validação para números float com tamanho exigido: verifica se a string recebida contém apenas números e duas casas decimais
+//no tamanho exigido(retorna "1") ou não(retorna "0")
 int valid_numeros_f(char* variavel, int tam) {
     int tam_variavel;
     tam_variavel = strlen(variavel);
     if (tam_variavel > tam) {
         return 0;
     }
-        for (int i = 0; i < tam_variavel; i++) {
-            if (!valid_digt(variavel[i])) {
-                if (variavel[i] == '.') {
-                    if (i == (tam_variavel -3)) {
-                        for (i++; i < tam_variavel; i++) {
-                            if (!valid_digt(variavel[i])) {
-                                return 0;
-                            }
-                            return 1;
-                        }
-                    } 
-                    else {
+    for (int i = 0; i < tam_variavel; i++) {
+        if (!valid_digt(variavel[i])) {
+            if ((variavel[i] == '.') && (i  == (tam_variavel - 3))){
+                for (i++; i < tam_variavel; i++) {
+                    if (!valid_digt(variavel[i])) {
                         return 0;
                     }
+                    return 1;
                 }
-            } 
+            } else {
+                    return 0;
+            }
         }
+    } 
     return 0;
-}
-// ADAPTADA - VALIDAÇÃO PARA CELULAR - AUTOR FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
+} // AUTOR - RENAN COSTA // GIT: https://github.com/RenanMRb
 
-//Validação para números sem tamanho exigido:
-//Verifica se a string recebida contém apenas números(retorna "1") ou não(retorna "0")
-//
+//Validação para números sem tamanho exigido: verifica se a string recebida contém apenas números(retorna "1") ou não(retorna "0")
 int valid_numeros_s(char* variavel) {
     int tam_variavel;
     tam_variavel = strlen(variavel);
@@ -124,25 +87,19 @@ int valid_numeros_s(char* variavel) {
         } 
     }
     return 1; 
-}
-// ADAPTADA - VALIDAÇÃO PARA CELULAR - AUTOR FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
+} // ADAPTADA - VALIDAÇÃO PARA CELULAR - AUTOR FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
 
-
-//Validação para CPF:
-//Verifica se a string recebida é um CPF válido(retorna "1") ou não(retorna "0")
-//
+//Validação para CPF: verifica se a string recebida é um CPF válido(retorna "1") ou não(retorna "0")
 int valid_cpf (char* cpf) {
     int i, j, digito1 = 0, digito2 = 0;
     if (strlen(cpf) != 11) {
         return 0;
-    }
-    else if(/*(strcmp (cpf,"00000000000") == 0) ||(strcmp (cpf,"11111111111") == 0) || (strcmp (cpf,"22222222222") == 0) ||*/
-            // (strcmp (cpf,"33333333333") == 0) || (strcmp (cpf,"44444444444") == 0) || (strcmp (cpf,"55555555555") == 0) ||
-            // (strcmp (cpf,"66666666666") == 0) || (strcmp (cpf,"77777777777") == 0) || (strcmp (cpf,"88888888888") == 0) ||
-            /*(strcmp (cpf,"99999999999") == 0) || */(strcmp (cpf,"12345678909") == 0)) {
+    } else if(/*(strcmp (cpf,"00000000000") == 0) ||(strcmp (cpf,"11111111111") == 0) || (strcmp (cpf,"22222222222") == 0) ||
+              (strcmp (cpf,"33333333333") == 0) || (strcmp (cpf,"44444444444") == 0) || (strcmp (cpf,"55555555555") == 0) ||
+              (strcmp (cpf,"66666666666") == 0) || (strcmp (cpf,"77777777777") == 0) || (strcmp (cpf,"88888888888") == 0) ||
+              (strcmp (cpf,"99999999999") == 0) || */(strcmp (cpf,"12345678909") == 0)) {
         return 0; //se o CPF estiver dentre os mencionados acima, ele é considerado cpf de teste.
-    }
-    else {
+    } else {
         //digito 1
         for (i = 0, j = 10; i < strlen (cpf) - 2; i++, j--) { //multiplica os números de 10 a 2 e soma os resultados dentro de digito1
             digito1 += (cpf[i]-48) * j;
@@ -150,21 +107,18 @@ int valid_cpf (char* cpf) {
         digito1 %= 11;
         if (digito1 < 2) {
             digito1 = 0;
-        }
-        else {
+        } else {
             digito1 = 11 - digito1;
         }
         if ((cpf[9] - 48) != digito1) {
             return 0; //se o digito 1 não for o mesmo que o da validação CPF é inválido
-        }
-        else { //digito 2
+        } else { //digito 2
             for (i = 0, j = 11; i < strlen (cpf) - 1; i++, j--) //multiplica os números de 11 a 2 e soma os resultados dentro de digito2
                 digito2 += (cpf[i] - 48) * j;
             digito2 %= 11;
             if (digito2 < 2) {
                 digito2 = 0;
-            }
-            else {
+            } else {
                 digito2 = 11 - digito2;
                 if ((cpf[10]-48) != digito2)
                     return 0;
@@ -172,44 +126,34 @@ int valid_cpf (char* cpf) {
         } 
     } //se o digito 2 não for o mesmo que o da validação CPF é inválido
     return 1;
-}
-// AUTOR: EDUARDO EDSON // GIT: https://github.com/eduardoedson
+} // AUTOR: EDUARDO EDSON // GIT: https://github.com/eduardoedson
 
 
-//Limpa buffer
-//
+//Limpa buffer: Limpa o buffer existente
 void limpa_buffer (void) {
     int entrada;
     do {
         entrada = fgetc(stdin); 
     } while (entrada != EOF && entrada != '\n');
-} 
-// AUTOR: GUILHERME BERNAL /// STACKOVERFLOW: https://pt.stackoverflow.com/questions/9427/limpeza-do-buffer-do-teclado-ap%C3%B3s-scanf
+} // AUTOR: GUILHERME BERNAL /// STACKOVERFLOW: https://pt.stackoverflow.com/questions/9427/limpeza-do-buffer-do-teclado-ap%C3%B3s-scanf
 
 
-//Validação bissexto:
-//Verifica se o ano for bissexto(divisível por 4, não divisível por ...
+//Validação bissexto: verifica se o ano for bissexto(divisível por 4, não divisível por
 //100 ou divisível por 400)(retorna "1") ou não(retorna "0")
-//
 int verif_bissexto(int aa) {
   if ((aa % 4 == 0) && (aa % 100 != 0)) {
         return 1; 
-    }
-    else if (aa % 400 == 0) {
+    } else if (aa % 400 == 0) {
         return 1; 
-    }
-    else {
+    } else {
         return 0; 
     } 
-}
-// AUTOR: FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
+} // AUTOR: FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
 
 
-//Validação data:
-//Verifica se dia, mês e ano correspondem a uma data válida, inclusive
-//em anos bissextos(retorna "1"), ou não (retorna "0")
-//
-int verif_data (int dd, int mm, int aa) {
+//Validação data dia, mês e ano: verifica se dia, mês e ano correspondem a uma data válida, inclusive
+//em anos bissextos(retorna "1"), ou não (retorna "0"). Utilizada no processo do valid_data
+int verif_valid_dat (int dd, int mm, int aa) {
     int maior_dia;
     if (aa < 0 || mm < 1 || mm > 12) {
         return 0; 
@@ -217,56 +161,97 @@ int verif_data (int dd, int mm, int aa) {
     if (mm == 2) {
         if (verif_bissexto(aa)) { 
             maior_dia = 29; 
-        }
-        else { 
+        } else { 
             maior_dia = 28; 
         } 
-    }
-    else if (mm == 4 || mm == 6 || mm == 9 || mm == 11) {
+    } else if (mm == 4 || mm == 6 || mm == 9 || mm == 11) {
         maior_dia = 30; 
-    }
-    else {
+    } else {
         maior_dia = 31; 
     }
     if (dd < 1 || dd > maior_dia) {
         return 0; 
     }
     return 1; 
-} 
-// AUTOR: FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
+} // AUTOR: FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
 
-
-//Validação data:
-//Verifica se a string recebida corresponde a uma data válida (apenas dígitos
-//e no formato: ddmmaaaa)(retorna "1") ou não(retorna "0")
-//
+//Validação data: verifica se a string recebida corresponde a uma data válida (apenas dígitos
+//e no formato: ddmmaaaa)(retorna "1") ou não(retorna "0"). Utilizada no processo valid_ent_data
 int valid_data (char* data) {
-    int tam, dia, mes, ano;
-    tam = strlen (data);
-    if (tam != 10) {
-        return 0; 
-    }
-    for (int i = 0; i < tam; i++) {
-        if (!valid_digt(data[i]) && (data[2] != '/') && (data[5] != '/')) {
-            return 0; 
-        } 
+    int dia, mes, ano;
+    for (int i = 0; i < strlen(data); i++) {
+        if (data[i] == '/') {
+        return 0;
+        }
     }
     dia = (data[0] - '0') * 10 + (data[1] - '0');
-    mes = (data[3] - '0') * 10 + (data[4] - '0');
-    ano = (data[6] - '0') * 1000 + (data[7] - '0') * 100 + 
-        (data[8] - '0') * 10 + (data[9] - '0');
-    if (!verif_data(dia, mes, ano)) {
-        return 0; 
+    mes = (data[2] - '0') * 10 + (data[3] - '0');
+    ano = (data[4] - '0') * 1000 + (data[5] - '0') * 100 + 
+          (data[6] - '0') * 10 + (data[7] - '0');
+    if (!verif_valid_dat(dia, mes, ano)) {
+        return 0;
     }
-    return 1; 
-}
-//AUTOR FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
+        return 1;  
+} // AUTOR FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
 
+//Trata data entrada: recebe uma data com barras (dd/mm/aaaa) e retorna a mesma sem barras (ddmmaaaa)
+char* trat_dat_e (char* data) {
+    data[2] = data[3];
+    data[3] = data[4];
+    data[4] = data[6];
+    data[5] = data[7];
+    data[6] = data[8];
+    data[7] = data[9];
+    data[8] = '\0';
+    return data;
+} // AUTOR: LUIZ MIGUEL // GIT: https://github.com/LuizMiguel4444
 
-//Validação para letra:
-//Verifica se a letra recebida é caractere alfabético(retorna "1") ou não(retorna "0")
+//Trata data saída: recebe uma data sem barras (ddmmaaaa) e retorna essa data com barras (dd/mm/aaaa)
+char* trat_dat_s (char* data) {
+  data[8] = data[7];
+  data[9] = data[8];
+  data[8] = data[6];
+  data[7] = data[5];
+  data[6] = data[4];
+  data[4] = data[3];
+  data[3] = data[2];
+  data[2] = '/';
+  data[5] = '/';
+  data[10] = '\0';
+  return data;
+} // AUTOR: LUIZ MIGUEL // GIT: https://github.com/LuizMiguel4444
+
+//Valida data: verifica se string recebido corresponder a uma data válida(retorna "1") ou não(retorna "0") 
+int valid_ent_data (char* data) {
+    int check;
+    char* new_data;
+    if (strlen(data) == 10) {
+        for (int i = 0; i < strlen(data); i++) {
+            if ((!valid_char_data(data[i])) || (data[2] != '/') || (data[5] != '/')) {
+            return 0;
+            } 
+        }
+    new_data = trat_dat_e(data);
+    check = valid_data(new_data);
+    } else if (strlen(data) == 8) {
+        for (int i = 0; i < strlen(data); i++) {
+            if (!valid_char_data(data[i])) {
+                return 0;   
+            }
+        }
+    check = valid_data(data);
+    } else if (strlen(data) != 8 && strlen(data) != 10) {
+        return 0;
+    }
+    if (check != 1) {
+        return 0;
+    } else {
+        return 1;
+    }
+}  // MODIFICADO DE: FLAVIUS GORGÔNIO E ANTONIO MANIERO // GIT: https://github.com/flaviusgorgonio E GIT: https://github.com/maniero
+
+//Validação para letra: verifica se a letra recebida é caractere alfabético(retorna "1") ou não(retorna "0")
 //Considerando alfabeto "A" - "Z" ou "a" - "z"
-//
 int valid_letra (char letra) {
     int a = letra;
     if (letra >= 'A' && letra <= 'Z') {
@@ -284,14 +269,11 @@ int valid_letra (char letra) {
     else {
     return 0;
     }
-}
-// AUTOR: FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
+} // AUTOR: FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
 
 
-//Validação para nome:
-//Verifica se todos os caracteres recebidos são caractere alfabético(retorna "1") ou não(retorna "0")
-//Considerando alfabeto "A" - "Z" ou "a" - "z"
-//
+//Validação para nome: verifica se todos os caracteres recebidos são caractere alfabético(retorna "1") ou não(retorna "0")
+//considerando alfabeto "A" - "Z" ou "a" - "z"
 int valid_nome (char* nome) {
     for (int i=0; nome[i] != '\0'; i++) {
         if (!valid_letra(nome[i]) || (strlen(nome) > 46)) {
@@ -299,69 +281,56 @@ int valid_nome (char* nome) {
         } 
     } 
     return 1; 
-}
-// AUTOR: FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
+} // AUTOR: FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
 
 
-//Validação para E-mail:
-//Verifica se a string recebida corresponde a um email válido(retorna "1")
-//ou não(retorna "0")
-//
+//Validação para E-mail: verifica se a string recebida corresponde a um email válido(retorna "1") ou não(retorna "0")
 int valid_email(char* email) {
     char usuario[256], site[256], dominio[256];
     if ((sscanf(email, "%[^@ \t\n]@%[^. \t\n].%3[^ \t\n]", usuario, site, dominio ) != 3 ) || (strlen(email) > 46)) {
         return 0;
     }
     return 1; 
-}
-// AUTOR: LACOBUS // STACKOVERFLOW: https://pt.stackoverflow.com/questions/310096/como-validar-um-e-mail-em-c
+} // AUTOR: LACOBUS // STACKOVERFLOW: https://pt.stackoverflow.com/questions/310096/como-validar-um-e-mail-em-c
 
 
-//validação para CNPJ:
-//Verifica se a string recebida corresponde a um CNPJ válido(retorna "1") ou não (retorna "0")
-//
-
+//validação para CNPJ: verifica se a string recebida corresponde a um CNPJ válido(retorna "1") ou não (retorna "0")
 int valid_cnpj(char*  cnpj) {
-    int size = strlen(cnpj);
-    if (size != 14) {
+    int tamanho = strlen(cnpj);;
+    if (tamanho != 14) {
         return 0; 
     }
-    int digits[14];
-    for (int i = 0; i < size; i++) {
-        if (cnpj[i] < '0' || cnpj[i] > '9') {
-            return 0; 
-        }
-        digits[i] = cnpj[i] - '0'; 
-    }
-    int sum = 0;
-    int weight = 5;
-    for (int i = 0; i < 12; i++) {
-        sum += digits[i] * weight;
-        weight = (weight == 2) ? 9 : (weight - 1); 
-    }
-    int remainder = sum % 11;
-    int digit1 = (remainder < 2) ? 0 : (11 - remainder);
-    if (digits[12] != digit1) {
+    int cnpj[14];
+    if (!valid_numeros_s(cnpj)) {
         return 0;
     }
-    sum = 0;
-    weight = 6;
-    for (int i = 0; i < 13; i++) {
-        sum += digits[i] * weight;
-        weight = (weight == 2) ? 9 : (weight - 1); 
+    int digt = 0;
+    int multiplicador = 5;
+    for (int i = 0; i < 12; i++) {
+        digt += cnpj[i] * multiplicador;
+        multiplicador = (multiplicador == 2) ? 9/*se o multiplicador for == '2', ele recebe '9'*/ : (multiplicador - 1)/*se não for, ele subtrai '1' dele mesmo*/; 
     }
-    remainder = sum % 11;
-    int digit2 = (remainder < 2) ? 0 : (11 - remainder);
-    if (digits[13] == digit2) {
+    int digt_aux = digt % 11;
+    int digit1 = (digt_aux < 2) ? 0/*se o digt_aux for < '2', ele recebe '0'*/ : (11 - digt_aux)/*se não for, ele subtrai digt_aux de '11'*/;
+    if (cnpj[12] != digit1) {
+        return 0;
+    }
+    digt = 0;
+    multiplicador = 6;
+    for (int i = 0; i < 13; i++) {
+        digt += cnpj[i] * multiplicador;
+        multiplicador = (multiplicador == 2) ? 9/*se o multiplicador for == '2', ele recebe '9'*/ : (multiplicador - 1)/*se não for, ele subtrai '1' dele mesmo*/; 
+    }
+    digt_aux = digt % 11;
+    int digit2 = (digt_aux < 2) ? 0/*se o digt_aux for < '2', ele recebe '0'*/ : (11 - digt_aux)/*se não for, ele subtrai digt_aux de '11'*/;
+    if (cnpj[13] == digit2) {
         return 1; 
     }
     return 0; 
-}
-// ADAPTADA DO CHAT GPT
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
 
-//Validação para código de barras
-//Verifica se a string recebida é um código de barras válido(retorna "1") ou não(retorna "0")
-//
+
+//Validação para código de barras: verifica se a string recebida é um código de barras válido(retorna "1") ou não(retorna "0")
 int valid_cod_barras (char* cod_barras) {
     int tam = 13;
     int l = 0;
@@ -392,13 +361,10 @@ int valid_cod_barras (char* cod_barras) {
         } 
     }
     return 0; 
-}
-// AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
 
 
-//Centralizar_texto
-//Centraliza o texto inserido
-//
+//Centralizar_texto: centraliza o texto inserido
 char* centralizar_texto(char* texto, int tam, int horizontal) {
     int tam_texto = strlen(texto);
 
@@ -427,20 +393,18 @@ char* centralizar_texto(char* texto, int tam, int horizontal) {
     }
     str[tam] = '\0';
     return str;
-}
-// AUTOR: EMANUEL ALVES // GIT: https://github.com/Faltrenn
+} // AUTOR: EMANUEL ALVES // GIT: https://github.com/Faltrenn
 
 
-// Simulador de input
+//Simulador de input
 char* input (void) {
   char linha[256];
   scanf(" %255[^\n]", linha);
   return duplica(linha);
-} 
-// AUTOR: FLAVIUS GORGÔNIO /// GIT: https://github.com/flaviusgorgonio
+} // AUTOR: FLAVIUS GORGÔNIO /// GIT: https://github.com/flaviusgorgonio
 
 
-// Auxiliar do simulador input
+//Auxiliar do simulador input
 char* duplica (char* s) {
   int n;
   n = strlen(s) + 1;
@@ -448,3 +412,127 @@ char* duplica (char* s) {
   strcpy(d, s);
   return d;
 } // AUTOR: FLAVIUS GORGÔNIO /// GIT: https://github.com/flaviusgorgonio
+
+//Pega o exato dia para auxiliar na função inst_data
+char* peg_dia (void) {
+    time_t momento;
+    momento = time(NULL);
+    struct tm tm = *localtime(&momento);
+    int d = tm.tm_mday;
+    char* dia = (char*) malloc(6 * sizeof(char));
+    sprintf(dia,"%d",d);
+    if (strlen(dia) < 2) {
+        char* dia2 = (char*) malloc(6 * sizeof(char));
+        strcpy(dia2, dia);
+        dia[0] = '0';
+        strcat(dia, dia2);
+    }
+    return dia;
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+
+//Pega o exato mes para auxiliar na função inst_data
+char* peg_mes (void) {
+    time_t momento;
+    momento = time(NULL);
+    struct tm tm = *localtime(&momento);
+    int m = tm.tm_mon + 1;
+    char* mes = (char*) malloc(6 * sizeof(char));
+    sprintf(mes,"%d",m);
+    if (strlen(mes) < 2) {
+        char* mes2 = (char*) malloc(6 * sizeof(char));
+        strcpy(mes2, mes);
+        mes[0] = '0';
+        strcat(mes, mes2);
+    }
+    return mes;
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+
+//Pega o exato ano para auxiliar na função inst_data
+char* peg_ano (void) {
+    time_t momento;
+    momento = time(NULL);
+    struct tm tm = *localtime(&momento);
+    int a = tm.tm_year + 1900;
+    char* ano = (char*) malloc(6 * sizeof(char));
+    sprintf(ano,"%d",a);
+    return ano;
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+
+//Pega a exata hora para auxiliar na função inst_hora
+char* peg_hora (void) {
+    time_t momento;
+    momento = time(NULL);
+    struct tm tm = *localtime(&momento);
+    int h = tm.tm_hour;
+    char* hora = (char*) malloc(6 * sizeof(char));
+    sprintf(hora,"%d",h);
+    if (strlen(hora) < 2) {
+        char* hora2 = (char*) malloc(6 * sizeof(char));
+        strcpy(hora2, hora);
+        hora[0] = '0';
+        strcat(hora, hora2);
+    }
+    return hora;
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+
+//Pega o exato minuto para auxiliar na função inst_hora
+char* peg_minuto (void) {
+    time_t momento;
+    momento = time(NULL);
+    struct tm tm = *localtime(&momento);
+    int m = tm.tm_min;
+    char* minuto = (char*) malloc(6 * sizeof(char));
+    sprintf(minuto,"%d",m);
+    if (strlen(minuto) < 2) {
+        char* minuto2 = (char*) malloc(6 * sizeof(char));
+        strcpy(minuto2, minuto);
+        minuto[0] = '0';
+        strcat(minuto, minuto2);
+    }
+    return minuto;
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+
+//Pega o exato segundo para auxiliar na função inst_hora
+char* peg_segundo (void) {
+    time_t momento;
+    momento = time(NULL);
+    struct tm tm = *localtime(&momento);
+    int s = tm.tm_sec;
+    char* segundo = (char*) malloc(6 * sizeof(char));
+    sprintf(segundo,"%d",s);
+    if (strlen(segundo) < 2) {
+        char* segundo2 = (char*) malloc(6 * sizeof(char));
+        strcpy(segundo2, segundo);
+        segundo[0] = '0';
+        strcat(segundo, segundo2);
+    }
+    return segundo;
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+
+//Retorna a data isntantanea
+char* inst_data (void) {
+    char* dia = peg_dia ();
+    char* mes = peg_mes ();
+    char* ano = peg_ano ();
+    char* data = (char *) malloc(strlen(dia) + strlen(mes) + strlen(ano));
+    data = dia;
+    strcat(data, "/");
+    strcat(data, mes);
+    strcat(data, "/");
+    strcat(data, ano);
+    return data;
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+
+//Retorna a hora instantanea
+char* inst_hora (void) {
+    char* hora = peg_hora ();
+    char* minuto = peg_minuto ();
+    char* segundo = peg_segundo ();
+    char* horario = (char *) malloc(strlen(hora) + strlen(minuto) + strlen(segundo));
+    horario = hora;
+    strcat(horario, ":");
+    strcat(horario, minuto);
+    strcat(horario, ":");
+    strcat(horario, segundo);
+    return horario;
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb

@@ -18,7 +18,7 @@
 /////
 //Declaração das funções do arquivo utel.c
 //
-int valid_entrada (char*);
+int valid_op_c (char*);
 int valid_op (char, char);
 int valid_digt (char);
 int valid_numeros (char*, char);
@@ -37,3 +37,11 @@ int valid_cod_barras (char*);
 char* centralizar_texto(char*, int, int);
 char* input (void);
 char* duplica (char*);
+char* peg_dia (void);
+char* peg_mes (void);
+char* peg_ano (void);
+char* peg_hora (void);
+char* peg_minuto (void);
+char* peg_segundo (void);
+char* inst_data (void);
+char* inst_hora (void);
