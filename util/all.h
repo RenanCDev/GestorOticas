@@ -1,27 +1,9 @@
-/*  ("+=========================================================================+\n")
-    ("|                                                                         |\n")
-    ("|               Universidade Federal do Rio Grande do Norte               |\n")
-    ("|                                                                         |\n")
-    ("|                   Centro de Ensino Superior do Seridó                   |\n")
-    ("|                                                                         |\n")
-    ("|             Aluno -- Renan Missias Rodrigues Alves da Costa             |\n")
-    ("|                                                                         |\n")
-    ("|                    Disciplina DCT1106 -- Programação                    |\n")
-    ("|                                                                         |\n")
-    ("|                  Projeto Sistema de Gestão para Óticas                  |\n")
-    ("|                                                                         |\n")
-    ("|               Developed by @RenanMRb - since august, 2023               |\n")
-    ("|                                                                         |\n")
-    ("+=========================================================================+\n")  */
+//Inclui tudo que será importado e utilizado no programa
 
-
-/////
-//Contém todos os //#include ".h"//
-//
 #ifndef UTIL_H  // Evita problemas de inclusão múltipla, exigindo a não existencia de
                 // nenhuma #define UTIL_H antes
                 
-#define UTIL_H
+#define UTIL_H // Define a UTIL_H
 
 #include <stdio.h> // Fornece funções para entrada e saída de dados
 
@@ -49,30 +31,28 @@
                   // time (obtém o tempo atual), ctime (converte uma representação de tempo para uma string legível),
                   // gmtime (converte o tempo para uma estrutura de tempo UTC) e outras.
 
-#include "../util/all.h"
+#include "../menus_telas/telas.h" //Inclui todas as declarações do telas.h
 
-#include "../menus_telas/telas.h"
+#include "../ent_le_dados/ent_dados.h" //Inclui todas as declarações do ent_dados.h
 
-#include "../ent_le_dados/ent_dados.h"
+#include "../menus_telas/menus.h" //Inclui todas as declarações do menus.h
 
-#include "../menus_telas/menus.h"
+#include "../administrativo/administrativo.h" //Inclui todas as declarações do //Inclui todas as declarações do administratvo.h
 
-#include "../administrativo/administrativo.h"
+#include "../fornecedor/fornecedor.h" //Inclui todas as declarações do fornecedor.h
 
-#include "../fornecedor/fornecedor.h"
+#include "../produto/produto.h" //Inclui todas as declarações do produto.h
 
-#include "../produto/produto.h"
+#include "../colaborador/colaborador.h" //Inclui todas as declarações do colaborador.h
 
-#include "../colaborador/colaborador.h"
+#include "../cliente/cliente.h" //Inclui todas as declarações do cliente.h
 
-#include "../cliente/cliente.h"
+#include "../relatorio/relatorio.h" //Inclui todas as declarações do relatorio.h 
 
-#include "../relatorio/relatorio.h"
+#include "../venda/venda.h" //Inclui todas as declarações do venda.h
 
-#include "../venda/venda.h"
+#include "../util/util.h" //Inclui todas as declarações do util.h
 
-#include "../util/util.h"
-
-#include "../ent_le_dados/le_dados.h"
+#include "../ent_le_dados/le_dados.h" //Inclui todas as declarações do dados.h
 
 #endif // UTIL_H
