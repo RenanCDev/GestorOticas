@@ -62,8 +62,12 @@ Client* cad_client (void) {
     limpa_buffer ();
     char* nome = le_nome ("Cadastro cliente");
     strcpy(cli->nome, nome);
+    char* data = inst_data ();
+    strcpy(cli->data, data);
+    char* hora = inst_hora ();
+    strcpy(cli->hora, hora);
     cli->status = '1';
-    tela_pessoas ("Cadastro cliente", cli->cpf, cli->email, cli->cel, cli->nome, cli->status);
+    tela_pessoas ("Cadastro cliente", cli->cpf, cli->email, cli->cel, cli->nome, cli->status, cli->data, cli->hora, cli->id);
     tela_ok ();
     return cli;
 }
@@ -82,7 +86,7 @@ Client* pesq_client (void) {
     } while (cli == NULL);
         char edit;
         do {
-            edit = menu_edit("Cadastro cliente", cli->cpf, cli->email, cli->cel, cli->nome, cli->status);
+            edit = menu_edit("Cadastro cliente", cli->cpf, cli->email, cli->cel, cli->nome, cli->status, cli->data, cli->hora, cli->id);
             if ((edit >= '1') && (edit <= '4')) {
                 regravar_cli (cli, edit);
                 tela_ok ();
@@ -162,5 +166,28 @@ void edit_cad_cli (Client* cli, char op) {
         case '4' :
             cli->status = '0';
             break;
+    }
+}
+
+//Percorre o algoritmo para gerar um id de um cliente adequadamente
+int gera_id_client (void) {
+    FILE *fp_cli;
+    fp_cli = fopen("dat/cliente.dat", "rb");
+    if (fp_cli == NULL) {
+        return 1;
+    }
+    fseek(fp_cli, 0, SEEK_END);
+    if ((long)ftell(fp_cli) == 0){
+        fclose(fp_cli);
+        return 1;
+    }
+    else {
+        fseek(fp_cli, -((long)sizeof(Client)), SEEK_END);
+        Client* perf_f;
+        perf_f = (Client*)malloc(sizeof(Client));
+        fread(perf_f, sizeof(Client), 1, fp_cli);
+        int id = perf_f->id+1;
+        fclose(fp_cli);
+        return id;
     }
 }

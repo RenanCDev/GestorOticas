@@ -25,7 +25,10 @@ struct cliente {
     char email[47];
     char cel[12];
     char nome[47];
+    char data[12];
+    char hora[12];
     char status;
+    int id;
 };
 
 //Declaração das funções do arquivo cliente.c
@@ -37,3 +40,4 @@ void gravar_client (Client*);
 Client* carregar_cli (char*);
 void regravar_cli(Client*, char);
 void edit_cad_cli (Client*, char);
+int gera_id_client (void);
