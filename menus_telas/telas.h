@@ -37,5 +37,5 @@ void t_exe_relat_forn (void);
 void t_exe_relat_prod (void);
 void t_exe_relat_colab (void);
 void t_exe_relat_client (void);
-void tela_produto (char*, char*, char*, char*, char*, char*, char*);
+void tela_produto (char*, char*, char*, char*, char*, char*, char*, char*, char*, int);
 void tela_venda (char*, char*, char*, char*, char*, char*, char*, char*, int, char);

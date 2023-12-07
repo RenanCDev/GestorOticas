@@ -315,12 +315,12 @@ char menu_edit (char* titulo, char* cpf, char* email, char* cel, char* nome, cha
 
 //Menu relatórios
 //
-char menu_edit_prod (char* titulo, char* cod_barras, char* cnpj, char* desc, char* quant, char* valor_comp, char* valor_vend) {
+char menu_edit_prod (char* titulo, char* cod_barras, char* cnpj, char* desc, char* quant, char* valor_comp, char* valor_vend, char* data, char* hora, int id) {
     char* op;
     char op_max = '5';
     do {
         system("clear");
-        tela_produto (titulo, cod_barras, cnpj, desc, quant, valor_comp, valor_vend);
+        tela_produto (titulo, cod_barras, cnpj, desc, quant, valor_comp, valor_vend, data, hora, id);
         printf("+=========================================================================+\n");
         printf("|                                                                         |\n");
         printf("|%s|\n", centralizar_texto ("Editar", 73, 0));

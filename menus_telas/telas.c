@@ -131,7 +131,9 @@ void tela_pessoas (char* tela, char* cpf, char* email, char* cel, char* nome, ch
 //Tela exemplo cadastro produto
 //
 void tela_produto (char* tela, char* cod_barras, char* cnpj, char* desc,
- char* quant, char* valor_comp, char* valor_vend) {
+ char* quant, char* valor_comp, char* valor_vend, char* data, char* hora, int id) {
+    char id_c[8];
+    snprintf(id_c, sizeof(id_c), "%d", id);
     tela_universal (tela);
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
@@ -146,6 +148,12 @@ void tela_produto (char* tela, char* cod_barras, char* cnpj, char* desc,
     printf("|   Valor de compra : %s|\n", centralizar_texto(valor_comp, 52, -1));
     printf("|                                                                         |\n");
     printf("|   Valor de venda : %s|\n", centralizar_texto(valor_vend, 53, -1));
+    printf("|                                                                         |\n");
+    printf("|   Data : %s|\n", centralizar_texto(data, 63, -1));
+    printf("|                                                                         |\n");
+    printf("|   Horário : %s|\n", centralizar_texto(hora, 60, -1));
+    printf("|                                                                         |\n");
+    printf("|   ID : %s|\n", centralizar_texto(id_c, 65, -1));
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n"); 
 }
