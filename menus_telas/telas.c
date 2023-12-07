@@ -162,7 +162,7 @@ void tela_produto (char* tela, char* cod_barras, char* cnpj, char* desc,
 //Tela exemplo cadastro venda
 //
 void tela_venda (char* tela, char* cli, char* col, char* cod_barras, char* desc,
- char* v_v_uni, char* quant, char* v_v_tot, int id, char status) {
+ char* v_v_uni, char* quant, char* v_v_tot, int id, char status, char* data, char* hora) {
     tela_universal (tela);
     char id_c[8];
     snprintf(id_c, sizeof(id_c), "%d", id);
@@ -177,6 +177,10 @@ void tela_venda (char* tela, char* cli, char* col, char* cod_barras, char* desc,
     printf("|   Desc. : %s|\n", centralizar_texto(desc, 62, -1));
     printf("|                                                                         |\n");
     printf("|   Quant. / Uni. / Tot. : %s x %s = %s|\n", v_v_uni, quant, centralizar_texto(v_v_tot, (41-(strlen(v_v_uni)+(strlen(quant)))), -1));
+    printf("|                                                                         |\n");
+    printf("|   Data : %s|\n", centralizar_texto(data, 63, -1));
+    printf("|                                                                         |\n");
+    printf("|   Horário : %s|\n", centralizar_texto(hora, 60, -1));
     printf("|                                                                         |\n");
     printf("|   ID : %s|\n", centralizar_texto(id_c, 65, -1));
     printf("|                                                                         |\n");

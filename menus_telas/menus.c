@@ -354,13 +354,13 @@ char menu_edit_prod (char* titulo, char* cod_barras, char* cnpj, char* desc, cha
 //Menu relatórios
 //
 char menu_edit_vend (char* tela, char* cpf_cli, char* cpf_col, char* cod_barras, char* desc,
- char* valor_vend_uni, char*  quant, char* valor_vend_tot, int id, char status) {
+ char* valor_vend_uni, char*  quant, char* valor_vend_tot, int id, char status, char* data, char* hora) {
     char* op;
     char op_max = '1';
     do {
         system("clear");
         tela_venda (tela, cpf_cli, cpf_col, cod_barras, desc, valor_vend_uni, 
-         quant, valor_vend_tot, id, status);
+         quant, valor_vend_tot, id, status, data, hora);
         printf("+=========================================================================+\n");
         printf("|                                                                         |\n");
         printf("|%s|\n", centralizar_texto ("Cancelar", 73, 0));
