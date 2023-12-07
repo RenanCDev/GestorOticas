@@ -25,7 +25,10 @@ struct fornecedor {
     char email[47];
     char cel[12];
     char nome[47];
+    char data[12];
+    char hora[12];
     char status;
+    int id;
 };
 
 //Declaração das funções do arquivo fornecedor.c
@@ -37,3 +40,4 @@ void gravar_fornec (Fornec*);
 Fornec* carregar_fornec (char*);    
 void regravar_fornec (Fornec*, char);
 void edit_cad_fornec (Fornec*, char);
+int gera_id_fornec (void);

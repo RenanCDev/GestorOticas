@@ -25,7 +25,8 @@ void modulo_fornecedor (void) {
     setlocale (LC_ALL, "Portuguese_Brazil");
     char op;
         do {
-            op = menu_sec_uni ("Fornecedor", " 1 -> Cadastrar fornecedor <- ", " 2 -> Pesquisar fornecedor <- ");            switch (op) {
+            op = menu_sec_uni ("Fornecedor", " 1 -> Cadastrar fornecedor <- ", " 2 -> Pesquisar fornecedor <- ");            
+            switch (op) {
                 case '1':
                     limpa_buffer ();
                     fornecedor = cad_fornec (); //Cria a struct Fornec
@@ -61,8 +62,12 @@ Fornec* cad_fornec (void) {
     limpa_buffer ();
     char* nome = le_nome ("Cadastro fornecedor");
     strcpy(forn->nome, nome);
+    char* data = inst_data ();
+    strcpy(forn->data, data);
+    char* hora = inst_hora ();
+    strcpy(forn->hora, hora);
     forn->status = '1';
-    tela_pessoas ("Cadastro fornecedor", forn->cnpj, forn->email, forn->cel, forn->nome, forn->status);
+    tela_pessoas ("Cadastro fornecedor", forn->cnpj, forn->email, forn->cel, forn->nome, forn->status, forn->data, forn->hora, forn->id);
     tela_ok ();
     return forn;
 }
@@ -81,7 +86,7 @@ Fornec* pesq_fornec (void) {
     } while (forn == NULL);
         char edit;
         do {
-            edit = menu_edit("Cadastro fornecedor", forn->cnpj, forn->email, forn->cel, forn->nome, forn->status);
+            edit = menu_edit("Cadastro fornecedor", forn->cnpj, forn->email, forn->cel, forn->nome, forn->status, forn->data, forn->hora, forn->id);
             if ((edit >= '1') && (edit <= '4')) {
                 regravar_fornec (forn, edit);
                 tela_ok ();
@@ -161,5 +166,28 @@ void edit_cad_fornec (Fornec* forn, char op) {
         case '4' :
             forn->status = '0';
             break;
+    }
+}
+
+//Percorre o algoritmo para gerar um id de um fornecedor adequadamente
+int gera_id_fornec (void) {
+    FILE *fp_forn;
+    fp_forn = fopen("dat/fornecedor.dat", "rb");
+    if (fp_forn == NULL) {
+        return 1;
+    }
+    fseek(fp_forn, 0, SEEK_END);
+    if ((long)ftell(fp_forn) == 0){
+        fclose(fp_forn);
+        return 1;
+    }
+    else {
+        fseek(fp_forn, -((long)sizeof(Fornec)), SEEK_END);
+        Fornec* perf_f;
+        perf_f = (Fornec*)malloc(sizeof(Fornec));
+        fread(perf_f, sizeof(Fornec), 1, fp_forn);
+        int id = perf_f->id+1;
+        fclose(fp_forn);
+        return id;
     }
 }
