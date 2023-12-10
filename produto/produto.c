@@ -57,10 +57,10 @@ Prod* cad_prod (void) {
     limpa_buffer ();
     do {
         cnpj = le_cnpj ("Cadastro produto");
-        if (carregar_fornec (cnpj) != NULL) {
+        if (carregar_fornec (cnpj) == NULL) {
             tela_erro ("Entrada não cadastrada");
         }
-    } while (carregar_fornec (cnpj) != NULL);
+    } while (carregar_fornec (cnpj) == NULL);
     strcpy(pro->cnpj, cnpj);
     limpa_buffer ();
     char* desc = le_desc_prod ("Cadastro produto");
