@@ -57,10 +57,12 @@ char* le_cel (char* tela) {
     do {
         tela_universal (tela);
         cel = ent_cel ();
+        trat_cel_entr (cel);
         if (!valid_numeros(cel, 11)) {
             tela_erro ("ENTRADA INVÁLIDA ! ! !");
         } 
     } while (!valid_numeros(cel, 11)); 
+    trat_cel_said (cel);
     return cel;
 }
 //Leitura nome
@@ -70,11 +72,11 @@ char* le_nome (char* tela) {
     do {
         tela_universal (tela);
         nome = ent_nome ();
-        trat_nome(nome);
         if (!valid_nome(nome)) {
             tela_erro ("ENTRADA INVÁLIDA ! ! !");
         } 
     } while (!valid_nome(nome)); 
+    trat_nome(nome);
     return nome;
 }
 //Leitura cnpj
@@ -114,7 +116,8 @@ char* le_desc_prod (char* tela) {
         if (!valid_nome(desc_prod)) {
             tela_erro ("ENTRADA INVÁLIDA ! ! !");
         } 
-    } while (!valid_nome(desc_prod)); 
+    } while (!valid_nome(desc_prod));
+    trat_nome(desc_prod);
     return desc_prod;
 }
 //Leitura quantidade de peças
