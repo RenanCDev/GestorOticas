@@ -548,7 +548,7 @@ void trat_cpf_entr (char* cpf) {
     }
 } // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
 
-//Tratamento de entrada para cpf colocando os "." e "-"
+//Tratamento de saída para cpf colocando os "." e "-"
 void trat_cpf_said (char* cpf) {
     cpf[13] = cpf[10];
     cpf[12] = cpf[9];
@@ -583,7 +583,7 @@ void trat_cel_entr (char* cel) {
     }
 } // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
 
-//Tratamento de entrada para cel colocando os "." e "-"
+//Tratamento de saída para cel colocando os "." e "-"
 void trat_cel_said (char* cel) {
     cel[13] = cel[10];
     cel[12] = cel[9];
@@ -600,4 +600,47 @@ void trat_cel_said (char* cel) {
     cel[1] = cel[0];
     cel[0] = '(';
     cel[14] = '\0';
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+
+//Tratamento de entrada para cnpj retirando os ".", "/" e "-"
+void trat_cnpj_entr (char* cnpj) {
+    int tam = strlen(cnpj);
+    if (tam > 13) {
+        cnpj[2] = cnpj[3];
+        cnpj[3] = cnpj[4];
+        cnpj[4] = cnpj[5];
+        cnpj[5] = cnpj[7];
+        cnpj[6] = cnpj[8];
+        cnpj[7] = cnpj[9];
+        cnpj[8] = cnpj[11];
+        cnpj[9] = cnpj[12];
+        cnpj[10] = cnpj[13];
+        cnpj[11] = cnpj[14];
+        cnpj[12] = cnpj[16];
+        cnpj[13] = cnpj[17];
+        cnpj[14] = '\0';
+    }
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb]
+
+//Tratamento de saida para cnpj colocando os ".", "/" e "-"
+void trat_cnpj_said (char* cnpj) {
+    cnpj[17] = cnpj[13];
+    cnpj[16] = cnpj[12];
+    cnpj[15] = '-';
+    cnpj[14] = cnpj[11];
+    cnpj[13] = cnpj[10];
+    cnpj[12] = cnpj[9];
+    cnpj[11] = cnpj[8];
+    cnpj[10] = '/';
+    cnpj[9] = cnpj[7];
+    cnpj[8] = cnpj[6];
+    cnpj[7] = cnpj[5];
+    cnpj[6] = '.';
+    cnpj[5] = cnpj[4];
+    cnpj[4] = cnpj[3];
+    cnpj[3] = cnpj[2];
+    cnpj[2] = '.';
+    cnpj[1] = cnpj[1];
+    cnpj[0] = cnpj[0];
+    cnpj[18] = '\0';
 } // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
