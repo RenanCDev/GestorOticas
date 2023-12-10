@@ -48,6 +48,13 @@ int main (void) {
     load_create("relatorio.dat");
     load_create("venda.dat");
     setlocale (LC_ALL, "Portuguese_Brazil");
+    char cel[16] = "(83)99900-8017";
+    printf("\t\t\t\t\t%s\t\t\t\t\t\n", cel);
+    trat_cel_entr(cel);
+    printf("\t\t\t\t\t%s\t\t\t\t\t\n", cel);
+    trat_cel_said(cel);
+    printf("\t\t\t\t\t%s\t\t\t\t\t\n", cel);
+    getchar ();
     char op0;
         do {
             op0 = menu_principal ();

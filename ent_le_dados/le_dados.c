@@ -29,10 +29,12 @@ char* le_cpf (char* tela) {
     do {
         tela_universal (tela);
         cpf = ent_cpf ();
+        trat_cpf_entr (cpf);
         if (!valid_cpf(cpf)) {
             tela_erro ("ENTRADA INVÁLIDA ! ! !");
         } 
     } while (!valid_cpf(cpf)); 
+    trat_cpf_said(cpf);
     return cpf;
 }
 //Leitura email
