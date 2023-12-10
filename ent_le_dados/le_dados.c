@@ -86,7 +86,7 @@ char* le_cnpj (char* tela) {
     do {
         tela_universal (tela);
         cnpj = ent_cnpj ();
-        trat_cel_entr (cnpj);
+        trat_cnpj_entr (cnpj);
         if (!valid_cnpj(cnpj)) {
             tela_erro ("ENTRADA INVÁLIDA ! ! !");
         } 

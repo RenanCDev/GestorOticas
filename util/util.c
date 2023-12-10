@@ -605,7 +605,7 @@ void trat_cel_said (char* cel) {
 //Tratamento de entrada para cnpj retirando os ".", "/" e "-"
 void trat_cnpj_entr (char* cnpj) {
     int tam = strlen(cnpj);
-    if (tam > 13) {
+    if (tam > 14) {
         cnpj[2] = cnpj[3];
         cnpj[3] = cnpj[4];
         cnpj[4] = cnpj[5];

@@ -48,12 +48,12 @@ int main (void) {
     load_create("relatorio.dat");
     load_create("venda.dat");
     setlocale (LC_ALL, "Portuguese_Brazil");
-    char cel[16] = "(83)99900-8017";
-    printf("\t\t\t\t\t%s\t\t\t\t\t\n", cel);
-    trat_cel_entr(cel);
-    printf("\t\t\t\t\t%s\t\t\t\t\t\n", cel);
-    trat_cel_said(cel);
-    printf("\t\t\t\t\t%s\t\t\t\t\t\n", cel);
+    char cnpj[20] = "59.199.089/0001-00";
+    printf("\t\t\t\t\t%s\t\t\t\t\t%ld\n", cnpj, strlen(cnpj));
+    trat_cnpj_entr(cnpj);
+    printf("\t\t\t\t\t%s\t\t\t\t\t%ld\n", cnpj, strlen(cnpj));
+    trat_cnpj_said(cnpj);
+    printf("\t\t\t\t\t%s\t\t\t\t\t%ld\n", cnpj, strlen(cnpj));
     getchar ();
     char op0;
         do {
