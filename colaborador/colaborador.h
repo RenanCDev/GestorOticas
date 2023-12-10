@@ -21,9 +21,9 @@
 typedef struct colaborador Colab;
 
 struct colaborador {
-    char cpf[12];
+    char cpf[16];
     char email[47];
-    char cel[12];
+    char cel[16];
     char nome[47];
     char data[12];
     char hora[12];
