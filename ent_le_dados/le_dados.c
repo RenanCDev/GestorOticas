@@ -86,10 +86,12 @@ char* le_cnpj (char* tela) {
     do {
         tela_universal (tela);
         cnpj = ent_cnpj ();
+        trat_cel_entr (cnpj);
         if (!valid_cnpj(cnpj)) {
             tela_erro ("ENTRADA INVÁLIDA ! ! !");
         } 
     } while (!valid_cnpj(cnpj)); 
+    trat_cnpj_said(cnpj);
     return cnpj;
 }
 //Leitura código de barras
