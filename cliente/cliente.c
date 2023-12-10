@@ -67,6 +67,7 @@ Client* cad_client (void) {
     char* hora = inst_hora ();
     strcpy(cli->hora, hora);
     cli->status = '1';
+    cli->id = gera_id_client();
     tela_pessoas ("Cadastro cliente", cli->cpf, cli->email, cli->cel, cli->nome, cli->status, cli->data, cli->hora, cli->id);
     tela_ok ();
     return cli;

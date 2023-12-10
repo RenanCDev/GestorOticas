@@ -67,6 +67,7 @@ Colab* cad_colab (void) {
     char* hora = inst_hora ();
     strcpy(col->hora, hora);
     col->status = '1';
+    col->id = gera_id_colab();
     tela_pessoas ("Cadastro colaborador", col->cpf, col->email, col->cel, col->nome, col->status, col->data, col->hora, col->id);
     tela_ok ();
     return col;
