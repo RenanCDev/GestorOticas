@@ -21,9 +21,9 @@
 typedef struct fornecedor Fornec;
 
 struct fornecedor {
-    char cnpj[15];
+    char cnpj[20];
     char email[47];
-    char cel[12];
+    char cel[15];
     char nome[47];
     char data[12];
     char hora[12];
