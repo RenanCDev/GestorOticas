@@ -251,14 +251,12 @@ int valid_ent_data (char* data) {
 //Validação para letra: verifica se a letra recebida é caractere alfabético(retorna "1") ou não(retorna "0")
 //Considerando alfabeto "A" - "Z" ou "a" - "z"
 int valid_letra (char letra) {
-    int a = letra;
+    // int a = letra;
     if (letra >= 'A' && letra <= 'Z') {
     return 1;
     } else if (letra >= 'a' && letra <= 'z') {
     return 1;
     } else if (letra == ' ') {
-    return 1;
-    } else if (a < 0) {
     return 1;
     } else {
     return 0;
@@ -527,9 +525,79 @@ char* inst_hora (void) {
     return horario;
 } // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
 
-void trat_nome(char* nome)
-{
+//Retorna a string maiúscula
+void trat_nome(char* nome) {
   for (int i = 0; nome[i] != '\0'; ++i) {
     nome[i] = toupper(nome[i]);
   }
-} 
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+
+//Tratamento de entrada para cpf retirando os "." e "-"
+void trat_cpf_entr (char* cpf) {
+    int tam = strlen(cpf);
+    if (tam > 11) {
+        cpf[3] = cpf[4];
+        cpf[4] = cpf[5];
+        cpf[5] = cpf[6];
+        cpf[6] = cpf[8];
+        cpf[7] = cpf[9];
+        cpf[8] = cpf[10];
+        cpf[9] = cpf[12];
+        cpf[10] = cpf[13];
+        cpf[11] = '\0';
+    }
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+
+//Tratamento de entrada para cpf colocando os "." e "-"
+void trat_cpf_said (char* cpf) {
+    cpf[13] = cpf[10];
+    cpf[12] = cpf[9];
+    cpf[11] = '-';
+    cpf[10] = cpf[8];
+    cpf[9] = cpf[7];
+    cpf[8] = cpf[6];
+    cpf[7] = '.';
+    cpf[6] = cpf[5];
+    cpf[5] = cpf[4];
+    cpf[4] = cpf[3];
+    cpf[3] = '.';
+    cpf[14] = '\0';
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+
+//Tratamento de entrada para cel retirando os "()" e "-"
+void trat_cel_entr (char* cel) {
+    int tam = strlen(cel);
+    if (tam > 11) {
+        cel[0] = cel[1];
+        cel[1] = cel[2];
+        cel[2] = cel[4];
+        cel[3] = cel[5];
+        cel[4] = cel[6];
+        cel[5] = cel[7];
+        cel[6] = cel[8];
+        cel[7] = cel[10];
+        cel[8] = cel[11];
+        cel[9] = cel[12];
+        cel[10] = cel[13];
+        cel[11] = '\0';
+    }
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+
+//Tratamento de entrada para cel colocando os "." e "-"
+void trat_cel_said (char* cel) {
+    cel[13] = cel[10];
+    cel[12] = cel[9];
+    cel[11] = cel[8];
+    cel[10] = cel[7];
+    cel[9] = '-';
+    cel[8] = cel[6];
+    cel[7] = cel[5];
+    cel[6] = cel[4];
+    cel[5] = cel[3];
+    cel[4] = cel[2];
+    cel[3] = ')';
+    cel[2] = cel[1];
+    cel[1] = cel[0];
+    cel[0] = '(';
+    cel[14] = '\0';
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb

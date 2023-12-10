@@ -46,3 +46,7 @@ char* peg_segundo (void);
 char* inst_data (void);
 char* inst_hora (void);
 void trat_nome (char*);
+void trat_cpf_entr (char*);
+void trat_cpf_said (char*);
+void trat_cel_entr (char*);
+void trat_cel_said (char*);
