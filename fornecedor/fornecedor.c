@@ -67,6 +67,7 @@ Fornec* cad_fornec (void) {
     char* hora = inst_hora ();
     strcpy(forn->hora, hora);
     forn->status = '1';
+    forn->id = gera_id_fornec();
     tela_pessoas ("Cadastro fornecedor", forn->cnpj, forn->email, forn->cel, forn->nome, forn->status, forn->data, forn->hora, forn->id);
     tela_ok ();
     return forn;
