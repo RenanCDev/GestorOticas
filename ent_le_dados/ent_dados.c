@@ -30,14 +30,14 @@
 //
 char* ent_cpf (void) {
     char* cpf;
-    cpf = (char*) malloc(11*sizeof(char));
+    cpf = (char*) malloc(15*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                             Digite o CPF .                              |\n");
     printf("|                                                                         |\n");
-    printf("|                         Insira apenas números !                         |\n");
+    printf("|                        Exemplos de CPF válidos .                        |\n");
     printf("|                                                                         |\n");
-    printf("|                    Tamanho máximo de 11 caracters .                     |\n");
+    printf("|                     00000000000 ou 000.000.000-00 .                     |\n");
     printf("|                                                                         |\n");
     printf("|          No caso do cadastro zero insira 11 caracters zeros .           |\n");
     printf("|                                                                         |\n");
@@ -72,14 +72,14 @@ char* ent_email (void) {
 //
 char* ent_cel (void) {
     char* cel;
-    cel = (char*) malloc(11*sizeof(char));
+    cel = (char*) malloc(15*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
     printf("|                           Digite o celular .                            |\n");
     printf("|                                                                         |\n");
-    printf("|                Insira apenas números, incluindo o ddd !                 |\n");
+    printf("|                     Exemplos de celulares válidos .                     |\n");
     printf("|                                                                         |\n");
-    printf("|                    Tamanho máximo de 11 caracters .                     |\n");
+    printf("|                     83912341234 ou (83)91234-1234 .                     |\n");
     printf("|                                                                         |\n");
     printf("|                            Cel.: ");
     cel = input();
@@ -100,6 +100,8 @@ char* ent_nome (void) {
     printf("|                                                                         |\n");
     printf("|                    Tamanho máximo de 46 caracters .                     |\n");
     printf("|                                                                         |\n");
+    printf("|                  Sem acentos e caractéres especiáis .                   |\n");
+    printf("|                                                                         |\n");
     printf("|               Nome: ");
     nome = input();
     printf("|                                                                         |\n");
@@ -112,14 +114,14 @@ char* ent_nome (void) {
 //
 char* ent_cnpj (void) {
     char* cnpj;
-    cnpj = (char*) malloc(14*sizeof(char));
+    cnpj = (char*) malloc(29*sizeof(char));
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|                      Digite o CNPJ do fornecedor :                      |\n");
+    printf("|                      Digite o CNPJ do fornecedor .                      |\n");
     printf("|                                                                         |\n");
-    printf("|                         Insira apenas números !                         |\n");
+    printf("|                       Exemplos de CNPJs válidos .                       |\n");
     printf("|                                                                         |\n");
-    printf("|                    Tamanho máximo de 14 caracters .                     |\n");
+    printf("|                 00000000000000 ou 00.000.000/0000-00 .                  |\n");
     printf("|                                                                         |\n");
     printf("|          No caso do cadastro zero insira 14 caracters zeros .           |\n");
     printf("|                                                                         |\n");
