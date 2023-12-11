@@ -52,3 +52,4 @@ void trat_cel_entr (char*);
 void trat_cel_said (char*);
 void trat_cnpj_entr (char*);
 void trat_cnpj_said (char*);
+int cancel (char*);

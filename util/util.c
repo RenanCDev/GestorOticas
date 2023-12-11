@@ -644,3 +644,11 @@ void trat_cnpj_said (char* cnpj) {
     cnpj[0] = cnpj[0];
     cnpj[18] = '\0';
 } // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+
+int cancel (char* comparado) {
+    char* comparador = "sair";
+    if (strcmp(comparado, comparador) == 0) {
+        return 0;
+    }
+    return 1;
+}
