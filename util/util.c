@@ -535,7 +535,7 @@ void trat_nome(char* nome) {
 //Tratamento de entrada para cpf retirando os "." e "-"
 void trat_cpf_entr (char* cpf) {
     int tam = strlen(cpf);
-    if (tam > 11) {
+    if ((cpf[3] == '.') && (cpf[7] == '.') && (cpf[11] == '-') && (tam == 14)) {
         cpf[3] = cpf[4];
         cpf[4] = cpf[5];
         cpf[5] = cpf[6];
@@ -567,7 +567,7 @@ void trat_cpf_said (char* cpf) {
 //Tratamento de entrada para cel retirando os "()" e "-"
 void trat_cel_entr (char* cel) {
     int tam = strlen(cel);
-    if (tam > 11) {
+    if ((cel[0] == '(') && (cel[3] == ')') && (cel[8] == '-') && (tam == 14)) {
         cel[0] = cel[1];
         cel[1] = cel[2];
         cel[2] = cel[4];
@@ -605,7 +605,7 @@ void trat_cel_said (char* cel) {
 //Tratamento de entrada para cnpj retirando os ".", "/" e "-"
 void trat_cnpj_entr (char* cnpj) {
     int tam = strlen(cnpj);
-    if (tam > 14) {
+    if ((cnpj[2] == '.') && (cnpj[6] == '.') && (cnpj[10] == '/') && (cnpj[15] == '-') && (tam == 18)) {
         cnpj[2] = cnpj[3];
         cnpj[3] = cnpj[4];
         cnpj[4] = cnpj[5];
