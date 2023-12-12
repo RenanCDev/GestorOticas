@@ -1,20 +1,3 @@
-/*  ("+=========================================================================+\n")
-    ("|                                                                         |\n")
-    ("|               Universidade Federal do Rio Grande do Norte               |\n")
-    ("|                                                                         |\n")
-    ("|                   Centro de Ensino Superior do Seridó                   |\n")
-    ("|                                                                         |\n")
-    ("|             Aluno -- Renan Missias Rodrigues Alves da Costa             |\n")
-    ("|                                                                         |\n")
-    ("|                    Disciplina DCT1106 -- Programação                    |\n")
-    ("|                                                                         |\n")
-    ("|                  Projeto Sistema de Gestão para Óticas                  |\n")
-    ("|                                                                         |\n")
-    ("|               Developed by @RenanMRb - since august, 2023               |\n")
-    ("|                                                                         |\n")
-    ("+=========================================================================+\n")  */
-
-
 //Inclui todas as importações e declarações necessárias no programa
 #include "../util/all.h"
 
@@ -30,7 +13,9 @@ void modulo_produto (void) {
                 case '1':
                     limpa_buffer ();
                     produto = cad_prod (); //Cria a struct Prod
-                    gravar_prod (produto); //Grava a struct Prod em arquivo
+                    if (produto != NULL) {
+                        gravar_prod (produto); //Grava a struct Prod em arquivo
+                    }
                     break;
                 case '2':
                     limpa_buffer ();
@@ -49,7 +34,9 @@ Prod* cad_prod (void) {
     char* cnpj;
     do {
         cod_barras = le_cod_barras ("Cadastro produto");
-        if (carregar_prod (cod_barras) != NULL) {
+        if (!cancel(cod_barras)) {
+            return NULL;
+        } else if (carregar_prod (cod_barras) != NULL) {
             tela_erro ("Entrada já cadastrada");
         }
     } while (carregar_prod (cod_barras) != NULL);
@@ -57,22 +44,36 @@ Prod* cad_prod (void) {
     limpa_buffer ();
     do {
         cnpj = le_cnpj ("Cadastro produto");
-        if (carregar_fornec (cnpj) == NULL) {
+        if (!cancel(cnpj)) {
+            return NULL;
+        } else if (carregar_fornec (cnpj) == NULL) {
             tela_erro ("Entrada não cadastrada");
         }
     } while (carregar_fornec (cnpj) == NULL);
     strcpy(pro->cnpj, cnpj);
     limpa_buffer ();
     char* desc = le_desc_prod ("Cadastro produto");
+    if (!cancel(desc)) {
+        return NULL;
+    }
     strcpy(pro->desc, desc);
     limpa_buffer ();
     char* quant = le_quant ("Cadastro produto");
+    if (!cancel(quant)) {
+        return NULL;
+    }
     strcpy(pro->quant, quant);
     limpa_buffer ();
     char* valor_comp = le_valor_c ("Cadastro produto");
+    if (!cancel(valor_comp)) {
+        return NULL;
+    }
     strcpy(pro->valor_comp, valor_comp);
     limpa_buffer ();
     char* valor_vend = le_valor_v ("Cadastro produto");
+    if (!cancel(valor_vend)) {
+        return NULL;
+    }
     strcpy(pro->valor_vend, valor_vend);
     char* data = inst_data ();
     strcpy(pro->data, data);
@@ -90,9 +91,7 @@ Prod* cad_prod (void) {
 void gravar_prod (Prod* pro) {
     FILE *fp_pro;
     fp_pro = fopen("dat/produto.dat", "ab");
-    do {
-        fwrite(pro, sizeof(Prod), 1, fp_pro);
-    } while (fwrite(pro, sizeof(Prod), 1, fp_pro) != 1);
+    fwrite(pro, sizeof(Prod), 1, fp_pro);
     fclose(fp_pro);
     free(pro);
 }
@@ -105,7 +104,9 @@ Prod* pesq_prod (void) {
     do{
         cod_barras = le_cod_barras ("Pesquisa produto");
         pro = carregar_prod (cod_barras);
-        if (pro == NULL) {
+        if (!cancel(cod_barras)) {
+           return NULL;
+        } else if (pro == NULL) {
             tela_erro ("Cadastro inexistente");
         }
     } while (pro == NULL);
@@ -185,30 +186,44 @@ void edit_cad_prod (Prod* pro, char op) {
         case '1' :
             do {
                 cnpj = le_cnpj ("Cadastro produto");
-                if (carregar_fornec (cnpj) != NULL) {
+                if (!cancel(cnpj)) {
+                    break;
+                } else if (carregar_fornec (cnpj) == NULL) {
                     tela_erro ("Entrada não cadastrada");
                 }
-            } while (carregar_fornec (cnpj) != NULL);
+            } while (carregar_fornec (cnpj) == NULL);
             strcpy(pro->cnpj, cnpj);
             break;
         case '2' :
             limpa_buffer ();
             char* desc = le_desc_prod ("Cadastro produto");
+            if (!cancel(desc)) {
+                break;
+            }
             strcpy(pro->desc, desc);
             break;
         case '3' :
             limpa_buffer ();
             char* quant = le_quant ("Cadastro produto");
+            if (!cancel(quant)) {
+                break;
+            }
             strcpy(pro->quant, quant);
             break;
         case '4' :
             limpa_buffer ();
             char* valor_comp = le_valor_c ("Cadastro produto");
+            if (!cancel(valor_comp)) {
+                break;
+            }
             strcpy(pro->valor_comp, valor_comp);
             break;
         case '5' :
             limpa_buffer ();
             char* valor_vend = le_valor_v ("Cadastro produto");
+            if (!cancel(valor_vend)) {
+                break;
+            }
             strcpy(pro->valor_vend, valor_vend);
             break;
     }
