@@ -13,11 +13,13 @@ void modulo_administrativo (void) {
                 case '1':
                     limpa_buffer (); 
                     adm = cad_admin (); //Cria a struct Admin
-                    gravar_admin (adm); //Grava a struct Admin em arquivo
+                    if (adm != NULL) {
+                        gravar_admin (adm); //Grava a struct Admin em arquivo
+                    }
                     break; 
                 case '2':
                     limpa_buffer (); 
-                    adm = pesq_admin (); //Pesquisa a struct Admin em arquivo
+                    pesq_admin (); //Pesquisa a struct Admin em arquivo
                     break; 
                 case '3':
                     modulo_relatorio (); //Entrada no módulo relatórios
@@ -34,19 +36,30 @@ Admin* cad_admin (void) {
     char* cpf;
     do {
         cpf = le_cpf ("Cadastro administrador");
-        if (carregar_adm (cpf) != NULL) {
+        if (!cancel(cpf)) {
+            return NULL;
+        } else if (carregar_adm (cpf) != NULL) {
             tela_erro ("Entrada já cadastrada");
         }
     } while (carregar_adm (cpf) != NULL);
     strcpy(adm->cpf, cpf);
     limpa_buffer ();
     char* email = le_email ("Cadastro administrador");
+    if (!cancel(email)) {
+        return NULL;
+    }
     strcpy(adm->email, email);
     limpa_buffer ();
     char* cel = le_cel ("Cadastro administrador");
+    if (!cancel(cel)) {
+        return NULL;
+    }
     strcpy(adm->cel, cel);
     limpa_buffer ();
     char* nome = le_nome ("Cadastro administrador");
+    if (!cancel(nome)) {
+        return NULL;
+    }
     strcpy(adm->nome, nome);
     char* data = inst_data ();
     strcpy(adm->data, data);
@@ -67,7 +80,9 @@ Admin* pesq_admin (void) {
     do{
         cpf = le_cpf ("Pesquisa administrador");
         adm = carregar_adm (cpf);
-        if (adm == NULL) {
+        if (!cancel(cpf)) {
+            return NULL;
+        } else if (adm == NULL) {
             tela_erro ("Cadastro inexistente");
         }
     } while (adm == NULL);
@@ -87,9 +102,7 @@ Admin* pesq_admin (void) {
 void gravar_admin (Admin* adm) {
     FILE* fp_adm;
     fp_adm = fopen("dat/administrativo.dat", "ab");
-    do {
-        fwrite(adm, sizeof(Admin), 1, fp_adm);
-    } while (fwrite(adm, sizeof(Admin), 1, fp_adm) != 1);
+    fwrite(adm, sizeof(Admin), 1, fp_adm);
     fclose(fp_adm);
     free(adm);
 }
@@ -138,16 +151,25 @@ void edit_cad_adm (Admin* adm, char op) {
         case '1' :
             limpa_buffer ();
             char* email = le_email ("Cadastro administrador");
+            if (!cancel(email)) {
+                break;
+            }
             strcpy(adm->email, email);
             break;
         case '2' :
             limpa_buffer ();
             char* cel = le_cel ("Cadastro administrador");
+            if (!cancel(cel)) {
+                break;
+            }
             strcpy(adm->cel, cel);
             break;
         case '3' :
             limpa_buffer ();
             char* nome = le_nome ("Cadastro administrador");
+            if (!cancel(nome)) {
+                break;
+            }
             strcpy(adm->nome, nome);
             break;
         case '4' :
