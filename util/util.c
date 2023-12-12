@@ -644,3 +644,42 @@ int cancel (char* comparado) {
     }
     return 1;
 }
+
+int cpf_zero (char* comparado) {
+    char* comparador = "000";
+    if (strcmp(comparado, comparador) == 0) {
+        return 0;
+    }
+    return 1;
+}
+
+void recebe_cpf_zero (char* cpf) {
+    char* cpf_zero = "000.000.000-00";
+    strcpy(cpf, cpf_zero);
+}
+
+int cnpj_zero (char* comparado) {
+    char* comparador = "000";
+    if (strcmp(comparado, comparador) == 0) {
+        return 0;
+    }
+    return 1;
+}
+
+void recebe_cnpj_zero (char* cnpj) {
+    char* cnpj_zero = "00.000.000/0000-00";
+    strcpy(cnpj, cnpj_zero);
+}
+
+int cod_barras_zero (char* comparado) {
+    char* comparador = "000";
+    if (strcmp(comparado, comparador) == 0) {
+        return 0;
+    }
+    return 1;
+}
+
+void recebe_cod_barras_zero (char* cod_barras) {
+    char* cod_barras_zero = "0000000000000";
+    strcpy(cod_barras, cod_barras_zero);
+}
