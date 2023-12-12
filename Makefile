@@ -11,4 +11,4 @@ all:
 	rm */*.gch;
 rm:
 	rm dat/*.dat;
-	cp dados_teste/*.dat dat
+	cp datTeste/*.dat dat

@@ -41,6 +41,8 @@ char* ent_cpf (void) {
     printf("|                                                                         |\n");
     printf("|          No caso do cadastro zero insira 11 caracters zeros .           |\n");
     printf("|                                                                         |\n");
+    printf("|              Para voltar ao menu anterior insira: 'sair' .              |\n");
+    printf("|                                                                         |\n");
     printf("|                            CPF: ");
     cpf = input();
     printf("|                                                                         |\n");
@@ -59,6 +61,8 @@ char* ent_email (void) {
     printf("|                            Digite o E-mail .                            |\n");
     printf("|                                                                         |\n");
     printf("|                    Tamanho máximo de 46 caracters .                     |\n");
+    printf("|                                                                         |\n");
+    printf("|              Para voltar ao menu anterior insira: 'sair' .              |\n");
     printf("|                                                                         |\n");
     printf("|                   E-mail: ");
     email = input();
@@ -81,6 +85,8 @@ char* ent_cel (void) {
     printf("|                                                                         |\n");
     printf("|                     83912341234 ou (83)91234-1234 .                     |\n");
     printf("|                                                                         |\n");
+    printf("|              Para voltar ao menu anterior insira: 'sair' .              |\n");
+    printf("|                                                                         |\n");
     printf("|                            Cel.: ");
     cel = input();
     printf("|                                                                         |\n");
@@ -101,6 +107,8 @@ char* ent_nome (void) {
     printf("|                    Tamanho máximo de 46 caracters .                     |\n");
     printf("|                                                                         |\n");
     printf("|                  Sem acentos e caractéres especiáis .                   |\n");
+    printf("|                                                                         |\n");
+    printf("|              Para voltar ao menu anterior insira: 'sair' .              |\n");
     printf("|                                                                         |\n");
     printf("|               Nome: ");
     nome = input();
@@ -125,6 +133,8 @@ char* ent_cnpj (void) {
     printf("|                                                                         |\n");
     printf("|          No caso do cadastro zero insira 14 caracters zeros .           |\n");
     printf("|                                                                         |\n");
+    printf("|              Para voltar ao menu anterior insira: 'sair' .              |\n");
+    printf("|                                                                         |\n");
     printf("|                          CNPJ: ");
     cnpj = input();
     printf("|                                                                         |\n");
@@ -148,6 +158,8 @@ char* ent_cod_barras (void) {
     printf("|                                                                         |\n");
     printf("|          No caso do cadastro zero insira 13 caracters zeros .           |\n");
     printf("|                                                                         |\n");
+    printf("|              Para voltar ao menu anterior insira: 'sair' .              |\n");
+    printf("|                                                                         |\n");
     printf("|                     Código de barras: ");
     cod_barras = input();
     printf("|                                                                         |\n");
@@ -166,6 +178,8 @@ char* ent_desc_produto (void) {
     printf("|                          Descreva o produto .                           |\n");
     printf("|                                                                         |\n");
     printf("|                    Tamanho máximo de 46 caracters .                     |\n");
+    printf("|                                                                         |\n");
+    printf("|              Para voltar ao menu anterior insira: 'sair' .              |\n");
     printf("|                                                                         |\n");
     printf("|     Descrição do produto: ");
     desc = input();
@@ -188,6 +202,8 @@ char* ent_quant (void) {
     printf("|                                                                         |\n");
     printf("|                     Tamanho máximo de 8 caracters .                     |\n");
     printf("|                                                                         |\n");
+    printf("|              Para voltar ao menu anterior insira: 'sair' .              |\n");
+    printf("|                                                                         |\n");
     printf("|                          Quantidade de peças: ");
     quant = input();
     printf("|                                                                         |\n");
@@ -208,6 +224,8 @@ char* ent_valor_ent (void) {
     printf("|               Insira apenas números, incluindo centavos !               |\n");
     printf("|                                                                         |\n");
     printf("|                     Tamanho máximo de 8 caracters .                     |\n");
+    printf("|                                                                         |\n");
+    printf("|              Para voltar ao menu anterior insira: 'sair' .              |\n");
     printf("|                                                                         |\n");
     printf("|                           Valor de compra: R$ ");
     valor = input();
@@ -230,6 +248,8 @@ char* ent_valor_saida (void) {
     printf("|                                                                         |\n");
     printf("|                     Tamanho máximo de 8 caracters .                     |\n");
     printf("|                                                                         |\n");
+    printf("|              Para voltar ao menu anterior insira: 'sair' .              |\n");
+    printf("|                                                                         |\n");
     printf("|                           Valor de venda: R$ ");
     valor = input();
     printf("|                                                                         |\n");
@@ -250,6 +270,8 @@ char* ent_id_venda (void) {
     printf("|                         Insira apenas números !                         |\n");
     printf("|                                                                         |\n");
     printf("|                     Tamanho máximo de 8 caracters .                     |\n");
+    printf("|                                                                         |\n");
+    printf("|              Para voltar ao menu anterior insira: 'sair' .              |\n");
     printf("|                                                                         |\n");
     printf("|                                  ID : ");
     id = input();

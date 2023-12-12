@@ -29,6 +29,9 @@ char* le_cpf (char* tela) {
     do {
         tela_universal (tela);
         cpf = ent_cpf ();
+        if (!cancel(cpf)) {
+            return "sair";
+        }
         trat_cpf_entr (cpf);
         if (!valid_cpf(cpf)) {
             tela_erro ("ENTRADA INVÁLIDA ! ! !");
@@ -44,7 +47,9 @@ char* le_email (char* tela) {
     do {
         tela_universal (tela);
         email = ent_email ();
-        if (!valid_email(email)) {
+        if (!cancel(email)) {
+            return "sair";
+        } else if (!valid_email(email)) {
             tela_erro ("ENTRADA INVÁLIDA ! ! !");
         } 
     } while (!valid_email(email)); 
@@ -57,6 +62,9 @@ char* le_cel (char* tela) {
     do {
         tela_universal (tela);
         cel = ent_cel ();
+        if (!cancel(cel)) {
+            return "sair";
+        }
         trat_cel_entr (cel);
         if (!valid_numeros(cel, 11)) {
             tela_erro ("ENTRADA INVÁLIDA ! ! !");
@@ -72,7 +80,9 @@ char* le_nome (char* tela) {
     do {
         tela_universal (tela);
         nome = ent_nome ();
-        if (!valid_nome(nome)) {
+        if (!cancel(nome)) {
+            return "sair";
+        } else if (!valid_nome(nome)) {
             tela_erro ("ENTRADA INVÁLIDA ! ! !");
         } 
     } while (!valid_nome(nome)); 
@@ -86,6 +96,9 @@ char* le_cnpj (char* tela) {
     do {
         tela_universal (tela);
         cnpj = ent_cnpj ();
+        if (!cancel(cnpj)) {
+            return "sair";
+        }
         trat_cnpj_entr (cnpj);
         if (!valid_cnpj(cnpj)) {
             tela_erro ("ENTRADA INVÁLIDA ! ! !");
@@ -101,7 +114,9 @@ char* le_cod_barras (char* tela) {
     do {
         tela_universal (tela);
         cod_barras = ent_cod_barras ();
-        if (!valid_cod_barras(cod_barras)) {
+        if (!cancel(cod_barras)) {
+            return "sair";
+        } else if (!valid_cod_barras(cod_barras)) {
             tela_erro ("ENTRADA INVÁLIDA ! ! !");
         } 
     } while (!valid_cod_barras(cod_barras)); 
@@ -114,6 +129,9 @@ char* le_desc_prod (char* tela) {
     do {
         tela_universal (tela);
         desc_prod = ent_desc_produto ();
+        if (!cancel(desc_prod)) {
+            return "sair";
+        }
         trat_nome(desc_prod);
         if (!valid_nome(desc_prod)) {
             tela_erro ("ENTRADA INVÁLIDA ! ! !");
@@ -129,7 +147,9 @@ char* le_quant (char* tela) {
     do {
         tela_universal (tela);
         quant = ent_quant ();
-        if ((strlen(quant) > 8) || (!valid_numeros_s(quant))) {
+        if (!cancel(quant)) {
+            return "sair";
+        } else if ((strlen(quant) > 8) || (!valid_numeros_s(quant))) {
             tela_erro ("ENTRADA INVÁLIDA ! ! !");
         } 
     } while ((strlen(quant) > 8) || (!valid_numeros_s(quant))); 
@@ -142,7 +162,9 @@ char* le_valor_c (char* tela) {
     do {
         tela_universal (tela);
         valor_ent = ent_valor_ent ();
-        if (!valid_numeros_f(valor_ent, 8)) {
+        if (!cancel(valor_ent)) {
+            return "sair";
+        } else if (!valid_numeros_f(valor_ent, 8)) {
             tela_erro ("ENTRADA INVÁLIDA ! ! !");
         } 
     } while (!valid_numeros_f(valor_ent, 8)); 
@@ -155,7 +177,9 @@ char* le_valor_v (char* tela) {
     do {
         tela_universal (tela);
         valor_saida = ent_valor_saida ();
-        if (!valid_numeros_f(valor_saida, 8)) {
+        if (!cancel(valor_saida)) {
+            return "sair";
+        } else if (!valid_numeros_f(valor_saida, 8)) {
             tela_erro ("ENTRADA INVÁLIDA ! ! !");
         } 
     } while (!valid_numeros_f(valor_saida, 8)); 
@@ -168,7 +192,9 @@ int le_id (char* tela) {
     do {
         tela_universal (tela);
         id = ent_id_venda ();
-        if (!valid_numeros_s(id)) {
+        if (!cancel(id)) {
+            return 0;
+        } else if (!valid_numeros_s(id)) {
             tela_erro ("ENTRADA INVÁLIDA ! ! !");
         } 
     } while (!valid_numeros_s(id));
@@ -182,7 +208,9 @@ char* cli_cad (void) {
     char* cpf;
     do {
         cpf = le_cpf ("Cadastro venda - cliente");
-        if (carregar_cli (cpf) == NULL) {
+        if (!cancel(cpf)) {
+            return "sair";
+        } else if (carregar_cli (cpf) == NULL) {
             tela_erro ("Entrada não cadastrada");
         }
     } while (carregar_cli (cpf) == NULL);
@@ -195,7 +223,9 @@ char* col_cad (void) {
     char* cpf;
     do {
         cpf = le_cpf ("Cadastro venda - colaborador");
-        if (carregar_colab (cpf) == NULL) {
+        if (!cancel(cpf)) {
+            return "sair";
+        } else if (carregar_colab (cpf) == NULL) {
             tela_erro ("Entrada não cadastrada");
         }
     } while (carregar_colab (cpf) == NULL);
@@ -207,13 +237,17 @@ char* col_cad (void) {
 Prod* pro_cad (void) {
     Prod* pro;
     pro = (Prod*)malloc((sizeof(Prod)));
+    char* cod_barras;
     do{
-        char* cod_barras = le_cod_barras ("Cadastro venda");
+        cod_barras = le_cod_barras ("Cadastro venda");
+        if (!cancel(cod_barras)) {
+            return NULL;
+        }
         pro = carregar_prod (cod_barras);
         if (pro == NULL) {
             tela_erro ("Cadastro inexistente");
         }
-    } while (pro == NULL);
+    } while ((pro == NULL) || !cancel(cod_barras));
     return pro;
 }
 
