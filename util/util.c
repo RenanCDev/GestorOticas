@@ -335,27 +335,19 @@ int valid_cod_barras (char* cod_barras) {
     } else {
         for (int i = 0; i < 12; i++) {
             if (i % 2 == 0) {
-                l = l + ((cod_barras[i] - '0') * 1); 
+                l = l + ((cod_barras[i] - '0')); 
             } else {
-                l = l + ((cod_barras[i] - '0') * 3); 
+                l = l + 3 * ((cod_barras[i] - '0')); 
             } 
         }
-        int m = l % 10;
-        if (m != 0) {
-            do {
-                l = l + 1;
-                k = k + 1;
-                m = l % 10; 
-            } while (m != 0); 
-        }
+        k = (10 - (l % 10)) % 10;
         int z = cod_barras[12];
-        if (z == k + 48) {
+        if (z == k + '0') {
             return 1; 
         } 
     }
     return 0; 
 } // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
-
 
 //Centralizar_texto: centraliza o texto inserido
 char* centralizar_texto(char* texto, int tam, int horizontal) {
