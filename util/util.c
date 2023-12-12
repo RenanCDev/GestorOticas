@@ -567,7 +567,7 @@ void trat_cpf_said (char* cpf) {
 //Tratamento de entrada para cel retirando os "()" e "-"
 void trat_cel_entr (char* cel) {
     int tam = strlen(cel);
-    if ((cel[0] == '(') && (cel[3] == ')') && (cel[8] == '-') && (tam == 14)) {
+    if ((cel[0] == '(') && (cel[3] == ')') && (cel[9] == '-') && (tam == 14)) {
         cel[0] = cel[1];
         cel[1] = cel[2];
         cel[2] = cel[4];
