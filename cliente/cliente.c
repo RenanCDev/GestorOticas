@@ -1,20 +1,3 @@
-/*  ("+=========================================================================+\n")
-    ("|                                                                         |\n")
-    ("|               Universidade Federal do Rio Grande do Norte               |\n")
-    ("|                                                                         |\n")
-    ("|                   Centro de Ensino Superior do Seridó                   |\n")
-    ("|                                                                         |\n")
-    ("|             Aluno -- Renan Missias Rodrigues Alves da Costa             |\n")
-    ("|                                                                         |\n")
-    ("|                    Disciplina DCT1106 -- Programação                    |\n")
-    ("|                                                                         |\n")
-    ("|                  Projeto Sistema de Gestão para Óticas                  |\n")
-    ("|                                                                         |\n")
-    ("|               Developed by @RenanMRb - since august, 2023               |\n")
-    ("|                                                                         |\n")
-    ("+=========================================================================+\n")  */
-    
-
 //Inclui todas as importações e declarações necessárias no programa
 #include "../util/all.h"
 
@@ -30,7 +13,9 @@ void modulo_cliente (void) {
                 case '1':
                     limpa_buffer ();
                     cliente = cad_client (); //Cria a struct Client
-                    gravar_client (cliente); //Grava a struct Client em arquivo
+                    if (cliente != NULL) {
+                        gravar_client (cliente); //Grava a struct Client em arquivo
+                    }
                     break;
                 case '2':
                     limpa_buffer ();
@@ -41,26 +26,37 @@ void modulo_cliente (void) {
 }
 
 
-//Percorre o algoritmo para cadastrar um novo administrador adequadamente
+//Percorre o algoritmo para cadastrar um novo cliente adequadamente
 Client* cad_client (void) {
     Client* cli;
     cli = (Client*)malloc((sizeof(Client)));
     char* cpf;
     do {
         cpf = le_cpf ("Cadastro cliente");
-        if (carregar_cli (cpf) != NULL) {
+        if (!cancel(cpf)) {
+            return NULL;
+        } else if (carregar_cli (cpf) != NULL) {
             tela_erro ("Entrada já cadastrada");
         }
     } while (carregar_cli (cpf) != NULL);
     strcpy(cli->cpf, cpf);
     limpa_buffer ();
     char* email = le_email ("Cadastro cliente");
+    if (!cancel(email)) {
+        return NULL;
+    }
     strcpy(cli->email, email);
     limpa_buffer ();
     char* cel = le_cel ("Cadastro cliente");
+    if (!cancel(cel)) {
+        return NULL;
+    }
     strcpy(cli->cel, cel);
     limpa_buffer ();
     char* nome = le_nome ("Cadastro cliente");
+    if (!cancel(nome)) {
+        return NULL;
+    }
     strcpy(cli->nome, nome);
     char* data = inst_data ();
     strcpy(cli->data, data);
@@ -81,7 +77,9 @@ Client* pesq_client (void) {
     do{
         cpf = le_cpf ("Pesquisa cliente");
         cli = carregar_cli (cpf);
-        if (cli == NULL) {
+        if (!cancel(cpf)) {
+            return NULL;
+        } else if (cli == NULL) {
             tela_erro ("Cadastro inexistente");
         }
     } while (cli == NULL);
@@ -101,9 +99,7 @@ Client* pesq_client (void) {
 void gravar_client (Client* cli) {
     FILE *fp_cli;
     fp_cli = fopen("dat/cliente.dat", "ab");
-    do {
-        fwrite(cli, sizeof(Client), 1, fp_cli);
-    } while (fwrite(cli, sizeof(Client), 1, fp_cli) != 1);
+    fwrite(cli, sizeof(Client), 1, fp_cli);
     fclose(fp_cli);
     free(cli);
 }
@@ -152,16 +148,25 @@ void edit_cad_cli (Client* cli, char op) {
         case '1' :
             limpa_buffer ();
             char* email = le_email ("Cadastro cliente");
+            if (!cancel(email)) {
+                break;
+            }
             strcpy(cli->email, email);
             break;
         case '2' :
             limpa_buffer ();
             char* cel = le_cel ("Cadastro cliente");
+            if (!cancel(cel)) {
+                break;
+            }
             strcpy(cli->cel, cel);
             break;
         case '3' :
             limpa_buffer ();
             char* nome = le_nome ("Cadastro cliente");
+            if (!cancel(nome)) {
+                break;
+            }
             strcpy(cli->nome, nome);
             break;
         case '4' :
