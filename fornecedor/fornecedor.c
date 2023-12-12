@@ -1,20 +1,3 @@
-/*  ("+=========================================================================+\n")
-    ("|                                                                         |\n")
-    ("|               Universidade Federal do Rio Grande do Norte               |\n")
-    ("|                                                                         |\n")
-    ("|                   Centro de Ensino Superior do Seridó                   |\n")
-    ("|                                                                         |\n")
-    ("|             Aluno -- Renan Missias Rodrigues Alves da Costa             |\n")
-    ("|                                                                         |\n")
-    ("|                    Disciplina DCT1106 -- Programação                    |\n")
-    ("|                                                                         |\n")
-    ("|                  Projeto Sistema de Gestão para Óticas                  |\n")
-    ("|                                                                         |\n")
-    ("|               Developed by @RenanMRb - since august, 2023               |\n")
-    ("|                                                                         |\n")
-    ("+=========================================================================+\n")  */
-
-
 //Inclui todas as importações e declarações necessárias no programa
 #include "../util/all.h"
 
@@ -30,7 +13,9 @@ void modulo_fornecedor (void) {
                 case '1':
                     limpa_buffer ();
                     fornecedor = cad_fornec (); //Cria a struct Fornec
-                    gravar_fornec (fornecedor); //Grava a struct Fornec em arquivo
+                    if (fornecedor != NULL) {
+                        gravar_fornec (fornecedor); //Grava a struct Fornec em arquivo
+                    }
                     break;
                 case '2':
                     limpa_buffer ();
@@ -48,19 +33,30 @@ Fornec* cad_fornec (void) {
     char* cnpj;
     do {
         cnpj = le_cnpj ("Cadastro fornecedor");
-        if (carregar_fornec (cnpj) != NULL) {
+        if (!cancel(cnpj)) {
+            return NULL;
+        } else if (carregar_fornec (cnpj) != NULL) {
             tela_erro ("Entrada já cadastrada");
         }
     } while (carregar_fornec (cnpj) != NULL);
     strcpy(forn->cnpj, cnpj);
     limpa_buffer ();
     char* email = le_email ("Cadastro fornecedor");
+    if (!cancel(email)) {
+        return NULL;
+    }
     strcpy(forn->email, email);
     limpa_buffer ();
     char* cel = le_cel ("Cadastro fornecedor");
+    if (!cancel(cel)) {
+        return NULL;
+    }
     strcpy(forn->cel, cel);
     limpa_buffer ();
     char* nome = le_nome ("Cadastro fornecedor");
+    if (!cancel(nome)) {
+        return NULL;
+    }
     strcpy(forn->nome, nome);
     char* data = inst_data ();
     strcpy(forn->data, data);
@@ -81,7 +77,9 @@ Fornec* pesq_fornec (void) {
     do{
         cnpj = le_cnpj ("Pesquisa fornecedor");
         forn = carregar_fornec (cnpj);
-        if (forn == NULL) {
+        if (!cancel(cnpj)) {
+            return NULL;
+        } else if (forn == NULL) {
             tela_erro ("Cadastro inexistente");
         }
     } while (forn == NULL);
@@ -101,9 +99,7 @@ Fornec* pesq_fornec (void) {
 void gravar_fornec (Fornec* forn) {
     FILE *fp_forn;
     fp_forn = fopen("dat/fornecedor.dat", "ab");
-    do {
-        fwrite(forn, sizeof(Fornec), 1, fp_forn);
-    } while (fwrite(forn, sizeof(Fornec), 1, fp_forn) != 1);
+    fwrite(forn, sizeof(Fornec), 1, fp_forn);
     fclose(fp_forn);
     free(forn);
 }
@@ -152,16 +148,25 @@ void edit_cad_fornec (Fornec* forn, char op) {
         case '1' :
             limpa_buffer ();
             char* email = le_email ("Cadastro fornecedor");
+            if (!cancel(email)) {
+                break;
+            }
             strcpy(forn->email, email);
             break;
         case '2' :
             limpa_buffer ();
             char* cel = le_cel ("Cadastro fornecedor");
+            if (!cancel(cel)) {
+                break;
+            }
             strcpy(forn->cel, cel);
             break;
         case '3' :
             limpa_buffer ();
             char* nome = le_nome ("Cadastro fornecedor");
+            if (!cancel(nome)) {
+                break;
+            }
             strcpy(forn->nome, nome);
             break;
         case '4' :
