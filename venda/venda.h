@@ -21,8 +21,8 @@
 typedef struct venda Vend;
 
 struct venda {
-    char cpf_cli[12];
-    char cpf_col[12];
+    char cpf_cli[16];
+    char cpf_col[16];
     char cod_barras[14];
     char desc[47];
     char quant[9];
@@ -32,6 +32,7 @@ struct venda {
     char hora[12];
     int id;
     char status;
+    Vend* prox;
 };
 
 

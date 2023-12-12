@@ -29,6 +29,7 @@ struct fornecedor {
     char hora[12];
     char status;
     int id;
+    Fornec* prox;
 };
 
 //Declaração das funções do arquivo fornecedor.c

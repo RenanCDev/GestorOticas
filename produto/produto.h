@@ -30,6 +30,7 @@ struct produto {
     char data[12];
     char hora[12];
     int id;
+    Prod* prox;
 };
 
 

@@ -29,6 +29,7 @@ struct colaborador {
     char hora[12];
     char status;
     int id;
+    Colab* prox;
 };
 
 //Declaração das funções do arquivo colaborador.c

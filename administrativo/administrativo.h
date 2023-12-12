@@ -26,6 +26,7 @@ struct administrador { //Estruturação da struct "administrador"
     char hora [12];
     int id;
     char status;
+    Admin* prox;
 };
 
 //Declaração das funções do arquivo administrativo.c

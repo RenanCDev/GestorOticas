@@ -29,6 +29,7 @@ struct cliente {
     char hora[12];
     char status;
     int id;
+    Client* prox;
 };
 
 //Declaração das funções do arquivo cliente.c
