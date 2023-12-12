@@ -1,20 +1,3 @@
-/*  ("+=========================================================================+\n")
-    ("|                                                                         |\n")
-    ("|               Universidade Federal do Rio Grande do Norte               |\n")
-    ("|                                                                         |\n")
-    ("|                   Centro de Ensino Superior do Seridó                   |\n")
-    ("|                                                                         |\n")
-    ("|             Aluno -- Renan Missias Rodrigues Alves da Costa             |\n")
-    ("|                                                                         |\n")
-    ("|                    Disciplina DCT1106 -- Programação                    |\n")
-    ("|                                                                         |\n")
-    ("|                  Projeto Sistema de Gestão para Óticas                  |\n")
-    ("|                                                                         |\n")
-    ("|               Developed by @RenanMRb - since august, 2023               |\n")
-    ("|                                                                         |\n")
-    ("+=========================================================================+\n")  */
-
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -39,7 +22,7 @@ char* ent_cpf (void) {
     printf("|                                                                         |\n");
     printf("|                     00000000000 ou 000.000.000-00 .                     |\n");
     printf("|                                                                         |\n");
-    printf("|          No caso do cadastro zero insira 11 caracters zeros .           |\n");
+    printf("|                 No caso do cadastro zero insira '000' .                 |\n");
     printf("|                                                                         |\n");
     printf("|              Para voltar ao menu anterior insira: 'sair' .              |\n");
     printf("|                                                                         |\n");
@@ -131,7 +114,7 @@ char* ent_cnpj (void) {
     printf("|                                                                         |\n");
     printf("|                 00000000000000 ou 00.000.000/0000-00 .                  |\n");
     printf("|                                                                         |\n");
-    printf("|          No caso do cadastro zero insira 14 caracters zeros .           |\n");
+    printf("|                 No caso do cadastro zero insira '000' .                 |\n");
     printf("|                                                                         |\n");
     printf("|              Para voltar ao menu anterior insira: 'sair' .              |\n");
     printf("|                                                                         |\n");
@@ -156,7 +139,7 @@ char* ent_cod_barras (void) {
     printf("|                                                                         |\n");
     printf("|                    Tamanho máximo de 13 caracters .                     |\n");
     printf("|                                                                         |\n");
-    printf("|          No caso do cadastro zero insira 13 caracters zeros .           |\n");
+    printf("|                 No caso do cadastro zero insira '000' .                 |\n");
     printf("|                                                                         |\n");
     printf("|              Para voltar ao menu anterior insira: 'sair' .              |\n");
     printf("|                                                                         |\n");

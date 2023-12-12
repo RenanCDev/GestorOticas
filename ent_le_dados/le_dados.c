@@ -31,6 +31,9 @@ char* le_cpf (char* tela) {
         cpf = ent_cpf ();
         if (!cancel(cpf)) {
             return "sair";
+        } else if (!cpf_zero(cpf)) {
+            recebe_cpf_zero(cpf);
+            return cpf;
         }
         trat_cpf_entr (cpf);
         if (!valid_cpf(cpf)) {
@@ -98,6 +101,9 @@ char* le_cnpj (char* tela) {
         cnpj = ent_cnpj ();
         if (!cancel(cnpj)) {
             return "sair";
+        } else if (!cnpj_zero(cnpj)) {
+            recebe_cnpj_zero(cnpj);
+            return cnpj;
         }
         trat_cnpj_entr (cnpj);
         if (!valid_cnpj(cnpj)) {
@@ -116,6 +122,9 @@ char* le_cod_barras (char* tela) {
         cod_barras = ent_cod_barras ();
         if (!cancel(cod_barras)) {
             return "sair";
+        } else if (!cod_barras_zero(cod_barras)) {
+            recebe_cod_barras_zero(cod_barras);
+            return cod_barras;
         } else if (!valid_cod_barras(cod_barras)) {
             tela_erro ("ENTRADA INVÁLIDA ! ! !");
         } 
