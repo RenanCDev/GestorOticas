@@ -1,20 +1,3 @@
-/*  ("+=========================================================================+\n")
-    ("|                                                                         |\n")
-    ("|               Universidade Federal do Rio Grande do Norte               |\n")
-    ("|                                                                         |\n")
-    ("|                   Centro de Ensino Superior do Seridó                   |\n")
-    ("|                                                                         |\n")
-    ("|             Aluno -- Renan Missias Rodrigues Alves da Costa             |\n")
-    ("|                                                                         |\n")
-    ("|                    Disciplina DCT1106 -- Programação                    |\n")
-    ("|                                                                         |\n")
-    ("|                  Projeto Sistema de Gestão para Óticas                  |\n")
-    ("|                                                                         |\n")
-    ("|               Developed by @RenanMRb - since august, 2023               |\n")
-    ("|                                                                         |\n")
-    ("+=========================================================================+\n")  */
-
-
 //Inclui todas as importações e declarações necessárias no programa
 #include "../util/all.h"
 
@@ -30,7 +13,9 @@ void modulo_venda (void) {
             case '1':
                 limpa_buffer ();
                 venda = cad_vend (); //Cria a struct Vend
-                gravar_vend(venda); //Grava a struct Vend em arquivo
+                if (venda != NULL) {
+                    gravar_vend(venda); //Grava a struct Vend em arquivo
+                }
                 break;
             case '2':
                 limpa_buffer ();
@@ -48,15 +33,27 @@ Vend* cad_vend (void) {
     Prod* pro;
     pro = (Prod*)malloc((sizeof(Prod)));
     char* cpf_cli = cli_cad ();
+    if (!cancel(cpf_cli)) {
+        return NULL;
+    }
     strcpy(ven->cpf_cli, cpf_cli);
     limpa_buffer ();
     char* cpf_col = col_cad ();
+    if (!cancel(cpf_col)) {
+        return NULL;
+    }
     strcpy(ven->cpf_col, cpf_col);
     limpa_buffer ();
     pro = pro_cad ();
+    if (pro == NULL) {
+        return NULL;
+    }
     strcpy(ven->cod_barras, pro->cod_barras);
     strcpy(ven->desc, pro->desc);
     char* quant = quant_vend (pro);
+    if (!cancel(quant)) {
+        return NULL;
+    }
     strcpy(ven->quant, quant);
     strcpy(ven->valor_vend_uni, pro->valor_vend);
     float v_vend = atof(pro->valor_vend);
@@ -81,9 +78,6 @@ Vend* cad_vend (void) {
 void gravar_vend (Vend* ven) {
     FILE *fp_ven;
     fp_ven = fopen("dat/venda.dat", "ab");
-    if (fp_ven == NULL) {
-        tela_erro ("SAVE/ LOADING de dados incompleto ou com problema");
-    }
     fwrite(ven, sizeof(Vend), 1, fp_ven);
     fclose(fp_ven);
     free(ven);
@@ -121,7 +115,9 @@ Vend* pesq_vend (void) {
     do{
         id = le_id ("Pesquisa venda");
         ven = carregar_vend (id);
-        if (ven == NULL) {
+        if (id == 0) {
+            return NULL;
+        } else if (ven == NULL) {
             tela_erro ("Venda inexistente");
         }
     } while (ven == NULL);
