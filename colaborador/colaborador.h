@@ -42,3 +42,6 @@ Colab* carregar_colab (char*);
 void regravar_colab(Colab*, char);
 void edit_cad_colab (Colab*, char);
 int gera_id_colab (void);
+void relat_pessoa_col (Colab* col);
+void relat_pessoa_atv_col (Colab* col);
+void relat_pessoa_inatv_col (Colab* col);

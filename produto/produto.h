@@ -45,3 +45,4 @@ void regravar_prod (Prod*, char);
 void regravar_prod_quant (Prod*);
 void edit_cad_prod (Prod*, char);
 int gera_id_prod (void);
+void relat_prod_t (Prod* pro);

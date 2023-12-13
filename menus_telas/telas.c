@@ -189,239 +189,135 @@ void tela_venda (char* tela, char* cli, char* col, char* cod_barras, char* desc,
     printf("+=========================================================================+\n"); 
 }
 
-
-//Tela exemplo relatório administrador
-//
-void t_exe_relat_adm (void) {
+void tela_relat_pessoa (void) {
     printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|   CPF : XXX.XXX.XXX-XX                                                  |\n");
-    printf("|                                                                         |\n");
-    printf("|   Email : email.exemplo@dominio.com                                     |\n");
-    printf("|                                                                         |\n");
-    printf("|   Cel .: (XX)9 9999 - 9999                                              |\n");
-    printf("|                                                                         |\n");
-    printf("|   Administrador : Administrador Exemplo de eyes                         |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|   Atividade 01 - #descrição completa da venda . . .                     |\n");
-    printf("|                                                                         |\n");
-    printf("|                  #dados comletos . . .                                  |\n");
-    printf("|                                                                         |\n");
-    printf("|                  #descrição completa da venda . . .                     |\n");
-    printf("|                                                                         |\n");
-    printf("|                  #dados comletos . . .                                  |\n");
-    printf("|                                                                         |\n");
-    printf("|                  #descrição completa da venda . . .                     |\n");
-    printf("|                                                                         |\n");
-    printf("|                  #dados comletos . . .                                  |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|   Atividade 02 - #descrição completa da venda . . .                     |\n");
-    printf("|                                                                         |\n");
-    printf("|                  #dados comletos . . .                                  |\n");
-    printf("|                                                                         |\n");
-    printf("|                  #descrição completa da venda . . .                     |\n");
-    printf("|                                                                         |\n");
-    printf("|                  #dados comletos . . .                                  |\n");
-    printf("|                                                                         |\n");
-    printf("|                  #descrição completa da venda . . .                     |\n");
-    printf("|                                                                         |\n");
-    printf("|                  #dados comletos . . .                                  |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n"); 
+    printf("|%s|%s|%s|%s|\n", centralizar_texto("CPF / CNPJ", 20, 0), centralizar_texto("ID", 5, 0), centralizar_texto("NOME", 38, 0), centralizar_texto("STATUS", 7, 0));
 }
 
-
-//Tela exemplo relatório administrador
-//
-void t_exe_relat_forn (void) {
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|   CNPJ : XX.XXX.XXX/0001-XX                                             |\n");
-    printf("|                                                                         |\n");
-    printf("|   Email : email.exemplo@dominio.com                                     |\n");
-    printf("|                                                                         |\n");
-    printf("|   Cel .: (XX)9 9999 - 9999                                              |\n");
-    printf("|                                                                         |\n");
-    printf("|   Fornecedor : Fornecedor Exemplo de eyes                               |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|   Compra 01 - #descrição completa da compra . . .                       |\n");
-    printf("|                                                                         |\n");
-    printf("|              #dados comletos . . .                                      |\n");
-    printf("|                                                                         |\n");
-    printf("|              #descrição completa da compra . . .                        |\n");
-    printf("|                                                                         |\n");
-    printf("|              #dados comletos . . .                                      |\n");
-    printf("|                                                                         |\n");
-    printf("|              #descrição completa da compra . . .                        |\n");
-    printf("|                                                                         |\n");
-    printf("|              #dados comletos . . .                                      |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|   Compra 02 - #descrição completa da compra . . .                       |\n");
-    printf("|                                                                         |\n");
-    printf("|              #dados comletos . . .                                      |\n");
-    printf("|                                                                         |\n");
-    printf("|              #descrição completa da compra . . .                        |\n");
-    printf("|                                                                         |\n");
-    printf("|              #dados comletos . . .                                      |\n");
-    printf("|                                                                         |\n");
-    printf("|              #descrição completa da compra . . .                        |\n");
-    printf("|                                                                         |\n");
-    printf("|              #dados comletos . . .                                      |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n"); 
+void relat_pessoa_adm (Admin* adm) {
+    char* id =(char*) malloc(8*sizeof(char));
+    sprintf(id,"%d",adm->id);
+    printf("+-------------------------------------------------------------------------+\n");
+    printf("|%s|%s|%s|   %c   |\n", centralizar_texto(adm->cpf, 20, 0), centralizar_texto(id, 5, 0), centralizar_texto(adm->nome, 38, 0), adm->status);
 }
 
-
-//Tela exemplo relatório administrador
-//
-void t_exe_relat_prod (void) {
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|   Código de barras : 0 00000 00000 0                                    |\n");
-    printf("|                                                                         |\n");
-    printf("|   Fornecedor : Fornecedor Exemplo Eagle                                 |\n");
-    printf("|                                                                         |\n");
-    printf("|   Produto : **** ******* ******** *******                               |\n");
-    printf("|                                                                         |\n");
-    printf("|   Estoque atual : 9999                                                  |\n");
-    printf("|                                                                         |\n");
-    printf("|   Valor de compra : 999,99 R$                                           |\n");
-    printf("|                                                                         |\n");
-    printf("|   Valor de compra : 1888,88 R$                                          |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|              #descrição completa do produto . . .                       |\n");
-    printf("|                                                                         |\n");
-    printf("|              #dados comletos . . .                                      |\n");
-    printf("|                                                                         |\n");
-    printf("|              #descrição completa do produto . . .                       |\n");
-    printf("|                                                                         |\n");
-    printf("|              #dados comletos . . .                                      |\n");
-    printf("|                                                                         |\n");
-    printf("|              #descrição completa do produto . . .                       |\n");
-    printf("|                                                                         |\n");
-    printf("|              #dados comletos . . .                                      |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n"); 
+void relat_pessoa_atv_adm (Admin* adm) {
+    if (adm->status == '1') {
+        char* id =(char*) malloc(8*sizeof(char));
+        sprintf(id,"%d",adm->id);
+        printf("+-------------------------------------------------------------------------+\n");
+        printf("|%s|%s|%s|   %c   |\n", centralizar_texto(adm->cpf, 20, 0), centralizar_texto(id, 5, 0), centralizar_texto(adm->nome, 38, 0), adm->status);
+    }
 }
 
-
-//Tela exemplo relatório colaborador
-//
-void t_exe_relat_colab (void) {
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|   CPF : XXX.XXX.XXX-XX                                                  |\n");
-    printf("|                                                                         |\n");
-    printf("|   Email : email.exemplo@dominio.com                                     |\n");
-    printf("|                                                                         |\n");
-    printf("|   Cel .: (XX)9 9999 - 9999                                              |\n");
-    printf("|                                                                         |\n");
-    printf("|   Colaborador : Colaborador Exemplo de eyes                             |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|   Venda 01 - #descrição completa da venda . . .                         |\n");
-    printf("|                                                                         |\n");
-    printf("|              #dados comletos . . .                                      |\n");
-    printf("|                                                                         |\n");
-    printf("|              #descrição completa da venda . . .                         |\n");
-    printf("|                                                                         |\n");
-    printf("|              #dados comletos . . .                                      |\n");
-    printf("|                                                                         |\n");
-    printf("|              #descrição completa da venda . . .                         |\n");
-    printf("|                                                                         |\n");
-    printf("|              #dados comletos . . .                                      |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|   Venda 02 - #descrição completa da venda . . .                         |\n");
-    printf("|                                                                         |\n");
-    printf("|              #dados comletos . . .                                      |\n");
-    printf("|                                                                         |\n");
-    printf("|              #descrição completa da venda . . .                         |\n");
-    printf("|                                                                         |\n");
-    printf("|              #dados comletos . . .                                      |\n");
-    printf("|                                                                         |\n");
-    printf("|              #descrição completa da venda . . .                         |\n");
-    printf("|                                                                         |\n");
-    printf("|              #dados comletos . . .                                      |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n"); 
-}
-    
-
-//Tela exemplo relatório cliente
-//
-void t_exe_relat_client (void) {
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|   CPF : XXX.XXX.XXX-XX                                                  |\n");
-    printf("|                                                                         |\n");
-    printf("|   Email : email.exemplo@dominio.com                                     |\n");
-    printf("|                                                                         |\n");
-    printf("|   Cel .: (XX)9 9999 - 9999                                              |\n");
-    printf("|                                                                         |\n");
-    printf("|   Cliente : Cliente Exemplo de eyes                                     |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|   Compra 01 - #descrição completa da compra . . .                       |\n");
-    printf("|                                                                         |\n");
-    printf("|              #dados comletos . . .                                      |\n");
-    printf("|                                                                         |\n");
-    printf("|              #descrição completa da compra . . .                        |\n");
-    printf("|                                                                         |\n");
-    printf("|              #dados comletos . . .                                      |\n");
-    printf("|                                                                         |\n");
-    printf("|              #descrição completa da compra . . .                        |\n");
-    printf("|                                                                         |\n");
-    printf("|              #dados comletos . . .                                      |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|   Compra 02 - #descrição completa da compra . . .                       |\n");
-    printf("|                                                                         |\n");
-    printf("|              #dados comletos . . .                                      |\n");
-    printf("|                                                                         |\n");
-    printf("|              #descrição completa da compra . . .                        |\n");
-    printf("|                                                                         |\n");
-    printf("|              #dados comletos . . .                                      |\n");
-    printf("|                                                                         |\n");
-    printf("|              #descrição completa da compra . . .                        |\n");
-    printf("|                                                                         |\n");
-    printf("|              #dados comletos . . .                                      |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n"); 
+void relat_pessoa_inatv_adm (Admin* adm) {
+    if (adm->status == '0') {
+        char* id =(char*) malloc(8*sizeof(char));
+        sprintf(id,"%d",adm->id);
+        printf("+-------------------------------------------------------------------------+\n");
+        printf("|%s|%s|%s|   %c   |\n", centralizar_texto(adm->cpf, 20, 0), centralizar_texto(id, 5, 0), centralizar_texto(adm->nome, 38, 0), adm->status);
+    }
 }
 
-
-//Tela exemplo cadastro pproduto
-//
-void t_exe_cad_prod (void) {
+void tela_fecha_relat (int quantidade) {
+    char* quant =(char*) malloc(8*sizeof(char));
+    sprintf(quant,"%d",quantidade);
+    printf("+-------------------------------------------------------------------------+\n");
     printf("+=========================================================================+\n");
-    printf("|                                                                         |\n");
-    printf("|   Código de barras : 0 00000 00000 0                                    |\n");
-    printf("|                                                                         |\n");
-    printf("|   Fornecedor : Fornecedor Exemplo Eagle                                 |\n");
-    printf("|                                                                         |\n");
-    printf("|   Descrição do produto : **** ******* ******** *******                  |\n");
-    printf("|                                                                         |\n");
-    printf("|   Estoque atual : 9999                                                  |\n");
-    printf("|                                                                         |\n");
-    printf("|   Valor de compra : 999,99 R$                                           |\n");
-    printf("|                                                                         |\n");
-    printf("|   Valor de compra : 1888,88 R$                                          |\n");
-    printf("|                                                                         |\n");
-    printf("+=========================================================================+\n"); 
+    printf("|%s : %s|\n", centralizar_texto("TOTAL DE CADASTROS", 43, 1), centralizar_texto(quant, 27, -1));
+    printf("+=========================================================================+\n");
 }
 
+void relat_pessoa_forn (Fornec* forn) {
+    char* id =(char*) malloc(8*sizeof(char));
+    sprintf(id,"%d",forn->id);
+    printf("+-------------------------------------------------------------------------+\n");
+    printf("|%s|%s|%s|   %c   |\n", centralizar_texto(forn->cnpj, 20, 0), centralizar_texto(id, 5, 0), centralizar_texto(forn->nome, 38, 0), forn->status);
+}
+
+void relat_pessoa_atv_forn (Fornec* forn) {
+    if (forn->status == '1') {
+        char* id =(char*) malloc(8*sizeof(char));
+        sprintf(id,"%d",forn->id);
+        printf("+-------------------------------------------------------------------------+\n");
+        printf("|%s|%s|%s|   %c   |\n", centralizar_texto(forn->cnpj, 20, 0), centralizar_texto(id, 5, 0), centralizar_texto(forn->nome, 38, 0), forn->status);
+    }
+}
+
+void relat_pessoa_inatv_forn (Fornec* forn) {
+    if (forn->status == '0') {
+        char* id =(char*) malloc(8*sizeof(char));
+        sprintf(id,"%d",forn->id);
+        printf("+-------------------------------------------------------------------------+\n");
+        printf("|%s|%s|%s|   %c   |\n", centralizar_texto(forn->cnpj, 20, 0), centralizar_texto(id, 5, 0), centralizar_texto(forn->nome, 38, 0), forn->status);
+    }
+}
+
+void relat_pessoa_cli (Client* cli) {
+    char* id =(char*) malloc(8*sizeof(char));
+    sprintf(id,"%d",cli->id);
+    printf("+-------------------------------------------------------------------------+\n");
+    printf("|%s|%s|%s|   %c   |\n", centralizar_texto(cli->cpf, 20, 0), centralizar_texto(id, 5, 0), centralizar_texto(cli->nome, 38, 0), cli->status);
+}
+
+void relat_pessoa_atv_cli (Client* cli) {
+    if (cli->status == '1') {
+        char* id =(char*) malloc(8*sizeof(char));
+        sprintf(id,"%d",cli->id);
+        printf("+-------------------------------------------------------------------------+\n");
+        printf("|%s|%s|%s|   %c   |\n", centralizar_texto(cli->cpf, 20, 0), centralizar_texto(id, 5, 0), centralizar_texto(cli->nome, 38, 0), cli->status);
+    }
+}
+
+void relat_pessoa_inatv_cli (Client* cli) {
+    if (cli->status == '0') {
+        char* id =(char*) malloc(8*sizeof(char));
+        sprintf(id,"%d",cli->id);
+        printf("+-------------------------------------------------------------------------+\n");
+        printf("|%s|%s|%s|   %c   |\n", centralizar_texto(cli->cpf, 20, 0), centralizar_texto(id, 5, 0), centralizar_texto(cli->nome, 38, 0), cli->status);
+    }
+}
+void relat_pessoa_col (Colab* col) {
+    char* id =(char*) malloc(8*sizeof(char));
+    sprintf(id,"%d",col->id);
+    printf("+-------------------------------------------------------------------------+\n");
+    printf("|%s|%s|%s|   %c   |\n", centralizar_texto(col->cpf, 20, 0), centralizar_texto(id, 5, 0), centralizar_texto(col->nome, 38, 0), col->status);
+}
+
+void relat_pessoa_atv_col (Colab* col) {
+    if (col->status == '1') {
+        char* id =(char*) malloc(8*sizeof(char));
+        sprintf(id,"%d",col->id);
+        printf("+-------------------------------------------------------------------------+\n");
+        printf("|%s|%s|%s|   %c   |\n", centralizar_texto(col->cpf, 20, 0), centralizar_texto(id, 5, 0), centralizar_texto(col->nome, 38, 0), col->status);
+    }
+}
+
+void relat_pessoa_inatv_col (Colab* col) {
+    if (col->status == '0') {
+        char* id =(char*) malloc(8*sizeof(char));
+        sprintf(id,"%d",col->id);
+        printf("+-------------------------------------------------------------------------+\n");
+        printf("|%s|%s|%s|   %c   |\n", centralizar_texto(col->cpf, 20, 0), centralizar_texto(id, 5, 0), centralizar_texto(col->nome, 38, 0), col->status);
+    }
+}
+
+void tela_relat_prod (void) {
+    printf("+=========================================================================+\n");
+    printf("|%s|%s|%s|%s|\n", centralizar_texto("COD. BARRAS", 15, 0), centralizar_texto("DESCRIÇÃO", 35, 0), centralizar_texto("V COMPRA", 10, 0), centralizar_texto("V VENDA", 10, 0));
+}
+
+void relat_prod_t (Prod* pro) {
+    printf("+-------------------------------------------------------------------------+\n");
+    printf("|%s|%s|%s|%s|\n", centralizar_texto(pro->cod_barras, 15, 0), centralizar_texto(pro->desc, 35, 0), centralizar_texto(pro->valor_comp, 10, 0), centralizar_texto(pro->valor_vend, 10, 0));
+}
+
+void tela_relat_vend (void) {
+    printf("+=========================================================================+\n");
+    printf("|%s|%s|%s|%s|\n", centralizar_texto("PRODUTO", 25, 0), centralizar_texto("COLABORADOR", 16, 0), centralizar_texto("CLIENTE", 16, 0), centralizar_texto("V VENDA", 13, 0));
+}
+
+void relat_vend_t (Vend* ven) {
+    printf("+-------------------------------------------------------------------------+\n");
+    printf("|%s|%s|%s|%s|\n", centralizar_texto(ven->desc, 25, 0), centralizar_texto(ven->cpf_col, 16, 0), centralizar_texto(ven->cpf_cli, 16, 0), centralizar_texto(ven->valor_vend_tot, 13, 0));
+}

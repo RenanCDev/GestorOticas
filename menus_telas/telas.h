@@ -32,10 +32,9 @@ void info_cliente_0 (void);
 //Telas exemplo
 //
 void tela_pessoas (char*, char*, char*, char*, char*, char, char*, char*, int);
-void t_exe_relat_adm (void);
-void t_exe_relat_forn (void);
-void t_exe_relat_prod (void);
-void t_exe_relat_colab (void);
-void t_exe_relat_client (void);
 void tela_produto (char*, char*, char*, char*, char*, char*, char*, char*, char*, int);
 void tela_venda (char*, char*, char*, char*, char*, char*, char*, char*, int, char, char*, char*);
+void tela_relat_pessoa (void);
+void tela_fecha_relat (int);
+void tela_relat_prod (void);
+void tela_relat_vend (void);

@@ -42,3 +42,6 @@ Client* carregar_cli (char*);
 void regravar_cli(Client*, char);
 void edit_cad_cli (Client*, char);
 int gera_id_client (void);
+void relat_pessoa_cli (Client* cli);
+void relat_pessoa_atv_cli (Client* cli);
+void relat_pessoa_inatv_cli (Client* cli);

@@ -28,3 +28,6 @@ char menu_edit_vend (char*, char*, char*, char*, char*, char*, char*, char*, int
 char menu_item_venda (void);
 char menu_form_pag (void);
 void tela_sobre (void);
+char menu_modulo (char*);
+char menu_modulo_prod (char*);
+char menu_modulo_vend (char*);

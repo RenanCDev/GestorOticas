@@ -439,6 +439,121 @@ char menu_form_pag (void) {
     } while ((!valid_op_c(op)) || (valid_op(op[0], op_max))); 
 }
 
+char menu_modulo (char* menu) {
+    char* op;
+    char op_max = '8';
+    do {
+        tela_banner ();
+        printf("+=========================================================================+\n");
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto (menu, 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("1 -> Todos cronologicamente <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("2 -> Todos alfabeticamente <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("3 -> Ativos cronologicamente <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("4 -> Ativos alfabeticamente <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("5 -> Inativos cronologicamente <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("6 -> Inativos alfabeticamente <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("7 -> Entre datas <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("8 -> Inicio de nome <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("0 -> Fechar o programa <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("+=========================================================================+\n");
+        printf("Selecione uma opção: \n");
+        op = input();
+        if ((valid_op_c(op)) && (valid_op(op[0], op_max))) {
+            return op[0]; 
+        } 
+        else {
+            tela_erro ("ENTRADA INVÁLIDA ! ! !");
+            return 'z';
+        } 
+    } while ((!valid_op_c(op)) || (valid_op(op[0], op_max))); 
+}
+
+char menu_modulo_prod (char* menu) {
+    char* op;
+    char op_max = '7';
+    do {
+        tela_banner ();
+        printf("+=========================================================================+\n");
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto (menu, 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("1 -> Todos cronologicamente <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("2 -> Todos alfabeticamente <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("3 -> Ordem crescente de código de barras <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("4 -> Por fornecedor <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("5 -> Por faixa de preço de compra <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("6 -> Por faixa de preço de venda <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("7 -> Inicio de nome <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("0 -> Fechar o programa <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("+=========================================================================+\n");
+        printf("Selecione uma opção: \n");
+        op = input();
+        if ((valid_op_c(op)) && (valid_op(op[0], op_max))) {
+            return op[0]; 
+        } 
+        else {
+            tela_erro ("ENTRADA INVÁLIDA ! ! !");
+            return 'z';
+        } 
+    } while ((!valid_op_c(op)) || (valid_op(op[0], op_max))); 
+}
+
+char menu_modulo_vend (char* menu) {
+    char* op;
+    char op_max = '7';
+    do {
+        tela_banner ();
+        printf("+=========================================================================+\n");
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto (menu, 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("1 -> Todos cronologicamente <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("2 -> Por produto <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("3 -> Por colaborador <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("4 -> Por cliente <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("5 -> Por faixa de preço crescente <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("6 -> Por faixa de preço descrescente <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("7 -> Entre datas <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("0 -> Fechar o programa <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("+=========================================================================+\n");
+        printf("Selecione uma opção: \n");
+        op = input();
+        if ((valid_op_c(op)) && (valid_op(op[0], op_max))) {
+            return op[0]; 
+        } 
+        else {
+            tela_erro ("ENTRADA INVÁLIDA ! ! !");
+            return 'z';
+        } 
+    } while ((!valid_op_c(op)) || (valid_op(op[0], op_max))); 
+}
 
 //Tela sobre o programa
 //

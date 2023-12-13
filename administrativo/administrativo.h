@@ -38,3 +38,6 @@ Admin* carregar_adm (char*);
 void regravar_adm(Admin*, char);
 void edit_cad_adm (Admin*, char);
 int gera_id_admin (void);
+void relat_pessoa_adm (Admin* adm);
+void relat_pessoa_atv_adm (Admin* adm);
+void relat_pessoa_inatv_adm (Admin* adm);

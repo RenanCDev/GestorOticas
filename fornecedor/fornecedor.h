@@ -42,3 +42,6 @@ Fornec* carregar_fornec (char*);
 void regravar_fornec (Fornec*, char);
 void edit_cad_fornec (Fornec*, char);
 int gera_id_fornec (void);
+void relat_pessoa_forn (Fornec* forn);
+void relat_pessoa_atv_forn (Fornec* forn);
+void relat_pessoa_inatv_forn (Fornec* forn);
