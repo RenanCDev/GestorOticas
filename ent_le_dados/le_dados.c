@@ -263,18 +263,20 @@ Prod* pro_cad (void) {
 
 //Percorre o algoritmo para retornar a quantidade vendida e atualização do estoque adequadamente
 char* quant_vend (Prod* pro) {
-    pro = (Prod*)malloc((sizeof(Prod)));
     char* quant;
     int quant_escolhida;
     int quant_estoque;
     int quant_total;
     do {
         quant = le_quant ("Cadastro venda");
+        if (!cancel(quant)) {
+            return "sair";
+        }
         quant_escolhida = atoi(quant);
         quant_estoque = atoi(pro->quant);
         quant_total = quant_estoque - quant_escolhida;
         if ((quant_total < 0) || (quant_estoque <= 0)) {
-            tela_erro ("ENTRADA INVÁLIDA ! ! !");
+            tela_erro ("ENTRADA INVÁLIDAasasfaadasdasdasd ! ! !");
         } 
     } while ((quant_total < 0) || (quant_estoque <= 0));
     snprintf(pro->quant, sizeof(pro->quant), "%d", quant_total);
