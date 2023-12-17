@@ -92,11 +92,6 @@ int valid_cpf (char* cpf) {
     int i, j, digito1 = 0, digito2 = 0;
     if (strlen(cpf) != 11) {
         return 0;
-    } else if((strcmp (cpf,"00000000000") == 0) ||(strcmp (cpf,"11111111111") == 0) || (strcmp (cpf,"22222222222") == 0) ||
-              (strcmp (cpf,"33333333333") == 0) || (strcmp (cpf,"44444444444") == 0) || (strcmp (cpf,"55555555555") == 0) ||
-              (strcmp (cpf,"66666666666") == 0) || (strcmp (cpf,"77777777777") == 0) || (strcmp (cpf,"88888888888") == 0) ||
-              (strcmp (cpf,"99999999999") == 0) || (strcmp (cpf,"12345678909") == 0)) {
-        return 0; //se o CPF estiver dentre os mencionados acima, ele é considerado cpf de teste.
     } else {
         //digito 1
         for (i = 0, j = 10; i < strlen (cpf) - 2; i++, j--) { //multiplica os números de 10 a 2 e soma os resultados dentro de digito1
@@ -192,45 +187,80 @@ int valid_data (char* data) {
         return 1;  
 } // AUTOR FLAVIUS GORGÔNIO // GIT: https://github.com/flaviusgorgonio
 
-//Trata data entrada: recebe uma data com barras (dd/mm/aaaa) e retorna a mesma sem barras (ddmmaaaa)
-char* trat_dat_e (char* data) {
-    data[2] = data[3];
-    data[3] = data[4];
-    data[4] = data[6];
-    data[5] = data[7];
-    data[6] = data[8];
-    data[7] = data[9];
-    data[8] = '\0';
-    return data;
-} // AUTOR: LUIZ MIGUEL // GIT: https://github.com/LuizMiguel4444
+void trat_dat_ent (char* data) {
+    if ((strlen(data) == 10) && (data[2] == '/') && (data[5] == '/')) {
+        data[2] = data[3];
+        data[3] = data[4];
+        data[4] = data[6];
+        data[5] = data[7];
+        data[6] = data[8];
+        data[7] = data[9];
+        data[8] = '\0';
+    }
+}
 
-//Trata data saída: recebe uma data sem barras (ddmmaaaa) e retorna essa data com barras (dd/mm/aaaa)
-char* trat_dat_s (char* data) {
-  data[8] = data[7];
-  data[9] = data[8];
-  data[8] = data[6];
-  data[7] = data[5];
-  data[6] = data[4];
-  data[4] = data[3];
-  data[3] = data[2];
-  data[2] = '/';
-  data[5] = '/';
-  data[10] = '\0';
-  return data;
-} // AUTOR: LUIZ MIGUEL // GIT: https://github.com/LuizMiguel4444
+void trat_dat_said (char* data) {
+    data[8] = data[7];
+    data[9] = data[8];
+    data[8] = data[6];
+    data[7] = data[5];
+    data[6] = data[4];
+    data[4] = data[3];
+    data[3] = data[2];
+    data[2] = '/';
+    data[5] = '/';
+    data[10] = '\0';
+}
+
+int compara_datas (char* data_inicial, char* data_final) {
+
+  int dia_inicial, mes_inicial, ano_inicial;
+  sscanf(data_inicial, "%2d %2d %4d", &dia_inicial, &mes_inicial, &ano_inicial);
+
+  int dia_final, mes_final, ano_final;
+  sscanf(data_final, "%2d %2d %4d", &dia_final, &mes_final, &ano_final);
+
+  if (ano_final < ano_inicial || (ano_final == ano_inicial && (mes_final < mes_inicial || (mes_final == mes_inicial && dia_final < dia_inicial)))) {
+    return 0;
+  } else {
+    return 1;
+  }
+} // ADAPTADA DE: LUIZ MIGUEL /// GIT: https://github.com/LuizMiguel4444
+
+int compara_datas_relat (char* data, char* data_inicial, char* data_final) {
+  int dia, mes, ano;
+  sscanf(data, "%2d %2d %4d", &dia, &mes, &ano);
+
+  int dia_inicial, mes_inicial, ano_inicial;
+  sscanf(data_inicial, "%2d %2d %4d", &dia_inicial, &mes_inicial, &ano_inicial);
+
+  int dia_final, mes_final, ano_final;
+  sscanf(data_final, "%2d %2d %4d", &dia_final, &mes_final, &ano_final);
+
+  if (ano_final < ano_inicial || (ano_final == ano_inicial && (mes_final < mes_inicial || (mes_final == mes_inicial && dia_final < dia_inicial)))) {
+    return 0;
+  }
+
+  if (ano < ano_inicial || (ano == ano_inicial && (mes < mes_inicial || (mes == mes_inicial && dia < dia_inicial)))) {
+    return 0;
+  } else if (ano > ano_final || (ano == ano_final && (mes > mes_final || (mes == mes_final && dia > dia_final)))) {
+    return 0;
+  } else {
+    return 1;
+  }
+} // AUTOR: LUIZ MIGUEL /// GIT: https://github.com/LuizMiguel4444
 
 //Valida data: verifica se string recebido corresponder a uma data válida(retorna "1") ou não(retorna "0") 
 int valid_ent_data (char* data) {
     int check;
-    char* new_data;
     if (strlen(data) == 10) {
         for (int i = 0; i < strlen(data); i++) {
             if ((!valid_char_data(data[i])) || (data[2] != '/') || (data[5] != '/')) {
             return 0;
             } 
         }
-    new_data = trat_dat_e(data);
-    check = valid_data(new_data);
+    trat_dat_ent(data);
+    check = valid_data(data);
     } else if (strlen(data) == 8) {
         for (int i = 0; i < strlen(data); i++) {
             if (!valid_char_data(data[i])) {

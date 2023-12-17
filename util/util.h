@@ -1,23 +1,3 @@
-/*  ("+=========================================================================+\n")
-    ("|                                                                         |\n")
-    ("|               Universidade Federal do Rio Grande do Norte               |\n")
-    ("|                                                                         |\n")
-    ("|                   Centro de Ensino Superior do Seridó                   |\n")
-    ("|                                                                         |\n")
-    ("|             Aluno -- Renan Missias Rodrigues Alves da Costa             |\n")
-    ("|                                                                         |\n")
-    ("|                    Disciplina DCT1106 -- Programação                    |\n")
-    ("|                                                                         |\n")
-    ("|                  Projeto Sistema de Gestão para Óticas                  |\n")
-    ("|                                                                         |\n")
-    ("|               Developed by @RenanMRb - since august, 2023               |\n")
-    ("|                                                                         |\n")
-    ("+=========================================================================+\n")  */
-
-
-/////
-//Declaração das funções do arquivo utel.c
-//
 int valid_op_c (char*);
 int valid_op (char, char);
 int valid_digt (char);
@@ -59,3 +39,7 @@ int cnpj_zero (char*);
 void recebe_cnpj_zero (char*);
 int cod_barras_zero (char*);
 void recebe_cod_barras_zero (char*);
+void trat_dat_ent (char*);
+void trat_dat_said (char*);
+int compara_datas (char*, char*);
+int compara_datas_relat (char*, char*, char*);

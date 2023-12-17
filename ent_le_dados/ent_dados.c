@@ -1,8 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <locale.h>
-#include <unistd.h>
 #include "../util/all.h"
 
 
@@ -261,4 +256,44 @@ char* ent_id_venda (void) {
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");   
     return id; 
+}
+
+char* ent_data_ini (void) {
+    char* data;
+    data = (char*) malloc(11*sizeof(char));
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                         Digite a data inicial .                         |\n");
+    printf("|                                                                         |\n");
+    printf("|                       Exemplos de datas válidas :                       |\n");
+    printf("|                                                                         |\n");
+    printf("|                         XX/XX/XXXX OU XXXXXXXX                          |\n");
+    printf("|                                                                         |\n");
+    printf("|              Para voltar ao menu anterior insira: 'sair' .              |\n");
+    printf("|                                                                         |\n");
+    printf("|                            Data : ");
+    data = input();
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");   
+    return data; 
+}
+
+char* ent_data_fim (void) {
+    char* data;
+    data = (char*) malloc(11*sizeof(char));
+    printf("+=========================================================================+\n");
+    printf("|                                                                         |\n");
+    printf("|                          Digite a data final .                          |\n");
+    printf("|                                                                         |\n");
+    printf("|                       Exemplos de datas válidas :                       |\n");
+    printf("|                                                                         |\n");
+    printf("|                         XX/XX/XXXX OU XXXXXXXX                          |\n");
+    printf("|                                                                         |\n");
+    printf("|              Para voltar ao menu anterior insira: 'sair' .              |\n");
+    printf("|                                                                         |\n");
+    printf("|                            Data : ");
+    data = input();
+    printf("|                                                                         |\n");
+    printf("+=========================================================================+\n");   
+    return data; 
 }

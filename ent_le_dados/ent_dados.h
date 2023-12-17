@@ -29,3 +29,5 @@ char* ent_quant (void);
 char* ent_valor_ent (void);
 char* ent_valor_saida (void);
 char* ent_id_venda (void);
+char* ent_data_ini (void);
+char* ent_data_fim (void);

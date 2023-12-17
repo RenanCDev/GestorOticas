@@ -1,23 +1,3 @@
-/*  ("+=========================================================================+\n")
-    ("|                                                                         |\n")
-    ("|               Universidade Federal do Rio Grande do Norte               |\n")
-    ("|                                                                         |\n")
-    ("|                   Centro de Ensino Superior do Seridó                   |\n")
-    ("|                                                                         |\n")
-    ("|             Aluno -- Renan Missias Rodrigues Alves da Costa             |\n")
-    ("|                                                                         |\n")
-    ("|                    Disciplina DCT1106 -- Programação                    |\n")
-    ("|                                                                         |\n")
-    ("|                  Projeto Sistema de Gestão para Óticas                  |\n")
-    ("|                                                                         |\n")
-    ("|               Developed by @RenanMRb - since august, 2023               |\n")
-    ("|                                                                         |\n")
-    ("+=========================================================================+\n")  */
-
-
-/////
-//Include do material necessario
-//
 #include "../util/all.h"
 
 
@@ -260,6 +240,24 @@ Prod* pro_cad (void) {
     return pro;
 }
 
+//Percorre o algoritmo para retornar um produto cadastrado
+char* forn_relat (char* texto) {
+    Fornec* forn;
+    forn = (Fornec*)malloc((sizeof(Fornec)));
+    char* cnpj;
+    do{
+        cnpj = le_cnpj (texto);
+        if (!cancel(cnpj)) {
+            return "sair";
+        }
+        forn = carregar_fornec (cnpj);
+        if (forn == NULL) {
+            tela_erro ("Cadastro inexistente");
+        }
+    } while ((forn == NULL) || !cancel(cnpj));
+    return cnpj;
+}
+
 
 //Percorre o algoritmo para retornar a quantidade vendida e atualização do estoque adequadamente
 char* quant_vend (Prod* pro) {
@@ -276,10 +274,45 @@ char* quant_vend (Prod* pro) {
         quant_estoque = atoi(pro->quant);
         quant_total = quant_estoque - quant_escolhida;
         if ((quant_total < 0) || (quant_estoque <= 0)) {
-            tela_erro ("ENTRADA INVÁLIDAasasfaadasdasdasd ! ! !");
+            tela_erro ("ENTRADA INVÁLIDA ! ! !");
         } 
     } while ((quant_total < 0) || (quant_estoque <= 0));
     snprintf(pro->quant, sizeof(pro->quant), "%d", quant_total);
     regravar_prod_quant (pro);
     return quant;
+}
+
+char* le_data_ini (char* tela) {
+    char* data;
+    do {
+        tela_universal (tela);
+        data = ent_data_ini ();
+        if (!cancel(data)) {
+            return "sair";
+        }
+        trat_dat_ent (data);
+        if (!valid_data(data)) {
+            tela_erro ("ENTRADA INVÁLIDA ! ! !");
+        } 
+    } while (!valid_data (data));
+    trat_dat_said (data);
+    return data;
+}
+
+char* le_data_fim (char* tela, char* data_ini) {
+    char* data;
+    do {
+        tela_universal (tela);
+        data = ent_data_fim ();
+        if (!cancel(data)) {
+            return "sair";
+        }
+        trat_dat_ent (data);
+        trat_dat_ent (data_ini);
+        if ((!valid_data(data)) || (!compara_datas( data_ini, data))) {
+            tela_erro ("ENTRADA INVÁLIDA ! ! !");
+        }
+    } while (!valid_data (data)); 
+    trat_dat_said (data);
+    return data;
 }

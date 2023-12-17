@@ -1,20 +1,3 @@
-/*  ("+=========================================================================+\n")
-    ("|                                                                         |\n")
-    ("|               Universidade Federal do Rio Grande do Norte               |\n")
-    ("|                                                                         |\n")
-    ("|                   Centro de Ensino Superior do Seridó                   |\n")
-    ("|                                                                         |\n")
-    ("|             Aluno -- Renan Missias Rodrigues Alves da Costa             |\n")
-    ("|                                                                         |\n")
-    ("|                    Disciplina DCT1106 -- Programação                    |\n")
-    ("|                                                                         |\n")
-    ("|                  Projeto Sistema de Gestão para Óticas                  |\n")
-    ("|                                                                         |\n")
-    ("|               Developed by @RenanMRb - since august, 2023               |\n")
-    ("|                                                                         |\n")
-    ("+=========================================================================+\n")  */
-
-
 #include "../util/all.h"
 
 
@@ -462,7 +445,7 @@ char menu_modulo (char* menu) {
         printf("|                                                                         |\n");
         printf("|%s|\n", centralizar_texto ("7 -> Entre datas <-", 73, 0));
         printf("|                                                                         |\n");
-        printf("|%s|\n", centralizar_texto ("8 -> Inicio de nome <-", 73, 0));
+        printf("|%s|\n", centralizar_texto ("8 -> Por nome <-", 73, 0));
         printf("|                                                                         |\n");
         printf("|%s|\n", centralizar_texto ("0 -> Fechar o programa <-", 73, 0));
         printf("|                                                                         |\n");
@@ -492,15 +475,15 @@ char menu_modulo_prod (char* menu) {
         printf("|                                                                         |\n");
         printf("|%s|\n", centralizar_texto ("2 -> Todos alfabeticamente <-", 73, 0));
         printf("|                                                                         |\n");
-        printf("|%s|\n", centralizar_texto ("3 -> Ordem crescente de código de barras <-", 73, 0));
+        printf("|%s|\n", centralizar_texto ("3 -> Todos por código de barras <-", 73, 0));
         printf("|                                                                         |\n");
         printf("|%s|\n", centralizar_texto ("4 -> Por fornecedor <-", 73, 0));
         printf("|                                                                         |\n");
-        printf("|%s|\n", centralizar_texto ("5 -> Por faixa de preço de compra <-", 73, 0));
+        printf("|%s|\n", centralizar_texto ("5 -> Por faixa de preço de compra crescente <-", 73, 0));
         printf("|                                                                         |\n");
-        printf("|%s|\n", centralizar_texto ("6 -> Por faixa de preço de venda <-", 73, 0));
+        printf("|%s|\n", centralizar_texto ("6 -> Por faixa de preço de venda crescente <-", 73, 0));
         printf("|                                                                         |\n");
-        printf("|%s|\n", centralizar_texto ("7 -> Inicio de nome <-", 73, 0));
+        printf("|%s|\n", centralizar_texto ("7 -> Por descrição <-", 73, 0));
         printf("|                                                                         |\n");
         printf("|%s|\n", centralizar_texto ("0 -> Fechar o programa <-", 73, 0));
         printf("|                                                                         |\n");
@@ -519,7 +502,7 @@ char menu_modulo_prod (char* menu) {
 
 char menu_modulo_vend (char* menu) {
     char* op;
-    char op_max = '7';
+    char op_max = '9';
     do {
         tela_banner ();
         printf("+=========================================================================+\n");
@@ -528,17 +511,21 @@ char menu_modulo_vend (char* menu) {
         printf("|                                                                         |\n");
         printf("|%s|\n", centralizar_texto ("1 -> Todos cronologicamente <-", 73, 0));
         printf("|                                                                         |\n");
-        printf("|%s|\n", centralizar_texto ("2 -> Por produto <-", 73, 0));
+        printf("|%s|\n", centralizar_texto ("2 -> Todos ativos <-", 73, 0));
         printf("|                                                                         |\n");
-        printf("|%s|\n", centralizar_texto ("3 -> Por colaborador <-", 73, 0));
+        printf("|%s|\n", centralizar_texto ("3 -> Todos desativos <-", 73, 0));
         printf("|                                                                         |\n");
-        printf("|%s|\n", centralizar_texto ("4 -> Por cliente <-", 73, 0));
+        printf("|%s|\n", centralizar_texto ("4 -> Por produto <-", 73, 0));
         printf("|                                                                         |\n");
-        printf("|%s|\n", centralizar_texto ("5 -> Por faixa de preço crescente <-", 73, 0));
+        printf("|%s|\n", centralizar_texto ("5 -> Por colaborador <-", 73, 0));
         printf("|                                                                         |\n");
-        printf("|%s|\n", centralizar_texto ("6 -> Por faixa de preço descrescente <-", 73, 0));
+        printf("|%s|\n", centralizar_texto ("6 -> Por cliente <-", 73, 0));
         printf("|                                                                         |\n");
-        printf("|%s|\n", centralizar_texto ("7 -> Entre datas <-", 73, 0));
+        printf("|%s|\n", centralizar_texto ("7 -> Por faixa de preço crescente <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("8 -> Por faixa de preço descrescente <-", 73, 0));
+        printf("|                                                                         |\n");
+        printf("|%s|\n", centralizar_texto ("9 -> Entre datas <-", 73, 0));
         printf("|                                                                         |\n");
         printf("|%s|\n", centralizar_texto ("0 -> Fechar o programa <-", 73, 0));
         printf("|                                                                         |\n");

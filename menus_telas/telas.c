@@ -192,6 +192,13 @@ void tela_venda (char* tela, char* cli, char* col, char* cod_barras, char* desc,
 void tela_relat_pessoa (void) {
     printf("+=========================================================================+\n");
     printf("|%s|%s|%s|%s|\n", centralizar_texto("CPF / CNPJ", 20, 0), centralizar_texto("ID", 5, 0), centralizar_texto("NOME", 38, 0), centralizar_texto("STATUS", 7, 0));
+    printf("+=========================================================================+\n");
+}
+
+void tela_sem_cad (void) {
+    printf("+-------------------------------------------------------------------------+\n");
+    printf("|%s|\n", centralizar_texto("CADASTROS NÃO ENCONTRADOS ! ! !", 74, 0));
+    printf("+-------------------------------------------------------------------------+\n");
 }
 
 void relat_pessoa_adm (Admin* adm) {
@@ -224,7 +231,26 @@ void tela_fecha_relat (int quantidade) {
     sprintf(quant,"%d",quantidade);
     printf("+-------------------------------------------------------------------------+\n");
     printf("+=========================================================================+\n");
-    printf("|%s : %s|\n", centralizar_texto("TOTAL DE CADASTROS", 43, 1), centralizar_texto(quant, 27, -1));
+    printf("|%s : %s|\n", centralizar_texto("TOTAL DE CADASTROS ENCONTRADOS NO SISTEMA", 54, 1), centralizar_texto(quant, 16, -1));
+    printf("+=========================================================================+\n");
+}
+
+void tela_fecha_relat1 (int quantidade, int ativos, int inativos) {
+    char texto_q[25] = "TOTAL ENCONTRADO : ";
+    char* quant = (char*) malloc(8*sizeof(char));
+    sprintf(quant,"%d",quantidade);
+    strcat(texto_q, quant);
+    char texto_at[15] = "ATIVOS : ";
+    char* at = (char*) malloc(8*sizeof(char));
+    sprintf(at,"%d",ativos);
+    strcat(texto_at, at);
+    char texto_inat[17] = "INATIVOS : ";
+    char* inat = (char*) malloc(8*sizeof(char));
+    sprintf(inat,"%d",inativos);
+    strcat(texto_inat, inat);
+    printf("+-------------------------------------------------------------------------+\n");
+    printf("+=========================================================================+\n");
+    printf("|%s|%s|%s|\n", centralizar_texto(texto_q, 33, 0), centralizar_texto(texto_at, 19, 0), centralizar_texto(texto_inat, 19, 0));
     printf("+=========================================================================+\n");
 }
 
@@ -305,6 +331,7 @@ void relat_pessoa_inatv_col (Colab* col) {
 void tela_relat_prod (void) {
     printf("+=========================================================================+\n");
     printf("|%s|%s|%s|%s|\n", centralizar_texto("COD. BARRAS", 15, 0), centralizar_texto("DESCRIÇÃO", 35, 0), centralizar_texto("V COMPRA", 10, 0), centralizar_texto("V VENDA", 10, 0));
+    printf("+=========================================================================+\n");
 }
 
 void relat_prod_t (Prod* pro) {
@@ -315,6 +342,7 @@ void relat_prod_t (Prod* pro) {
 void tela_relat_vend (void) {
     printf("+=========================================================================+\n");
     printf("|%s|%s|%s|%s|\n", centralizar_texto("PRODUTO", 25, 0), centralizar_texto("COLABORADOR", 16, 0), centralizar_texto("CLIENTE", 16, 0), centralizar_texto("V VENDA", 13, 0));
+    printf("+=========================================================================+\n");
 }
 
 void relat_vend_t (Vend* ven) {

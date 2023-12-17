@@ -36,5 +36,7 @@ void tela_produto (char*, char*, char*, char*, char*, char*, char*, char*, char*
 void tela_venda (char*, char*, char*, char*, char*, char*, char*, char*, int, char, char*, char*);
 void tela_relat_pessoa (void);
 void tela_fecha_relat (int);
+void tela_fecha_relat1 (int, int, int);
 void tela_relat_prod (void);
 void tela_relat_vend (void);
+void tela_sem_cad (void);
