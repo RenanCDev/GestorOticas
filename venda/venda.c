@@ -13,9 +13,7 @@ void modulo_venda (void) {
             case '1':
                 limpa_buffer ();
                 venda = cad_vend (); //Cria a struct Vend
-                if (venda != NULL) {
-                    gravar_vend(venda); //Grava a struct Vend em arquivo
-                }
+                free (venda);
                 break;
             case '2':
                 limpa_buffer ();
@@ -32,6 +30,8 @@ Vend* cad_vend (void) {
     ven = (Vend*)malloc((sizeof(Vend)));
     Prod* pro;
     pro = (Prod*)malloc((sizeof(Prod)));
+    char novo_item;
+    ven->id = gera_id_vend ();
     char* cpf_cli = cli_cad ();
     if (!cancel(cpf_cli)) {
         return NULL;
@@ -44,31 +44,41 @@ Vend* cad_vend (void) {
     }
     strcpy(ven->cpf_col, cpf_col);
     limpa_buffer ();
-    pro = pro_cad ();
-    if (pro == NULL) {
-        return NULL;
-    }
-    strcpy(ven->cod_barras, pro->cod_barras);
-    strcpy(ven->desc, pro->desc);
-    char* quant = quant_vend (pro);
-    if (!cancel(quant)) {
-        return NULL;
-    }
-    strcpy(ven->quant, quant);
-    strcpy(ven->valor_vend_uni, pro->valor_vend);
-    float v_vend = atof(pro->valor_vend);
-    int q_vend = atoi(quant);
-    float v_vend_tot = v_vend * q_vend;
-    snprintf(ven->valor_vend_tot, sizeof(ven->valor_vend_tot), "%.2f", v_vend_tot);
-    free(pro);
-    ven->id = gera_id_vend ();
-    char* data = inst_data ();
-    strcpy(ven->data, data);
-    char* hora = inst_hora ();
-    strcpy(ven->hora, hora);
-    ven->status = '1';
-    tela_venda ("Cadastro venda", ven->cpf_cli, ven->cpf_col, ven->cod_barras,
-        ven->desc, ven->quant, ven->valor_vend_uni, ven->valor_vend_tot, ven->id, ven->status, ven->data, ven->hora);
+    do {
+        pro = pro_cad ();
+        if (pro == NULL) {
+            excluir_vend(ven);
+            return NULL;
+        }
+        strcpy(ven->cod_barras, pro->cod_barras);
+        strcpy(ven->desc, pro->desc);
+        char* quant = quant_vend (pro);
+        if (!cancel(quant)) {
+            excluir_vend(ven);
+            return NULL;
+        }
+        strcpy(ven->quant, quant);
+        strcpy(ven->valor_vend_uni, pro->valor_vend);
+        float v_vend = atof(pro->valor_vend);
+        int q_vend = atoi(quant);
+        float v_vend_tot = v_vend * q_vend;
+        snprintf(ven->valor_vend_tot, sizeof(ven->valor_vend_tot), "%.2f", v_vend_tot);
+        free(pro);
+        novo_item = menu_item_venda ();
+        if (novo_item == '0') {
+            excluir_vend(ven);
+            return NULL;
+        }
+        char* data = inst_data ();
+        strcpy(ven->data, data);
+        char* hora = inst_hora ();
+        strcpy(ven->hora, hora);
+        ven->status = '1';
+        gravar_vend(ven);
+    } while (novo_item != '2');
+    tela_list_venda1 ("Cadastro venda", ven->cpf_cli, ven->cpf_col);
+    lista_venda(ven->id);
+    tela_list_venda_f(ven->data, ven->hora, ven->id, ven->status);
     tela_ok ();
     return ven;
 }
@@ -80,7 +90,6 @@ void gravar_vend (Vend* ven) {
     fp_ven = fopen("dat/venda.dat", "ab");
     fwrite(ven, sizeof(Vend), 1, fp_ven);
     fclose(fp_ven);
-    free(ven);
 }
 
 
@@ -114,17 +123,20 @@ Vend* pesq_vend (void) {
     int id;
     do{
         id = le_id ("Pesquisa venda");
-        ven = carregar_vend (id);
         if (id == 0) {
             return NULL;
-        } else if (ven == NULL) {
+        }
+        ven = carregar_vend (id);
+        if (ven == NULL) {
             tela_erro ("Venda inexistente");
         }
     } while (ven == NULL);
         char edit;
         do {
-            edit = menu_edit_vend ("Cadastro venda", ven->cpf_cli, ven->cpf_col, ven->cod_barras,
-                ven->desc, ven->valor_vend_uni, ven->quant, ven->valor_vend_tot, ven->id, ven->status, ven->data, ven->hora);
+            tela_list_venda1 ("Cadastro venda", ven->cpf_cli, ven->cpf_col);
+            lista_venda(id);
+            tela_list_venda_f(ven->data, ven->hora, ven->id, ven->status);
+            edit = menu_edit_vend ();
             if (edit == '1') {
                 excluir_vend (ven);
                 tela_ok ();
@@ -140,8 +152,6 @@ Vend* carregar_vend (int id) {
     Vend* ven;
     ven = (Vend*)malloc(sizeof(Vend));
     fp = fopen("dat/venda.dat", "rb");
-    if (fp == NULL) {
-    }
     while (fread(ven, sizeof(Vend), 1, fp)) {
         if ((ven->id == id) && (ven->status == '1')) {
             fclose(fp);
@@ -150,6 +160,19 @@ Vend* carregar_vend (int id) {
     }
     fclose(fp);
     return NULL;
+}
+
+void lista_venda (int id) {
+    FILE *fp;
+    Vend* ven;
+    ven = (Vend*) malloc(sizeof(Vend));
+    fp = fopen("dat/venda.dat", "rb");
+    while(fread(ven, sizeof(Vend), 1, fp)) {
+        if (ven->id == id) {
+            tela_list_venda2(ven->cod_barras, ven->desc, ven->valor_vend_uni, ven->quant, ven->valor_vend_tot);
+        }
+    }
+    fclose(fp);
 }
 
 
@@ -162,18 +185,18 @@ void excluir_vend (Vend* ven) {
     pro = (Prod*)malloc(sizeof(Prod));
     fp = fopen("dat/venda.dat", "r+b");
     while(!feof(fp)) {
-        fread(nova_ent, sizeof(Vend), 1, fp);
-        if (nova_ent->id == ven->id) {
-            pro = carregar_prod (ven->cod_barras);
-            int devolve = atoi(ven->quant);
-            int estoque = atoi(pro->quant);
-            int novo_estoque = devolve + estoque;
-            snprintf(pro->quant, sizeof(pro->quant), "%d", novo_estoque);
-            regravar_prod_quant (pro);
-            ven->status = '0';
-            fseek(fp, -1 * sizeof(Vend), SEEK_CUR);
-            fwrite(ven, sizeof(Vend), 1, fp);
-            break;
+        while(fread(nova_ent, sizeof(Vend), 1, fp)){
+            if (nova_ent->id == ven->id) {
+                pro = carregar_prod (ven->cod_barras);
+                int devolve = atoi(ven->quant);
+                int estoque = atoi(pro->quant);
+                int novo_estoque = devolve + estoque;
+                snprintf(pro->quant, sizeof(pro->quant), "%d", novo_estoque);
+                regravar_prod_quant (pro);
+                ven->status = '0';
+                fseek(fp, -1 * sizeof(Vend), SEEK_CUR);
+                fwrite(ven, sizeof(Vend), 1, fp);
+            }
         }
     }
     fclose(fp);

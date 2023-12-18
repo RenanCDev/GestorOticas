@@ -40,3 +40,6 @@ void tela_fecha_relat1 (int, int, int);
 void tela_relat_prod (void);
 void tela_relat_vend (void);
 void tela_sem_cad (void);
+void tela_list_venda1 (char*, char*, char*);
+void tela_list_venda2 (char*, char*, char*, char*, char*);
+void tela_list_venda_f (char*, char*, int, char);

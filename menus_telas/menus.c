@@ -336,14 +336,10 @@ char menu_edit_prod (char* titulo, char* cod_barras, char* cnpj, char* desc, cha
 
 //Menu relatórios
 //
-char menu_edit_vend (char* tela, char* cpf_cli, char* cpf_col, char* cod_barras, char* desc,
- char* valor_vend_uni, char*  quant, char* valor_vend_tot, int id, char status, char* data, char* hora) {
+char menu_edit_vend (void) {
     char* op;
     char op_max = '1';
     do {
-        system("clear");
-        tela_venda (tela, cpf_cli, cpf_col, cod_barras, desc, valor_vend_uni, 
-         quant, valor_vend_tot, id, status, data, hora);
         printf("+=========================================================================+\n");
         printf("|                                                                         |\n");
         printf("|%s|\n", centralizar_texto ("Cancelar", 73, 0));
@@ -383,44 +379,15 @@ char menu_item_venda (void) {
         op = input ();
         if ((valid_op_c(op)) && (valid_op(op[0], op_max)) && (op[0] != '0')) {
             return op[0]; 
-        } 
+        } else if (!cancel(op)) {
+            return '0';
+        }
         else {
             return '9';
         } 
     } while ((!valid_op_c(op)) || (valid_op(op[0], op_max))); 
 }
 
-
-//Forma de pagamento
-//
-char menu_form_pag (void) {
-    char* op;
-    char op_max = '4';
-    do {
-        printf("+=========================================================================+\n");
-        printf("|                                                                         |\n");
-        printf("|%s|\n", centralizar_texto ("Forma de pagamento", 73, 0));
-        printf("|                                                                         |\n");
-        printf("|%s|\n", centralizar_texto ("1 -> Dinheiro <-", 73, 0));
-        printf("|                                                                         |\n");
-        printf("|%s|\n", centralizar_texto ("2 -> Pix <-", 73, 0));
-        printf("|                                                                         |\n");
-        printf("|%s|\n", centralizar_texto ("3 -> Cartão de crédito <-", 73, 0));
-        printf("|                                                                         |\n");
-        printf("|%s|\n", centralizar_texto ("4 -> Cartão de débito <-", 73, 0));
-        printf("|                                                                         |\n");
-        printf("+=========================================================================+\n");
-        printf("Selecione uma opção: \n");
-        op = input ();
-        if ((valid_op_c(op)) && (valid_op(op[0], op_max)) && (op[0] != '0')) {
-            return op[0]; 
-        } 
-        else {
-            tela_erro ("ENTRADA INVÁLIDA ! ! !");
-            return '9';
-        } 
-    } while ((!valid_op_c(op)) || (valid_op(op[0], op_max))); 
-}
 
 char menu_modulo (char* menu) {
     char* op;
