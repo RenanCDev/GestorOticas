@@ -45,7 +45,6 @@ int main (void) {
     load_create("colaborador.dat");
     load_create("fornecedor.dat");
     load_create("produto.dat");
-    load_create("relatorio.dat");
     load_create("venda.dat");
     setlocale (LC_ALL, "Portuguese_Brazil");
     char op0;

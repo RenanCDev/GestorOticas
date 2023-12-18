@@ -45,4 +45,6 @@ Vend* carregar_vend (int);
 void excluir_vend (Vend* ven);
 int gera_id_vend (void);
 void relat_vend_t (Vend* ven);
+void relat_vend_t_at (Vend* ven);
+void relat_vend_t_inat (Vend* ven);
 void lista_venda (int);

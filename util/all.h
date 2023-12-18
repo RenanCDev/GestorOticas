@@ -59,6 +59,8 @@
 
 #include "../relatorio/relatorio_prod.h" //Inclui todas as declarações do relatorio.h
 
+#include "../relatorio/relatorio_ven.h" //Inclui todas as declarações do relatorio.h
+
 #include "../venda/venda.h" //Inclui todas as declarações do venda.h
 
 #include "../util/util.h" //Inclui todas as declarações do util.h

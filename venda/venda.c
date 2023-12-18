@@ -81,7 +81,6 @@ Vend* cad_vend (void) {
     } while (novo_item != '2');
     tela_list_venda1 ("Cadastro venda", ven->cpf_cli, ven->cpf_col);
     lista_venda(ven->id);
-    tela_list_venda_f(ven->valor_vend_tot_f, ven->data, ven->hora, ven->id, ven->status);
     tela_ok ();
     return ven;
 }

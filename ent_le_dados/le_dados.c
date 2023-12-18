@@ -273,10 +273,10 @@ char* quant_vend (Prod* pro) {
         quant_escolhida = atoi(quant);
         quant_estoque = atoi(pro->quant);
         quant_total = quant_estoque - quant_escolhida;
-        if ((quant_total < 0) || (quant_estoque <= 0)) {
+        if ((quant_total < 0) || (quant_estoque <= 0) || (quant_escolhida <= 0)) {
             tela_erro ("ENTRADA INVÁLIDA ! ! !");
         } 
-    } while ((quant_total < 0) || (quant_estoque <= 0));
+    } while ((quant_total < 0) || (quant_estoque <= 0) || (quant_escolhida <= 0));
     snprintf(pro->quant, sizeof(pro->quant), "%d", quant_total);
     regravar_prod_quant (pro);
     return quant;

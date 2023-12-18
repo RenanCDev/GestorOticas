@@ -26,10 +26,10 @@ void modulo_relatorio (void) {
                     limpa_buffer ();
                     relat_cliente ();
                     break;
-                // case '6':
-                //     limpa_buffer ();
-                //     relat_venda ();
-                //     break;
+                case '6':
+                    limpa_buffer ();
+                    relat_venda ();
+                    break;
             }
         } while (op != '0'); 
 }

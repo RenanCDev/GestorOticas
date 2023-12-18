@@ -380,11 +380,31 @@ void relat_prod_t (Prod* pro) {
 
 void tela_relat_vend (void) {
     printf("+=========================================================================+\n");
-    printf("|%s|%s|%s|%s|\n", centralizar_texto("PRODUTO", 25, 0), centralizar_texto("COLABORADOR", 16, 0), centralizar_texto("CLIENTE", 16, 0), centralizar_texto("V VENDA", 13, 0));
+    printf("|%s|%s|%s|%s|%s|\n", centralizar_texto("ID", 5, 0), centralizar_texto("COLABORADOR", 16, 0), centralizar_texto("CLIENTE", 16, 0), centralizar_texto("STATUS", 7, 0), centralizar_texto("VALOR TOTAL DA VENDA", 25, 0));
     printf("+=========================================================================+\n");
 }
 
 void relat_vend_t (Vend* ven) {
+    char* id =(char*) malloc(8*sizeof(char));
+    sprintf(id,"%d",ven->id);
     printf("+-------------------------------------------------------------------------+\n");
-    printf("|%s|%s|%s|%s|\n", centralizar_texto(ven->desc, 25, 0), centralizar_texto(ven->cpf_col, 16, 0), centralizar_texto(ven->cpf_cli, 16, 0), centralizar_texto(ven->valor_vend_tot, 13, 0));
+    printf("|%s|%s|%s|   %c   |%s|\n", centralizar_texto(id, 5, 0), centralizar_texto(ven->cpf_col, 16, 0), centralizar_texto(ven->cpf_cli, 16, 0), ven->status, centralizar_texto(ven->valor_vend_tot_f, 25, 0));
+}
+
+void relat_vend_t_at (Vend* ven) {
+    if (ven->status == '1') {
+        char* id =(char*) malloc(8*sizeof(char));
+        sprintf(id,"%d",ven->id);
+        printf("+-------------------------------------------------------------------------+\n");
+        printf("|%s|%s|%s|   %c   |%s|\n", centralizar_texto(id, 5, 0), centralizar_texto(ven->cpf_col, 16, 0), centralizar_texto(ven->cpf_cli, 16, 0), ven->status, centralizar_texto(ven->valor_vend_tot_f, 25, 0));
+    }
+}
+
+void relat_vend_t_inat (Vend* ven) {
+    if (ven->status == '0') {
+        char* id =(char*) malloc(8*sizeof(char));
+        sprintf(id,"%d",ven->id);
+        printf("+-------------------------------------------------------------------------+\n");
+        printf("|%s|%s|%s|   %c   |%s|\n", centralizar_texto(id, 5, 0), centralizar_texto(ven->cpf_col, 16, 0), centralizar_texto(ven->cpf_cli, 16, 0), ven->status, centralizar_texto(ven->valor_vend_tot_f, 25, 0));
+    }
 }

@@ -713,3 +713,24 @@ void recebe_cod_barras_zero (char* cod_barras) {
     char* cod_barras_zero = "0000000000000";
     strcpy(cod_barras, cod_barras_zero);
 }
+
+int compara_float (char* float1, char* float2) {
+    float a = atof (float1);
+    float b = atof (float2);
+    if ((a == b) && (a == 0)) {
+        return 0;
+    } else if (a < b) {
+        return -1;
+    } else {
+        return 1;
+    }
+}
+
+int verif_array(int id_verif, int id[], int tamanho) {
+    for (int i = 0; i < tamanho; i++) {
+        if (id[i] == id_verif) {
+            return 1;
+        }
+    }
+    return 0;
+}

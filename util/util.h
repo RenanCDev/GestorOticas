@@ -43,3 +43,5 @@ void trat_dat_ent (char*);
 void trat_dat_said (char*);
 int compara_datas (char*, char*);
 int compara_datas_relat (char*, char*, char*);
+int compara_float (char*, char*);
+int verif_array (int, int[], int);

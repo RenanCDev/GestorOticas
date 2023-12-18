@@ -367,6 +367,7 @@ char menu_edit_vend (void) {
 char menu_item_venda (void) {
     char* op;
     char op_max = '2';
+    tela_universal ("Menu novo item");
     do {
         printf("+=========================================================================+\n");
         printf("|                                                                         |\n");
@@ -374,18 +375,19 @@ char menu_item_venda (void) {
         printf("|                                                                         |\n");
         printf("|%s|\n", centralizar_texto ("2 -> Prosseguir com a venda <-", 73, 0));
         printf("|                                                                         |\n");
+        printf("|          Para voltar ao menu anterior insira: 'sair' ou '0' .           |\n");
+        printf("|                                                                         |\n");
         printf("+=========================================================================+\n");
         printf("Selecione uma opção: \n");
         op = input ();
         if ((valid_op_c(op)) && (valid_op(op[0], op_max)) && (op[0] != '0')) {
             return op[0]; 
-        } else if (!cancel(op)) {
+        } else if ((!cancel(op)) || (op[0] == '0')) {
             return '0';
-        }
-        else {
+        } else {
             return '9';
         } 
-    } while ((!valid_op_c(op)) || (valid_op(op[0], op_max))); 
+    } while ((!valid_op_c(op)) || (valid_op(op[0], op_max) || (op[0] == '0'))); 
 }
 
 

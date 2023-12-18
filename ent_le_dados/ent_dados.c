@@ -249,7 +249,7 @@ char* ent_id_venda (void) {
     printf("|                                                                         |\n");
     printf("|                     Tamanho máximo de 8 caracters .                     |\n");
     printf("|                                                                         |\n");
-    printf("|               Para voltar ao menu anterior insira: '0' .                |\n");
+    printf("|          Para voltar ao menu anterior insira: 'sair' ou '0' .           |\n");
     printf("|                                                                         |\n");
     printf("|                                  ID : ");
     id = input();
