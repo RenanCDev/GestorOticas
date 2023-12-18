@@ -160,32 +160,32 @@ void relat_data_col (void) {
     col = (Colab*) malloc(sizeof(Colab));
     char* data;
     char* data_ini = le_data_ini ("Relatório colaborador entre datas");
-    if (!cancel(data_ini)) {
-    }
-    trat_dat_ent (data_ini);
-    char* data_fim = le_data_fim ("Relatório colaborador entre datas", data_ini);
-    if (!cancel(data_ini)) {
-    }
-    trat_dat_ent (data_fim);
-    fp = fopen("dat/colaborador.dat", "rb");
-    int conta_col_total = 0, conta_col_ativo = 0, conta_col_inativo = 0;
-    while(fread(col, sizeof(Colab), 1, fp)) {
-        data = col->data;
-        trat_dat_ent (data);
-        int ok = compara_datas_relat(data, data_ini, data_fim);
-        if (ok == 1) {
-            conta_col_total ++;
-            if (col->status == '1') {
-                conta_col_ativo ++;
-            } else if (col->status == '0') {
-                conta_col_inativo ++;
-            }
-            relat_pessoa_col (col);
+    if (cancel(data_ini)) {
+        trat_dat_ent (data_ini);
+        char* data_fim = le_data_fim ("Relatório colaborador entre datas", data_ini);
+        if (cancel(data_fim)) {
+            trat_dat_ent (data_fim);
+            fp = fopen("dat/colaborador.dat", "rb");
+            int conta_col_total = 0, conta_col_ativo = 0, conta_col_inativo = 0;
+            while(fread(col, sizeof(Colab), 1, fp)) {
+                data = col->data;
+                trat_dat_ent (data);
+                int ok = compara_datas_relat(data, data_ini, data_fim);
+                if (ok == 1) {
+                    conta_col_total ++;
+                    if (col->status == '1') {
+                        conta_col_ativo ++;
+                    } else if (col->status == '0') {
+                        conta_col_inativo ++;
+                    }
+                    relat_pessoa_col (col);
+                }
+            } 
+            fclose(fp);
+            limpa_buffer();
+            tela_fecha_relat1(conta_col_total, conta_col_ativo, conta_col_inativo);
         }
-    } 
-    fclose(fp);
-    limpa_buffer();
-    tela_fecha_relat1(conta_col_total, conta_col_ativo, conta_col_inativo);
+    }
 }
 
 void relat_nome_col (void) {
@@ -193,20 +193,22 @@ void relat_nome_col (void) {
     Colab* col;
     col = (Colab*) malloc(sizeof(Colab));
     char* nome = le_nome("Relatório colaborador por nome");
-    fp = fopen("dat/colaborador.dat", "rb");
-    int conta_col_total = 0, conta_col_ativo = 0, conta_col_inativo = 0;
-    while(fread(col, sizeof(Colab), 1, fp)) {
-        if (strstr(col->nome, nome) != NULL) {
-            conta_col_total ++;
-            if (col->status == '1') {
-                conta_col_ativo ++;
-            } else if (col->status == '0') {
-                conta_col_inativo ++;
+    if (cancel(nome)) {
+        fp = fopen("dat/colaborador.dat", "rb");
+        int conta_col_total = 0, conta_col_ativo = 0, conta_col_inativo = 0;
+        while(fread(col, sizeof(Colab), 1, fp)) {
+            if (strstr(col->nome, nome) != NULL) {
+                conta_col_total ++;
+                if (col->status == '1') {
+                    conta_col_ativo ++;
+                } else if (col->status == '0') {
+                    conta_col_inativo ++;
+                }
+                relat_pessoa_col (col);
             }
-            relat_pessoa_col (col);
         }
+        fclose(fp);
+        limpa_buffer();
+        tela_fecha_relat1(conta_col_total, conta_col_ativo, conta_col_inativo);
     }
-    fclose(fp);
-    limpa_buffer();
-    tela_fecha_relat1(conta_col_total, conta_col_ativo, conta_col_inativo);
 }

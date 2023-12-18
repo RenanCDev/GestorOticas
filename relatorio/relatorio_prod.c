@@ -154,17 +154,19 @@ void relat_forn_pro (void) {
     Prod* pro;
     pro = (Prod*) malloc(sizeof(Prod));
     char* cnpj = forn_relat("Relatório produto por fornecedor");
-    fp = fopen("dat/produto.dat", "rb");
-    int conta_pro_total = 0;
-    while(fread(pro, sizeof(Prod), 1, fp)) {
-        if (strcmp(pro->cnpj, cnpj) == 0) {
-            conta_pro_total ++;
-            relat_prod_t (pro);
+    if (cancel(cnpj)) {
+        fp = fopen("dat/produto.dat", "rb");
+        int conta_pro_total = 0;
+        while(fread(pro, sizeof(Prod), 1, fp)) {
+            if (strcmp(pro->cnpj, cnpj) == 0) {
+                conta_pro_total ++;
+                relat_prod_t (pro);
+            }
         }
+        fclose(fp);
+        limpa_buffer();
+        tela_fecha_relat (conta_pro_total);
     }
-    fclose(fp);
-    limpa_buffer();
-    tela_fecha_relat (conta_pro_total);
 }
 
 void relat_prec_comp_pro (void) {
@@ -260,16 +262,18 @@ void relat_desc_prod (void) {
     Prod* pro;
     pro = (Prod*) malloc(sizeof(Prod));
     char* desc = le_desc_prod("Relatório produto por descrição");
-    fp = fopen("dat/produto.dat", "rb");
-    int conta_pro_total = 0;
-    tela_relat_prod ();
-    while(fread(pro, sizeof(Prod), 1, fp)) {
-        if (strstr(pro->desc, desc) != NULL) {
-            conta_pro_total ++;
-            relat_prod_t (pro);
+    if (cancel(desc)) {
+        fp = fopen("dat/produto.dat", "rb");
+        int conta_pro_total = 0;
+        tela_relat_prod ();
+        while(fread(pro, sizeof(Prod), 1, fp)) {
+            if (strstr(pro->desc, desc) != NULL) {
+                conta_pro_total ++;
+                relat_prod_t (pro);
+            }
         }
+        fclose(fp);
+        limpa_buffer();
+        tela_fecha_relat(conta_pro_total);
     }
-    fclose(fp);
-    limpa_buffer();
-    tela_fecha_relat(conta_pro_total);
 }

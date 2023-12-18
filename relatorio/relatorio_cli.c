@@ -160,32 +160,32 @@ void relat_data_cli (void) {
     cli = (Client*) malloc(sizeof(Client));
     char* data;
     char* data_ini = le_data_ini ("Relatório cliente entre datas");
-    if (!cancel(data_ini)) {
-    }
-    trat_dat_ent (data_ini);
-    char* data_fim = le_data_fim ("Relatório cliente entre datas", data_ini);
-    if (!cancel(data_ini)) {
-    }
-    trat_dat_ent (data_fim);
-    fp = fopen("dat/cliente.dat", "rb");
-    int conta_cli_total = 0, conta_cli_ativo = 0, conta_cli_inativo = 0;
-    while(fread(cli, sizeof(Client), 1, fp)) {
-        data = cli->data;
-        trat_dat_ent (data);
-        int ok = compara_datas_relat(data, data_ini, data_fim);
-        if (ok == 1) {
-            conta_cli_total ++;
-            if (cli->status == '1') {
-                conta_cli_ativo ++;
-            } else if (cli->status == '0') {
-                conta_cli_inativo ++;
-            }
-            relat_pessoa_cli (cli);
+    if (cancel(data_ini)) {
+        trat_dat_ent (data_ini);
+        char* data_fim = le_data_fim ("Relatório cliente entre datas", data_ini);
+        if (cancel(data_fim)) {
+            trat_dat_ent (data_fim);
+            fp = fopen("dat/cliente.dat", "rb");
+            int conta_cli_total = 0, conta_cli_ativo = 0, conta_cli_inativo = 0;
+            while(fread(cli, sizeof(Client), 1, fp)) {
+                data = cli->data;
+                trat_dat_ent (data);
+                int ok = compara_datas_relat(data, data_ini, data_fim);
+                if (ok == 1) {
+                    conta_cli_total ++;
+                    if (cli->status == '1') {
+                        conta_cli_ativo ++;
+                    } else if (cli->status == '0') {
+                        conta_cli_inativo ++;
+                    }
+                    relat_pessoa_cli (cli);
+                }
+            } 
+            fclose(fp);
+            limpa_buffer();
+            tela_fecha_relat1(conta_cli_total, conta_cli_ativo, conta_cli_inativo);
         }
-    } 
-    fclose(fp);
-    limpa_buffer();
-    tela_fecha_relat1(conta_cli_total, conta_cli_ativo, conta_cli_inativo);
+    }
 }
 
 void relat_nome_cli (void) {
@@ -193,20 +193,22 @@ void relat_nome_cli (void) {
     Client* cli;
     cli = (Client*) malloc(sizeof(Client));
     char* nome = le_nome("Relatório cliente por nome");
-    fp = fopen("dat/cliente.dat", "rb");
-    int conta_cli_total = 0, conta_cli_ativo = 0, conta_cli_inativo = 0;
-    while(fread(cli, sizeof(Client), 1, fp)) {
-        if (strstr(cli->nome, nome) != NULL) {
-            conta_cli_total ++;
-            if (cli->status == '1') {
-                conta_cli_ativo ++;
-            } else if (cli->status == '0') {
-                conta_cli_inativo ++;
+    if (cancel(nome)) {    
+        fp = fopen("dat/cliente.dat", "rb");
+        int conta_cli_total = 0, conta_cli_ativo = 0, conta_cli_inativo = 0;
+        while(fread(cli, sizeof(Client), 1, fp)) {
+            if (strstr(cli->nome, nome) != NULL) {
+                conta_cli_total ++;
+                if (cli->status == '1') {
+                    conta_cli_ativo ++;
+                } else if (cli->status == '0') {
+                    conta_cli_inativo ++;
+                }
+                relat_pessoa_cli (cli);
             }
-            relat_pessoa_cli (cli);
         }
+        fclose(fp);
+        limpa_buffer();
+        tela_fecha_relat1(conta_cli_total, conta_cli_ativo, conta_cli_inativo);
     }
-    fclose(fp);
-    limpa_buffer();
-    tela_fecha_relat1(conta_cli_total, conta_cli_ativo, conta_cli_inativo);
 }

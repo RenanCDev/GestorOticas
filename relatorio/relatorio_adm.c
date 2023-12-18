@@ -160,32 +160,32 @@ void relat_data_adm (void) {
     adm = (Admin*) malloc(sizeof(Admin));
     char* data;
     char* data_ini = le_data_ini ("Relatório administrativo entre datas");
-    if (!cancel(data_ini)) {
-    }
-    trat_dat_ent (data_ini);
-    char* data_fim = le_data_fim ("Relatório administrativo entre datas", data_ini);
-    if (!cancel(data_ini)) {
-    }
-    trat_dat_ent (data_fim);
-    fp = fopen("dat/administrativo.dat", "rb");
-    int conta_adm_total = 0, conta_adm_ativo = 0, conta_adm_inativo = 0;
-    while(fread(adm, sizeof(Admin), 1, fp)) {
-        data = adm->data;
-        trat_dat_ent (data);
-        int ok = compara_datas_relat(data, data_ini, data_fim);
-        if (ok == 1) {
-            conta_adm_total ++;
-            if (adm->status == '1') {
-                conta_adm_ativo ++;
-            } else if (adm->status == '0') {
-                conta_adm_inativo ++;
-            }
-            relat_pessoa_adm (adm);
+    if (cancel(data_ini)) {
+        trat_dat_ent (data_ini);
+        char* data_fim = le_data_fim ("Relatório administrativo entre datas", data_ini);
+        if (cancel(data_fim)) {
+            trat_dat_ent (data_fim);
+            fp = fopen("dat/administrativo.dat", "rb");
+            int conta_adm_total = 0, conta_adm_ativo = 0, conta_adm_inativo = 0;
+            while(fread(adm, sizeof(Admin), 1, fp)) {
+                data = adm->data;
+                trat_dat_ent (data);
+                int ok = compara_datas_relat(data, data_ini, data_fim);
+                if (ok == 1) {
+                    conta_adm_total ++;
+                    if (adm->status == '1') {
+                        conta_adm_ativo ++;
+                    } else if (adm->status == '0') {
+                        conta_adm_inativo ++;
+                    }
+                    relat_pessoa_adm (adm);
+                }
+            } 
+            fclose(fp);
+            limpa_buffer();
+            tela_fecha_relat1(conta_adm_total, conta_adm_ativo, conta_adm_inativo);
         }
-    } 
-    fclose(fp);
-    limpa_buffer();
-    tela_fecha_relat1(conta_adm_total, conta_adm_ativo, conta_adm_inativo);
+    }
 }
 
 void relat_nome_adm (void) {
@@ -193,20 +193,22 @@ void relat_nome_adm (void) {
     Admin* adm;
     adm = (Admin*) malloc(sizeof(Admin));
     char* nome = le_nome("Relatório administrativo por nome");
-    fp = fopen("dat/administrativo.dat", "rb");
-    int conta_adm_total = 0, conta_adm_ativo = 0, conta_adm_inativo = 0;
-    while(fread(adm, sizeof(Admin), 1, fp)) {
-        if (strstr(adm->nome, nome) != NULL) {
-            conta_adm_total ++;
-            if (adm->status == '1') {
-                conta_adm_ativo ++;
-            } else if (adm->status == '0') {
-                conta_adm_inativo ++;
+    if (cancel(nome)) {
+        fp = fopen("dat/administrativo.dat", "rb");
+        int conta_adm_total = 0, conta_adm_ativo = 0, conta_adm_inativo = 0;
+        while(fread(adm, sizeof(Admin), 1, fp)) {
+            if (strstr(adm->nome, nome) != NULL) {
+                conta_adm_total ++;
+                if (adm->status == '1') {
+                    conta_adm_ativo ++;
+                } else if (adm->status == '0') {
+                    conta_adm_inativo ++;
+                }
+                relat_pessoa_adm (adm);
             }
-            relat_pessoa_adm (adm);
         }
+        fclose(fp);
+        limpa_buffer();
+        tela_fecha_relat1(conta_adm_total, conta_adm_ativo, conta_adm_inativo);
     }
-    fclose(fp);
-    limpa_buffer();
-    tela_fecha_relat1(conta_adm_total, conta_adm_ativo, conta_adm_inativo);
 }

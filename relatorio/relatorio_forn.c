@@ -160,32 +160,32 @@ void relat_data_forn (void) {
     forn = (Fornec*) malloc(sizeof(Fornec));
     char* data;
     char* data_ini = le_data_ini ("Relatório fornecedor entre datas");
-    if (!cancel(data_ini)) {
-    }
-    trat_dat_ent (data_ini);
-    char* data_fim = le_data_fim ("Relatório fornecedor entre datas", data_ini);
-    if (!cancel(data_ini)) {
-    }
-    trat_dat_ent (data_fim);
-    fp = fopen("dat/fornecedor.dat", "rb");
-    int conta_forn_total = 0, conta_forn_ativo = 0, conta_forn_inativo = 0;
-    while(fread(forn, sizeof(Fornec), 1, fp)) {
-        data = forn->data;
-        trat_dat_ent (data);
-        int ok = compara_datas_relat(data, data_ini, data_fim);
-        if (ok == 1) {
-            conta_forn_total ++;
-            if (forn->status == '1') {
-                conta_forn_ativo ++;
-            } else if (forn->status == '0') {
-                conta_forn_inativo ++;
-            }
-            relat_pessoa_forn (forn);
+    if (cancel(data_ini)) {
+        trat_dat_ent (data_ini);
+        char* data_fim = le_data_fim ("Relatório fornecedor entre datas", data_ini);
+        if (cancel(data_fim)) {
+            trat_dat_ent (data_fim);
+            fp = fopen("dat/fornecedor.dat", "rb");
+            int conta_forn_total = 0, conta_forn_ativo = 0, conta_forn_inativo = 0;
+            while(fread(forn, sizeof(Fornec), 1, fp)) {
+                data = forn->data;
+                trat_dat_ent (data);
+                int ok = compara_datas_relat(data, data_ini, data_fim);
+                if (ok == 1) {
+                    conta_forn_total ++;
+                    if (forn->status == '1') {
+                        conta_forn_ativo ++;
+                    } else if (forn->status == '0') {
+                        conta_forn_inativo ++;
+                    }
+                    relat_pessoa_forn (forn);
+                }
+            } 
+            fclose(fp);
+            limpa_buffer();
+            tela_fecha_relat1(conta_forn_total, conta_forn_ativo, conta_forn_inativo);
         }
-    } 
-    fclose(fp);
-    limpa_buffer();
-    tela_fecha_relat1(conta_forn_total, conta_forn_ativo, conta_forn_inativo);
+    }
 }
 
 void relat_nome_forn (void) {
@@ -193,20 +193,22 @@ void relat_nome_forn (void) {
     Fornec* forn;
     forn = (Fornec*) malloc(sizeof(Fornec));
     char* nome = le_nome("Relatório fornecedor por nome");
-    fp = fopen("dat/fornecedor.dat", "rb");
-    int conta_forn_total = 0, conta_forn_ativo = 0, conta_forn_inativo = 0;
-    while(fread(forn, sizeof(Fornec), 1, fp)) {
-        if (strstr(forn->nome, nome) != NULL) {
-            conta_forn_total ++;
-            if (forn->status == '1') {
-                conta_forn_ativo ++;
-            } else if (forn->status == '0') {
-                conta_forn_inativo ++;
+    if (cancel(nome)) {
+        fp = fopen("dat/fornecedor.dat", "rb");
+        int conta_forn_total = 0, conta_forn_ativo = 0, conta_forn_inativo = 0;
+        while(fread(forn, sizeof(Fornec), 1, fp)) {
+            if (strstr(forn->nome, nome) != NULL) {
+                conta_forn_total ++;
+                if (forn->status == '1') {
+                    conta_forn_ativo ++;
+                } else if (forn->status == '0') {
+                    conta_forn_inativo ++;
+                }
+                relat_pessoa_forn (forn);
             }
-            relat_pessoa_forn (forn);
         }
+        fclose(fp);
+        limpa_buffer();
+        tela_fecha_relat1(conta_forn_total, conta_forn_ativo, conta_forn_inativo);
     }
-    fclose(fp);
-    limpa_buffer();
-    tela_fecha_relat1(conta_forn_total, conta_forn_ativo, conta_forn_inativo);
 }
