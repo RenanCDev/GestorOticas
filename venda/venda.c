@@ -31,6 +31,7 @@ Vend* cad_vend (void) {
     Prod* pro;
     pro = (Prod*)malloc((sizeof(Prod)));
     char novo_item;
+    float v_vend_tot_f = 0;
     ven->id = gera_id_vend ();
     char* cpf_cli = cli_cad ();
     if (!cancel(cpf_cli)) {
@@ -74,11 +75,13 @@ Vend* cad_vend (void) {
         char* hora = inst_hora ();
         strcpy(ven->hora, hora);
         ven->status = '1';
+        v_vend_tot_f += v_vend_tot;
+        snprintf(ven->valor_vend_tot_f, sizeof(ven->valor_vend_tot_f), "%.2f", v_vend_tot_f);
         gravar_vend(ven);
     } while (novo_item != '2');
     tela_list_venda1 ("Cadastro venda", ven->cpf_cli, ven->cpf_col);
     lista_venda(ven->id);
-    tela_list_venda_f(ven->data, ven->hora, ven->id, ven->status);
+    tela_list_venda_f(ven->valor_vend_tot_f, ven->data, ven->hora, ven->id, ven->status);
     tela_ok ();
     return ven;
 }
@@ -135,7 +138,6 @@ Vend* pesq_vend (void) {
         do {
             tela_list_venda1 ("Cadastro venda", ven->cpf_cli, ven->cpf_col);
             lista_venda(id);
-            tela_list_venda_f(ven->data, ven->hora, ven->id, ven->status);
             edit = menu_edit_vend ();
             if (edit == '1') {
                 excluir_vend (ven);
@@ -172,6 +174,7 @@ void lista_venda (int id) {
             tela_list_venda2(ven->cod_barras, ven->desc, ven->valor_vend_uni, ven->quant, ven->valor_vend_tot);
         }
     }
+    tela_list_venda_f(ven->valor_vend_tot_f, ven->data, ven->hora, ven->id, ven->status);
     fclose(fp);
 }
 

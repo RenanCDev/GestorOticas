@@ -211,9 +211,11 @@ void tela_list_venda2 (char* cod_barras, char* desc, char* v_v_uni, char* quant,
     printf("+=========================================================================+\n");
 }
 
-void tela_list_venda_f (char* data, char* hora, int id, char status) {
+void tela_list_venda_f (char* total, char* data, char* hora, int id, char status) {
     char id_c[8];
     snprintf(id_c, sizeof(id_c), "%d", id);
+    printf("|                                                                         |\n");
+    printf("|   Valor total da compra : %s|\n", centralizar_texto(total, 46, -1));
     printf("|                                                                         |\n");
     printf("|   Data : %s|\n", centralizar_texto(data, 63, -1));
     printf("|                                                                         |\n");
