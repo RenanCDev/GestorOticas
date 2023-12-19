@@ -101,7 +101,7 @@ Admin* pesq_admin (void) {
 //Percorre o algoritmo para gravar um administrador em arquivo adequadamente
 void gravar_admin (Admin* adm) {
     FILE* fp_adm;
-    fp_adm = fopen("dat/administrativo.dat", "ab");
+    fp_adm = fopen("administrativo.dat", "ab");
     fwrite(adm, sizeof(Admin), 1, fp_adm);
     fclose(fp_adm);
     free(adm);
@@ -113,7 +113,7 @@ Admin* carregar_adm (char* cpf) {
     FILE* fp;
     Admin* adm;
     adm = (Admin*)malloc(sizeof(Admin));
-    fp = fopen("dat/administrativo.dat", "rb");
+    fp = fopen("administrativo.dat", "rb");
     while (fread(adm, sizeof(Admin), 1, fp)) {
         if ((!strcmp(adm->cpf, cpf) && (adm->status == '1'))) {
             fclose(fp);
@@ -130,7 +130,7 @@ void regravar_adm(Admin* adm, char op) {
     FILE* fp;
     Admin* nova_ent;
     nova_ent = (Admin*)malloc(sizeof(Admin));
-    fp = fopen("dat/administrativo.dat", "r+b");
+    fp = fopen("administrativo.dat", "r+b");
     while(!feof(fp)) {
         fread(nova_ent, sizeof(Admin), 1, fp);
         if (strcmp(nova_ent->cpf, adm->cpf) == 0) {
@@ -181,7 +181,7 @@ void edit_cad_adm (Admin* adm, char op) {
 //Percorre o algoritmo para gerar um id de um administrador adequadamente
 int gera_id_admin (void) {
     FILE *fp_adm;
-    fp_adm = fopen("dat/administrativo.dat", "rb");
+    fp_adm = fopen("administrativo.dat", "rb");
     if (fp_adm == NULL) {
         return 1;
     }

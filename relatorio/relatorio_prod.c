@@ -48,7 +48,7 @@ void relat_crono_pro (void) {
     FILE *fp;
     Prod* pro;
     pro = (Prod*) malloc(sizeof(Prod));
-    fp = fopen("dat/produto.dat", "rb");
+    fp = fopen("produto/produto.dat", "rb");
     int conta_pro_total = 0;
     tela_universal ("Relatório produto em ordem cronológica");
     tela_relat_prod ();
@@ -65,7 +65,7 @@ void relat_alfa_pro (void) {
     FILE *fp;
     Prod* pro;
     pro = (Prod*) malloc(sizeof(Prod));
-    fp = fopen("dat/produto.dat", "rb");
+    fp = fopen("produto/produto.dat", "rb");
     int conta_pro_total = 0;
     Prod* lista;
     lista = NULL;
@@ -109,7 +109,7 @@ void relat_alfa_cod_pro (void) {
     FILE *fp;
     Prod* pro;
     pro = (Prod*) malloc(sizeof(Prod));
-    fp = fopen("dat/produto.dat", "rb");
+    fp = fopen("produto/produto.dat", "rb");
     int conta_pro_total = 0;
     Prod* lista;
     lista = NULL;
@@ -155,7 +155,7 @@ void relat_forn_pro (void) {
     pro = (Prod*) malloc(sizeof(Prod));
     char* cnpj = forn_relat("Relatório produto por fornecedor");
     if (cancel(cnpj)) {
-        fp = fopen("dat/produto.dat", "rb");
+        fp = fopen("produto/produto.dat", "rb");
         int conta_pro_total = 0;
         while(fread(pro, sizeof(Prod), 1, fp)) {
             if (strcmp(pro->cnpj, cnpj) == 0) {
@@ -173,7 +173,7 @@ void relat_prec_comp_pro (void) {
     FILE *fp;
     Prod* pro;
     pro = (Prod*) malloc(sizeof(Prod));
-    fp = fopen("dat/produto.dat", "rb");
+    fp = fopen("produto/produto.dat", "rb");
     int conta_pro_total = 0;
     Prod* lista;
     lista = NULL;
@@ -217,7 +217,7 @@ void relat_prec_vend_pro (void) {
     FILE *fp;
     Prod* pro;
     pro = (Prod*) malloc(sizeof(Prod));
-    fp = fopen("dat/produto.dat", "rb");
+    fp = fopen("produto/produto.dat", "rb");
     int conta_pro_total = 0;
     Prod* lista;
     lista = NULL;
@@ -263,7 +263,7 @@ void relat_desc_prod (void) {
     pro = (Prod*) malloc(sizeof(Prod));
     char* desc = le_desc_prod("Relatório produto por descrição");
     if (cancel(desc)) {
-        fp = fopen("dat/produto.dat", "rb");
+        fp = fopen("produto/produto.dat", "rb");
         int conta_pro_total = 0;
         tela_relat_prod ();
         while(fread(pro, sizeof(Prod), 1, fp)) {

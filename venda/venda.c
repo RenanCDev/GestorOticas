@@ -89,7 +89,7 @@ Vend* cad_vend (void) {
 //Percorre o algoritmo para gravar uma venda em arquivo adequadamente
 void gravar_vend (Vend* ven) {
     FILE *fp_ven;
-    fp_ven = fopen("dat/venda.dat", "ab");
+    fp_ven = fopen("venda/venda.dat", "ab");
     fwrite(ven, sizeof(Vend), 1, fp_ven);
     fclose(fp_ven);
 }
@@ -98,7 +98,7 @@ void gravar_vend (Vend* ven) {
 //Percorre o algoritmo para gerar um id de uma venda adequadamente
 int gera_id_vend (void) {
     FILE *fp_ven;
-    fp_ven = fopen("dat/venda.dat", "rb");
+    fp_ven = fopen("venda/venda.dat", "rb");
     if (fp_ven == NULL) {
         return 1;
     }
@@ -152,7 +152,7 @@ Vend* carregar_vend (int id) {
     FILE *fp;
     Vend* ven;
     ven = (Vend*)malloc(sizeof(Vend));
-    fp = fopen("dat/venda.dat", "rb");
+    fp = fopen("venda/venda.dat", "rb");
     while (fread(ven, sizeof(Vend), 1, fp)) {
         if ((ven->id == id) && (ven->status == '1')) {
             fclose(fp);
@@ -167,7 +167,7 @@ void lista_venda (int id) {
     FILE *fp;
     Vend* ven;
     ven = (Vend*) malloc(sizeof(Vend));
-    fp = fopen("dat/venda.dat", "rb");
+    fp = fopen("venda/venda.dat", "rb");
     while(fread(ven, sizeof(Vend), 1, fp)) {
         if (ven->id == id) {
             tela_list_venda2(ven->cod_barras, ven->desc, ven->valor_vend_uni, ven->quant, ven->valor_vend_tot);
@@ -185,7 +185,7 @@ void excluir_vend (Vend* ven) {
     nova_ent = (Vend*)malloc(sizeof(Vend));
     Prod* pro;
     pro = (Prod*)malloc(sizeof(Prod));
-    fp = fopen("dat/venda.dat", "r+b");
+    fp = fopen("venda/venda.dat", "r+b");
     while(!feof(fp)) {
         while(fread(nova_ent, sizeof(Vend), 1, fp)){
             if (nova_ent->id == ven->id) {

@@ -98,7 +98,7 @@ Fornec* pesq_fornec (void) {
 //Percorre o algoritmo para gravar um fornecedor em arquivo adequadamente
 void gravar_fornec (Fornec* forn) {
     FILE *fp_forn;
-    fp_forn = fopen("dat/fornecedor.dat", "ab");
+    fp_forn = fopen("fornecedor.dat", "ab");
     fwrite(forn, sizeof(Fornec), 1, fp_forn);
     fclose(fp_forn);
     free(forn);
@@ -110,7 +110,7 @@ Fornec* carregar_fornec (char* cnpj) {
     FILE *fp;
     Fornec* forn;
     forn = (Fornec*)malloc(sizeof(Fornec));
-    fp = fopen("dat/fornecedor.dat", "rb");
+    fp = fopen("fornecedor.dat", "rb");
     while (fread(forn, sizeof(Fornec), 1, fp)) {
         if ((!strcmp(forn->cnpj, cnpj)) && (forn->status == '1')) {
             fclose(fp);
@@ -127,7 +127,7 @@ void regravar_fornec (Fornec* forn, char op) {
     FILE* fp;
     Fornec* nova_ent;
     nova_ent = (Fornec*)malloc(sizeof(Fornec));
-    fp = fopen("dat/fornecedor.dat", "r+b");
+    fp = fopen("fornecedor.dat", "r+b");
     while(!feof(fp)) {
         fread(nova_ent, sizeof(Fornec), 1, fp);
         if (strcmp(nova_ent->cnpj, forn->cnpj) == 0) {
@@ -178,7 +178,7 @@ void edit_cad_fornec (Fornec* forn, char op) {
 //Percorre o algoritmo para gerar um id de um fornecedor adequadamente
 int gera_id_fornec (void) {
     FILE *fp_forn;
-    fp_forn = fopen("dat/fornecedor.dat", "rb");
+    fp_forn = fopen("fornecedor.dat", "rb");
     if (fp_forn == NULL) {
         return 1;
     }

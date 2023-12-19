@@ -67,7 +67,7 @@ void relat_crono_ven (char escolha) {
     FILE *fp;
     Vend* ven;
     ven = (Vend*) malloc(sizeof(Vend));
-    fp = fopen("dat/venda.dat", "rb");
+    fp = fopen("venda/venda.dat", "rb");
     int conta_ven_total = 0, conta_ven_ativo = 0, conta_ven_inativo = 0;
     tela_universal ("Relatório venda em ordem cronológica");
     tela_relat_vend ();
@@ -146,7 +146,7 @@ void relat_pro_vend (void) {
     ven = (Vend*) malloc(sizeof(Vend));
     char* cod_barras = pro_relat("Relatório venda por produto");
     if (cancel(cod_barras)) {
-        fp = fopen("dat/venda.dat", "rb");
+        fp = fopen("venda/venda.dat", "rb");
         int conta_ven_total = 0, conta_ven_ativo = 0, conta_ven_inativo = 0;
         tela_universal ("Relatório venda por produto");
         tela_relat_vend ();
@@ -210,7 +210,7 @@ void relat_col_vend (void) {
     ven = (Vend*) malloc(sizeof(Vend));
     char* cpf = col_relat("Relatório venda por colaborador");
     if (cancel(cpf)) {
-        fp = fopen("dat/venda.dat", "rb");
+        fp = fopen("venda/venda.dat", "rb");
         int conta_ven_total = 0, conta_ven_ativo = 0, conta_ven_inativo = 0;
         tela_universal ("Relatório venda por colaborador");
         tela_relat_vend ();
@@ -274,7 +274,7 @@ void relat_cli_vend (void) {
     ven = (Vend*) malloc(sizeof(Vend));
     char* cpf = cli_relat("Relatório venda por cliente");
     if (cancel(cpf)) {
-        fp = fopen("dat/venda.dat", "rb");
+        fp = fopen("venda/venda.dat", "rb");
         int conta_ven_total = 0, conta_ven_ativo = 0, conta_ven_inativo = 0;
         tela_universal ("Relatório venda por cliente");
         tela_relat_vend ();
@@ -343,7 +343,7 @@ void relat_data_vend (void) {
         char* data_fim = le_data_fim ("Relatório venda entre datas", data_ini);
         if (cancel(data_fim)) {
             trat_dat_ent (data_fim);
-            fp = fopen("dat/venda.dat", "rb");
+            fp = fopen("venda/venda.dat", "rb");
             int conta_ven_total = 0, conta_ven_ativo = 0, conta_ven_inativo = 0;
             tela_universal ("Relatório venda entre datas");
             tela_relat_vend ();

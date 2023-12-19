@@ -65,7 +65,7 @@ void relat_crono_cli (char escolha) {
     FILE *fp;
     Client* cli;
     cli = (Client*) malloc(sizeof(Client));
-    fp = fopen("dat/cliente.dat", "rb");
+    fp = fopen("cliente/cliente.dat", "rb");
     int conta_cli_total = 0, conta_cli_ativo = 0, conta_cli_inativo = 0;
     tela_universal ("Relatório cliente em ordem cronológica");
     tela_relat_pessoa ();
@@ -97,7 +97,7 @@ void relat_alfa_cli (char escolha) {
     FILE *fp;
     Client* cli;
     cli = (Client*) malloc(sizeof(Client));
-    fp = fopen("dat/cliente.dat", "rb");
+    fp = fopen("cliente/cliente.dat", "rb");
     int conta_cli_total = 0, conta_cli_ativo = 0, conta_cli_inativo = 0;
     Client* lista;
     lista = NULL;
@@ -165,7 +165,7 @@ void relat_data_cli (void) {
         char* data_fim = le_data_fim ("Relatório cliente entre datas", data_ini);
         if (cancel(data_fim)) {
             trat_dat_ent (data_fim);
-            fp = fopen("dat/cliente.dat", "rb");
+            fp = fopen("cliente/cliente.dat", "rb");
             int conta_cli_total = 0, conta_cli_ativo = 0, conta_cli_inativo = 0;
             while(fread(cli, sizeof(Client), 1, fp)) {
                 data = cli->data;
@@ -194,7 +194,7 @@ void relat_nome_cli (void) {
     cli = (Client*) malloc(sizeof(Client));
     char* nome = le_nome("Relatório cliente por nome");
     if (cancel(nome)) {    
-        fp = fopen("dat/cliente.dat", "rb");
+        fp = fopen("cliente/cliente.dat", "rb");
         int conta_cli_total = 0, conta_cli_ativo = 0, conta_cli_inativo = 0;
         while(fread(cli, sizeof(Client), 1, fp)) {
             if (strstr(cli->nome, nome) != NULL) {

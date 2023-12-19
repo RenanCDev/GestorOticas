@@ -65,7 +65,7 @@ void relat_crono_col (char escolha) {
     FILE *fp;
     Colab* col;
     col = (Colab*) malloc(sizeof(Colab));
-    fp = fopen("dat/colaborador.dat", "rb");
+    fp = fopen("colaborador/colaborador.dat", "rb");
     int conta_col_total = 0, conta_col_ativo = 0, conta_col_inativo = 0;
     tela_universal ("Relatório colaborador em ordem cronológica");
     tela_relat_pessoa ();
@@ -97,7 +97,7 @@ void relat_alfa_col (char escolha) {
     FILE *fp;
     Colab* col;
     col = (Colab*) malloc(sizeof(Colab));
-    fp = fopen("dat/colaborador.dat", "rb");
+    fp = fopen("colaborador/colaborador.dat", "rb");
     int conta_col_total = 0, conta_col_ativo = 0, conta_col_inativo = 0;
     Colab* lista;
     lista = NULL;
@@ -165,7 +165,7 @@ void relat_data_col (void) {
         char* data_fim = le_data_fim ("Relatório colaborador entre datas", data_ini);
         if (cancel(data_fim)) {
             trat_dat_ent (data_fim);
-            fp = fopen("dat/colaborador.dat", "rb");
+            fp = fopen("colaborador/colaborador.dat", "rb");
             int conta_col_total = 0, conta_col_ativo = 0, conta_col_inativo = 0;
             while(fread(col, sizeof(Colab), 1, fp)) {
                 data = col->data;
@@ -194,7 +194,7 @@ void relat_nome_col (void) {
     col = (Colab*) malloc(sizeof(Colab));
     char* nome = le_nome("Relatório colaborador por nome");
     if (cancel(nome)) {
-        fp = fopen("dat/colaborador.dat", "rb");
+        fp = fopen("colaborador/colaborador.dat", "rb");
         int conta_col_total = 0, conta_col_ativo = 0, conta_col_inativo = 0;
         while(fread(col, sizeof(Colab), 1, fp)) {
             if (strstr(col->nome, nome) != NULL) {

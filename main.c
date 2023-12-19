@@ -20,10 +20,10 @@
 
 /////
 //LOAD/CREATE dos arquivos
-void load_create (const char* arq) {
+void load_create (const char* pasta, const char* arq) {
     FILE *fp;
     char past[256];
-    snprintf(past, sizeof(past), "%s/%s", "dat", arq);
+    snprintf(past, sizeof(past), "%s/%s", pasta, arq);
     fp = fopen(past, "rb");
     if (fp == NULL) {
         fp = fopen(past, "wb");
@@ -40,12 +40,12 @@ void load_create (const char* arq) {
 //Programa principal
 //
 int main (void) {
-    load_create("administrativo.dat");
-    load_create("cliente.dat");
-    load_create("colaborador.dat");
-    load_create("fornecedor.dat");
-    load_create("produto.dat");
-    load_create("venda.dat");
+    load_create("administrativo", "administrativo.dat");
+    load_create("cliente", "cliente.dat");
+    load_create("colaborador", "colaborador.dat");
+    load_create("fornecedor", "fornecedor.dat");
+    load_create("produto", "produto.dat");
+    load_create("venda", "venda.dat");
     setlocale (LC_ALL, "Portuguese_Brazil");
     char op0;
         do {

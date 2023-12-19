@@ -65,7 +65,7 @@ void relat_crono_forn (char escolha) {
     FILE *fp;
     Fornec* forn;
     forn = (Fornec*) malloc(sizeof(Fornec));
-    fp = fopen("dat/fornecedor.dat", "rb");
+    fp = fopen("fornecedor/fornecedor.dat", "rb");
     int conta_forn_total = 0, conta_forn_ativo = 0, conta_forn_inativo = 0;
     tela_universal ("Relatório fornecedor em ordem cronológica");
     tela_relat_pessoa ();
@@ -97,7 +97,7 @@ void relat_alfa_forn (char escolha) {
     FILE *fp;
     Fornec* forn;
     forn = (Fornec*) malloc(sizeof(Fornec));
-    fp = fopen("dat/fornecedor.dat", "rb");
+    fp = fopen("fornecedor/fornecedor.dat", "rb");
     int conta_forn_total = 0, conta_forn_ativo = 0, conta_forn_inativo = 0;
     Fornec* lista;
     lista = NULL;
@@ -165,7 +165,7 @@ void relat_data_forn (void) {
         char* data_fim = le_data_fim ("Relatório fornecedor entre datas", data_ini);
         if (cancel(data_fim)) {
             trat_dat_ent (data_fim);
-            fp = fopen("dat/fornecedor.dat", "rb");
+            fp = fopen("fornecedor/fornecedor.dat", "rb");
             int conta_forn_total = 0, conta_forn_ativo = 0, conta_forn_inativo = 0;
             while(fread(forn, sizeof(Fornec), 1, fp)) {
                 data = forn->data;
@@ -194,7 +194,7 @@ void relat_nome_forn (void) {
     forn = (Fornec*) malloc(sizeof(Fornec));
     char* nome = le_nome("Relatório fornecedor por nome");
     if (cancel(nome)) {
-        fp = fopen("dat/fornecedor.dat", "rb");
+        fp = fopen("fornecedor/fornecedor.dat", "rb");
         int conta_forn_total = 0, conta_forn_ativo = 0, conta_forn_inativo = 0;
         while(fread(forn, sizeof(Fornec), 1, fp)) {
             if (strstr(forn->nome, nome) != NULL) {

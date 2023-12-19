@@ -65,7 +65,7 @@ void relat_crono_adm (char escolha) {
     FILE *fp;
     Admin* adm;
     adm = (Admin*) malloc(sizeof(Admin));
-    fp = fopen("dat/administrativo.dat", "rb");
+    fp = fopen("administrativo/administrativo.dat", "rb");
     int conta_adm_total = 0, conta_adm_ativo = 0, conta_adm_inativo = 0;
     tela_universal ("Relatório administrativo em ordem cronológica");
     tela_relat_pessoa ();
@@ -97,7 +97,7 @@ void relat_alfa_adm (char escolha) {
     FILE *fp;
     Admin* adm;
     adm = (Admin*) malloc(sizeof(Admin));
-    fp = fopen("dat/administrativo.dat", "rb");
+    fp = fopen("administrativo/administrativo.dat", "rb");
     int conta_adm_total = 0, conta_adm_ativo = 0, conta_adm_inativo = 0;
     Admin* lista;
     lista = NULL;
@@ -165,7 +165,7 @@ void relat_data_adm (void) {
         char* data_fim = le_data_fim ("Relatório administrativo entre datas", data_ini);
         if (cancel(data_fim)) {
             trat_dat_ent (data_fim);
-            fp = fopen("dat/administrativo.dat", "rb");
+            fp = fopen("administrativo/administrativo.dat", "rb");
             int conta_adm_total = 0, conta_adm_ativo = 0, conta_adm_inativo = 0;
             while(fread(adm, sizeof(Admin), 1, fp)) {
                 data = adm->data;
@@ -194,7 +194,7 @@ void relat_nome_adm (void) {
     adm = (Admin*) malloc(sizeof(Admin));
     char* nome = le_nome("Relatório administrativo por nome");
     if (cancel(nome)) {
-        fp = fopen("dat/administrativo.dat", "rb");
+        fp = fopen("administrativo/administrativo.dat", "rb");
         int conta_adm_total = 0, conta_adm_ativo = 0, conta_adm_inativo = 0;
         while(fread(adm, sizeof(Admin), 1, fp)) {
             if (strstr(adm->nome, nome) != NULL) {
