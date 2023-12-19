@@ -259,6 +259,60 @@ char* forn_relat (char* texto) {
 }
 
 
+//Percorre o algoritmo para retornar um produto cadastrado
+char* pro_relat (char* texto) {
+    Prod* pro;
+    pro = (Prod*)malloc((sizeof(Prod)));
+    char* cod_barras;
+    do{
+        cod_barras = le_cod_barras (texto);
+        if (!cancel(cod_barras)) {
+            return "sair";
+        }
+        pro = carregar_prod (cod_barras);
+        if (pro == NULL) {
+            tela_erro ("Cadastro inexistente");
+        }
+    } while ((pro == NULL) || !cancel(cod_barras));
+    return cod_barras;
+}
+
+//Percorre o algoritmo para retornar um produto cadastrado
+char* col_relat (char* texto) {
+    Colab* col;
+    col = (Colab*)malloc((sizeof(Colab)));
+    char* cpf;
+    do{
+        cpf = le_cpf (texto);
+        if (!cancel(cpf)) {
+            return "sair";
+        }
+        col = carregar_colab (cpf);
+        if (col == NULL) {
+            tela_erro ("Cadastro inexistente");
+        }
+    } while ((col == NULL) || !cancel(cpf));
+    return cpf;
+}
+
+//Percorre o algoritmo para retornar um colduto cadastrado
+char* cli_relat (char* texto) {
+    Client* cli;
+    cli = (Client*)malloc((sizeof(Client)));
+    char* cpf;
+    do{
+        cpf = le_cpf (texto);
+        if (!cancel(cpf)) {
+            return "sair";
+        }
+        cli = carregar_cli (cpf);
+        if (cli == NULL) {
+            tela_erro ("Cadastro inexistente");
+        }
+    } while ((cli == NULL) || !cancel(cpf));
+    return cpf;
+}
+
 //Percorre o algoritmo para retornar a quantidade vendida e atualização do estoque adequadamente
 char* quant_vend (Prod* pro) {
     char* quant;

@@ -50,14 +50,16 @@ void relat_venda (void) {
 }
 
 void relat_ven (char escolha) {
-    if ((escolha == '1') || (escolha == '3') || (escolha == '5')) {
+    if ((escolha == '1') || (escolha == '2') || (escolha == '3')) {
         relat_crono_ven (escolha);
-    } else if ((escolha == '2') || (escolha == '4') || (escolha == '6')) {
-        // relat_alfa_ven(escolha);    
+    } else if (escolha == '4') {
+        relat_pro_vend ();
+    } else if (escolha == '5') {
+        relat_col_vend ();
+    } else if (escolha == '6') {
+        relat_cli_vend ();
     } else if (escolha == '7') {
-        // relat_data_ven ();
-    } else if (escolha == '8') {
-        // relat_nome_ven ();
+        relat_data_vend ();
     }
 }
 
@@ -89,12 +91,10 @@ void relat_crono_ven (char escolha) {
         } else {
             Vend* anterior = lista;
             Vend* atual = lista->prox;
-                int round = 0;
             while ((atual != NULL) && (atual->id < ven->id)) {
                 anterior = atual;
                 atual = atual->prox;
                 if (atual != NULL) {
-                round ++;
                 }
             }
         anterior->prox = ven;
@@ -113,14 +113,14 @@ void relat_crono_ven (char escolha) {
                 }
                 ven = ven->prox;
                 break;
-            case '3':
+            case '2':
                 if (ven->id == id) {
                     relat_vend_t_at (ven);
                     id++;
                 }
                 ven = ven->prox;
                 break;
-            case '5':
+            case '3':
                 if (ven->id == id) {
                     relat_vend_t_inat (ven);
                     id++;
@@ -140,7 +140,199 @@ void relat_crono_ven (char escolha) {
     tela_fecha_relat1(conta_ven_total, conta_ven_ativo, conta_ven_inativo);
 }
 
-void relat_data_ven (void) {
+void relat_pro_vend (void) {
+    FILE *fp;
+    Vend* ven;
+    ven = (Vend*) malloc(sizeof(Vend));
+    char* cod_barras = pro_relat("Relatório venda por produto");
+    if (cancel(cod_barras)) {
+        fp = fopen("dat/venda.dat", "rb");
+        int conta_ven_total = 0, conta_ven_ativo = 0, conta_ven_inativo = 0;
+        tela_universal ("Relatório venda por produto");
+        tela_relat_vend ();
+        int id = 0;
+        Vend* lista;
+        lista = NULL;
+        while(fread(ven, sizeof(Vend), 1, fp)) {
+            if (strcmp(ven->cod_barras, cod_barras) == 0) {
+                if (ven->id != id) {
+                    conta_ven_total ++;
+                    if ((ven->status == '1')) {
+                        conta_ven_ativo ++;
+                    } else if ((ven->status == '0')) {
+                        conta_ven_inativo ++;
+                    }
+                    id = ven->id;
+                }
+                ven->prox = NULL;
+                if ((lista == NULL) || (ven->id == lista->id)) {
+                    ven->prox = lista;
+                    lista = ven;
+                } else {
+                    Vend* anterior = lista;
+                    Vend* atual = lista->prox;
+                    while ((atual != NULL) && (atual->id < ven->id)) {
+                        anterior = atual;
+                        atual = atual->prox;
+                        if (atual != NULL) {
+                        }
+                    }
+                anterior->prox = ven;
+                ven->prox = atual;
+                }
+            ven = (Vend*)malloc(sizeof(Vend));
+            }
+        }
+        ven = lista;
+        id = 1;
+        while (ven != NULL) {
+            if (ven->id == id) {
+                relat_vend_t (ven);
+                id++;
+            }
+            ven = ven->prox;
+        }
+        ven = lista;
+        while (lista != NULL) {
+            lista = lista->prox;
+            free(ven);
+            ven = lista;
+        }
+        fclose(fp);
+        limpa_buffer();
+        tela_fecha_relat1(conta_ven_total, conta_ven_ativo, conta_ven_inativo);
+    }
+}
+
+void relat_col_vend (void) {
+    FILE *fp;
+    Vend* ven;
+    ven = (Vend*) malloc(sizeof(Vend));
+    char* cpf = col_relat("Relatório venda por colaborador");
+    if (cancel(cpf)) {
+        fp = fopen("dat/venda.dat", "rb");
+        int conta_ven_total = 0, conta_ven_ativo = 0, conta_ven_inativo = 0;
+        tela_universal ("Relatório venda por colaborador");
+        tela_relat_vend ();
+        int id = 0;
+        Vend* lista;
+        lista = NULL;
+        while(fread(ven, sizeof(Vend), 1, fp)) {
+            if (strcmp(ven->cpf_col, cpf) == 0) {
+                if (ven->id != id) {
+                    conta_ven_total ++;
+                    if ((ven->status == '1')) {
+                        conta_ven_ativo ++;
+                    } else if ((ven->status == '0')) {
+                        conta_ven_inativo ++;
+                    }
+                    id = ven->id;
+                }
+                ven->prox = NULL;
+                if ((lista == NULL) || (ven->id == lista->id)) {
+                    ven->prox = lista;
+                    lista = ven;
+                } else {
+                    Vend* anterior = lista;
+                    Vend* atual = lista->prox;
+                    while ((atual != NULL) && (atual->id < ven->id)) {
+                        anterior = atual;
+                        atual = atual->prox;
+                        if (atual != NULL) {
+                        }
+                    }
+                anterior->prox = ven;
+                ven->prox = atual;
+                }
+            ven = (Vend*)malloc(sizeof(Vend));
+            }
+        }
+        ven = lista;
+        id = 1;
+        while (ven != NULL) {
+            if (ven->id == id) {
+                relat_vend_t (ven);
+                id++;
+            }
+            ven = ven->prox;
+        }
+        ven = lista;
+        while (lista != NULL) {
+            lista = lista->prox;
+            free(ven);
+            ven = lista;
+        }
+        fclose(fp);
+        limpa_buffer();
+        tela_fecha_relat1(conta_ven_total, conta_ven_ativo, conta_ven_inativo);
+    }
+}
+
+void relat_cli_vend (void) {
+    FILE *fp;
+    Vend* ven;
+    ven = (Vend*) malloc(sizeof(Vend));
+    char* cpf = cli_relat("Relatório venda por cliente");
+    if (cancel(cpf)) {
+        fp = fopen("dat/venda.dat", "rb");
+        int conta_ven_total = 0, conta_ven_ativo = 0, conta_ven_inativo = 0;
+        tela_universal ("Relatório venda por cliente");
+        tela_relat_vend ();
+        int id = 0;
+        Vend* lista;
+        lista = NULL;
+        while(fread(ven, sizeof(Vend), 1, fp)) {
+            if (strcmp(ven->cpf_cli, cpf) == 0) {
+                if (ven->id != id) {
+                    conta_ven_total ++;
+                    if ((ven->status == '1')) {
+                        conta_ven_ativo ++;
+                    } else if ((ven->status == '0')) {
+                        conta_ven_inativo ++;
+                    }
+                    id = ven->id;
+                }
+                ven->prox = NULL;
+                if ((lista == NULL) || (ven->id == lista->id)) {
+                    ven->prox = lista;
+                    lista = ven;
+                } else {
+                    Vend* anterior = lista;
+                    Vend* atual = lista->prox;
+                    while ((atual != NULL) && (atual->id < ven->id)) {
+                        anterior = atual;
+                        atual = atual->prox;
+                        if (atual != NULL) {
+                        }
+                    }
+                anterior->prox = ven;
+                ven->prox = atual;
+                }
+            ven = (Vend*)malloc(sizeof(Vend));
+            }
+        }
+        ven = lista;
+        id = 1;
+        while (ven != NULL) {
+            if (ven->id == id) {
+                relat_vend_t (ven);
+                id++;
+            }
+            ven = ven->prox;
+        }
+        ven = lista;
+        while (lista != NULL) {
+            lista = lista->prox;
+            free(ven);
+            ven = lista;
+        }
+        fclose(fp);
+        limpa_buffer();
+        tela_fecha_relat1(conta_ven_total, conta_ven_ativo, conta_ven_inativo);
+    }
+}
+
+void relat_data_vend (void) {
     FILE *fp;
     Vend* ven;
     ven = (Vend*) malloc(sizeof(Vend));
@@ -153,48 +345,62 @@ void relat_data_ven (void) {
             trat_dat_ent (data_fim);
             fp = fopen("dat/venda.dat", "rb");
             int conta_ven_total = 0, conta_ven_ativo = 0, conta_ven_inativo = 0;
+            tela_universal ("Relatório venda entre datas");
+            tela_relat_vend ();
+            int id = 0;
+            Vend* lista;
+            lista = NULL;
             while(fread(ven, sizeof(Vend), 1, fp)) {
                 data = ven->data;
                 trat_dat_ent (data);
                 int ok = compara_datas_relat(data, data_ini, data_fim);
                 if (ok == 1) {
-                    conta_ven_total ++;
-                    if (ven->status == '1') {
-                        conta_ven_ativo ++;
-                    } else if (ven->status == '0') {
-                        conta_ven_inativo ++;
+                    if (ven->id != id) {
+                        conta_ven_total ++;
+                        if ((ven->status == '1')) {
+                            conta_ven_ativo ++;
+                        } else if ((ven->status == '0')) {
+                            conta_ven_inativo ++;
+                        }
+                        id = ven->id;
                     }
-                    relat_vend_t (ven);
+                    ven->prox = NULL;
+                    if ((lista == NULL) || (ven->id == lista->id)) {
+                        ven->prox = lista;
+                        lista = ven;
+                    } else {
+                        Vend* anterior = lista;
+                        Vend* atual = lista->prox;
+                        while ((atual != NULL) && (atual->id < ven->id)) {
+                            anterior = atual;
+                            atual = atual->prox;
+                            if (atual != NULL) {
+                            }
+                        }
+                    anterior->prox = ven;
+                    ven->prox = atual;
+                    }
+                ven = (Vend*)malloc(sizeof(Vend));
                 }
-            } 
+            }
+            ven = lista;
+            id = 1;
+            while (ven != NULL) {
+                if (ven->id == id) {
+                    relat_vend_t (ven);
+                    id++;
+                }
+                ven = ven->prox;
+            }
+            ven = lista;
+            while (lista != NULL) {
+                lista = lista->prox;
+                free(ven);
+                ven = lista;
+            }
             fclose(fp);
             limpa_buffer();
             tela_fecha_relat1(conta_ven_total, conta_ven_ativo, conta_ven_inativo);
         }
     }
 }
-
-// void relat_nome_ven (void) {
-//     FILE *fp;
-//     Vend* ven;
-//     ven = (Vend*) malloc(sizeof(Vend));
-//     char* nome = le_nome("Relatório venda por nome");
-//     if (cancel(nome)) {
-//         fp = fopen("dat/venda.dat", "rb");
-//         int conta_ven_total = 0, conta_ven_ativo = 0, conta_ven_inativo = 0;
-//         while(fread(ven, sizeof(Vend), 1, fp)) {
-//             if (strstr(ven->nome, nome) != NULL) {
-//                 conta_ven_total ++;
-//                 if (ven->status == '1') {
-//                     conta_ven_ativo ++;
-//                 } else if (ven->status == '0') {
-//                     conta_ven_inativo ++;
-//                 }
-//                 relat_pessoa_vend (ven);
-//             }
-//         }
-//         fclose(fp);
-//         limpa_buffer();
-//         tela_fecha_relat1(conta_ven_total, conta_ven_ativo, conta_ven_inativo);
-//     }
-// }

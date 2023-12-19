@@ -471,7 +471,7 @@ char menu_modulo_prod (char* menu) {
 
 char menu_modulo_vend (char* menu) {
     char* op;
-    char op_max = '9';
+    char op_max = '7';
     do {
         tela_banner ();
         printf("+=========================================================================+\n");
@@ -482,7 +482,7 @@ char menu_modulo_vend (char* menu) {
         printf("|                                                                         |\n");
         printf("|%s|\n", centralizar_texto ("2 -> Todos ativos <-", 73, 0));
         printf("|                                                                         |\n");
-        printf("|%s|\n", centralizar_texto ("3 -> Todos desativos <-", 73, 0));
+        printf("|%s|\n", centralizar_texto ("3 -> Todos inativos <-", 73, 0));
         printf("|                                                                         |\n");
         printf("|%s|\n", centralizar_texto ("4 -> Por produto <-", 73, 0));
         printf("|                                                                         |\n");
@@ -490,11 +490,7 @@ char menu_modulo_vend (char* menu) {
         printf("|                                                                         |\n");
         printf("|%s|\n", centralizar_texto ("6 -> Por cliente <-", 73, 0));
         printf("|                                                                         |\n");
-        printf("|%s|\n", centralizar_texto ("7 -> Por faixa de preço crescente <-", 73, 0));
-        printf("|                                                                         |\n");
-        printf("|%s|\n", centralizar_texto ("8 -> Por faixa de preço descrescente <-", 73, 0));
-        printf("|                                                                         |\n");
-        printf("|%s|\n", centralizar_texto ("9 -> Entre datas <-", 73, 0));
+        printf("|%s|\n", centralizar_texto ("7 -> Entre datas <-", 73, 0));
         printf("|                                                                         |\n");
         printf("|%s|\n", centralizar_texto ("0 -> Fechar o programa <-", 73, 0));
         printf("|                                                                         |\n");

@@ -36,3 +36,6 @@ char* forn_relat (char*);
 char* quant_vend (Prod* pro);
 char* le_data_ini (char* tela);
 char* le_data_fim (char* tela, char* data_ini);
+char* pro_relat (char*);
+char* cli_relat (char*);
+char* col_relat (char*);
