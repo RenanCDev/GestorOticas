@@ -90,7 +90,7 @@ Prod* cad_prod (void) {
 //Percorre o algoritmo para gravar um produto em arquivo adequadamente
 void gravar_prod (Prod* pro) {
     FILE *fp_pro;
-    fp_pro = fopen("produto.dat", "ab");
+    fp_pro = fopen("produto/produto.dat", "ab");
     fwrite(pro, sizeof(Prod), 1, fp_pro);
     fclose(fp_pro);
     free(pro);
@@ -128,7 +128,7 @@ Prod* carregar_prod (char* cod_barras) {
     FILE *fp;
     Prod* pro;
     pro = (Prod*)malloc(sizeof(Prod));
-    fp = fopen("produto.dat", "rb");
+    fp = fopen("produto/produto.dat", "rb");
     while (fread(pro, sizeof(Prod), 1, fp)) {
         if ((!strcmp(pro->cod_barras, cod_barras))) {
             fclose(fp);
@@ -145,7 +145,7 @@ void regravar_prod (Prod* pro, char op) {
     FILE* fp;
     Prod* nova_ent;
     nova_ent = (Prod*)malloc(sizeof(Prod));
-    fp = fopen("produto.dat", "r+b");
+    fp = fopen("produto/produto.dat", "r+b");
     while(!feof(fp)) {
         fread(nova_ent, sizeof(Prod), 1, fp);
         if (strcmp(nova_ent->cod_barras, pro->cod_barras) == 0) {
@@ -165,7 +165,7 @@ void regravar_prod_quant (Prod* pro) {
     FILE* fp;
     Prod* nova_ent;
     nova_ent = (Prod*)malloc(sizeof(Prod));
-    fp = fopen("produto.dat", "r+b");
+    fp = fopen("produto/produto.dat", "r+b");
     while(!feof(fp)) {
         fread(nova_ent, sizeof(Prod), 1, fp);
         if (strcmp(nova_ent->cod_barras, pro->cod_barras) == 0) {
@@ -232,7 +232,7 @@ void edit_cad_prod (Prod* pro, char op) {
 //Percorre o algoritmo para gerar um id de um produto adequadamente
 int gera_id_prod (void) {
     FILE *fp_pro;
-    fp_pro = fopen("produto.dat", "rb");
+    fp_pro = fopen("produto/produto.dat", "rb");
     if (fp_pro == NULL) {
         return 1;
     }

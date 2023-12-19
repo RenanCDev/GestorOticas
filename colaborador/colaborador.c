@@ -98,7 +98,7 @@ Colab* pesq_colab (void) {
 //Percorre o algoritmo para gravar um colaborador em arquivo adequadamente
 void gravar_colab (Colab* col) {
     FILE *fp_col;
-    fp_col = fopen("colaborador.dat", "ab");
+    fp_col = fopen("colaborador/colaborador.dat", "ab");
     fwrite(col, sizeof(Colab), 1, fp_col);
     fclose(fp_col);
     free(col);
@@ -110,7 +110,7 @@ Colab* carregar_colab(char* cpf) {
     FILE *fp;
     Colab* col;
     col = (Colab*)malloc(sizeof(Colab));
-    fp = fopen("colaborador.dat", "rb");
+    fp = fopen("colaborador/colaborador.dat", "rb");
     while (fread(col, sizeof(Colab), 1, fp)) {
         if ((!strcmp(col->cpf, cpf) && (col->status == '1'))) {
             fclose(fp);
@@ -127,7 +127,7 @@ void regravar_colab(Colab* col, char op) {
     FILE* fp;
     Colab* nova_ent;
     nova_ent = (Colab*)malloc(sizeof(Colab));
-    fp = fopen("colaborador.dat", "r+b");
+    fp = fopen("colaborador/colaborador.dat", "r+b");
     while(!feof(fp)) {
         fread(nova_ent, sizeof(Colab), 1, fp);
         if (strcmp(nova_ent->cpf, col->cpf) == 0) {
@@ -178,7 +178,7 @@ void edit_cad_colab (Colab* col, char op) {
 //Percorre o algoritmo para gerar um id de um colaborador adequadamente
 int gera_id_colab (void) {
     FILE *fp_col;
-    fp_col = fopen("colaborador.dat", "rb");
+    fp_col = fopen("colaborador/colaborador.dat", "rb");
     if (fp_col == NULL) {
         return 1;
     }
