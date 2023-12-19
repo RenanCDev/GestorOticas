@@ -41,7 +41,7 @@ infoCompilacaoWindows = 'Windows (AS CHANCES DO PROGRAMA RODAR PERFEITAMENTE SÃ
 ignorarWarningsWindows = 'Ignore os Warnings que surgirão, utilizei uma função não compatível com o Windows, mesmo assim, o programa rodará, mesmo que não perfeitamente.';
 comandosCompilacaoWindows = ["Para compilar e rodar o programa, abra o terminal, vá até a pasta do programa e digite os seguintes comandos em sequência:"; 
     'gcc -c -Wall */*.c'; 
-    'cc -c -Wall */*.h';
+    'gcc -c -Wall */*.h';
     'gcc -c -Wall main.c';
     'gcc -o main *.o';
     './main'];
