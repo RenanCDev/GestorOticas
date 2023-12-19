@@ -43,3 +43,4 @@ void tela_sem_cad (void);
 void tela_list_venda1 (char*, char*, char*);
 void tela_list_venda2 (char*, char*, char*, char*, char*);
 void tela_list_venda_f (char*, char*, char*, int, char);
+void relat_null (void);

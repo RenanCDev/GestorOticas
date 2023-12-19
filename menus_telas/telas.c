@@ -247,6 +247,12 @@ void relat_pessoa_adm (Admin* adm) {
     printf("|%s|%s|%s|   %c   |\n", centralizar_texto(adm->cpf, 20, 0), centralizar_texto(id, 5, 0), centralizar_texto(adm->nome, 38, 0), adm->status);
 }
 
+void relat_null (void) {
+    printf("+-------------------------------------------------------------------------+\n");
+    printf("|%s|\n", centralizar_texto("SEM CADASTROS ENCONTRADOS ! ! !", 73, 0));
+    printf("+-------------------------------------------------------------------------+\n");    
+}
+
 void relat_pessoa_atv_adm (Admin* adm) {
     if (adm->status == '1') {
         char* id =(char*) malloc(8*sizeof(char));

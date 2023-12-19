@@ -520,6 +520,8 @@ void tela_sobre (void) {
     printf("|                                                                         |\n");
     printf("|             Aluno -- Renan Missias Rodrigues Alves da Costa             |\n");
     printf("|                                                                         |\n");
+    printf("|                         Matrícula: 20230078244                          |\n");
+    printf("|                                                                         |\n");
     printf("|                    Disciplina DCT1106 -- Programação                    |\n");
     printf("|                                                                         |\n");
     printf("|                  Projeto Sistema de Gestão para Óticas                  |\n");
@@ -529,9 +531,11 @@ void tela_sobre (void) {
     printf("+=========================================================================+\n");  
     printf("+=========================================================================+\n");
     printf("|                                                                         |\n");
-    printf("|         O projeto EAGLE EYES é um projeto de gestão de óticas .         |\n");
+    printf("|        O projeto GestorOticas é um projeto de gestão de óticas .        |\n");
     printf("|                                                                         |\n");
     printf("|       Tem o objetivo avaliar o desenvolvedor do segundo período .       |\n");
+    printf("|                                                                         |\n");
+    printf("|                               MIT License                               |\n");
     printf("|                                                                         |\n");
     printf("|              Avaliador - Doutor Flavius da Luz e Gorgonio               |\n");
     printf("|                                                                         |\n");

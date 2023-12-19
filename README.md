@@ -1,18 +1,30 @@
-//informes_sobre_desenvolvedor
-Aluno: Renan Missias Rodrigues Alves da Costa
-Matrícula: 20230078244
-Curso: SISTEMAS DE INFORMAÇÃO/CERES
-Instituição: UFRN - Universidade Federal do Rio Grande do Norte
-Área: Departamento de Computação e Tecnologia
+% Informações do Desenvolvedor
+desenvolvedorTitulo = 'Informações do Desenvolvedor:';
+universidade = 'Universidade Federal do Rio Grande do Norte';
+centroEnsino = 'Centro de Ensino Superior do Seridó';
+aluno = 'Aluno -- Renan Missias Rodrigues Alves da Costa';
+matricula = 'Matrícula: 20230078244';
+disciplina = 'Disciplina DCT1106 -- Programação';
+projeto = 'Projeto Sistema de Gestão para Óticas';
+desenvolvidoPor = 'Developed by @RenanMRb - since August, 2023';
 
+% Informações do Projeto
+projetoTitulo = 'Informações do Projeto:';
+descricaoProjeto = 'O projeto GestorOticas é um projeto de gestão de óticas.';
+objetivoProjeto = 'Tem o objetivo avaliar o desenvolvedor do segundo período.';
+licenca = 'MIT License';
+avaliador = 'Avaliador - Doutor Flavius da Luz e Gorgonio';
+disciplinaProjeto = 'Disciplina DCT1106 Programação -- Bacharelado de Sistemas de Informação';
+atencao = '> > ATENÇÃO < <';
+naoComercial = 'Este NÃO é um programa comercial.';
+responsabilidade = 'O desenvolvedor não se responsabiliza por quaisquer danos!';
 
-//projeto_eagle_eyes
-Projeto de gestão de óticas.
-Projeto destinado a cadeira = DCT1106 - PROGRAMAÇÃO = UFRN - período 2 (23.2)
+% Informações de Uso
+usoTitulo = 'Informações de Uso:';
+atencaoUso = '> > ATENÇÃO < <';
+desenvolvidoNoLinux = 'Este programa foi inteiramente desenvolvido no Linux.';
+recomendacaoLinux = 'Desde já, o desenvolvedor recomenda a utilização do mesmo SO para testes e usos.';
 
-
-//pretenção_do_projeto
-O projeto tem o objetivo de gerir e administrar uma ótica, desde suas entradas, sejam elas de mercadoria ou dinheiro, até suas saídas.
-
-
-//ATENÇÃO: este NÃO é um programa comercial. O desenolvedor não se responsabiliza por quaisquer danos!
+% Instruções de Uso
+subtituloUso = 'Instruções de Uso:';
+% Adicione as instruções de uso aqui conforme necessário
