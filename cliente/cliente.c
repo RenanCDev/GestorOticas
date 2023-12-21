@@ -98,7 +98,7 @@ Client* pesq_client (void) {
 //Percorre o algoritmo para gravar um cliente em arquivo adequadamente
 void gravar_client (Client* cli) {
     FILE *fp_cli;
-    fp_cli = fopen("cliente.dat/cliente.dat", "ab");
+    fp_cli = fopen("cliente/cliente.dat", "ab");
     fwrite(cli, sizeof(Client), 1, fp_cli);
     fclose(fp_cli);
     free(cli);
@@ -110,7 +110,7 @@ Client* carregar_cli (char* cpf) {
     FILE* fp;
     Client* cli;
     cli = (Client*)malloc(sizeof(Client));
-    fp = fopen("cliente.dat/cliente.dat", "rb");
+    fp = fopen("cliente/cliente.dat", "rb");
     while (fread(cli, sizeof(Client), 1, fp)) {
         if ((!strcmp(cli->cpf, cpf)) && (cli->status == '1')) {
             fclose(fp);
@@ -127,7 +127,7 @@ void regravar_cli(Client* cli, char op) {
     FILE* fp;
     Client* nova_ent;
     nova_ent = (Client*)malloc(sizeof(Client));
-    fp = fopen("cliente.dat/cliente.dat", "r+b");
+    fp = fopen("cliente/cliente.dat", "r+b");
     while(!feof(fp)) {
         fread(nova_ent, sizeof(Client), 1, fp);
         if (strcmp(nova_ent->cpf, cli->cpf) == 0) {
@@ -178,7 +178,7 @@ void edit_cad_cli (Client* cli, char op) {
 //Percorre o algoritmo para gerar um id de um cliente adequadamente
 int gera_id_client (void) {
     FILE *fp_cli;
-    fp_cli = fopen("cliente.dat/cliente.dat", "rb");
+    fp_cli = fopen("cliente/cliente.dat", "rb");
     if (fp_cli == NULL) {
         return 1;
     }
