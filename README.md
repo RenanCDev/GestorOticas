@@ -7,7 +7,7 @@ Aluno -- Renan Missias Rodrigues Alves da Costa
 Matrícula: 20230078244
 Disciplina DCT1106 -- Programação
 Projeto Sistema de Gestão para Óticas
-Developed by @RenanMRb - since august, 2023
+Developed by @RenanCDev - since august, 2023
 projetoDisciplina = 'Projeto da Disciplina de Programação - 2023.2';
 
 
@@ -29,7 +29,7 @@ comandoCompletoLinux = "gcc -c -Wall */*.c -> gcc -c -Wall */*.h -> gcc -c -Wall
 
 infoCompilacaoReplit = 'Replit:';
 cloneRepositorio = "Abra o site, crie um arquivo de linguagem C, vá até o Shell, clone o repositório utilizando o seguinte comando:";
-comandoCloneRepositorio = 'git clone https://github.com/RenanMRb/GestorOticas.git';
+comandoCloneRepositorio = 'git clone https://github.com/RenanCDev/GestorOticas.git';
 navegarPastaPrograma = 'Vá até a pasta do programa utilizando:';
 comandoNavegarPasta = 'cd GestorOticas';
 comandoMakeReplit = "Utilize o comando "make";

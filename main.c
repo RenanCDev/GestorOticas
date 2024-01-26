@@ -10,7 +10,7 @@
     ("|                                                                         |\n")
     ("|                  Projeto Sistema de Gestão para Óticas                  |\n")
     ("|                                                                         |\n")
-    ("|               Developed by @RenanMRb - since august, 2023               |\n")
+    ("|               Developed by @RenanCDev - since august, 2023               |\n")
     ("|                                                                         |\n")
     ("+=========================================================================+\n")  */
 

@@ -526,7 +526,7 @@ void tela_sobre (void) {
     printf("|                                                                         |\n");
     printf("|                  Projeto Sistema de Gestão para Óticas                  |\n");
     printf("|                                                                         |\n");
-    printf("|               Developed by @RenanMRb - since august, 2023               |\n");
+    printf("|               Developed by @RenanCDev - since august, 2023               |\n");
     printf("|                                                                         |\n");
     printf("+=========================================================================+\n");  
     printf("+=========================================================================+\n");

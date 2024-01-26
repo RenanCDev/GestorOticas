@@ -33,7 +33,7 @@ int valid_char_data (char data) {
         return 1;
     }
     return 0;
-} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanCDev
 
 //Validação para números com tamanho exigido: verifica se a string recebida contém apenas números no tamanho exigido(retorna "1") ou não(retorna "0")
 int valid_numeros(char* variavel, char tam) {
@@ -73,7 +73,7 @@ int valid_numeros_f(char* variavel, int tam) {
         }
     } 
     return 0;
-} // AUTOR - RENAN COSTA // GIT: https://github.com/RenanMRb
+} // AUTOR - RENAN COSTA // GIT: https://github.com/RenanCDev
 
 //Validação para números sem tamanho exigido: verifica se a string recebida contém apenas números(retorna "1") ou não(retorna "0")
 int valid_numeros_s(char* variavel) {
@@ -352,7 +352,7 @@ int valid_cnpj(char*  cnpj) {
         return 1; 
     }
     return 0; 
-} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanCDev
 
 
 //Validação para código de barras: verifica se a string recebida é um código de barras válido(retorna "1") ou não(retorna "0")
@@ -377,7 +377,7 @@ int valid_cod_barras (char* cod_barras) {
         } 
     }
     return 0; 
-} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanCDev
 
 //Centralizar_texto: centraliza o texto inserido
 char* centralizar_texto(char* texto, int tam, int horizontal) {
@@ -442,7 +442,7 @@ char* peg_dia (void) {
         dia[0] = '0';
     }
     return dia;
-} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanCDev
 
 //Pega o exato mes para auxiliar na função inst_data
 char* peg_mes (void) {
@@ -458,7 +458,7 @@ char* peg_mes (void) {
         mes[0] = '0';
     }
     return mes;
-} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanCDev
 
 //Pega o exato ano para auxiliar na função inst_data
 char* peg_ano (void) {
@@ -469,7 +469,7 @@ char* peg_ano (void) {
     char* ano = (char*) malloc(6 * sizeof(char));
     sprintf(ano,"%d",a);
     return ano;
-} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanCDev
 
 //Pega a exata hora para auxiliar na função inst_hora
 char* peg_hora (void) {
@@ -485,7 +485,7 @@ char* peg_hora (void) {
         hora[0] = '0';
     }
     return hora;
-} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanCDev
 
 //Pega o exato minuto para auxiliar na função inst_hora
 char* peg_minuto (void) {
@@ -501,7 +501,7 @@ char* peg_minuto (void) {
         minuto[0] = '0';
     }
     return minuto;
-} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanCDev
 
 //Pega o exato segundo para auxiliar na função inst_hora
 char* peg_segundo (void) {
@@ -517,7 +517,7 @@ char* peg_segundo (void) {
         segundo[0] = '0';
     }
     return segundo;
-} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanCDev
 
 //Retorna a data isntantanea
 char* inst_data (void) {
@@ -531,7 +531,7 @@ char* inst_data (void) {
     strcat(data, "/");
     strcat(data, ano);
     return data;
-} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanCDev
 
 //Retorna a hora instantanea
 char* inst_hora (void) {
@@ -545,14 +545,14 @@ char* inst_hora (void) {
     strcat(horario, ":");
     strcat(horario, segundo);
     return horario;
-} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanCDev
 
 //Retorna a string maiúscula
 void trat_nome(char* nome) {
   for (int i = 0; nome[i] != '\0'; ++i) {
     nome[i] = toupper(nome[i]);
   }
-} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanCDev
 
 //Tratamento de entrada para cpf retirando os "." e "-"
 void trat_cpf_entr (char* cpf) {
@@ -568,7 +568,7 @@ void trat_cpf_entr (char* cpf) {
         cpf[10] = cpf[13];
         cpf[11] = '\0';
     }
-} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanCDev
 
 //Tratamento de saída para cpf colocando os "." e "-"
 void trat_cpf_said (char* cpf) {
@@ -584,7 +584,7 @@ void trat_cpf_said (char* cpf) {
     cpf[4] = cpf[3];
     cpf[3] = '.';
     cpf[14] = '\0';
-} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanCDev
 
 //Tratamento de entrada para cel retirando os "()" e "-"
 void trat_cel_entr (char* cel) {
@@ -603,7 +603,7 @@ void trat_cel_entr (char* cel) {
         cel[10] = cel[13];
         cel[11] = '\0';
     }
-} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanCDev
 
 //Tratamento de saída para cel colocando os "." e "-"
 void trat_cel_said (char* cel) {
@@ -622,7 +622,7 @@ void trat_cel_said (char* cel) {
     cel[1] = cel[0];
     cel[0] = '(';
     cel[14] = '\0';
-} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanCDev
 
 //Tratamento de entrada para cnpj retirando os ".", "/" e "-"
 void trat_cnpj_entr (char* cnpj) {
@@ -642,7 +642,7 @@ void trat_cnpj_entr (char* cnpj) {
         cnpj[13] = cnpj[17];
         cnpj[14] = '\0';
     }
-} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb]
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanCDev]
 
 //Tratamento de saida para cnpj colocando os ".", "/" e "-"
 void trat_cnpj_said (char* cnpj) {
@@ -665,7 +665,7 @@ void trat_cnpj_said (char* cnpj) {
     cnpj[1] = cnpj[1];
     cnpj[0] = cnpj[0];
     cnpj[18] = '\0';
-} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanCDev
 
 int cancel (char* comparado) {
     char* comparador = "sair";
@@ -673,7 +673,7 @@ int cancel (char* comparado) {
         return 0;
     }
     return 1;
-} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanCDev
 
 int cpf_zero (char* comparado) {
     char* comparador = "000";
@@ -681,12 +681,12 @@ int cpf_zero (char* comparado) {
         return 0;
     }
     return 1;
-} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanCDev
 
 void recebe_cpf_zero (char* cpf) {
     char* cpf_zero = "000.000.000-00";
     strcpy(cpf, cpf_zero);
-} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanCDev
 
 int cnpj_zero (char* comparado) {
     char* comparador = "000";
@@ -694,12 +694,12 @@ int cnpj_zero (char* comparado) {
         return 0;
     }
     return 1;
-} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanCDev
 
 void recebe_cnpj_zero (char* cnpj) {
     char* cnpj_zero = "00.000.000/0000-00";
     strcpy(cnpj, cnpj_zero);
-} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanCDev
 
 int cod_barras_zero (char* comparado) {
     char* comparador = "000";
@@ -707,12 +707,12 @@ int cod_barras_zero (char* comparado) {
         return 0;
     }
     return 1;
-} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanCDev
 
 void recebe_cod_barras_zero (char* cod_barras) {
     char* cod_barras_zero = "0000000000000";
     strcpy(cod_barras, cod_barras_zero);
-} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanCDev
 
 int compara_float (char* float1, char* float2) {
     float a = atof (float1);
@@ -724,4 +724,4 @@ int compara_float (char* float1, char* float2) {
     } else {
         return 1;
     }
-} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanMRb
+} // AUTOR: RENAN COSTA // GIT: https://github.com/RenanCDev
